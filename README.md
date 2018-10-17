@@ -10,11 +10,12 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 
 1. Who's in the team.
 2. Which squad each individual belongs to and availability.
-3. Release process.
-4. Technical documents.
-5. New hires checklist.
-6. Interview process.
-7. Code guidelines, standards and etiquette.
+3. OSS maitained projects.
+4. Release process.
+5. Technical documents.
+6. New hires checklist.
+7. Interview process.
+8. Code guidelines, standards and etiquette.
 
 
 ## 1. Who's in the team
@@ -54,3 +55,11 @@ By definition members work on their respective squad, although they are free to 
 | Project Avalon                | Sergey                   |    1/1       |
 | Project Coconut Cookies       | Anders                   |    1/2       |
 | Project Vanilla Cookies       | Michael                  |    1/1       |
+
+## 3. OSS maitained projects
+
+| Project name                  | Owner(s)                 | Stars        |  
+|-------------------------------|--------------------------| ------------ |
+| Bento                         | Anders, David, Serg      | [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Bento.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Bento/stargazers/)             |
+| DrawerKit                     | David, Wagner            |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/DrawerKit/stargazers/)       |
+| ReactiveFeedback              | Anders, Serg             |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/ReactiveFeedback/stargazers/)        |
