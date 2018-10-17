@@ -50,7 +50,7 @@ By definition members work on their respective squad, although they are free to 
 | Healthcheck                   | Ben, Wagner              |    2/2       |
 | Core                          | Witold, Jason            |    2/4       |
 | Professional Services         | Danilo                   |    1/1       |
-| GP@Hand                       | Diego                    |    1/1       |
+| GP at Hand                       | Diego                    |    1/1       |
 | Project Avalon                | Sergey                   |    1/1       |
 | Project Coconut Cookies       | Anders                   |    1/2       |
 | Project Vanilla Cookies       | Michael                  |    1/1       |
