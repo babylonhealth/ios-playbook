@@ -53,8 +53,8 @@ By definition members work on their respective squad, although they are free to 
 | Professional Services         | Danilo                   |    1/1       |
 | GP at Hand                    | Diego                    |    1/1       |
 | Project Avalon                | Sergey                   |    1/1       |
-| Project Coconut Cookies       | Anders                   |    1/2       |
-| Project Vanilla Cookies       | Michael                  |    1/1       |
+| Project Minkowski             | Anders                   |    1/2       |
+| Project Bayes                 | Michael                  |    1/1       |
 
 ## 3. OSS maitained projects
 
