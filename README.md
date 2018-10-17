@@ -19,23 +19,23 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 
 ## 1. Who's in the team
 
-| Name                    | Contact |  
-|-------------------------|---------|
-| Ana Catarina Figueiredo |         |
-| Anders Ha               |         |
-| Ben Henshall            |         |
-| Danilo Aliberti         |         |
-| David Rodrigues         |         |
-| Diego Petrucci          |         |
-| Ilya Puchka             |         |
-| Jason Dobo              |         |
-| Martin Nygren           |         |
-| Michael Brown           |         |
-| Rui Peres               | [@peres](https://twitter.com/peres)        |
-| Sergey Shulga           |         |
-| Viorel Mihalache        |         |
-| Wagner Truppel          |         |
-| Witold Skibniewski      |         |
+| Name                    | Contact                                                       |  
+|-------------------------|---------------------------------------------------------------|
+| Ana Catarina Figueiredo | [@AnnKatFig](https://twitter.com/AnnKatFig)                   |
+| Anders Ha               | [@_andersha](https://twitter.com/_andersha)                   |
+| Ben Henshall            |                                                               |
+| Danilo Aliberti         |                                                               |
+| David Rodrigues         | [@dmcrodrigues](https://twitter.com/dmcrodrigues)             |
+| Diego Petrucci          | [@diegopetrucci](https://twitter.com/diegopetrucci)           |
+| Ilya Puchka             | [@ilyapuchka](https://twitter.com/ilyapuchka)                 |
+| Jason Dobo              |                                                               |
+| Martin Nygren           |                                                               |
+| Michael Brown           | [@mluisbrown](https://twitter.com/mluisbrown)                 |
+| Rui Peres               | [@peres](https://twitter.com/peres)                           |
+| Sergey Shulga           | [@SergDort](https://twitter.com/SergDort)                     |
+| Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
+| Wagner Truppel          |                                                               |    
+| Witold Skibniewski      | [@mr_witold](https://twitter.com/mr_witold)                   |
 
 
 ## 2. Which squad each individual belongs to and availability
