@@ -40,14 +40,17 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 
 ## 2. Which squad each individual belongs to and availability
 
+By definition members work on their respective squad, although they are free to work in different squads if the work load justifies it.
 
-| Squad Name                    | Members | Availability |  
-|-------------------------------|---------| ------------ |
-| SDK                           | - Viorel|    3/4        |
-| Consultation Experience       | - Ilya  |    1/1        |
-| Healthcheck                   | - Ben   |    2/2       |
-| Core                          | - Michael|   2/4       |
-| Professional Services         | - Danilo|    1/1       |
-| GP@Hand                       | - Diego |    1/1       |
-| Project Avalon                | - Sergey|    1/1       |
-| Project Coconut Cookies       | - Anders|    1/2       |
+
+| Squad Name                    | Members                  | Availability |  
+|-------------------------------|--------------------------| ------------ |
+| SDK                           | David, Viorel, Martin    |    3/4       |
+| Consultation Experience       | Ilya                     |    1/1       |
+| Healthcheck                   | Ben, Wagner              |    2/2       |
+| Core                          | Witold, Jason            |    2/4       |
+| Professional Services         | Danilo                   |    1/1       |
+| GP@Hand                       | Diego                    |    1/1       |
+| Project Avalon                | Sergey                   |    1/1       |
+| Project Coconut Cookies       | Anders                   |    1/2       |
+| Project Vanilla Cookies       | Michael                  |    1/1       |
