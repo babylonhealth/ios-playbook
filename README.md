@@ -63,3 +63,23 @@ By definition members work on their respective squad, although they are free to 
 | Bento                         | Anders, David, Serg      | [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Bento.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Bento/stargazers/)             |
 | DrawerKit                     | David, Wagner            |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/DrawerKit/stargazers/)       |
 | ReactiveFeedback              | Anders, Serg             |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/ReactiveFeedback/stargazers/)        |
+
+## 4. OSS maitained projects
+
+// Working in progress ⚠️
+
+## 5. Technical documents
+
+// Working in progress ⚠️
+
+## 6. New hires checklist
+
+// Working in progress ⚠️
+
+## 7. Interview process
+
+// Working in progress ⚠️
+
+## 8. Code guidelines, standards and etiquette
+
+// Working in progress ⚠️
