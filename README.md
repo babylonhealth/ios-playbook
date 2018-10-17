@@ -36,3 +36,18 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Viorel Mihalache        |         |
 | Wagner Truppel          |         |
 | Witold Skibniewski      |         |
+
+
+## 2. Which squad each individual belongs to and availability
+
+
+| Squad Name                    | Members | Availability |  
+|-------------------------------|---------| ------------ |
+| SDK                           | - Viorel|    3/4        |
+| Consultation Experience       | - Ilya  |    1/1        |
+| Healthcheck                   | - Ben   |    2/2       |
+| Core                          | - Michael|   2/4       |
+| Professional Services         | - Danilo|    1/1       |
+| GP@Hand                       | - Diego |    1/1       |
+| Project Avalon                | - Sergey|    1/1       |
+| Project Coconut Cookies       | - Anders|    1/2       |
