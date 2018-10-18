@@ -6,7 +6,7 @@
 iOS Playbook 📚
 ==================================
 
-At Babylon, we firmly believe that **transparency** is a core value that should be present in everything we do. This playbook embodies that value by giving an overview on how we work:
+At Babylon, we firmly believe that **transparency** is a core value that should be present in everything we do. This playbook embodies that value by giving an overview of how we work:
 
 1. Who's in the team.
 2. Which squad each individual belongs to, and its availability.
