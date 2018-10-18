@@ -10,7 +10,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 
 1. Who's in the team.
 2. Which squad each individual belongs to, and its availability.
-3. OSS maintained projects.
+3. OSS-maintained projects.
 4. Release process.
 5. Technical documents.
 6. New hires checklist.
@@ -56,7 +56,7 @@ By definition, members work on their respective squad, although they are free to
 | Project Minkowski             | Anders                   |    1/2       |
 | Project Bayes                 | Michael                  |    1/1       |
 
-## 3. OSS maitained projects
+## 3. OSS-maintained projects
 
 | Project name                  | Owner(s)                 | Stars        |  
 |-------------------------------|--------------------------| ------------ |
