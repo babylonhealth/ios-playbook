@@ -9,7 +9,7 @@ iOS Playbook 📚
 At Babylon, we firmly believe that **transparency** is a core value that should be present in everything we do. This playbook embodies that value by giving an overview on how we work:
 
 1. Who's in the team.
-2. Which squad each individual belongs to and availability.
+2. Which squad each individual belongs to, and its availability.
 3. OSS maintained projects.
 4. Release process.
 5. Technical documents.
@@ -35,13 +35,13 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Rui Peres               | [@peres](https://twitter.com/peres)                           |
 | Sergey Shulga           | [@SergDort](https://twitter.com/SergDort)                     |
 | Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
-| Wagner Truppel          |                                                               |    
+| Wagner Truppel          | [@wltrup](https://github.com/wltrup)                         |    
 | Witold Skibniewski      | [@mr_witold](https://twitter.com/mr_witold)                   |
 
 
-## 2. Which squad each individual belongs to and availability
+## 2. Which squad each individual belongs to, and its availability.
 
-By definition members work on their respective squad, although they are free to work in different squads if the work load justifies it.
+By definition, members work on their respective squad, although they are free to work in different squads if the work load justifies it.
 
 
 | Squad Name                    | Members                  | Availability |  
@@ -60,26 +60,26 @@ By definition members work on their respective squad, although they are free to 
 
 | Project name                  | Owner(s)                 | Stars        |  
 |-------------------------------|--------------------------| ------------ |
-| Bento                         | Anders, David, Serg      | [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Bento.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Bento/stargazers/)             |
+| Bento                         | Anders, David, Sergey    | [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Bento.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Bento/stargazers/)             |
 | DrawerKit                     | David, Wagner            |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/DrawerKit/stargazers/)       |
-| ReactiveFeedback              | Anders, Serg             |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/ReactiveFeedback/stargazers/)        |
+| ReactiveFeedback              | Anders, Sergey           |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/ReactiveFeedback/stargazers/)        |
 
-## 4. OSS maintained projects
+## 4. Release process
 
-// Working in progress ⚠️
+// Work in progress ⚠️
 
 ## 5. Technical documents
 
-// Working in progress ⚠️
+// Work in progress ⚠️
 
 ## 6. New hires checklist
 
-// Working in progress ⚠️
+// Work in progress ⚠️
 
 ## 7. Interview process
 
-// Working in progress ⚠️
+// Work in progress ⚠️
 
 ## 8. Code guidelines, standards and etiquette
 
-// Working in progress ⚠️
+// Work in progress ⚠️
