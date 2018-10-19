@@ -84,11 +84,12 @@ Time to release should be broken down by:
 1. Automated testing time (e.g. `5h`)
 2. Manual testing times (e.g. `3h`)
 3. Delta between the jira ticket being open and marked as `done` or `wont fix`. (e.g. `UA-8289: 1h30`)
+4. Total time
 
 
 | Version                  | Release Engineer(s)              | Time to release        |
 |--------------------------|----------------------------------| ---------------------- |
-| 3.2.0                    | Danilo Aliberti                  | - Automated: 12h53<br>- Manual: 10h<br>- UA-8166: 4h<br>- UA-8149: 2d<br>- UA-8187: 3h |
+| 3.2.0                    | Danilo Aliberti                  | Automated: `12h53`<br>Manual: `10h`<br>`UA-8166: 4h`<br>`UA-8149: 2d`<br>`UA-8187: 3h`<br>Total: **3d6h** |
 
 ### Release step-by-step.
 
