@@ -66,6 +66,32 @@ By definition, members work on their respective squad, although they are free to
 
 ## 4. Release process
 
+### Release engineer as a role
+
+  The release engineer responsibilities are, but not limited to:
+
+  1. Own the entire release process (step-by-step).
+  2. Provide visibility, at all stages, of the release to the wider audience (e.g. squad, tribe and iOS chapter lead).
+  3. Collaborate with QA by:
+    1. Providing visibility to potential blockers to the wider audience.
+    2. Escalating abnormal influx of bugs, so the release, as a whole, can be reassessed.
+  4. Making sure he/she can dedicate enough time for the release. In case this is not possible (due to other squad commitments), please inform the iOS chapter lead.
+
+### Release calendar
+
+Time to release should be broken down by:
+
+1. Automated testing time (e.g. `5h`)
+2. Manual testing times (e.g. `3h`)
+3. Delta between the jira ticket being open and marked as `done` or `wont fix`. (e.g. `UA-8289: 1h30`)
+
+
+| Version                  | Release Engineer(s)              | Time to release        |
+|--------------------------|----------------------------------| ---------------------- |
+| 3.2.0                    | Danilo Aliberti                  | - Automated: 12h53<br>- Manual: 10h<br>- UA-8166: 4h<br>- UA-8149: 2d<br>- UA-8187: 3h |
+
+### Release step-by-step.
+
 // Work in progress ⚠️
 
 ## 5. Technical documents
