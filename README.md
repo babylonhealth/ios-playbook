@@ -29,7 +29,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | David Rodrigues         | [@dmcrodrigues](https://twitter.com/dmcrodrigues)             |
 | Diego Petrucci          | [@diegopetrucci](https://twitter.com/diegopetrucci)           |
 | Ilya Puchka             | [@ilyapuchka](https://twitter.com/ilyapuchka)                 |
-| Jason Dobo              | [@wltrup](https://github.com/jasondobo)                       |
+| Jason Dobo              | [@jasondobo](https://github.com/jasondobo)                    |
 | Martin Nygren           |                                                               |
 | Michael Brown           | [@mluisbrown](https://twitter.com/mluisbrown)                 |
 | Rui Peres               | [@peres](https://twitter.com/peres)                           |
