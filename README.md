@@ -75,7 +75,7 @@ By definition, members work on their respective squad, although they are free to
   3. Collaborate with QA by:
     1. Providing visibility to potential blockers to the wider audience.
     2. Escalating abnormal influx of bugs, so the release, as a whole, can be reassessed.
-  4. Making sure he/she can dedicate enough time for the release. In case this is not possible (due to other squad commitments), please inform the iOS chapter lead.
+  4. Making sure they can dedicate enough time for the release. In case this is not possible (due to other squad commitments), please inform the iOS chapter lead.
 
 ### Release calendar
 
