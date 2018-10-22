@@ -96,7 +96,7 @@ Effort to release should be broken down by:
 1. Cut a release branch when the sprint ends (typically when the new sprint starts on Monday). Create a new branch from develop and push to origin (e.g `release/3.2.0`).
 2. Bump the release version by triggering its command (eg. `/release babylon:3.2.0`) in `#ios-builds` (you can run the command every time you want to upload a new build).
     1. This creates a test Tesflight build (try to do one as early as possible, so that you can catch issues like missing/expired certificates or profiles and any other production build errors early)
-3. Trigger a hockey build from that branch (Triggering builds in Slack)
+3. Trigger a hockey build from that branch.
 4. Testers will then begin their work against the build you just created.
 5. Any hotfix should target that branch, you, as the release engineer, are responsible for double checking the hotfix PR is pointing to the release branch (instead of develop). 
 7. Create a board for the release. Use a filter to reduce its scope, eg `project = UA AND affectedVersion = "iOS 3.2.0"`.
