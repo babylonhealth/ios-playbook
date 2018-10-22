@@ -79,7 +79,7 @@ By definition, members work on their respective squad, although they are free to
 
 ### Release calendar
 
-Effort to release should be broken down by:
+The release process starts when the first build is provided to QA and ends when Apple has approved the app. Effort to release should be broken down by:
 
 1. Automated QA effort (e.g. `5h`)
 2. Manual QA effort (e.g. `3h`)
@@ -102,7 +102,7 @@ Effort to release should be broken down by:
 7. Create a board for the release. Use a filter to reduce its scope, eg `project = UA AND affectedVersion = "iOS 3.2.0"`.
 8. Create a new version in AppStoreConnect (login using your own account) / My Apps - on sidebar: + Version or Platform: iOS, input the version number.
     1. Add the release notes and update the release notes document.
-    2. Add your release to the calendar.
+    2. Add your release to the release calendar.
     3. Check if you need anything from the Marketing Team. (`#MarketingQuestions`)
     4. Send the release notes to `#ClinicsOps`, so they have visibility on the release.
 9. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay.
@@ -117,8 +117,6 @@ Effort to release should be broken down by:
 12 Once the app is accepted by Apple
     1. Tag the release and upload the binary. (If you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
     2. Merge the changes back to develop.
-13. Please fill the release calendar.
-    1. The process starts when the first build is provided to QA and ends when Apple has approved the app. 
 
 
 ## 5. Technical documents
