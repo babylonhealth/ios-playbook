@@ -98,7 +98,7 @@ Effort to release should be broken down by:
     1. This creates a test Tesflight build (try to do one as early as possible, so that you can catch issues like missing/expired certificates or profiles and any other production build errors early)
 3. Trigger a hockey build from that branch.
 4. Testers will then begin their work against the build you just created.
-5. Any hotfix should target that branch, you, as the release engineer, are responsible for double checking the hotfix PR is pointing to the release branch (instead of develop). 
+5. Any hotfix should target that branch, and you, as the release engineer, are responsible for double checking that the hotfix's PR is pointing to the release branch (instead of `develop`). 
 7. Create a board for the release. Use a filter to reduce its scope, eg `project = UA AND affectedVersion = "iOS 3.2.0"`.
 8. Create a new version in AppStoreConnect (login using your own account) / My Apps - on sidebar: + Version or Platform: iOS, input the version number.
     1. Add the release notes and update the release notes document.
