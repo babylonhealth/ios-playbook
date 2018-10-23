@@ -99,22 +99,22 @@ The release process starts when the first build is provided to QA and ends when 
 3. Trigger a hockey build from that branch.
 4. Testers will then begin their work against the build you just created.
 5. Any hotfix should target that branch, and you, as the release engineer, are responsible for double checking that the hotfix's PR is pointing to the release branch (instead of `develop`). 
-7. Create a board for the release. Use a filter to reduce its scope, eg `project = UA AND affectedVersion = "iOS 3.2.0"`.
-8. Create a new version in AppStoreConnect (login using your own account) / My Apps - on sidebar: + Version or Platform: iOS, input the version number.
+6. Create a board for the release. Use a filter to reduce its scope, eg `project = UA AND affectedVersion = "iOS 3.2.0"`.
+7. Create a new version in AppStoreConnect (login using your own account) / My Apps - on sidebar: + Version or Platform: iOS, input the version number.
     1. Add the release notes and update the release notes document.
     2. Add your release to the release calendar.
     3. Check if you need anything from the Marketing Team. (`#MarketingQuestions`)
     4. Send the release notes to `#ClinicsOps`, so they have visibility on the release.
-9. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay.
+8. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay.
 (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues)
-10. By now, QA should be notified that there is a new version in TestFlight.
-11. When QA has signed off a particular build, submit the app to Apple.
+9. By now, QA should be notified that there is a new version in TestFlight.
+10. When QA has signed off a particular build, submit the app to Apple.
     1. Make sure the release is Manual.
     2. When submitting to release, you are asked if the app uses the Advertising Identifier (IDFA). The answer is YES. You are then presented with three options please select as followed:
     1. 🚫 Serve advertisements within the app
     2. ✅ Attribute this app installation to a previously served advertisement
     3. ✅ Attribute an action taken within this app to a previously served advertisement
-12 Once the app is accepted by Apple
+11. Once the app is accepted by Apple:
     1. Tag the release and upload the binary. (If you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
     2. Merge the changes back to develop.
 
