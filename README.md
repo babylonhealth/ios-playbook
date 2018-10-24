@@ -12,9 +12,9 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 2. Which squad each individual belongs to, and its availability
 3. OSS-maintained projects
 4. New hires checklist
-5. [Release process](https://github.com/Babylonpartners/ios-playbook/blob/master/Release/README.md)
-6. [Technical documents and Proposals](https://github.com/Babylonpartners/ios-playbook/blob/master/TechnicalDocuments/README.md)
-7. [Interview process](https://github.com/Babylonpartners/iOS-Interview-Demo/blob/master/README.md)
+5. [Release process](release.md)
+6. [Technical documents and Proposals](/TechnicalDocuments/README.md)
+7. [Interview process](/Interview/README.md)
 8. Code guidelines, standards and etiquette
 
 
