@@ -13,9 +13,10 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 3. OSS-maintained projects.
 4. Release process.
 5. Technical documents.
-6. New hires checklist.
-7. Interview process.
-8. Code guidelines, standards and etiquette.
+6. Proposals.
+7. New hires checklist.
+8. Interview process.
+9. Code guidelines, standards and etiquette.
 
 
 ## 1. Who's in the team
