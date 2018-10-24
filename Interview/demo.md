@@ -61,7 +61,7 @@ You can retrieve the remaining information from these API:
 
 The following requirements should be met:
 
-* Use Swift 3.0 or above.
+* Use Swift 4.0 or above.
 * The information (posts and post details) should be available offline. It's assumed that, if it's the first time you are accessing the app and you are offline, you shouldn't see any data.
 * The code should be production grade.
 * It should compile and run.
@@ -70,7 +70,7 @@ The following requirements should be met:
 
 We would be happy if you would submit a project you already have (for instance, a demo project for another company). Still, the project **must**:
 
-* Use Swift 3.0 or above.
+* Use Swift 4.0 or above.
 * Have at least two distinct network calls.
 * Parse the network response and present the information to the user.
 * Have some sort of persistence mechanism.
