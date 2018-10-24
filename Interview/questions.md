@@ -1,5 +1,5 @@
 <p align="center">
-<img src="logo.png">
+<img src="../logo.png">
 </p>
 
 
@@ -34,7 +34,7 @@ Please keep in mind that this document is in a continuous state of flux, with ne
 - Can you describe the similarities and difference between the `Delegation` and `Observer` patterns?
 - What's good and what's bad about this piece of code?
 ```SWIFT
-(void)viewDidDisappear:(BOOL)animated {
+- (void)viewDidDisappear:(BOOL)animated {
     [self retain];
     [sharedDialog release];
     sharedDialog = nil;
@@ -139,8 +139,8 @@ Please keep in mind that this document is in a continuous state of flux, with ne
 - What is a `deadlock`? How do you avoid it?
 - What is a `race condition`? How do you avoid it?
 - Knowledge about Big O notation
-- Knowledge about data structures: graphs, trees, queues, stacks, linked lists, hashtables and others. 
-- Knowledge about algorithms: sorting, searching and others. 
+- Knowledge about data structures: graphs, trees, queues, stacks, linked lists, hashtables and others.
+- Knowledge about algorithms: sorting, searching and others.
 
 #### Thanks for your time! We look forward to hearing from you!
 - The [babylon health iOS team](http://github.com/Babylonpartners)

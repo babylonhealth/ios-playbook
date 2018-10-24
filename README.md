@@ -82,4 +82,4 @@ The interview process can be found [here](/Interview/README.md).
 
 ## 8. Code guidelines, standards and etiquette
 
-The code guidelines, standards and etiquette can be found [here](/Standards/README.md)..
+The code guidelines, standards and etiquette can be found [here](/Standards/README.md).
