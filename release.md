@@ -1,7 +1,7 @@
 
 ## Release process
 
-### Release engineer as a role
+### 1. Release engineer as a role
 
   The release engineer responsibilities are, but not limited to:
 
@@ -12,21 +12,7 @@
     2. Escalating abnormal influx of bugs, so the release, as a whole, can be reassessed.
 4. Making sure they can dedicate enough time for the release. In case this is not possible (due to other squad commitments), please inform the iOS chapter lead.
 
-### Release calendar
-
-The release process starts when the first build is provided to QA and ends when Apple has approved the app. Effort to release should be broken down by:
-
-1. Automated QA effort (e.g. `5h`)
-2. Manual QA effort (e.g. `3h`)
-3. Delta between the jira ticket being open and marked as `done` or `wont fix`, for Engineering effort. (e.g. `UA-8289: 1h30`)
-4. Total effort
-
-
-| Version                  | Release Engineer(s)              | QA effort              | Engineering effort | Total effort |
-|--------------------------|----------------------------------| ---------------------- |--------------------|--------------|
-| 3.2.0                    | Danilo Aliberti                  | Automated: `12h53`<br>Manual: `10h`<br>| `UA-8166: 4h`<br>`UA-8149: 2d`<br>`UA-8187: 3h`<br>| Total: **3d6h** |
-
-### Release step-by-step
+### 2. Release step-by-step
 
 1. Cut a release branch when the sprint ends (typically when the new sprint starts on Monday). Create a new branch from develop and push to origin (e.g `release/3.2.0`).
 2. Bump the release version by triggering its command (eg. `/release babylon:3.2.0`) in `#ios-builds` (you can run the command every time you want to upload a new build).
@@ -52,3 +38,17 @@ The release process starts when the first build is provided to QA and ends when 
 11. Once the app is accepted by Apple:
     1. Tag the release and upload the binary. (If you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
     2. Merge the changes back to develop.
+
+### 3. Release calendar
+
+The release process starts when the first build is provided to QA and ends when Apple has approved the app. Effort to release should be broken down by:
+
+1. Automated QA effort (e.g. `5h`)
+2. Manual QA effort (e.g. `3h`)
+3. Delta between the jira ticket being open and marked as `done` or `wont fix`, for Engineering effort. (e.g. `UA-8289: 1h30`)
+4. Total effort
+
+
+| Version                  | Release Engineer(s)              | QA effort              | Engineering effort | Total effort |
+|--------------------------|----------------------------------| ---------------------- |--------------------|--------------|
+| 3.2.0                    | Danilo Aliberti                  | Automated: `12h53`<br>Manual: `10h`<br>| `UA-8166: 4h`<br>`UA-8149: 2d`<br>`UA-8187: 3h`<br>| Total: **3d6h** |
