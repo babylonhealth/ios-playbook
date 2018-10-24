@@ -70,16 +70,16 @@ By definition, members work on their respective squad, although they are free to
 
 ## 5. Release process
 
-The release process can be found [here](https://github.com/Babylonpartners/ios-playbook/blob/master/Release/README.md).
+The release process can be found [here](release.md).
 
 ## 6. Technical documents and Proposals
 
-The technical documents and proposals can be found [here](https://github.com/Babylonpartners/ios-playbook/blob/master/TechnicalDocuments/README.md).
+The technical documents and proposals can be found [here](/TechnicalDocuments/README.md).
 
 ## 7. Interview process
 
-The interview process can be found [here](https://github.com/Babylonpartners/ios-playbook/blob/master/Interview/README.md).
+The interview process can be found [here](/Interview/README.md).
 
 ## 8. Code guidelines, standards and etiquette
 
-The code guidelines, standards and etiquette can be found [here](https://github.com/Babylonpartners/ios-playbook/blob/master/Standards/README.md)..
+The code guidelines, standards and etiquette can be found [here](/Standards/README.md)..
