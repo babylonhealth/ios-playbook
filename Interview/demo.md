@@ -6,7 +6,7 @@
 babylon iOS interview demo project
 ==================================
 
-As described in the iOS recruitment process [main page](https://github.com/Babylonpartners/iOS-Interview-Demo/blob/master/README.md), we expect all candidates to submit a demo project, in one of the three formats below. **Only one of these is required**.
+As described in the iOS recruitment process [main page](README.md), we expect all candidates to submit a demo project, in one of the three formats below. **Only one of these is required**.
 
 1. [The babylon demo project](#1-the-babylon-demo-project).
 2. [A project you've already done](#2-already-written-project).
