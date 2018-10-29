@@ -15,7 +15,7 @@
 ### 2. Release step-by-step
 
 1. Cut a release branch when the sprint ends (typically when the new sprint starts on Monday). Create a new branch from develop and push to origin (e.g `release/3.2.0`).
-2. Bump the release version by triggering its command (eg. `/release babylon:3.2.0`) in `#ios-builds` (you can run the command every time you want to upload a new build).
+2. Bump the release version by triggering its command (eg. `/release babylon:3.2.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
     * This creates a test Tesflight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
 3. Trigger a hockey build from that branch.
 4. Testers will then begin their work against the build you just created.
