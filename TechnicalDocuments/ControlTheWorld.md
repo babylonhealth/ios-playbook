@@ -102,3 +102,15 @@ Once we get more familiar with using `Current`, we can explore using the `struct
 ## Where is the boundary between Current and using Dependency Injection?
 
 In previous discussions with the team it was agreed that we can / should use `Current` as far as our Builders and no further. The Builders should still continue to inject any dependencies required by View Models, View Controllers and Flow Controllers.
+
+## Where will Current live?
+
+In order that `Current` is accessible from all of the Babylon frameworks, we should create a new framework 🙈 , maybe `BabylonWorld`, which can be imported into all our frameworks that require it.
+
+The definition should be something like:
+
+```swift
+public var Current = World()
+```
+
+In order for this to work, we will need default values for some of the `AppDependencies` to store in `Current` as this would normally be configured shortly after app startup (currently in `SharedAppDelegate`).
