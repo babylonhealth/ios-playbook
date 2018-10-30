@@ -15,13 +15,13 @@
 ### 2. Release step-by-step
 
 1. Cut a release branch when the sprint ends (typically when the new sprint starts on Monday). Create a new branch from develop and push to origin (e.g `release/3.2.0`).
-2. Bump the release version by triggering its command (eg. `/release babylon:3.2.0`) in `#ios-builds` (you can run the command every time you want to upload a new build).
+2. Bump the release version by triggering its command (eg. `/release babylon:3.2.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
     * This creates a test Tesflight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
-3. Trigger a hockey build from that branch.
+3. Trigger a hockey build from that branch using its command (eg. `/distribute release/3.2.0:babylon`) in `#ios-build`.
 4. Testers will then begin their work against the build you just created.
 5. Any hotfix should target that branch, and you, as the release engineer, are responsible for double checking that the hotfix's PR is pointing to the release branch (instead of `develop`).
 6. Create a board for the release. Use a filter to reduce its scope, eg `project = UA AND affectedVersion = "iOS 3.2.0"`.
-7. Create a new version in AppStoreConnect (login using your own account) / My Apps - on sidebar: + Version or Platform: iOS, input the version number.
+7. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps - on sidebar: + Version or Platform: iOS, input the version number.
     1. Add the release notes and update the release notes document.
     2. Add your release to the release calendar.
     3. Check if you need anything from the Marketing Team. (`#MarketingQuestions`)
