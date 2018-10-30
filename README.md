@@ -24,7 +24,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 |-------------------------|---------------------------------------------------------------|
 | Ana Catarina Figueiredo | [@AnnKatFig](https://twitter.com/AnnKatFig)                   |
 | Anders Ha               | [@_andersha](https://twitter.com/_andersha)                   |
-| Ben Henshall            |                                                               |
+| Ben Henshall            | [@Ben_Henshall](https://twitter.com/ben_henshall?lang=en)     |
 | Danilo Aliberti         |                                                               |
 | David Rodrigues         | [@dmcrodrigues](https://twitter.com/dmcrodrigues)             |
 | Diego Petrucci          | [@diegopetrucci](https://twitter.com/diegopetrucci)           |
@@ -35,7 +35,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Rui Peres               | [@peres](https://twitter.com/peres)                           |
 | Sergey Shulga           | [@SergDort](https://twitter.com/SergDort)                     |
 | Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
-| Wagner Truppel          | [@wltrup](https://github.com/wltrup)                         |    
+| Wagner Truppel          | [@wltrup](https://github.com/wltrup)                          |    
 | Witold Skibniewski      |                                                               |
 
 
