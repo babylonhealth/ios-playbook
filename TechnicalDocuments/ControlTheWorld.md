@@ -8,7 +8,7 @@ This proposal is heavily based on episodes [16](https://www.pointfree.co/episode
 
 ## Motivation
 
-To oversome some of the disadvantages of dependency injection:
+To overcome some of the disadvantages of dependency injection:
 
 * Adding a new dependency a long way down the chain can mean passing that dependency all the way down through many layers. Many of those layers only need to get passed the dependency in order to pass it down to the next layer. This leads to a lot of source files being changed just to add a single dependency.
 
