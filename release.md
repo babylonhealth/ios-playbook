@@ -26,8 +26,7 @@
     2. Add your release to the release calendar.
     3. Check if you need anything from the Marketing Team. (`#MarketingQuestions`)
     4. Send the release notes to `#ClinicsOps`, so they have visibility on the release.
-8. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. ❗️ NOTE: Remember to submit compliance info for that build.
-(e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues)
+8. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues) ❗️ NOTE: Remember to submit compliance info for that build.
 9. By now, QA should be notified that there is a new version in TestFlight.
 10. When QA has signed off a particular build, submit the app to Apple.
     1. Make sure *Manually release this version* is selected in `Version Release`.
