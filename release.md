@@ -26,15 +26,14 @@
     2. Add your release to the release calendar.
     3. Check if you need anything from the Marketing Team. (`#MarketingQuestions`)
     4. Send the release notes to `#ClinicsOps`, so they have visibility on the release.
-8. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay.
-(e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues)
+8. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues) ❗️ NOTE: Remember to submit compliance info for that build.
 9. By now, QA should be notified that there is a new version in TestFlight.
 10. When QA has signed off a particular build, submit the app to Apple.
-    1. Make sure the release is Manual.
+    1. Make sure *Manually release this version* is selected in `Version Release`.
     2. When submitting to release, you are asked if the app uses the Advertising Identifier (IDFA). The answer is YES. You are then presented with three options please select as followed:
-    1. 🚫 Serve advertisements within the app
-    2. ✅ Attribute this app installation to a previously served advertisement
-    3. ✅ Attribute an action taken within this app to a previously served advertisement
+        1. 🚫 Serve advertisements within the app
+        2. ✅ Attribute this app installation to a previously served advertisement
+        3. ✅ Attribute an action taken within this app to a previously served advertisement
 11. Once the app is accepted by Apple:
     1. Tag the release and upload the binary. (If you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
     2. Merge the changes back to develop.
