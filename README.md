@@ -55,7 +55,7 @@ By definition, members work on their respective squad, although they are free to
 | GP at Hand                    | Diego                    |    1/1       |
 | Project Avalon                | Sergey                   |    1/1       |
 | Project Minkowski             | Anders                   |    1/2       |
-| Project Bayes                 | Michael                  |    1/1       |
+| Get Well                      | Michael                  |    1/1       |
 
 ## 3. OSS-maintained projects
 
