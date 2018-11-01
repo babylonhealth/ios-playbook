@@ -51,3 +51,4 @@ The release process starts when the first build is provided to QA and ends when 
 | Version                  | Release Engineer(s)              | QA effort              | Engineering effort | Total effort |
 |--------------------------|----------------------------------| ---------------------- |--------------------|--------------|
 | 3.2.0                    | Danilo Aliberti                  | Automated: `12h53`<br>Manual: `10h`<br>| `UA-8166: 4h`<br>`UA-8149: 2d`<br>`UA-8187: 3h`<br>| Total: **3d6h** |
+| 3.3.0                    | David Rodrigues                  | Automated: `09h40`<br>Manual: `14h`<br>| `UA-8268: 1h`<br>`UA-8269: 1h30`<br>`UA-8252: 5h`<br>| Total: **1d7h10min** |

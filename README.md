@@ -13,9 +13,10 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 3. OSS-maintained projects
 4. New hires checklist
 5. [Release process](release.md)
-6. [Technical documents and Proposals](/TechnicalDocuments/README.md)
-7. [Interview process](/Interview/README.md)
-8. Code guidelines, standards and etiquette
+6. [Changelog](CHANGELOG.md)
+7. [Technical documents and Proposals](/TechnicalDocuments/README.md)
+8. [Interview process](/Interview/README.md)
+9. Code guidelines, standards and etiquette
 
 
 ## 1. Who's in the team
