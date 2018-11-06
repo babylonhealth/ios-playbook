@@ -62,26 +62,11 @@ By definition, members work on their respective squad, although they are free to
 
 | Project name                  | Owner(s)                 | Stars        |
 |-------------------------------|--------------------------| ------------ |
-| Bento                         | Anders, David, Sergey    | [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Bento.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Bento/stargazers/)             |
-| DrawerKit                     | David, Wagner            |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/DrawerKit/stargazers/)       |
-| ReactiveFeedback              | Anders, Sergey           |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/ReactiveFeedback/stargazers/)        |
+| Bento                         | Anders, David, Sergey    | [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Bento.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Bento/stargazers/) |
+| DrawerKit                     | David, Wagner            |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/DrawerKit/stargazers/) |
+| ReactiveFeedback              | Anders, Sergey           |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/ReactiveFeedback/stargazers/) |
+| Style guide                   | Wagner                   |    WIP       |
 
 ## 4. New hires checklist
 
 // Work in progress ⚠️
-
-## 5. Release process
-
-The release process can be found [here](release.md).
-
-## 6. Technical documents and Proposals
-
-The technical documents and proposals can be found [here](/TechnicalDocuments/README.md).
-
-## 7. Interview process
-
-The interview process can be found [here](/Interview/README.md).
-
-## 8. Code guidelines, standards and etiquette
-
-The code guidelines, standards and etiquette can be found [here](/Standards/README.md).
