@@ -69,19 +69,3 @@ By definition, members work on their respective squad, although they are free to
 ## 4. New hires checklist
 
 // Work in progress ⚠️
-
-## 5. Release process
-
-The release process can be found [here](release.md).
-
-## 6. Technical documents and Proposals
-
-The technical documents and proposals can be found [here](/TechnicalDocuments/README.md).
-
-## 7. Interview process
-
-The interview process can be found [here](/Interview/README.md).
-
-## 8. Code guidelines, standards and etiquette
-
-The code guidelines, standards and etiquette can be found [here](/Standards/README.md).
