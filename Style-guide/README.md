@@ -1,9 +1,55 @@
+# This is WIP and currently in flux. The text below is not ready for review yet. Please ignore it until it's moved to a position above this message.
+
+=======
+
 # The Official raywenderlich.com Swift Style Guide.
 ### Updated for Swift 4.2
 
 This style guide is different from others you may see, because the focus is centered on readability for print and the web. We created this style guide to keep the code in our books, tutorials, and starter kits nice and consistent — even though we have many different authors working on the books.
 
 Our overarching goals are clarity, consistency and brevity, in that order.
+
+=======
+
+# Contributing to the Official raywenderlich.com Swift Style Guide.
+
+This style guide is a living document that evolves with the Swift language. It is different from others you may see, because the focus is centered on readability for print and the web. We created this style guide to keep the code in our books, tutorials, and starter kits nice and consistent — even though we have many different authors working on the books.
+
+We appreciate and encourage contributions from the community that improve this document and hence the quality of tutorials we produce.  This document outlines the process for making contributions to the guide.
+
+**Note:** You are responsible for adding your name to the list of contributors should you desire.
+
+## Fixing Typos
+
+Uncontroversial, non-additive changes such as misspellings, grammar or compiler errors can be fixed by simply issuing a pull request to master. The maintainer will merge the pull request or, if it is deemed "controversial" request the contributor open an issue so that other members of the community can participate in the discussion.
+
+## Style Changes
+
+Authors at RayWenderlich.com are expected to follow all of the rules in this style guide unless special circumstances apply.  Because of this, it is important that updates happen at predictable times.  Be aware in advance that there may be a significant delay (many months) before a suggestion is ratified on the master branch.
+### Step 1: Open an Issue
+
+Open an issue on github and describe the change you would like to see or rule that you would like to have added.  You can even propose the exact change in github markdown which can be pasted into the guide.
+### Step 2: Wait for Community Feedback
+
+Wait for feedback on the issue. Even if the feedback is negative, don't close the issue too quickly.  Often times the discussion itself can be useful and give way to something even better.  Style guides are very subjective and it is important to always be respectful.  We expect participants to follow the same community guidelines as the Swift project itself outlined at [contributor-covenant.org](http://contributor-covenant.org)
+### Step 3: Wait for Maintainer Go Ahead
+
+The maintainer will decide if a change is go or no go.  This decision is not necessarily based on the feedback of the community, but will often play a role. If you believe that the maintainer is mistaken, you can appeal the decision by just asking them. At this point the maintainer will poll the RayWenderlich team leads for a final decision with RayWenderlich acting as tie breaker if required.  Apologies in advance if your style suggestion isn't accepted.  You are always welcome, however, to make your own style guide for your organization or community!
+### Step 4: Create a Pull Request on the Update branch
+
+Given the go ahead from the maintainer, create a pull request on the update branch in the repo.  There should be one of these.  If it is not clear what it is, ask the maintainer.  The current update branch is `update.`
+### Step 5: Branch Merged
+
+At this point your involvement is complete. The maintainer will merge your PR to the update branch.
+### Step 6: Update Branch Reviewed
+
+The RayWenderlich.com team has a chance to look at the final updated document before it is merged to master.  If an objection is raised, as with the appeal process, teams leads will deliberate on the final decision.
+
+### Step 7: Update Branch Merged to Master
+
+Hurray!
+
+=======
 
 ## Table of Contents
 
@@ -459,7 +505,7 @@ For functions with long signatures, put each parameter on a new line and add an 
 
 ```swift
 func reticulateSplines(
-  spline: [Double], 
+  spline: [Double],
   adjustmentFactor: Double,
   translateConstant: Int, comment: String
 ) -> Bool {
@@ -821,7 +867,7 @@ Use access control as the leading property specifier. The only things that shoul
 ```swift
 private let message = "Great Scott!"
 
-class TimeMachine {  
+class TimeMachine {
   private dynamic lazy var fluxCapacitor = FluxCapacitor()
 }
 ```
@@ -830,7 +876,7 @@ class TimeMachine {
 ```swift
 fileprivate let message = "Great Scott!"
 
-class TimeMachine {  
+class TimeMachine {
   lazy dynamic private var fluxCapacitor = FluxCapacitor()
 }
 ```
@@ -937,10 +983,10 @@ When multiple optionals are unwrapped either with `guard` or `if let`, minimize 
 
 **Preferred**:
 ```swift
-guard 
+guard
   let number1 = number1,
   let number2 = number2,
-  let number3 = number3 
+  let number3 = number3
   else {
     fatalError("impossible")
 }
@@ -1065,17 +1111,17 @@ file:
 
 ```swift
 /// Copyright (c) 2018 Razeware LLC
-/// 
+///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
 /// in the Software without restriction, including without limitation the rights
 /// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 /// copies of the Software, and to permit persons to whom the Software is
 /// furnished to do so, subject to the following conditions:
-/// 
+///
 /// The above copyright notice and this permission notice shall be included in
 /// all copies or substantial portions of the Software.
-/// 
+///
 /// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
 /// distribute, sublicense, create a derivative work, and/or sell copies of the
 /// Software in any work that is designed, intended, or marketed for pedagogical or
@@ -1083,7 +1129,7 @@ file:
 /// or information technology.  Permission for such use, copying, modification,
 /// merger, publication, distribution, sublicensing, creation of derivative works,
 /// or sale is expressly withheld.
-/// 
+///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 /// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -1105,7 +1151,7 @@ Smiley faces are a very prominent style feature of the [raywenderlich.com](https
 **Not Preferred**:
 ```
 :)
-```  
+```
 
 ## References
 
