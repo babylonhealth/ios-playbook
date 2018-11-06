@@ -1,4 +1,4 @@
-# Our Swift Style Guide.
+# Our Swift Style Guide
 
 ## Introduction
 
