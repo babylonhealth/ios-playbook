@@ -16,7 +16,8 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 6. [Changelog](CHANGELOG.md)
 7. [Technical documents and Proposals](/TechnicalDocuments/README.md)
 8. [Interview process](/Interview/README.md)
-9. [Code guidelines, standards and etiquette](/Standards/README.md)
+9. [Swift style guide](/Style-guide/README.md)
+10. [Code of conduct](/Etiquette/README.md)
 
 
 ## 1. Who's in the team
