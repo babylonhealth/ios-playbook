@@ -16,12 +16,12 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 6. [Changelog](CHANGELOG.md)
 7. [Technical documents and Proposals](/TechnicalDocuments/README.md)
 8. [Interview process](/Interview/README.md)
-9. Code guidelines, standards and etiquette
+9. [Code guidelines, standards and etiquette](/Standards/README.md)
 
 
 ## 1. Who's in the team
 
-| Name                    | Contact                                                       |  
+| Name                    | Contact                                                       |
 |-------------------------|---------------------------------------------------------------|
 | Ana Catarina Figueiredo | [@AnnKatFig](https://twitter.com/AnnKatFig)                   |
 | Anders Ha               | [@_andersha](https://twitter.com/_andersha)                   |
@@ -36,7 +36,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Rui Peres               | [@peres](https://twitter.com/peres)                           |
 | Sergey Shulga           | [@SergDort](https://twitter.com/SergDort)                     |
 | Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
-| Wagner Truppel          | [@wltrup](https://github.com/wltrup)                          |    
+| Wagner Truppel          | [@wltrup](https://github.com/wltrup)                          |
 | Witold Skibniewski      |                                                               |
 
 
@@ -45,7 +45,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 By definition, members work on their respective squad, although they are free to work in different squads if the work load justifies it.
 
 
-| Squad Name                    | Members                  | Availability |  
+| Squad Name                    | Members                  | Availability |
 |-------------------------------|--------------------------| ------------ |
 | SDK                           | David, Viorel, Martin    |    3/4       |
 | Consultation Experience       | Ilya                     |    1/1       |
@@ -59,7 +59,7 @@ By definition, members work on their respective squad, although they are free to
 
 ## 3. OSS-maintained projects
 
-| Project name                  | Owner(s)                 | Stars        |  
+| Project name                  | Owner(s)                 | Stars        |
 |-------------------------------|--------------------------| ------------ |
 | Bento                         | Anders, David, Sergey    | [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Bento.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Bento/stargazers/)             |
 | DrawerKit                     | David, Wagner            |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/DrawerKit/stargazers/)       |
