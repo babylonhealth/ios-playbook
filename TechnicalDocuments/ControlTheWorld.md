@@ -95,13 +95,31 @@ The project uses protocols and dependency injection **heavily**. `struct` based 
 
 Instead I propose that, for now, we put everything that is currently in `AppDependencies` into `Current`, along with `date`, `calendar`, `timezone` and `locale` (which we currently are not even injecting).
 
+For context, our `AppDependencies` struct currently looks like this:
+
+```swift
+struct AppDependencies {
+    let environment: Environment
+    let networkDependencies: NetworkDependencies
+    let visualDependencies: VisualDependenciesProtocol
+    let appConfiguration: AppConfigurationProtocol
+    let analyticsService: AnalyticsTrackingService
+    let abTestingService: ABTestingServiceProtocol
+    let biometricAuth: BiometricAuthProtocol
+    let notificationsAuth: UserNotificationsAuthorizationProtocol
+    let settings: Settings
+
+    // initaliser omitted
+}
+```
+
 This will already save us a lot of DI boilerplate and give us the ability to simulate different date, calendar, timezone and locale settings easily.
 
 Once we get more familiar with using `Current`, we can explore using the `struct` approach above for analytics and AB testing services.
 
 ## Where is the boundary between Current and using Dependency Injection?
 
-In previous discussions with the team it was agreed that we can / should use `Current` as far as our Builders and no further. The Builders should still continue to inject any dependencies required by View Models, View Controllers and Flow Controllers.
+In previous discussions with the team it was agreed that we can / should use `Current` only as far as the level of our Builders and no further. The Builders should still continue to inject any dependencies required by View Models, View Controllers and Flow Controllers, such that these entities have no need to know anything about `Current`.
 
 
 ## Where will Current live?
