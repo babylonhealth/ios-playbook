@@ -103,13 +103,14 @@ Once we get more familiar with using `Current`, we can explore using the `struct
 
 In previous discussions with the team it was agreed that we can / should use `Current` as far as our Builders and no further. The Builders should still continue to inject any dependencies required by View Models, View Controllers and Flow Controllers.
 
-<p align="center">
-<img src="arch.png">
-</p>
 
 ## Where will Current live?
 
 In order that `Current` is accessible from all of the Babylon frameworks, we should create a new framework 🙈 , maybe `BabylonWorld`, which can be imported into all our frameworks that require it.
+
+<p align="center">
+<img src="arch.png">
+</p>
 
 The definition should be something like:
 
