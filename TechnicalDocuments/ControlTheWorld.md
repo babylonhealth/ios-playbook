@@ -91,7 +91,7 @@ var Current = World(
 
 ## Applying this to the Babylon iOS project
 
-The project uses protocols and dependency injection **heavily**. `struct` based approaches like the `Analytics` example above are probably not a realistic target for a first implementation of `Current` in our project.
+The project uses protocols and dependency injection **heavily**. `Struct`-based approaches like the `Analytics` example above are probably not a realistic target for a first implementation of `Current` in our project.
 
 Instead I propose that, for now, we put everything that is currently in `AppDependencies` into `Current`, along with `date`, `calendar`, `timezone` and `locale` (which we currently are not even injecting).
 
