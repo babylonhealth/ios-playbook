@@ -12,7 +12,7 @@ To overcome some of the disadvantages of dependency injection:
 
 * Adding a new dependency down the chain can mean passing that dependency all the way down through many layers. Many of those layers only need to get passed the dependency in order to pass it down to the next layer. This leads to a lot of source files being changed just to add a single dependency.
 
-* Many of our dependencies, such as the Analytics service or the AB Testing Service are, in reality, singletons which never change at runtime and are just passed all over the place.
+* Many of our dependencies, such as the Analytics or the AB Testing Service are, in reality, singletons which never change at runtime and are just passed all over the place.
 
 * In order to gain the testing benefit of dependency injection (being able to substitute a dependency with a stub implementation for testing), you have to use Protocols, which adds unnecessary boilerplate.
 
