@@ -30,7 +30,7 @@ Define a `struct` to provide dependencies of the environment external to the app
 
 ```swift
 struct World {
-    var date = { Date () }
+    var date = { Date() }
     var calendar = Calendar.autoupdatingCurrent
     var timezone = Timezone.autoupdatingCurrent
     var locale = Locale.autoupdatingCurrent
