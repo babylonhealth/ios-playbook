@@ -14,7 +14,7 @@ To overcome some of the disadvantages of dependency injection:
 
 * Many of our dependencies, such as the Analytics or the AB Testing Service are, in reality, singletons which never change at runtime and are just passed all over the place.
 
-* In order to gain the testing benefit of dependency injection (being able to substitute a dependency with a stub implementation for testing), you have to use Protocols, which adds unnecessary boilerplate.
+* In order to gain the testing benefit of dependency injection (e.g: being able to substitute a dependency with a stub implementation for testing), you have to use Protocols, which add unnecessary boilerplate.
 
 ## Benefits
 
