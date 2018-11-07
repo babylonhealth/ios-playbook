@@ -26,7 +26,7 @@ To overcome some of the disadvantages of dependency injection:
 
 ## Implementation
 
-Define a `struct` to provide dependencies of the environment external to the app (the "World" in which the app lives), and static configuaration dependencies:
+Define a `struct` to provide dependencies of the environment external to the app (the "World" in which the app lives), and static configuration dependencies:
 
 ```swift
 struct World {
