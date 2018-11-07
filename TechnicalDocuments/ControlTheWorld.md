@@ -10,11 +10,11 @@ This proposal is heavily based on episodes [16](https://www.pointfree.co/episode
 
 To overcome some of the disadvantages of dependency injection:
 
-* Adding a new dependency a long way down the chain can mean passing that dependency all the way down through many layers. Many of those layers only need to get passed the dependency in order to pass it down to the next layer. This leads to a lot of source files being changed just to add a single dependency.
+* Adding a new dependency down the chain can mean passing that dependency all the way down through many layers. Many of those layers only need to get passed the dependency in order to pass it down to the next layer. This leads to a lot of source files being changed just to add a single dependency.
 
-* Many of our dependencies, such as the Analytics service or the AB Testing Service are, in reality, singletons which never change at runtime and are just passed all over the place.
+* Many of our dependencies, such as the Analytics or the AB Testing Service are, in reality, singletons which never change at runtime and are just passed all over the place.
 
-* In order to gain the testing benefit of dependency injection (being able to substitute a dependency with a stub implementation for testing), you have to use Protocols, which adds unnecessary boilerplate.
+* In order to gain the testing benefit of dependency injection (e.g: being able to substitute a dependency with a stub implementation for testing), you have to use Protocols, which add unnecessary boilerplate.
 
 ## Benefits
 
@@ -30,7 +30,7 @@ Define a `struct` to provide dependencies of the environment external to the app
 
 ```swift
 struct World {
-    var date = { Date () }
+    var date = { Date() }
     var calendar = Calendar.autoupdatingCurrent
     var timezone = Timezone.autoupdatingCurrent
     var locale = Locale.autoupdatingCurrent
@@ -91,7 +91,7 @@ var Current = World(
 
 ## Applying this to the Babylon iOS project
 
-The project uses protocols and dependency injection **heavily**. `struct` based approaches like the `Analytics` example above are probably not a realistic target for a first implementation of `Current` in our project.
+The project uses protocols and dependency injection **heavily**. `Struct`-based approaches like the `Analytics` example above are probably not a realistic target for a first implementation of `Current` in our project.
 
 Instead I propose that, for now, we put everything that is currently in `AppDependencies` into `Current`, along with `date`, `calendar`, `timezone` and `locale` (which we currently are not even injecting).
 
@@ -115,7 +115,7 @@ struct AppDependencies {
 
 This will already save us a lot of DI boilerplate and give us the ability to simulate different date, calendar, timezone and locale settings easily.
 
-Once we get more familiar with using `Current`, we can explore using the `struct` approach above for analytics and AB testing services.
+Once we get more familiar with using `Current`, we can explore using the `struct` approach above for the analytics and AB testing services.
 
 ## Where is the boundary between Current and using Dependency Injection?
 
@@ -124,7 +124,7 @@ In previous discussions with the team it was agreed that we can / should use `Cu
 
 ## Where will Current live?
 
-In order that `Current` is accessible from all of the Babylon frameworks, we should create a new framework 🙈 , maybe `BabylonWorld`, which can be imported into all our frameworks that require it.
+In order for `Current` to be accessible from all of the Babylon frameworks, we should create a new framework 🙈 , maybe named `BabylonWorld`, which can be imported into all our frameworks that require it.
 
 <p align="center">
 <img src="arch.png">
