@@ -97,7 +97,7 @@ Instead I propose that, for now, we put everything that is currently in `AppDepe
 
 This will already save us a lot of DI boilerplate and give us the ability to simulate different date, calendar, timezone and locale settings easily.
 
-Once we get more familiar with using `Current`, we can explore using the `struct` approach above for analytics and AB testing services.
+Once we get more familiar with using `Current`, we can explore using the `struct` approach above for the analytics and AB testing services.
 
 ## Where is the boundary between Current and using Dependency Injection?
 
