@@ -73,7 +73,7 @@ var Current = World()
 
 ## Usage
 
-Everywhere where we are referring to one of the dependencies now stored in `Current`, use `Current`: eg, instead of `Date()` use `Current.date()`.
+Everywhere where we'd be using a dependency, use `Current` to access it instead. For example, use `Current.date()` as opposed to `Date()`.
 
 ## Testing & Simulating different environments
 
