@@ -127,7 +127,7 @@ In previous discussions with the team it was agreed that we can / should use `Cu
 In order for `Current` to be accessible from all of the Babylon frameworks, we should create a new framework 🙈 , maybe named `BabylonWorld`, which can be imported into all our frameworks that require it.
 
 <p align="center">
-<img src="arch.png">
+<img src="arch.png" width="596">
 </p>
 
 The definition should be something like:
