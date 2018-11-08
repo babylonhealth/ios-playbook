@@ -10,8 +10,6 @@ Our primary goals, like theirs, are clarity, consistency, and brevity but also t
 
 Uncontroversial, non-additive changes such as misspellings, grammar or compiler errors can be fixed by simply issuing a pull request to master. The maintainer will merge the pull request or, if it is deemed "controversial", ask the contributor to open an issue so that other members of our team can participate in the discussion. We thank any and all such contributions in advance!
 
-### This is WIP and currently in flux. The text below is not ready for review yet. Please ignore it until it's moved to a position above this message.
-
 ## Table of Contents
 
 * [Correctness](#correctness)
@@ -60,7 +58,6 @@ Uncontroversial, non-additive changes such as misspellings, grammar or compiler 
 * [Smiley Face](#smiley-face)
 * [References](#references)
 
-
 ## Correctness
 
 Strive to make your code compile without warnings. This rule informs many style decisions such as using `#selector` types instead of string literals.
@@ -71,8 +68,8 @@ Descriptive and consistent naming makes software easier to read and understand. 
 
 - striving for clarity at the call site
 - prioritizing clarity over brevity
-- using camel case (not snake case)
-- using uppercase for types (and protocols), lowercase for everything else
+- using `camelCase` (not `snake_case`)
+- using uppercase initials for types (and protocols), lowercase first-initial for everything else
 - including all needed words while omitting needless words
 - using names based on roles, not types
 - sometimes compensating for weak type information
@@ -81,7 +78,7 @@ Descriptive and consistent naming makes software easier to read and understand. 
 - naming methods for their side effects
   - verb methods follow the -ed, -ing rule for the non-mutating version
   - noun methods follow the formX rule for the mutating version
-  - boolean types should read like assertions
+  - boolean types should read like assertions (`isLoading`, `isHidden`, etc)
   - protocols that describe _what something is_ should read as nouns
   - protocols that describe _a capability_ should end in _-able_ or _-ible_
 - using terms that don't surprise experts or confuse beginners
@@ -92,28 +89,13 @@ Descriptive and consistent naming makes software easier to read and understand. 
 - giving the same base name to methods that share the same meaning
 - avoiding overloads on return type
 - choosing good parameter names that serve as documentation
-- preferring to name the first parameter instead of including its name in the method name, except as mentioned under Delegates
+- preferring to name the first parameter instead of including its name in the method name, except as mentioned under [Delegates](#delegates)
 - labeling closure and tuple parameters
 - taking advantage of default parameters
 
-### Prose
-
-When referring to methods in prose, being unambiguous is critical. To refer to a method name, use the simplest form possible.
-
-1. Write the method name with no parameters.  **Example:** Next, you need to call `addTarget`.
-2. Write the method name with argument labels.  **Example:** Next, you need to call `addTarget(_:action:)`.
-3. Write the full method name with argument labels and types. **Example:** Next, you need to call `addTarget(_: Any?, action: Selector?)`.
-
-For the above example using `UIGestureRecognizer`, 1 is unambiguous and preferred.
-
-**Pro Tip:** You can use Xcode's jump bar to lookup methods with argument labels. If you’re particularly good a mashing lots of keys simultaneously, put the cursor in the method name and press **Shift-Control-Option-Command-C** (all 4 modifier keys) and Xcode will kindly put the signature on your clipboard.
-
-![Methods in Xcode jump bar](screens/xcode-jump-bar.png)
-
-
 ### Class Prefixes
 
-Swift types are automatically namespaced by the module that contains them and you should not add a class prefix such as RW. If two names from different modules collide you can disambiguate by prefixing the type name with the module name. However, only specify the module name when there is possibility for confusion which should be rare.
+Swift types are automatically namespaced by the module that contains them and you should not add a class prefix. If two names from different modules collide you can disambiguate by prefixing the type name with the module name. However, only specify the module name when there is possibility for confusion which should be rare.
 
 ```swift
 import SomeModule
@@ -159,7 +141,7 @@ let view = UIView(frame: CGRect.zero)
 
 ### Generics
 
-Generic type parameters should be descriptive, upper camel case names. When a type name doesn't have a meaningful relationship or role, use a traditional single uppercase letter such as `T`, `U`, or `V`.
+Generic type parameters should be descriptive, upper camel-case names. When a type name doesn't have a meaningful relationship or role, use a traditional single uppercase letter such as `T`, `U`, or `V`.
 
 **Preferred**:
 ```swift
@@ -191,11 +173,11 @@ let colour = "red"
 
 ## Code Organization
 
-Use extensions to organize your code into logical blocks of functionality. Each extension should be set off with a `// MARK: -` comment to keep things well-organized.
+Use extensions to organize your code into logical blocks of functionality. Do not use `// MARK: -` comments.
 
 ### Protocol Conformance
 
-In particular, when adding protocol conformance to a model, prefer adding a separate extension for the protocol methods. This keeps the related methods grouped together with the protocol and can simplify instructions to add a protocol to a class with its associated methods.
+In particular, when adding protocol conformance to a type, prefer adding a separate extension for the protocol methods. This keeps the related methods grouped together with the protocol.
 
 **Preferred**:
 ```swift
@@ -221,15 +203,13 @@ class MyViewController: UIViewController, UITableViewDataSource, UIScrollViewDel
 }
 ```
 
-Since the compiler does not allow you to re-declare protocol conformance in a derived class, it is not always required to replicate the extension groups of the base class. This is especially true if the derived class is a terminal class and a small number of methods are being overridden. When to preserve the extension groups is left to the discretion of the author.
+Since the compiler does not allow you to re-declare protocol conformance in a derived class, it is not always required to replicate the extension groups of the base class. This is especially true if the derived class is a terminal class and a small number of methods are being overridden. When to preserve the extension groups is left to the discretion of the developer.
 
 For UIKit view controllers, consider grouping lifecycle, custom accessors, and IBAction in separate class extensions.
 
 ### Unused Code
 
-Unused (dead) code, including Xcode template code and placeholder comments should be removed. An exception is when your tutorial or book instructs the user to use the commented code.
-
-Aspirational methods not directly associated with the tutorial whose implementation simply calls the superclass should also be removed. This includes any empty/unused UIApplicationDelegate methods.
+Unused (dead) code, including Xcode template code and placeholder comments should be removed.
 
 **Preferred**:
 ```swift
@@ -289,7 +269,7 @@ var deviceModels: [String]
 
 ## Spacing
 
-* Indent using 2 spaces rather than tabs to conserve space and help prevent line wrapping. Be sure to set this preference in Xcode and in the Project settings as shown below:
+* Indent using 4 spaces rather than tabs to conserve space and help prevent line wrapping. Be sure to set this preference in Xcode and in the Project settings as shown below:
 
 ![Xcode indent settings](screens/indentation.png)
 
@@ -344,11 +324,13 @@ class TestDatabase : Database {
 
 ## Comments
 
-When they are needed, use comments to explain **why** a particular piece of code does something. Comments must be kept up-to-date or deleted.
+When they are needed, use comments to explain **why** a particular piece of code does something. Comments must be kept up-to-date, or altogether deleted.
 
 Avoid block comments inline with code, as the code should be as self-documenting as possible. _Exception: This does not apply to those comments used to generate documentation._
 
 Avoid the use of C-style comments (`/* ... */`). Prefer the use of double- or triple-slash.
+
+### This is WIP and currently in flux. The text below is not ready for review yet. Please ignore it until it's moved to a position above this message.
 
 ## Classes and Structures
 
