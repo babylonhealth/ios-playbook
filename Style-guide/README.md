@@ -82,10 +82,10 @@ Descriptive and consistent naming makes software easier to read and understand. 
   - protocols that describe _what something is_ should read as nouns
   - protocols that describe _a capability_ should end in _-able_ or _-ible_
 - using terms that don't surprise experts or confuse beginners
-- generally avoiding abbreviations
-- using precedent for names
+- generally avoiding abbreviations // a few well-known ones are allowed, such as, `Html` and `Id`. Any others?
+- using precedent for names // ???
 - preferring methods and properties to free functions
-- casing acronyms and initialisms uniformly up or down
+- casing acronyms and initialisms uniformly up or down // I think we use camelcase, as in `Id` and `Html`
 - giving the same base name to methods that share the same meaning
 - avoiding overloads on return type
 - choosing good parameter names that serve as documentation
