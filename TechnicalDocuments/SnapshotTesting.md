@@ -23,6 +23,9 @@ This proposal is to replace the library that we use for snapshot testing ([`iOSS
 * It is fully Linux compatiable. Allowing snapshot testing to be used on projects that are not iOS or macOS (eg our merge bot).
 * Even if `record` is set to `false` it will still record reference snapshots if none currently exist, so you only have to set it to `true` when updating snapshots becuase of changes.
 
+### Cons of `SnapshotTesting`
+* It's a very new library and in active development. The developers themselves state *"This library should be considered alpha, and not stable. Breaking changes will happen often."* However, provided we stick to a specific version or commit in the Podfile, this should not be a big issue.
+
 ## Implementation
 
 All our snapshot tests currently extend `SnapshotTestCase` which is itself an extension of `FBSnapshotTestCase`. Our tests don't call any `FBSnapshotTestCase` methods directly, they all use abstractions in `SnapshotTestCase`.
