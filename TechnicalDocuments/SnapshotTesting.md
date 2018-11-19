@@ -27,7 +27,18 @@ This proposal is to replace the library that we use for snapshot testing ([`iOSS
 * It's a very new library and in active development. The developers themselves state *"This library should be considered alpha, and not stable. Breaking changes will happen often."* However, provided we stick to a specific version or commit in the Podfile, this should not be a big issue.
 
 ### Benchmarks
-Benchmarks between the two libraries will be added once I have tried the implementation for more tests.
+I used `BabylonChatBotUI` for running some rudimentary benchmarks between the two libraries as it seems to have the most snapshot tests and, more importantly, it seems to have *only* snapshot test so nothing else would pollute the times.
+
+Average times for running `Cmd+U` on my machine in Xcode for `BabylonChatBotUI`:
+
+iOSSnapshotTestCase | SnapshotTesting
+-------------------|-----------------
+11 seconds | 15 seconds
+
+So, it would seem that `SnapshotTesting` is roughtly 36% slower than `iOSSnapshotTestCase` 😞 .
+
+I have no idea where the speed difference is. Could well be just that unoptimized Swift is slower than Objective-C 🤷🏼‍♀️ . Still, I don't think this is a reason to reject the benefits of `SnapshotTesting`.
+
 
 ## Implementation
 
