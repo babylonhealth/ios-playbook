@@ -26,6 +26,9 @@ This proposal is to replace the library that we use for snapshot testing ([`iOSS
 ### Cons of `SnapshotTesting`
 * It's a very new library and in active development. The developers themselves state *"This library should be considered alpha, and not stable. Breaking changes will happen often."* However, provided we stick to a specific version or commit in the Podfile, this should not be a big issue.
 
+### Benchmarks
+Benchmarks between the two libraries will be added once I have tried the implementation for more tests.
+
 ## Implementation
 
 All our snapshot tests currently extend `SnapshotTestCase` which is itself an extension of `FBSnapshotTestCase`. Our tests don't call any `FBSnapshotTestCase` methods directly, they all use abstractions in `SnapshotTestCase`.
