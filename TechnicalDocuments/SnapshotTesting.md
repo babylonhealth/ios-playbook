@@ -16,8 +16,9 @@ This proposal is to replace the library that we use for snapshot testing ([`iOSS
 
 ### Pros of `SnapshotTesting`
 * `SnapshotTesting` is a brand new library written in Swift by the [Pointfree](pointfree.co) duo. It's a great example of a protocol based API using struct based protocol witnesses as explained in the Pointfree videos on the subject.
-* It supports snapshotting almost anything, not just `UIView` or `CALayer`. For example, you could snapshot a `URLRequest` instead of having to labouriously type out the expected values by hand.
-* It is easy to extend the library to support snapshotting of other types.
+* It supports snapshotting anything, not just `UIView` or `CALayer`. For example, you could snapshot a `URLRequest` instead of having to laboriously type out the expected values by hand.
+You can snapshot anything as a text representation, for example, a view hierarchy, a Bento render tree, a struct, or a JSON dictionary.
+* It is easy to extend the library to add explicit support for snapshotting of other types, instead of just using the `Any` strategy.
 * Snapshots are stored in a `__Snapshots__` folder in the same folder hierarchy as the test source. This makes it easy to find relevant snapshots.
 * It uses `XCTAttachment`s to store failure snapshots and diffs, which makes these available directly from the Xcode test report navigator, without requiring any other software or needing to hunt for them.
 * It is fully Linux compatiable. Allowing snapshot testing to be used on projects that are not iOS or macOS (eg our merge bot).
