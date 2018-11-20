@@ -41,8 +41,8 @@ Our recruitment process is different for candidates who are interested in workin
 - remote candidates are **required** to be proficient in **reactive programming** (`ReactiveSwift`/`ReactiveCocoa` or `RxSwift`) at an above-average level
 - remote candidates are **required** to use **reactive programming** in their interview demo projects
 - technical interview sessions differ in number and duration:
-    * **on-site**: initial call -> demo -> 3-hour face-to-face technical interview
-    * **remote**: initial call -> demo -> one or more Skype interviews -> 1 working day with us (at our expense)
+    * **on-site**: initial call -> demo -> one or more Skype interviews -> **3-hour face-to-face technical interview**
+    * **remote**:  initial call -> demo -> one or more Skype interviews -> **1 working day with us (at our expense)**
 
 As indicated above, we expect all candidates to submit an ["interview demo project"](demo.md) but, in order to be accommodating of different schedules, we provide three different ways in which a candidate can submit a demo of their work. **Only one of these is required**.
 
