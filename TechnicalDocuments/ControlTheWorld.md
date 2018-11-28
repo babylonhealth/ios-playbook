@@ -22,7 +22,7 @@ To overcome some of the disadvantages of dependency injection:
 
 * Ability to easily create different app "environments" to simulate running on different dates, timezones and locales, for example.
 
-* Ability to have "mock" environments for testing. For example, testing that analytics events are correctly being sent is typically quite difficult. With a mock analytics service in a mock app environment this becomes trivial, and without the need to inject an analytics service protocol to every part of the app.
+* Ability to have "mock" environments for testing. For example, testing that analytics events are correctly being sent is typically quite difficult. With a mock analytics service in a mock app environment this becomes trivial, and without the need to inject an analytics service protocol to every part of the app. NOTE: analytics is just an example here, this does not make moving analytics to `Current` part of this proposal, it remains an option though.
 
 ## Implementation
 
