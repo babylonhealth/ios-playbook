@@ -21,11 +21,13 @@
 4. Testers will then begin their work against the build you just created.
 5. Any hotfix should target that branch, and you, as the release engineer, are responsible for double checking that the hotfix's PR is pointing to the release branch (instead of `develop`).
 6. Create a board for the release. Use a filter to reduce its scope, eg `project = UA AND affectedVersion = "iOS 3.2.0"`.
-7. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps - on sidebar: + Version or Platform: iOS, input the version number.
-    1. Add the release notes and update the release notes document.
-    2. Add your release to the release calendar.
-    3. Check if you need anything from the Marketing Team. (`#MarketingQuestions`)
-    4. Send the release notes to `#ClinicsOps`, so they have visibility on the release.
+7. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps 
+    1. On the sidebar click `+ Version or Platform` and select `iOS`.  
+    2. Input the new version number.
+    3. Add the release notes and update the release notes document.
+    4. Add your release to the release calendar.
+    5. Check if you need anything from the Marketing Team. (`#MarketingQuestions`)
+    6. Send the release notes to `#ClinicsOps`, so they have visibility on the release.
 8. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues) ❗️ NOTE: Remember to submit compliance info for that build.
 9. By now, QA should be notified that there is a new version in TestFlight.
 10. When QA has signed off a particular build, submit the app to Apple.
