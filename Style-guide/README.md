@@ -4,7 +4,7 @@
 
 This style guide is based on the [official raywenderlich.com Swift style guide](https://github.com/raywenderlich/swift-style-guide) but departs from it in several ways, to better accommodate the needs of our team. We would like to thank [Ray and his team](https://www.raywenderlich.com), and all of those who contributed to their style guide, for creating it in the first place.
 
-Our primary goals, like theirs, are clarity, consistency, and brevity but also to achieve a sufficiently stable style guide to configure a linter from. Nonetheless, it's a living document that will evolve as our needs change, as well as alongside the Swift language.
+Our primary goals, like theirs, are **clarity**, **consistency**, and **brevity** but also to achieve a sufficiently stable style guide to configure a linter from. Nonetheless, it's a living document that will evolve as our needs change, as well as alongside the Swift language.
 
 ### Fixing Typos
 
