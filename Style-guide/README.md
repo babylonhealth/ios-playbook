@@ -1047,10 +1047,6 @@ let message = "You cannot charge the flux " +
   "have \(credits) credits available."
 ```
 
-## No Emoji
-
-Do not use emoji in your projects. For those readers who actually type in their code, it's an unnecessary source of friction. While it may be cute, it doesn't add to the learning and it interrupts the coding flow for these readers.
-
 ## References
 
 * [The Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
