@@ -54,7 +54,6 @@ Uncontroversial, non-additive changes such as misspellings, grammar or compiler 
 * [No Emoji](#no-emoji)
 * [Organization and Bundle Identifier](#organization-and-bundle-identifier)
 * [Copyright Statement](#copyright-statement)
-* [Smiley Face](#smiley-face)
 * [References](#references)
 
 ## Correctness
