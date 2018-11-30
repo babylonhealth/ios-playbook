@@ -69,8 +69,8 @@ Descriptive and consistent naming makes software easier to read and understand. 
 - striving for clarity at the call site
 - prioritizing clarity over brevity
 - using `camelCase` (not `snake_case`)
-- using uppercase initials for types (and protocols), lowercase first-initial for everything else
-- including all needed words while omitting needless words
+- [using uppercase initials for types (and protocols), lowercase first-initial for everything else](https://swift.org/documentation/api-design-guidelines/#follow-case-conventions)
+- [including all needed words while omitting needless words](https://swift.org/documentation/api-design-guidelines/#include-words-to-avoid-ambiguity)
 - using names based on roles, not types
 - sometimes compensating for weak type information
 - striving for fluent usage
@@ -81,11 +81,12 @@ Descriptive and consistent naming makes software easier to read and understand. 
   - boolean types should read like assertions (`isLoading`, `isHidden`, etc)
   - protocols that describe _what something is_ should read as nouns
   - protocols that describe _a capability_ should end in _-able_ or _-ible_
+  - if protocols are tightly bound to their implementations, it's ok to suffix the protocol name with `Protocol`
 - using terms that don't surprise experts or confuse beginners
-- generally avoiding abbreviations // a few well-known ones are allowed, such as, `Html` and `Id`. Any others?
-- using precedent for names // ???
+- generally avoiding abbreviations, although a few well-known ones are allowed, such as, `HTML`, `HTTP`, `URL`, and `ID`.
+- using precedent for names
 - preferring methods and properties to free functions
-- casing acronyms and initialisms uniformly up or down // I think we use camelcase, as in `Id` and `Html`
+- casing acronyms and initialisms uniformly up or down. Note that we use `ID` when part of a type but `Id` when part of an identifier's name
 - giving the same base name to methods that share the same meaning
 - avoiding overloads on return type
 - choosing good parameter names that serve as documentation
@@ -324,7 +325,7 @@ class TestDatabase : Database {
 
 ## Comments
 
-When they are needed, use comments to explain **why** a particular piece of code does something. Comments must be kept up-to-date, or altogether deleted.
+In the very rare occasions when they are needed, use comments to explain **why** a particular piece of code does something. Comments must be kept up-to-date, or altogether deleted. Never write comments that tell what the code **does**.
 
 Avoid block comments inline with code, as the code should be as self-documenting as possible. _Exception: This does not apply to those comments used to generate documentation._
 
