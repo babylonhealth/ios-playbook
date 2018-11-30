@@ -343,8 +343,6 @@ Avoid the use of C-style comments (`/* ... */`). Prefer the use of double- or tr
 
 where `AAA` are the author's initials, `YYYY-MM-DD` is the date (if appropriate), and `CNSMR-XX` is the ticket number associated with the comment.
 
-### This is WIP and currently in flux. The text below is not ready for review yet. Please ignore it until it's moved to a position above this message.
-
 ## Classes and Structures
 
 ### Which one to use?
@@ -352,8 +350,6 @@ where `AAA` are the author's initials, `YYYY-MM-DD` is the date (if appropriate)
 Remember, structs have [value semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_144). Use structs for things that do not have an identity. An array that contains [a, b, c] is really the same as another array that contains [a, b, c] and they are completely interchangeable. It doesn't matter whether you use the first array or the second, because they represent the exact same thing. That's why arrays are structs.
 
 Classes have [reference semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_145). Use classes for things that do have an identity or a specific life cycle. You would model a person as a class because two person objects are two different things. Just because two people have the same name and birthdate, doesn't mean they are the same person. But the person's birthdate would be a struct because a date of 3 March 1950 is the same as any other date object for 3 March 1950. The date itself doesn't have an identity.
-
-Sometimes, things should be structs but need to conform to `AnyObject` or are historically modeled as classes already (`NSDate`, `NSSet`). Try to follow these guidelines as closely as possible.
 
 ### Example definition
 
@@ -402,7 +398,7 @@ The example above demonstrates the following style guidelines:
  + Specify types for properties, variables, constants, argument declarations and other statements with a space after the colon but not before, e.g. `x: Int`, and `Circle: Shape`.
  + Define multiple variables and structures on a single line if they share a common purpose / context.
  + Indent getter and setter definitions and property observers.
- + Don't add modifiers such as `internal` when they're already the default. Similarly, don't repeat the access modifier when overriding a method.
+ + Don't add modifiers such as `internal` when they're already the default, unless there is a good reason to emphasize it. Similarly, don't repeat the access modifier when overriding a method.
  + Organize extra functionality (e.g. printing) in extensions.
  + Hide non-shared, implementation details such as `centerString` inside the extension using `private` access control.
 
@@ -434,7 +430,7 @@ var diameter: Double {
 
 ### Final
 
-Marking classes or members as `final` in tutorials can distract from the main topic and is not required. Nevertheless, use of `final` can sometimes clarify your intent and is worth the cost. In the below example, `Box` has a particular purpose and customization in a derived class is not intended. Marking it `final` makes that clear.
+Mark classes or members as `final` when appropriate. In the below example, `Box` has a particular purpose and customization in a derived class is not intended. Marking it `final` makes that clear.
 
 ```swift
 // Turn any generic type into a reference type using this Box class.
@@ -456,13 +452,14 @@ func reticulateSplines(spline: [Double]) -> Bool {
 }
 ```
 
-For functions with long signatures, put each parameter on a new line and add an extra indent on subsequent lines:
+For functions with long signatures, put each parameter on a new line and add an extra indent on subsequent lines. Note that the closing parenthesis aligns with the f in `func`. This is not how Xcode indents these blocks of code so keep an eye out for violations of this guideline.
 
 ```swift
 func reticulateSplines(
   spline: [Double],
   adjustmentFactor: Double,
-  translateConstant: Int, comment: String
+  translateConstant: Int,
+  comment: String
 ) -> Bool {
   // reticulate code goes here
 }
@@ -498,14 +495,15 @@ Mirror the style of function declarations at call sites. Calls that fit on a sin
 let success = reticulateSplines(splines)
 ```
 
-If the call site must be wrapped, put each parameter on a new line, indented one additional level:
+If the call site must be wrapped, put each parameter on a new line, indented one additional level. Note that the parentheses follow the same rules as braces.
 
 ```swift
 let success = reticulateSplines(
   spline: splines,
   adjustmentFactor: 1.3,
   translateConstant: 2,
-  comment: "normalize the display")
+  comment: "normalize the display"
+)
 ```
 
 ## Closure Expressions
@@ -546,11 +544,9 @@ attendeeList.sort { a, b in
 }
 ```
 
-Chained methods using trailing closures should be clear and easy to read in context. Decisions on spacing, line breaks, and when to use named versus anonymous arguments is left to the discretion of the author. Examples:
+Chained methods using trailing closures should be clear and easy to read in context. Moreover, they should go one per line. Example:
 
 ```swift
-let value = numbers.map { $0 * 2 }.filter { $0 % 3 == 0 }.index(of: 90)
-
 let value = numbers
   .map {$0 * 2}
   .filter {$0 > 50}
@@ -593,10 +589,10 @@ You can define constants on a type rather than on an instance of that type using
 ```swift
 enum Math {
   static let e = 2.718281828459045235360287
-  static let root2 = 1.41421356237309504880168872
+  static let sqrt2 = 1.41421356237309504880168872
 }
 
-let hypotenuse = side * Math.root2
+let hypotenuse = side * Math.sqrt2
 
 ```
 **Note:** The advantage of using a case-less enumeration is that it can't accidentally be instantiated and works as a pure namespace.
@@ -604,9 +600,9 @@ let hypotenuse = side * Math.root2
 **Not Preferred**:
 ```swift
 let e = 2.718281828459045235360287  // pollutes global namespace
-let root2 = 1.41421356237309504880168872
+let sqrt2 = 1.41421356237309504880168872
 
-let hypotenuse = side * root2 // what is root2?
+let hypotenuse = side * sqrt2
 ```
 
 ### Static Methods and Variable Type Properties
@@ -643,7 +639,8 @@ var subview: UIView?
 var volume: Double?
 
 // later on...
-if let subview = subview, let volume = volume {
+if let subview = subview,
+   let volume = volume {
   // do something with unwrapped subview and volume
 }
 
@@ -779,7 +776,7 @@ Code (even non-production, tutorial demo code) should not create reference cycle
 
 ### Extending object lifetime
 
-Extend object lifetime using the `[weak self]` and `guard let self = self else { return }` idiom. `[weak self]` is preferred to `[unowned self]` where it is not immediately obvious that `self` outlives the closure. Explicitly extending lifetime is preferred to optional chaining.
+Extend object lifetime using the `[weak self]` and `guard let self = self else { return }` idiom. `[weak self]` is preferred to `[unowned self]` where it is not immediately obvious that `self` outlives the closure. Explicitly extending lifetime is preferred to optional chaining. Note how there is an empty line after the guard block.
 
 **Preferred**
 ```swift
@@ -787,6 +784,7 @@ resource.request().onComplete { [weak self] response in
   guard let self = self else {
     return
   }
+
   let model = self.updateModel(response)
   self.updateUI(model)
 }
@@ -812,7 +810,7 @@ resource.request().onComplete { [weak self] response in
 
 ## Access Control
 
-Full access control annotation in tutorials can distract from the main topic and is not required. Using `private` and `fileprivate` appropriately, however, adds clarity and promotes encapsulation. Prefer `private` to `fileprivate`; use `fileprivate` only when the compiler insists.
+]Using `private` and `fileprivate` appropriately adds clarity and promotes encapsulation. Prefer `private` to `fileprivate`; use `fileprivate` only when the compiler insists.
 
 Only explicitly use `open`, `public`, and `internal` when you require a full access control specification.
 
@@ -842,7 +840,7 @@ Prefer the `for-in` style of `for` loop over the `while-condition-increment` sty
 
 **Preferred**:
 ```swift
-for _ in 0..<3 {
+for _ in 0 ..< 3 {
   print("Hello three times")
 }
 
@@ -854,7 +852,7 @@ for index in stride(from: 0, to: items.count, by: 2) {
   print(index)
 }
 
-for index in (0...3).reversed() {
+for index in (0 ... 3).reversed() {
   print(index)
 }
 ```
@@ -934,7 +932,7 @@ func computeFFT(context: Context?, inputData: InputData?) throws -> Frequencies 
 }
 ```
 
-When multiple optionals are unwrapped either with `guard` or `if let`, minimize nesting by using the compound version when possible. In the compound version, place the `guard` on its own line, then ident each condition on its own line. The `else` clause is indented to match the conditions and the code is indented one additional level, as shown below. Example:
+When multiple optionals are unwrapped either with `guard` or `if let`, minimize nesting by using the compound version when possible. In the compound version, place the `guard` on its own line, then ident each condition on its own line. The `else` clause is indented to match the `guard` keywork and the code is indented one additional level, as shown below. Note that this is not Xcode's way of implementing this. Example:
 
 **Preferred**:
 ```swift
@@ -942,7 +940,7 @@ guard
   let number1 = number1,
   let number2 = number2,
   let number3 = number3
-  else {
+else {
     fatalError("impossible")
 }
 // do something with numbers
@@ -1014,7 +1012,7 @@ let playerMark = (player == current ? "X" : "O")
 
 ## Multi-line String Literals
 
-When building a long string literal, you're encouraged to use the multi-line string literal syntax. Open the literal on the same line as the assignment but do not include text on that line. Indent the text block one additional level.
+When building a long string literal, you're encouraged to use the multi-line string literal syntax. Open the literal on the same line as the assignment but do not include text on that line. Indent the text block one additional level and keep the trailing triple quotes indented to match the `let` keyword.
 
 **Preferred**:
 
@@ -1052,61 +1050,6 @@ let message = "You cannot charge the flux " +
 ## No Emoji
 
 Do not use emoji in your projects. For those readers who actually type in their code, it's an unnecessary source of friction. While it may be cute, it doesn't add to the learning and it interrupts the coding flow for these readers.
-
-## Organization and Bundle Identifier
-
-Where an Xcode project is involved, the organization should be set to `Ray Wenderlich` and the Bundle Identifier set to `com.razeware.TutorialName` where `TutorialName` is the name of the tutorial project.
-
-![Xcode Project settings](screens/project_settings.png)
-
-## Copyright Statement
-
-The following copyright statement should be included at the top of every source
-file:
-
-```swift
-/// Copyright (c) 2018 Razeware LLC
-///
-/// Permission is hereby granted, free of charge, to any person obtaining a copy
-/// of this software and associated documentation files (the "Software"), to deal
-/// in the Software without restriction, including without limitation the rights
-/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-/// copies of the Software, and to permit persons to whom the Software is
-/// furnished to do so, subject to the following conditions:
-///
-/// The above copyright notice and this permission notice shall be included in
-/// all copies or substantial portions of the Software.
-///
-/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
-/// distribute, sublicense, create a derivative work, and/or sell copies of the
-/// Software in any work that is designed, intended, or marketed for pedagogical or
-/// instructional purposes related to programming, coding, application development,
-/// or information technology.  Permission for such use, copying, modification,
-/// merger, publication, distribution, sublicensing, creation of derivative works,
-/// or sale is expressly withheld.
-///
-/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-/// THE SOFTWARE.
-```
-
-## Smiley Face
-
-Smiley faces are a very prominent style feature of the [raywenderlich.com](https://www.raywenderlich.com/) site! It is very important to have the correct smile signifying the immense amount of happiness and excitement for the coding topic. The closing square bracket `]` is used because it represents the largest smile able to be captured using ASCII art. A closing parenthesis `)` creates a half-hearted smile, and thus is not preferred.
-
-**Preferred**:
-```
-:]
-```
-
-**Not Preferred**:
-```
-:)
-```
 
 ## References
 
