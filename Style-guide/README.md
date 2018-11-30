@@ -14,7 +14,6 @@ Uncontroversial, non-additive changes such as misspellings, grammar or compiler 
 
 * [Correctness](#correctness)
 * [Naming](#naming)
-  * [Prose](#prose)
   * [Delegates](#delegates)
   * [Use Type Inferred Context](#use-type-inferred-context)
   * [Generics](#generics)
@@ -84,6 +83,7 @@ Descriptive and consistent naming makes software easier to read and understand. 
   - if protocols are tightly bound to their implementations, it's ok to suffix the protocol name with `Protocol`
 - using terms that don't surprise experts or confuse beginners
 - generally avoiding abbreviations, although a few well-known ones are allowed, such as, `HTML`, `HTTP`, `URL`, and `ID`.
+- String identifiers and integer identifiers should use the `Tagged` approach
 - using precedent for names
 - preferring methods and properties to free functions
 - casing acronyms and initialisms uniformly up or down. Note that we use `ID` when part of a type but `Id` when part of an identifier's name
@@ -186,12 +186,10 @@ class MyViewController: UIViewController {
   // class stuff here
 }
 
-// MARK: - UITableViewDataSource
 extension MyViewController: UITableViewDataSource {
   // table view data source methods
 }
 
-// MARK: - UIScrollViewDelegate
 extension MyViewController: UIScrollViewDelegate {
   // scroll view delegate methods
 }
@@ -207,6 +205,8 @@ class MyViewController: UIViewController, UITableViewDataSource, UIScrollViewDel
 Since the compiler does not allow you to re-declare protocol conformance in a derived class, it is not always required to replicate the extension groups of the base class. This is especially true if the derived class is a terminal class and a small number of methods are being overridden. When to preserve the extension groups is left to the discretion of the developer.
 
 For UIKit view controllers, consider grouping lifecycle, custom accessors, and IBAction in separate class extensions.
+
+Use `private`, `fileprivate`, `internal`, and `public` visibility qualifiers on each function implemented in a protocol extension, rather than have a single qualifier for the entire protocol extension.
 
 ### Unused Code
 
@@ -323,6 +323,10 @@ class TestDatabase : Database {
 
 * Add a single newline character at the end of each file.
 
+## Availability qualifiers
+
+Ue `@available(*, unavailable)` when using unimplemented init-with-coder initialisers.
+
 ## Comments
 
 In the very rare occasions when they are needed, use comments to explain **why** a particular piece of code does something. Comments must be kept up-to-date, or altogether deleted. Never write comments that tell what the code **does**.
@@ -330,6 +334,14 @@ In the very rare occasions when they are needed, use comments to explain **why**
 Avoid block comments inline with code, as the code should be as self-documenting as possible. _Exception: This does not apply to those comments used to generate documentation._
 
 Avoid the use of C-style comments (`/* ... */`). Prefer the use of double- or triple-slash.
+
+## TODO comments
+
+`TODO` comments must have a ticket number. When writing the comment, use the following format:
+
+`// TODO: [AAA] (YYYY-MM-DD) [CNSMR-XX] Your todo comment goes here.`
+
+where `AAA` are the author's initials, `YYYY-MM-DD` is the date (if appropriate), and `CNSMR-XX` is the ticket number associated with the comment.
 
 ### This is WIP and currently in flux. The text below is not ready for review yet. Please ignore it until it's moved to a position above this message.
 
@@ -399,7 +411,6 @@ The example above demonstrates the following style guidelines:
 For conciseness, avoid using `self` since Swift does not require it to access an object's properties or invoke its methods.
 
 Use self only when required by the compiler (in `@escaping` closures, or in initializers to disambiguate properties from arguments). In other words, if it compiles without `self` then omit it.
-
 
 ### Computed Properties
 
