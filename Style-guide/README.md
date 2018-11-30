@@ -51,7 +51,6 @@ Uncontroversial, non-additive changes such as misspellings, grammar or compiler 
 * [Semicolons](#semicolons)
 * [Parentheses](#parentheses)
 * [Multi-line String Literals](#multi-line-string-literals)
-* [No Emoji](#no-emoji)
 * [Organization and Bundle Identifier](#organization-and-bundle-identifier)
 * [Copyright Statement](#copyright-statement)
 * [References](#references)
