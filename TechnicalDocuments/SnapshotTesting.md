@@ -12,7 +12,7 @@ This proposal is to replace the library that we use for snapshot testing ([`iOSS
 * It has on occasion seemed to be quite fragile, reporting diffs when nothing changed, to the extent that we have had to increase the failure tolerance to quite a high value, and have even on a couple of occasions considered dropping snapshot testing altogether.
 * it stores all references images in a single folder for all tests
 * you have to manually find the failure images and diffs to see what went wrong (or use an app like FBSnapshotsViewer)
-* You always have to explicityly set `recordMode` to `true` even if the test has no reference images yet.
+* You always have to explicitly set `recordMode` to `true` even if the test has no reference images yet.
 
 ### Pros of `SnapshotTesting`
 * `SnapshotTesting` is a brand new library written in Swift by the [Pointfree](pointfree.co) duo. It's a great example of a protocol based API using struct based protocol witnesses as explained in the Pointfree videos on the subject.
