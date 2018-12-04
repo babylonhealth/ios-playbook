@@ -29,6 +29,8 @@ You can snapshot anything as a text representation, for example, a view hierarch
 
    `SnapshotTesting` is now [released at 1.0](https://www.pointfree.co/blog/posts/23-snapshottesting-1-0-delightful-swift-snapshot-testing) so this point no longer applies.
 
+* A very small number of our `UIViewController` snapshot tests cause a crash when using `SnapshotTesting`, which doesn't occur when using `iOSSnapshotTestCase`. I need to investigate this further. It is possibly related to async snapshots.
+
 ### Benchmarks
 I used `BabylonChatBotUI` for running some rudimentary benchmarks between the two libraries as it seems to have the most snapshot tests and, more importantly, it seems to have *only* snapshot test so nothing else would pollute the times.
 
