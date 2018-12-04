@@ -25,7 +25,9 @@ You can snapshot anything as a text representation, for example, a view hierarch
 * Even if `record` is set to `false` it will still record reference snapshots if none currently exist, so you only have to set it to `true` when updating snapshots becuase of changes.
 
 ### Cons of `SnapshotTesting`
-* It's a very new library and in active development. The developers themselves state *"This library should be considered alpha, and not stable. Breaking changes will happen often."* However, provided we stick to a specific version or commit in the Podfile, this should not be a big issue.
+* ~~It's a very new library and in active development. The developers themselves state *"This library should be considered alpha, and not stable. Breaking changes will happen often."* However, provided we stick to a specific version or commit in the Podfile, this should not be a big issue.~~
+
+   `SnapshotTesting` is now [released at 1.0](https://www.pointfree.co/blog/posts/23-snapshottesting-1-0-delightful-swift-snapshot-testing) so this point no longer applies.
 
 ### Benchmarks
 I used `BabylonChatBotUI` for running some rudimentary benchmarks between the two libraries as it seems to have the most snapshot tests and, more importantly, it seems to have *only* snapshot test so nothing else would pollute the times.
