@@ -46,17 +46,18 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 By definition, members work on their respective squad, although they are free to work in different squads if the work load justifies it.
 
 
-| Squad Name                    | Members                  | Availability |
-|-------------------------------|--------------------------| ------------ |
-| SDK                           | David, Viorel, Martin    |    3/4       |
-| Consultation Experience       | Ilya                     |    1/1       |
-| Healthcheck                   | Ben, Wagner              |    2/2       |
-| Core                          | Witold, Jason            |    2/4       |
-| Professional Services         | Danilo                   |    1/1       |
-| GP at Hand                    | Diego                    |    1/1       |
-| Project Avalon                | Sergey                   |    1/1       |
-| Project Minkowski             | Anders                   |    1/2       |
-| Get Well                      | Michael                  |    1/1       |
+| Squad Name                    | Members                          | Availability |  
+|-------------------------------|----------------------------------| ------------ |
+| SDK                           | David, Viorel, Martin, Witold    |    4/5       |
+| Consultation Experience       | Ilya                             |    1/2       |
+| Healthcheck                   | Ben                              |    1/3       |
+| Core                          | Wagner, Jason                    |    2/5       |
+| Professional Services         | Danilo                           |    1/3       |
+| GP at Hand                    | Diego                            |    1/1       |
+| Project Avalon                | Sergey                           |    1/1       |
+| Project Minkowski             | Anders                           |    1/2       |
+| Get Well                      | Michael                          |    1/1       |
+
 
 ## 3. OSS-maintained projects
 
