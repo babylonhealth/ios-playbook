@@ -26,10 +26,10 @@ Uncontroversial, non-additive changes such as misspellings, grammar or compiler 
 * [Spacing](#spacing)
 * [Comments](#comments)
 * [Classes and Structures](#classes-and-structures)
-  * [Use of Self](#use-of-self)
-  * [Protocol Conformance](#protocol-conformance)
-  * [Computed Properties](#computed-properties)
-  * [Final](#final)
+* [Use of Self](#use-of-self)
+* [Protocol Conformance](#protocol-conformance)
+* [Computed Properties](#computed-properties)
+* [Final](#final)
 * [Function Declarations](#function-declarations)
 * [Function Calls](#function-calls)
 * [Closure Expressions](#closure-expressions)
@@ -343,70 +343,17 @@ where `AAA` are the author's initials, `YYYY-MM-DD` is the date (if appropriate)
 
 ## Classes and Structures
 
-### Which one to use?
-
 Remember, structs have [value semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_144). Use structs for things that do not have an identity. An array that contains [a, b, c] is really the same as another array that contains [a, b, c] and they are completely interchangeable. It doesn't matter whether you use the first array or the second, because they represent the exact same thing. That's why arrays are structs.
 
-Classes have [reference semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_145). Use classes for things that do have an identity or a specific life cycle. You would model a person as a class because two person objects are two different things. Just because two people have the same name and birthdate, doesn't mean they are the same person. But the person's birthdate would be a struct because a date of 3 March 1950 is the same as any other date object for 3 March 1950. The date itself doesn't have an identity.
+Classes have [reference semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_145). Use classes for things that do have an identity or a specific life cycle. You would model a ViewModel as a class because two ViewModel objects might be in a different state. Although they might represent the same screen, it doesn't mean they have the same state (e.g. `.loading` vs `.loaded([T])`.
 
-### Example definition
-
-Here's an example of a well-styled class definition:
-
-```swift
-class Circle: Shape {
-  var x: Int, y: Int
-  var radius: Double
-  var diameter: Double {
-    get {
-      return radius * 2
-    }
-    set {
-      radius = newValue / 2
-    }
-  }
-
-  init(x: Int, y: Int, radius: Double) {
-    self.x = x
-    self.y = y
-    self.radius = radius
-  }
-
-  convenience init(x: Int, y: Int, diameter: Double) {
-    self.init(x: x, y: y, radius: diameter / 2)
-  }
-
-  override func area() -> Double {
-    return Double.pi * radius * radius
-  }
-}
-
-extension Circle: CustomStringConvertible {
-  var description: String {
-    return "center = \(centerString) area = \(area())"
-  }
-  private var centerString: String {
-    return "(\(x),\(y))"
-  }
-}
-```
-
-The example above demonstrates the following style guidelines:
-
- + Specify types for properties, variables, constants, argument declarations and other statements with a space after the colon but not before, e.g. `x: Int`, and `Circle: Shape`.
- + Define multiple variables and structures on a single line if they share a common purpose / context.
- + Indent getter and setter definitions and property observers.
- + Don't add modifiers such as `internal` when they're already the default, unless there is a good reason to emphasize it. Similarly, don't repeat the access modifier when overriding a method.
- + Organize extra functionality (e.g. printing) in extensions.
- + Hide non-shared, implementation details such as `centerString` inside the extension using `private` access control.
-
-### Use of Self
+## Use of Self
 
 For conciseness, avoid using `self` since Swift does not require it to access an object's properties or invoke its methods.
 
 Use self only when required by the compiler (in `@escaping` closures, or in initializers to disambiguate properties from arguments). In other words, if it compiles without `self` then omit it.
 
-### Computed Properties
+## Computed Properties
 
 For conciseness, if a computed property is read-only, omit the get clause. The get clause is required only when a set clause is provided.
 
@@ -426,7 +373,7 @@ var diameter: Double {
 }
 ```
 
-### Final
+## Final
 
 Mark classes or members as `final` when appropriate. In the below example, `Box` has a particular purpose and customization in a derived class is not intended. Marking it `final` makes that clear.
 
