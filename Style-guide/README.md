@@ -755,7 +755,7 @@ resource.request().onComplete { [weak self] response in
 
 ## Access Control
 
-]Using `private` and `fileprivate` appropriately adds clarity and promotes encapsulation. Prefer `private` to `fileprivate`; use `fileprivate` only when the compiler insists.
+Using `private` and `fileprivate` appropriately adds clarity and promotes encapsulation. Prefer `private` to `fileprivate`; use `fileprivate` only when the compiler insists.
 
 Only explicitly use `open`, `public`, and `internal` when you require a full access control specification.
 
