@@ -16,12 +16,13 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 6. [Changelog](CHANGELOG.md)
 7. [Technical documents and Proposals](/TechnicalDocuments/README.md)
 8. [Interview process](/Interview/README.md)
-9. Code guidelines, standards and etiquette
+9. [Swift style guide](/Style-guide/README.md)
+10. [Code of conduct](/Etiquette/README.md)
 
 
 ## 1. Who's in the team
 
-| Name                    | Contact                                                       |  
+| Name                    | Contact                                                       |
 |-------------------------|---------------------------------------------------------------|
 | Ana Catarina Figueiredo | [@AnnKatFig](https://twitter.com/AnnKatFig)                   |
 | Anders Ha               | [@_andersha](https://twitter.com/_andersha)                   |
@@ -36,7 +37,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Rui Peres               | [@peres](https://twitter.com/peres)                           |
 | Sergey Shulga           | [@SergDort](https://twitter.com/SergDort)                     |
 | Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
-| Wagner Truppel          | [@wltrup](https://github.com/wltrup)                          |    
+| Wagner Truppel          | [@wltrup](https://github.com/wltrup)                          |
 | Witold Skibniewski      |                                                               |
 
 
@@ -57,30 +58,16 @@ By definition, members work on their respective squad, although they are free to
 | Project Minkowski             | Anders                           |    1/2       |
 | Get Well                      | Michael                          |    1/1       |
 
+
 ## 3. OSS-maintained projects
 
-| Project name                  | Owner(s)                 | Stars        |  
+| Project name                  | Owner(s)                 | Stars        |
 |-------------------------------|--------------------------| ------------ |
-| Bento                         | Anders, David, Sergey    | [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Bento.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Bento/stargazers/)             |
-| DrawerKit                     | David, Wagner            |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/DrawerKit/stargazers/)       |
-| ReactiveFeedback              | Anders, Sergey           |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/ReactiveFeedback/stargazers/)        |
+| Bento                         | Anders, David, Sergey    | [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Bento.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Bento/stargazers/) |
+| DrawerKit                     | David, Wagner            |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/DrawerKit/stargazers/) |
+| ReactiveFeedback              | Anders, Sergey           |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/ReactiveFeedback/stargazers/) |
+| Style guide                   | Wagner                   |    WIP       |
 
 ## 4. New hires checklist
 
 // Work in progress ⚠️
-
-## 5. Release process
-
-The release process can be found [here](release.md).
-
-## 6. Technical documents and Proposals
-
-The technical documents and proposals can be found [here](/TechnicalDocuments/README.md).
-
-## 7. Interview process
-
-The interview process can be found [here](/Interview/README.md).
-
-## 8. Code guidelines, standards and etiquette
-
-The code guidelines, standards and etiquette can be found [here](/Standards/README.md).
