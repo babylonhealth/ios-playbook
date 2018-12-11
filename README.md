@@ -30,6 +30,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Danilo Aliberti         |                                                               |
 | David Rodrigues         | [@dmcrodrigues](https://twitter.com/dmcrodrigues)             |
 | Diego Petrucci          | [@diegopetrucci](https://twitter.com/diegopetrucci)           |
+| Giorgos Tsiapaliokas    | [@gtsiap](https://github.com/gtsiap)
 | Ilya Puchka             | [@ilyapuchka](https://twitter.com/ilyapuchka)                 |
 | Jason Dobo              | [@jasondobo](https://github.com/jasondobo)                    |
 | Martin Nygren           |                                                               |
@@ -37,7 +38,6 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Rui Peres               | [@peres](https://twitter.com/peres)                           |
 | Sergey Shulga           | [@SergDort](https://twitter.com/SergDort)                     |
 | Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
-| Wagner Truppel          | [@wltrup](https://github.com/wltrup)                          |
 | Witold Skibniewski      |                                                               |
 
 
@@ -51,11 +51,11 @@ By definition, members work on their respective squad, although they are free to
 | SDK                           | David, Viorel, Martin, Witold    |    4/5       |
 | Consultation Experience       | Ilya                             |    1/2       |
 | Healthcheck                   | Ben                              |    1/3       |
-| Core                          | Wagner, Jason                    |    2/5       |
+| Core                          | Giorgos, Jason                   |    2/5       |
 | Professional Services         | Danilo                           |    1/3       |
 | GP at Hand                    | Diego                            |    1/1       |
 | Project Avalon                | Sergey                           |    1/1       |
-| Project Minkowski             | Anders                           |    1/2       |
+| Condition Management          | Anders                           |    1/2       |
 | Get Well                      | Michael                          |    1/1       |
 
 
