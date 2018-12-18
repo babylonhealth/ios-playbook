@@ -48,14 +48,16 @@ By definition, members work on their respective squad, although they are free to
 
 | Squad Name                    | Members                          | Availability |  
 |-------------------------------|----------------------------------| ------------ |
-| SDK                           | David, Viorel, Martin, Witold    |    4/5       |
-| Consultation Experience       | Ilya                             |    1/2       |
-| Healthcheck                   | Ben                              |    1/3       |
-| Core                          | Giorgos, Jason                   |    2/5       |
+| SDK                           | Viorel, Martin                   |    2/4       |
+| Consultation                  | Ilya                             |    1/2       |
+| Booking                       | Witold                           |    1/1       |
+| Prescriptions                 |                                  |    0/1       |
+| Healthcheck                   | Ben, Catarina                    |    2/3       |
+| Native/Core                   | Giorgos, Jason                   |    2/6       |
 | Professional Services         | Danilo                           |    1/3       |
 | GP at Hand                    | Diego                            |    1/1       |
 | Project Avalon                | Sergey                           |    1/1       |
-| Condition Management          | Anders                           |    1/2       |
+| Condition Management          | David, Anders                    |    2/2       |
 | Get Well                      | Michael                          |    1/1       |
 
 
