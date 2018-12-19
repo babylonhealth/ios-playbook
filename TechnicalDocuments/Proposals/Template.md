@@ -9,16 +9,15 @@
 
 ## Motivation
 
-// This section should the answer the "why?".
+// This section should the answer the `why?`.
 
 ## Proposed solution
 
-// This section should the answer the "how?".
+// This section should the answer the `how?`.
 
 ## Impact on existing codebase
 
-// This section should explain, assuming this proposal is accepted, how much work
-// it would require for it to work with our codebase.
+// This section should explain, assuming this proposal is accepted, how much work it would require for it to work with our codebase.
 
 ## Alternatives considered
 
