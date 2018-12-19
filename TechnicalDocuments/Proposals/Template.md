@@ -1,7 +1,7 @@
 # <Title>
 
-* Author(s): <Author1>, <Author2>
-* Review Manager: <ReviewManager>
+* Author(s): Author1, Author2
+* Review Manager: ReviewManager
 
 ## Introduction
 
