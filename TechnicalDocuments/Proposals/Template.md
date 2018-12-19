@@ -17,7 +17,7 @@
 
 ## Impact on existing codebase
 
-// This section should explain, assuming this proposal is accepted, how much work it would require for it to work with our codebase.
+// This section should explain, assuming this proposal is accepted, how much effort it would require for it to be implemented in our codebase. Other concerns should be raised, if it's a significant deviation from our stack. 
 
 ## Alternatives considered
 
