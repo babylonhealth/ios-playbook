@@ -54,7 +54,7 @@
 **Phase 5: Closure**
 <br/>	*It starts after the app is accepted by Apple and final internal approval*
 
-1. Press `Submit` in App Store Connect
+1. Press `Release this version` in App Store Connect
 1. Tag the release and upload the binary. (If you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
 1. Merge the changes back to develop.
 
