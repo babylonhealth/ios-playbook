@@ -5,7 +5,7 @@ Lokalise is used for managing texts and translations in our apps.
 Strings are edited through the [Lokalise app](https://lokalise.co). 
 Login using your github account and request access to the relevant projects.
 
-To update strings in the app the following fast-lane lanes can be used:
+To update strings in the app the following `Fastlane` lanes can be used:
 ```
 bundle exec fastlane lokalise_pull         // download all projects
 bundle exec fastlane lokalise_pull_babylon     //download the main Babylon
