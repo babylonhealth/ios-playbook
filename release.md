@@ -1,4 +1,4 @@
-
+  
 ## Release process
 
 ### 1. Release engineer as a role
@@ -14,7 +14,7 @@
 
 ### 2. Release step-by-step
 
-**Stage 1:**
+**Phase 1: Initiation**
 *It starts at the end of the sprint (typically when the new sprint starts on Monday)*
 
 1. Cut a release branch:  Create a new branch from develop and push to origin (e.g `release/3.2.0`).
@@ -27,32 +27,33 @@
     1. On the sidebar click `+ Version or Platform` and select `iOS`.  
     1. Input the new version number.
 
-**Stage 2**
+**Phase 2: Test and fix bugs**
 *It starts after the Hockey build has been delivered and it can take several cycles*
 
 1. Testers will then begin their work against the build you just created. 
 1. Any hotfix should target that branch, and you, as the release engineer, are responsible for double checking that the hotfix's PR is pointing to the release branch (instead of `develop`).
 
-**Stage 3**
-*It starts after all opened issues had been adressed and can also take several cycles until final approval form QA*
+**Phase 3: Submit beta builds for Hockey and App Store Connect**
+*It starts after all opened issues had been adressed and can take several cycles until final approval form QA*
 
 1. Triger a new release build in the `#ios-build` channel
-1. Obtain the realease notes form the Product Manager  and update them in the [AppStoreConnect]
-1. Enable the new release version in [AppStoreConnect]. 
+1. Obtain the release notes form the Product Manager  and update them in the [AppStoreConnect](https://appstoreconnect.apple.com)
+1. Enable the new release version in [AppStoreConnect](https://appstoreconnect.apple.com). 
 1. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues) ❗️ NOTE: Remember to submit compliance info for that build.
 1. By now, QA should be notified that there is a new version in TestFlight.
 
-**Stage 4**
-*It starts after QA has signed off a particular build*
-Submit the app to Apple in [AppStoreConnect]
+**Phase 4: Submit to release in App Store Connect**
+
+*It starts after QA has signed off a particular build and can take several cycles until final approval form Apple*
 
 1. Make sure *Manually release this version* is selected in `Version Release`.
-1. When submitting to release, you are asked if the app uses the Advertising Identifier (IDFA). The answer is YES. You are then presented with three options please select as followed:
-        1. 🚫 Serve advertisements within the app
-        1. ✅ Attribute this app installation to a previously served advertisement
-        1. ✅ Attribute an action taken within this app to a previously served advertisement
+2. When submitting to release, you are asked if the app uses the Advertising Identifier (IDFA). The answer is YES. You are then presented with three options please select as followed:
+	1. 🚫 Serve advertisements within the app
+	2. ✅ Attribute this app installation to a previously served advertisement
+	3. ✅ Attribute an action taken within this app to a previously served advertisement
 
-**Stage 5**
+**Phase 5: Closure**
+
 *It starts after the app is accepted by Apple*
 
 1. Tag the release and upload the binary. (If you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
