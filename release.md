@@ -34,7 +34,7 @@
 1. Any hotfix should target that branch, and you, as the release engineer, are responsible for double checking that the hotfix's PR is pointing to the release branch (instead of `develop`).
 
 **Phase 3: Submit beta builds for Hockey and App Store Connect**
-<br/>	*It starts after all opened issues had been adressed and can take several cycles until final approval form QA*
+<br/>	*It starts after all opened issues had been adressed and can take several cycles until QA's approval*
 
 1. Triger a new release build in the `#ios-build` channel
 1. Obtain the release notes form the Product Manager  and update them in the [AppStoreConnect](https://appstoreconnect.apple.com)
@@ -43,7 +43,7 @@
 1. By now, QA should be notified that there is a new version in TestFlight.
 
 **Phase 4: Submit to release in App Store Connect**
-<br/>	*It starts after QA has signed off a particular build and can take several cycles until final approval form Apple*
+<br/>	*It starts after QA has signed off a particular build and can take several cycles until Apple's approval*
 
 1. Make sure *Manually release this version* is selected in `Version Release`.
 2. When submitting to release, you are asked if the app uses the Advertising Identifier (IDFA). The answer is YES. You are then presented with three options please select as followed:
