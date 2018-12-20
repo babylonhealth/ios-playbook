@@ -33,7 +33,7 @@
 1. Testers will then begin their work against the build you just created. 
 1. Any hotfix should target that branch, and you, as the release engineer, are responsible for double checking that the hotfix's PR is pointing to the release branch (instead of `develop`).
 
-**Phase 3: Submit beta builds for Hockey and App Store Connect**
+**Phase 3: Submit TestFlight builds to App Store Connect**
 <br/>	*It starts after all opened issues had been adressed and can take several cycles until QA's approval*
 
 1. Triger a new release build in the `#ios-build` channel
@@ -42,7 +42,7 @@
 1. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues) ❗️ NOTE: Remember to submit compliance info for that build.
 1. By now, QA should be notified that there is a new version in TestFlight.
 
-**Phase 4: Submit to release in App Store Connect**
+**Phase 4: Submit for release in App Store Connect**
 <br/>	*It starts after QA has signed off a particular build and can take several cycles until Apple's approval*
 
 1. Make sure *Manually release this version* is selected in `Version Release`.
@@ -52,8 +52,9 @@
 	3. ✅ Attribute an action taken within this app to a previously served advertisement
 
 **Phase 5: Closure**
-<br/>	*It starts after the app is accepted by Apple*
+<br/>	*It starts after the app is accepted by Apple and final internal approval*
 
+1. Press `Submit` in App Store Connect
 1. Tag the release and upload the binary. (If you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
 1. Merge the changes back to develop.
 
