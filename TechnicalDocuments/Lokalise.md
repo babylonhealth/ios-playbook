@@ -1,6 +1,6 @@
 ## Lokalise Service
 
-Lokalise is used for managing texts and translations used in our apps.
+Lokalise is used for managing texts and translations in our apps.
 
 
 Strings are edited through the [Lokalise app](https://lokalise.co). 
