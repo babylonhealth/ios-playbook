@@ -3,7 +3,7 @@
 Lokalise is used for managing texts and translations used in our apps.
 
 
-Strings are edited through the lokalise app [https://lokalise.co/](https://lokalise.co/). 
+Strings are edited through the [Lokalise app](https://lokalise.co). 
 Login using your github account and request acces to releavant projects.
 
 To update strings in the app the following fast-lane lanes can be used:
