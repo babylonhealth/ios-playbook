@@ -1,4 +1,4 @@
-
+  
 ## Release process
 
 ### 1. Release engineer as a role
@@ -14,31 +14,50 @@
 
 ### 2. Release step-by-step
 
-1. Cut a release branch when the sprint ends (typically when the new sprint starts on Monday). Create a new branch from develop and push to origin (e.g `release/3.2.0`).
-2. Bump the release version by triggering its command (eg. `/release babylon:3.2.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
+**Phase 1: Initiation**
+<br/>	*It starts at the end of the sprint (typically when the new sprint starts on Monday)*
+
+1. Cut a release branch:  Create a new branch from develop and push to origin (e.g `release/3.2.0`).
+1. Bump the release version by triggering its command (eg. `/release babylon:3.2.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
     * This creates a test Tesflight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
-3. Trigger a hockey build from that branch using its command (eg. `/distribute release/3.2.0:babylon`) in `#ios-build`.
-4. Testers will then begin their work against the build you just created.
-5. Any hotfix should target that branch, and you, as the release engineer, are responsible for double checking that the hotfix's PR is pointing to the release branch (instead of `develop`).
-6. Create a board for the release. Use a filter to reduce its scope, eg `project = UA AND affectedVersion = "iOS 3.2.0"`.
-7. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps 
+1. Trigger a hockey build from that branch using its command (eg. `/distribute release/3.2.0:babylon`) in `#ios-build`.
+1. Create a board for the release. Use a filter to reduce its scope, eg `project = UA AND affectedVersion = "iOS 3.2.0"`.
+1. Create and send the issue list to the Product Manager: In console run `git log --since="2018-11-26" --pretty=format:%s  > issue_list.txt` (use the date when the sprint started).
+1. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps 
     1. On the sidebar click `+ Version or Platform` and select `iOS`.  
-    2. Input the new version number.
-    3. Add the release notes and update the release notes document.
-    4. Add your release to the release calendar.
-    5. Check if you need anything from the Marketing Team. (`#MarketingQuestions`)
-    6. Send the release notes to `#ClinicsOps`, so they have visibility on the release.
-8. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues) ❗️ NOTE: Remember to submit compliance info for that build.
-9. By now, QA should be notified that there is a new version in TestFlight.
-10. When QA has signed off a particular build, submit the app to Apple.
-    1. Make sure *Manually release this version* is selected in `Version Release`.
-    2. When submitting to release, you are asked if the app uses the Advertising Identifier (IDFA). The answer is YES. You are then presented with three options please select as followed:
-        1. 🚫 Serve advertisements within the app
-        2. ✅ Attribute this app installation to a previously served advertisement
-        3. ✅ Attribute an action taken within this app to a previously served advertisement
-11. Once the app is accepted by Apple:
-    1. Tag the release and upload the binary. (If you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
-    2. Merge the changes back to develop.
+    1. Input the new version number.
+
+**Phase 2: Test and fix bugs**
+<br/>	*It starts after the Hockey build has been delivered and it can take several cycles*
+
+1. Testers will then begin their work against the build you just created. 
+1. Any hotfix should target that branch, and you, as the release engineer, are responsible for double checking that the hotfix's PR is pointing to the release branch (instead of `develop`).
+
+**Phase 3: Submit TestFlight builds to App Store Connect**
+<br/>	*It starts after all opened issues had been adressed and can take several cycles until QA's approval*
+
+1. Triger a new release build in the `#ios-build` channel
+1. Obtain the release notes form the Product Manager  and update them in the [AppStoreConnect](https://appstoreconnect.apple.com)
+1. Enable the new release version in [AppStoreConnect](https://appstoreconnect.apple.com). 
+1. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues) ❗️ NOTE: Remember to submit compliance info for that build.
+1. By now, QA should be notified that there is a new version in TestFlight.
+
+**Phase 4: Submit for release in App Store Connect**
+<br/>	*It starts after QA has signed off a particular build and can take several cycles until Apple's approval*
+
+1. Make sure *Manually release this version* is selected in `Version Release`.
+2. When submitting to release, you are asked if the app uses the Advertising Identifier (IDFA). The answer is YES. You are then presented with three options please select as followed:
+	1. 🚫 Serve advertisements within the app
+	2. ✅ Attribute this app installation to a previously served advertisement
+	3. ✅ Attribute an action taken within this app to a previously served advertisement
+
+**Phase 5: Closure**
+<br/>	*It starts after the app is accepted by Apple and final internal approval*
+
+1. Press `Release this version` in App Store Connect
+1. Tag the release and upload the binary. (If you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
+1. Merge the changes back to develop.
+
 
 ### 3. Release calendar
 
