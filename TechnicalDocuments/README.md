@@ -1,6 +1,10 @@
 Technical Documents and Proposals 🛠
 ====================================
 
+## Documents
+
+* [Strings and Localisation](./Lokalise.md).
+
 ## Proposals
 
 
