@@ -63,8 +63,8 @@ Please keep in mind that this document is in a continuous state of flux, with ne
 - Is it possible to define an instance method that applies to arrays of integers but *not* to arrays of doubles, or any other type? Can you think of an example when this could be useful? Do you happen to know the syntax?
 - What is the Swift embedded runtime?
 - What is the difference between `value semantics` and `reference semantics`?
-- So, say that you have a struct and one or more of its properties is of a reference type. What happens then? Does the struct still have value semantics?
-- How do the Obj-C and Swift runtime environments manage memory these days?
+- Say that you have a struct and one or more of its properties is of a reference type. What happens then? Does the struct still have value semantics?
+- How does the Swift runtime environment manage memory these days?
 - How does `ARC` work?
 - Do you know what `autorelease pools` are? When are they useful?
 - Do you know what retain cycles are? Can you give examples? Is it something to worry about and, if so, what facilities are available in Swift to handle them?
