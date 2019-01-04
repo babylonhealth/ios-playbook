@@ -10,3 +10,4 @@ Technical Documents and Proposals 🛠
 
 * [Proposal Template](./Proposals/Template.md)
 * [Global `Current` struct to hold global dependencies](./Proposals/ControlTheWorld.md).
+* [Refactor Flow to be a Struct](./Proposals/FlowAsStruct.md).
