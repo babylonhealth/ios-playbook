@@ -397,7 +397,7 @@ func reticulateSplines(spline: [Double]) -> Bool {
 }
 ```
 
-For functions with long signatures, put each parameter on a new line and add an extra indent on subsequent lines. Note that the closing parenthesis aligns with the f in `func`. This is not how Xcode indents these blocks of code so keep an eye out for violations of this guideline.
+For functions with long signatures, more than 120 characters, put each parameter on a new line and add an extra indent on subsequent lines. Note that the closing parenthesis aligns with the f in `func`. This is not how Xcode indents these blocks of code so keep an eye out for violations of this guideline.
 
 ```swift
 func reticulateSplines(
