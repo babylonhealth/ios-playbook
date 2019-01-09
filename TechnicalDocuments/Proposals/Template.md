@@ -23,5 +23,6 @@
 
 // This section describes what other approaches were considered and why this one was chosen.
 
+--- 
 * [ ] **By creating this proposal, I understand that it might not be accepted**. I also agree that, if it's accepted,
 depending on its complexity, i might be requested to give a workshop to the rest of the team. 🚀
