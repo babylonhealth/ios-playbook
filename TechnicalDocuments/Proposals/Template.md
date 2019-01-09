@@ -1,7 +1,3 @@
-**Note:** By creating a proposal, you understand that it might not be accepted. You also agree that, if it's accepted,
-depending on its complexity, you might be requested to give a workshop to the rest of the team.
-**Please remove this note when creating said proposal**. Thank you! ❤️
-
 # <Title>
 
 * Author(s): Author1, Author2
@@ -27,3 +23,5 @@ depending on its complexity, you might be requested to give a workshop to the re
 
 // This section describes what other approaches were considered and why this one was chosen.
 
+* [ ] **By creating this proposal, I understand that it might not be accepted**. I also agree that, if it's accepted,
+depending on its complexity, i might be requested to give a workshop to the rest of the team. 🚀
