@@ -25,4 +25,4 @@
 
 --- 
 * [ ] **By creating this proposal, I understand that it might not be accepted**. I also agree that, if it's accepted,
-depending on its complexity, i might be requested to give a workshop to the rest of the team. 🚀
+depending on its complexity, I might be requested to give a workshop to the rest of the team. 🚀
