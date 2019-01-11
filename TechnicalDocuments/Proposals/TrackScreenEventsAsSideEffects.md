@@ -19,7 +19,7 @@ code to track them.
 Posting analytics events should ideally not have any impact
 on the business logic. In an ideal world it would always be possible to collect
 product analytics data without any impact on the business or user interface
-logic, reality tends to be messier but the more analytics events we can collect
+logic. The reality tends to be messier but the more analytics events we can collect
 without interfering with the business logic the better it is.
 
 It might happen that we get requirements to post some extra data in addition to
@@ -29,7 +29,7 @@ and simple it cannot be guaranteed that all of them will be.
 Experimenting with decorating flows with side effects I have arrived at the
 conclusion that this approach makes it quite quick to add screen event tracking.
 
-Adding screen event tracking as side-effects make sure that they don't have
+Adding screen event tracking as side-effects makes sure that it doesn't have
 any impact on the business logic.
 
 Collecting more complicated data points can be done by decorating the flow
@@ -74,14 +74,14 @@ different screen name for bento style view controllers.
 
 ```
 open class BabylonBoxViewController<ViewModel, Renderer>: BoxViewController<ViewModel, Renderer, BabylonAppAppearance> {
-  ...
-  @objc open override func screenName() -> String? {
-    if let name = (viewModel as? ScreenNaming)?.screenName() {
-        return name
-    } else {
-        return super.screenName()
+    ...
+    @objc open override func screenName() -> String? {
+        if let name = (viewModel as? ScreenNaming)?.screenName() {
+            return name
+        } else {
+            return super.screenName()
+        }
     }
-  }
 }
 ```
 
@@ -98,7 +98,7 @@ extension FlowAnalyticsEvent {
     static func screenViewTracking(
         _ flow: Flow,
         with tracker: AnalyticsTrackingService
-        ) -> Flow {
+    ) -> Flow {
 
         func trackScreenView() {
             guard let viewController = flow.currentViewController() else { return }
@@ -149,15 +149,15 @@ how to do it for the GP @ Hand Introduction journey
 
 ```
 private func showNHSIntro() {
-        BabylonNavigationController { navigation, modal in
-            return builders.nhsOnboarding.make(
-                navigation: navigation |> FlowAnalyticsEvent.screenViewTracking,
-                modal: modal |> FlowAnalyticsEvent.screenViewTracking,
-                parent: self.modal,
-                root: self.modal
-            )
-        } |> modal.present
-    }
+    BabylonNavigationController { navigation, modal in
+        return builders.nhsOnboarding.make(
+            navigation: navigation |> FlowAnalyticsEvent.screenViewTracking,
+            modal: modal |> FlowAnalyticsEvent.screenViewTracking,
+            parent: self.modal,
+            root: self.modal
+        )
+    } |> modal.present
+}
 ```
 
 I added this helper function to make `|>` available.
