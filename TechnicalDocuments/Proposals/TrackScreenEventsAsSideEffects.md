@@ -46,7 +46,7 @@ Creating a general side-effect that can be used to post the screen name requires
 a mechanism for reading the screen name from the view controller. Part one of
 this proposal is thus to add define a protocol `ScreenNaming`
 
-```
+```swift
 public protocol ScreenNaming {
     func screenName() -> String?
 }
@@ -55,7 +55,7 @@ public protocol ScreenNaming {
 
 with a default implementation for `UIViewController`
 
-```
+```swift
 extension UIViewController: ScreenNaming {
     @objc open func screenName() -> String? { return view.accessibilityIdentifier }
 }
@@ -72,7 +72,7 @@ to use that accessibility identifier as the screen name. In my view adding this
 override to `BabylonBoxViewController` offers a convenient way to define a
 different screen name for bento style view controllers.
 
-```
+```swift
 open class BabylonBoxViewController<ViewModel, Renderer>: BoxViewController<ViewModel, Renderer, BabylonAppAppearance> {
     ...
     @objc open override func screenName() -> String? {
@@ -89,7 +89,7 @@ With a solution for defining screen names for view controllers it is now
 possible to define a generic mechanism for posting screen views to the analytics
 service.
 
-```
+```swift
 enum FlowAnalyticsEvent: AnalyticsEvent {
     case screenView(name: String)
 }
@@ -147,7 +147,7 @@ in a navigation stack.
 Finally, to track screen view events we need to decorate the `Flow`, here is
 how to do it for the GP @ Hand Introduction journey
 
-```
+```swift
 private func showNHSIntro() {
     BabylonNavigationController { navigation, modal in
         return builders.nhsOnboarding.make(
@@ -162,7 +162,7 @@ private func showNHSIntro() {
 
 I added this helper function to make `|>` available.
 
-```
+```swift
 static func screenViewTracking(_ flow: Flow) -> Flow {
     return screenViewTracking(flow, with: Current.analyticsService)
 }
