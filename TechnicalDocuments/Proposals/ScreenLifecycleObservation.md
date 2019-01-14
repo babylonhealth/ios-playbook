@@ -57,6 +57,15 @@ Status | UIKit message
 _[1] This holds until it is removed from its container indefinitely._
 _[2] This holds until it is presented by any container again._ 
 
+### Excluding `viewDidLoad`.
+The `didLoad` status is not included as part of the mechanism.
+
+It should be aware that `willAppear && isBeingPresentedInitially == true` is not equivalent to `didLoad`, because:
+
+1. a screen may be presented again by any given container after it is removed from one; and
+2. a screen need not be immediately presented after `viewDidLoad`.
+
+Moreover, in terms of practical necessity, `didLoad` may not offer substantial differentiation over simply having those trigger executed as part of the initializer of the view model. That is unless we consider instantiations of the view model and the `BoxViewController` might be far apart in time from each other, but this is however observed to be generally non existing in practical uses.
 
 ## Impact on existing codebase
 
