@@ -22,6 +22,19 @@ For example:
 
 Introduce a screen lifecycle observing mechanism which BentoKit screens may participate by conforming `BoxViewModel` to `ScreenLifecycleAware`.
 
+```swift
+extension ExampleViewModel: BoxViewModel {
+    func send(_ event: ScreenLifecycleEvent) {
+        if event.status == .appearing && event.isBeingPresentedInitially {
+            analytics.track(ExampleAnalyticsEvent.pageView)
+                   
+            // [Optional] Screen state machine needs to be aware of certain lifecycle changes.
+            actionsObserver.send(value: .screenIsAppearingInitially)
+        }
+    }
+}
+```
+
 The event model `ScreenLifecycleEvent` reflects the lifecycle status of a given screen at a given time. The status can be directly mapped to messages emitted by UIKit:
 
 Status | UIKit message
