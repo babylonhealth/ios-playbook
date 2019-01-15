@@ -21,7 +21,6 @@
 1. Bump the release version by triggering its command (eg. `/release babylon:3.2.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
     * This creates a test Tesflight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
 1. Trigger a hockey build from that branch using its command (eg. `/distribute release/3.2.0:babylon`) in `#ios-build`.
-1. Create a board for the release. Use a filter to reduce its scope, eg `project = UA AND affectedVersion = "iOS 3.2.0"`.
 1. Create and send the issue list to the Product Manager: In console run `git log --since="2018-11-26" --pretty=format:%s  > issue_list.txt` (use the date when the sprint started).
 1. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps 
     1. On the sidebar click `+ Version or Platform` and select `iOS`.  
@@ -31,7 +30,7 @@
 <br/>	*It starts after the Hockey build has been delivered and it can take several cycles*
 
 1. Testers will then begin their work against the build you just created. 
-1. Any hotfix should target that branch, and you, as the release engineer, are responsible for double checking that the hotfix's PR is pointing to the release branch (instead of `develop`).
+1. Any hotfix should target that branch, and you, as the release engineer, are responsible for double checking that the hotfix's PR is pointing to the release branch (instead of `develop`). The issue for the hotfix should be added to the release JIRA board.
 
 **Phase 3: Submit TestFlight builds to App Store Connect**
 <br/>	*It starts after all opened issues had been adressed and can take several cycles until QA's approval*
@@ -68,9 +67,9 @@ The release process starts when the first build is provided to QA and ends when 
 3. Delta between the jira ticket being open and marked as `done` or `wont fix`, for Engineering effort. (e.g. `UA-8289: 1h30`)
 4. Total effort
 
-
 | Version                  | Release Engineer(s)              | QA effort              | Engineering effort | Total effort |
 |--------------------------|----------------------------------| ---------------------- |--------------------|--------------|
+| 3.7.0                    | Ben Henshall, David Rodrigues | Automated: `06h58m`<br>Manual: `32h`<br>| `MON-3855: 2h`<br>`MON-3857: 1h`<br>`AV-207: 1h`<br>`NRX-190: 3h`<br>`CNSMR-493: 3h`<br>`CNSMR-477: 3h`<br> | Total: **2d3h58mh** |
 | 3.6.0                    | Viorel Mihalache, Ilya Puchka | Automated: <br>Manual: <br>| `CNMSR-388`<br>`CNMSR-397`<br>`CE-146`<br>`NRX-150`<br>`CNMSR-404`<br>`NRX-149`<br>`UA-8329`<br>`UA-8431`<br>`CNMSR-365`<br>`CNMSR-324`<br>`CNMSR-340`<br>`CE-124`<br> | Total: **8d** |
 | 3.5.0                    | Wagner Truppel                   | Automated: `06h47`<br>Manual: `28h`<br>| `CNSMR-82: 1h39m`<br>| Total: **1d12h26m** |
 | 3.4.0                    | Martin Nygren                    | Automated: `06h40`<br>Manual: `32h`<br>| `UA-8385: 2h`<br>`UA8381: 4h`<br>`UA-8375 6h`<br>`UA-8374 2h`<br>`UA-8362 1h`<br>`UA-8369 2h`<br>`UA-8372 1h`<br>`MON-3631 2h`<br>`MON-3634 14h`<br>`UA-8359 13h`<br>| Total: **3d9h40min** |
