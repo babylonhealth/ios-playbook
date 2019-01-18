@@ -55,6 +55,9 @@
 
 1. Press `Release this version` in App Store Connect
 1. Tag the release and upload the binary. (If you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
+1. Release new version for the Babylon SDK:
+	1. Ask SDK team (#sdk_squad) about the SDK version number 
+	1. Trigger a hockey build from that branch using its command (eg. `/distribute_sdk version:0.1.11 pre_release:false branch:release/3.7.0`) in `#ios-build`.
 1. Merge the changes back to develop.
 
 
