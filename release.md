@@ -67,7 +67,7 @@ The release process starts when the first build is provided to QA and ends when 
 3. Delta between the jira ticket being open and marked as `done` or `wont fix`, for Engineering effort. (e.g. `UA-8289: 1h30`)
 4. Total effort
 
-| Version                  | Release Engineer(s)              | QA effort              | Engineering effort | Total effort |
+| Version                  | Release Engineer(s)              | QA effort              | Engineering effort | Total effort | Cut-off date| Release date |
 |--------------------------|----------------------------------| ---------------------- |--------------------|--------------|
 | 3.7.0                    | Ben Henshall, David Rodrigues | Automated: `06h58m`<br>Manual: `32h`<br>| `MON-3855: 2h`<br>`MON-3857: 1h`<br>`AV-207: 1h`<br>`NRX-190: 3h`<br>`CNSMR-493: 3h`<br>`CNSMR-477: 3h`<br> | Total: **2d3h58mh** |
 | 3.6.0                    | Viorel Mihalache, Ilya Puchka | Automated: <br>Manual: <br>| `CNMSR-388`<br>`CNMSR-397`<br>`CE-146`<br>`NRX-150`<br>`CNMSR-404`<br>`NRX-149`<br>`UA-8329`<br>`UA-8431`<br>`CNMSR-365`<br>`CNMSR-324`<br>`CNMSR-340`<br>`CE-124`<br> | Total: **8d** |
