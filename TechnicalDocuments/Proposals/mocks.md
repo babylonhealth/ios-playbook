@@ -13,7 +13,8 @@ As the team grows, having set standards and processes becomes more and more impo
 
 ## Proposed solution
 
-1. From now on, every mock/stub will be an extension of the object itself, sitting in the unit tests target.
+1. From now on, every mock/stub will be an extension of the object itself, sitting in the unit tests target. It will be created by calling `object.fixture()`.
+
 2. We require *every* model and business controller created to have at least one mock in the PR where it is created.
 
 ## Impact on existing codebase
