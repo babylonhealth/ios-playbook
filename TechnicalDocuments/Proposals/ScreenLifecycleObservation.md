@@ -25,7 +25,7 @@ Introduce a screen lifecycle observing mechanism which BentoKit screens may part
 ```swift
 extension ExampleViewModel: BoxViewModel {
     func send(_ event: ScreenLifecycleEvent) {
-        if event.status == .appearing && event.isBeingPresentedInitially {
+        if case .didAppear(isPresentedInitially: true) = event {
             analytics.track(ExampleAnalyticsEvent.pageView)
                    
             // [Optional] Screen state machine needs to be aware of certain lifecycle changes.
@@ -37,35 +37,31 @@ extension ExampleViewModel: BoxViewModel {
 
 The event model `ScreenLifecycleEvent` reflects the lifecycle status of a given screen at a given time. The status can be directly mapped to messages emitted by UIKit:
 
-Status | UIKit message
---- | ---
-`willAppear` | `viewWillAppear`
-`didAppear` | `viewDidAppear`
-`willDisappear` | `viewWillDisappear`
-`didDisappear` | `viewDidDisappear`
+Status | UIKit message | Additional Metadata
+--- | --- | ---
+`didLoad` | `viewDidLoad` | N/A
+`willAppear` | `viewWillAppear` | `isPresentedInitially`
+`didAppear` | `viewDidAppear` | `isPresentedInitially`
+`willDisappear` | `viewWillDisappear` | `isRemovedPermanently`
+`didDisappear` | `viewDidDisappear` | `isRemovedPermanently`
 
-`ScreenLifecycleEvent` also provides two extra properties representing two critical and unique scenarios of navigation:
+As mentioned in the table, `ScreenLifecycleEvent` also provides contextual metadata representing two critical and unique scenarios of navigation:
 
-* `isBeingPresentedInitially`
+* `isPresentedInitially`
    If this is `true`, the screen is being presented by its container for the very first time [1]. Subsequent reappearance, e.g. user having returned from another screen in a navigation flow, would not lead to this being `true`.
-   
-    
 
-* `isBeingRemovedIndefinitely`
-   If this is `true`, the screen is about to be removed from its container **indefinitely** [2]. Temporarily disappearance, e.g. being covered by another screen in a navigation flow, would not lead to this being `true`.
+* `isRemovedPermanently`
+   If this is `true`, the screen is about to be removed from its container **permanently** [2]. Temporarily disappearance, e.g. being covered by another screen in a navigation flow, would not lead to this being `true`.
    
-_[1] This holds until it is removed from its container indefinitely._
+_[1] This holds until it is removed from its container permanently._
 _[2] This holds until it is presented by any container again._ 
 
-### Excluding `viewDidLoad`.
-The `didLoad` status is not included as part of the mechanism.
+### On the difference between `isPresentedInitially` and `viewDidLoad`.
 
-It should be aware that `willAppear && isBeingPresentedInitially == true` is not equivalent to `didLoad`, because:
+It should be aware that `willAppear && isPresentedInitially == true` is not equivalent to `didLoad`, because:
 
 1. a screen may be presented again by any given container after it is removed from one; and
 2. a screen need not be immediately presented after `viewDidLoad`.
-
-Moreover, in terms of practical necessity, `didLoad` may not offer substantial differentiation over simply having those trigger executed as part of the initializer of the view model. That is unless we consider instantiations of the view model and the `BoxViewController` might be far apart in time from each other, but this is however observed to be generally non existing in practical uses.
 
 ## Impact on existing codebase
 
