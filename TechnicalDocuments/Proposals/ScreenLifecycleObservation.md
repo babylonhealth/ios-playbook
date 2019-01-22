@@ -53,6 +53,14 @@ As mentioned in the table, `ScreenLifecycleEvent` also provides contextual metad
 * `isRemovedPermanently`
    If this is `true`, the screen is about to be removed from its container **permanently** [2]. Temporarily disappearance, e.g. being covered by another screen in a navigation flow, would not lead to this being `true`.
    
+A container of a screen is seeked in the following order:
+
+1. the parent view controller of the screen; or
+1. the presenting view controller of the screen; or
+1. the presenting view controller of an ancestor of it.
+
+If none of these is satisfied, the screen is considered to be the root view controller of a `UIWindow`, in which case `isPresentedInitially` and `isRemovedPermanently` shall always be true.
+   
 _[1] This holds until it is removed from its container permanently._
 _[2] This holds until it is presented by any container again._ 
 
