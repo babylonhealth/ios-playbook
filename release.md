@@ -55,6 +55,9 @@
 
 1. Press `Release this version` in App Store Connect
 1. Tag the release and upload the binary. (If you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
+1. Release new version for the Babylon SDK:
+	1. Ask SDK team (#sdk_squad) about the SDK version number 
+	1. Trigger a hockey build from that branch using its command (eg. `/distribute_sdk version:0.1.11 pre_release:false branch:release/3.7.0`) in `#ios-build`.
 1. Merge the changes back to develop.
 
 
@@ -67,12 +70,12 @@ The release process starts when the first build is provided to QA and ends when 
 3. Delta between the jira ticket being open and marked as `done` or `wont fix`, for Engineering effort. (e.g. `UA-8289: 1h30`)
 4. Total effort
 
-| Version                  | Release Engineer(s)              | QA effort              | Engineering effort | Total effort |
-|--------------------------|----------------------------------| ---------------------- |--------------------|--------------|
+| Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
+|---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
 | 3.8.0                    | Sergey Shulga, Diego Petrucci | Automated: `06h58m`<br>Manual: `29h`<br>| `CE-125: - 2h`<br>`CNSMR-538: 1h`<br>`AV-243: 1h`<br>`CNSMR-556: 2h`<br>`NRX-229: 1h`<br>`NRX-232: - 1h`<br> `CNSMR-554: 1h` | Total: **1d20h58m** |
-| 3.7.0                    | Ben Henshall, David Rodrigues | Automated: `06h58m`<br>Manual: `32h`<br>| `MON-3855: 2h`<br>`MON-3857: 1h`<br>`AV-207: 1h`<br>`NRX-190: 3h`<br>`CNSMR-493: 3h`<br>`CNSMR-477: 3h`<br> | Total: **2d3h58mh** |
-| 3.6.0                    | Viorel Mihalache, Ilya Puchka | Automated: <br>Manual: <br>| `CNMSR-388`<br>`CNMSR-397`<br>`CE-146`<br>`NRX-150`<br>`CNMSR-404`<br>`NRX-149`<br>`UA-8329`<br>`UA-8431`<br>`CNMSR-365`<br>`CNMSR-324`<br>`CNMSR-340`<br>`CE-124`<br> | Total: **8d** |
-| 3.5.0                    | Wagner Truppel                   | Automated: `06h47`<br>Manual: `28h`<br>| `CNSMR-82: 1h39m`<br>| Total: **1d12h26m** |
-| 3.4.0                    | Martin Nygren                    | Automated: `06h40`<br>Manual: `32h`<br>| `UA-8385: 2h`<br>`UA8381: 4h`<br>`UA-8375 6h`<br>`UA-8374 2h`<br>`UA-8362 1h`<br>`UA-8369 2h`<br>`UA-8372 1h`<br>`MON-3631 2h`<br>`MON-3634 14h`<br>`UA-8359 13h`<br>| Total: **3d9h40min** |
-| 3.3.0                    | David Rodrigues                  | Automated: `09h40`<br>Manual: `14h`<br>| `UA-8268: 1h`<br>`UA-8269: 1h30`<br>`UA-8252: 5h`<br>| Total: **1d7h10min** |
-| 3.2.0                    | Danilo Aliberti                  | Automated: `12h53`<br>Manual: `10h`<br>| `UA-8166: 4h`<br>`UA-8149: 2d`<br>`UA-8187: 3h`<br>| Total: **3d6h** |
+| 3.7.0                    | Ben Henshall, David Rodrigues | Automated: `06h58m`<br>Manual: `32h`<br>| `MON-3855: 2h`<br>`MON-3857: 1h`<br>`AV-207: 1h`<br>`NRX-190: 3h`<br>`CNSMR-493: 3h`<br>`CNSMR-477: 3h`<br> | Total: **2d3h58mh** | | |
+| 3.6.0                    | Viorel Mihalache, Ilya Puchka | Automated: `06h50m`<br>Manual: `32h` <br>| `CNSMR-388: 2h`<br>`CNSMR-397: 1h`<br>`CE-146: 2h`<br>`NRX-150: 8h`<br>`CNSMR-404: 1h`<br>`NRX-149: 4h`<br>`UA-8329: 3h`<br>`UA-8431: 1h `<br>`CNMSR-365: 1h`<br>`CNSMR-324: 2h`<br>`CNSMR-340: 3h`<br>`CE-124: 2h`<br> | Total: **2d20h50min** | | |
+| 3.5.0                    | Wagner Truppel                   | Automated: `06h47`<br>Manual: `28h`<br>| `CNSMR-82: 1h39m`<br>| Total: **1d12h26m** | | |
+| 3.4.0                    | Martin Nygren                    | Automated: `06h40`<br>Manual: `32h`<br>| `UA-8385: 2h`<br>`UA8381: 4h`<br>`UA-8375 6h`<br>`UA-8374 2h`<br>`UA-8362 1h`<br>`UA-8369 2h`<br>`UA-8372 1h`<br>`MON-3631 2h`<br>`MON-3634 14h`<br>`UA-8359 13h`<br>| Total: **3d9h40min** | | |
+| 3.3.0                    | David Rodrigues                  | Automated: `09h40`<br>Manual: `14h`<br>| `UA-8268: 1h`<br>`UA-8269: 1h30`<br>`UA-8252: 5h`<br>| Total: **1d7h10min** | | |
+| 3.2.0                    | Danilo Aliberti                  | Automated: `12h53`<br>Manual: `10h`<br>| `UA-8166: 4h`<br>`UA-8149: 2d`<br>`UA-8187: 3h`<br>| Total: **3d6h** | | |
