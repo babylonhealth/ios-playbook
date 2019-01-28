@@ -1,4 +1,4 @@
-# <Title>
+# Unified Definition for Screen Names
 
 * Author(s): Martin Nygren
 * Review Manager: Sergey Shulga
@@ -21,9 +21,9 @@ To be able to post screen events for all view controllers we will need to be abl
 Define a protocol
 
 ```swift
-	public protocol ScreenNaming {
-	    func screenName() -> String?
-	}
+public protocol ScreenNaming {
+	  func screenName() -> String?
+}
 
 ```
 
@@ -74,5 +74,5 @@ To not have a default coupling between screen names and accessibility identifier
 To make adding a screen name for a form or box view model. I believe this will be too much work to be done in one go.
 
 ---
-* [ ] **By creating this proposal, I understand that it might not be accepted**. I also agree that, if it's accepted,
+* [x] **By creating this proposal, I understand that it might not be accepted**. I also agree that, if it's accepted,
 depending on its complexity, I might be requested to give a workshop to the rest of the team. 🚀
