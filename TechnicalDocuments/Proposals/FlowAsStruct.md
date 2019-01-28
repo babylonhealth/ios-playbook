@@ -11,30 +11,30 @@ This proposal is inspired by the [Pointfree](https://www.pointfree.co) episodes 
 
 Currently `Flow` is defined as a `Protocol` and implemented by a couple of helper classes (e.g. `EmptyFlow`, `NavigationFlow`, `ModalFlow`) that are made available as calculated properties (`Flow.empty`, `UINavigationController.navigationFlow`, `UIViewController.modalFlow`). This implementation already indicates that modelling the concept of a `Flow` as struct with function variables is closer to what we want then defining `Flow` as a protocol. We would have preferred to extend various `UIKit` classes if modelling `Flow` as a protocol is a natural choice.
 
-```
+```Swift
 extension UIViewController: Flow {
-  public func present(_ viewController: UIViewController,
+    public func present(_ viewController: UIViewController,
                       animated: Bool,
                       completion: (() -> Void)?) {
-                self.present(viewController,
+        self.present(viewController,
                              animated: animated,
                              completion: completion)
-         }
+    }
 
-  public func replace(with viewController: UIViewController,
+    public func replace(with viewController: UIViewController,
                       animated: Bool) {
-                present(viewController, animated: true)
-         }
+        present(viewController, animated: true)
+    }
 
-  public func dismiss(animated: Bool,
+    public func dismiss(animated: Bool,
                       completion: (() -> Void)?) {
 
-                if self.presentedViewController == nil {
-                    DispatchQueue.main.async { completion?() }
-                } else {
-                    self.dismiss(animated: animated, completion: completion)
-                }
-          }
+        if self.presentedViewController == nil {
+            DispatchQueue.main.async { completion?() }
+        } else {
+            self.dismiss(animated: animated, completion: completion)
+        }
+    }
 }
 ```
 
@@ -46,7 +46,7 @@ Another reason to change `Flow` from a protocol to a struct is that it makes it 
 
 Redefine `Flow` like this.
 
-```
+```Swift
 /// Represents the root or containing view of a stack of view controllers.
 public struct Flow {
 
