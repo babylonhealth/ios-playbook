@@ -1,7 +1,7 @@
 # Babylon Design Library
 
 * Author(s): Giorgos Tsiapaliokas
-* Review Manager: ReviewManager
+* Review Manager: Anders Ha
 
 ## Introduction
 This proposal is about introducing a Design Library.
@@ -12,22 +12,29 @@ we provide different styesheets based on the design.
 
 The idea behind this is to have reusable components with a predefined stylesheet displaying different data.
 The benefit of having a design library is
-1. to develop new UIs faster
+1. to develop new UIs faster.
 2. to catch inconsistencies in the UI due to a deisgn flaw or due to an engineering mistake.
 
 The requirement is to cover most of the common use cases and *not* to extend to edge cases.
 Also we must reuse our current tools like `Bento`
 
 ## Proposed solution
-We can introduce a new service which will be responsible for creating these components following
+We can introduce `AppearenceService` which will be responsible for creating these components following
 the semantics of the design styleguide which will be provided to us.
 
-The purpose of this service isn't to expose the full potential of `Bento` components but to follow the
-given design guidelines. This is an example.
-Also with this service we want to limit the exposure of specific components, in order to be able to introduce  
-drastic design changes in the future as easy as possible.
+The purpose of  `AppearenceService` isn't to expose the full potential of `Bento` components but to 
+follow specific design guidelines.
+As an example of this is: 
+A `Bento` component supports different behaviours like  `Deletable` the goal of this
+proposal isn't to replicate them or to make a wrapper around them but to follow specific design guidelines
+and to offer reusable UI elements.
 
-Furthermore, this service can also host alerts, custom viewcontroller animations, etc. 
+Also with `AppearenceService` we want to limit the exposure of specific components, in order to be able to introduce  
+drastic design changes in the future as easy as possible.
+For example `AppearenceService.Appearence.makeButton` returns `AnyRenderable` instead of `Component.Button`
+because in the future we may decide that we need to use a different button component. We want to depend on abstractions.
+
+Furthermore, `AppearenceService` can also host alerts, custom viewcontroller animations, etc.
 
 ``` swift
 final class AppearenceService {
