@@ -16,7 +16,16 @@ The benefit of having a design library is
 2. to catch inconsistencies in the UI due to a deisgn flaw or due to an engineering mistake.
 
 The requirement is to cover most of the common use cases and *not* to extend to edge cases.
-Also we must reuse our current tools like `Bento`
+Also we must reuse our current tools like `Bento`.
+
+For instance, in our codebase a common UI element is a rounded button with background color. 
+For that we use `Component.Button` and a stylesheet while this approach is functional is has a few drawbacks.
+The attributes of the button (background color, alpha, corner radius etc) can either 
+1. have been redefined in another part of the codebase which is good from a design point of view *and if* we search
+for them we can use them, *if we don't* search for them we will just reimplement something which already exists.
+2. or the attributes of the button haven't been redefined in another part of the application and we may not
+notice that so a design flaw will be implemented. We are humans after all :).
+
 
 ## Proposed solution
 We can introduce `AppearenceService` which will be responsible for creating these components following
