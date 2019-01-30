@@ -28,45 +28,56 @@ notice that so a design flaw will be implemented. We are humans after all :).
 
 
 ## Proposed solution
-We can introduce `AppearenceService` which will be responsible for creating these components following
+We can introduce `Appearence` which will be responsible for creating these components following
 the semantics of the design styleguide which will be provided to us.
 
-The purpose of  `AppearenceService` isn't to expose the full potential of `Bento` components but to 
+The purpose of  `Appearence` isn't to expose the full potential of `Bento` components but to 
 follow specific design guidelines.
 As an example of this is: 
 A `Bento` component supports different behaviours like  `Deletable` the goal of this
 proposal isn't to replicate them or to make a wrapper around them but to follow specific design guidelines
 and to offer reusable UI elements.
 
-Also with `AppearenceService` we want to limit the exposure of specific components, in order to be able to introduce  
+Also with `Appearence` we want to limit the exposure of specific components, in order to be able to introduce  
 drastic design changes in the future as easy as possible.
-For example `AppearenceService.Appearence.makeButton` returns `AnyRenderable` instead of `Component.Button`
+For example `Appearence.ComponentsBuilder.button` returns `AnyRenderable` instead of `Component.Button`
 because in the future we may decide that we need to use a different button component. We want to depend on abstractions.
 
-Furthermore, `AppearenceService` can also host alerts, custom viewcontroller animations, etc.
+Furthermore, `Appearence` can also host alerts, custom viewcontroller animations, etc.
 
 ``` swift
-final class AppearenceService {
-    let appearence: MutableProperty<Appearence>
-    init(appearence: Appearence) {
-        self.appearence = MutableProperty(appearence)
+
+struct Appearance {
+    let appearanceConfiguration: AppearanceConfiguration
+
+    var viewControllerBuilder: ViewControllerBuilder {
+        return ViewControllerBuilder(appearance: appearance.value)
+    }
+
+    var componentBuilder: ComponetsBuilder {
+        return ComponetsBuilder(appearanceConfiguration: appearanceConfiguration, traits: UITraitCollection())
+    }
+
+    init(
+        appearanceConfiguration: AppearanceConfiguration
+    ) {
+        self.appearanceConfiguration = appearanceConfiguration
     }
 }
 
-extension AppearenceService {
-    struct Appearence {
+extension Appearance {
+    struct AppearanceConfiguration {
         let typography: Typography
         let colors: Colors
     }
 }
 
-extension AppearenceService.Appearence {
+extension Appearance.AppearanceConfiguration {
     struct Typography {
-        typealias Font = (UIFont, UIColor)
-        let headline1: Font
-        let headline2: Font
-        let body1: Font
-        let body2: Font
+        let headline1: UIFont
+        let headline2: UIFont
+        let body1: UIFont
+        let body2: UIFont
     }
 
     struct Colors {
@@ -75,58 +86,107 @@ extension AppearenceService.Appearence {
     }
 }
 
-extension AppearenceService.Appearence {
+extension Appearance {
+    struct ComponetsBuilder: BoxAppearance {
+        let appearanceConfiguration: AppearanceConfiguration
+        var traits: UITraitCollection
 
-     func makeButton(title: String, isEnabled: Bool, didTap: (() -> Void)?) -> AnyRenderable {
-        let buttonStyleSheet = ButtonStyleSheet()
+        @available(*, deprecated, message: "Use Appearance.appearanceConfiguration")
+        public var brandColors: BrandColorsProtocol = DefaultBrandColor()
 
-        let colorForState = isEnabled ? colors.primary : colors.primary.withAlphaComponent(0.5)
+        @available(*, deprecated, message: "Use Appearance.appearanceConfiguration")
+        public var appColors: AppColors = AppColors()
 
-        buttonStyleSheet.compose(\.backgroundColor, colorForState)
+        @available(*, deprecated, message: "Use Appearance.componentBuilder")
+        public var modern: ModernPalette {
+            return ModernPalette(self)
+        }
 
-        let activityIndicatorStyleSheet = ActivityIndicatorStyleSheet()
-        let styleSheet = Component.Button.StyleSheet(
-            button: buttonStyleSheet,
-            activityIndicator: activityIndicatorStyleSheet,
-            hugsContent: true,
-            autoRoundCorners: false
-        )
+        fileprivate init(appearanceConfiguration: AppearanceConfiguration, traits: UITraitCollection) {
+            self.appearanceConfiguration = appearanceConfiguration
+            self.traits = traits
+        }
 
-        return Component.Button(
-            title: title,
-            isEnabled: isEnabled,
-            isLoading: false,
-            didTap: didTap,
-            styleSheet: styleSheet
-        )
+        func primaryButton(title: String, isEnabled: Bool, didTap: (() -> Void)?) -> AnyRenderable { ... }
+
+        func secondaryButton(title: String, isEnabled: Bool, didTap: (() -> Void)?) -> AnyRenderable { ... }
+
+        func loader() -> AnyRenderable { ... }
     }
-    
-    func makeLoader() -> AnyRenderable {
-        let buttonStyleSheet = ButtonStyleSheet()
+}
 
-        let activityIndicatorStyleSheet = ActivityIndicatorStyleSheet()
-        activityIndicatorStyleSheet.compose(\.activityIndicatorViewStyle, .gray)
+extension AppearanceService {
+    struct ViewControllerBuilder {
+        let appearanceConfiguration: AppearanceConfiguration
 
-        let styleSheet = Component.Button.StyleSheet(\
-            button: buttonStyleSheet,
-            activityIndicator: activityIndicatorStyleSheet,
-            hugsContent: false,
-            autoRoundCorners: false
-        )
-
-        return Component.Button(
-            title: nil,
-            isEnabled: false,
-            isLoading: true,
-            didTap: nil,
-            styleSheet: styleSheet
-        )
+        func makeConfirmationModal(
+            title: String,
+            description: String,
+            acceptButtonTitle: String,
+            declineButtonTitle: String
+        ) -> UIViewController { ... }
     }
 }
 ```
 
 ## Impact on existing codebase
-This is not a breaking change. If we agree on this one, we can port the existing codebase.
+`Appearance` will be accessible via `Current` and `BabylonBoxViewController` will be modified in order to
+make the change less distruptive.
+Here is the implementation of the above statement
+
+```swift
+/// extend `World`
+import Bento
+import BentoKit
+import ReactiveSwift
+
+protocol AppearanceProtocol {
+    associatedtype ComponentsBuilder: BoxAppearance
+    var componentsBuilder: ComponentsBuilder { get }
+}
+
+extension Appearance.ComponetsBuilder: BoxAppearance {}
+extension Appearance: AppearanceProtocol {}
+
+/// Note: Appearance can't be used directly here due to
+/// framework dependencies.
+struct World<Appearance: AppearanceProtocol> {
+    let appearance: MutableProperty<Appearance>
+}
+
+/// Use Current in BabylonBoxViewController
+class BabylonBoxViewController<ViewModel, Renderer>: BoxViewController<
+    ViewModel,
+    Renderer,
+    Appearance.ComponetsBuilder
+> where
+    ViewModel: BoxViewModel,
+    Renderer: BoxRenderer,
+    ViewModel.State == Renderer.State,
+    ViewModel.Action == Renderer.Action,
+    Renderer.Appearance == Appearance.ComponetsBuilder {
+    init(
+        viewModel: ViewModel,
+        renderer: Renderer.Type,
+        rendererConfig: Renderer.Config
+    ) {
+        super.init(
+            viewModel: viewModel,
+            renderer: renderer,
+            rendererConfig: rendererConfig,
+            appearance: Current.appearance.map(\.componentsBuilder)
+        )
+    }
+}
+```
+This initializer can also be dropped but the change will be more disruptive.
+
+Also `Appearance.ComponentsBuilder` includes
+- `Appearance.ComponentsBuilder.brandColors`
+- `Appearance.ComponentsBuilder.appColors`
+- `Appearance.ComponentsBuilder.modern`
+
+in order to be source compatible with the current `BabylonAppAppearance` and to replace it. 
 
 ## Alternatives considered
 Our current approach. We will continue to use reusable components with dedicated stylesheets.
