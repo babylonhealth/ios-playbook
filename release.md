@@ -72,6 +72,7 @@ The release process starts when the first build is provided to QA and ends when 
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
+| 3.8.0                    | Sergey Shulga, Diego Petrucci | Automated: `07h30m`<br>Manual: `33h`<br>| `CE-125: - 2h`<br>`CNSMR-538: 1h`<br>`AV-243: 1h`<br>`CNSMR-556: 2h`<br>`NRX-229: 1h`<br>`NRX-232: - 1h`<br> `CNSMR-554: 1h` <br> `NRX-229: 5h`<br> `NRX-232: 3h` <br>| Total: **57h30m** | 21.01.2019 | 24.01.2019
 | 3.7.0                    | Ben Henshall, David Rodrigues | Automated: `06h58m`<br>Manual: `32h`<br>| `MON-3855: 2h`<br>`MON-3857: 1h`<br>`AV-207: 1h`<br>`NRX-190: 3h`<br>`CNSMR-493: 3h`<br>`CNSMR-477: 3h`<br> | Total: **2d3h58mh** | | |
 | 3.6.0                    | Viorel Mihalache, Ilya Puchka | Automated: `06h50m`<br>Manual: `32h` <br>| `CNSMR-388: 2h`<br>`CNSMR-397: 1h`<br>`CE-146: 2h`<br>`NRX-150: 8h`<br>`CNSMR-404: 1h`<br>`NRX-149: 4h`<br>`UA-8329: 3h`<br>`UA-8431: 1h `<br>`CNMSR-365: 1h`<br>`CNSMR-324: 2h`<br>`CNSMR-340: 3h`<br>`CE-124: 2h`<br> | Total: **2d20h50min** | | |
 | 3.5.0                    | Wagner Truppel                   | Automated: `06h47`<br>Manual: `28h`<br>| `CNSMR-82: 1h39m`<br>| Total: **1d12h26m** | | |
