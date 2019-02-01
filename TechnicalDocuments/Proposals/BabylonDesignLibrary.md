@@ -28,51 +28,51 @@ notice that so a design flaw will be implemented. We are humans after all :).
 
 
 ## Proposed solution
-We can introduce `Appearence` which will be responsible for creating these components following
+We can introduce `DesignLibrary` which will be responsible for creating these components following
 the semantics of the design styleguide which will be provided to us.
 
-The purpose of  `Appearence` isn't to expose the full potential of `Bento` components but to 
+The purpose of  `DesignLibrary` isn't to expose the full potential of `Bento` components but to 
 follow specific design guidelines.
 As an example of this is: 
 A `Bento` component supports different behaviours like  `Deletable` the goal of this
 proposal isn't to replicate them or to make a wrapper around them but to follow specific design guidelines
 and to offer reusable UI elements.
 
-Also with `Appearence` we want to limit the exposure of specific components, in order to be able to introduce  
+Also with `DesignLibrary` we want to limit the exposure of specific components, in order to be able to introduce  
 drastic design changes in the future as easy as possible.
-For example `Appearence.ComponentsBuilder.button` returns `AnyRenderable` instead of `Component.Button`
+For example `DesignLibrary.ComponentsBuilder.button` returns `AnyRenderable` instead of `Component.Button`
 because in the future we may decide that we need to use a different button component. We want to depend on abstractions.
 
-Furthermore, `Appearence` can also host alerts, custom viewcontroller animations, etc.
+Furthermore, `DesignLibrary` can also host alerts, custom viewcontroller animations, etc.
 
 ``` swift
 
-struct Appearance {
-    let appearanceConfiguration: AppearanceConfiguration
+struct DesignLibrary {
+    let configuration: Configuration
 
     var viewControllerBuilder: ViewControllerBuilder {
-        return ViewControllerBuilder(appearance: appearance.value)
+        return ViewControllerBuilder(configuration: configuration)
     }
 
     var componentBuilder: ComponetsBuilder {
-        return ComponetsBuilder(appearanceConfiguration: appearanceConfiguration, traits: UITraitCollection())
+        return ComponetsBuilder(configuration: configuration, traits: UITraitCollection())
     }
 
     init(
-        appearanceConfiguration: AppearanceConfiguration
+        configuration: Configuration
     ) {
-        self.appearanceConfiguration = appearanceConfiguration
+        self.configuration = configuration
     }
 }
 
-extension Appearance {
-    struct AppearanceConfiguration {
+extension DesignLibrary {
+    struct Configuration {
         let typography: Typography
         let colors: Colors
     }
 }
 
-extension Appearance.AppearanceConfiguration {
+extension DesignLibrary.Configuration {
     struct Typography {
         let headline1: UIFont
         let headline2: UIFont
@@ -86,24 +86,24 @@ extension Appearance.AppearanceConfiguration {
     }
 }
 
-extension Appearance {
-    struct ComponetsBuilder: BoxAppearance {
-        let appearanceConfiguration: AppearanceConfiguration
+extension DesignLibrary {
+    struct ComponetsBuilder: BoxDesignLibrary {
+        let configuration: Configuration
         var traits: UITraitCollection
 
-        @available(*, deprecated, message: "Use Appearance.appearanceConfiguration")
+        @available(*, deprecated, message: "Use DesignLibrary.Configuration")
         public var brandColors: BrandColorsProtocol = DefaultBrandColor()
 
-        @available(*, deprecated, message: "Use Appearance.appearanceConfiguration")
+        @available(*, deprecated, message: "Use DesignLibrary.Configuration")
         public var appColors: AppColors = AppColors()
 
-        @available(*, deprecated, message: "Use Appearance.componentBuilder")
+        @available(*, deprecated, message: "Use DesignLibrary.componentBuilder")
         public var modern: ModernPalette {
             return ModernPalette(self)
         }
 
-        fileprivate init(appearanceConfiguration: AppearanceConfiguration, traits: UITraitCollection) {
-            self.appearanceConfiguration = appearanceConfiguration
+        fileprivate init(configuration: Configuration, traits: UITraitCollection) {
+            self.Configuration = Configuration
             self.traits = traits
         }
 
@@ -115,9 +115,9 @@ extension Appearance {
     }
 }
 
-extension AppearanceService {
+extension DesignLibraryService {
     struct ViewControllerBuilder {
-        let appearanceConfiguration: AppearanceConfiguration
+        let configuration: Configuration
 
         func makeConfirmationModal(
             title: String,
@@ -130,7 +130,7 @@ extension AppearanceService {
 ```
 
 ## Impact on existing codebase
-`Appearance` will be accessible via `Current` and `BabylonBoxViewController` will be modified in order to
+`DesignLibrary` will be accessible via `Current` and `BabylonBoxViewController` will be modified in order to
 make the change less distruptive.
 Here is the implementation of the above statement
 
@@ -140,31 +140,31 @@ import Bento
 import BentoKit
 import ReactiveSwift
 
-protocol AppearanceProtocol {
+protocol DesignLibraryProtocol {
     associatedtype ComponentsBuilder: BoxAppearance
     var componentsBuilder: ComponentsBuilder { get }
 }
 
-extension Appearance.ComponetsBuilder: BoxAppearance {}
-extension Appearance: AppearanceProtocol {}
+extension DesignLibrary.ComponetsBuilder: BoxAppearance {}
+extension DesignLibrary: DesignLibraryProtocol {}
 
-/// Note: Appearance can't be used directly here due to
+/// Note: DesignLibrary can't be used directly here due to
 /// framework dependencies.
-struct World<Appearance: AppearanceProtocol> {
-    let appearance: MutableProperty<Appearance>
+struct World<DesignLibrary: DesignLibraryProtocol> {
+    let DesignLibrary: MutableProperty<DesignLibrary>
 }
 
 /// Use Current in BabylonBoxViewController
 class BabylonBoxViewController<ViewModel, Renderer>: BoxViewController<
     ViewModel,
     Renderer,
-    Appearance.ComponetsBuilder
+    DesignLibrary.ComponetsBuilder
 > where
     ViewModel: BoxViewModel,
     Renderer: BoxRenderer,
     ViewModel.State == Renderer.State,
     ViewModel.Action == Renderer.Action,
-    Renderer.Appearance == Appearance.ComponetsBuilder {
+    Renderer.DesignLibrary == DesignLibrary.ComponetsBuilder {
     init(
         viewModel: ViewModel,
         renderer: Renderer.Type,
@@ -174,17 +174,17 @@ class BabylonBoxViewController<ViewModel, Renderer>: BoxViewController<
             viewModel: viewModel,
             renderer: renderer,
             rendererConfig: rendererConfig,
-            appearance: Current.appearance.map(\.componentsBuilder)
+            appearance: Current.DesignLibrary.map(\.componentsBuilder)
         )
     }
 }
 ```
 This initializer can also be dropped but the change will be more disruptive.
 
-Also `Appearance.ComponentsBuilder` includes
-- `Appearance.ComponentsBuilder.brandColors`
-- `Appearance.ComponentsBuilder.appColors`
-- `Appearance.ComponentsBuilder.modern`
+Also `DesignLibrary.ComponentsBuilder` includes
+- `DesignLibrary.ComponentsBuilder.brandColors`
+- `DesignLibrary.ComponentsBuilder.appColors`
+- `DesignLibrary.ComponentsBuilder.modern`
 
 in order to be source compatible with the current `BabylonAppAppearance` and to replace it. 
 
