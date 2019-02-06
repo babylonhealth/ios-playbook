@@ -11,7 +11,7 @@ Meeting Etiquette:
   a.	If you haven’t read the proposal, or don’t care for the outcome, please don’t show up for the meeting.
 2.	If you want to make a counter proposal, or raise a change, please provide those in written to all meetings participants beforehand.
   a.	Ideally this is done via a PR comment.
-  b.	Meetings notes (or PR's comments) can only be provided 2h before the meeting.
+  b.	Meetings notes (or PR comments) can only be provided 2h before the meeting.
 3.	Questions should be asked on the PR, not during the meeting.
 4.	**The purpose of the meeting is to act as a sync point and a final outcome for the proposal itself.**
   a. Comments can be made, but at this point, the author should have a good idea if the proposal is going to move forward or not.
