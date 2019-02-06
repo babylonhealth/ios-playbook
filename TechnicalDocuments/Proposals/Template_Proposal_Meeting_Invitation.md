@@ -9,7 +9,7 @@ Meeting Etiquette:
 
 1.	**Please fully read the proposal.**
   a.	If you haven’t read the proposal, or don’t care for the outcome, please don’t show up for the meeting.
-2.	If you want to counter purpose, or raise a change, please provide those in written to all meetings participants beforehand.
+2.	If you want to make a counter proposal, or raise a change, please provide those in written to all meetings participants beforehand.
   a.	Ideally this is done via a PR’s comment.
   b.	Meetings notes (or PR's comments) can only be provided 2h before the meeting.
 3.	Questions should be asked on the PR, not during the meeting.
