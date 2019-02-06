@@ -87,7 +87,7 @@ extension DesignLibrary.Configuration {
 }
 
 extension DesignLibrary {
-    struct ComponetsBuilder: BoxDesignLibrary {
+    struct ComponetsBuilder: BoxAppearance {
         let configuration: Configuration
         var traits: UITraitCollection
 
