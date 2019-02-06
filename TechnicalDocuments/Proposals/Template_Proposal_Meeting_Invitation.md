@@ -14,7 +14,7 @@ Meeting Etiquette:
   b.	Meetings notes (or PR's comments) can only be provided 2h before the meeting.
 3.	Questions should be asked on the PR, not during the meeting.
 4.	**The purpose of the meeting is to act as a sync point and a final outcome for the proposal itself.**
-  a. Comments can be made, but at this point, the author should have a good idea if the proposal is to move forward or not.
+  a. Comments can be made, but at this point, the author should have a good idea if the proposal is going to move forward or not.
 
 Location:
 
