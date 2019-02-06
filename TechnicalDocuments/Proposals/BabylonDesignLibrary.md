@@ -103,7 +103,7 @@ extension DesignLibrary {
         }
 
         fileprivate init(configuration: Configuration, traits: UITraitCollection) {
-            self.Configuration = Configuration
+            self.configuration = configuration
             self.traits = traits
         }
 
