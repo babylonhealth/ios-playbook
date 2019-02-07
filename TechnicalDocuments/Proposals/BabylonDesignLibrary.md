@@ -48,31 +48,31 @@ Furthermore, `DesignLibrary` can also host alerts, custom viewcontroller animati
 ``` swift
 
 struct DesignLibrary {
-    let configuration: Configuration
+    let tokens: Tokens
 
     var viewControllerBuilder: ViewControllerBuilder {
-        return ViewControllerBuilder(configuration: configuration)
+        return ViewControllerBuilder(tokens: Tokens)
     }
 
     var componentsBuilder: ComponentsBuilder {
-        return ComponentsBuilder(configuration: configuration, traits: UITraitCollection())
+        return ComponentsBuilder(tokens: Tokens, traits: UITraitCollection())
     }
 
     init(
-        configuration: Configuration
+        tokens: Tokens
     ) {
-        self.configuration = configuration
+        self.tokens = tokens
     }
 }
 
 extension DesignLibrary {
-    struct Configuration {
+    struct Tokens {
         let typography: Typography
         let colors: Colors
     }
 }
 
-extension DesignLibrary.Configuration {
+extension DesignLibrary.Tokens {
     struct Typography {
         let headline1: UIFont
         let headline2: UIFont
@@ -88,13 +88,13 @@ extension DesignLibrary.Configuration {
 
 extension DesignLibrary {
     struct ComponentsBuilder: BoxAppearance {
-        let configuration: Configuration
+        let tokens: Tokens
         var traits: UITraitCollection
 
-        @available(*, deprecated, message: "Use DesignLibrary.Configuration")
+        @available(*, deprecated, message: "Use DesignLibrary.Tokens")
         public var brandColors: BrandColorsProtocol = DefaultBrandColor()
 
-        @available(*, deprecated, message: "Use DesignLibrary.Configuration")
+        @available(*, deprecated, message: "Use DesignLibrary.Tokens")
         public var appColors: AppColors = AppColors()
 
         @available(*, deprecated, message: "Use DesignLibrary.componentBuilder")
@@ -102,8 +102,8 @@ extension DesignLibrary {
             return ModernPalette(self)
         }
 
-        fileprivate init(configuration: Configuration, traits: UITraitCollection) {
-            self.configuration = configuration
+        fileprivate init(tokens: Tokens, traits: UITraitCollection) {
+            self.tokens = tokens
             self.traits = traits
         }
 
@@ -117,7 +117,7 @@ extension DesignLibrary {
 
 extension DesignLibraryService {
     struct ViewControllerBuilder {
-        let configuration: Configuration
+        let tokens: Tokens
 
         func makeConfirmationModal(
             title: String,
