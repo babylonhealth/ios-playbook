@@ -151,7 +151,7 @@ extension DesignLibrary: DesignLibraryProtocol {}
 /// Note: DesignLibrary can't be used directly here due to
 /// framework dependencies.
 struct World<DesignLibrary: DesignLibraryProtocol> {
-    let DesignLibrary: MutableProperty<DesignLibrary>
+    let designLibrary: MutableProperty<DesignLibrary>
 }
 
 /// Use Current in BabylonBoxViewController
