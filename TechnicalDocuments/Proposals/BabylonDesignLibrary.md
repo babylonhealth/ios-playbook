@@ -54,8 +54,8 @@ struct DesignLibrary {
         return ViewControllerBuilder(configuration: configuration)
     }
 
-    var componentBuilder: ComponetsBuilder {
-        return ComponetsBuilder(configuration: configuration, traits: UITraitCollection())
+    var componentsBuilder: ComponentsBuilder {
+        return ComponentsBuilder(configuration: configuration, traits: UITraitCollection())
     }
 
     init(
@@ -87,7 +87,7 @@ extension DesignLibrary.Configuration {
 }
 
 extension DesignLibrary {
-    struct ComponetsBuilder: BoxAppearance {
+    struct ComponentsBuilder: BoxAppearance {
         let configuration: Configuration
         var traits: UITraitCollection
 
@@ -145,7 +145,7 @@ protocol DesignLibraryProtocol {
     var componentsBuilder: ComponentsBuilder { get }
 }
 
-extension DesignLibrary.ComponetsBuilder: BoxAppearance {}
+extension DesignLibrary.ComponentsBuilder: BoxAppearance {}
 extension DesignLibrary: DesignLibraryProtocol {}
 
 /// Note: DesignLibrary can't be used directly here due to
@@ -158,13 +158,13 @@ struct World<DesignLibrary: DesignLibraryProtocol> {
 class BabylonBoxViewController<ViewModel, Renderer>: BoxViewController<
     ViewModel,
     Renderer,
-    DesignLibrary.ComponetsBuilder
+    DesignLibrary.ComponentsBuilder
 > where
     ViewModel: BoxViewModel,
     Renderer: BoxRenderer,
     ViewModel.State == Renderer.State,
     ViewModel.Action == Renderer.Action,
-    Renderer.DesignLibrary == DesignLibrary.ComponetsBuilder {
+    Renderer.DesignLibrary == DesignLibrary.ComponentsBuilder {
     init(
         viewModel: ViewModel,
         renderer: Renderer.Type,
