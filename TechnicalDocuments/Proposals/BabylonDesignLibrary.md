@@ -80,6 +80,17 @@ extension DesignLibrary.Tokens {
         let body2: UIFont
     }
 
+    struct Typography {
+        struct FontAttributes {
+            let textStyle: UIFont.TextStyle
+            let weight: UIFont.Weight
+        }
+
+        let title1: FontAttributes
+        let title2: FontAttributes
+        let headline: FontAttributes
+    }
+
     struct Colors {
         let primary: UIColor
         let secondary: UIColor
@@ -105,6 +116,14 @@ extension DesignLibrary {
         fileprivate init(tokens: Tokens, traits: UITraitCollection) {
             self.tokens = tokens
             self.traits = traits
+        }
+
+        func font(fontAttributes: Tokens.Typography.FontAttributes) -> UIFont {
+            return UIFont.preferredFont(
+                for: fontAttributes.textStyle,
+                weight: fontAttributes.weight,
+                compatibleWith: traits
+            )
         }
 
         func primaryButton(title: String, isEnabled: Bool, didTap: (() -> Void)?) -> AnyRenderable { ... }
