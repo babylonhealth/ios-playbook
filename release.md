@@ -1,4 +1,4 @@
-  
+
 ## Release process
 
 ### 1. Release engineer as a role
@@ -22,14 +22,14 @@
     * This creates a test Tesflight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
 1. Trigger a hockey build from that branch using its command (eg. `/distribute release/3.2.0:babylon`) in `#ios-build`.
 1. Create and send the issue list to the Product Manager: In console run `git log --since="2018-11-26" --pretty=format:%s  > issue_list.txt` (use the date when the sprint started).
-1. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps 
-    1. On the sidebar click `+ Version or Platform` and select `iOS`.  
+1. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
+    1. On the sidebar click `+ Version or Platform` and select `iOS`.
     1. Input the new version number.
 
 **Phase 2: Test and fix bugs**
 <br/>	*It starts after the Hockey build has been delivered and it can take several cycles*
 
-1. Testers will then begin their work against the build you just created. 
+1. Testers will then begin their work against the build you just created.
 1. Any hotfix should target that branch, and you, as the release engineer, are responsible for double checking that the hotfix's PR is pointing to the release branch (instead of `develop`). The issue for the hotfix should be added to the release JIRA board.
 
 **Phase 3: Submit TestFlight builds to App Store Connect**
@@ -37,7 +37,7 @@
 
 1. Triger a new release build in the `#ios-build` channel
 1. Obtain the release notes form the Product Manager  and update them in the [AppStoreConnect](https://appstoreconnect.apple.com)
-1. Enable the new release version in [AppStoreConnect](https://appstoreconnect.apple.com). 
+1. Enable the new release version in [AppStoreConnect](https://appstoreconnect.apple.com).
 1. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues) ❗️ NOTE: Remember to submit compliance info for that build.
 1. By now, QA should be notified that there is a new version in TestFlight.
 
@@ -56,7 +56,7 @@
 1. Press `Release this version` in App Store Connect
 1. Tag the release and upload the binary. (If you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
 1. Release new version for the Babylon SDK:
-	1. Ask SDK team (#sdk_squad) about the SDK version number 
+	1. Ask SDK team (#sdk_squad) about the SDK version number
 	1. Trigger a hockey build from that branch using its command (eg. `/distribute_sdk version:0.1.11 pre_release:false branch:release/3.7.0`) in `#ios-build`.
 1. Merge the changes back to develop.
 
@@ -72,6 +72,7 @@ The release process starts when the first build is provided to QA and ends when 
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
+| 3.9.0                    | Michael Brown, Giorgos Tsiapaliokas | Automated: `07h25m`<br>Manual: `24h`<br>| `CNSMR-680: - 2h`<br>| Total: **33h25m** | 04.02.2019 | 08.02.2019
 | 3.8.0                    | Sergey Shulga, Diego Petrucci | Automated: `07h30m`<br>Manual: `33h`<br>| `CE-125: - 2h`<br>`CNSMR-538: 1h`<br>`AV-243: 1h`<br>`CNSMR-556: 2h`<br>`NRX-229: 1h`<br>`NRX-232: - 1h`<br> `CNSMR-554: 1h` <br> `NRX-229: 5h`<br> `NRX-232: 3h` <br>| Total: **57h30m** | 21.01.2019 | 24.01.2019
 | 3.7.0                    | Ben Henshall, David Rodrigues | Automated: `06h58m`<br>Manual: `32h`<br>| `MON-3855: 2h`<br>`MON-3857: 1h`<br>`AV-207: 1h`<br>`NRX-190: 3h`<br>`CNSMR-493: 3h`<br>`CNSMR-477: 3h`<br> | Total: **2d3h58mh** | | |
 | 3.6.0                    | Viorel Mihalache, Ilya Puchka | Automated: `06h50m`<br>Manual: `32h` <br>| `CNSMR-388: 2h`<br>`CNSMR-397: 1h`<br>`CE-146: 2h`<br>`NRX-150: 8h`<br>`CNSMR-404: 1h`<br>`NRX-149: 4h`<br>`UA-8329: 3h`<br>`UA-8431: 1h `<br>`CNMSR-365: 1h`<br>`CNSMR-324: 2h`<br>`CNSMR-340: 3h`<br>`CE-124: 2h`<br> | Total: **2d20h50min** | | |
