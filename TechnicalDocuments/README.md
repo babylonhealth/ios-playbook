@@ -1,8 +1,13 @@
 Technical Documents and Proposals 🛠
  ====================================
 
- ## Proposals
+## Documents
 
- * [Global `Current` struct to hold global dependencies](./ControlTheWorld.md).
- * [Replace `iOSSnapshotTestCase` library with `SnapshotTesting`](/SnapshotTesting.md).
+* [Strings and Localisation](./Lokalise.md).
 
+## Proposals
+
+
+* [Proposal Template](./Proposals/Template.md)
+* [Global `Current` struct to hold global dependencies](./Proposals/ControlTheWorld.md).
+* [Replace `iOSSnapshotTestCase` library with `SnapshotTesting`](/SnapshotTesting.md).

@@ -16,12 +16,13 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 6. [Changelog](CHANGELOG.md)
 7. [Technical documents and Proposals](/TechnicalDocuments/README.md)
 8. [Interview process](/Interview/README.md)
-9. Code guidelines, standards and etiquette
+9. [Swift style guide](/Style-guide/README.md)
+10. [Code of conduct](/Etiquette/README.md)
 
 
 ## 1. Who's in the team
 
-| Name                    | Contact                                                       |  
+| Name                    | Contact                                                       |
 |-------------------------|---------------------------------------------------------------|
 | Ana Catarina Figueiredo | [@AnnKatFig](https://twitter.com/AnnKatFig)                   |
 | Anders Ha               | [@_andersha](https://twitter.com/_andersha)                   |
@@ -29,6 +30,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Danilo Aliberti         |                                                               |
 | David Rodrigues         | [@dmcrodrigues](https://twitter.com/dmcrodrigues)             |
 | Diego Petrucci          | [@diegopetrucci](https://twitter.com/diegopetrucci)           |
+| Giorgos Tsiapaliokas    | [@gtsiap](https://github.com/gtsiap)
 | Ilya Puchka             | [@ilyapuchka](https://twitter.com/ilyapuchka)                 |
 | Jason Dobo              | [@jasondobo](https://github.com/jasondobo)                    |
 | Martin Nygren           |                                                               |
@@ -36,7 +38,6 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Rui Peres               | [@peres](https://twitter.com/peres)                           |
 | Sergey Shulga           | [@SergDort](https://twitter.com/SergDort)                     |
 | Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
-| Wagner Truppel          | [@wltrup](https://github.com/wltrup)                          |    
 | Witold Skibniewski      |                                                               |
 
 
@@ -47,40 +48,59 @@ By definition, members work on their respective squad, although they are free to
 
 | Squad Name                    | Members                          | Availability |  
 |-------------------------------|----------------------------------| ------------ |
-| SDK                           | David, Viorel, Martin, Witold    |    4/5       |
-| Consultation Experience       | Ilya                             |    1/2       |
-| Healthcheck                   | Ben                              |    1/3       |
-| Core                          | Wagner, Jason                    |    2/5       |
+| SDK                           | Viorel, Martin                   |    2/4       |
+| Consultation                  | Ilya                             |    1/2       |
+| Booking                       | Witold                           |    1/1       |
+| Prescriptions                 |                                  |    0/1       |
+| Healthcheck                   | Ben, Catarina                    |    2/3       |
+| Native/Core                   | Giorgos, Jason                   |    2/6       |
 | Professional Services         | Danilo                           |    1/3       |
 | GP at Hand                    | Diego                            |    1/1       |
 | Project Avalon                | Sergey                           |    1/1       |
-| Project Minkowski             | Anders                           |    1/2       |
+| Condition Management          | David, Anders                    |    2/2       |
 | Get Well                      | Michael                          |    1/1       |
+
 
 ## 3. OSS-maintained projects
 
-| Project name                  | Owner(s)                 | Stars        |  
+| Project name                  | Owner(s)                 | Stars        |
 |-------------------------------|--------------------------| ------------ |
-| Bento                         | Anders, David, Sergey    | [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Bento.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Bento/stargazers/)             |
-| DrawerKit                     | David, Wagner            |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/DrawerKit/stargazers/)       |
-| ReactiveFeedback              | Anders, Sergey           |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/ReactiveFeedback/stargazers/)        |
+| Bento                         | Anders, David, Sergey    | [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Bento.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Bento/stargazers/) |
+| DrawerKit                     | David, Wagner            |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/DrawerKit/stargazers/) |
+| ReactiveFeedback              | Anders, Sergey           |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/ReactiveFeedback/stargazers/) |
+| Style guide                   | Wagner                   |    WIP       |
 
 ## 4. New hires checklist
 
-// Work in progress ⚠️
+Prior to starting, make sure you have a Babylon GitHub account and that you have access to the following repositories:
 
-## 5. Release process
+- [babylon-ios](https://github.com/Babylonpartners/babylon-ios)
+- [ios-charts](https://github.com/Babylonpartners/ios-charts)
+- [ios-private-podspecs](https://github.com/Babylonpartners/ios-private-podspecs)
+- [ios-build-distribution](https://github.com/Babylonpartners/ios-build-distribution)
+- [ios-fastlane-match](https://github.com/Babylonpartners/ios-fastlane-match)
 
-The release process can be found [here](release.md).
+Here's how to get the iOS project up and running.
 
-## 6. Technical documents and Proposals
+1. Clone the iOS repository: https://github.com/Babylonpartners/babylon-ios
+1. Set up Git LFS and pull, according to these instructions: https://github.com/Babylonpartners/babylon-ios/wiki/How-to-install-Git-LFS
+1. Globally configure Git to use SSH instead of HTTPS: https://ricostacruz.com/til/github-always-ssh
+     ```
+     git config --global url."git@github.com:".insteadOf "https://github.com/"
+     ```
+1. Run `bundle install`
+1. Run `pod install`
+1. Open `Babylon.xcworkspace` in Xcode (there may be several warnings; they can be ignored)
+1. Configure the Xcode **Text Editing -> Editing** preferences as follows:
+     - Automatically trim trailing whitespace
+     - Including whitespace-only lines
+     - Default line endings: macOS / Unix (LF)
+     - Convert existing files on save
+1. Configure the Xcode **Text Editing -> Indentation** preferences as follows:
+     - Prefer indent using: Spaces
+     - Tab width: 4 spaces
+     - Indent width: 4 spaces
+     - Tab key: Indents in leading whitespace
+1. Make sure the device selected for testing is iPhone 5s
 
-The technical documents and proposals can be found [here](/TechnicalDocuments/README.md).
-
-## 7. Interview process
-
-The interview process can be found [here](/Interview/README.md).
-
-## 8. Code guidelines, standards and etiquette
-
-The code guidelines, standards and etiquette can be found [here](/Standards/README.md).
+<img src="iphone-5s.png" height="101" width="388" alt="iPhone 5s" />
