@@ -5,6 +5,7 @@ Technical Documents and Proposals 🛠
 
 * [Strings and Localisation](./Lokalise.md).
 * [Posting Analytics Events to Snowplow](./SnowplowHowTo.md)
+* [Outstanding Technical Debt and Legacy Code](./TechnicalDebt.md)
 
 ## Proposals
 
