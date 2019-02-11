@@ -17,7 +17,7 @@ Identification of *XCUIElements* in automation code should be done in the screen
 The identifiers themselves are passed to the framework as a string and defined in a file using a private enum or injected into the constructor. As you can see from the example below, we have used both accessibility identifiers and the text within the element to locate XCUIElement's.
 
 ##### Chatbot Bento Screen
-```sh
+```swift
     fileprivate enum Others {
         static let ctaInput = "inputContentbarCTAInputView"
         static let textInput = "inputContentInputBarView"
