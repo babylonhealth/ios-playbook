@@ -43,7 +43,7 @@ The identifiers themselves are passed to the framework as a string and defined i
 The other way to find a element is using a *XCUIElementQuery* which can either make use of a identifier or not. The key difference is that a query requires detailed knowledge of the screen layout and is more commonly used when multi *XCUIElement* with the same identifier are displayed on the screens i.e. the address list.
 
 ##### Examples
-- ```sh let element = app.navigationBars[NavigationBars.pageHeader] ``` Returns a single **XCUIElement** or throws a error if there are multiple matches
+- `let element = app.navigationBars[NavigationBars.pageHeader] ` Returns a single **XCUIElement** or throws a error if there are multiple matches
 - `let queryWithIdentifier = app.navigationBars.matching(identifier: NavigationBars.pageHeader)` Returns a **XCUIElementQuery** array with multiple **XCUIElement**
 - ```sh let queryWithOutIdentifier = app.navigationBars ``` Returns a **XCUIElementQuery** array with all .navigationBars on screen
 - ```sh let queryWithSingleResult  = app.navigationBars.firsrMatch ``` Returns the first **XCUIElment** matching the **XCUIElementQuery**  & is the only method that stops searching on the forstMatch, while the other methods will search the entire view hierarchy.
