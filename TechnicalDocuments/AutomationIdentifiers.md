@@ -70,7 +70,7 @@ The most common root cause is that the **XCUIElementQuery** requires a update. T
 
 But comes at the cost, that if the layout changes, the query itself, not the identifier can be broken. In this case the query will need to be updated, to reflect the change, i.e. if the buttons moves from the alert to table. Then the query should be updated to:
 
-    let okButton = app.tables.buttons[Buttons.okButton]
+    `let okButton = app.tables.buttons[Buttons.okButton]`
 
 This will fix the issue, while not changing the identifier itself.
 
