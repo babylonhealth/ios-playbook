@@ -20,4 +20,79 @@ GatewayManager supplies global dependencies to legacy Objective-C code. There wa
 
 | View Controller | Comments |
 | --------------- | -------- |
-| InfoViewController | Could be replaced with a Bento Component for scrolling through a couple of info screens. |
+| InfoViewController | Could be replaced with a Bento Component for scrolling through a couple of info screens. Only used for the GP @ hand on-boarding so could be moved from BabylonUI. |
+| SegmentedViewController | Currently only used in Health Check to show the the two bands with organs and layers. Should probably be moved from BabylonUI. |
+
+## View Models and Controllers that use Forms V2.
+
+| View Model | Comments |
+| ---------- | |
+| AppointmentCancellationViewModel | |
+| AppointmentConsultationNotesViewModel | |
+| AppointmentDetailsViewModel | |
+| AppointmentNotesViewModel | |
+| AppointmentPrescriptionViewModel | CE-30 |
+| AppointmentReferralViewModel | |
+| AppointmentReferralsViewModel | |
+| AppointmentReplayViewModel | |
+| AppointmentListViewModel | |
+| BookAppointmentViewModel | |
+| PractitionerDetailsViewModel | |
+| ChatHistoryViewModel | |
+| MedicalHistoryViewModel | |
+| PersonalDetailsViewModel | |
+| InfoItemsViewModel | |
+| GPDetailsViewModel | |
+| AddAddressViewModel | |
+| PrivacySettingsViewModel | |
+| ChooseCountryViewModel | |
+| ForgotPasswordViewModel | |
+| NotificationsViewModel | |
+| ProfileViewModel | |
+| SignInViewModel | |
+
+## Accessing Business Controllers Directly instead of using the SDK.
+
+
+| Business Controller | Accessed From |
+| ------------------- | ------------- |
+| AppointmentBusinessControllerProtocol | BabylonAppointmentsUI, Babylon |
+| AddressBusinessControllerProtocol | BabylonAppointmentsUI, BabylonUI, Babylon |
+| PractitionerBusinessController | BabylonAppointmentsUI |
+| PatientBusinessControllerProtocol | BabylonAppointmentsUI, BabylonClinicalRecordsUI, BabylonUI, Babylon |
+| PrescriptionBusinessControllerProtocol | BabylonAppointmentsUI, Babylon |
+| PharmaciesBusinessControllerProtocol | BabylonAppointmentsUI, BabylonClinicalRecordsUI |
+| ImageBusinessControllerProtocol | BabylonAppointmentsUI, BabylonClinicalRecordsUI, BabylonMonitor, Babylon |
+| BookAppointmentBusinessControllerProtocol | BabylonAppointmentsUI |
+| PrivacyBusinessControllerProtocol | BabylonAppointmentsUI, BabylonChatBotUI, BabylonUI |
+| PublicHealthcareIdentifierBusinessController | BabylonAppointmentsUI, BabylonClinicalRecordsUI, BabylonUI, Babylon |
+| SearchAssistantBusinessController | BabylonChatBotUI |
+| MedicalHistoryBusinessController | BabylonClinicalRecordsUI |
+| GenderBusinessControllerProtocol | BabylonClinicalRecordsUI, BabylonUI, Babylon |
+| GeolocationBusinessController | BabylonClinicalRecordsUI, BabylonUI |
+| InfoItemsBusinessControllerProtocol | BabylonClinicalRecordsUI |
+| MapsBusinessControllerProtocol | BabylonClinicalRecordsUI |
+| GPDetailsBusinessController | BabylonClinicalRecordsUI |
+| HealthcheckReportBusinessControllerProtocol | BabylonMonitor, BabylonUI, Babylon |
+| ReferAFriendBusinessControllerProtocol | BabylonUI, Babylon |
+| RatingBusinessController | BabylonUI |
+| FamilyBusinessControllerProtocol | BabylonUI |
+| RedemptionBusinessController | Babylon |
+| RegionBusinessControllerProtocol | Babylon |
+| EligibilityCheckBusinessControllerProtocol | Babylon |
+| NotificationPayloadBusinessControllerProtocol | Babylon |
+| SignInPrivacyBusinessControllerProtocol | Babylon |
+| PaymentsBusinessControllerProtocol | Babylon |
+| PDSQueueBusinessControllerProtocol | Babylon |
+| LocationEligibilityBusinessController | Babylon |
+| PostCodeEligibilityBusinessControllerProtocol | Babylon |
+| SignUpBusinessController | Babylon |
+| ForgotPasswordBusinessControllerProtocol | Babylon |
+| FamilyBusinessControllerProtocol | Babylon |
+| OnfidoBusinessControllerProtocol | Babylon |
+| PDSBusinessControllerProtocol | Babylon |
+| NHSBusinessController | Babylon |
+
+Some of these business controllers are still defined in BabylonCore.
+
+## Main Tab Bar and Navigation.
