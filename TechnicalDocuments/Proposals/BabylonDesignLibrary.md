@@ -13,7 +13,7 @@ we provide different styesheets based on the design.
 The idea behind this is to have reusable components with a predefined stylesheet displaying different data.
 The benefit of having a design library is
 1. to develop new UIs faster.
-2. to catch inconsistencies in the UI due to a deisgn flaw or due to an engineering mistake.
+2. to catch inconsistencies in the UI due to a design flaw or due to an engineering mistake.
 
 The requirement is to cover most of the common use cases and *not* to extend to edge cases.
 Also we must reuse our current tools like `Bento`.
@@ -73,13 +73,6 @@ extension DesignLibrary {
 }
 
 extension DesignLibrary.Tokens {
-    struct Typography {
-        let headline1: UIFont
-        let headline2: UIFont
-        let body1: UIFont
-        let body2: UIFont
-    }
-
     struct Typography {
         struct FontAttributes {
             let textStyle: UIFont.TextStyle
