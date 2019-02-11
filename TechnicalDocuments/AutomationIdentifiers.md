@@ -52,7 +52,7 @@ The other way to find a element is using a *XCUIElementQuery* which can either m
 
 The quick solution is to simply update the enum. When an identifier's text has changed, this is very straight forward and simple. Update the text defined in the enum to the correct value and automation should start working. Resulting in Pull Requests like this https://github.com/Babylonpartners/babylon-ios/pull/6475
 
-```sh
+```swift
 	fileprivate enum NavigationBar {
 			static let header = "Privacy policy"
 			- static let telus = "Babylon by TELUS Health Privacy Policy"
