@@ -48,7 +48,7 @@ The other way to find a element is using a *XCUIElementQuery* which can either m
 - ```sh let queryWithOutIdentifier = app.navigationBars ``` Returns a **XCUIElementQuery** array with all .navigationBars on screen
 - ```sh let queryWithSingleResult  = app.navigationBars.firsrMatch ``` Returns the first **XCUIElment** matching the **XCUIElementQuery**  & is the only method that stops searching on the forstMatch, while the other methods will search the entire view hierarchy.
 
-## Updating Locator's
+## Updating Locators
 
 The quick solution is to simply update the enum. When an identifier's text has changed, this is very straight forward and simple. Update the text defined in the enum to the correct value and automation should start working. Resulting in Pull Requests like this https://github.com/Babylonpartners/babylon-ios/pull/6475
 
