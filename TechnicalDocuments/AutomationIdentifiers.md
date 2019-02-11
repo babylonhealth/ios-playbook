@@ -66,7 +66,7 @@ While this will fix the test, it is susceptible to future changes. In this case 
 
 The most common root cause is that the **XCUIElementQuery** requires a update. The thing we need to consider is that the performance of the framework is effected by how much of the view hierarchy is searched when looking for an element. This is because the framework will by default search the entire view hierarchy. This is time consuming, the recommended solution is to give the query as much information as possible. For example, below, we are telling the framework that the the button is within an alert, this improves the performance of the test.
 
-    let okButton = app.alerts.buttons[Buttons.okButton]
+    `let okButton = app.alerts.buttons[Buttons.okButton]`
 
 But comes at the cost, that if the layout changes, the query itself, not the identifier can be broken. In this case the query will need to be updated, to reflect the change, i.e. if the buttons moves from the alert to table. Then the query should be updated to:
 
