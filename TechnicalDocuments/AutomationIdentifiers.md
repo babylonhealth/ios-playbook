@@ -44,7 +44,7 @@ The other way to find a element is using a *XCUIElementQuery* which can either m
 
 ##### Examples
 - ```sh let element = app.navigationBars[NavigationBars.pageHeader] ``` Returns a single **XCUIElement** or throws a error if there are multiple matches
-- ```sh let queryWithIdentifier = app.navigationBars.matching(identifier: NavigationBars.pageHeader) ``` Returns a **XCUIElementQuery** array with multiple **XCUIElement**
+- `let queryWithIdentifier = app.navigationBars.matching(identifier: NavigationBars.pageHeader)` Returns a **XCUIElementQuery** array with multiple **XCUIElement**
 - ```sh let queryWithOutIdentifier = app.navigationBars ``` Returns a **XCUIElementQuery** array with all .navigationBars on screen
 - ```sh let queryWithSingleResult  = app.navigationBars.firsrMatch ``` Returns the first **XCUIElment** matching the **XCUIElementQuery**  & is the only method that stops searching on the forstMatch, while the other methods will search the entire view hierarchy.
 
