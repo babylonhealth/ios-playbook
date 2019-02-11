@@ -29,7 +29,7 @@ Forms V2 is no longer maintained and we should refactor these view controllers t
 Porting these view controllers to Bento will also make it easier to apply an app wide style guide (design library).
 
 | View Model | Comments |
-| ---------- | |
+| ---------- | -------- |
 | AppointmentCancellationViewModel | |
 | AppointmentConsultationNotesViewModel | |
 | AppointmentDetailsViewModel | |
@@ -109,4 +109,4 @@ Although much improved since version two was released, there is still a fair amo
 
 ## Adapt the Code to Employ Current.
 
-Entities that have been moved to Current are still accessed via `AppDependencies.` Our agreed approach was to inject entities from Current into builders initialisers as default arguments. Before we extend Current to include more app wide content we should refactor how what is already available is accessed.
+Entities that have been moved to Current are still accessed via `AppDependencies.` Our agreed approach was to inject entities from Current into builder initialisers as default arguments. Before we extend Current to include more app wide content we should refactor how what is already available is accessed.
