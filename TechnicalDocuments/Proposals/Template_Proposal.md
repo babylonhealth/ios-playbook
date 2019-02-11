@@ -17,12 +17,13 @@
 
 ## Impact on existing codebase
 
-// This section should explain, assuming this proposal is accepted, how much effort it would require for it to be implemented in our codebase. Other concerns should be raised, if it's a significant deviation from our stack. 
+// This section should explain, assuming this proposal is accepted, how much effort it would require for it to be implemented in our codebase. Other concerns should be raised, if it's a significant deviation from our stack.
 
 ## Alternatives considered
 
 // This section describes what other approaches were considered and why this one was chosen.
 
---- 
+---
+* [ ] I will send a meeting invitation, using this [template](Template_Proposal_Meeting_Invitation.MD), scheduled for 2 weeks after this proposal is made, so an agreement can be reached.
 * [ ] **By creating this proposal, I understand that it might not be accepted**. I also agree that, if it's accepted,
 depending on its complexity, I might be requested to give a workshop to the rest of the team. 🚀
