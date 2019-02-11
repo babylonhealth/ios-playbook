@@ -25,6 +25,9 @@ GatewayManager supplies global dependencies to legacy Objective-C code. There wa
 
 ## View Models and Controllers that use Forms V2.
 
+Forms V2 is no longer maintained and we should refactor these view controllers to use Bento.
+Porting these view controllers to Bento will also make it easier to apply an app wide style guide (design library).
+
 | View Model | Comments |
 | ---------- | |
 | AppointmentCancellationViewModel | |
@@ -53,6 +56,7 @@ GatewayManager supplies global dependencies to legacy Objective-C code. There wa
 
 ## Accessing Business Controllers Directly instead of using the SDK.
 
+Some of these business controllers are not defined inside the SDK. Most of them will be moved to the SDK, but some of them will stay in the Babylon project. Once the first, complete version of the SDK has been published there should not be any business controllers left in BabylonCore. Business controllers that are defined outside the SDK should have a documenting comment that explain why they are not part of the SDK.
 
 | Business Controller | Accessed From |
 | ------------------- | ------------- |
@@ -87,12 +91,16 @@ GatewayManager supplies global dependencies to legacy Objective-C code. There wa
 | LocationEligibilityBusinessController | Babylon |
 | PostCodeEligibilityBusinessControllerProtocol | Babylon |
 | SignUpBusinessController | Babylon |
+| SignUpPrivacyBusinessController | Babylon |
 | ForgotPasswordBusinessControllerProtocol | Babylon |
 | FamilyBusinessControllerProtocol | Babylon |
 | OnfidoBusinessControllerProtocol | Babylon |
 | PDSBusinessControllerProtocol | Babylon |
 | NHSBusinessController | Babylon |
+| CreditCardsBusinessControllerProtocol | Babylon |
+| TestsAndKitsBusinessControllerProtocol | Babylon |
+| RedemptionBusinessControllerProtocol | Babylon |
+| ForgotPasswordBusinessController | Babylon|
 
-Some of these business controllers are still defined in BabylonCore.
 
 ## Main Tab Bar and Navigation.
