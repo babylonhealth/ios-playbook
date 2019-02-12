@@ -22,6 +22,7 @@ GatewayManager supplies global dependencies to legacy Objective-C code. There wa
 | --------------- | -------- |
 | InfoViewController | Could be replaced with a Bento Component for scrolling through a couple of info screens. Only used for the GP @ hand on-boarding so could be moved from BabylonUI. |
 | SegmentedViewController | Currently only used in Health Check to show the the two bands with organs and layers. Should probably be moved from BabylonUI. |
+| IntroViewController | Could potentially be merged with InfoViewController. |
 
 ## View Models and Controllers that use Forms V2.
 
@@ -53,6 +54,8 @@ Porting these view controllers to Bento will also make it easier to apply an app
 | NotificationsViewModel | |
 | ProfileViewModel | |
 | SignInViewModel | |
+| NHSRegistrationStep1ViewController | |
+| NHSRegistrationStep2ViewController | |
 
 ## Accessing Business Controllers Directly instead of using the SDK.
 
