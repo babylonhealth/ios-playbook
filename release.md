@@ -72,6 +72,7 @@ The release process starts when the first build is provided to QA and ends when 
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
+| 3.9.1                    | Michael Brown | Automated: `04h00m`<br>Manual: `14h`<br>| `CNSMR-705: - 30m`<br>`AV-312: - 30m`| Total: **19h00m** | 11.02.2019 | 13.02.2019
 | 3.9.0                    | Michael Brown, Giorgos Tsiapaliokas | Automated: `07h25m`<br>Manual: `24h`<br>| `CNSMR-680: - 2h`<br>| Total: **33h25m** | 04.02.2019 | 08.02.2019
 | 3.8.0                    | Sergey Shulga, Diego Petrucci | Automated: `07h30m`<br>Manual: `33h`<br>| `CE-125: - 2h`<br>`CNSMR-538: 1h`<br>`AV-243: 1h`<br>`CNSMR-556: 2h`<br>`NRX-229: 1h`<br>`NRX-232: - 1h`<br> `CNSMR-554: 1h` <br> `NRX-229: 5h`<br> `NRX-232: 3h` <br>| Total: **57h30m** | 21.01.2019 | 24.01.2019
 | 3.7.0                    | Ben Henshall, David Rodrigues | Automated: `06h58m`<br>Manual: `32h`<br>| `MON-3855: 2h`<br>`MON-3857: 1h`<br>`AV-207: 1h`<br>`NRX-190: 3h`<br>`CNSMR-493: 3h`<br>`CNSMR-477: 3h`<br> | Total: **2d3h58mh** | | |
