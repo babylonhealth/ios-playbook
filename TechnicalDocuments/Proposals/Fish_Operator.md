@@ -49,7 +49,7 @@ When we will look into types we will see the following:
 
 This will not compile though as Swift treats `() -> A` and `(()) -> A` as different types. And even if it would treat them the same the final function that would be created by this chain will have signature `() -> Void?` which is not the same as `() -> Void`.
 
-To solve that we can introduce few overload of `>=>` operator to handle these special cases:
+To solve that we can introduce few overloads of `>=>` operator to handle these special cases:
 
 ```swift
 public func >=> <A, B>(lhs: @escaping () -> A?, rhs: @escaping (A) -> B?) -> () -> B? {
@@ -71,7 +71,7 @@ public func flatMap<A>(_ a2b: @escaping (A) -> Void) -> (A?) -> Void {
 }
 ```
 
-Comparing with original implementation based on `Optional.map` this approach gives a bit different result in the sense that it always creates a closure, that niside will terminate on `nil` values, whether `Optional.map` will produce `nil` value for a closure if mapped value is `nil`. This is an insignificant change though, unless semantics requires to pass `nil` instead of closure that contains a terminatable chain of calls. In this case the original approach can be still used. (But personally I'd prefer us to avoid using optional closures unless it is required by API semantics, which is usually not the case)
+Comparing with original implementation based on `Optional.map` this approach gives a bit different result in the sense that it always creates a closure, that inside will terminate chain of operations on first `nil` value, whether using `Optional.map` will produce `nil` value for a closure itself if mapped value is `nil`. In most cases this is an insignificant difference though, unless semantics require to pass `nil` instead of a closure that contains a terminatable chain of calls. In this case the original approach can be still used. (But personally I'd prefer us to avoid using optional closures unless it is required by API semantics, which is usually not the case)
 
 ## Impact on existing codebase
 
