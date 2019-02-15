@@ -35,7 +35,7 @@ public func flatMap<A, B>(_ a2b: @escaping (A) -> B?) -> (A?) -> B? {
 }
 ```
 
-This is called [Kleisli composition](https://typelevel.org/cats/datatypes/kleisli.html)
+This is called [Kleisli composition](https://blog.ssanj.net/posts/2017-06-07-composing-monadic-functions-with-kleisli-arrows.html)
 
 With this we can convert example code above to much simpler form:
 
