@@ -143,8 +143,6 @@ class AchievementUnlockedTests: BaseFeature {
 
     let achievementSchema = "iglu:com.thegame/achievement/jsonschema/1-0-0"
 
-    // Existing user login United kingdom
-    //===================================
     func test_honor_achievement_awarded() {
         self.snowplowServer.expectedSnowplowEvents = [
             .screenView(name: "achievement"),
