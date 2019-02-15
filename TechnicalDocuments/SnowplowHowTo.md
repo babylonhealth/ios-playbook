@@ -84,7 +84,7 @@ The generic event dictionary may also contain `label`, `property` and `value` wh
 ```swift
 fileprivate func makeDispatcher() -> AnalyticsEventDispatcher {
     let dispatcher = AnalyticsEventDispatcher()
-        .forward(ActionEvents.AchievementUnlocked.self,to: SnowplowTracker.track)
+        .forward(ActionEvents.AchievementUnlocked.self, to: SnowplowTracker.track)
 }
 
 extension SnowplowTracker {
