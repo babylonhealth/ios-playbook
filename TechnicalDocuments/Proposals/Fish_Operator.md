@@ -1,4 +1,4 @@
-# Introduce "fish" operator
+# Introduce "fish" operator (Kleisli composition)
 
 * Author: Ilya Puchka
 * Review Manager:TBD
@@ -34,6 +34,8 @@ public func flatMap<A, B>(_ a2b: @escaping (A) -> B?) -> (A?) -> B? {
   }
 }
 ```
+
+This is called [Kleisli composition](https://typelevel.org/cats/datatypes/kleisli.html)
 
 With this we can convert example code above to much simpler form:
 
