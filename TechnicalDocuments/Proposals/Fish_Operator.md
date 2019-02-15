@@ -71,36 +71,6 @@ public func flatMap<A>(_ a2b: @escaping (A) -> Void) -> (A?) -> Void {
 }
 ```
 
-This can result in ambiguty in some cases and will force to specify types explicitly, so to avoid that we can alternatively introduce new operator to work specifically with `Void` types:
-
-```swift
-infix operator >->: ForwardComposition
-
-public func >-> <A, B>(lhs: @escaping () -> A?, rhs: @escaping (A) -> B?) -> () -> B? {
-    return lhs >>> flatMap(rhs)
-}
-
-public func >-> <A, B>(lhs: @escaping (A) -> B?, rhs: @escaping (B) -> Void) -> (A) -> Void {
-    return lhs >>> flatMap(rhs)
-}
-
-public func >-> <A>(lhs: @escaping () -> A?, rhs: @escaping (A) -> Void) -> () -> Void {
-    return lhs >>> flatMap(rhs)
-}
-
-public func flatMap<A>(_ a2b: @escaping (A) -> Void) -> (A?) -> Void {
-    return { a in
-        a.flatMap(a2b)
-    }
-}
-```
-
-This then will result in such code:
-
-```swift
-didTap: ^helpText >-> Action.didTapWhatDoesThisMean >-> observer
-```
-
 Comparing with original implementation based on `Optional.map` this approach gives a bit different result in the sense that it always creates a closure, that niside will terminate on `nil` values, whether `Optional.map` will produce `nil` value for a closure if mapped value is `nil`. This is an insignificant change though, unless semantics requires to pass `nil` instead of closure that contains a terminatable chain of calls. In this case the original approach can be still used. (But personally I'd prefer us to avoid using optional closures unless it is required by API semantics, which is usually not the case)
 
 ## Impact on existing codebase
@@ -111,6 +81,7 @@ As it is a new operator and not an overload of existing `>>>` operator there wil
 
 - We can leave things as they are.
 - Instead of free `flatMap` function we can use `{ $0 ?|> rhs }`
+- Instead of overloading `>=>` for `Void` type we can introduce a separate operator, i.e. `>->` just to compose functions with `Void` on either side.
 
 ## Reference
 
