@@ -55,21 +55,13 @@ To solve that we can introduce few overloads of `>=>` operator to handle these s
 
 ```swift
 public func >=> <A, B>(lhs: @escaping () -> A?, rhs: @escaping (A) -> B?) -> () -> B? {
-    return lhs >>> flatMap(rhs)
-}
-
-public func >=> <A, B>(lhs: @escaping (A) -> B?, rhs: @escaping (B) -> Void) -> (A) -> Void {
-    return lhs >>> flatMap(rhs)
+    let f = lhs >>> flatMap(rhs)
+    return { f(()) }
 }
 
 public func >=> <A>(lhs: @escaping () -> A?, rhs: @escaping (A) -> Void) -> () -> Void {
-    return lhs >>> flatMap(rhs)
-}
-
-public func flatMap<A>(_ a2b: @escaping (A) -> Void) -> (A?) -> Void {
-    return { a in
-        a.flatMap(a2b)
-    }
+    let f = lhs >>> flatMap(rhs)
+    return { f(()) }
 }
 ```
 
