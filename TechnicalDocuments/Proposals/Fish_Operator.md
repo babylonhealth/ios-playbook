@@ -54,14 +54,14 @@ This will not compile though as Swift treats `() -> A` and `(()) -> A` as differ
 To solve that we can introduce few overloads of `>=>` operator to handle these special cases:
 
 ```swift
-public func >=> <A, B>(lhs: @escaping () -> A?, rhs: @escaping (A) -> B?) -> () -> B? {
+public func >=> <A>(lhs: @escaping (()) -> A?, rhs: @escaping (A) -> Void) -> () -> Void {
     let f = lhs >>> flatMap(rhs)
     return { f(()) }
 }
 
-public func >=> <A>(lhs: @escaping () -> A?, rhs: @escaping (A) -> Void) -> () -> Void {
+public func >=> <A, B>(lhs: @escaping (A) -> B?, rhs: @escaping (B) -> Void) -> (A) -> Void {
     let f = lhs >>> flatMap(rhs)
-    return { f(()) }
+    return { f($0) }
 }
 ```
 
