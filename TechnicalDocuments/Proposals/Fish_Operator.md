@@ -46,7 +46,7 @@ didTap: ^helpText >=> Action.didTapWhatDoesThisMean >=> observer
 When we will look into types we will see the following:
 
 ```swift
-() -> String? >=> (String) -> Action >=> (Action) -> Void
+(() -> String?) >=> ((String) -> Action?) >=> ((Action) -> Void)
 ```
 
 This will not compile though as Swift treats `() -> A` and `(()) -> A` as different types. And even if it would treat them the same the final function that would be created by this chain will have signature `() -> Void?` which is not the same as `() -> Void`.
