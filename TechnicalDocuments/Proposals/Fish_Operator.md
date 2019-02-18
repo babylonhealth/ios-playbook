@@ -51,21 +51,41 @@ When we will look into types we will see the following:
 
 This will not compile though as Swift treats `() -> A` and `(()) -> A` as different types. And even if it would treat them the same the final function that would be created by this chain will have signature `() -> Void?` which is not the same as `() -> Void`.
 
-To solve that we can introduce few overloads of `>=>` operator to handle these special cases:
+To solve that we can wrap the whole chain in a closure:
 
 ```swift
-public func >=> <A>(lhs: @escaping (()) -> A?, rhs: @escaping (A) -> Void) -> () -> Void {
-    let f = lhs >>> flatMap(rhs)
-    return { f(()) }
-}
-
-public func >=> <A, B>(lhs: @escaping (A) -> B?, rhs: @escaping (B) -> Void) -> (A) -> Void {
-    let f = lhs >>> flatMap(rhs)
-    return { f($0) }
-}
+didTap: { ^helpText >=> Action.didTapWhatDoesThisMean >=> observer <| () }
 ```
 
-Comparing with original implementation based on `Optional.map` this approach gives a bit different result in the sense that it always creates a closure, that inside will terminate chain of operations on first `nil` value, whether using `Optional.map` will produce `nil` value for a closure itself if mapped value is `nil`. In most cases this is an insignificant difference though, unless semantics require to pass `nil` instead of a closure that contains a terminatable chain of calls. In this case the original approach can be still used. (But personally I'd prefer us to avoid using optional closures unless it is required by API semantics, which is usually not the case)
+Alternatively we could use a regular composition and write it as following:
+
+```swift
+didTap: { helpText ?|> Action.didTapWhatDoesThisMean >>> observer }
+```
+
+The value of Kleisli cmposition is that it allows composition on functions which will not be composed with regular composition `>>>` because one of them returns optinal. This can be most usefull to replace chains of optional unwraping:
+
+```swift
+// (A) -> B?
+func doSomething(_ value: A) -> B? {
+  guard let a = a,
+    let thing = someOptionalThingFromA(a)
+    else { return nil }
+  
+  return maybeCreateBfromThing(thing)
+}
+
+let b: B? = a |> doSomething
+```
+
+With Kleisli it can be written much simpler:
+
+```swift
+// (A) -> B?
+let doSomething = someOptionalThingFromA >=> maybeCreateBfromThing
+
+let b: B? = a |> doSomething
+```
 
 ## Impact on existing codebase
 
@@ -75,7 +95,17 @@ As it is a new operator and not an overload of existing `>>>` operator there wil
 
 - We can leave things as they are.
 - Instead of free `flatMap` function we can use `{ $0 ?|> rhs }`
-- Instead of overloading `>=>` for `Void` type we can introduce a separate operator, i.e. `>->` just to compose functions with `Void` on either side.
+- Instead of passing `()` into composed function or using closure with regular composition (`>>>`) we can have a funiton, somthing like `runLazy` that wraps the side effect into function and discards the result (which is the nature of user action callbacks anyway) (lazy because just `run` will imply that side effect will be performed right away, rather than wrapped in a function to be performed later):
+
+```swift
+func runLazy<A>(_ f: @escaping () -> A) -> () -> Void {
+    return { _ = f() }
+}
+
+didTap: ^helpText >=> Action.didTapWhatDoesThisMean >=> observer |> runLazy
+```
+
+Though just using closure with regular composition (`>>>`) seems to be the best option.
 
 ## Reference
 
