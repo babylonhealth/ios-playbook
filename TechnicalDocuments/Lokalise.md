@@ -7,7 +7,7 @@ Create an account using your `@babylonhealth.com` email address and request acce
 
 To update strings in the app the following `Fastlane` lanes can be used:
 ```
-bundle exec fastlane lokalise_pull         // download all projects
+bundle exec fastlane lokalise_pull             // download all projects
 bundle exec fastlane lokalise_pull_babylon     //download the main Babylon
 
 // these download the other apps projects - they are subsets that populates the files `TargetSpecificLocalizable`
