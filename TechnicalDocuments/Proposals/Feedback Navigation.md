@@ -58,6 +58,7 @@ Other things that we can improve with this approach is we can finally unify the 
 // This is not a final  implementation, it's just a hint how it may look conceptualy.
 	return SignalProducer { observer, lifetime in
 		let vc = self.builders.makeMap(response: observer, modal: modal, presenting: self.presentationFlow)
+		vc |> self.presentationFlow.present
             lifetime += AnyDisposable {
             
 // Here is example how we can rely on the `SignalProducer` lifecycle to dismiss the screen
