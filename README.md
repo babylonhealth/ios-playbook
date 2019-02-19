@@ -51,7 +51,7 @@ By definition, members work on their respective squad, although they are free to
 |-------------------------------|----------------------------------| ------------ |
 | SDK                           | Viorel, Martin, Witold           |    2/4       |
 | Consultation                  | Ilya                             |    1/2       |
-| Booking                       |                                  |    0/1       |
+| Booking                       | Witold                           |    1/1       |
 | Prescriptions                 | Adam                             |    1/1       |
 | Healthcheck                   | Ben, Catarina                    |    2/3       |
 | Native/Core                   | Giorgos, Jason                   |    2/6       |
