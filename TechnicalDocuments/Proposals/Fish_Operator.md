@@ -72,13 +72,14 @@ This can be most usefull to replace chains of optional unwraping:
 ```swift
 // (A) -> B?
 func doSomething(_ value: A) -> B? {
-  guard let a = a,
-    let thing = someOptionalThingFromA(a)
+  guard let thing = someOptionalThingFromA(value)
+    // possibly more failable operations here...
     else { return nil }
   
   return maybeCreateBfromThing(thing)
 }
 
+let a: A = ...
 let b: B? = a |> doSomething
 ```
 
