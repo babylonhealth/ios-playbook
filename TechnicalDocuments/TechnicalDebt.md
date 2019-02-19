@@ -21,7 +21,7 @@ GatewayManager supplies global dependencies to legacy Objective-C code. There wa
 | View Controller | Comments |
 | --------------- | -------- |
 | InfoViewController | Could be replaced with a Bento Component for scrolling through a couple of info screens. Only used for the GP @ hand on-boarding so could be moved from BabylonUI. |
-| SegmentedViewController | Currently only used in Health Check to show the the two bands with organs and layers. Should probably be moved from BabylonUI. |
+| SegmentedViewController | Currently only used in Healthcheck to show the the two bands with organs and layers. Should probably be moved from BabylonUI. |
 | IntroViewController | Could potentially be merged with InfoViewController. |
 
 ## View Models and Controllers that use Forms V2.
