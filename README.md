@@ -8,31 +8,32 @@ iOS Playbook 📚
 
 At Babylon, we firmly believe that **transparency** is a core value that should be present in everything we do. This playbook embodies that value by giving an overview of how we work:
 
-1. Who's in the team
-2. Which squad each individual belongs to, and its availability
-3. OSS-maintained projects
-4. New hires checklist
+1. [Who's in the team](#1-whos-in-the-team)
+2. [Which squad each individual belongs to, and its availability](#2-which-squad-each-individual-belongs-to-and-its-availability)
+3. [OSS-maintained projects](#3-oss-maintained-projects)
+4. [New hires checklist](#4-new-hires-checklist)
 5. [Release process](release.md)
-6. [Changelog](CHANGELOG.md)
-7. [Technical documents and Proposals](/TechnicalDocuments/README.md)
-8. [Interview process](/Interview/README.md)
-9. [Swift style guide](/Style-guide/README.md)
-10. [Code of conduct](/Etiquette/README.md)
+6. [Technical documents and Proposals](/TechnicalDocuments/README.md)
+7. [Interview process](/Interview/README.md)
+8. [Swift style guide](/Style-guide/README.md)
+9. [Code of conduct](/Etiquette/README.md)
 
 
 ## 1. Who's in the team
 
 | Name                    | Contact                                                       |
 |-------------------------|---------------------------------------------------------------|
+| Adam Borek              | [@TheAdamBorek](https://twitter.com/TheAdamBorek)             |
 | Ana Catarina Figueiredo | [@AnnKatFig](https://twitter.com/AnnKatFig)                   |
 | Anders Ha               | [@_andersha](https://twitter.com/_andersha)                   |
 | Ben Henshall            | [@Ben_Henshall](https://twitter.com/ben_henshall?lang=en)     |
 | Danilo Aliberti         |                                                               |
 | David Rodrigues         | [@dmcrodrigues](https://twitter.com/dmcrodrigues)             |
 | Diego Petrucci          | [@diegopetrucci](https://twitter.com/diegopetrucci)           |
-| Giorgos Tsiapaliokas    | [@gtsiap](https://github.com/gtsiap)
+| Giorgos Tsiapaliokas    | [@gtsiap](https://github.com/gtsiap)                          |
 | Ilya Puchka             | [@ilyapuchka](https://twitter.com/ilyapuchka)                 |
 | Jason Dobo              | [@jasondobo](https://github.com/jasondobo)                    |
+| João Pereira            | [@NSMyself](https://twitter.com/nsmyself)                     |
 | Martin Nygren           |                                                               |
 | Michael Brown           | [@mluisbrown](https://twitter.com/mluisbrown)                 |
 | Rui Peres               | [@peres](https://twitter.com/peres)                           |
@@ -46,19 +47,19 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 By definition, members work on their respective squad, although they are free to work in different squads if the work load justifies it.
 
 
-| Squad Name                    | Members                          | Availability |  
+| Squad Name                    | Members                          | Availability |
 |-------------------------------|----------------------------------| ------------ |
-| SDK                           | Viorel, Martin                   |    2/4       |
+| SDK                           | Viorel, Martin, Witold           |    2/4       |
 | Consultation                  | Ilya                             |    1/2       |
 | Booking                       | Witold                           |    1/1       |
-| Prescriptions                 |                                  |    0/1       |
+| Prescriptions                 | Adam                             |    1/1       |
 | Healthcheck                   | Ben, Catarina                    |    2/3       |
 | Native/Core                   | Giorgos, Jason                   |    2/6       |
 | Professional Services         | Danilo                           |    1/3       |
 | GP at Hand                    | Diego                            |    1/1       |
-| Project Avalon                | Sergey                           |    1/1       |
+| Consumer Experience           | Sergey                           |    1/1       |
 | Condition Management          | David, Anders                    |    2/2       |
-| Get Well                      | Michael                          |    1/1       |
+| Triage UI                     | Michael                          |    1/1       |
 
 
 ## 3. OSS-maintained projects
@@ -68,7 +69,7 @@ By definition, members work on their respective squad, although they are free to
 | Bento                         | Anders, David, Sergey    | [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Bento.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Bento/stargazers/) |
 | DrawerKit                     | David, Wagner            |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/DrawerKit/stargazers/) |
 | ReactiveFeedback              | Anders, Sergey           |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/ReactiveFeedback/stargazers/) |
-| Style guide                   | Wagner                   |    WIP       |
+| Style guide                   |                    |    WIP       |
 
 ## 4. New hires checklist
 
