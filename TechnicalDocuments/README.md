@@ -4,6 +4,7 @@ Technical Documents and Proposals 🛠
 ## Documents
 
 * [Strings and Localisation](./Lokalise.md).
+* [Posting Analytics Events to Snowplow](./SnowplowHowTo.md)
 
 ## Proposals
 
