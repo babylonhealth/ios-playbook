@@ -58,10 +58,13 @@ Porting these view controllers to Bento will also make it easier to apply an app
 | SignInViewModel | |
 | NHSRegistrationStep1ViewController | |
 | NHSRegistrationStep2ViewController | |
+| InfoRender | |
 
 ## Accessing Business Controllers Directly instead of using the SDK.
 
 Some of these business controllers are not defined inside the SDK. Most of them will be moved to the SDK, but some of them will stay in the Babylon project. Once the first, complete version of the SDK has been published there should not be any business controllers left in BabylonCore. Business controllers that are defined outside the SDK should have a documenting comment that explain why they are not part of the SDK.
+
+Discussion about how to make [MainUserSession](./RefactorAppMainUserSession.md) SDK friendly.
 
 | Business Controller | Accessed From |
 | ------------------- | ------------- |
@@ -114,4 +117,4 @@ Although much improved since version two was released, there is still a fair amo
 
 ## Adapt the Code to Employ Current.
 
-Entities that have been moved to Current are still accessed via `AppDependencies`. Our agreed approach was to inject entities from Current into builder initialisers as default arguments. Before we extend Current to include more app wide content we should refactor how what is already available is accessed.
+Entities that have been moved to Current are still accessed via `AppDependencies.` Our agreed approach was to inject entities from Current into builder initialisers as default arguments. Before we extend Current to include more app wide content we should refactor how what is already available is accessed.
