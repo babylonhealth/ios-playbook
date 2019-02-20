@@ -6,7 +6,7 @@ Snowplow has published a schema with two frequently used event types. The first 
 
 # Posting Screen View Events from the iOS Client.
 
-View controllers that are created with `BentoKit` and use the Babylon specialisation of `BoxViewController` will post screen view events if the view model conforms to `ScreenNaming`.
+View controllers that are created with [BentoKit](https://github.com/Babylonpartners/Bento) and use the Babylon specialisation of [BoxViewController](https://github.com/Babylonpartners/Bento/blob/master/BentoKit/BentoKit/Screen/BoxViewController.swift) will post screen view events if the view model conforms to `ScreenNaming`.
 
 ```swift
 final class AwesomeRenderer: BoxRenderer {
