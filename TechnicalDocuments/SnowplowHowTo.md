@@ -1,6 +1,6 @@
 # Posting Analytics Events to Snowplow
 
-Snowplow is a data centric analytics platform that combines flexibility with reasonable type safety. This is achieved by verifying incoming events against a user defined schema before storing them. The same schema definitions are used to define database tables for storing analytics events. That events are stored in well defined database tables makes it possible to match front end analytics with backend log data. The downside is that becomes slightly more complicated to post front end analytics events.
+Snowplow is a data centric analytics platform that combines flexibility with reasonable type safety. This is achieved by verifying incoming events against a user defined schema before storing them. The same schema definitions are used to define database tables for storing analytics events. These events are stored in well defined database tables making it possible to match front end analytics with backend log data. The downside is that becomes slightly more complicated to post front end analytics events.
 
 Snowplow has published a schema with two frequently used event types. The first is for screen views and the other is based on the fields in a Google Analytics event. In Snowplow lingo they are referred to as screen view event (`SPScreenView`) and structured events (`SPStructered`). Events with a bespoke definition are referred as unstructured events (`SPUnstructured`)
 
