@@ -126,7 +126,7 @@ How detailed the content verification needs to be is a judgement call.
 
 ## UI Tests for Snowplow Events.
 
-That the events are fired with the correct generic content should be verified in a UI tests. For performance reasons it is preferable to add analytics verification to an existing UI test.
+That the events are fired with the correct generic content should be verified by UI tests. For performance reasons it is preferable to add analytics verification to an existing UI test.
 
 ```swift
 class AchievementUnlockedTests: BaseFeature {
