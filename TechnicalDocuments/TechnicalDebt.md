@@ -16,6 +16,8 @@ GatewayManager supplies global dependencies to legacy Objective-C code. There wa
 | InsuranceViewController | Clinical Records | |
 | BBAddAdditionalPatientInformationViewControllerV2 | Clinical Records | Might be dead code |
 
+Some additional information about [BBAddAdditionalPatientInformationViewControllerV2](./BBAddAdditionalPatientInformationViewControllerV2.md)
+
 ## Free Standing Swift View Controllers that should be Moved to Bento.
 
 | View Controller | Comments |
