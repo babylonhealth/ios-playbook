@@ -11,12 +11,6 @@ This proposal it to suggest to use new operator that will allow us to compose fu
 
 Since introduction of `>>>` operator it was widely adopted throughout the code base and became an important tool in our tool set. But there are some cases where it's not enough. 
 
-One of these cases is when the first function returns optional, which makes us to jump through the hoops like this:
-
-```swift
-didTap: helpText.map { ^Action.didTapWhatDoesThisMean($0) >>> observer }
-```
-
 or use verbose optional unwrapping chains with if-let or guard-let. 
 
 ## Proposed solution
@@ -30,6 +24,11 @@ public func >=> <A, B, C>(lhs: @escaping (A) -> B?, rhs: @escaping (B) -> C?) ->
   return lhs >>> flatMap(rhs)
 }
 
+public func >=> <A, B>(lhs: @escaping (()) -> A?, rhs: @escaping (A) -> B?) -> () -> B? {
+    let f = lhs >>> { b in b.flatMap(rhs) }
+    return { f(()) }
+}
+
 public func flatMap<A, B>(_ a2b: @escaping (A) -> B?) -> (A?) -> B? {
   return { a in
     a.flatMap(a2b)
@@ -37,37 +36,11 @@ public func flatMap<A, B>(_ a2b: @escaping (A) -> B?) -> (A?) -> B? {
 }
 ```
 
-This is called [Kleisli composition](https://blog.ssanj.net/posts/2017-06-07-composing-monadic-functions-with-kleisli-arrows.html) and is very common in functional programming.
+This is called [Kleisli composition](https://blog.ssanj.net/posts/2017-06-07-composing-monadic-functions-with-kleisli-arrows.html) and is very common in functional programming. The `Void` overload is needed to avoid having `(()) -> T?`  as result of composition when its first argument accepts `Void`. We already have a simialr overload for `>>>` for the same reason.
 
-With this we can convert our example code above to much simpler form:
+The value of Kleisli composition is that it allows composition on functions which will not be composed with regular composition `>>>` because one of them returns result wrapped in some container (it can be `Optional`, `Either` or other kind of type that wraps value of another type in some way).
 
-```swift
-didTap: ^helpText >=> Action.didTapWhatDoesThisMean >=> observer
-```
-
-When we break down the types we will see the following:
-
-```swift
-(() -> String?) >=> ((String) -> Action?) >=> ((Action) -> Void)
-```
-
-This code will not compile as it is though as Swift treats `() -> A` and `(()) -> A` as different types. And even if it would treat them the same the final function that is created by this chain has signature `() -> Void?` which is not the same as `() -> Void`.
-
-To solve that we can wrap the whole chain in a closure and invoke it with `()` argument:
-
-```swift
-didTap: { ^helpText >=> Action.didTapWhatDoesThisMean >=> observer <| () }
-```
-
-Alternatively we could use a regular composition and write it as following:
-
-```swift
-didTap: { helpText ?|> Action.didTapWhatDoesThisMean >>> observer }
-```
-
-Even though the last option seems a bit better it does not mean that Kleisli composition can be always replaced with regular composition combined with other operators. The value of Kleisli composition is that it allows composition on functions which will not be composed with regular composition `>>>` because one of them returns result wrapped in some container (it can be `Optional`, `Either` or other kinds of types that wrap value of another type in some way).
-
-This can be most usefull to replace chains of optional unwraping:
+This can be usefull to replace chains of optional unwraping:
 
 ```swift
 // (A) -> B?
@@ -90,6 +63,69 @@ With Kleisli it can be written much simpler:
 let doSomething = someOptionalThingFromA >=> maybeCreateBfromThing
 
 let b: B? = a |> doSomething
+```
+
+Another possible application is in `filterMap` operator that has `(A) -> B?` signature. For example this code:
+
+```swift
+let avatarSelection = avatarSelection.producer.filterMap { image in
+    return image
+        |> PatientUpdateRequest.prepareAvatar
+        ?|> Event.userDidSelectAvatar
+}
+```
+
+can be rewritten into this using Kleisli:
+
+```swift
+let avatarSelection = avatarSelection.producer.filterMap(
+   PatientUpdateRequest.prepareAvatar >=> Event.userDidSelectAvatar
+)
+```
+
+In this case `>=>` is a way to replace closure and `?|>` operator, the same way as `>>>` is a way to replace closure and `|>` operator.
+
+Similarly to `filterMap` Kleisli can be useful when defining feedbacks that should be active only in particular states and depend on the associated values of this state. With a help of some method (let's call it `patternMatch`) that will pattern match enum cases (subject to a separate proposal) we can rewrite this code:
+
+```swift
+return Feedback { state -> Signal<Event, NoError> in
+    guard
+        let loaded = state.loadedState,
+        let selecting = loaded.selectingDeliveryMethodState,
+        case let .selectingDeliveryOption(address) = selecting else {
+            return .empty
+    }
+```
+
+into something like this:
+
+```swift
+return Feedback(filterQuery:
+    ^\.loadedState
+        >=> ^\.selectingDeliveryMethodState
+        >=> patternMatch(SelectingDeliveryMethodState.selectingDeliveryOption)
+) { (address) -> Signal<Event, NoError> in
+
+// patternMatch<T, A>(_ `case`: @escaping (A) -> T) -> (T) -> A?
+```
+
+Here we are replacing the `quard` with a chain of optional unwrapping with a Kleisli composition. If it still does not look  ergonomic enough we can improve it by adjusting `Feedback` constructor to something like this:
+
+```swift
+init<A, Control, Effect>(
+  filterQuery: (State) -> Control?, 
+  patternMatching: (A) -> Control, 
+  effects: @escaping (Control) -> Effect
+)
+```
+
+so that we can use it like this:
+
+```swift
+return Feedback(
+    filterQuery: ^\.loadedState >=> ^\.selectingDeliveryMethodState,
+    patternMatching: SelectingDeliveryMethodState.selectingDeliveryOption
+) { (address) -> Signal<Event, NoError> in
 ```
 
 ## Impact on existing codebase
