@@ -54,7 +54,7 @@
 <br/>	*It starts after the app is accepted by Apple and final internal approval*
 
 1. Press `Release this version` in App Store Connect
-1. Tag the release commit and create GitHub release. Attach the binary as an artefact to the GitHub release (If you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
+1. Tag the release commit and create a GitHub release. Attach the binary as an artefact to the GitHub release (If you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
 1. Release new version for the Babylon SDK:
 	1. Ask SDK team (#sdk_squad) about the SDK version number
 	1. Trigger a hockey build from that branch using its command (eg. `/distribute_sdk version:0.1.11 pre_release:false branch:release/3.7.0`) in `#ios-build`.
@@ -72,6 +72,7 @@ The release process starts when the first build is provided to QA and ends when 
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
+| 3.10.0                   | Martin Nygren, Witold Skibniewski | Automated: `07h30m`<br>Manual: `28h`<br> | `CNSMR-814: 30m` | Total: **36h00m** | 18.02.2019 | 21.02.2019 |
 | 3.9.1                    | Michael Brown | Automated: `04h00m`<br>Manual: `14h`<br>| `CNSMR-705: - 30m`<br>`AV-312: - 30m`| Total: **19h00m** | 11.02.2019 | 13.02.2019
 | 3.9.0                    | Michael Brown, Giorgos Tsiapaliokas | Automated: `07h25m`<br>Manual: `24h`<br>| `CNSMR-680: - 2h`<br>| Total: **33h25m** | 04.02.2019 | 08.02.2019
 | 3.8.0                    | Sergey Shulga, Diego Petrucci | Automated: `07h30m`<br>Manual: `33h`<br>| `CE-125: - 2h`<br>`CNSMR-538: 1h`<br>`AV-243: 1h`<br>`CNSMR-556: 2h`<br>`NRX-229: 1h`<br>`NRX-232: - 1h`<br> `CNSMR-554: 1h` <br> `NRX-229: 5h`<br> `NRX-232: 3h` <br>| Total: **57h30m** | 21.01.2019 | 24.01.2019
