@@ -57,8 +57,9 @@ By definition, members work on their respective squad, although they are free to
 | Native/Core                   | Giorgos, Jason                   |    2/6       |
 | Professional Services         | Danilo                           |    1/3       |
 | GP at Hand                    | Diego                            |    1/1       |
-| Consumer Experience           | Sergey                           |    1/1       |
-| Condition Management          | David, Anders                    |    2/2       |
+| Core Experience               | Sergey                           |    1/1       |
+| Health Management             | David, Joao                      |    2/2       |
+| Monitor                       | Anders                           |    1/2       |
 | Triage UI                     | Michael                          |    1/1       |
 
 
