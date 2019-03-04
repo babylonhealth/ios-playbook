@@ -82,6 +82,35 @@ Prior to starting, make sure you have a Babylon GitHub account and that you have
 - [ios-build-distribution](https://github.com/Babylonpartners/ios-build-distribution)
 - [ios-fastlane-match](https://github.com/Babylonpartners/ios-fastlane-match)
 
+On Babylon's Slack, check the channels iOS Team related channels:
+Public:
+- #ios
+- #ios-build
+- #ios-usa-support
+- #ios-standup
+- #ios-automation
+- #ios-crash-reports
+- #ios-recruiting
+
+Private (ask someone to invite you):
+- ios-underground
+- ios-questions
+- ios-sdk
+- ios-oss
+- ios-recruiting
+
+Others
+- demo_frontend
+- developers
+- general
+- announcements
+
+Apps
+- pull-reminders
+- peakon
+
+And also your squad will have 
+
 Here's how to get the iOS project up and running.
 
 1. Clone the iOS repository: https://github.com/Babylonpartners/babylon-ios
@@ -106,3 +135,4 @@ Here's how to get the iOS project up and running.
 1. Make sure the device selected for testing is iPhone 5s
 
 <img src="iphone-5s.png" height="101" width="388" alt="iPhone 5s" />
+
