@@ -49,18 +49,18 @@ By definition, members work on their respective squad, although they are free to
 
 | Squad Name                    | Members                          | Availability |
 |-------------------------------|----------------------------------| ------------ |
-| SDK                           | Viorel, Martin, Witold           |    2/4       |
-| Consultation                  | Ilya                             |    1/2       |
+| SDK                           | Viorel                           |    1/3       |
+| Consultation                  | Ilya                             |    1/1       |
 | Booking                       | Witold                           |    1/1       |
 | Prescriptions                 | Adam                             |    1/1       |
 | Healthcheck                   | Ben, Catarina                    |    2/3       |
-| Native/Core                   | Giorgos, Jason                   |    2/6       |
+| Native/Core                   | Giorgos, Jason, Martin           |    3/6       |
 | Professional Services         | Danilo                           |    1/3       |
 | GP at Hand                    | Diego                            |    1/1       |
-| Core Experience               | Sergey                           |    1/1       |
+| Core Experience               | Sergey                           |    1/2       |
 | Health Management             | David, Joao                      |    2/2       |
 | Monitor                       | Anders                           |    1/2       |
-| Triage UI                     | Michael                          |    1/1       |
+| Triage UI                     | Michael                          |    1/2       |
 
 
 ## 3. OSS-maintained projects
