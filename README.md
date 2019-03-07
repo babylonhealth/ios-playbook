@@ -36,6 +36,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | João Pereira            | [@NSMyself](https://twitter.com/nsmyself)                     |
 | Martin Nygren           |                                                               |
 | Michael Brown           | [@mluisbrown](https://twitter.com/mluisbrown)                 |
+| Olivier Halligon        | [@AliSoftware](https://twitter.com/aligatr)                   |
 | Rui Peres               | [@peres](https://twitter.com/peres)                           |
 | Sergey Shulga           | [@SergDort](https://twitter.com/SergDort)                     |
 | Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
