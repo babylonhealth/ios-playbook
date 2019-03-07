@@ -41,6 +41,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Sergey Shulga           | [@SergDort](https://twitter.com/SergDort)                     |
 | Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
 | Witold Skibniewski      |                                                               |
+| Yasuhiro Inami          | [@inamiy](https://twitter.com/inamiy)                         |
 
 
 ## 2. Which squad each individual belongs to, and its availability.
