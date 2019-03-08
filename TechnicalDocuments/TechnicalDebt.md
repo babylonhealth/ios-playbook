@@ -9,12 +9,12 @@ GatewayManager supplies global dependencies to legacy Objective-C code. There wa
 
 | Objective-C view Controllers | Location | Comments |
 | ---------------------------- | ---------| -------- |
-| BillingInformationViewController | Clinical Records | |
-| EditMembershipCodeViewController | Clinical Records | |
-| MembershipTableViewController | Me Tab | |
-| SurveyViewController | Clinical Records | |
-| InsuranceViewController | Clinical Records | |
-| BBAddAdditionalPatientInformationViewControllerV2 | Clinical Records | Might be dead code |
+| BillingInformationViewController | Clinical Records | CNSMR-930 |
+| EditMembershipCodeViewController | Clinical Records | CNSMR-934 |
+| MembershipTableViewController | Me Tab | CNSMR-926 |
+| SurveyViewController | Clinical Records | CNSMR-937 |
+| InsuranceViewController | Clinical Records | CNSMR-942 |
+| BBAddAdditionalPatientInformationViewControllerV2 | Clinical Records | Might be dead code but will be deleted as part of CNSMR-947 |
 
 Some additional information about [BBAddAdditionalPatientInformationViewControllerV2](./BBAddAdditionalPatientInformationViewControllerV2.md)
 
@@ -33,31 +33,31 @@ Porting these view controllers to Bento will also make it easier to apply an app
 
 | View Model | Comments |
 | ---------- | -------- |
-| AppointmentCancellationViewModel | |
-| AppointmentConsultationNotesViewModel | |
-| AppointmentDetailsViewModel | |
-| AppointmentNotesViewModel | |
+| AppointmentCancellationViewModel | CNSMR-950, CNSMR-951 |
+| AppointmentConsultationNotesViewModel | CNSMR-952, CNSMR-953 |
+| AppointmentDetailsViewModel | CNSMR-954, CNSMR-955 |
+| AppointmentNotesViewModel | CNSMR-956, CNSMR-957 |
 | AppointmentPrescriptionViewModel | CE-30 |
-| AppointmentReferralViewModel | |
-| AppointmentReferralsViewModel | |
-| AppointmentReplayViewModel | |
-| AppointmentListViewModel | |
-| BookAppointmentViewModel | |
-| PractitionerDetailsViewModel | |
-| ChatHistoryViewModel | |
-| MedicalHistoryViewModel | |
-| PersonalDetailsViewModel | |
-| InfoItemsViewModel | |
-| GPDetailsViewModel | |
-| AddAddressViewModel | |
-| PrivacySettingsViewModel | |
-| ChooseCountryViewModel | |
+| AppointmentReferralViewModel | CNSMR-958, CNSMR-959 |
+| AppointmentReferralsViewModel | CNSMR-960, CNSMR-961 |
+| AppointmentReplayViewModel | CNSMR-962, CNSMR-963 |
+| AppointmentListViewModel | CNSMR-964, CNSMR-965 |
+| BookAppointmentViewModel | CNSMR-966, CNSMR-967 |
+| PractitionerDetailsViewModel | CNSMR-968, CNSMR-969 |
+| ChatHistoryViewModel | CNSMR-970, CNSMR-971 |
+| MedicalHistoryViewModel | CNSMR-972, CNSMR-973 |
+| PersonalDetailsViewModel | CNSMR-974, CNSMR-975 |
+| InfoItemsViewModel | CNSMR-976, CNSMR-977 |
+| GPDetailsViewModel | CNSMR-978, CNSMR-979 |
+| AddAddressViewModel | CNSMR-980, CNSMR-981 |
+| PrivacySettingsViewModel | AV-334 |
+| ChooseCountryViewModel | AV-338 |
 | ForgotPasswordViewModel | CNSMR-904 |
-| NotificationsViewModel | |
-| ProfileViewModel | |
-| SignInViewModel | |
-| NHSRegistrationStep1ViewController | |
-| NHSRegistrationStep2ViewController | |
+| NotificationsViewModel | AV-342 |
+| ProfileViewModel | AV-340 |
+| SignInViewModel | AV-332 |
+| NHSRegistrationStep1ViewController | NRX-361 |
+| NHSRegistrationStep2ViewController | NRX-186 |
 
 ## Accessing Business Controllers Directly instead of using the SDK.
 
