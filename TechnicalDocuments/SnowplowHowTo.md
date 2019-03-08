@@ -18,9 +18,9 @@ extension HomeRenderer: ScreenNaming {
 }
 ```
 
-Screen names should be inside the `ScreenNames` namespace to avoid name clashes. Declaring the view model to conform to `ScreenNaming` will also assign the screen name as the default accessibility identifier.
+Screen names should be inside the `ScreenNames` namespace to avoid name clashes. Declaring the view controller to conform to `ScreenNaming` will also assign the screen name as the default accessibility identifier.
 
-View controllers that are not based on `BentoKit` should post a `ScreenEvent` in `viewWillAppear`.
+View controllers that are not based on `BentoKit` should post a `ScreenEvent` in `viewWillAppear`. 
 
 ```swift
 class MassiveViewController: UIViewController {
