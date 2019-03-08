@@ -14,7 +14,7 @@ final class AwesomeRenderer: BoxRenderer {
 }
 
 extension HomeRenderer: ScreenNaming {
-     static var AwesomeRenderer: String { return ScreenNames.BestFeatureEver.awesome }
+     static var screenName: String { return ScreenNames.BestFeatureEver.awesome }
 }
 ```
 
