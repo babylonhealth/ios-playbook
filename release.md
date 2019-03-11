@@ -1,4 +1,3 @@
-  
 ## Release process
 
 ### 1. Release engineer as a role
