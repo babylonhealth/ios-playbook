@@ -53,6 +53,7 @@
 **Phase 5: Closure**
 <br/>	*It starts after the app is accepted by Apple and final internal approval*
 
+1. Send the build to Testflight Beta (external testing). Select the `External Testers` group.
 1. Press `Release this version` in App Store Connect
 1. Tag the release commit and create a GitHub release. Attach the binary as an artefact to the GitHub release (if you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
 1. Release new version for the Babylon SDK:
