@@ -60,9 +60,8 @@
 ### 3. SDK Release
 
 1. Ask SDK team (#sdk_squad) about the SDK version number.
-2. Follow the [Internal SDK Release Process](https://engineering.ops.babylontech.co.uk/docs/cicd-deployments/#mobile-sdk-releases-ios-android)
- to open a CR ticket on the CRP board.
-3. 3. Trigger a hockey build from that branch using its command (eg. `/distribute_sdk version:0.1.11 pre_release:false branch:release/3.7.0`) in `#ios-build`.
+2. Follow the [Internal SDK Release Process](https://engineering.ops.babylontech.co.uk/docs/cicd-deployments/#mobile-sdk-releases-ios-android) to open a CR ticket on the CRP board.
+3. Trigger a hockey build from that branch using its command (eg. `/distribute_sdk version:0.1.11 pre_release:false branch:release/3.7.0`) in `#ios-build`.
 4. Update the Sample app to point to the latest SDK release
 
 ### 4. Release calendar
