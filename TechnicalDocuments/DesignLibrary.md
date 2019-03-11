@@ -2,16 +2,15 @@
 
 This is a FAQ for `DesignLibrary`.
 
-1. Q: How can I reuse viewcontrollers?
+1. How can I reuse viewcontrollers?
 
-A:
 ```swift
 DesignLibrary.viewControllersBuilder().navigationController(....)
 ```
 
-2. Q: How can I use `DesignLibrary`?
+2. How can I use `DesignLibrary`?
 
-A: If you are working on a feature called `Foo` and you are following our architecture then you also have `FooRenderer` like 
+If you are working on a feature called `Foo` and you are following our architecture then you also have `FooRenderer` like 
 
 ```swift
 struct Foo: BoxRenderer {
@@ -63,9 +62,7 @@ private func renderTextInput(
 }
 ```
 
-3. Q: How can I access fonts and colors from my renderer? 
-
-Α: 
+3. How can I access fonts and colors from my renderer? 
 
 ```swift
 struct Foo: BoxRenderer {
@@ -83,14 +80,14 @@ struct Foo: BoxRenderer {
     }
 
 ```
-4. Q: Why `DesignLibrary` doesn't allow me to construct a custom color or font?
+4. Why `DesignLibrary` doesn't allow me to construct a custom color or font?
 
-A: Because we must use specific colors and fonts which have been decided by our design team.
+Because we must use specific colors and fonts which have been decided by our design team.
 
-5. Q: Do you have any real examples.
+5. Do you have any real examples.
 
-A: Yes, check the `GalleryApp` :)
+Yes, check the `GalleryApp` :)
 
-6: Q: Where can I find all the components which are approved by our design team?
+6: Where can I find all the components which are approved by our design team?
 
-A: Go to `Zeplin` and select the `Design System` tag.
+Go to `Zeplin` and select the `Design System` tag.
