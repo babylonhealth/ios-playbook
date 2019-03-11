@@ -52,7 +52,7 @@ Porting these view controllers to Bento will also make it easier to apply an app
 | AddAddressViewModel | |
 | PrivacySettingsViewModel | |
 | ChooseCountryViewModel | |
-| ForgotPasswordViewModel | |
+| ForgotPasswordViewModel | CNSMR-904 |
 | NotificationsViewModel | |
 | ProfileViewModel | |
 | SignInViewModel | |
