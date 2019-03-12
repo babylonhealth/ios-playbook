@@ -43,14 +43,14 @@ final class AppointmentListFlowController {
 }
 ```
 
-It would also clean up the FlowControllers API, since we wouldn't need to inject builders. I will provide further examples in the proposal
+I will provide further examples in the proposal
 
 ## Motivation
 
 There are a couple of reasons for this change:
 
 1. It was decided that DI via `Current` would happen at the builders level. This means that the requirement to inject dependencies via initializer, in builders, cease to exist. This would remove: protocols, clean FlowControllers APIs and dissolve the concept of child builders. 
-2. It would become easier to find factory methods to construct screens. One could just type `Builder.` and Xcode would autocomplete with the available factory methods. It also free engineers from wasting too much time finding dependencies, if they are immeaditly accessible via `Current`. This is not a justification for engineers to not understand the codebase and how to do things "properly". It is simply an observation of how cumbersome passing dependencies via initalizer is, the raison d'être for `Current` and the overall way of creating screens (VM + VC + FC). 
+2. It would become easier to find factory methods to construct screens. One could just type `Builder.` and Xcode would autocomplete with the available factory methods. It would also free engineers from wasting too much time finding dependencies, if they are immeaditly accessible via `Current` and the namespaced free functions. This is not a justification for engineers to not understand the codebase and how to do things "properly". It is simply an observation of how cumbersome passing dependencies via initalizer is, the raison d'être for `Current` and the overall way of creating screens (VM + VC + FC). 
 
 The first point is about simplicity and clean up of multiple ways of creating screens, while the second point focus in discoverability and development ergonomics.   
 
