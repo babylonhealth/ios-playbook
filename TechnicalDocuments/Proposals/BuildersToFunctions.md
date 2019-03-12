@@ -144,7 +144,7 @@ case let .appointmentList(session):
 
 As Ilya pointed out it would make unit testing a bit more cumbersome. That's the case, because you no longer inject builders. I would like to make the case for the following:
 
-1. We don't test `FlowControllers` with Unit tests anyway. This is not a reason to not do it, it's simply difficult to justify time doing so, when there are more important pieces to be tested and the tests would bring, in my opinion, little value. More value would be achieve by the next point (**2.**).
+1. We don't test `FlowControllers` with Unit tests anyway. This is not a reason to not do it, it's simply difficult to justify time doing so, when there are more important pieces to be tested and those tests would bring, in my opinion, little value. More value would be achieve by the next point (**2.**).
 2. We can test that a particular navigation/flow is done as expected independently of this proposal being approved or not. For that to happen we simply observe a ViewModel state and assert on it, since we derive routes from state.
 3. If we "really" want to test FlowControllers, it's still possible by mocking `Current`, which is something trivial to achieve (`World.init()`). The difference here is that we can't say we are **Unit** testing FlowControllers, but instead these become **Integration** tests. I personally don't feel this is semantically significant. 
 
