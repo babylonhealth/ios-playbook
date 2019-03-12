@@ -1,5 +1,5 @@
 Technical Documents and Proposals 🛠
-====================================
+ ====================================
 
 ## Documents
 
@@ -12,3 +12,4 @@ Technical Documents and Proposals 🛠
 
 * [Proposal Template](./Proposals/Template.md)
 * [Global `Current` struct to hold global dependencies](./Proposals/ControlTheWorld.md).
+* [Replace `iOSSnapshotTestCase` library with `SnapshotTesting`](/SnapshotTesting.md).
