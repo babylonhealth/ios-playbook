@@ -152,6 +152,10 @@ Given all those points, it has no impact, since we don't test that layer and the
 
 There is still the question about moving `UserSession`, or something in that shape, to `Current`. Based on an initial conversation with Anders, and quoting him, it would be a "fairly low" effort. This is for me a point that should be thought carefully and be a reason to reject this proposal. 
 
+As a proposal on its own, it wouldn't have any immediate impact. For new features, and assuming `UserSession` in `Current` is in place, those could start using this approach. Builders that don't rely at all `UserSession` could be migrated immidiatly. 
+
 ## Alternatives considered
 
 Leave as is.
+
+
