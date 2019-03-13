@@ -49,20 +49,20 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 By definition, members work on their respective squad, although they are free to work in different squads if the work load justifies it.
 
 
-| Squad Name                    | Members                          | Availability |
-|-------------------------------|----------------------------------| ------------ |
-| SDK                           | Viorel                           |    1/3       |
+| Squad Name                    | Members                          | Availability | Public slack channel |
+|-------------------------------|----------------------------------| ------------ | -------------------- |
+| SDK                           | Viorel                           |    1/3       | [#sdk_squad](https://babylonhealth.slack.com/archives/CC5JNDGJJ) |
 | Consultation                  | Ilya                             |    1/1       |
 | Booking                       | Witold                           |    1/1       |
 | Prescriptions                 | Adam                             |    1/1       |
-| Healthcheck                   | Ben, Catarina                    |    2/3       |
+| Healthcheck                   | Ben, Catarina                    |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
 | Native/Core                   | Giorgos, Jason, Martin           |    3/6       |
 | Professional Services         | Danilo                           |    1/3       |
-| GP at Hand                    | Diego                            |    1/1       |
+| Enrolment and Integrity       | Diego                            |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Core Experience               | Sergey                           |    1/2       |
-| Health Management             | David, Joao                      |    2/2       |
-| Monitor                       | Anders                           |    1/2       |
-| Triage UI                     | Michael                          |    1/2       |
+| Health Management             | David, Joao                      |    2/2       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) |
+| Monitor                       | Anders                           |    1/2       | [https://babylonhealth.slack.com/archives/CE37S5W9Z](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
+| Triage UI                     | Michael                          |    1/2       | [#squad_triage_ui](https://babylonhealth.slack.com/archives/CE6H6SLRX) |
 
 
 ## 3. OSS-maintained projects
