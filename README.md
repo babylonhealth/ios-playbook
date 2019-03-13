@@ -56,7 +56,7 @@ By definition, members work on their respective squad, although they are free to
 | Booking                       | Witold                           |    1/1       |
 | Prescriptions                 | Adam                             |    1/1       |
 | Healthcheck                   | Ben, Catarina                    |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
-| Native/Core                   | Giorgos, Jason, Martin           |    3/6       |
+| Native/Core                   | Giorgos, Jason, Martin           |    3/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
 | Professional Services         | Danilo                           |    1/3       | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
 | Enrolment and Integrity       | Diego                            |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Core Experience               | Sergey                           |    1/2       | [#core-experience](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
