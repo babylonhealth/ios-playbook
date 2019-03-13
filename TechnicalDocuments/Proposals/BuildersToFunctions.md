@@ -150,7 +150,7 @@ As Ilya pointed out it would make unit testing a bit more cumbersome. That's the
 
 Given all those points, it has no impact, since we don't test that layer and there are currently no plans in the short term to do so. 
 
-There is still the question about moving `UserSession`, or something in that shape, to `Current`. Based on an initial conversation with Anders, and quoting him, it would be a "fairly low" effort. This is for me a point that should be thought carefully and be a reason to reject this proposal. 
+There is still the question about moving `UserSession`, or something in that shape, to `Current`. Based on an initial conversation with Anders, and quoting him, it would be a "fairly low" effort. This is for me a point that should be thought about carefully and could be a reason to reject this proposal. 
 
 As a proposal on its own, it wouldn't have any immediate impact. For new features, and assuming `UserSession` in `Current` is in place, those could start using this approach. Builders that don't rely on `UserSession` could be migrated immediately. 
 
