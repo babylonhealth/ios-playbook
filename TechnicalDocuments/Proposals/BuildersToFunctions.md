@@ -106,7 +106,7 @@ With the free functions approach, this would never be possible to do, since buil
 ```swift
 extension Builder {
     enum ClinicalRecords {
-        func makeAppointmentList(session: UserSession,
+        static func makeAppointmentList(session: UserSession,
                                  enableClinicalDownloads: Bool,
                                  addressSwitches: AddressSwitchesProtocol,
                                  primary: Flow,
