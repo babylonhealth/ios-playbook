@@ -93,7 +93,7 @@ extension Builder {
 
 This would remove the intricate structure we have with builders and their children.
 
-A side effect of this approach, because we are dealing with functions (versus structs) we are able to remove local state. An example of such case is `enableClinicalDownloads` at `ClinicalRecordsChildBuilders`. You can see the code smell here:
+A side effect of this approach, because we are dealing with functions (versus structs) we are able to remove local state. An example of this is `enableClinicalDownloads` in `ClinicalRecordsChildBuilders`. You can see the code smell here:
 
 ```swift
 builders.appointmentList(with: session,
