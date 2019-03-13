@@ -91,7 +91,7 @@ extension Builder {
 }
 ```
 
-This would remove the intricated structure we have with builders and its children.
+This would remove the intricate structure we have with builders and their children.
 
 A side effect of this approach, because we are dealing with functions (versus structs) we are able to remove local state. An example of such case is `enableClinicalDownloads` at `ClinicalRecordsChildBuilders`. You can see the code smell here:
 
