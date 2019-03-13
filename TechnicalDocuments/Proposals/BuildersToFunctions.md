@@ -86,7 +86,7 @@ Particular medical histories (e.g. for minors) can also be created, but in this 
 extension Builder {
     enum ClinicalRecords {
         func makeMedicalHistory(with session: Session, modal: Flow) -> UIViewController
-        func makeMedicalHistory(modal: Flow) -> UIViewController
+        static func makeMedicalHistory(modal: Flow) -> UIViewController
     }
 }
 ```
