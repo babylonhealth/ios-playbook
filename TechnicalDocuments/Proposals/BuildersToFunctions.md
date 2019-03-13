@@ -75,7 +75,7 @@ Given the Module where it's located it could be migrated to:
 ```swift
 extension Builder {
     enum ClinicalRecords {
-        func makeMedicalHistory(modal: Flow) -> UIViewController
+        static func makeMedicalHistory(modal: Flow) -> UIViewController
     }
 }
 ```
