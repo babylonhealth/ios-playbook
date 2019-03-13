@@ -61,7 +61,7 @@ By definition, members work on their respective squad, although they are free to
 | Enrolment and Integrity       | Diego                            |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Core Experience               | Sergey                           |    1/2       |
 | Health Management             | David, Joao                      |    2/2       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) |
-| Monitor                       | Anders                           |    1/2       | [https://babylonhealth.slack.com/archives/CE37S5W9Z](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
+| Monitor                       | Anders                           |    1/2       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
 | Triage UI                     | Michael                          |    1/2       | [#squad_triage_ui](https://babylonhealth.slack.com/archives/CE6H6SLRX) |
 
 
