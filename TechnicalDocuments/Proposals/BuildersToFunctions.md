@@ -31,7 +31,7 @@ To this:
 ```swift
 struct FlowControllerFooBar {
    private let primary: Flow
-   private let builder: BuilderFooBar
+   private let builder: Builder.FooBar
 
    init(primary: Flow, builder: Builder.FooBar = Builder.FooBar()) {
       self.primary = primary
