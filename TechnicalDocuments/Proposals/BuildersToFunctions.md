@@ -5,7 +5,9 @@
 
 ## Introduction
 
-The goal of this proposal is to simplify the usage of builders across the codebase, improve discoverability and development ergonomics. This can be achieve via `Current`, since most, but not all, dependencies can be found there. An example of such change would be going from this:
+The goal of this proposal is to simplify the usage of builders across the codebase, improve discoverability and development ergonomics. This can be achieve via `Current`, since most, but not all, dependencies can be found there. 
+
+An example of such change would be going from this:
 
 ```swift
 struct FlowControllerFooBar {
