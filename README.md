@@ -53,7 +53,7 @@ By definition, members work on their respective squad, although they are free to
 |-------------------------------|----------------------------------| ------------ | -------------------- |
 | SDK                           | Viorel                           |    1/3       | [#sdk_squad](https://babylonhealth.slack.com/archives/CC5JNDGJJ) |
 | Consultation                  | Ilya                             |    1/1       |
-| Booking                       | Witold                           |    1/1       |
+| Booking                       | Witold                           |    1/1       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
 | Prescriptions                 | Adam                             |    1/1       |
 | Healthcheck                   | Ben, Catarina                    |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
 | Native/Core                   | Giorgos, Jason, Martin           |    3/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
