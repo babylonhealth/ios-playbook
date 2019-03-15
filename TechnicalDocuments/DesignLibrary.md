@@ -31,7 +31,7 @@ struct Foo: BoxRenderer {
     }
 ```
 
-`BabylonAppAppearance` is `DesignLibrary.ComponentsBuilder` so you can call `appearance` in order to reuse Bento components, here is an example
+`BabylonAppAppearance` is a typealias for `DesignLibrary.ComponentsBuilder` so you can call `appearance` in order to reuse Bento components, here is an example
 
 ```swift
 private func renderTextInput(
