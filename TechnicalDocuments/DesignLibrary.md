@@ -2,7 +2,7 @@
 
 This is a FAQ for `DesignLibrary`.
 
-1. How can I reuse viewcontrollers?
+1. How can I reuse view controllers?
 
 ```swift
 DesignLibrary.viewControllersBuilder().navigationController(....)
