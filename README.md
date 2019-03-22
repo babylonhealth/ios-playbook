@@ -56,7 +56,7 @@ By definition, members work on their respective squad, although they are free to
 | Booking                       | Witold                           |    1/1       |  |
 | Prescriptions                 | Adam                             |    1/1       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
 | Healthcheck                   | Ben, Catarina                    |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
-| Native/Core                   | Giorgos, Jason, Martin           |    3/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
+| Native/Core                   | Giorgos, Jason, Martin, Inami    |    4/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
 | Professional Services         | Danilo                           |    1/3       | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
 | Enrolment and Integrity       | Diego                            |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Core Experience               | Sergey                           |    1/2       | [#core-experience](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
@@ -70,6 +70,8 @@ By definition, members work on their respective squad, although they are free to
 | Project name                  | Owner(s)                 | Stars        |
 |-------------------------------|--------------------------| ------------ |
 | Bento                         | Anders, David, Sergey    | [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Bento.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Bento/stargazers/) |
-| DrawerKit                     | David, Wagner            |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/DrawerKit/stargazers/) |
+| DrawerKit                     | Inami, Ben               |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/DrawerKit/stargazers/) |
 | ReactiveFeedback              | Anders, Sergey           |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/ReactiveFeedback/stargazers/) |
-| Style guide                   |                    |    WIP       |
+| Wall-E                        | David, Rui               |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Wall-E.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Wall-E/stargazers/)    |
+| Stevenson                     | Ilya                     |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Stevenson.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Stevenson/stargazers/) |
+| Style guide                   |                          |    WIP       |
