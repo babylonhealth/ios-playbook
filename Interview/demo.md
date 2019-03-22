@@ -64,6 +64,7 @@ The following requirements should be met:
 * Use Swift 4.0 or above.
 * The information (posts and post details) should be available offline. It's assumed that, if it's the first time you are accessing the app and you are offline, you shouldn't see any data.
 * Add reloading mechanism e.g. button or `UIRefreshControl`. `Reachability` is not required.
+* **Have a point of synchronization (e.g. making two concurrent requests and waiting for both of them to finish).**
 * The code should be production grade.
 * It should compile and run.
 
