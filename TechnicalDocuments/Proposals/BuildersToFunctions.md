@@ -33,17 +33,15 @@ To this:
 ```swift
 struct FlowControllerFooBar {
    private let primary: Flow
-   private let builder: Builder.FooBar
 
-   init(primary: Flow, builder: Builder.FooBar = Builder.FooBar()) {
+   init(primary: Flow) {
       self.primary = primary
-      self.builder = builder
    } 
 
    func handle(state: State) {
       switch (state) {
        case .bar: 
-           builder.makeFooBar() |> primary.present
+           Builder.FooBar.makeFooBar() |> primary.present
       }
    }
 }
@@ -62,7 +60,9 @@ The first point is about simplicity and clean-up of multiple ways of creating sc
 
 ## Proposed solution
 
-**Note:** The proposed solution assumes that a way to authenticate HTTP requests is available at `Current` level (in this case something in the shape of `MainUserSession` abstracted via `UserSession`).
+**Note:** The proposed solution assumes that a way to authenticate HTTP requests is available at `Current` level (in this case something in the shape of `MainUserSession` abstracted via `UserSession`). 
+
+**Edit** This has voted and approved. An entity will exist at `Current` level.
 
 Let's use `MedicalHistoryBuilder.swift` as an example, since it offers a trivial API: 
 
@@ -80,8 +80,8 @@ Given the Module where it's located it could be migrated to:
 
 ```swift
 extension Builder {
-    struct ClinicalRecords {
-        internal(set) var makeMedicalHistory: (Flow) -> UIViewController = { _ in UIViewController() }
+    enum ClinicalRecords {
+        static func makeMedicalHistory(with flow: Flow) -> UIViewController = { _ in UIViewController() }
     }
 }
 ```
@@ -113,28 +113,23 @@ struct ClinicalRecordsFlowController {
     private let navigation: Flow
     private let modal: Flow
     private let presenting: Flow
-    private let builder: Builder.ClinicalRecordsBuilder
 
     public init(navigation: Flow,
                 modal: Flow,
-                presenting: Flow,
-                builder: Builder.ClinicalRecordsBuilder = Builder.ClinicalRecordsBuilder()) {
+                presenting: Flow) {
         self.navigation = navigation
         self.modal = modal
         self.presenting = presenting
-        self.builder = builder
     }
 ```
-
-This provides the flexibility, in case testing is desirable via the `internal(set)`.
 
 Particular medical histories (e.g. for minors) can also be created, but in this case, the minor session would be passed instead of relying on `Current`. This situation (with child builders) can be observed at `ClinicalRecordsChildBuilders.swift`:
 
 ```swift
 extension Builder {
     struct ClinicalRecords {
-        internal(set) var makeMedicalHistory: (Session, Flow) -> UIViewController 
-        internal(set) var makeMedicalHistory: (Flow) -> UIViewController
+        static func makeMedicalHistory(with session: Session, flow: Flow) -> UIViewController 
+        static func makeMedicalHistory(flow: Flow) -> UIViewController
     }
 }
 ```
@@ -150,4 +145,14 @@ As a proposal on its own, it wouldn't have any immediate impact. For new feature
 ## Alternatives considered
 
 Using Ilya's suggestion about structs with functions as properties, versus static free functions. The overall goals of the proposal are preserved and it provides flexibility for testing. 
+
+---
+
+Decision made during the call:
+
+1. Popular Vote: Use/Move UserSession (not the entity, but what it represents), to `Current`. **Majority has approved.**
+2. Popular Vote: In favour of the original proposal to use static builder methods. **Majority has approved.**
+   1. Amendment to the original proposal: **by default** `FlowControllers` will only be injected with `Flows`, but if testing is deemed, then further dependencies can be passed.
+     
+ 
 
