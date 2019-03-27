@@ -40,7 +40,7 @@ TODO
 It depend on the squad you’re assigned. For Enrolment and Integrity I counted 18 in a typical sprint, so that averages to ~2 a day. Note that quite a few of them are optional.
 
 ### Does your calendar look like a losing game of tetris? Do you have large continuous uninterrupted hours?
-Most of the meetings are on the first Monday/Tuesday of the sprint.
+It depends a lot on the squad. For Enrolment and Integrity, for example, most meetings are on the first Monday and Tuesday of the sprint. For Triage and Health Management this is not the case and are more spread out.
 
 ### Are there any private spaces in your office?
 There are very few at the moment.
