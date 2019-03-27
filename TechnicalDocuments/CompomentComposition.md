@@ -48,6 +48,7 @@ In `BabylonUI` there is a new namespace called `UI` which is the place for `Atom
 ```
 
 Currently `Renderable` provides some util methods like `card(..)`, `stack(...)`, `width(...)` and `height(...)`.
+You can also add new convenience methods if you need them. 
 
 ## `UIStackView` based component composition depends on Auto Layout
 
