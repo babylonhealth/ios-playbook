@@ -75,7 +75,7 @@ Descriptive and consistent naming makes software easier to read and understand. 
 - naming methods for their side effects
   - verb methods follow the -ed, -ing rule for the non-mutating version
   - noun methods follow the formX rule for the mutating version
-  - boolean types should read like assertions (`isLoading`, `isHidden`, etc)
+  - boolean types should read like assertions (`isLoading`, `isHidden`, `isFalse`, etc)
   - protocols that describe _what something is_ should read as nouns
   - protocols that describe _a capability_ should end in _-able_ or _-ible_
   - if protocols are tightly bound to their implementations, it's ok to suffix the protocol name with `Protocol`
