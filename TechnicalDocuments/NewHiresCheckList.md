@@ -56,6 +56,9 @@ Here's how to get the iOS project up and running.
      ```
 
 1. Clone the iOS repository: https://github.com/Babylonpartners/babylon-ios
+     ```
+     git clone git@github.com:Babylonpartners/babylon-ios.git
+     ```
 
 1. Install RVM and Ruby version 2.4
      ```
@@ -64,7 +67,7 @@ Here's how to get the iOS project up and running.
      rvm install 2.4
      rvm use 2.4
      ```
-1. Install Ruby gems:
+1. Install Ruby gems (do this in the root of the project directory):
      ```
      bundle install
      ```
@@ -72,6 +75,8 @@ Here's how to get the iOS project up and running.
      ```
      bundle exec pod install
      ```
+     
+     It can be useful to create a command line alias for `pod` to `bundle exec pod` so that you are guaranteed to always be running the correct version of Cocoapods.
 1. Open `Babylon.xcworkspace` in Xcode (there may be several warnings; they can be ignored). You can use `xed .` on the command line at the root of the project to open the workspace.
 1. Configure the Xcode **Text Editing -> Editing** preferences as follows:
      - Automatically trim trailing whitespace
