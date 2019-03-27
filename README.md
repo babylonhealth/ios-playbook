@@ -69,9 +69,10 @@ By definition, members work on their respective squad, although they are free to
 
 | Project name                  | Owner(s)                 | Stars        |
 |-------------------------------|--------------------------| ------------ |
-| Bento                         | Anders, David, Sergey    | [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Bento.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Bento/stargazers/) |
-| DrawerKit                     | Inami, Ben               |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/DrawerKit/stargazers/) |
-| ReactiveFeedback              | Anders, Sergey           |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/ReactiveFeedback/stargazers/) |
+| [Bento](https://github.com/Babylonpartners/Bento)                         | Anders, David, Sergey    | [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Bento.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Bento/stargazers/) |
+| [DrawerKit](https://github.com/Babylonpartners/DrawerKit)                     | Inami, Ben               |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/DrawerKit/stargazers/) |
+| [ReactiveFeedback](https://github.com/Babylonpartners/ReactiveFeedback)              | Anders, Sergey           |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/ReactiveFeedback/stargazers/) |
 | Wall-E                        | David, Rui               |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Wall-E.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Wall-E/stargazers/)    |
 | Stevenson                     | Ilya                     |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Stevenson.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Stevenson/stargazers/) |
-| Style guide                   |                          |    WIP       |
+| Style guide                   | Diego                    |    WIP       |
+| [UIFlow](https://github.com/Babylonpartners/UIFlow)                        | Diego                    |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/UIFlow.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/UIFlow/stargazers/)       |
