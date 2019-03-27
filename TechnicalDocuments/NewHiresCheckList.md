@@ -38,15 +38,41 @@ Make sure you join your Tribe/Squad's Slack channels.
 
 Here's how to get the iOS project up and running.
 
-1. Clone the iOS repository: https://github.com/Babylonpartners/babylon-ios
-1. Set up Git LFS and pull, according to these instructions: https://github.com/Babylonpartners/babylon-ios/wiki/How-to-install-Git-LFS
-1. Globally configure Git to use SSH instead of HTTPS: https://ricostacruz.com/til/github-always-ssh
+1. Globally configure Git to use SSH instead of HTTPS:
      ```
      git config --global url."git@github.com:".insteadOf "https://github.com/"
+     git config --global url."git@github.com:".pushinsteadof "git://github.com/"
+     git config --global url."git@github.com:".pushinsteadof "https://github.com/"
      ```
-1. Run `bundle install`
-1. Run `pod install`
-1. Open `Babylon.xcworkspace` in Xcode (there may be several warnings; they can be ignored)
+1. Install Homebrew if you don't already have it installed:    
+     ```
+     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+     ```
+   
+1. Setup Git LFS:
+     ```
+     brew install git-lfs
+     git lfs install
+     ```
+
+1. Clone the iOS repository: https://github.com/Babylonpartners/babylon-ios
+
+1. Install RVM and Ruby version 2.4
+     ```
+     \curl -sSL https://get.rvm.io | bash -s stable
+     source ~/.rvm/scripts/rvm
+     rvm install 2.4
+     rvm use 2.4
+     ```
+1. Install Ruby gems:
+     ```
+     bundle install
+     ```
+1. Install Cocoapods pods:
+     ```
+     bundle exec pod install
+     ```
+1. Open `Babylon.xcworkspace` in Xcode (there may be several warnings; they can be ignored). You can use `xed .` on the command line at the root of the project to open the workspace.
 1. Configure the Xcode **Text Editing -> Editing** preferences as follows:
      - Automatically trim trailing whitespace
      - Including whitespace-only lines
@@ -57,6 +83,3 @@ Here's how to get the iOS project up and running.
      - Tab width: 4 spaces
      - Indent width: 4 spaces
      - Tab key: Indents in leading whitespace
-1. Make sure the device selected for testing is iPhone 5s
-
-<img src="iphone-5s.png" height="101" width="388" alt="iPhone 5s" />
