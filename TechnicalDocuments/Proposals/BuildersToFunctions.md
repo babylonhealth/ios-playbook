@@ -128,7 +128,7 @@ Particular medical histories (e.g. for minors) can also be created, but in this 
 ```swift
 extension Builder {
     struct ClinicalRecords {
-        static func makeMedicalHistory(with session: Session, flow: Flow) -> UIViewController 
+        static func makeMedicalHistory(with miniorSession: Session, flow: Flow) -> UIViewController 
         static func makeMedicalHistory(flow: Flow) -> UIViewController
     }
 }
