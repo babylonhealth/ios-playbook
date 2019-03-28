@@ -136,7 +136,7 @@ extension Builder {
 
 This would remove the intricate structure we have with builders and their children and protocols.
 
-## Impact on an existing codebas
+## Impact on an existing codebase
 
 There is the question about moving `UserSession`, or something in that shape, to `Current`. Based on an initial conversation with Anders, and quoting him, it would be a "fairly low" effort. This is for me a point that should be thought about carefully and could be a reason to reject this proposal. 
 
