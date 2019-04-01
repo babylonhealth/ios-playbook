@@ -41,8 +41,6 @@ Here's how to get the iOS project up and running.
 1. Globally configure Git to use SSH instead of HTTPS:
      ```
      git config --global url."git@github.com:".insteadOf "https://github.com/"
-     git config --global url."git@github.com:".pushinsteadof "git://github.com/"
-     git config --global url."git@github.com:".pushinsteadof "https://github.com/"
      ```
 1. Install Homebrew if you don't already have it installed:    
      ```
@@ -54,8 +52,10 @@ Here's how to get the iOS project up and running.
      brew install git-lfs
      git lfs install
      ```
+1. [Generate](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) & add the SSH key to your [GitHub account](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account)
 
-1. Clone the iOS repository: https://github.com/Babylonpartners/babylon-ios
+1. Clone the iOS repository: https://github.com/Babylonpartners/babylon-ios  
+*Make sure you've already done the `Setup Git LFS` step before cloning the project.*
      ```
      git clone git@github.com:Babylonpartners/babylon-ios.git
      ```
