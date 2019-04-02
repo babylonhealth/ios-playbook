@@ -76,7 +76,7 @@ Here's how to get the iOS project up and running.
      bundle exec pod install
      ```
       It can be useful to create a command line alias for `pod` to `bundle exec pod` so that you are guaranteed to always be running the correct version of Cocoapods.
-      
+
 1. Open `Babylon.xcworkspace` in Xcode (there may be several warnings; they can be ignored). You can use `xed .` on the command line at the root of the project to open the workspace.
 
 1. Configure the Xcode **Text Editing -> Editing** preferences as follows:
