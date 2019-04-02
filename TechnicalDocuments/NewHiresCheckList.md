@@ -41,8 +41,6 @@ Here's how to get the iOS project up and running.
 1. Globally configure Git to use SSH instead of HTTPS:
      ```
      git config --global url."git@github.com:".insteadOf "https://github.com/"
-     git config --global url."git@github.com:".pushinsteadof "git://github.com/"
-     git config --global url."git@github.com:".pushinsteadof "https://github.com/"
      ```
 1. Install Homebrew if you don't already have it installed:    
      ```
@@ -54,8 +52,10 @@ Here's how to get the iOS project up and running.
      brew install git-lfs
      git lfs install
      ```
+1. [Generate](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) & add the SSH key to your [GitHub account](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account)
 
-1. Clone the iOS repository: https://github.com/Babylonpartners/babylon-ios
+1. Clone the iOS repository: https://github.com/Babylonpartners/babylon-ios  
+*Make sure you've already done the `Setup Git LFS` step before cloning the project.*
      ```
      git clone git@github.com:Babylonpartners/babylon-ios.git
      ```
@@ -75,16 +75,24 @@ Here's how to get the iOS project up and running.
      ```
      bundle exec pod install
      ```
-     
-     It can be useful to create a command line alias for `pod` to `bundle exec pod` so that you are guaranteed to always be running the correct version of Cocoapods.
+      It can be useful to create a command line alias for `pod` to `bundle exec pod` so that you are guaranteed to always be running the correct version of Cocoapods.
+
 1. Open `Babylon.xcworkspace` in Xcode (there may be several warnings; they can be ignored). You can use `xed .` on the command line at the root of the project to open the workspace.
+
 1. Configure the Xcode **Text Editing -> Editing** preferences as follows:
      - Automatically trim trailing whitespace
      - Including whitespace-only lines
      - Default line endings: macOS / Unix (LF)
      - Convert existing files on save
+     
 1. Configure the Xcode **Text Editing -> Indentation** preferences as follows:
      - Prefer indent using: Spaces
      - Tab width: 4 spaces
      - Indent width: 4 spaces
      - Tab key: Indents in leading whitespace
+     
+1. Compile the project 🎉
+
+1. Add yourself to the team list in the [playbook](https://github.com/Babylonpartners/ios-playbook) by making your first PR 😉
+
+1. Don't hesitate to create a PR with an update to this `NewHiresCheckList` if you have spotted something is missing here.
