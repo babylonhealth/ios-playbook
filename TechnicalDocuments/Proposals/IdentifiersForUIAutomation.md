@@ -7,7 +7,7 @@
 At the moment, there is no systematic approach to apply accessibility identifiers in Bento. Some components accept a custom accessibility identifier as a temporary measure, e.g. Chatbot UI components.
 
 ## Motivation
-`String` accessibility identifier is fragile, and there were already a few breakages observed due to accessibility identifier mismatch. This is because the main codebase does not publish accessibility identifiers used, and therefore automation tests have no mean to ensure themselves always pick up the same identifier as defined in the main codebase. In other words, automation tests are prone to breakage when changes in accessibility identifiers happen.
+Use of ad hoc `String` and textual content as accessibility identifiers makes automation tests fragile, and there were already a few breakages observed due to mismatch between the UI code and the automation test code. This is because the main codebase does not publish accessibility identifiers used, and therefore automation tests have no mean to ensure themselves always pick up the same identifier as defined in the main codebase. It also raises the barrier of running automation tests on different locales.
 
 ## Proposed solution
 
