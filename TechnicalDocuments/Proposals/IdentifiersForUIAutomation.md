@@ -1,7 +1,7 @@
 # Improve discoverability of elements in UI automation tests
 
 * Author(s): Anders Ha
-* Review Manager: David Rodrigues, Sergey Shulga
+* Review Manager: Jason Dobo
 
 ## Introduction
 At the moment, there is no systematic approach to apply accessibility identifiers in Bento. Some components accept a custom accessibility identifier as a temporary measure, e.g. Chatbot UI components.
