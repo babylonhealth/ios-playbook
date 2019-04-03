@@ -46,7 +46,7 @@ Here's how to get the iOS project up and running.
      ```
      /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
      ```
-   
+
 1. Setup Git LFS:
      ```
      brew install git-lfs
@@ -59,6 +59,8 @@ Here's how to get the iOS project up and running.
      ```
      git clone git@github.com:Babylonpartners/babylon-ios.git
      ```
+
+1. Get our latest Xcode templates by running `./Templates/install_xcode_templates.sh`
 
 1. Install RVM and Ruby version 2.4
      ```
@@ -84,15 +86,21 @@ Here's how to get the iOS project up and running.
      - Including whitespace-only lines
      - Default line endings: macOS / Unix (LF)
      - Convert existing files on save
-     
+
 1. Configure the Xcode **Text Editing -> Indentation** preferences as follows:
      - Prefer indent using: Spaces
      - Tab width: 4 spaces
      - Indent width: 4 spaces
      - Tab key: Indents in leading whitespace
-     
+
 1. Compile the project 🎉
 
 1. Add yourself to the team list in the [playbook](https://github.com/Babylonpartners/ios-playbook) by making your first PR 😉
 
 1. Don't hesitate to create a PR with an update to this `NewHiresCheckList` if you have spotted something is missing here.
+
+### Extras
+
+1. Install Charles
+* Add the desired URL under Proxy > SSL Proxy Settings
+* Install on Simulator via Help > SSL Proxying > Install on iOS Simulator
