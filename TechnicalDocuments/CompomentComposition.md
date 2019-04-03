@@ -21,7 +21,7 @@ The reasoning for this decision is that
 `BabylonUI` now has a new namespace called `UI`, which contains a few `atomic` components.
 
 - `Atomic Components` are the `Bento` equivalent of standard `UIKit` components — this is why they retain a similar nomenclature (e.g: `UILabel` and `UI.Label`, `UIButton` and `UI.Button`);
-- `Atomic Components` use `Stylesheets` for styling
+- `Atomic Components` use `Stylesheets` for styling;
 - `Atomic Components` should behave like their `UIKit` counterpart.
 
 ## Code Sample
