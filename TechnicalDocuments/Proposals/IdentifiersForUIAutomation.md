@@ -152,8 +152,10 @@ which the automation code can rely on. For example:
 ```swift
 import BabylonHealthManagementUI
 
-// NOTE: alias in the UI testing target to help reduce verbosity.
-typealias Name = DesignLibrary.AutomationName
+extension BaseScreen {
+    // NOTE: alias in the UI testing target to help reduce verbosity.
+    typealias Name = DesignLibrary.AutomationName
+}
 
 class FeedScreen: BaseScreen {
     func tapSubmit() {
