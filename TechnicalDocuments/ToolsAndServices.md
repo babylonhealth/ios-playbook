@@ -14,15 +14,15 @@ These are tools and services used by the BabylonHealth's Consumer Apps tribe.
 
 | Service | What for | How to access |
 |---|---|---|
-| Slack | Chat with whole org. See channels below | You should have given access during your mini induction. Log in with your BabylonHealth email and Okta |
+| Slack | Chat with whole org. See channels of interest [here](NewHiresCheckList.md#slack). | You should have given access during your mini induction. Log in with your BabylonHealth email and Okta |
 | 1Password | Access shared passwords used by various services in the team | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) |
 | JIRA | Tickets of tasks and issues on your sprint | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) |
 | Zeplin | Screen Designs | Ask `@Carlos` or `@adrian` on Slack |
-| GitHub | Repos for the app, the bots, the playbook... | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/248) |
-| Lokalize | Manage translations used by the app | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) or your Team lead |
+| GitHub | Repos for the app, the bots, the playbook... | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/248) to get added to the org. |
+| [Lokalize](https://lokalise.co/projects) | Manage translations used by the app | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) or your Team lead |
 | Confluence Spaces (iOS, your Tribe, ...) | Documentation for various processes | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) – You can also ask your PM or Tribe Lead which Spaces you need to be given access to |
 | Google Team Drives | Access shared documents for which you need multiple people to contribute | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) – You can also ask your PM / Tribe Lead which Drives you need to be given access to. At leat as for the `iOS` and `Consumer Apps Tribe` ones. |
-| Zoom.us | Video Conferences | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) _(you can join invites without an account but will need one to create conferences)_|
-| VPN | Remote Access to our intranet and internal domains | [IT Support](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) |
-| CircleCI | See CI jobs and logs | Use your GitHub login |
-| HockeyApp | see OTA builds sent internally to QA | Ask `@ilyapuchka` on Slack to invite you to the org |
+| [zoom.us](https://zoom.us/) | Video Conferences | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) _(you can join invites without an account but will need one to create conferences)_|
+| VPN | Remote Access to our intranet and internal domains | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) |
+| [CircleCI](https://circleci.com/gh/Babylonpartners) | See CI jobs and logs | Use your GitHub login |
+| [HockeyApp](https://rink.hockeyapp.net/) | see OTA builds sent internally to QA | Ask `@ilyapuchka` on Slack to invite you to the org |
