@@ -1,5 +1,7 @@
 # New Hires Checklist
 
+## GitHub access
+
 Prior to starting, make sure you have a Babylon GitHub account and that you have access to the following repositories:
 
 - [babylon-ios](https://github.com/Babylonpartners/babylon-ios)
@@ -8,33 +10,40 @@ Prior to starting, make sure you have a Babylon GitHub account and that you have
 - [ios-build-distribution](https://github.com/Babylonpartners/ios-build-distribution)
 - [ios-fastlane-match](https://github.com/Babylonpartners/ios-fastlane-match)
 
+See [access to dev services](ToolsAndServices.md) if you don't have access yet.
+
+## Slack
+
 As an iOS Engineer, you should be in the following Slack channels:
-Public:
-- #ios
-- #ios-build
-- #ios-usa-support
-- #ios-standup
-- #ios-automation
-- #ios-crash-reports
-- #ios-recruiting
 
-Private (ask someone to invite you):
-- ios-underground
-- ios-questions
-- ios-sdk
-- ios-oss
-- ios-recruiting
+* Public:
+	- `#ios`
+	- `#ios-build`
+	- `#ios-usa-support`
+	- `#ios-standup`
+	- `#ios-automation`
+	- `#ios-crash-reports`
+	- `#ios-recruiting`
 
-Others
-- demo_frontend
-- developers
+* Private (ask someone to invite you):
+	- `#ios-underground`
+	- `#ios-questions`
+	- `#ios-sdk`
+	- `#ios-oss`
+	- `#ios-recruiting`
 
-Apps
-- pull-reminders
-- peakon
-- betterworks
+* Others
+	- `#demo_frontend`
+	- `#developers`
 
-Make sure you join your Tribe/Squad's Slack channels.
+* Slack Apps
+	- pull-reminders
+	- peakon
+	- betterworks
+
+Make sure you also join your Tribe/Squad's Slack channels.
+
+## Setup your development environment
 
 Here's how to get the iOS project up and running.
 
@@ -97,12 +106,13 @@ Here's how to get the iOS project up and running.
 
 1. Compile the project 🎉
 
+## What's next?
+
+1. [Install additional tools and ask access for the various services we use](ToolsAndServices.md).
+
 1. Add yourself to the team list in the [playbook](https://github.com/Babylonpartners/ios-playbook) by making your first PR 😉
 
 1. Don't hesitate to create a PR with an update to this `NewHiresCheckList` if you have spotted something is missing here.
 
-### Extras
-
-1. Install Charles
-* Add the desired URL under Proxy > SSL Proxy Settings
-* Install on Simulator via Help > SSL Proxying > Install on iOS Simulator
+1. Ask your team lead to be invited to any upcoming/recurring meetings (like PR parties or sprint retros).  
+   You'll also be invited to the `#newbabylonians` private Slack channel after your induction; feel free to ask there to be invited to recurring company meetings too, like the weekly company standups
