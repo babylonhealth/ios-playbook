@@ -82,15 +82,17 @@ and this particular composite component called `prettyCard`:
 extension DesignLibrary.ComponentsLibrary {
     public func prettyCard() -> AnyRenderable {
         return [
-            UI.Label(/* ... */, automationName: AutomationName.prettyCardNotice),
-            UI.Button(/* ... */, automationName: AutomationName.prettyCardSubmit)
+            UI.Label(/* ... */, automationName: String(AutomationName.prettyCardNotice)),
+            UI.Button(/* ... */, automationName: String(AutomationName.prettyCardSubmit))
         ].stack(axis: .vertical)
     }
 }
 
 extension DesignLibrary.AutomationName {
-    public static let prettyCardNotice = "notice"
-    public static let prettyCardSubmit = "notice"
+    public enum PrettyCard: String {
+        case notice
+        case submit
+    }
 }
 ```
 
@@ -129,10 +131,18 @@ extension BaseScreen {
     subscript<Renderer: BoxRenderer>(
         _ renderer: Renderer.Type,
         _ section: Renderer.SectionID,
-        _ item: Renderer.ItemID,
-        _ subcomponent: String? = nil
+        _ item: Renderer.ItemID
     ) -> String {
-        return "\(section)/\(item)/" + (subcomponent ?? "")
+        return "\(section)/\(item)/"
+    }
+
+    subscript<Renderer: BoxRenderer, AutomationName: RawRepresentable>(
+        _ renderer: Renderer.Type,
+        _ section: Renderer.SectionID,
+        _ item: Renderer.ItemID,
+        _ automationName: AutomationName
+    ) -> String where AutomationName.RawValue == String {
+        return "\(section)/\(item)/" + automationName.rawValue
     }
 }
 ```
@@ -142,9 +152,12 @@ which the automation code can rely on. For example:
 ```swift
 import BabylonHealthManagementUI
 
+// NOTE: alias in the UI testing target to help reduce verbosity.
+typealias Name = DesignLibrary.AutomationName
+
 class FeedScreen: BaseScreen {
     func tapSubmit() {
-        let button = app[FeedRenderer.self, .activity, .card, DesignLibrary.ComponentsLibrary.PrettyCardAutomationName.submit]
+        let button = app[FeedRenderer.self, .activity, .card, Name.PrettyCard.submit]
         button.tap()
     }
 }
