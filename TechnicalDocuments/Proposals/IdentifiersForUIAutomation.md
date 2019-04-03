@@ -32,7 +32,15 @@ Bento shall generates a prefix based on the section ID and the item ID. All vari
 
 Atomic components present a challenge, since composition is allowed and thus multiple components may present at the same ID path.
 
-The proposal suggests that all atomic components to allow specifying a custom _automation name_, and implements `ViewLifecycleAware.updateAccessibilityIdentifiers(usingPrefix:)`. Composite components, that have multiple opaque child components, should propagate this call to its children if appropriate.
+The proposal suggests that all atomic components allow a custom _automation name_ to be specified, and implements `ViewLifecycleAware.updateAccessibilityIdentifiers(usingPrefix:)`. Composite components, that have multiple opaque child components, should propagate this call to its children if appropriate.
+
+The Design Library shall introduce a new umbrella namespace `DesignLibrary.AutomationName` for all defined automation names:
+
+```swift
+extension DesignLibrary {
+    public enum AutomationName {}
+}
+```
 
 For example, given the conformance of these two atomic components:
 
@@ -68,21 +76,27 @@ extension UI.Button: ViewLifecycleAware {
 }
 ```
 
-When this particular composite component is rendered:
+and this particular composite component called `prettyCard`:
 
 ```swift
-public enum PrettyCardAutomationName: String {
-    case notice
-    case submit
+extension DesignLibrary.ComponentsLibrary {
+    public func prettyCard() -> AnyRenderable {
+        return [
+            UI.Label(/* ... */, automationName: AutomationName.prettyCardNotice),
+            UI.Button(/* ... */, automationName: AutomationName.prettyCardSubmit)
+        ].stack(axis: .vertical)
+    }
 }
 
-func prettyCard() -> AnyRenderable {
-    return [
-        UI.Label(/* ... */, automationName: PrettyCardAutomationName.notice),
-        UI.Button(/* ... */, automationName: PrettyCardAutomationName.submit)
-    ].stack(axis: .vertical)
+extension DesignLibrary.AutomationName {
+    public static let prettyCardNotice = "notice"
+    public static let prettyCardSubmit = "notice"
 }
+```
 
+When we render `prettyCard`:
+
+```
 render(
     Box(
         sections: [
@@ -101,7 +115,7 @@ It should result in two accessibility identifiers:
 * `activity/card/notice` applied to the label; and
 * `activity/card/submit` applied to the button.
 
-Notice that an enum for the automation name `PrettyCardAutomationName` has been defined. This publishes the automation names, so as to facilitate the next suggestion of this proposal...
+Notice that automation names for the relevant subcomponents of `prettyCard` has been published in the `DesignLibrary.AutomationName` umbrella. This facilitates the next suggestion of this proposal...
 
 ### Working with UI automation tests
 
@@ -130,7 +144,7 @@ import BabylonHealthManagementUI
 
 class FeedScreen: BaseScreen {
     func tapSubmit() {
-        let button = app[FeedRenderer.self, .activity, .card, PrettyCardAutomationName.submit]
+        let button = app[FeedRenderer.self, .activity, .card, DesignLibrary.ComponentsLibrary.PrettyCardAutomationName.submit]
         button.tap()
     }
 }
