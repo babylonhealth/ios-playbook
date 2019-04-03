@@ -18,7 +18,7 @@ The reasoning for this decision is that
 * We need to be flexible and to depend on abstractions.
 
 #### Where and how to use component composition
-In `BabylonUI` there is a new namespace called `UI` which is the place for `Atomic Components`.
+`BabylonUI` now has a new namespace called `UI`, which contains a few `atomic` components.
 
 - `Atomic Components` are the `Bento` Components version of `UIKit`'s components so the nomenclature is similar  like `UILabel` and `UI.Label`, `UIButton` and `UI.Button` etc 
 - `Atomic Components` use `Stylesheets` for styling
