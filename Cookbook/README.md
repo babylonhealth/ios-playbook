@@ -8,7 +8,7 @@ iOS Cookbook 👩‍🍳
 * [Implementing features with ReactiveFeedback](http://ilya.puchka.me/implementing-features-with-reactivefeedback/)
 * [Global `Current` struct to hold global dependencies](./Proposals/ControlTheWorld.md)
 * [Posting Analytics Events to Snowplow](./Technical-Documents/SnowplowHowTo.md)
-* [Use builders as functions](./Technical-Documents/BuildersToFunctions.md)
+* [Use builders as functions](./Proposals/BuildersToFunctions.md)
 
 ##### ... build my feature with Bento 🍱
 
