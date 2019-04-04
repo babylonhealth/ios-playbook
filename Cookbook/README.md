@@ -27,7 +27,7 @@ iOS Cookbook 👩‍🍳
 * [Replace `iOSSnapshotTestCase` library with `SnapshotTesting`](./Proposals/SnapshotTesting.md)
 * [Automation Identifiers](./Technical-Documents/AutomationIdentifiers.md)
 
-#### ... functional programming 🚀
+##### ... functional programming 🚀
 
 * [Introduce "fish" operator (Kleisli composition)](./Proposals/Fish_Operator.md)
 
