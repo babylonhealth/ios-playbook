@@ -1,7 +1,5 @@
 # Tools and Services
 
-These are tools and services used by the BabylonHealth's Consumer Apps tribe.
-
 ## Optional tools
 
 ### Charles
