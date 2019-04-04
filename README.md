@@ -13,9 +13,8 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 3. [OSS-maintained projects](#3-oss-maintained-projects)
 4. [New hires checklist](/TechnicalDocuments/NewHiresCheckList.md)
 5. [Release process](release.md)
-6. [Technical documents and Proposals](/TechnicalDocuments/README.md)
+6. [Cookbook](/Cookbook/README.md)
 7. [Interview process](/Interview/README.md)
-8. [Swift style guide](/Style-guide/README.md)
 9. [Code of conduct](/Etiquette/README.md)
 
 
@@ -60,8 +59,8 @@ By definition, members work on their respective squad, although they are free to
 | Professional Services         | Danilo                           |    1/3       | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
 | Enrolment and Integrity       | Diego                            |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Core Experience               | Sergey                           |    1/2       | [#core-experience](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
-| Health Management             | David, Joao                      |    2/2       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) |
-| Monitor                       | Anders                           |    1/2       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
+| Health Management             | David, João                      |    2/2       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) |
+| Monitor                       | Anders, Michal                   |    2/2       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
 | Triage UI                     | Michael                          |    1/2       | [#squad_triage_ui](https://babylonhealth.slack.com/archives/CE6H6SLRX) |
 
 
