@@ -19,8 +19,8 @@ iOS Cookbook 👩‍🍳
 
 * [Code Owners - Restoring developer's efficiency](./Proposals/CODEOWNERS.md)
 * [iOS Team style guide](./Style-guide/)
-* [New hires checklist](./Technical-Documents/NewHiresChecklist.md)
-* [How to make a proposal](./Proposals/Template_Proposal.md)
+* [New hires checklist](./Technical-Documents/NewHiresCheckList.md)
+* [Proposal template](./Proposals/Template_Proposal.md)
 
 ##### ... test my app 🌳
 
