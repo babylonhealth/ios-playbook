@@ -3,7 +3,7 @@ iOS Cookbook 👩‍🍳
 
 ## I am here because I want to ...
 
-###### ... learn about our architecture 🏠
+##### ... learn about our architecture 🏠
 
 * [Implementing features with ReactiveFeedback](http://ilya.puchka.me/implementing-features-with-reactivefeedback/)
 * [Global `Current` struct to hold global dependencies](./Proposals/ControlTheWorld.md)
