@@ -18,16 +18,16 @@ iOS Cookbook 👩‍🍳
 ##### ... learn how the iOS team works 🛠
 
 * [Code Owners - Restoring developer's efficiency](./Proposals/CODEOWNERS.md)
-* [Proposal Template](./Proposals/Template_Proposal.md)
 * [iOS Team style guide](./Style-guide/)
 * [New hires checklist](./Technical-Documents/NewHiresChecklist.md)
+* [How to make a proposal](./Proposals/Template_Proposal.md)
 
-##### ... Test my app 🌳
+##### ... test my app 🌳
 
 * [Replace `iOSSnapshotTestCase` library with `SnapshotTesting`](./Proposals/SnapshotTesting.md)
 * [Automation Identifiers](./Technical-Documents/AutomationIdentifiers.md)
 
-##### ... functional programming 🚀
+##### ... learn functional programming 🚀
 
 * [Introduce "fish" operator (Kleisli composition)](./Proposals/Fish_Operator.md)
 
