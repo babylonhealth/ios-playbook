@@ -8,15 +8,12 @@ iOS Playbook 📚
 
 At Babylon, we firmly believe that **transparency** is a core value that should be present in everything we do. This playbook embodies that value by giving an overview of how we work:
 
-1. [Who's in the team](#1-whos-in-the-team)
-2. [Which squad each individual belongs to, and its availability](#2-which-squad-each-individual-belongs-to-and-its-availability)
-3. [OSS-maintained projects](#3-oss-maintained-projects)
-4. [New hires checklist](/Cookbook/Technical-Documents/NewHiresCheckList.md)
-5. [Release process](release.md)
-6. [Cookbook](/Cookbook/README.md)
-7. [Interview process](/Interview/README.md)
-9. [Code of conduct](/Etiquette/README.md)
-
+1. [Who's in the team 👨‍👩‍👧‍👦](#1-whos-in-the-team)
+2. [Which squad each individual belongs to, and its availability 🏠](#2-which-squad-each-individual-belongs-to-and-its-availability)
+3. [OSS-maintained projects 🚀](#3-oss-maintained-projects)
+4. [The Cookbook 👩‍🍳](/Cookbook/README.md)
+5. [Interview process 📝](/Interview/README.md)
+6. [Code of conduct ❤️](/Etiquette/README.md)
 
 ## 1. Who's in the team
 
