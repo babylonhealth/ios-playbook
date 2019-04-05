@@ -8,7 +8,7 @@ Fastlane match is a tool for managing certificates and provisioning profiles cen
 For day to day development work it usually suffices to navigate to the project directory in a terminal shell and run the command
 
 ```shell
- $ fastlane match development --read-only
+ $ fastlane match development --readonly
 ```
 
 Certificates and provisioning profiles for enterprise builds (Hockey App) or release builds (Testflight and the App Store) can also be downloaded. Normally, this is not needed but might be necessary if you want to run UI tests locally or work on updating our fastlane build scripts.
@@ -22,7 +22,7 @@ To install certificates and provisioning profiles for creating a Testflight or A
 For a Hockeyapp build
 
 ```shell
- $ fastlane match enterprise --read-only
+ $ fastlane match enterprise --readonly
 ```
 
 More information about available options can be found below and in the fastlane match [documentation](https://docs.fastlane.tools/actions/match/).
