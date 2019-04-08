@@ -21,7 +21,7 @@ Its purpose is to provide __convenient__ components in order to assist developer
 ### DesignLibrary
 
 `DesignLibrary` is our abstraction layer.
-Instead of depending on implementations like `BentoKit` or `Atomic Components` we depend on abstractions.
+Instead of depending on concrete types of components, either from `BentoKit` or `Atomic Components`, we depend on abstractions in a form of abstract factory methods that return `AnyRenderable`.
 For more informations please check the [proposal](./Proposals/BabylonDesignLibrary.md)
 
 ## Frequent Scenarios and how we should deal with them
