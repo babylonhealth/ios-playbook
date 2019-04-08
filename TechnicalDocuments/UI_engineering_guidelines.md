@@ -12,7 +12,9 @@ The purpose of this document is to describe how we implement our UI in babylon a
 
 `BentoKit` is the first implementation of `Bento` Components in Babylon.
 Its purpose is to provide __convenient__ components in order to assist developers.
-`BentoKit` isn't suitable for Component composition. 
+`BentoKit` isn't suitable for component composition. 
+
+Examples: `TitledDescription`, `ImageOrLabel`
 
 ### Atomic Components
 `Atomic Components` are the newest implementation of `Bento` Components in Babylon.
