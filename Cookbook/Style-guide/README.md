@@ -410,12 +410,14 @@ func reticulateSplines(
 }
 ```
 
-Don't use `(Void)` to represent the lack of an input; simply use `()`. Use `Void` instead of `()` for closure and function outputs.
+Don't use `(Void)` to represent the lack of an input; simply use `()`.
+Use `Void` instead of `()` for closure outputs.
+Don't use `Void` for function outputs as it is redundant.
 
 **Preferred**:
 
 ```swift
-func updateConstraints() -> Void {
+func updateConstraints() {
   // magic happens here
 }
 
