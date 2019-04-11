@@ -36,4 +36,4 @@ iOS Cookbook 👩‍🍳
 * [Strings and Localisation](./Technical-Documents/Lokalise.md)
 * [Outstanding Technical Debt and Legacy Code](./Technical-Documents/TechnicalDebt.md)
     * [BBAddAdditionalPatientInformationViewControllerV2](./Technical-Documents/TechnicalDebt.md)
-* What is the When / Given / Then/ And formatting used by QA and how can i determine it's correctness
+* * [✏️] What is Gherkin (the When / Given / Then/ And formatting used by QA) and how can i determine it's correctness in QA PRs
