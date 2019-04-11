@@ -3,7 +3,7 @@ Integrate with the Debug Window
 
 Sometimes there is a complicated user journey, requiring multiple steps or data entry to proceed. Sometimes there is a prerequisite to reach a certain user flow that is awfully long for recurring manual QA and dev testing.
 
-You want to have an early way out to this prolonged, endured pain of having to repeat yourselves just to get through them.
+You want to have an early way out to this prolonged, endured process of having to repeat yourselves just to get through them.
 
 ## 😘 The Debug Window is here to help! 🎉
 
