@@ -1005,36 +1005,36 @@ let message = "You cannot charge the flux " +
 ## SwiftLint rules
 
 This is the complete list of rules that are currently enabled on our linter, or will be in the future:
-- [ ] Generic Type Name
-- [] duplicate_imports
-- [] unused_import
-- [] vertical_whitespace_closing_braces
-- [] vertical_whitespace_opening_braces
+- [ ] generic_type_name
+- [ ] duplicate_imports
+- [ ] unused_import
+- [ ] vertical_whitespace_closing_braces
+- [ ] vertical_whitespace_opening_braces
 - [x] void_return
-- [] trailing_comma
-- [] trailing_semicolon
-- [] closure_spacing
-- [] closure_parameter_position
-- [] comma
-- [] leading_whitespace
-- [] let_var_whitespace
-- [] operator_whitespace
-- [] return_arrow_whitespace
-- [] statement_position
-- [] trailing_newline
-- [] trailing_whitespace
-- [] colon
-- [] multiline_arguments
-- [] multiline_arguments_brackets
-- [] multiline_parameters
-- [] multiline_parameters_brackets
-- [] multiple_closures_with_trailing_closure
-- [] multiline_function_chains
-- [] convenience_type
-- [] redundant_type_annotation
-- [] redundant_void_return
-- [] syntactic_sugar
-- [] private_over_fileprivate
-- [] yoda_condition
-- [] opening_brace
-- [] control_statement
+- [ ] trailing_comma
+- [ ] trailing_semicolon
+- [ ] closure_spacing
+- [ ] closure_parameter_position
+- [ ] comma
+- [ ] leading_whitespace
+- [ ] let_var_whitespace
+- [ ] operator_whitespace
+- [ ] return_arrow_whitespace
+- [ ] statement_position
+- [ ] trailing_newline
+- [ ] trailing_whitespace
+- [ ] colon
+- [ ] multiline_arguments
+- [ ] multiline_arguments_brackets
+- [ ] multiline_parameters
+- [ ] multiline_parameters_brackets
+- [ ] multiple_closures_with_trailing_closure
+- [ ] multiline_function_chains
+- [ ] convenience_type
+- [ ] redundant_type_annotation
+- [ ] redundant_void_return
+- [ ] syntactic_sugar
+- [ ] private_over_fileprivate
+- [ ] yoda_condition
+- [ ] opening_brace
+- [ ] control_statement
