@@ -109,7 +109,7 @@ Please keep in mind that this document is in a continuous state of flux, with ne
 - Can you list some `communication patterns` used in iOS?
 - What are the differences between `frame` and `bounds`?
 - Is the `bounds.origin` always zero?
-- How would you extend the touchable area of a `UIView`?
+- How does UIKit know which view is tapped? How would you extend the touchable area of a `UIView`?
 - What is the `Responder Chain`?
 - Have you used `Core Data`? If so, how do you like it, and why? When would it not be appropriate to use `Core Data`?
 - What other iOS frameworks are you familiar with (eg AVFoundation, SceneKit)?
