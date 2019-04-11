@@ -36,6 +36,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Olivier Halligon        | [@AliSoftware](https://twitter.com/aligatr)                   |
 | Rui Peres               | [@peres](https://twitter.com/peres)                           |
 | Sergey Shulga           | [@SergDort](https://twitter.com/SergDort)                     |
+| Simon Cass               | [@codercass](https://twitter.com/codercass)                |
 | Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
 | Witold Skibniewski      |                                                               |
 | Yasuhiro Inami          | [@inamiy](https://twitter.com/inamiy)                         |
@@ -48,7 +49,7 @@ By definition, members work on their respective squad, although they are free to
 
 | Squad Name                    | Members                          | Availability | Public slack channel |
 |-------------------------------|----------------------------------| ------------ | -------------------- |
-| SDK                           | Viorel                           |    1/3       | [#sdk_squad](https://babylonhealth.slack.com/archives/CC5JNDGJJ) |
+| SDK                           | Viorel, Simon                      |    2/3       | [#sdk_squad](https://babylonhealth.slack.com/archives/CC5JNDGJJ) |
 | Consultation                  | Ilya                             |    1/1       | |
 | Booking                       | Witold                           |    1/1       |  |
 | Prescriptions                 | Adam                             |    1/1       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
