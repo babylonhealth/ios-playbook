@@ -1,16 +1,20 @@
 # DesignLibrary Technical Documentation
 
-This is a FAQ for `DesignLibrary`.
+The purpose of this document is provide information regarding
 
-1. How can I reuse view controllers?
+- how you can use existing components
+- General Design Guidelines related to `DesignLibrary`.
+- how you can implement new components to `DesignLibrary`.
+
+## How to use DesignLibrary
+
+- How can I reuse view controllers?
 
 ```swift
 DesignLibrary.viewControllersBuilder().navigationController(....)
 ```
 
-2. How can I use `DesignLibrary`?
-
-If you are working on a feature called `Foo` and you are following our architecture then you also have `FooRenderer` like 
+- If you are working on a feature called `Foo` and you are following our architecture then you also have `FooRenderer` like 
 
 ```swift
 struct Foo: BoxRenderer {
@@ -62,7 +66,7 @@ private func renderTextInput(
 }
 ```
 
-3. How can I access fonts and colors from my renderer? 
+- How can I access fonts and colors from my renderer? 
 
 ```swift
 struct Foo: BoxRenderer {
@@ -80,14 +84,74 @@ struct Foo: BoxRenderer {
     }
 
 ```
-4. Why `DesignLibrary` doesn't allow me to construct a custom color or font?
+
+## General Design Guidelines related to `DesignLibrary`.
+
+-  Why `DesignLibrary` doesn't allow me to construct a custom color or font?
 
 Because we must use specific colors and fonts which have been decided by our design team.
 
-5. Do you have any real examples.
+- Do you have any real examples?
 
-Yes, check the `GalleryApp` :)
+Yes, there is the `GalleryApp`. The scheme of the target is `GalleryApp` and the source
+code location is `Babylon/GalleryApp`. It contains all the available components. 
 
-6: Where can I find all the components which are approved by our design team?
+- Where can I find all the components which are approved by our design team?
 
-Go to `Zeplin` and select the `Design System` tag.
+ You can find them in [Zeplin](https://zpl.io/2ZL1odJ)
+
+
+## How you can implement new components to `DesignLibrary`
+
+In order to implement a new factory method in `DesignLibrary` you need to 
+be aware of all the available tools that we have.
+Also the Nomenclature is important, so we will start with defining that we have.
+
+### What are the `BentoKit` components and how to use them in order to create new factory methods in `DesignLibrary`
+
+`BentoKit` contains feature rich components. `BentoKit` was designed with developer ergonomics in
+mind. All the `BentoKit` components are available under the `Component` namespace.
+All the `BentoKit` components are configurable via their initializer.
+This is an example of a factory method using `BentoKit`
+
+```swift
+    func input(      
+        title: String,
+        placeholder: String? = nil,
+        textDidChange: (String) -> ()
+    ) -> AnyRenderable {
+        let inputStyleSheet = ...
+        return Component.Input(
+            title: title, 
+            placeholder: placeholder,
+             textDidChange: textDidChange, 
+             styleSheet: inputStyleSheet
+        ).asAnyRenderable()
+    }
+```
+
+These components are feature rich but they aren't as flexible as `Atomic` components.
+You should always prefer the `Atomic` components over these.
+
+### `Atomic` components
+
+`Atomic` components are lightweight components which are the `Bento` equivalent of standard `UIKit` components.
+They are lightweight because the purpose is to compose them.
+
+# TODO add Documentation about atomic components!
+
+### When and why to create custom  `Bento` components using view based composition in `DesignLibrary`
+
+This applies when you create custom components from scratch. In practice this rarely happens. 
+You should follow this approach only if there are technical limitations which doesn't allow you to implement the component otherwise.
+*Component composition* is always preferred over *view composition*.
+
+### Component Composition
+So by this point you must be familiar with these terms `BentoKit` components, `Atomic` components and custom components with view based composition.
+In order to do component composition there are two ways 
+- either by manually
+- or by making use of the `Layout` Components
+
+Is you choose to do it manually its you should be aware that its not a trivial task but it provides flexibility.
+Due to its non trivial nature we have created the `Layout` Components. 
+These components
