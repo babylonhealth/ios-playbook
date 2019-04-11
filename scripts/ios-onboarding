@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# Set up repo and related dependencies for iOS development at Babylon.  This
+# script will echo every command that it's running, for clarity.
+#
+# This script is reasonably idempotent.
+#
+# Required Arguments:
+#
+#   CODE_DIRECTORY
+#   the absolute path of the directory into which you would like to clone the
+#   babylon-ios repo (do not include a trailing slash)
+#
+# To use this script, set CODE_DIRECTORY and invoke it. For example, to clone
+# the babylon-ios repo into a directory underneath /Users/me/code, run:
+#
+#   $ CODE_DIRECTORY=/Users/me/code scripts/ios-onboarding
+#
+# See the "New Hires Checklist" in the ios-playbook repo for more details.
+
+set -eo pipefail  # exit immediately when any command fails
+set -o nounset    # treat unset variables as an error
+set -x            # echo every command before running it
+
+target_directory="${CODE_DIRECTORY}/babylon-ios"
+
+# Globally configure Git to use SSH instead of HTTPS.
+git config --global url."git@github.com:".insteadOf "https://github.com/"
+
+# Set up Git LFS.
+brew install git-lfs
+git lfs install
+
+# Clone the iOS repository into the given code directory, if needed.
+if [[ ! -d "${target_directory}" ]]; then
+  git clone git@github.com:Babylonpartners/babylon-ios.git "${target_directory}"
+fi
+cd "${target_directory}"
+
+# Get the latest Xcode templates.
+./Templates/install_xcode_templates.sh
+
+# Install project dependencies (Ruby gems and Cocoapods pods).
+gem install bundler -v '~> 1.0'
+bundle install
+bundle exec pod install
+
+set +x
+echo
+echo "The babylon-ios project is now ready for local development on your system."
+echo "It has been set up in: ${target_directory}"
+echo "Run 'xed .' inside that directory to get started!"
+echo
