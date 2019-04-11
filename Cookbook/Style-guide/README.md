@@ -54,6 +54,7 @@ Uncontroversial, non-additive changes such as misspellings, grammar or compiler 
 * [Organization and Bundle Identifier](#organization-and-bundle-identifier)
 * [Copyright Statement](#copyright-statement)
 * [References](#references)
+* [SwiftLint rules](#swiftlint-rules)
 
 ## Correctness
 
@@ -1000,3 +1001,40 @@ let message = "You cannot charge the flux " +
 * [The Swift Programming Language](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/index.html)
 * [Using Swift with Cocoa and Objective-C](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/BuildingCocoaApps/index.html)
 * [Swift Standard Library Reference](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/index.html)
+
+## SwiftLint rules
+
+This is the complete list of rules that are currently enabled on our linter, or will be in the future:
+- [ ] Generic Type Name
+- [] duplicate_imports
+- [] unused_import
+- [] vertical_whitespace_closing_braces
+- [] vertical_whitespace_opening_braces
+- [x] void_return
+- [] trailing_comma
+- [] trailing_semicolon
+- [] closure_spacing
+- [] closure_parameter_position
+- [] comma
+- [] leading_whitespace
+- [] let_var_whitespace
+- [] operator_whitespace
+- [] return_arrow_whitespace
+- [] statement_position
+- [] trailing_newline
+- [] trailing_whitespace
+- [] colon
+- [] multiline_arguments
+- [] multiline_arguments_brackets
+- [] multiline_parameters
+- [] multiline_parameters_brackets
+- [] multiple_closures_with_trailing_closure
+- [] multiline_function_chains
+- [] convenience_type
+- [] redundant_type_annotation
+- [] redundant_void_return
+- [] syntactic_sugar
+- [] private_over_fileprivate
+- [] yoda_condition
+- [] opening_brace
+- [] control_statement
