@@ -103,9 +103,33 @@ code location is `Babylon/GalleryApp`. It contains all the available components.
 
 ## How you can implement new components to `DesignLibrary`
 
+### Guidelines for adding new factory methods to `DesignLibrary`
+The API the factory method should be semantically relative  to the functionality of the method.
+
+For instance, if you have a banner which has an icon which can aligned vertically then
+
+__Wrong__
+
+```swift
+    func banner(title: String, color: UIColor, stackViewAlignment: UIStackView.Alignment) -> AnyRenderable { ... }
+```
+
+__Correct__
+
+```swift
+    enum IconAlignment {
+        case top
+        case center
+        case bottom
+    }
+    func banner(title: String, color: UIColor, iconAlignment: IconAlignment) -> AnyRenderable { ... }
+```
+
+### Nomenclature around `DesignLibrary` and the available tools
+
 In order to implement a new factory method in `DesignLibrary` you need to 
 be aware of all the available tools that we have.
-Also the Nomenclature is important, so we will start with defining that we have.
+Also the nomenclature is important, so we will start with defining that we have.
 
 ### What are the `BentoKit` components and how to use them in order to create new factory methods in `DesignLibrary`
 
@@ -149,9 +173,12 @@ You should follow this approach only if there are technical limitations which do
 ### Component Composition
 So by this point you must be familiar with these terms `BentoKit` components, `Atomic` components and custom components with view based composition.
 In order to do component composition there are two ways 
-- either by manually
+- either manually
 - or by making use of the `Layout` Components
 
-Is you choose to do it manually its you should be aware that its not a trivial task but it provides flexibility.
-Due to its non trivial nature we have created the `Layout` Components. 
-These components
+Composing components manually is more flexible but its not a trivial task. Due to its non trivial nature we have created the `Layout` Components. 
+These components do comfort to the `Renderable` protocol.
+
+### Layout Components 
+
+# TODO add Documentation about Layout components!
