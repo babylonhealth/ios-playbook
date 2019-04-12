@@ -14,6 +14,16 @@ The purpose of this document is provide information regarding
 DesignLibrary.viewControllersBuilder().navigationController(....)
 ```
 
+Currently we have two factory methods for navigation controllers these are 
+
+1. `DesignLibrary.ViewControllersBuilder.navigationControllerForTopMostScreen`
+2. `DesignLibrary.ViewControllersBuilder.navigationController`
+
+The first factory method is suitable when your presented view controller should have the semantic of top most screen, the current
+implementation only applies large titles.
+
+The second factory method should be used for all the other cases.
+
 - If you are working on a feature called `Foo` and you are following our architecture then you also have `FooRenderer` like 
 
 ```swift
@@ -87,7 +97,7 @@ struct Foo: BoxRenderer {
 
 ## General Design Guidelines related to `DesignLibrary`.
 
--  Why `DesignLibrary` doesn't allow me to construct a custom color or font?
+-  Why `DesignLibrary` doesn't allow me to provide a custom color or font?
 
 Because we must use specific colors and fonts which have been decided by our design team.
 
@@ -101,12 +111,12 @@ code location is `Babylon/GalleryApp`. It contains all the available components.
  You can find them in [Zeplin](https://zpl.io/2ZL1odJ)
 
 
-## How you can implement new components to `DesignLibrary`
+## Adding new components to `DesignLibrary`
 
 ### Guidelines for adding new factory methods to `DesignLibrary`
-The API the factory method should be semantically relative  to the functionality of the method.
+The API of the factory method should be semantically relative  to the functionality of the method.
 
-For instance, if you have a banner which has an icon which can aligned vertically then
+For instance, if you have a banner which has an icon which can be aligned vertically then
 
 __Wrong__
 
@@ -129,7 +139,7 @@ __Correct__
 
 In order to implement a new factory method in `DesignLibrary` you need to 
 be aware of all the available tools that we have.
-Also the nomenclature is important, so we will start with defining that we have.
+Also the nomenclature is important, so we will start with defining what we have.
 
 ### What are the `BentoKit` components and how to use them in order to create new factory methods in `DesignLibrary`
 
