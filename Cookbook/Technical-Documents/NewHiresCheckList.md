@@ -85,6 +85,7 @@ Here's how to get the iOS project up and running.
      ```
 1. Install Cocoapods pods:
      ```
+     gem install bundler
      bundle exec pod install
      ```
       It can be useful to create a command line alias for `pod` to `bundle exec pod` so that you are guaranteed to always be running the correct version of Cocoapods.
@@ -110,6 +111,8 @@ Here's how to get the iOS project up and running.
 1. [Install additional tools and ask access for the various services we use](ToolsAndServices.md).
 
 1. Add yourself to the team list in the [playbook](https://github.com/Babylonpartners/ios-playbook) by making your first PR 😉
+
+1. Add shared `iOS Developers` calendar to your calendar on Outlook
 
 1. Don't hesitate to create a PR with an update to this `NewHiresCheckList` if you have spotted something is missing here.
 

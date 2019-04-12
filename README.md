@@ -23,6 +23,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Ana Catarina Figueiredo | [@AnnKatFig](https://twitter.com/AnnKatFig)                   |
 | Anders Ha               | [@_andersha](https://twitter.com/_andersha)                   |
 | Ben Henshall            | [@Ben_Henshall](https://twitter.com/ben_henshall?lang=en)     |
+| Chitra Kotwani          | [@ChitraKotwani](https://twitter.com/chitrakotwani)           |
 | Danilo Aliberti         |                                                               |
 | David Rodrigues         | [@dmcrodrigues](https://twitter.com/dmcrodrigues)             |
 | Diego Petrucci          | [@diegopetrucci](https://twitter.com/diegopetrucci)           |
@@ -36,7 +37,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Olivier Halligon        | [@AliSoftware](https://twitter.com/aligatr)                   |
 | Rui Peres               | [@peres](https://twitter.com/peres)                           |
 | Sergey Shulga           | [@SergDort](https://twitter.com/SergDort)                     |
-| Simon Cass               | [@codercass](https://twitter.com/codercass)                |
+| Simon Cass              | [@codercass](https://twitter.com/codercass)                   |
 | Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
 | Witold Skibniewski      |                                                               |
 | Yasuhiro Inami          | [@inamiy](https://twitter.com/inamiy)                         |
@@ -49,13 +50,13 @@ By definition, members work on their respective squad, although they are free to
 
 | Squad Name                    | Members                          | Availability | Public slack channel |
 |-------------------------------|----------------------------------| ------------ | -------------------- |
-| SDK                           | Viorel, Simon                      |    2/3       | [#sdk_squad](https://babylonhealth.slack.com/archives/CC5JNDGJJ) |
+| SDK                           | Viorel, Simon                    |    2/3       | [#sdk_squad](https://babylonhealth.slack.com/archives/CC5JNDGJJ) |
 | Consultation                  | Ilya                             |    1/1       | |
 | Booking                       | Witold                           |    1/1       |  |
 | Prescriptions                 | Adam                             |    1/1       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
 | Healthcheck                   | Ben, Catarina                    |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
 | Native/Core                   | Giorgos, Jason, Martin, Inami    |    4/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
-| Professional Services         | Danilo                           |    1/3       | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
+| Professional Services         | Danilo, Chitra                   |    1/3       | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
 | Enrolment and Integrity       | Diego                            |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Core Experience               | Sergey                           |    1/2       | [#core-experience](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
 | Health Management             | David, João                      |    2/2       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) |
