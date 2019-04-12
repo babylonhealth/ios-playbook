@@ -85,7 +85,7 @@ Here's how to get the iOS project up and running.
      ```
 1. Install Cocoapods pods:
      ```
-	 gem install bundler
+     gem install bundler
      bundle exec pod install
      ```
       It can be useful to create a command line alias for `pod` to `bundle exec pod` so that you are guaranteed to always be running the correct version of Cocoapods.

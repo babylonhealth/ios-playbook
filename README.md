@@ -37,7 +37,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Olivier Halligon        | [@AliSoftware](https://twitter.com/aligatr)                   |
 | Rui Peres               | [@peres](https://twitter.com/peres)                           |
 | Sergey Shulga           | [@SergDort](https://twitter.com/SergDort)                     |
-| Simon Cass              | [@codercass](https://twitter.com/codercass)                  |
+| Simon Cass              | [@codercass](https://twitter.com/codercass)                   |
 | Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
 | Witold Skibniewski      |                                                               |
 | Yasuhiro Inami          | [@inamiy](https://twitter.com/inamiy)                         |
