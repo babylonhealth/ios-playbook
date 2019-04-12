@@ -7,7 +7,7 @@
 * Install Charles Proxy
 * Add the desired URL under Proxy > SSL Proxy Settings
 * Install on Simulator via Help > SSL Proxying > Install on iOS Simulator
-* The license for Charles can be had from iOS team vault on 1Password
+* The license for Charles can be found in the iOS team vault on 1Password
 
 ## Access to Services
 
