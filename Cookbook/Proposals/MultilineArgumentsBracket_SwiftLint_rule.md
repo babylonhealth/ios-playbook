@@ -38,7 +38,7 @@ Turn on following SwiftLint rules:
 The documentation with samples what particular rule does can be found [here](https://github.com/realm/SwiftLint/blob/master/Rules.md#multiline-arguments).
 
 ## Impact on existing codebase
-When adding the rule to our codebase, Xcode reports about 2500+ violations of the rule. That would need to be solved. Around half of the work can be automated by using SwiftFormat to automatically format files. After running [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) there's around ~900 issues to be fixed manually.
+After adding rules to our codebase, Xcode reports about 2500+ violations of them. That would need to be solved before marging to develop. More than the half of the work can be automated by using SwiftFormat to automatically format files. After running [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) there's around ~900 issues to be fixed manually.
 
 In my opinion the impact on the codebase will be very positive, however it will also add few changes which are not defined in our style guide. I think it's acceptable price to make it possible to resolve nits quicker which would decrease a time when a PR is open.
 
