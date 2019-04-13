@@ -1,0 +1,121 @@
+# Enable multiline rules in SwiftLint
+
+* Author(s): Adam Borek
+* Review Manager: Diego Petrucci
+
+## Introduction
+The motivation to create this proposal to not waste the time to fix violations of a SwfitLint's rule which we maybe wouldn't like to have, considering all pros & cons.
+
+## Motivation
+In our [StyleGuide](https://github.com/Babylonpartners/ios-playbook/tree/master/Cookbook/Style-guide#function-declarations) we have a section about multiline arguments & parameters. Multiline function declaration or function calls should have their brackets in separate lines e.g:
+```swift
+func reticulateSplines(
+  spline: [Double],
+  adjustmentFactor: Double,
+  translateConstant: Int,
+  comment: String
+) -> Bool {
+  // reticulate code goes here
+}
+
+let success = reticulateSplines(
+  spline: splines,
+  adjustmentFactor: 1.3,
+  translateConstant: 2,
+  comment: "normalize the display"
+)
+```
+To reduce our time spent on fixing such nits we can use SwiftLint to warns us about such issues.
+
+## Proposed solution
+Turn on following SwiftLint rules:
+```
+- multiline_arguments
+- multiline_arguments_brackets
+- multiline_parameters
+- multiline_parameters_brackets
+```
+The documentation with samples what particular rule does can be found [here](https://github.com/realm/SwiftLint/blob/master/Rules.md#multiline-arguments).
+
+## Impact on existing codebase
+When adding the rule to our codebase, Xcode reports about 2500+ violations of the rule. That would need to be solved. Around half of the work can be automated by using SwiftFormat to automatically format files. After running SwiftFormat there's around ~900 issues to be fixed manually.
+
+In my opinion the impact on the codebase will be very positive, however it will also add few changes which are not defined in our style guide. I think it's acceptable price to make it possible to resolve nits quicker which would decrease a time when a PR is open.
+
+However, the given set of rules goes a step further. `multiline_arguments_brackets` rule makes it possible achieve what we want, which is, having a trailing bracket at a function call in the new line `)`. However, this rule **always** requires to put trailing bracket `)` in a newline if the function takes more than just one line to be invoked. Even if it's only one argument.
+
+Few example what pieces of the code trigger the rule and how can this be fixed:
+
+ 1. **Trailing closure argument**:
+```swift
+AppsFlyerTracker.shared()?.continue(userActivity, restorationHandler: { restoring in
+        restorationHandler(restoring?.compactMap({ $0 as? UIUserActivityRestoring }))
+})
+```
+The fix:
+```
+AppsFlyerTracker.shared()?.continue(
+    userActivity,
+    restorationHandler: { restoring in
+        restorationHandler(restoring?.compactMap({ $0 as? UIUserActivityRestoring }))
+    }
+)
+```
+
+ 2. **Inlined array argument**:
+```swift
+NSLayoutConstraint.activate([
+    imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -viewModel.viewSpec.secondaryLogoDistanceFromBottom),
+    imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+])
+```
+The fix:
+```swift
+NSLayoutConstraint.activate(
+    [
+        imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -viewModel.viewSpec.secondaryLogoDistanceFromBottom),
+        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+    ]
+)
+```
+or:
+```swift
+NSLayoutConstraint.activate(
+    [imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -viewModel.viewSpec.secondaryLogoDistanceFromBottom),
+     imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)]
+)
+```
+
+ 3. **Multiline inner argument**:
+```swift
+return accessible.access(InsuranceDetailsService.saveInsuranceDetails(
+    membershipId: membershipId,
+    selectedProvider: selectedProvider,
+    patientId: patientId
+))
+```
+The fix:
+```swift
+return accessible.access(
+    InsuranceDetailsService.saveInsuranceDetails(
+        membershipId: membershipId,
+        selectedProvider: selectedProvider,
+        patientId: patientId
+    )
+)
+```
+
+More examples of what changes that would bring can be find in [the sample PR](https://github.com/Babylonpartners/babylon-ios/pull/7246/files) I've created against develop.
+ 
+## Alternatives considered
+
+There are few alternatives:
+
+- drop the one of those four rules (the `multiline_arguments_brackets`). However dropping this rule will allow to have such a function call, which is against our style guide:
+```swift
+makeAutoFillFormAction(with: formProperties,
+    genders: genders,
+    continueAction: continueAction)
+```
+
+- write custom rule to swiftlint which would satisfy our needs. We could consider creating a PR to the SwiftLint. This however will be more time consuming to do.
