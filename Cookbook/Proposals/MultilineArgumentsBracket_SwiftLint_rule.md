@@ -44,7 +44,7 @@ In my opinion the impact on the codebase will be very positive, however it will 
 
 However, the given set of rules goes a step further. `multiline_arguments_brackets` rule makes it possible achieve what we want, which is, having a trailing bracket at a function call in the new line `)`. However, this rule **always** requires to put trailing bracket `)` in a newline if the function takes more than just one line to be invoked. Even if it's only one argument.
 
-Few example what pieces of the code trigger the rule and how can this be fixed:
+Few examples what pieces of the code trigger the rule and how can this be fixed. Keep in mind this is a list of changes which are not defined in the `Function Definition` or `Function Call` sections of the [StyleGuide](https://github.com/Babylonpartners/ios-playbook/tree/master/Cookbook/Style-guide#function-declarations).
 
  1. **Trailing closure argument**:
 ```swift
