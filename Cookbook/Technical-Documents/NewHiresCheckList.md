@@ -44,18 +44,22 @@ Make sure you also join your Tribe/Squad's Slack channels.
 
 ## Install prerequisites
 
-  - Xcode + its command-line tools
-  - [Homebrew](https://brew.sh/)
-  - Ruby 2.4
+1. Install [Homebrew](https://brew.sh/).
 
-If you don't have Ruby or a version manager, you can use RVM to set up Ruby 2.4:
+1. Install the correct version of Xcode, along with its command-line tools. (To
+   find out the correct version you need for the current build, ask a
+   teammate.) Make sure you download and install Xcode from the Apple Developer
+   Center, rather than the App Store, to avoid unexpected automatic updates.
 
-```
-\curl -sSL https://get.rvm.io | bash -s stable
-source ~/.rvm/scripts/rvm
-rvm install 2.4
-rvm use 2.4
-```
+1. Install Ruby 2.4. If you don't have Ruby or a version manager, you can use
+   RVM to set up Ruby 2.4:
+
+    ```
+    \curl -sSL https://get.rvm.io | bash -s stable
+    source ~/.rvm/scripts/rvm
+    rvm install 2.4
+    rvm use 2.4
+    ```
 
 ## Setup Guide
 
