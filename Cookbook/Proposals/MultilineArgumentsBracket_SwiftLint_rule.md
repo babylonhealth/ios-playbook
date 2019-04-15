@@ -28,23 +28,23 @@ let success = reticulateSplines(
 To reduce our time spent on fixing such nits we can use SwiftLint to warns us about such issues.
 
 ## Proposed solution
-Turn on following SwiftLint rules:
+Turn on the following SwiftLint rules:
 ```
 - multiline_arguments
 - multiline_arguments_brackets
 - multiline_parameters
 - multiline_parameters_brackets
 ```
-The documentation with samples what particular rule does can be found [here](https://github.com/realm/SwiftLint/blob/master/Rules.md#multiline-arguments).
+The documentation of these rules, with examples, can be found [here](https://github.com/realm/SwiftLint/blob/master/Rules.md#multiline-arguments).
 
 ## Impact on existing codebase
-After adding rules to our codebase, Xcode reports about 2500+ violations of them. That would need to be solved before marging to develop. More than the half of the work can be automated by using SwiftFormat to automatically format files. After running [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) there's around ~900 issues to be fixed manually.
+After adding these rules to our codebase, Xcode reports about 2500+ violations. That would need to be solved before marging to develop. More than the half of the work can be automated by using SwiftFormat to automatically format files. After running [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) there are around ~900 issues to be fixed manually.
 
 In my opinion the impact on the codebase will be very positive, however it will also add few changes which are not defined in our style guide. I think it's acceptable price to make it possible to resolve nits quicker which would decrease a time when a PR is open.
 
-However, the given set of rules goes a step further. `multiline_arguments_brackets` rule makes it possible achieve what we want, which is, having a trailing bracket at a function call in the new line `)`. However, this rule **always** requires to put trailing bracket `)` in a newline if the function takes more than just one line to be invoked. Even if it's only one argument.
+However, the given set of rules goes a step further. `multiline_arguments_brackets` rule makes it possible achieve what we want — which is, having a trailing bracket at a function call in the new line `)`. However, this rule **always** requires to put the trailing bracket `)` in a newline if the function takes more than just one line to be invoked. Even if it's only one argument.
 
-Few examples what pieces of the code trigger the rule and how can this be fixed. Keep in mind this is a list of changes which are not defined in the `Function Definition` or `Function Call` sections of the [StyleGuide](https://github.com/Babylonpartners/ios-playbook/tree/master/Cookbook/Style-guide#function-declarations).
+These are a few examples of pieces of code that trigger the rule and how can this be fixed. Keep in mind that this is a list of changes which are not defined in the `Function Definition` or `Function Call` sections of the [StyleGuide](https://github.com/Babylonpartners/ios-playbook/tree/master/Cookbook/Style-guide#function-declarations), and so the style guide will need to be updated accordingly.
 
  1. **Trailing closure argument**:
 ```swift
@@ -111,11 +111,11 @@ More examples of changes that would need to be added can be found in [the sample
 
 There are few alternatives:
 
-- drop the one of those four rules (the `multiline_arguments_brackets`). However dropping this rule will allow to have such a function call, which is against our style guide:
+- Drop the one of those four rules — the `multiline_arguments_brackets`. However, doing so will allow to have such a function call, which is against our style guide:
 ```swift
 makeAutoFillFormAction(with: formProperties,
     genders: genders,
     continueAction: continueAction)
 ```
 
-- write custom rule to swiftlint which would satisfy our needs. We could consider creating a PR to the SwiftLint. This however will be more time consuming to do.
+- Write a custom rule to swiftlint which would satisfy our needs. We could consider creating a PR to the SwiftLint repo. This however will be more time consuming to do.
