@@ -26,7 +26,7 @@ The Debug Window serves these functionalities:
 
 Represented in code as `DebugAction`, these are debug shortcuts or side effects that are supported by your screen.
 
-All `DebugAction` has a title, which need not be localized. You may configure them to be either of these three forms:
+All `DebugAction` have a title, which need not be localized. You may configure them to be either of these three forms:
 
 * Simple action — a simple one-off closure invocation;
 * Producer action — starting a `SignalProducer`, and showing an alert upon failure; and
