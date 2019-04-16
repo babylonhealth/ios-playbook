@@ -31,6 +31,7 @@ All `DebugAction` has a title, which need not be localized. You may configure th
 * Simple action — a simple one-off closure invocation;
 * Producer action — starting a `SignalProducer`, and showing an alert upon failure; and
 * Modal action — a factory closure which generates a `UIViewController`, which would be presented by the Debug Window.
+* Date action - A one-off closure that retrieves a selected (optional) date. You could also provide an initially selected date.
 
 ### Ubiquitous actions
 
