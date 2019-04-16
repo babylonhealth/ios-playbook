@@ -9,7 +9,7 @@ You want to have an early way out to this prolonged, endured process of having t
 
 ## What is the Debug Window?
 
-It always stands by and wait for you call — either
+It always stands by and waits for you call — either
 
 * Swipe in from the right screen edge; or
 * Shake on any screen when there is no first responder (e.g. focused text field); or
@@ -92,8 +92,8 @@ extension HomeViewModel: DebugActionsProviding {
 
 For other screens with a custom view controller, conform your view controller to `DebugActionsProviding`, and forward the call to your view model if necessary.
 
-### Do I need to worry about memory leak?
-The Debug Window accesses `DebugActionsProviding.debugActions` only when it is activated. It releases all debug actions when it is dismissed. So you should not need to worry about memory leak.
+### Do I need to worry about memory leaks?
+The Debug Window accesses `DebugActionsProviding.debugActions` only when it is activated. It releases all debug actions when it is dismissed. So you should not need to worry about memory leaks.
 
 If you do spot leaks due to the Debug Window, please file a ticket.
 
