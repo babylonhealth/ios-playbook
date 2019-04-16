@@ -9,7 +9,7 @@ You want to have an early way out to this prolonged, endured process of having t
 
 ## What is the Debug Window?
 
-It always stands by and waits for you call — either
+The debug window can be activated in the following ways:
 
 * Swipe in from the right screen edge; or
 * Shake on any screen when there is no first responder (e.g. focused text field); or
