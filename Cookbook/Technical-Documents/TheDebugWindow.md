@@ -12,7 +12,6 @@ You want to have an early way out to this prolonged, endured process of having t
 The debug window can be activated in the following ways:
 
 * Swipe in from the right screen edge; or
-* Shake on any screen when there is no first responder (e.g. focused text field); or
 * Press Command + D if you are running the app in the Simulator.
 
 <img src="./Assets/thedebugwindow.png" width="200" />
@@ -62,15 +61,8 @@ When the Debug Window is activated on Screen D, you should have debug actions in
 * Action c0
 * Action a1
 
-### 🚧 Shake quick action
-If you expect your screen would ever have only one debug action, you can mark the `DebugAction` as _preferred for shake_.
-
-Then when a user shakes with the screen on, the preferred debug action is triggered automatically, instead of the Debug Window being activated.
-
-Do note that the shake ignores ubiquitous debug actions, and the activation gesture would continue to activate the Debug Window regardless of the presence of a preferred-for-shake action.
-
 ## How can my screen integrate with the Debug Window?
-For Bento screens using `BabylonBoxViewController`, and Forms screens using `FormViewController` (🚧), simply conform your view model to `DebugActionsProviding`.
+For Bento screens using `BabylonBoxViewController`, simply conform your view model to `DebugActionsProviding`.
 
 ```swift
 #if DEBUG
@@ -100,5 +92,3 @@ If you do spot leaks due to the Debug Window, please file a ticket.
 ## What is Quick Info?
 
 Just a bunch of relevant information about the current build and the user session for us devs and QA. Feel free to add more stuff as needed.
-
-🚧 You may press the Share button to quickly share a textual version of the Quick Info to somewhere, e.g. Slack.
