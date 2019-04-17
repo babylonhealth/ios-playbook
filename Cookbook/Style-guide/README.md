@@ -961,7 +961,7 @@ let playerMark = (player == current ? "X" : "O")
 
 ## Commas
 
-Trailing commas in arrays should be avoided.
+Trailing commas in arrays and dictionaries should be avoided.
 
 **Preferred**:
 ```swift
