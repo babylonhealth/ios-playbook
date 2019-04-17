@@ -200,4 +200,20 @@ A caveat: There is a scenario, filed as [SR-10272](https://bugs.swift.org/browse
 Additive changes.
 
 ## Alternatives considered
-Status quo: Fragile accessibility identifier; ad hoc definition of accessibility identifier.
+### Status quo
+Fragile accessibility identifier; ad hoc definition of accessibility identifier.
+
+### Two-level accessibility identifier?
+A spike had been made to apply an accessibility identifier to the component root view, and have components applying constant accessibility identifiers to all its subviews as necessary. This was meant to enable two-step queries like:
+
+```swift
+app.otherElements["component"].buttons["submit"]
+```
+
+However, such scenario does not appear to be supported by the Accessibility mechanism. Accessibility containers are not discoverable by accessibility identifiers. So for an element to be discoverable via its accessibility identifier, it **has to be an accessibility element**, and as a consequence, all its child elements are **ignored** by the Accessibility mechanism regardless.
+
+As a reference, UIKit documentation specifically stated this:
+
+> https://developer.apple.com/documentation/uikit/accessibility/uiaccessibilitycontainer
+>
+> Note, however, that the container view itself is not an accessibility element because users interact with the contents, not with the container. This means that a container view that implements the `UIAccessibilityContainer` methods must set to `false` the `isAccessibilityElement` property of the `UIAccessibility` informal protocol.
