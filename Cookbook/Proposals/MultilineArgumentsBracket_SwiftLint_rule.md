@@ -4,10 +4,10 @@
 * Review Manager: Diego Petrucci
 
 ## Introduction
-The motivation to create this proposal to not waste the time to fix violations of a SwfitLint's rule which we maybe wouldn't like to have, considering all pros & cons.
+The motivation to create this proposal is to not waste time fixing violations of a SwfitLint rule which we maybe wouldn't like to have, considering all pros & cons.
 
 ## Motivation
-In our [StyleGuide](https://github.com/Babylonpartners/ios-playbook/tree/master/Cookbook/Style-guide#function-declarations) we have a section about multiline arguments & parameters. Multiline function declaration or function calls should have their brackets in separate lines.To reduce our time spent on fixing such nits we can use SwiftLint to warns us about such issues.
+In our [StyleGuide](https://github.com/Babylonpartners/ios-playbook/tree/master/Cookbook/Style-guide#function-declarations) we have a section about multiline arguments & parameters. Multiline function declaration or function calls should have their brackets in separate lines. To reduce our time spent on fixing such nits we can use SwiftLint to warns us about such issues.
 
 ## Proposed solution
 Turn on the following SwiftLint rules:
@@ -20,7 +20,7 @@ Turn on the following SwiftLint rules:
 The documentation of these rules, with examples, can be found [here](https://github.com/realm/SwiftLint/blob/master/Rules.md#multiline-arguments).
 
 ## Impact on existing codebase
-After adding these rules to our codebase, Xcode reports about 2500+ violations. That would need to be solved before marging to develop. More than the half of the work can be automated by using SwiftFormat to automatically format files. After running [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) there are around ~900 issues to be fixed manually.
+After adding these rules to our codebase, Xcode reports about 2500+ violations. That would need to be solved before merging to develop. More than the half of the work can be automated by using SwiftFormat to automatically format files. After running [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) there are around ~900 issues to be fixed manually.
 
 In my opinion the impact on the codebase will be very positive, however it will also add few changes which are not defined in our style guide. I think it's acceptable price to make it possible to resolve nits quicker which would decrease a time when a PR is open.
 
@@ -44,9 +44,9 @@ let success = reticulateSplines(
   comment: "normalize the display"
 )
 ```
-This is all about having parameters/arguments in seprate lines when we define/call multiple parameters/arguments functions.
+This is all about having parameters/arguments in separate lines when we define/call multiple parameters/arguments functions.
 
-This time, the following examples show what else triggers the rule and how can this be fixed. Keep in mind that this is a list of changes which are not defined in the `Function Definition` or `Function Call` sections of the [StyleGuide](https://github.com/Babylonpartners/ios-playbook/tree/master/Cookbook/Style-guide#function-declarations), and so the style guide will need to be updated accordingly. I would say sometimes the code before a fix is more readable than after SwiftLint's fix.
+This time, the following examples show what else triggers the rule and how this can be fixed. Keep in mind that this is a list of changes which are not defined in the `Function Definition` or `Function Call` sections of the [StyleGuide](https://github.com/Babylonpartners/ios-playbook/tree/master/Cookbook/Style-guide#function-declarations), and so the style guide will need to be updated accordingly. I would say sometimes the code before a fix is more readable than after SwiftLint's fix.
 
  1. **Trailing closure argument**:
 ```swift
@@ -109,7 +109,7 @@ return accessible.access(
 
 More examples of changes that would need to be added can be found in [the sample PR](https://github.com/Babylonpartners/babylon-ios/pull/7246/files) I've created against develop. It's not ready to be merged. It's a result of running [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) & couple of manual changes.
 
-## The question to be asked when reviwing this proposal
+## The question to be asked when reviewing this proposal
 Is it worth to have an automatic function parameters/arguments nits checking for the price of few additional changes in our style? 
  
 ## Alternatives considered
