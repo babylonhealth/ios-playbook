@@ -50,6 +50,7 @@ Uncontroversial, non-additive changes such as misspellings, grammar or compiler 
   * [Failing Guards](#failing-guards)
 * [Semicolons](#semicolons)
 * [Parentheses](#parentheses)
+* [Commas](#commas)
 * [Multi-line String Literals](#multi-line-string-literals)
 * [Organization and Bundle Identifier](#organization-and-bundle-identifier)
 * [Copyright Statement](#copyright-statement)
@@ -956,6 +957,28 @@ In larger expressions, optional parentheses can sometimes make code read more cl
 **Preferred**:
 ```swift
 let playerMark = (player == current ? "X" : "O")
+```
+
+## Commas
+
+Trailing commas in arrays should be avoided.
+
+**Preferred**:
+```swift
+return [
+    firstElement,
+    secondElement,
+    thirdElement
+]
+```
+
+**Not Preferred**:
+```swift
+return [
+    firstElement,
+    secondElement,
+    thirdElementWithTrailingComma,
+]
 ```
 
 ## Multi-line String Literals
