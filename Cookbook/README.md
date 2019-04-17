@@ -14,6 +14,7 @@ iOS Cookbook 👩‍🍳
 
 * [Generalized Screen Lifecycle Observation](./Proposals/ScreenLifecycleObservation.md)
 * [Design Library](./Technical-Documents/DesignLibrary.md)
+* [Integrate with the Debug Window](./Technical-Documents/TheDebugWindow.md)
 
 ##### ... learn how the iOS team works 🛠
 
