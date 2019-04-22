@@ -115,3 +115,30 @@ Requires many efforts for manual refactoring and resolving conflicts.
 ## Alternatives considered
 
 - No alternatives. (Reject this proposal and stay as is)
+
+## Appendix
+
+See [#74](https://github.com/Babylonpartners/ios-playbook/pull/74) for more strict declaration order rule, but it is NOT a part of this proposal.
+(This proposal only contains section 0 to 3)
+
+```
+Data type declaration (required in declaration scope):
+0. type stored properties (NOTE: this rarely appears in practice because singleton is discouraged)
+1. instance stored properties (struct), or enum cases
+2. designated initializers
+3. deinit
+
+(Below order is optional)
+
+In extension (if possible):
+4. convenience initializers
+5. instance computed properties
+6. instance methods
+
+In extension (if possible):
+7. type computed properties
+8. type methods
+
+In extension (if possible):
+9. nested types
+```
