@@ -104,6 +104,19 @@ Furthermore, by separating "external event" nicely, we can send "initial externa
          ...
      }
  }
+
++// NOTE: We won't have `SignalProducer.system` using `scan` anymore,
++// but instead we use `Property.producer`.
+-extension SignalProducer where Error == NoError {
+-    public static func system<Event>(
+-        initial: Value,
+-        scheduler: Scheduler = QueueScheduler.main,
+-        reduce: @escaping (Value, Event) -> Value,
+-        feedbacks: [Feedback<Value, Event>]
+-    ) -> SignalProducer<Value, NoError> {
+-        ...
+-    }
+-}
 ```
 
 - `Feedback` preserves the streaming format, i.e. `Signal<???> -> Signal<Event>` rather than `??? -> Signal<Event>` so that it can have flattening capability e.g. `flatMap(.latest)` or `flatMap(.first)`.
@@ -112,7 +125,9 @@ Furthermore, by separating "external event" nicely, we can send "initial externa
     - Resolves "idle -> routing -> idle" navigation state transition dance.
 - **Backward compatible** with current Moore machine (we can still add as many states for precise control as we want)
 
-### Usage
+### Usage Examples
+
+#### Example 1: Simple (counter, logging, analytics event)
 
 ```swift
 let externalEvent = Signal.merge(
@@ -120,17 +135,134 @@ let externalEvent = Signal.merge(
     decrement.map { Event.decrement }
 )
 
+let loggingFeedback = Feedback { signal -> Signal<Event> in
+    return signal
+        .on(value: { event, state in // side-effect
+            // NOTE: Now we can also retrieve `event` as well as `state`!
+            print("receiving event = \(event) with state = \(state)")
+        })
+        .ignoreValues() // no feedback loop
+        .promoteValue() // for adjusting type
+}
+
+let analyticsFeedback = Feedback { signal -> Signal<Event> in
+    return signal
+        .filter { event, _ in event == .increment }
+        .on(value: { event, _ in // side-effect
+            // NOTE: Analytics is one of the example that doesn't need state changes at all.
+            analytics.send(event: Analytics.Event.didTapIncrement)
+        })
+        .ignoreValues() // no feedback loop
+        .promoteValue() // for adjusting type
+}
+
 let system = Property(
     initial: 0,
     reduce: counterReducer,
     events: externalEvent,
     feedbacks: [loggingFeedback, analyticsFeedback]
 )
-
-/// We can simply create SignalProducer from this system,
-/// without creating producer first then bind to property.
-let p = system.producer
 ```
+
+To simplify the duplicated code above, see `Feedback.noFeedback` in [ios-playbook#102](https://github.com/Babylonpartners/ios-playbook/pull/102).
+
+#### Example 2: Navigation
+
+```swift
+let externalEvent = Signal.merge(
+    didTapA.map { Event.route(Route.pushA) },
+    didTapB.map { Event.route(Route.modalB) }
+)
+
+let navigationFeedback = Feedback { signal -> Signal<Event> in
+    return signal
+        // NOTE: Using `flatMap(.first)` prevents from routing to multiple screens simultaneously
+        .flatMap(.first) { event, _ in
+            guard case let route = event.route else { return .empty }
+            return flowController.handle(route)
+        }
+        .ignoreValues() // no feedback loop
+        .promoteValue() // for adjusting type
+}
+
+let system = Property(
+    initial: 0,
+    reduce: reducer,
+    events: externalEvent,
+    feedbacks: [navigationFeedback]
+)
+```
+
+For navigation feedback rule and `flatMap(.first)`, see also [Babylonpartners/ios-playbook#44](https://github.com/Babylonpartners/ios-playbook/pull/44).
+This is a handy FRP way of managing "isTransitioning" state outside of `State`.
+
+Because this routing is now event-driven rather than state-driven, **we don't need to transit the state back to the original position after completed, which will reduce the intermediate `case`s e.g. `State.isPushingA` and `Event.didFinishPushingA`**.
+(But note that we might still want to have these cases if we want to precisely handle tem to avoid interfering with other events/states/feedbacks)
+
+#### Example 3: Image Loading
+
+```swift
+enum Event {
+    case callAPI(Request)
+    case fetchImages(Response)
+    case reloadCell(image: UIImage, index: Int)
+}
+
+struct State {
+    var images: [/* cellIndex */ Int: UIImage?] = [:]
+}
+
+let externalEvent = Signal.merge(
+    viewDidLoad.map { Event.callAPI(Request(apiURL)) }
+}
+
+let apiFeedback = Feedback { signal -> Signal<Event> in
+    return signal
+        .flatMap(.first) { event, _ in
+            guard case let .callAPI(request) = event else { return .empty }
+            return apiSession.send(request)
+        }
+        .map(Event.fetchImages)
+}
+
+let imageFeedback = Feedback { signal -> Signal<Event> in
+    return signal
+        .flatMap(.merge) { event, _ -> Signal<(UIImage?, index: Int)> in
+            guard case let .fetchImages(response) = event else { return .empty }
+            return imageLoader.fetchAllImages(response.imageURLs)
+        }
+        .map { image, index in
+            Event.reloadCell(image: image, index: index)
+        }
+}
+
+let reducer = { state, event in
+    guard case let .reloadCell(image, index) = event else { return state }
+
+    var state = state
+    state.images[index] = image
+    return state
+}
+
+let system = Property(
+    initial: State(),
+    reduce: reducer,
+    events: externalEvent,
+    feedbacks: [apiFeedback, imageFeedback]
+)
+
+system.signal
+    .combinePrevious(initial: system.value)
+    .startWithValues { oldState, newState in
+        // NOTE: diff & patch algorithm must be efficient enough to update images only
+        let patch = diff(oldState, newState)
+        realView.apply(patch: patch)
+    }
+```
+
+This is a typical image loading example that changes state for every cell's image being ready.
+
+**Caveat:** Diff & patch algorithm must be efficient enough to update images only. Otherwise, we need to rely on primitive FRP e.g. `ReactiveSwift.Property` which will become tightly coupled with virtual view (See [Babylonpartners/Bento#144](https://github.com/Babylonpartners/Bento/issues/144) and [Slack](https://babylonhealth.slack.com/archives/G9S9L0TEK/p1554731131006300))
 
 ## Impact on existing codebase
 
