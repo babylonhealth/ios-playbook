@@ -63,7 +63,7 @@ By definition, members work on their respective squad, although they are free to
 | Health Management             | David, João                      |    2/2       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) |
 | Monitor                       | Anders, Michal                   |    2/2       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
 | Triage UI                     | Michael                          |    1/2       | [#squad_triage_ui](https://babylonhealth.slack.com/archives/CE6H6SLRX) |
-| Women's health                | Anil                             |    1/1       | [#womenshealthteam](https://babylonhealth.slack.com/archives/CFX73S4P5) |
+| Women's Health                | Anil                             |    1/1       | [#womenshealthteam](https://babylonhealth.slack.com/archives/CFX73S4P5) |
 
 
 ## 3. OSS-maintained projects
