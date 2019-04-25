@@ -38,5 +38,5 @@ iOS Cookbook 👩‍🍳
 * [Outstanding Technical Debt and Legacy Code](./Technical-Documents/TechnicalDebt.md)
     * [BBAddAdditionalPatientInformationViewControllerV2](./Technical-Documents/BBAddAdditionalPatientInformationViewControllerV2.md)
 
-* [✏️] What is Gherkin (the When / Given / Then/ And formatting used by QA) and how can i determine it's correctness in QA PRs
+* [✏️] What is Gherkin (the `Given` / `When` / `Then` / `And` formatting used by QA) and how can I determine its correctness in QA PRs
 * [Fastlane Match](./Technical-Documents/FastlaneMatch.md)
