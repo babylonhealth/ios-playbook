@@ -22,7 +22,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Adam Borek              | [@TheAdamBorek](https://twitter.com/TheAdamBorek)             |
 | Ana Catarina Figueiredo | [@AnnKatFig](https://twitter.com/AnnKatFig)                   |
 | Anders Ha               | [@_andersha](https://twitter.com/_andersha)                   |
-| Anil Puttabuddhi        |                                                               |
+| Anil Puttabuddhi        | [@anilputtabuddhi](https://github.com/anilputtabuddhi)        |
 | Ben Henshall            | [@Ben_Henshall](https://twitter.com/ben_henshall?lang=en)     |
 | Chitra Kotwani          | [@ChitraKotwani](https://twitter.com/chitrakotwani)           |
 | Danilo Aliberti         |                                                               |
