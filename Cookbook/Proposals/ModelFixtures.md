@@ -53,9 +53,9 @@ workarounds: is it cleaner, safer, or more efficient? -->
 Proposed approach is similar to what we often do by the convention with `MockSomeNameDTO.make` pattern. It aims to improve current situation by introducing a few important rules.
 
 1. Helpers for models should be defined as an **extension of the model type** in a test target or framework with test utilities.
-- Helper method should be named `fixture` to signify that it's part of the tests.
-- Helpers should use parameters that mirror model's initializer.
-- All of helper method parameters should have default value. This will make relevant data stand out and irrelevant data will be provided by defaults.
+1. Helper method should be named `fixture` to signify that it's part of the tests.
+1. Helpers should use parameters that mirror model's initializer.
+1. All of helper method parameters should have default value. This will make relevant data stand out and irrelevant data will be provided by defaults.
 
 Let's see sample implementation. First define extension on an existing type, instead of introducing extra type for namespacing.
 
