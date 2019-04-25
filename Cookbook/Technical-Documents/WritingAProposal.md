@@ -31,7 +31,7 @@ After the proposal PR has been posted, your coworkers have two weeks to read it 
 
 ### Have the meeting
 
-* Don't forget to create the zoom meeting and update the Outlook invite with the woom link before the meeting
+* Don't forget to create the zoom meeting and update the Outlook invite with the Zoom link before the meeting
 * Your coworkers are supposed to have given feedback on the PR up to 2 hours before the meeting
 * The proposal author is responsible for driving the meeting, taking notes, and draft a plan to implement the change if the proposal gets accepted
 
