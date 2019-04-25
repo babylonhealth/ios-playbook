@@ -25,10 +25,11 @@ We are only human and some of those things are sometimes hard to spot (e.g. in d
 
 By using a bot and a tool like Danger, we ensure that at least most of those hard-to-spot mistakes are detected by Danger, which will comment to warn us about it.
 
-Danger can also improve our review experience by not only warning on issues it found in the code, but also inform us on the state of the PR. This would help us enforce our etiquette:
+Danger can also improve our review experience by not only warning on issues it found in the code, but also inform us on the state of the PR. This would help us enforce etiquette for example if we want to:
 
- * We want to motivate small PRs and avoid large PRs
- * We want to be sure everyone is on board when deciding to update or add a new pod
+ * motivate small PRs and avoid large PRs (which is actually the rule proposed below)
+ * be sure everyone is on board when deciding to update or add a new pod
+ * be sure the PR author has assigned itself to the PR
 
 
 ## Proposed solution
@@ -87,6 +88,12 @@ This will make the bot generate a comment on the Pull Request with a ⚠️ emoj
 
 Being just a warning message, it will only be informative, and will not prevent the PR to build nor make the CI fail. This is to avoid being blocked if there is a justification in breaking that limit (e.g. big refactoring that can't be split)
 
+### Additional rules in the future
+
+We already have [some ideas for additional rules](#picking-a-different-first-rule) to add to Danger that would solve some of the other issues mentioned in the [Motivation](#motivation) section.
+
+Those rules are not part of this current proposal, in order to focus discussions on integration and initial rule. We will propose those potential future rules via separate proposals.
+
 ## Impact on existing codebase
 
 This tool won't have any impact on the codebase at all.
@@ -102,7 +109,7 @@ We could potentially trigger the `danger` CLI earlier in the CI workflow, to be 
 We could also decide to trigger `danger` later, for example _after_ the `test_babylon` job. This would give the advantage of allowing Danger to have access to test results for example. Which means that in the future we could use Danger to post a comment in the PR to tell which test failed or post the link to the HTML report maybe.  
 We think that those potential future rules (based on test results) are not our top priorities for now though and it's too early to decide to move Danger so late in the build pipeline, as it would mean only having feedback fron Danger _after_ the `test_pr` job has finished – which is usually one of the last to finish on PRs. It's totally imaginable to move the `danger` step after the test job in a later PR if it becomes a limitation for a rule we want to implement in the future.
 
-### Picking another first rule
+### Picking a different first rule
 
 There are other ideas for initial rules to include in our `Dangerfile`, including but not limiting to:
 
