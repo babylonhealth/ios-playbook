@@ -46,7 +46,7 @@ _Before going further, it's good to know how Danger works to understand what it'
 
 `danger` is a command line tool that is typically triggered as a script step by the CI, and has access to the PR metadata (including the PR title, author, labels, list of added/removed/modified files, etc).
 
-Using a `Dangerfile` to write our custom rules (written in ruby), we are able to ask Danger to post back comments on the PR, depending on the conditions we want. We can make use of those PR metadata in those rules (for example post a comment only if this metadata X has a value matching Y), which gives Danger all its power.
+Using a `Dangerfile` to write our custom rules, we are able to ask Danger to post back comments on the PR, depending on the conditions we want. We can make use of those PR metadata in those rules (for example post a comment only if this metadata X has a value matching Y), which gives Danger all its power.
 
 Danger is able to post comments of type "plain markdown", "informative", "warning" and "failures". Comments of type "failure" make `danger` exit with a non-zero code, making the CI job fail on purpose.
 
@@ -102,12 +102,51 @@ It will only have an impact on our review process: we will now be informed by Da
 
 ## Alternatives considered
 
+### Using Danger Swift
+
+Danger has recently gained a Swift version as an alternative to the Ruby version. This could make it easier to write `Dangerfile` for people more familiar to Swift than Ruby, so it's an alternative worth considering.
+
+* Danger-Swift [relies on interacting with the DangerJS](https://danger.systems/swift/tutorials/architecture.html#setup) to do its job.
+* Danger-Swift is installed via SPM (though it uses a workaround of having to bind it with a Swift target and a Swift file with only Foundation as dependency), so it needs another layer of caching in our CI, to be able to cache SPM build artefacts and dependencies when running `swift build` to install it on each CI run (while the Ruby version can rely on our existing caching of bundler gems)
+
+* Also note that the `Dangerfile.swift` will be more verbose than the Ruby `Dangerfile`. For example, the one-liner PR size rule mentioned in this proposal would become:
+
+```swift
+import Danger
+let danger = Danger()
+
+let bigPRThreshold = 800
+if (danger.github.pullRequest.additions + danger.github.pullRequest.deletions > bigPRThreshold) {
+  warn('> This PR is too big. Please split it in smaller PRs. If you can't split it, please justify why.')
+}
+```
+
+* As Orta points out in the "Help me choose" page, Danger Swift also has some limitations compared to Danger Ruby:
+
+> You may notice that there was a Swift logo in the index page, Swift is the first language supported by Danger JS’s process environment. Once a new language has been built out, and is stable, then I’ll be building out some documentation in this site.
+
+And in the documentation of Danger Swift's Troubleshooting section:
+
+> *I had a Ruby plugin which did x and y*
+> Yeah… Maybe I’ll just point you at the “Making a Plugin” guide. There’s also a discovery problem because there’s no central index, once there are a few plugins we can make an index on this site. If it gets bit and polished enough, then I think it might be reasonable to move into Danger Swift too.
+
+---
+
+On a side note, it's easy enough to test your Dangerfile for errors, by locally running in your terminal either `bundle exec danger pr <url-of-pr-to-test>` for a Ruby Dangerfile or `swift run danger-swift pr <url-of-pr-to-test>` for a Swift Dangerfile. So avoiding syntax errors and doing iteration testing bring similar experience in both worlds.
+
+In the end it's mainly a matter of tradeoff, the familiarity of the Swift language vs the additional cache step, dependencies, and the risk of plugins and documentation shortage (compare the [Danger-Swift documentation](https://danger.systems/swift/) and [DSL reference](https://danger.systems/swift/reference.html) to its more mature [Ruby counterpart](https://danger.systems/ruby/) and [DSL reference](https://danger.systems/reference.html) to get an idea of each project's doc maturity)
+
 ### Integration in the CI
 
-We could potentially trigger the `danger` CLI earlier in the CI workflow, to be notified about anything we missed ASAP in the PR. But this brings the risk of not having access to the code (if we do that before the checkout step), limiting our possibilties at what rule we can write in the future (and to be honest I'm not even sure every feature of Danger would work if we haven't checked out the code yet)
+We could potentially trigger the `danger` CLI earlier in the CI workflow, to be notified about anything we missed ASAP in the PR. But this brings the risk of not having access to the code (if we do that before the checkout step), requiring us to fetch the `Dangerfile` via the GitHub API in order for it to be present to run `danger`, and limiting our possibilties at what rule we can write in the future (and to be honest I'm not even sure every feature of Danger would work if we haven't checked out the code yet)
 
-We could also decide to trigger `danger` later, for example _after_ the `test_babylon` job. This would give the advantage of allowing Danger to have access to test results for example. Which means that in the future we could use Danger to post a comment in the PR to tell which test failed or post the link to the HTML report maybe.  
-We think that those potential future rules (based on test results) are not our top priorities for now though and it's too early to decide to move Danger so late in the build pipeline, as it would mean only having feedback fron Danger _after_ the `test_pr` job has finished – which is usually one of the last to finish on PRs. It's totally imaginable to move the `danger` step after the test job in a later PR if it becomes a limitation for a rule we want to implement in the future.
+Another alternative to trigger it earlier would be to run it during the `checkout_code_steps`, right after the `save_gems_cache` step, to run Danger right after its installation by `bundle install` in this job. This would allow to avoid waiting for things like the CocoaPods cache restoration and the `persist_workspace` steps, which could take a significant time to run. One drawback of this approach is that it means that `danger` would be run for every workflow using this `checkout_code` job (so basically all workflows, including the ones where no PR is associated, making `danger` fail on those), instead of only triggering on `test_pr` and `test_release` workflows.
+
+We could also decide to trigger `danger` later, for example _after_ the `test_babylon` job. This would give the advantage of allowing Danger to have access to test results for example. Which means that in the future we could use Danger to post a comment in the PR to tell which test failed or post the link to the HTML report maybe. But following that logic we should also trigger `danger` after `test_telus` and other jobs running tests, which will likely report some test failures multiple times (one per job if the failure is common to those targets). Which brings other questions and complexities into consideration (like does that mean one Danger comment on the PR... per test job, in each PR? Or a dedicated job after everything synchronizing all the previous test jobs but having to wait on them all before being able to report?) that might be too early to discuss for this initial proposal.
+
+We thus think that those potential future rules based on test results are not our top priorities for now and it's too early to decide to move Danger so late in the build pipeline, as it would mean only having feedback fron Danger _after_ the `test_pr` job has finished – which is usually one of the last to finish on PRs. It's totally imaginable to propose moving the `danger` step after a test job in a later PR if it becomes a limitation for a rule we want to implement in the future, but such a change would require a dedicated proposal to discuss the aforementioned consequences (especially having multiple jobs running in parallel and sync of the `danger` instances).
+
+On a side note, it is worth reminding the reader that Danger only posts one comment (after the initial run of the CI) and then _updates_ said comment on subsequent runs; which means that even if you commented or watched the PR, you won't be spammed by GitHub notifications, as comment _updates_ don't trigger notifications on GitHub.
 
 ### Picking a different first rule
 
@@ -132,12 +171,15 @@ _Note: I am hoping to write proposals for some of those additional rules soon, s
 
 The rule propose to make the condition based on the "overall lines of code added/removed in the diff" (that's the value returned by `git.lines_of_code` as documented in Danger docs). Which means it checks the value of `insertions` + `deletions`. That means that a PR which adds 20 lines and remove 30 lines will be seen as a size of 50.
 
-* We could instead define the size of a PR by `abs(insertions - deletions)`, so that a PR adding 30 lines and removing 20 will be seen as of size 10. But since there's no guarantee that those 30 lines added are _replacing_ the 20 lines removed, as they could also be completely unrelated, we don't think it is a reliable metric
+We could instead pick one of these other alternatives:
 
-* We could also use a ponderation of `A * insertions + B * deletions`, typically with `A > B > 0`, arguing that it's faster to review deleted code than added code. I'm not convinced that it's really the case – or worth going to such detail – but we might consider trying it in a future PR if we see that Danger warns too often about false positives
+* Define the size of a PR by `abs(insertions - deletions)`, so that a PR adding 30 lines and removing 20 will be seen as of size 10. But since there's no guarantee that those 30 lines added are _replacing_ the 20 lines removed, as they could also be completely unrelated, we don't think it is a reliable metric
 
+* Use a ponderation of `A * insertions + B * deletions`, typically with `A > B > 0`, arguing that it's faster to review deleted code than added code. I'm not convinced that it's really the case – or worth going to such detail – but we might consider trying it in a future PR if we see that Danger warns too often about false positives
 
-In the end, just using total number of lines would at least be a good initial metric for the PR complexity and for limiting the size of each PR.
+* Ignore some files when computing the PR size, considering they don't play a significant role in estimating the PR _review time and complexity_. Here are some file types that we might consider ignoring when computing `insertions` and `deletions`: Snapshot files, Localization files, Assets (like images), ...
+
+* Use `max(insertions, deletions) < 800` to consider the limit not on the sum of both metrics, but on either of these metrics separately (which is how some team members have interpreted our current informal limit so far, so it's worth clarifying if the limit is on the total or the max anyway).
 
 It still has the downside that for example fixing the indentation of a 50-lines block of code will count for 100 (50 deletions + 50 insertions), but this kind of special case is hard to differentiate from a real deletion of 50 lines in one place and addition of 50 lines in another. That's also why the rule is only a _warning_ emited by Danger – just for information for the PR author and reviewers – and won't fail the CI or block the merge in case of false positives.
 
