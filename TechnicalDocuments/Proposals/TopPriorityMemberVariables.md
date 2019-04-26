@@ -119,7 +119,7 @@ Requires many efforts for manual refactoring and resolving conflicts.
 ## Appendix
 
 See [#74](https://github.com/Babylonpartners/ios-playbook/pull/74) for more strict declaration order rule, but it is NOT a part of this proposal.
-(This proposal only contains section 0 to 3)
+(This proposal only contains section 1 to 3)
 
 ```
 Data type declaration (required in declaration scope):
