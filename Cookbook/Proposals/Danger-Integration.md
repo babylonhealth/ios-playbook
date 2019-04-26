@@ -7,7 +7,7 @@
 
 [Danger](https://danger.systems/ruby/) is a tool that is able to comment on your Pull Requests based on some rules that you can write yourself.
 
-This proposal suggest that we adopt Danger to automatically check cases that we missed in the past during some PR reviews.
+This proposal suggests that we adopt Danger to automatically check cases that we missed in the past during some PR reviews.
 
 This proposal also present an initial rule where Danger will be useful for us. Note that we will add more rules in the future via separate proposals or discussions (see [Alternatives Considered](#alternatives-considered)); this proposal focuses only on the first integration.
 
@@ -34,7 +34,7 @@ Danger can also improve our review experience by not only warning on issues it f
 
 ## Proposed solution
 
-This proposal suggest to:
+This proposal suggests to:
 
 * Integrate Danger in our repository (i.e. add it to the `Gemfile` and configure the CI to run it as a job)
 * Activate a first rule that would help solve one of the points listed above, namely warning about PR size
@@ -146,7 +146,7 @@ We could also decide to trigger `danger` later, for example _after_ the `test_ba
 
 We thus think that those potential future rules based on test results are not our top priorities for now and it's too early to decide to move Danger so late in the build pipeline, as it would mean only having feedback fron Danger _after_ the `test_pr` job has finished – which is usually one of the last to finish on PRs. It's totally imaginable to propose moving the `danger` step after a test job in a later PR if it becomes a limitation for a rule we want to implement in the future, but such a change would require a dedicated proposal to discuss the aforementioned consequences (especially having multiple jobs running in parallel and sync of the `danger` instances).
 
-On a side note, it is worth reminding the reader that Danger only posts one comment (after the initial run of the CI) and then _updates_ said comment on subsequent runs; which means that even if you commented or watched the PR, you won't be spammed by GitHub notifications, as comment _updates_ don't trigger notifications on GitHub.
+At this point, it is worth reminding the reader that Danger only posts one comment (after the initial run of the CI) and then _updates_ said comment on subsequent runs; which means that even if you commented or watched the PR, you won't be spammed by GitHub notifications, as comment _updates_ don't trigger notifications on GitHub. You'd get a notification if you commented _before_ Danger had time to post its initial comment after the initial CI run though, which is worth thinking about when discussing how soon or late `danger` should be triggered too.
 
 ### Picking a different first rule
 
@@ -161,7 +161,7 @@ There are other ideas for initial rules to include in our `Dangerfile`, includin
 * Report SwiftLint warnings in the PR (though it would require to move the execution of Danger after the `test_pr` job, and besides, as of today those SwiftLint violations are reported as errors anyway)
 * ...
 
-Those rules could also have been picked as initial candidate for the first rule we implement in Danger, but the rule about the PR size seems more straitforward to implement as a good way to test the initial usage of Danger on our process.
+Those rules could also have been picked as initial candidate for the first rule we implement in Danger, but the rule about the PR size seems more straightforward to implement as a good way to test the initial usage of Danger on our process.
 
 All the rules mentionned in the list above will get their own separate proposal, so that we can discuss their benefits, the exact conditions to trigger each rule, and alternatives considered for each of them separately.
 
@@ -177,7 +177,7 @@ We could instead pick one of these other alternatives:
 
 * Use a ponderation of `A * insertions + B * deletions`, typically with `A > B > 0`, arguing that it's faster to review deleted code than added code. I'm not convinced that it's really the case – or worth going to such detail – but we might consider trying it in a future PR if we see that Danger warns too often about false positives
 
-* Ignore some files when computing the PR size, considering they don't play a significant role in estimating the PR _review time and complexity_. Here are some file types that we might consider ignoring when computing `insertions` and `deletions`: Snapshot files, Localization files, Assets (like images), ...
+* Ignore some files when computing the PR size, considering they don't play a significant role in estimating the PR _review time and complexity_. Here are some file types that we might consider ignoring when computing `insertions` and `deletions`: Snapshot files, Localization files, Assets (like images), ... (Note that this would complexify the implementation of the rule though, as we'd need to compute the number of additions and deletions ourselves by analyzing the diff file by file in the `Dangerfile` instead of direclty using the `insertions` and `deletions` metrics provided by the metadata)
 
 * Use `max(insertions, deletions) < 800` to consider the limit not on the sum of both metrics, but on either of these metrics separately (which is how some team members have interpreted our current informal limit so far, so it's worth clarifying if the limit is on the total or the max anyway).
 
