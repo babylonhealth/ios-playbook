@@ -123,7 +123,6 @@ See [#74](https://github.com/Babylonpartners/ios-playbook/pull/74) for more stri
 
 ```
 Data type declaration (required in declaration scope):
-0. type stored properties (NOTE: this rarely appears in practice because singleton is discouraged)
 1. instance stored properties (struct), or enum cases
 2. designated initializers
 3. deinit
@@ -136,9 +135,10 @@ In extension (if possible):
 6. instance methods
 
 In extension (if possible):
-7. type computed properties
-8. type methods
+7. type stored properties (NOTE: this rarely appears in practice because singleton is discouraged)
+8. type computed properties
+9. type methods
 
 In extension (if possible):
-9. nested types
+10. nested types
 ```
