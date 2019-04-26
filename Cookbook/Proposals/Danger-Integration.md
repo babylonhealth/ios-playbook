@@ -66,7 +66,7 @@ Also note that if Danger is run multiple times on a PR – typically because the
 
 We propose to run the `danger` command line as a job:
 
-* Only during the `test_pr` and `test_release` workflows, as it doesn't make sense to run Danger if not in a PR context, but is still useful to have rules checking PRs from both feature and release branches
+* Only during the `test_pr` and `test_release` workflows, as there will be otherwise no pull request to make comments, but is still useful to have rules checking PRs from both feature and release branches
 * Immediately after the `checkout_code` job – so that danger will have access to the code itself if needed – and in parallel with all other jobs (`test_*` and `build_*` jobs) in the workflows
 
 ⏱ Danger is quite fast, as all the information the rules are based on are the metadata fetched from the Pull Request or from the git diff, so it doesn't have to analyse your codebase (like a linter would do) – just to decode the JSON of the PR, run the `Dangerfile`, then call the GitHub API to post the PR comment. It's unlikely that integrating Danger will have any impact on the CI total time, especially if run in parallel of the `test_pr` jobs
@@ -74,7 +74,7 @@ We propose to run the `danger` command line as a job:
 
 ### Initial Rule to activate
 
-_As this doesn't make sense to integrate Danger in the repo without having any rule at all in the `Dangerfile` (as this would do nothing and thus would not solve any issue listed in the Motivation section), this proposal also suggest to implement one simple but useful rule during this initial Danger integration in our repo._
+_As it won't be useful to integrate Danger in the repo without having any rule at all in the `Dangerfile` (as this would do nothing and thus would not solve any issue listed in the Motivation section), this proposal also suggests to implement one simple but useful rule during this initial Danger integration in our repo._
 
 The first rule that we propose to activate, and one which can be easy to write, is one to warn about a Pull Request which exceeds the maximum number of changes
 
