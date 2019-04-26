@@ -152,13 +152,14 @@ At this point, it is worth reminding the reader that Danger only posts one comme
 
 There are other ideas for initial rules to include in our `Dangerfile`, including but not limiting to:
 
-* Analyse the `pbxproj` files to find missing references and potential `(null)` values and warn about them
-* Analyse the `pbxproj` files to detect any files that was added to a target but is typically one to exclude from the final bundle – examples including `Info.plist` files but also `Snapshot` files
+* Analyse the `pbxproj` files to find missing references and potential `(null)` values and warn about them (see #112)
+* Analyse the `pbxproj` files to detect any files that was added to a target but is typically one to exclude from the final bundle – examples including `Info.plist` files but also `Snapshot` files (see #112)
 * Generate an informative comment if any of the build config changed in a project, so that reviewers would not miss those changes in a hard-to-read pbxproj diff
 * Generate an informative comment if the `Podfile.lock` changed, so that reviewers take extra care when pods are added, removed or updated on the project
 * Warn if the `CHANGELOG.md` hasn't been updated, and/or enforcing updating the SDK changelog if there was any change in `SDK/*`
 * Warn if the PR doesn't have the author assigned to it
 * Report SwiftLint warnings in the PR (though it would require to move the execution of Danger after the `test_pr` job, and besides, as of today those SwiftLint violations are reported as errors anyway)
+* Warn when the code introduce a new `// swiftlint:disable` usage in the codebase (especially outside of tests), to invite reviewers to ensure that this SwiftLint exception is justified
 * ...
 
 Those rules could also have been picked as initial candidate for the first rule we implement in Danger, but the rule about the PR size seems more straightforward to implement as a good way to test the initial usage of Danger on our process.
