@@ -34,9 +34,9 @@ This can be done pretty easily with Ruby, conceptually this will look like the l
 ```ruby
 pbxprojs = git.modified_files.select { |f| f.end_with?('pbxproj') }
 pbxprojs.each do |filename|
-	File.foreach(filename).with_index do |line, line_num|
-		warn("null reference found in pbxproj", file: filename, line: line_num) if line.include?('/* (null) */') }
-	end
+  File.foreach(filename).with_index do |line, line_num|
+    warn("null reference found in pbxproj", file: filename, line: line_num) if line.include?('/* (null) */') }
+  end
 end
 ```
 
@@ -46,13 +46,13 @@ The draft ruby code below would for example loop on all `pbxproj` files modified
 
 ```ruby
 pbxprojs.each do |project_file|
-	proj = Xcodeproj::Project.open(project_file)
-	proj.targets.each do |target|
-		rsrc_files = target.build_phases.find { |p| p.is_a?(Xcodeproj::Project::Object::PBXResourcesBuildPhase) }.files_references
-		rsrc_files.select { |ref| ref.path.end_with? '.xcconfig' }.each do |ref|
-			warn("Found file #{ref.path} added in target #{target.name} of project #{project_file}. You should uncheck its target membership checkbox."
-		end
-	end
+  proj = Xcodeproj::Project.open(project_file)
+  proj.targets.each do |target|
+    rsrc_files = target.build_phases.find { |p| p.is_a?(Xcodeproj::Project::Object::PBXResourcesBuildPhase) }.files_references.map(&:path)
+    rsrc_files.each do |path|
+      fail("#{path} should be removed from #{project_file}:#{target.name}" if path.end_with? '.xcconfig'
+    end
+  end
 end
 ```
 
