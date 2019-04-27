@@ -48,7 +48,9 @@ The draft ruby code below would for example loop on all `pbxproj` files modified
 pbxprojs.each do |project_file|
   proj = Xcodeproj::Project.open(project_file)
   proj.targets.each do |target|
-    rsrc_files = target.build_phases.find { |p| p.is_a?(Xcodeproj::Project::Object::PBXResourcesBuildPhase) }.files_references.map(&:path)
+    rsrc_files = target.build_phases
+      .find { |p| p.is_a?(Xcodeproj::Project::Object::PBXResourcesBuildPhase) }
+      .files_references.map(&:path)
     rsrc_files.each do |path|
       fail("#{path} should be removed from #{project_file}:#{target.name}" if path.end_with? '.xcconfig'
     end
