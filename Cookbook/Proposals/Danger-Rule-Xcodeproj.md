@@ -21,7 +21,7 @@ This means that some mistakes have ended up in `develop` in the past, like:
   * xcconfig files
   * Info.plist files
 
-Some of those mistakes, especially `(null)` references, are generally the result of build conflicts; so their apparition during a PR could be an indicator that something else could have gone wrong during the merge of the pbxproj file. It's generally a good incentive to double-check that there was no other side effect from the pbxproj merge.
+Some of those mistakes, especially `(null)` references, are generally the result of merge conflicts; so their appearances during a PR could be an indicator that something else could have gone wrong during the merge of the pbxproj file. It's generally a good incentive to double-check that there was no other side effect from the pbxproj merge.
 
 Other mistakes like unexpected files in target membership could lead to files ending up in the final bundle uploaded to the AppStore, and in addition to being useless in the final `ipa`, bloat the app size for no reason.
 
