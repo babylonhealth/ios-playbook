@@ -6,6 +6,6 @@ Various errors can occur when pulling code/switching branches. Typically all tha
 - Clean Build: Product > Clean (shortcut: cmd + shift + k)
 - Close Xcode
 - Update bundle: run `bundle install`
-- Update pods: `pod repo update && pod deintegrate && pod install`
+- Update pods: `bundle exec pod deintegrate && bundle exec pod install --repo-update`
 - Clean DerivedData: can be found at ~/Library/Developer/Xcode/DerivedData and/or babylon-ios/DerivedData
 - Reopen project in Xcode
