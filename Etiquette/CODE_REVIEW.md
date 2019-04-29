@@ -60,7 +60,8 @@ Reviewing a Pull Request
 * Do not comment if you don't have any suggestions to address your comment
 * Use GitHub suggestions as much as possible
 * If you feel strong against the change - request changes and explain why you are doing that. Do not request changes for typos, missing documentation comments or code style violations, trust your colleagues to address them.
-* Approve changes if you are confident about them
+* Approve changes if you are confident about them. 
+* If you are the first reviewer to approve the changes add the label "Needs one reviewer" so that others can see which PRs already have a feedback and which don't have any yet.
 * Comment on the changes if something is not clear to you and needs further clarification or actions
 * If you are not familiar with the domain ask for more context (better in person) rather than skipping to something more familiar
 * Ask, don't tell. ("What do you think about...?", "How about ...?", "Should we try ...?")
@@ -69,7 +70,7 @@ Reviewing a Pull Request
 * Submit all the comments as a single review, even if there is just one comment
 * If you see a stale pull request without any updates - ask for the status update in the comment
 * Do not be a blocker - if you requested changes and they were addressed make sure you review it
-* Do not merge others pull requests - they may be waiting for some one else review
+* Do not merge others pull requests - they may be waiting for someone else review. In general, the PR author should be the one adding the "Merge" label to merge their own PRs (except rare cases like if the author is on holidays but the PR is otherwise good to go)
 
 Responding to feedback
 -------------------------
@@ -77,7 +78,7 @@ Responding to feedback
 * Wait before answering to a single comment, the reviewer may be still writing more of them (though they should prefer to send all comments at once)
 * Be grateful for the reviewer's suggestions. ("Good call. I'll make that
   change.")
-* If you disagree with suggestion explain way and avoid template answers like "out of the scope", "thank you for your opinion". If you think that suggestion is a personal preference and does not bring value - say so
+* If you disagree with a suggestion, explain why and avoid template answers like "out of the scope" or "thank you for your opinion". If you think that suggestion is a personal preference and does not bring value - say so
 * Assume the best intention from the reviewer's comments.
 * If a reviewer seems aggressive or angry or otherwise personal, consider if it is intended to be read that way and ask the person for clarification of intent, in person if possible. Do not escalate online discussions.
 * If you can't reach agreement seek for more opinions
