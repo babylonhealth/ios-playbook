@@ -6,7 +6,7 @@
 Working in the iOS team
 ==================================
 
-This is more or less modelled after https://github.com/codeOfRobin/Questions-to-ask-your-interviewer-iOS
+This is document is modelled after Robin Malhotra's [Questions to ask your iOS interviewer][https://github.com/codeOfRobin/Questions-to-ask-your-interviewer-iOS). It aims to provide a few answers to how we work at Babylon and our process is structured.
 
 ### Where do we store our code?
 We use Github. We have a central repo that hosts the main and white label apps, and a [few Open Source projects](https://github.com/search?q=topic%3Aios+org%3ABabylonpartners+fork%3Atrue) that we created and rely on.
