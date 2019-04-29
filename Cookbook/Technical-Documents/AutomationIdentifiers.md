@@ -12,7 +12,7 @@ The most efficient way to locate a *XCUIElement* on screen is to use accessibili
 
 ### Locating Elements
 
-Identification of *XCUIElements* in automation code should be done in the screen objects and screen objects should not reference each other. If interacting with an element is handled elsewhere this is probably a bug. Though in some cases the identifiers are injected at run time, this has been used in content driven screens i.e. promo code details.
+Identification of `XCUIElements` in automation code should be done in the screen objects and screen objects should not reference each other. If interacting with an element is handled elsewhere this is probably a bug. Though in some cases the identifiers are injected at run time, this has been used in content driven screens i.e. promo code details.
 
 #### Identifiers
 
@@ -44,14 +44,14 @@ fileprivate enum StaticTexts {
 
 #### Queries
 
-The other way to find an element is using a *XCUIElementQuery* which can either make use of a identifier or not. The key difference is that a query requires detailed knowledge of the screen layout and is more commonly used when several *XCUIElement* with the same identifier are displayed on the screens i.e. the address list.
+The other way to find an element is using a `XCUIElementQuery` which can either make use of an identifier or not. The key difference is that a query requires detailed knowledge of the screen layout and is more commonly used when several `XCUIElement` with the same identifier are displayed on the screens i.e. the address list.
 
 ##### Examples
 
-- `let element = app.navigationBars[NavigationBars.pageHeader]` Returns a single **XCUIElement** or throws an error if there are multiple matches
-- `let queryWithIdentifier = app.navigationBars.matching(identifier: NavigationBars.pageHeader)` Returns a **XCUIElementQuery** array with multiple **XCUIElement**
-- `let queryWithOutIdentifier = app.navigationBars` Returns a **XCUIElementQuery** array with all navigation bars on screen
-- `let queryWithSingleResult  = app.navigationBars.firsrMatch` Returns the first **XCUIElment** matching the **XCUIElementQuery**  & is the only method that stops searching on the first match, while the other methods will search the entire view hierarchy.
+- `let element = app.navigationBars[NavigationBars.pageHeader]` Returns a single `XCUIElement` or throws an error if there are multiple matches
+ - `let queryWithIdentifier = app.navigationBars.matching(identifier: NavigationBars.pageHeader)` Returns a `XCUIElementQuery` array with multiple `XCUIElement`
+- `let queryWithOutIdentifier = app.navigationBars` Returns a `XCUIElementQuery` array with all navigation bars on screen
+- `let queryWithSingleResult  = app.navigationBars.firsrMatch` Returns the first `XCUIElment` matching the `XCUIElementQuery` and is the only method that stops searching on the first match, while the other methods will search the entire view hierarchy.
 
 ## Updating Locators
 
@@ -69,7 +69,7 @@ While this will fix the test, it is susceptible to future changes. In this case 
 
 #### Updating Queries
 
-The most common root cause is that the **XCUIElementQuery** requires an update. The thing we need to consider is that the performance of the XCTest framework is affected by how much of the view hierarchy is searched when looking for an element. This is because the framework will by default search the entire view hierarchy. This is time consuming, the recommended solution is to give the query as much information as possible. For example, below, we are telling the framework that the button is within an alert, this improves the performance of the test.
+The most common root cause is that the `XCUIElementQuery` requires an update. The thing we need to consider is that the performance of the XCTest framework is affected by how much of the view hierarchy is searched when looking for an element. This is because the framework will by default search the entire view hierarchy. This is time consuming, the recommended solution is to give the query as much information as possible. For example, below, we are telling the framework that the button is within an alert, this improves the performance of the test.
 
 ```swift
 let okButton = app.alerts.buttons[Buttons.okButton]
