@@ -74,7 +74,7 @@ Reviewing a Pull Request
 Responding to feedback
 -------------------------
 
-* Wait before answering to the single comments, reviewer may have more (though they should prefer to send all comments at once)
+* Wait before answering to a single comment, the reviewer may be still writing more of them (though they should prefer to send all comments at once)
 * Be grateful for the reviewer's suggestions. ("Good call. I'll make that
   change.")
 * If you disagree with suggestion explain way and avoid template answers like "out of the scope", "thank you for your opinion". If you think that suggestion is a personal preference and does not bring value - say so
@@ -82,12 +82,12 @@ Responding to feedback
 * If a reviewer seems aggressive or angry or otherwise personal, consider if it is intended to be read that way and ask the person for clarification of intent, in person if possible. Do not escalate online discussions.
 * If you can't reach agreement seek for more opinions
 * Don't be too defensive about your code, someone will rewrite it anyway sooner or later (it might be yourself as well)
-* Try to answer all comments. You can review your own code for that instead of sending individual replies
+* Try to answer all comments, don't make teammates feel like you are ignoring them. You can review your own code for that instead of sending individual replies so that all your answers are posted at once.
 * Add "work in progress" label while addressing review comments
 * Re-request review when you addressed the comments (either implementing suggested change or replying to the comment) and label it with "Ready for review" again
 * Do not rebase and force-push to your pull request branch after you have received any comments, use merge instead. This allows reviewers to view changes on the PR since their last review, rather than re-reviewing a lot of the code they have already reviewed. All pull requests are squashed when they are merged into the base branch so the history of your changes won't matter. It's fine to rebase and force-push if there are no comments.
-* Do no merge pull request with pending requests for changes unless you agreed with their authors that it was addressed
-* When you have two approvals and don't wait for review from anyone else - put a "Merge" label for bot to merge your changes.
+* Do not dismiss any pending requests for changes unless you agreed with their authors that it was addressed
+* When you have two approvals and have no pending questions or requests for changes and don't wait for review from anyone else - put a "Merge" label for bot to merge your changes.
 
 
 PR Parties
@@ -106,4 +106,4 @@ To balance the workload and avoid knowledge silos we use [Pull Assigners](https:
 
 - Each pull request will be assigned to three random reviewers from the team
 - Two approvals are enough to merge pull request (there shouldn't be pending requests for changes though)
-- Anyone else is still welcome to review any pull request and author can request for reviews from specific team mates
+- Anyone else is still encouraged to review any pull request and author can request reviews from specific teammates
