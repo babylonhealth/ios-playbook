@@ -9,7 +9,8 @@ Meeting Etiquette:
 
 1.	**Please fully read the proposal.**
 
-   * If you haven’t read the proposal, or don’t care for the outcome, please don’t show up for the meeting.
+   * Please make sure to have read the document and its discussion carefully before the meeting starts, as the proposal itself will not be explained again.
+   * If you are not interested in participating in the proposal discussion, you are free to skip the meeting.
 
 2.	If you want to make a counter proposal, or raise a change, please provide those in written to all meetings participants beforehand.
 
