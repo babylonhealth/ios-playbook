@@ -6,8 +6,6 @@
 Working in the iOS team
 ==================================
 
-TODO
-
 This is more or less modelled after https://github.com/codeOfRobin/Questions-to-ask-your-interviewer-iOS
 
 ### Where do we store our code?
