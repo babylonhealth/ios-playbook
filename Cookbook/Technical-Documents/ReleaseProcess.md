@@ -78,6 +78,7 @@ The release process starts when the first build is provided to QA and ends when 
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
+| 3.14.0                   | Giorgos Tsiapaliokas <br>Yasuhiro Inami | Automated: `07h28m`<br>Manual: `24h10m`| `NRX-506: 2h` <br> `NRX-495: 30m` <br> `NRX-501: 30m` <br> `CNSMR-1323: 30m` | Total: **35h08m** | 15.04.2019 | 23.04.2019 |
 | 3.13.0                   | Anders Ha <br> Viorel Mihalache | Automated: `07h`<br>Manual: `19h`| `CNSMR-1183: 3h` <br> `CNSMR-1181: 2h` | Total: **31h** | 1.04.2019 | 4.04.2019 | 
 | 3.12.0                   | Ben Henshall<br> Danilo Aliberti | Automated: `07h16m`<br>Manual: `22h`| `MON-4225: 3h`| Total: **32h16m** | 18.03.2019 | 21.03.2019 | 
 | 3.11.0                   | Adam Borek<br> Ilya Puchka | Automated: `07h17m`<br>Manual: `19h30m`| `CNSMR-894: 6h`<br>`CNSMR-913: 2h`<br>`CE-262: 2h`<br>`CE-261: 2h`<br> `Expired certificates: 3h`| Total: **41h47m** | 04.03.2019 | 11.03.2019 | 

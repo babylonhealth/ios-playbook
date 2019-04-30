@@ -14,13 +14,15 @@ iOS Cookbook 👩‍🍳
 
 * [Generalized Screen Lifecycle Observation](./Proposals/ScreenLifecycleObservation.md)
 * [Design Library](./Technical-Documents/DesignLibrary.md)
+* [Integrate with the Debug Window](./Technical-Documents/TheDebugWindow.md)
 
 ##### ... learn how the iOS team works 🛠
 
 * [Code Owners - Restoring developer's efficiency](./Proposals/CODEOWNERS.md)
 * [iOS Team style guide](./Style-guide/)
 * [New hires checklist](./Technical-Documents/NewHiresCheckList.md)
-* [Proposal template](./Proposals/Template_Proposal.md)
+* [Writing a Proposal](./Technical-Documents/WritingAProposal.md)
+* [Release Process](./Technical-Documents/ReleaseProcess.md)
 
 ##### ... test my app 🌳
 
@@ -35,5 +37,7 @@ iOS Cookbook 👩‍🍳
 
 * [Strings and Localisation](./Technical-Documents/Lokalise.md)
 * [Outstanding Technical Debt and Legacy Code](./Technical-Documents/TechnicalDebt.md)
-    * [BBAddAdditionalPatientInformationViewControllerV2](./Technical-Documents/TechnicalDebt.md)
+    * [BBAddAdditionalPatientInformationViewControllerV2](./Technical-Documents/BBAddAdditionalPatientInformationViewControllerV2.md)
+
+* [✏️] What is Gherkin (the When / Given / Then/ And formatting used by QA) and how can i determine it's correctness in QA PRs
 * [Fastlane Match](./Technical-Documents/FastlaneMatch.md)
