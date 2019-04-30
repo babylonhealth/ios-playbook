@@ -10,8 +10,11 @@ intended to be a more thorough reset to deal with bigger changes.
 - Close Xcode
 - Update bundle: run `bundle install`
 - Update pods: `bundle exec pod deintegrate && bundle exec pod install --repo-update`
+- Notes: fully reinstalling pods with `deintegrate` will cause the project file to be updated
+with changes. Should validate if `bundle exec pod cache clean --all` is a viable
+and safe alternative.
 - Clean DerivedData: can be found at
-`~/Library/Developer/Xcode/DerivedData and/or babylon-ios/DerivedData`
+`~/Library/Developer/Xcode/DerivedData` and/or `babylon-ios/DerivedData`
 - Reopen project in Xcode
 
 ### Project file conflicts
