@@ -2,7 +2,7 @@
 
 ### Errors when pulling code/switching branches
 Various errors can occur when pulling code/switching branches. 
-Typically all that is needed is running `pod install` and closing
+Typically all that is needed is running `bundle exec pod install` and closing
 and reopening the project in Xcode. The following directions are
 intended to be a more thorough reset to deal with bigger changes.
 
