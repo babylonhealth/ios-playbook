@@ -57,12 +57,12 @@ By definition, members work on their respective squad, although they are free to
 | Prescriptions                 | Adam                             |    1/1       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
 | Healthcheck                   | Ben, Catarina                    |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
 | Native/Core                   | Giorgos, Jason, Martin, Inami    |    4/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
-| Professional Services         | Danilo, Chitra                   |    1/3       | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
+| Professional Services         | Chitra             |    1/3      | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
 | Enrolment and Integrity       | Diego                            |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Core Experience               | Sergey                           |    1/2       | [#core-experience](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
 | Health Management             | David, João                      |    2/2       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) |
 | Monitor                       | Anders, Michal                   |    2/2       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
-| Triage UI                     | Michael                          |    1/2       | [#squad_triage_ui](https://babylonhealth.slack.com/archives/CE6H6SLRX) |
+| Triage UI                     | Michael, Danilo    |    1/2       | [#squad_triage_ui](https://babylonhealth.slack.com/archives/CE6H6SLRX) |
 | Women's Health                | Anil                             |    1/1       | [#womenshealthteam](https://babylonhealth.slack.com/archives/CFX73S4P5) |
 
 
