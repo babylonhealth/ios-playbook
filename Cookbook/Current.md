@@ -1,7 +1,7 @@
 # How to use `Current` in Babylon iOS Project
 
 ### Where is that? 
-- `Current` is the global implementation of the `World` file which is located in the `BabylonDependencies.framework`.
+- `Current` is the global instance of the `World` type which is located in the `BabylonDependencies.framework`. It's purpose is to provide convenient access to the instances that should be shared between different parts of the app (cross-cutting concerns)
 
 ### Properties with default values
 TBD
