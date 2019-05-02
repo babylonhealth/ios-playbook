@@ -205,8 +205,6 @@ Since the compiler does not allow you to re-declare protocol conformance in a de
 
 For UIKit view controllers, consider grouping lifecycle, custom accessors, and IBAction in separate class extensions.
 
-Use `private`, `fileprivate`, `internal`, and `public` visibility qualifiers on each function implemented in a protocol extension, rather than have a single qualifier for the entire protocol extension.
-
 ### Unused Code
 
 Unused (dead) code, including Xcode template code and placeholder comments should be removed.
@@ -763,6 +761,8 @@ Using `private` and `fileprivate` appropriately adds clarity and promotes encaps
 Only explicitly use `open`, `public`, and `internal` when you require a full access control specification.
 
 Use access control as the leading property specifier. The only things that should come before access control are the `static` specifier or attributes such as `@IBAction`, `@IBOutlet` and `@discardableResult`.
+
+Use `private`, `fileprivate`, `internal`, and `public` visibility qualifiers on each function implemented in an extension, rather than have a single qualifier for the entire extension.
 
 **Preferred**:
 ```swift
