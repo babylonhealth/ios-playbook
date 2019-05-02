@@ -173,7 +173,7 @@ let colour = "red"
 
 ## Code Organization
 
-Use extensions to organize your code into logical blocks of functionality. Do not use `// MARK: -` comments.
+Use extensions to organize your code into logical blocks of functionality. Add `MARK`s if they help with it.
 
 ### Protocol Conformance
 
