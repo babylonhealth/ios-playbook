@@ -56,13 +56,18 @@
 1. Send the build to Testflight Beta (external testing). Select the `External Testers` group.
 1. Press `Release this version` in App Store Connect
 1. Tag the release commit and create a GitHub release. Attach the binary as an artefact to the GitHub release (if you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
-1. Release new version for the Babylon SDK:
-	1. Ask SDK team (#sdk_squad) about the SDK version number
-	1. Trigger a hockey build from that branch using its command (eg. `/distribute_sdk version:0.1.11 pre_release:false branch:release/3.7.0`) in `#ios-build`.
 1. Merge the changes back to develop.
 
+### 3. SDK Release
 
-### 3. Release calendar
+1. Ask SDK team (#sdk_squad) about the SDK version number.
+2. Follow the [Internal SDK Release Process](https://engineering.ops.babylontech.co.uk/docs/cicd-deployments/#mobile-sdk-releases-ios-android) to open a CR ticket on the CRP board.
+3. Cut a release branch for the SDK from the app release branch (eg. `sdk/0.5.0`)
+4. Create PR and udpate the SDK changelog `SDK/CHANGELOG.md` to add the release version and date
+5. Trigger a hockey build from that branch using its command (eg. `/fastlane distribute_sdk_v2 version:0.5.0 branch:release/sdk/0.5.0`) in `#ios-build`.
+6. Update the Sample app to point to the latest SDK release
+
+### 4. Release calendar
 
 The release process starts when the first build is provided to QA and ends when Apple has approved the app. Effort to release should be broken down by:
 
