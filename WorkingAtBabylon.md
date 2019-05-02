@@ -6,13 +6,23 @@
 Working in the iOS team
 ==================================
 
-This is document is modelled after Robin Malhotra's [Questions to ask your iOS interviewer][https://github.com/codeOfRobin/Questions-to-ask-your-interviewer-iOS). It aims to provide a few answers to how we work at Babylon and our process is structured.
+This document is modelled after Robin Malhotra's [Questions to ask your iOS interviewer](https://github.com/codeOfRobin/Questions-to-ask-your-interviewer-iOS). It aims to provide a few answers to how we work at Babylon and our process is structured.
 
 ### Where do we store our code?
 We use Github. We have a central repo that hosts the main and white label apps, and a [few Open Source projects](https://github.com/search?q=topic%3Aios+org%3ABabylonpartners+fork%3Atrue) that we created and rely on.
 
 ## Continuous Integration
+### What Continuous Integration service do you use?
+
+We currently run on CircleCI
+
 ### How many apps/targets/schemes?
+
+We have a main app and a few white-label apps.
+
+We use a modular architecture, so our app workspace is split into 9 Xcode projects for modules and apps, 3 projects for test utilities and shared features, and 4 projects related to our SDK, not counting the Pods project (and our OSS projects)
+
+Each module project has 3 targets on average: one for the framework, one for the Unit Test and one for Snapshot tests when applicable. The app project has 18 targets (6*3) given our white-labelling variants.
 ### How big is your Fastfile?
 It's around 250 lines of code at the moment, with about 15-20 lanes for beta testing, daily and custom builds, etc.
 
