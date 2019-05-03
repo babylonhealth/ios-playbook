@@ -39,7 +39,7 @@ class MassiveViewController: UIViewController {
 These events are typically posted for specific user actions. Typically they should be posted as side-effects to the signal producer that carries out the work triggered by the action. The event type should be declared inside the `ActionEvents` namespace.
 
 ```swift
-extension ActionEvents {
+extension Tracking.ActionEvents {
   enum AchievementUnlocked: AnalyticsEvent {
     case honorReward(name: String, honor: Int)
     case moneyReward(name: String, gold: Int)
@@ -50,7 +50,7 @@ extension ActionEvents {
 The event type needs to conform to `UnstructuredEventConvertable`
 
 ```swift
-extension ActionEvents.AchievementUnlocked: UnstructuredEventConvertable {
+extension Tracking.ActionEvents.AchievementUnlocked: UnstructuredEventConvertable {
     var specificEventDictionary: [String: Any] {
         switch self {
         case let .honorReward(_, honor):
