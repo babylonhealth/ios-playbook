@@ -80,7 +80,7 @@ shell script. Here's how to get the iOS project up and running:
      - Including whitespace-only lines
      - Default line endings: macOS / Unix (LF)
      - Convert existing files on save
-		 - Page guide at column: 120 characters
+     - Page guide at column: 120 characters
 
 1. Configure the Xcode **Text Editing -> Indentation** preferences as follows:
      - Prefer indent using: Spaces
