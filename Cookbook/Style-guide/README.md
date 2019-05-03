@@ -316,7 +316,7 @@ class TestDatabase : Database {
 }
 ```
 
-* Long lines should be wrapped at around 70 characters. A hard limit is intentionally not specified.
+* Long lines should be wrapped at around 120 characters. A hard limit is intentionally not specified.
 
 * Avoid trailing whitespaces at the ends of lines.
 
@@ -398,7 +398,7 @@ func reticulateSplines(spline: [Double]) -> Bool {
 }
 ```
 
-For functions with long signatures, more than 120 characters, put each parameter on a new line and add an extra indent on subsequent lines. Note that the closing parenthesis aligns with the f in `func`. This is not how Xcode indents these blocks of code so keep an eye out for violations of this guideline.
+For functions with long signatures, more than the recommended length, put each parameter on a new line and add an extra indent on subsequent lines. Note that the closing parenthesis aligns with the f in `func`. This is _not_ how Xcode indents these blocks of code so keep an eye out for violations of this guideline.
 
 ```swift
 func reticulateSplines(
