@@ -4,7 +4,7 @@ Snowplow is a data centric analytics platform that combines flexibility with rea
 
 Snowplow has published a schema with two frequently used event types. The first is for screen views and the other is based on the fields in a Google Analytics event. In Snowplow lingo they are referred to as screen view event (`SPScreenView`) and structured events (`SPStructered`). Events with a bespoke definition are referred as unstructured events (`SPUnstructured`)
 
-# Posting Screen View Events from the iOS Client.
+# Posting Screen View Events from the iOS Client
 
 View controllers that are created with [BentoKit](https://github.com/Babylonpartners/Bento) and use the Babylon specialisation of [BoxViewController](https://github.com/Babylonpartners/Bento/blob/master/BentoKit/BentoKit/Screen/BoxViewController.swift) will post screen view events if the view model conforms to `ScreenNaming`.
 
@@ -47,10 +47,18 @@ extension Tracking.ActionEvents {
 }
 ```
 
-The event type needs to conform to `UnstructuredEventConvertable`
+The event type needs to conform to `UnstructuredEventConvertable`:
 
 ```swift
 extension Tracking.ActionEvents.AchievementUnlocked: UnstructuredEventConvertable {
+
+    // NOTE: 
+    // This is a schema for "specific" event.
+    // Schema for "generic" event is already defined internally.
+    var specificEventSchema: String { 
+        return "iglu:com.thegame/achievement/jsonschema/1-0-0"
+    }
+    
     var specificEventDictionary: [String: Any] {
         switch self {
         case let .honorReward(_, honor):
@@ -74,12 +82,10 @@ extension Tracking.ActionEvents.AchievementUnlocked: UnstructuredEventConvertabl
             "action": action
         ]
     }
-
-    var schema: String { return "iglu:com.thegame/achievement/jsonschema/1-0-0" }
 }
 ```
 
-The generic event dictionary may also contain `label`, `property` and `value` where `label` and `property` are strings and `value` is a double. The `specificEventDictionary` dictionary must be consistent with the JSON defined by `schema`. Finally, the event type needs to be added to the dispatch table.
+The generic event dictionary may also contain `label`, `property` and `value` where `label` and `property` are strings and `value` is a double. The `specificEventDictionary` dictionary must be consistent with the JSON defined by `specificEventSchema`. Finally, the event type needs to be added to the dispatch table.
 
 ```swift
 fileprivate func makeDispatcher() -> AnalyticsEventDispatcher {
@@ -95,6 +101,8 @@ extension SnowplowTracker {
 ```
 
 ## Unit tests for Snowplow events
+
+**(03 May 2019 TODO: Below is old document)**
 
 There should be unit tests that verify that the unstructured event content is correct.
 
@@ -124,7 +132,7 @@ class AchievementUnlockedEventTests: XCTestCase {
 
 How detailed the content verification needs to be is a judgement call.
 
-## UI Tests for Snowplow Events.
+## UI Tests for Snowplow Events
 
 That the events are fired with the correct generic content should be verified by UI tests. For performance reasons it is preferable to add analytics verification to an existing UI test.
 
