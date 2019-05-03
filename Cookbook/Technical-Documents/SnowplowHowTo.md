@@ -102,35 +102,32 @@ extension SnowplowTracker {
 
 ## Unit tests for Snowplow events
 
-**(03 May 2019 TODO: Below is old document)**
-
-There should be unit tests that verify that the unstructured event content is correct.
+Use `MockSnowplowTrackingEnvironment` to accumulate all the tracking events, and then compare them using `[AnyEquatble]` array as shown below:
 
 ```swift
 class AchievementUnlockedEventTests: XCTestCase {
-    var mockEnvironment = MockSnowplowTrackingEnvironment()
-    var mock: MockSnowplowTracking { return mockEnvironment.mockSnowplowTracking }
+    let mockEnvironment = MockSnowplowTrackingEnvironment()
 
     override func tearDown() {
-        mockEnvironment.reset()
+        mockAnalyticsEnvironment.clearAccumulatedEvents()
+        super.tearDown()
     }
 
-    func testConvertHonorAwarded() {
-        var correctCall = false
-        mock.trackUnstructuredEventAssertion = { unstructered in
-            guard let json = unstructered.json else { return }
+    func test_analytics_pageView() {
+        let mockAnalyticsEnviroment = AnalyticsTrackingService.mock
 
-            expect(json.contains("honor")).to(beTrue())
+        let viewModel = makeViewModel(analytics: mockAnalyticsEnviroment.analyticsTrackingService)
 
-            correctCall = true
-        }
+        viewModel.send(action: ...)
 
-        mockEnvironment.analyticesService.track(ActionEvents.AchievementUnlocked.honorReward(name: "Unit Test Written", honor: 50))
-        expect(correctCall).to(beTrue())
+        // Compares using `[AnyEquatable]`.
+        expect(mockAnalyticsEnviroment.accumulatedEvents) == [
+            AnyEquatable(ChatBotAnalyticsEvent.pageView),
+            AnyEquatable(ScreenEvent.viewWillAppear(screen: Tracking.ScreenNames.ChatBot.chatbot))
+        ]
     }
+}
 ```
-
-How detailed the content verification needs to be is a judgement call.
 
 ## UI Tests for Snowplow Events
 
