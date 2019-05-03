@@ -6,8 +6,8 @@ Fastlane match is a tool for managing certificates and provisioning profiles cen
 **TL;DR;**
 
 - Please do not use Match with `--readonly false` unless you really need that and you know what you are doing
-- Please don't use Xcode code signning capabilities and don't change automatic code signning in the project settings to make it download or generate code signing documents, always use Match for that
-- If you see the error when running Match make sure you specify correct parameters. Consult with `fastlane/Matchfile` and `fastlane/Appfile` to inspect defaults
+- Please don't use Xcode code signing capabilities ("Download Manual Profiles" or "Manage Certificates" buttons in Xcode's preferences pane) and don't change automatic code signing in the project settings. Always use Match.
+- If you see an error when running Match, make sure you specified the correct parameters. Consult with `fastlane/Matchfile` and `fastlane/Appfile` to inspect defaults
 
 ## Installing Certificates and Provisioning Profiles Locally
 
@@ -15,7 +15,7 @@ Fastlane match is a tool for managing certificates and provisioning profiles cen
 
 First you need to add a developer account to your Xcode settings in `Preferences -> Accounts` menu. For that you should use a shared account (credentials are stored in the 1Password team vault). _Do not download or try to update any code signing documents via "Download Manual Profiles" or "Manage Certificates" buttons to avoid more unneeded certificates on the portal._
 
-To install development sertificates locally run
+To install development certificates locally, run:
 
 ```shell
  $ bundle exec fastlane match development --team_id <enterprise team id>
@@ -26,14 +26,14 @@ Match checks if the certificates and profiles are valid and will prompt you if t
 
 If you need to build the app locally and run it on a device that is not yet added to the development portal you need to follow these steps:
 
-- register device manully on the poratal. Make sure you do that in the correct team, it should be added to the enterprise team, not to the AppStore team
+- register the device manually on the portal. Make sure you do that in the correct team: it should be added to the enterprise team, not to the AppStore team
 - run Match to update development certificates and include this new device:
 
 ```
 bundle exec fastlane match development --team_id XV8PWA37TZ --force_for_new_devices --readonly false
 ```
 
-This will regenerated development profiles and certificates including all new registered devices.
+This will regenerate the development profiles and certificates, including all new registered devices in them.
 
 Certificates and provisioning profiles for enterprise builds (Hockey App) or release builds (Testflight and the App Store) can also be downloaded. Normally, this is not needed – as those tasks are usually executed on Circle CI and not locally – but might be necessary for some tasks.
 
@@ -45,7 +45,7 @@ To install certificates and provisioning profiles for creating a Testflight or A
  $ bundle exec fastlane match appstore --git_branch <appstore team id> --team_id <appstore team id> --app_identifier <appstore bundle id>
 ```
 
-Note: The reason to specify individual app identifiers is that otherwise if AppStore bundle ids are added to the default set of identifiers Match will try to load certificates that may not exist for some apps on the partal, as those apps are registered in different teams.
+Note: The reason to specify individual app identifiers is that otherwise if AppStore bundle ids are added to the default set of identifiers Match will try to load certificates that may not exist for some apps on the portal, as those apps are registered in different teams.
 
 ### HockeyApp builds
 
@@ -57,7 +57,7 @@ More information about available options can be found below and in the fastlane 
 
 ## Several Targets and Teams
 
-Recommended practice is to have on branch per team. Enterprise team related certificates (development and distribution) are stored in the develop branch of the certificates repo managed by Match. Appstore releated certificates (distribution) are stored in the branch named by the AppStore team id.
+The recommended practice is to have one branch per team. Enterprise team related certificates (development and distribution) are stored in the develop branch of the certificates repo managed by Match. Appstore releated certificates (distribution) are stored in the branch named by the AppStore team id.
 
 It can happen that code signing certificates for more than one target or type are needed for a build. This can be handled by making several calls to match. This is how it can be done in a Ruby script, note that the `git_branch` argument refers to the branch in fastlane match repository:
 
@@ -73,13 +73,13 @@ fastlane match adhoc --app_identifier com.best.app.ever.seriously --git_branch b
 fastlane match development --app_identifier com.best.app.ever.seriously --git_branch best_app_ever_dev_signing
 ```
 
-When running command without parameters or not with all of them the remaining values will be loaded from `fastlane/Matchfile`  and `fastlane/Appfile` files.
+When running the command without any parameters, or with some of them omitted, the remaining values will be loaded from the `fastlane/Matchfile`  and `fastlane/Appfile` files.
 
 ## Update Contents Manually
 
 **TL;DR;**
 
-_This is something that you will not need to do normally but only in extraordinary situation. Consider asking for help and to do it in pair with someone not to make things worse. Officially Fastlane does not recommend this approach. For the original reference for this method visit [fastlane docs](https://docs.fastlane.tools/advanced/other/#manually-manage-the-fastlane-match-repo)._
+_This is something that you should normally not need to do, except in an extraordinary situation. Consider asking for help and to do it in pair with someone to avoid making things worse. Officially, Fastlane does not recommend this approach. For the original reference for this method visit [fastlane docs](https://docs.fastlane.tools/advanced/other/#manually-manage-the-fastlane-match-repo)._
 
 <details>
 <summary>I know! Tell me more!</summary>
