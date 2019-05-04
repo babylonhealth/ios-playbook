@@ -1,6 +1,6 @@
 ## Slack CI Integration
 
-From time to time we need to trigger some CI jobs manually, for example to create a hockeapp or testflight distribution build. This can be done easily from Slack Slash Commands powered by or bots, [Stevenson](https://github.com/Babylonpartners/Stevenson) and its predecessor Steve.
+From time to time we need to trigger some CI jobs manually, for example to create a Hockeyapp or Testflight distribution build. This can be done easily from Slack Slash Commands powered by or bots, [Stevenson](https://github.com/Babylonpartners/Stevenson) and its predecessor Steve.
 
 ### Supported commands (Stevenson)
 
