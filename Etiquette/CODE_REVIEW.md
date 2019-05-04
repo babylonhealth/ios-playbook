@@ -26,7 +26,7 @@ Everyone
 * When using emojis be aware that their meaning can be different for different individuals - winking smile may not be always innocent
 * Same with any other media format you decide to use
 * Do not expect your comments to be answered immediately. If you need an answer fast - talk in person (the same applies to the Slack messages)
-* It's fine to have disagreements and it's hard to please everyone.
+* Accept that it's fine to have disagreements and it's hard to please everyone
 
 
 Creating a Pull Request
