@@ -21,7 +21,7 @@ To install development certificates locally, run:
  $ bundle exec fastlane match development --team_id <enterprise team id>
 ```
 
-This will install latest development certificates for all the app targets listed in the `fastlane/Matchfile` in `app_identifier` function (not scoped to particular lane with `for_lane` function). 
+On the first run you will be asked a password to decrypt the repository managed by Match. The password is stored in the teams 1Password vault. After you entered the password Match will install latest development certificates for all the app targets listed in the `fastlane/Matchfile` in `app_identifier` function (not scoped to particular lane with `for_lane` function). 
 Match checks if the certificates and profiles are valid and will prompt you if there is an issue. By default it is configured to run in readonly mode so it will not regenerate any certificates or profiles if they are not valid.
 
 If you need to build the app locally and run it on a device that is not yet added to the development portal you need to follow these steps:
@@ -107,7 +107,6 @@ irb(main):006:0> workspace = Match::GitHelper.clone(git_url, shallow_clone, manu
 [14:22:12]: 🔓  Successfully decrypted certificates repo
 => "/var/folders/8k/r0x0ys_927q8vq5_tq01ntjd2b03m3/T/d20190228-92193-16w4fz2"
 ```
- 
 Open another terminal session and navigate to the folder name returned by `Match::GitHelper.clone`. Once all edits are complete, return to the ruby console. Beware that you must let fastlane match commit the changes that have been made. If you try to commit changes manually they will not be encrypted correctly.
 
 ```shell
