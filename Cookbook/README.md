@@ -42,3 +42,4 @@ iOS Cookbook 👩‍🍳
 * ✏️ What is Gherkin (the When / Given / Then/ And formatting used by QA) and how can i determine it's correctness in QA PRs
 * [Fastlane Match](./Technical-Documents/FastlaneMatch.md)
 * [How to invoke CI jobs from Slack](./Technical-Documents/SlackCIIntegration.md)
+* [Xcode Tips & Tricks](Technical-Documents/XcodeTips.md)

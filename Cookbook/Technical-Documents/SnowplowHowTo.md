@@ -4,7 +4,7 @@ Snowplow is a data centric analytics platform that combines flexibility with rea
 
 Snowplow has published a schema with two frequently used event types. The first is for screen views and the other is based on the fields in a Google Analytics event. In Snowplow lingo they are referred to as screen view event (`SPScreenView`) and structured events (`SPStructered`). Events with a bespoke definition are referred as unstructured events (`SPUnstructured`)
 
-# Posting Screen View Events from the iOS Client.
+# Posting Screen View Events from the iOS Client
 
 View controllers that are created with [BentoKit](https://github.com/Babylonpartners/Bento) and use the Babylon specialisation of [BoxViewController](https://github.com/Babylonpartners/Bento/blob/master/BentoKit/BentoKit/Screen/BoxViewController.swift) will post screen view events if the view model conforms to `ScreenNaming`.
 
@@ -39,7 +39,7 @@ class MassiveViewController: UIViewController {
 These events are typically posted for specific user actions. Typically they should be posted as side-effects to the signal producer that carries out the work triggered by the action. The event type should be declared inside the `ActionEvents` namespace.
 
 ```swift
-extension ActionEvents {
+extension Tracking.ActionEvents {
   enum AchievementUnlocked: AnalyticsEvent {
     case honorReward(name: String, honor: Int)
     case moneyReward(name: String, gold: Int)
@@ -47,10 +47,18 @@ extension ActionEvents {
 }
 ```
 
-The event type needs to conform to `UnstructuredEventConvertable`
+The event type needs to conform to `UnstructuredEventConvertable`:
 
 ```swift
-extension ActionEvents.AchievementUnlocked: UnstructuredEventConvertable {
+extension Tracking.ActionEvents.AchievementUnlocked: UnstructuredEventConvertable {
+
+    // NOTE: 
+    // This is a schema for "specific" event.
+    // Schema for "generic" event is already defined internally.
+    var specificEventSchema: String { 
+        return "iglu:com.thegame/achievement/jsonschema/1-0-0"
+    }
+    
     var specificEventDictionary: [String: Any] {
         switch self {
         case let .honorReward(_, honor):
@@ -74,12 +82,10 @@ extension ActionEvents.AchievementUnlocked: UnstructuredEventConvertable {
             "action": action
         ]
     }
-
-    var schema: String { return "iglu:com.thegame/achievement/jsonschema/1-0-0" }
 }
 ```
 
-The generic event dictionary may also contain `label`, `property` and `value` where `label` and `property` are strings and `value` is a double. The `specificEventDictionary` dictionary must be consistent with the JSON defined by `schema`. Finally, the event type needs to be added to the dispatch table.
+The generic event dictionary may also contain `label`, `property` and `value` where `label` and `property` are strings and `value` is a double. The `specificEventDictionary` dictionary must be consistent with the JSON defined by `specificEventSchema`. Finally, the event type needs to be added to the dispatch table.
 
 ```swift
 fileprivate func makeDispatcher() -> AnalyticsEventDispatcher {
@@ -96,35 +102,34 @@ extension SnowplowTracker {
 
 ## Unit tests for Snowplow events
 
-There should be unit tests that verify that the unstructured event content is correct.
+Use `MockSnowplowTrackingEnvironment` to accumulate all the tracking events, and then compare them using `[AnyEquatble]` array as shown below:
 
 ```swift
 class AchievementUnlockedEventTests: XCTestCase {
-    var mockEnvironment = MockSnowplowTrackingEnvironment()
-    var mock: MockSnowplowTracking { return mockEnvironment.mockSnowplowTracking }
+    let mockEnvironment = MockSnowplowTrackingEnvironment()
 
     override func tearDown() {
-        mockEnvironment.reset()
+        mockAnalyticsEnvironment.clearAccumulatedEvents()
+        super.tearDown()
     }
 
-    func testConvertHonorAwarded() {
-        var correctCall = false
-        mock.trackUnstructuredEventAssertion = { unstructered in
-            guard let json = unstructered.json else { return }
+    func test_analytics_pageView() {
+        let mockAnalyticsEnviroment = AnalyticsTrackingService.mock
 
-            expect(json.contains("honor")).to(beTrue())
+        let viewModel = makeViewModel(analytics: mockAnalyticsEnviroment.analyticsTrackingService)
 
-            correctCall = true
-        }
+        viewModel.send(action: ...)
 
-        mockEnvironment.analyticesService.track(ActionEvents.AchievementUnlocked.honorReward(name: "Unit Test Written", honor: 50))
-        expect(correctCall).to(beTrue())
+        // Compares using `[AnyEquatable]`.
+        expect(mockAnalyticsEnviroment.accumulatedEvents) == [
+            AnyEquatable(ChatBotAnalyticsEvent.pageView),
+            AnyEquatable(ScreenEvent.viewWillAppear(screen: Tracking.ScreenNames.ChatBot.chatbot))
+        ]
     }
+}
 ```
 
-How detailed the content verification needs to be is a judgement call.
-
-## UI Tests for Snowplow Events.
+## UI Tests for Snowplow Events
 
 That the events are fired with the correct generic content should be verified by UI tests. For performance reasons it is preferable to add analytics verification to an existing UI test.
 
