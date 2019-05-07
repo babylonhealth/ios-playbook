@@ -43,4 +43,4 @@
 
 * [Insomnia](https://insomnia.rest) is a REST client app that is helpful when working with APIs
 
-* [Fork](https://forkapp.io) and [GitUp](https://gitup.co) are examples of git clients that some members of the team love
+* [Fork](https://forkapp.io), [GitUp](https://gitup.co) and [SourceTree](https://www.sourcetreeapp.com) are examples of git clients that some members of the team love
