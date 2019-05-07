@@ -1,6 +1,6 @@
 ## Slack CI Integration
 
-From time to time we need to trigger some CI jobs manually, for example to create a Hockeyapp or Testflight distribution build. This can be done easily from Slack Slash Commands powered by or bots, [Stevenson](https://github.com/Babylonpartners/Stevenson) and its predecessor Steve.
+From time to time we need to trigger some CI jobs manually, for example to create a Hockeyapp or Testflight distribution build. This can be done easily from Slack Slash Commands powered by our bots, [Stevenson](https://github.com/Babylonpartners/Stevenson) and its predecessor Steve.
 
 ### Supported commands (Stevenson)
 
@@ -40,7 +40,7 @@ Tip: `/hockeyapp help` will respond with instructions for this command.
 
 * #### `/fastlane`
 
-Runs any lane defined in the `Fastflie`. It requires the lane name as the first parameter:
+Runs any lane defined in the `Fastfile`. It requires the lane name as the first parameter:
 
 ```
 /fastlane test_babylon 
@@ -107,6 +107,6 @@ This will create a new release from `develop` branch. Aditionally you can specif
 
 ### Troubleshooting
 
-* ATM we are hosting our bots on Heroku so they are being shut down when are not in use, so sometimes you may see a timeout errors when trying to call a Stevenson command (Slack expects apps to respond in 3 seconds). You will still get the response shortly after that when build is triggered. Steve commands may also fail because of timeouts but it may not send the response even if the build actually strted. In this case check the CI dashboard to see if the job was actually triggered - it should be if the command was correct.
+* ATM we are hosting our bots on Heroku so they are being shut down when they are not in use, so sometimes you may see a timeout errors when trying to call a Stevenson command (Slack expects apps to respond in 3 seconds). You will still get the response shortly after that when build is triggered. Steve commands may also fail because of timeouts but it may not send the response even if the build actually started. In this case check the CI dashboard to see if the job was actually triggered - it should be if the command was correct.
 
-* You can find Stevenson app in the list of Slack apps and see all its commands from there.
+* You can find Stevenson app in the list of Slack apps and see all of its commands from there.
