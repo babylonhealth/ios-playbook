@@ -16,7 +16,7 @@ This proposal also present an initial rule where Danger will be useful for us. N
 
 We have seen some common mistakes happen multiple times in our past PRs, like:
 
- * `(null)` references in `pbxproj` files
+ * `(null)` and `"Recovered References"` in `pbxproj` files
  * snapshot files added in copy files phase in targets
  * forgetting to remove old snapshot files when renaming a test
  * forgetting to add a CHANGELOG when releasing the SDK
