@@ -15,19 +15,19 @@ It is dependent on [#110 - Integrate Danger](https://github.com/Babylonpartners/
 
 This means that some mistakes have ended up in `develop` in the past, like:
 
-* `(null)` references in `pbxproj` files
+* `(null)` references and `"Recovered References"` groups in `pbxproj` files
 * Files being added as part of a target membership while they shouldn't:
   * Snapshot files
   * xcconfig files
   * Info.plist files
 
-Some of those mistakes, especially `(null)` references, are generally the result of merge conflicts; so their appearances during a PR could be an indicator that something else could have gone wrong during the merge of the pbxproj file. It's generally a good incentive to double-check that there was no other side effect from the pbxproj merge.
+Some of those mistakes, especially `(null)` and "Recovered References" in `pbxproj`, are generally the result of merge conflicts; so their appearances during a PR could be an indicator that something else could have gone wrong during the merge of the pbxproj file. It's generally a good incentive to double-check that there was no other side effect from the pbxproj merge.
 
 Other mistakes like unexpected files in target membership could lead to files ending up in the final bundle uploaded to the AppStore, and in addition to being useless in the final `ipa`, bloat the app size for no reason.
 
 ## Proposed solution
 
-* We can use a simple "find" in every `*.pbxproj` for the string `/* (null) */`, and make Danger generate an inline comment on the found line(s) if any
+* We can use a simple "find" in every `*.pbxproj` for the strings `/* (null) */` and `name = "Recovered References";`, and make Danger generate an inline comment on the found line(s) if any
 
 This can be done pretty easily with Ruby, conceptually this will look like the logic below:
 
@@ -36,6 +36,7 @@ pbxprojs = git.modified_files.select { |f| f.end_with?('pbxproj') }
 pbxprojs.each do |filename|
   File.foreach(filename).with_index do |line, line_num|
     warn("null reference found in pbxproj", file: filename, line: line_num) if line.include?('/* (null) */') }
+    warn("recovered references found in pbxproj", file: filename, line: line_num) if line.include?('name = "Recovered References";') }
   end
 end
 ```
