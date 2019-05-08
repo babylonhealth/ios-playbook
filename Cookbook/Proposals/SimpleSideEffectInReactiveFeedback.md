@@ -91,20 +91,22 @@ For example, instead of writing:
 we can replace with `Feedback`:
 
 ```swift
-let whenUserActionReceived = Feedback.noFeedback(^\Event.userAction) {
+let whenUserActionReceived = Feedback.sideEffect(^\Event.userAction) {
     analytics.track(TrackingEvent.userAction($0))
 }
 
 extension Feedback {
     /// Helper: simple side-effect without feedback-loop.
-    static func noFeedback<Value>(_ filter: Event -> Value?, _ f: Value -> Void) -> Signal<Event> {
-        return signal
-            .filterMap(filter)
-            .on(value: { value in // side-effect
-                f(value)
-            })
-            .ignoreValues() // no feedback loop
-            .promoteValue() // for adjusting type
+    static func sideEffect<Value>(_ filter: Event -> Value?, _ effect: Value -> Void) -> Feedback<Event> {
+        return Feedback { signal in
+            return signal
+                .filterMap(filter)
+                .on(value: { value in // side-effect
+                    effect(value)
+                })
+                .ignoreValues() // no feedback loop
+                .promoteValue() // for adjusting type
+        }
     }
 }
 ```
