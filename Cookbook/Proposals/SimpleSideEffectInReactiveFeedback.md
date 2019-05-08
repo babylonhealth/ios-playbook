@@ -123,4 +123,56 @@ This proposal will affect all construction of `ViewModel` and `RAF`, but we can 
 
 ## Alternatives considered
 
-N/A
+[#98 Mealy-Machine ReactiveFeedback](https://github.com/Babylonpartners/ios-playbook/pull/98) suggests a clear separation of "feedback events" and "external events" illustrated as:
+
+```swift
+Property.init(initial: ..., reduce: ..., events: Signal<Event>, feedbacks: ...)
+```
+
+To make things more simply, we can make alternative rule to add side-effects on top of `events`.
+
+For example, instead of writing:
+
+```swift
+let externalEvents = Signal<Event>(...)
+
+/* This proposal's Feedback.sideEffect() style */
+self.state = Property(
+    ...,
+    events: externalEvents, // external events
+    feedbacks: [
+        whenButtonTapped(analytics: analytics),
+        .sideEffect(^\Event.userAction) {
+            analytics.track(TrackingEvent.userAction($0))
+        },
+        .sideEffect(^\Event.login) {
+            print("login")
+        }
+    ]
+)
+```
+
+we can rewrite using ReactiveSwift's `Signal.on(value:)`:
+
+```swift
+// iff : (UserAction -> Event?) -> Event -> Void
+
+let externalEvents = Signal<Event>(...)
+
+/* Alternative: `Signal.on(value:)` style */
+self.state = Property(
+    ...,
+    events: externalEvents
+        .on(value: iff(^\Event.userAction) {
+            analytics.track(TrackingEvent.userAction($0))
+        })
+        .on(value: iff(^\Event.login) {
+            print("login")
+        })
+    feedbacks: [
+        whenButtonTapped(analytics: analytics)
+    ]
+)
+```
+
+While this is more efficient than proposed solution by minimizing verbose intermediate signals, separated occurances of side-effects in `events` and `feedbacks` might look awkward if one is familiar with Elm or Redux.
