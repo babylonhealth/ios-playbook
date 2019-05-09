@@ -1,22 +1,18 @@
 # How to use `Current` in Babylon iOS Project
 
 ### Where is that? 
-- `Current` is the global instance of the `World` type which is located in the `BabylonDependencies.framework`. It's purpose is to provide convenient access to the instances that should be shared between different parts of the app (cross-cutting concerns)
+- `Current` is the global instance of the `World` type which is located in the `BabylonDependencies.framework`. 
+It's purpose is to provide convenient access to the instances that should be shared between different parts of the app (cross-cutting concerns). For more information please read the [How Control the World](/Cookbook/Proposals/ControlTheWorld.md) document.
 
-### Properties with default values
-TBD
+## `Do`s and `Don't`s
 
-### Properties without default values..
-..which depends on asyncronous events to have its value
+#### do
+- access `Current` **only** from `Builder`s layer;
+- pass the required dependencies down the chain;
+- contribute to it;
 
-TBD
+#### don't
+- access `Current` from any other layer other than `Builder`. I.E all the other layers (ViewModel, Flowcontroller, ViewController, Model, BusinessController) continue to receive its dependencies throught injection, preferably via `init`;
+- inject `current` as a dependency;
+- try to mutate `Current`. In `Release` configuration it's a constant `let`;
 
-### Runtime dynamic changes as `DesignLibrary`
-
-TBD
-
-## Dos and don't
-- `do`s: tbd
-- `don't`s: tbd
-
-Reference to the [How Control the World](/Cookbook/Proposals/ControlTheWorld.md) approved proposal.
