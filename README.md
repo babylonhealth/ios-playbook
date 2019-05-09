@@ -32,6 +32,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Ilya Puchka             | [@ilyapuchka](https://twitter.com/ilyapuchka)                 |
 | Jason Dobo              | [@jasondobo](https://github.com/jasondobo)                    |
 | João Pereira            | [@NSMyself](https://twitter.com/nsmyself)                     |
+| Joshua Simmons          | [@j531](https://github.com/j531)                              |
 | Martin Nygren           |                                                               |
 | Michael Brown           | [@mluisbrown](https://twitter.com/mluisbrown)                 |
 | Michał Kwiecień         | [@kwiecien_co](https://twitter.com/kwiecien_co)               |
@@ -42,6 +43,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
 | Witold Skibniewski      |                                                               |
 | Yasuhiro Inami          | [@inamiy](https://twitter.com/inamiy)                         |
+| Yuri Karabatov          | [@karabatov](https://twitter.com/karabatov)                   |
 
 
 ## 2. Which squad each individual belongs to, and its availability.
@@ -59,9 +61,9 @@ By definition, members work on their respective squad, although they are free to
 | Native/Core                   | Giorgos, Jason, Martin, Inami    |    4/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
 | Professional Services         | Chitra             |    1/3      | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
 | Enrolment and Integrity       | Diego                            |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
-| Core Experience               | Sergey                           |    1/2       | [#core-experience](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
+| Core Experience               | Sergey, Yuri                     |    2/2       | [#core-experience](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
 | Health Management             | David, João                      |    2/2       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) |
-| Monitor                       | Anders, Michal                   |    2/2       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
+| Monitor                       | Anders, Joshua, Michal           |    3/3       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
 | Triage UI                     | Michael, Danilo    |    1/2       | [#squad_triage_ui](https://babylonhealth.slack.com/archives/CE6H6SLRX) |
 | Women's Health                | Anil                             |    1/1       | [#womenshealthteam](https://babylonhealth.slack.com/archives/CFX73S4P5) |
 
