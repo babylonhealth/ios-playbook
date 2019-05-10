@@ -6,7 +6,7 @@ Its purpose is to provide convenient access to the instances that should be shar
 
 ## `Do`s and `Don't`s
 
-#### do
+#### Dos
 - access `Current` **only** from `Builder`s layer;
 - pass the required dependencies down the chain;
 - contribute to it;
