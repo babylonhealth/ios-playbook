@@ -12,7 +12,7 @@ Its purpose is to provide convenient access to the instances that should be shar
 - contribute to it;
 
 #### don't
-- access `Current` from any other layer other than `Builder`. I.E all the other layers (ViewModel, Flowcontroller, ViewController, Model, BusinessController) continue to receive its dependencies throught injection, preferably via `init`;
+- access `Current` from any other layer other than `Builder`. All the other layers (`ViewModel`, `FlowController`, `ViewController`, `Model`, `BusinessController`) continue to receive their dependencies through injection when created by the builder, preferably at initialisation time;
 - inject `current` as a dependency;
 - try to mutate `Current`. In `Release` configuration it's a constant `let`;
 
