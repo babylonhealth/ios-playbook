@@ -11,7 +11,7 @@ Its purpose is to provide convenient access to the instances that should be shar
 - pass the required dependencies down the chain;
 - contribute to it;
 
-#### don't
+#### Don't
 - access `Current` from any other layer other than `Builder`. All the other layers (`ViewModel`, `FlowController`, `ViewController`, `Model`, `BusinessController`) continue to receive their dependencies through injection when created by the builder, preferably at initialisation time;
 - inject `current` as a dependency;
 - try to mutate `Current`. In `Release` configuration it's a constant `let`;
