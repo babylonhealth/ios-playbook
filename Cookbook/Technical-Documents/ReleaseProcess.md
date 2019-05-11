@@ -12,6 +12,12 @@
     2. Escalating abnormal influx of bugs, so the release, as a whole, can be reassessed.
 4. Making sure they can dedicate enough time for the release. In case this is not possible (due to other squad commitments), please inform the iOS chapter lead.
 
+**The objective is to ship the release build as soon as possible whilst maintaining the quality bar and addressing every bug raised by QA**. When dealing with a particularly complicated bug (one that would require a rather significant effort to address) the release engineer should speak with either Andreaa Papillon (Native Apps' Product Manager) or Lilla Szulyovszky (Native Apps' Delivery Manager) as every release is managed and signed-off by the Native Apps squad. The bug's corresponding feature should disabled altogether using its feature switch, if applicable. Such a bug would subsequently be handled by its respective squad.
+
+Release duties have priority over regular squad duties. Please inform your squad of your unavailability before starting to work in the release. It is a well known fact that twenty percent of your work hours overall are to be allocated towards making the release a reality.
+
+There are usually two release engineers working at any given time. It goes without saying that both engineers need to work together and that constant feedback is vital.
+
 ### 2. Release step-by-step
 
 **Phase 1: Initiation**
@@ -93,3 +99,8 @@ The release process starts when the first build is provided to QA and ends when 
 | 3.4.0                    | Martin Nygren                    | Automated: `06h40`<br>Manual: `32h`<br>| `UA-8385: 2h`<br>`UA8381: 4h`<br>`UA-8375 6h`<br>`UA-8374 2h`<br>`UA-8362 1h`<br>`UA-8369 2h`<br>`UA-8372 1h`<br>`MON-3631 2h`<br>`MON-3634 14h`<br>`UA-8359 13h`<br>| Total: **3d9h40min** | | |
 | 3.3.0                    | David Rodrigues                  | Automated: `09h40`<br>Manual: `14h`<br>| `UA-8268: 1h`<br>`UA-8269: 1h30`<br>`UA-8252: 5h`<br>| Total: **1d7h10min** | | |
 | 3.2.0                    | Danilo Aliberti                  | Automated: `12h53`<br>Manual: `10h`<br>| `UA-8166: 4h`<br>`UA-8149: 2d`<br>`UA-8187: 3h`<br>| Total: **3d6h** | | |
+
+
+### 5. Post-mortem
+
+If the release did not go as expected, request a meeting with the iOS team so that the reasons for this failure are analyzed and addressed in order to minimize similar problems in the future.
