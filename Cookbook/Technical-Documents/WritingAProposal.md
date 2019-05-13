@@ -35,3 +35,8 @@ After the proposal PR has been posted, your coworkers have two weeks to read it 
 * Your coworkers are supposed to have given feedback on the PR up to 2 hours before the meeting
 * The proposal author is responsible for driving the meeting, taking notes, and draft a plan to implement the change if the proposal gets accepted
 
+### After the meeting
+
+* If the proposal was accepted, merge the PR and create the JIRA tickets for the scheduled actions. A final comment on the PR with the meeting conclusions and links to the tickets is also appreciated, especially for people that could not attend said meeting.
+* If the proposal was rejected, add a comment to explain the meeting conclusions (i.e. why it was rejected) and close the PR
+
