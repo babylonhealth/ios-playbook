@@ -37,6 +37,6 @@ After the proposal PR has been posted, your coworkers have two weeks to read it 
 
 ### After the meeting
 
-* If the proposal was accepted, merge the PR and create the JIRA tickets for the scheduled actions. A final comment on the PR with the meeting conclusions and links to the tickets is also appreciated
-* If the proposal was rejected, add a comment to explain the meeting conclusions (why it was rejected) and close the PR
+* If the proposal was accepted, merge the PR and create the JIRA tickets for the scheduled actions. A final comment on the PR with the meeting conclusions and links to the tickets is also appreciated, especially for people that could not attend said meeting.
+* If the proposal was rejected, add a comment to explain the meeting conclusions (i.e. why it was rejected) and close the PR
 
