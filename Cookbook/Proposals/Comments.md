@@ -23,7 +23,7 @@ I think we sometimes overuse comments. The reason for this our StyleGuide doesn'
 
 I think comments are rather bad than good because of the 2 following reasons: 
 
-1. Comments eventually start to lie.
+1. Comments eventually start to lie since the code frequently gets updated but comments remain unchanged
 2. Usage of comments gives a false-positive feeling to the author that the code is readable.
 
 Look at this comment:
@@ -42,7 +42,7 @@ public enum ConsultationMethod: String {
 ```
 At the beginning, the `ConsultationMethod` had indeed 2 cases. This may be trivial here without big consequences however that not always a case and a lie may cost us many of hours.
 
-"Cross-files" comments are even more dangerous to become a lie at some point. Consider the following comment:
+"Cross-files" comments are even more likely of becoming lies at any given point. Consider the following comment:
 ```
 /// Make the booking confirmation screen. The created screen would always refetch
 /// the appointment from the backend.
@@ -73,12 +73,11 @@ extension AppointmentDTO {
     }
 }
 ```
-Can be simplified without any lose in understanding what the code represents to:
+Can be simplified without any loss in understanding what the code represents to:
 
 ```swift
 extension AppointmentDTO {
     public enum State: String, Codable {
-        /// waiting for payment
         case waitingForPayment = "pending"
         /// timeout == 10 min
         case paymentTimedOut = "timed_out"
@@ -93,9 +92,9 @@ extension AppointmentDTO {
 ## Proposed solution
 
 ### Our approach 
-The most important thing is to improve the definition of our approach to comments as currently it isn't said clearly. Moreover, it would be nice to have a common way how we comment our code when we are forced to add them. 
+The most important thing is to improve the definition of our approach to comments as currently it isn't clearly defined. Moreover, it would be nice to have a common way of commenting our code when we are forced to do so. 
 
-In my opinion, our approach should insist on writing always a **self-documented code**. It should be our goal. However, writing self-documented code **doesn't** mean we shouldn't use comments. It means, that commenting our code is a **necessary evil**:
+In my opinion, our approach should insist on writing always a **self-documented code**. It should be our goal. However, writing self-documented code **doesn't** mean we shouldn't use comments. Commenting our code is, at times, a **necessary evil**:
 
 > The proper use of comments is to compensate for our failure to express ourself in code. Note that I used the word failure. I meant it. Comments are always failures. We must have them because we cannot always figure out how to express ourselves without them, but their use is not a cause for celebration.
     // Robert C. Martin - "Clean Code"
@@ -109,15 +108,15 @@ To make our StyleGuide more verbose we can also add a list of what kind of comme
 **Good comments**:
 
 - **TODO comments**
-    This already has a good definition of our approach in the StyleGuide and I think we are fine with that approach.
+    This already has a good definition of our approach in the StyleGuide and I think we are fine with that approach. Don't forget to add JIRA's ticket number, if applicable.
 - **Doc headers for public API**
-    Good documentation helps consumers of the SDK to understand what the code does. However, I don't know if it's worth to add a comment to every public function/field, even if a comment is just a repetition. The following comment doesn't add any value (unless it's needed by a doc generation tool if we use any):
+    Good documentation helps consumers of the SDK understand what the code does. However, I don't know if it's worth adding a comment to every public function/field, even if a comment is just a repetition. The following comment doesn't add any value (unless it's needed by a doc generation tool if we use any):
     ```swift
      /// Supported biometric types
      public var supportedBiometry: BiometryType
     ```
 - **Explanation of Intent/Clarification**
-    It's a kind of comment when a developer tries to explain what he's trying to achieve when a code is not verbose enough. Example: Math code, sometimes parsing.
+    It's a kind of comment when a developer tries to explain what they're trying to achieve when a code is not verbose enough. Example: Math code, sometimes parsing.
 - **Warning of Consequences**
     If we had a test which takes an hour to run, it would be nice to have a comment warning about it.
 - **Amplification**
@@ -128,7 +127,7 @@ To make our StyleGuide more verbose we can also add a list of what kind of comme
 The above list is what defines a good comment. **However**, we still have to remember that **every** comment **is our failure** to name our code better. If someone gives you a good hint how to remove a comment without sacrificing readability **we should go for it**.
 
 ### How can we replace a comment?
-In case of a **what** comments usually it is very easy to replace a comment. Usually, it's all about taking what comment says and create a variable or function with such a name.
+In case of a **what** comment it is usually very easy to replace it by taking what the comment says and create a variable or function with such a name.
 
 
 ### How do we comment?
@@ -136,10 +135,10 @@ Even with the proposed approach, we will be forced to comment our code at some p
 
 The above solution has 2 benefits:
 
-1. It's visible to what part of a code comment refers.
+1. Clearly defines what part of a code comment refers to.
 2. It improves readability for a developer who doesn't need to know why a particular piece of code is written. Sometimes, during debugging for example, what you need to know is **what** happens, not **why**.
 
-To illustrate point `2.`. If there is an UIKit bug, with dismissing a modal screen which is ugly but works just fine, all we care about is the fact that the code has been dismissed. During a debuting we now we can go just further without a need to understand how `dismissing` is handled.
+To illustrate point `2.`. If there is an UIKit bug, with dismissing a modal screen which is ugly but works just fine, all we care about is the fact that the code has been dismissed. During debugging we now we can go just further without a need to understand how `dismissing` is handled.
 
 This shows what is a good comment:
 ```swift
