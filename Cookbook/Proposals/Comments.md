@@ -220,4 +220,4 @@ It doesn't have any impact on existing codebase as this is about extending a rul
 
 ## Alternatives considered
 1. Leave the StyleGuide as it is, aka. reject this proposal.
-2. Modify the list of good comments.
+2. Modify the list of good comments. Maybe we don't agree on everything in this proposal but we like part of it.
