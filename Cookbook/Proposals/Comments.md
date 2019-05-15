@@ -94,7 +94,7 @@ extension AppointmentDTO {
 ### Our approach 
 The most important thing is to improve the definition of our approach to comments as currently it isn't clearly defined. Moreover, it would be nice to have a common way of commenting our code when we are forced to do so. 
 
-In my opinion, our approach should insist on writing always a **self-documented code**. It should be our goal. However, writing self-documented code **doesn't** mean we shouldn't use comments. Commenting our code is, at times, a **necessary evil**:
+In my opinion, our approach should insist on writing always a **self-documented code**. It should be our goal. However, writing self-documented code **doesn't** mean we shouldn't use comments. Commenting our code is a **necessary evil**:
 
 > The proper use of comments is to compensate for our failure to express ourself in code. Note that I used the word failure. I meant it. Comments are always failures. We must have them because we cannot always figure out how to express ourselves without them, but their use is not a cause for celebration.
     // Robert C. Martin - "Clean Code"
