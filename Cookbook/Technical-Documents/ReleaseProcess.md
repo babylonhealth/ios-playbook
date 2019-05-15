@@ -18,10 +18,11 @@
 <br/>	*It starts at the end of the sprint (typically when the new sprint starts on Monday)*
 
 1. Cut a release branch:  Create a new branch from develop and push to origin (e.g `release/3.2.0`).
+1. Create a slack channel to discuss anything relative to the release (e.g. `ios_release_3_2_0`).
 1. Bump the release version by triggering its command (eg. `/release babylon:3.2.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
     * This creates a test Tesflight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
 1. Trigger a hockey build from that branch using its command (eg. `/distribute release/3.2.0:babylon`) in `#ios-build`.
-1. Create and send the issue list to the Product Manager: In console run `git log --since="2018-11-26" --pretty=format:%s  > issue_list.txt` (use the date when the sprint started).
+1. Create and share the changelog in `#ios-launchpad`: In console run `git log --since="2018-11-26" --pretty=format:%s  > issue_list.txt` (use the date when the sprint started). Ask the channel for the expected release notes from each squad if they are releasing anything.
 1. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
     1. On the sidebar click `+ Version or Platform` and select `iOS`.
     1. Input the new version number.
