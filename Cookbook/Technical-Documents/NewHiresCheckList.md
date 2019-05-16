@@ -90,11 +90,9 @@ shell script. Here's how to get the iOS project up and running:
 
 1. Compile the project 🎉
 
-1. In order to build and run the app on your personal iOS devices, first ask for your Apple ID to be added to Babylon Health's Team (with sufficient rights to add your own devices from Apple Developers Portal). Then add your devices UDIDs from the portal and run `bundle exec fastlane match development --readonly NO --force` from your local `babylon-ios` repo directory.
-Finally add the Apple ID `ios.development@babylonhealth.com` on Xcode **Accounts** preferences tab.
-Note: You can get the required passphrases/passwords from other members of the iOS team.
-
 ## What's next?
+
+1. Refer to the [Fastlane Match](https://github.com/Babylonpartners/ios-playbook/blob/master/Cookbook/Technical-Documents/FastlaneMatch.md) document for certificates and provisioning profiles related concerns.
 
 1. It can be useful to create a command line alias for `pod` to `bundle exec pod` so that you are guaranteed to always be running the correct version of Cocoapods.
 
