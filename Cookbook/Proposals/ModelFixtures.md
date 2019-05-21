@@ -39,7 +39,7 @@ In our codebase there are multiple implementations of this pattern with variatio
 - `MockAddressDTO.make`,
 - `CoreSessionDTO.mock`.
 
-On top of that some tests create value type by directly calling the initializer.
+Further inconsistencies are added by tests that directly call the initializer.
 
 These inconsistencies cause friction when trying to setup state in tests. It's hard to discover existing test helpers. Usage of unparametrized factory methods (e.g. `MockAddressDTO.make()`) makes it hard to understand on what data the test depends.
 
