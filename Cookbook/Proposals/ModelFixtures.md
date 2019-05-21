@@ -20,7 +20,7 @@ drawbacks. If it's completely new functionality that cannot be
 emulated, motivate why this new functionality would help Swift
 developers create better Swift code. -->
 
-Well-structured test code has a few distinct sections. One way to split them is to use Arrange, Act, Assert pattern. This proposal focuses on improving the initial Arrange stage of the test. First improvment is to make writing setup part as easy as possible. Second is to make this code easy to understand to help with readability and maintanance.
+Well-structured test code has a few distinct sections. One way to split them is to use Arrange, Act, Assert pattern. This proposal focuses on improving the initial Arrange stage of the test. First improvement is to make writing setup part as easy as possible. Second is to make this code easy to understand to help with readability and maintanance.
 
 So far the most used pattern for setting up values in tests is to add enum for namespacing and introduce `make` test helper method. Enumeration's name follows "`MockSomeNameDTO`" pattern, so for example tests  call `MockPatientDetailsDTO.make()`. There are a few issues with this approach:
 
