@@ -42,6 +42,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Rui Peres               | [@peres](https://twitter.com/peres)                           |
 | Sergey Shulga           | [@SergDort](https://twitter.com/SergDort)                     |
 | Simon Cass              | [@codercass](https://twitter.com/codercass)                   |
+| Jakub Tomanik           | [@jtomanik](https://github.com/jtomanik)                      |
 | Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
 | Witold Skibniewski      |                                                               |
 | Yasuhiro Inami          | [@inamiy](https://twitter.com/inamiy)                         |
@@ -60,7 +61,7 @@ By definition, members work on their respective squad, although they are free to
 | Booking                       | Witold                           |    1/1       |  |
 | Prescriptions                 | Adam                             |    1/1       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
 | Healthcheck                   | Ben, Catarina                    |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
-| Native/Core                   | Giorgos, Jason, Martin, Inami    |    4/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
+| Native/Core                   | Giorgos, Jason, Martin, Inami, Jakub    |    5/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
 | Professional Services         | Chitra             |    1/3      | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
 | Enrolment and Integrity       | Diego                            |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Core Experience               | Sergey, Yuri                     |    2/2       | [#core-experience](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
