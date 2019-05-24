@@ -6,7 +6,7 @@ iOS Cookbook 👩‍🍳
 ##### ... learn about our architecture 🏠
 
 * [Implementing features with ReactiveFeedback](http://ilya.puchka.me/implementing-features-with-reactivefeedback/)
-* [Adopt the `Current` struct to hold global dependencies](./Proposals/ControlTheWorld.md)
+* [Adopt the `Current` struct to hold global dependencies](./Proposals/ControlTheWorld.md) [following its guide](./Technical-Documents/Current-guide.md)
 * [Posting Analytics Events to Snowplow](./Technical-Documents/SnowplowHowTo.md)
 * [Use builders as functions](./Proposals/BuildersToFunctions.md)
 
