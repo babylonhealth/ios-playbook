@@ -30,7 +30,7 @@ If you need to build the app locally and run it on a device that is not yet adde
 - run Match to update development certificates and include this new device:
 
 ```
-bundle exec fastlane match development --team_id XV8PWA37TZ --force_for_new_devices --readonly false
+bundle exec fastlane match development --team_id <enterprise team id> --force_for_new_devices --readonly false
 ```
 
 This will regenerate the development profiles and certificates, including all new registered devices in them.
