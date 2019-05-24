@@ -68,7 +68,7 @@ By definition, members work on their respective squad, although they are free to
 | Health Management             | David, João                      |    2/2       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) |
 | Monitor                       | Anders, Joshua, Michal           |    3/3       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
 | Tests and Kits                | Nicola                           |    1/1       | [#test-and-kits](https://babylonhealth.slack.com/messages/CGCDJA8CD) |
-| Triage UI                     | Michael, Danilo    |    1/2       | [#squad_triage_ui](https://babylonhealth.slack.com/archives/CE6H6SLRX) |
+| Triage UI                     | Michael, Danilo    |    2/2       | [#squad_triage_ui](https://babylonhealth.slack.com/archives/CE6H6SLRX) |
 | Women's Health                | Anil                             |    1/1       | [#womenshealthteam](https://babylonhealth.slack.com/archives/CFX73S4P5) |
 
 
