@@ -98,6 +98,6 @@ The release process starts when the first build is provided to QA and ends when 
 
 ### 4a. SDK Release calendar
 
-| Version | Release Engineer(s)  | Engineering effort          | Total effort  | Cut-off date  | Release date  |
-|---------|----------------------|-----------------------------|---------------|---------------|---------------|
-| 0.7.0 | David Rodrigues <br> Ben Henshall | CNSMR-1589: 3h (Involved a lot of waiting due to dependency on DevOps)<br>Expired GitHub token issue: 2h | 4h30m | 17.05.2019 | 21.05.2019 |
+| Version | Associated App Version | Release Engineer(s)  | Engineering effort          | Total effort  | Cut-off date  | Release date  |
+|---------|------------------------|----------------------|-----------------------------|---------------|---------------|-------------------|
+| 0.7.0 | 3.16.0 | David Rodrigues <br> Ben Henshall | CNSMR-1589: 3h (Involved a lot of waiting due to dependency on DevOps)<br>Expired GitHub token issue: 2h | 4h30m | 17.05.2019 | 21.05.2019 |
