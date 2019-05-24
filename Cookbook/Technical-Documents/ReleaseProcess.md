@@ -18,10 +18,11 @@
 <br/>	*It starts at the end of the sprint (typically when the new sprint starts on Monday)*
 
 1. Cut a release branch:  Create a new branch from develop and push to origin (e.g `release/3.2.0`).
+1. Create a slack channel to discuss anything relative to the release (e.g. `ios_release_3_2_0`).
 1. Bump the release version by triggering its command (eg. `/release babylon:3.2.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
     * This creates a test Tesflight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
 1. Trigger a hockey build from that branch using its command (eg. `/distribute release/3.2.0:babylon`) in `#ios-build`.
-1. Create and send the issue list to the Product Manager: In console run `git log --since="2018-11-26" --pretty=format:%s  > issue_list.txt` (use the date when the sprint started).
+1. Create and share the changelog in `#ios-launchpad`: In console run `git log --since="2018-11-26" --pretty=format:%s  > issue_list.txt` (use the date when the sprint started). Ask the channel for the expected release notes from each squad if they are releasing anything.
 1. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
     1. On the sidebar click `+ Version or Platform` and select `iOS`.
     1. Input the new version number.
@@ -56,13 +57,18 @@
 1. Send the build to Testflight Beta (external testing). Select the `External Testers` group.
 1. Press `Release this version` in App Store Connect
 1. Tag the release commit and create a GitHub release. Attach the binary as an artefact to the GitHub release (if you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
-1. Release new version for the Babylon SDK:
-	1. Ask SDK team (#sdk_squad) about the SDK version number
-	1. Trigger a hockey build from that branch using its command (eg. `/distribute_sdk version:0.1.11 pre_release:false branch:release/3.7.0`) in `#ios-build`.
 1. Merge the changes back to develop.
 
+### 3. SDK Release
 
-### 3. Release calendar
+1. Ask SDK team (#sdk_squad) about the SDK version number.
+2. Follow the [Internal SDK Release Process](https://engineering.ops.babylontech.co.uk/docs/cicd-deployments/#mobile-sdk-releases-ios-android) to open a CR ticket on the CRP board.
+3. Cut a release branch for the SDK from the app release branch (eg. `sdk/0.5.0`)
+4. Create PR and udpate the SDK changelog `SDK/CHANGELOG.md` to add the release version and date
+5. Trigger a hockey build from that branch using its command (eg. `/fastlane distribute_sdk_v2 version:0.5.0 branch:release/sdk/0.5.0`) in `#ios-build`.
+6. Update the Sample app to point to the latest SDK release
+
+### 4. Release calendar
 
 The release process starts when the first build is provided to QA and ends when Apple has approved the app. Effort to release should be broken down by:
 
@@ -73,6 +79,8 @@ The release process starts when the first build is provided to QA and ends when 
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
+| 3.16.0  | David Rodrigues <br> Ben Henshall | Automated: `6h 50m`<br>Manual: `19h 35min`| `CNSMR-1556: 2h30m` <br> `CNSMR-1537: 3h` <br> `CNSMR-1525: 1h` <br> `CNSMR-1438: 1h` <br> `CNSMR-1437: 2h` <br> `CNSMR-1555: 1h` <br> `CNSMR-1540: 4h` | Total: **40h55m** | 13.05.2019 | 16.05.2019 |
+| 3.15.0                   | Sergey Shulga <br> Joao Pereira <br> Michael Brown | Automated: `7h 37m`<br>Manual: `24h 15 min`| `CNSMR-1449: 1h` <br> `CNSMR-1443: 12h` <br> `CNSMR-1381: 2h` <br> `CNSMR-1438: 30min` <br> `CNSMR-1430: 30min` <br> `CNSMR-1413: 20min` <br> `CNSMR-1412: 20min` <br> `CNSMR-1375: 20min` <br> `CNSMR-1391: 15min` | Total: **49h07m** | 29.04.2019 | 07.05.2019 |
 | 3.14.0                   | Giorgos Tsiapaliokas <br>Yasuhiro Inami | Automated: `07h28m`<br>Manual: `24h10m`| `NRX-506: 2h` <br> `NRX-495: 30m` <br> `NRX-501: 30m` <br> `CNSMR-1323: 30m` | Total: **35h08m** | 15.04.2019 | 23.04.2019 |
 | 3.13.0                   | Anders Ha <br> Viorel Mihalache | Automated: `07h`<br>Manual: `19h`| `CNSMR-1183: 3h` <br> `CNSMR-1181: 2h` | Total: **31h** | 1.04.2019 | 4.04.2019 | 
 | 3.12.0                   | Ben Henshall<br> Danilo Aliberti | Automated: `07h16m`<br>Manual: `22h`| `MON-4225: 3h`| Total: **32h16m** | 18.03.2019 | 21.03.2019 | 
@@ -87,3 +95,9 @@ The release process starts when the first build is provided to QA and ends when 
 | 3.4.0                    | Martin Nygren                    | Automated: `06h40`<br>Manual: `32h`<br>| `UA-8385: 2h`<br>`UA8381: 4h`<br>`UA-8375 6h`<br>`UA-8374 2h`<br>`UA-8362 1h`<br>`UA-8369 2h`<br>`UA-8372 1h`<br>`MON-3631 2h`<br>`MON-3634 14h`<br>`UA-8359 13h`<br>| Total: **3d9h40min** | | |
 | 3.3.0                    | David Rodrigues                  | Automated: `09h40`<br>Manual: `14h`<br>| `UA-8268: 1h`<br>`UA-8269: 1h30`<br>`UA-8252: 5h`<br>| Total: **1d7h10min** | | |
 | 3.2.0                    | Danilo Aliberti                  | Automated: `12h53`<br>Manual: `10h`<br>| `UA-8166: 4h`<br>`UA-8149: 2d`<br>`UA-8187: 3h`<br>| Total: **3d6h** | | |
+
+### 4a. SDK Release calendar
+
+| Version | Associated App Version | Release Engineer(s)  | Engineering effort          | Total effort  | Cut-off date  | Release date  |
+|---------|------------------------|----------------------|-----------------------------|---------------|---------------|-------------------|
+| 0.7.0 | 3.16.0 | David Rodrigues <br> Ben Henshall | CNSMR-1589: 3h (Involved a lot of waiting due to dependency on DevOps)<br>Expired GitHub token issue: 2h | 4h30m | 17.05.2019 | 21.05.2019 |

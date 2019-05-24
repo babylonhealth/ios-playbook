@@ -173,7 +173,34 @@ let colour = "red"
 
 ## Code Organization
 
-Use extensions to organize your code into logical blocks of functionality. Do not use `// MARK: -` comments.
+Use extensions to organize your code into logical blocks of functionality. Add `MARK`s if they help with it.
+
+### Declaration Order
+
+Data type declaration must follow the ordering rule 1 to 3:
+
+```
+1. instance stored properties (struct), or enum cases
+2. designated initializer
+3. deinit
+4. (others)
+```
+
+(Note that rule 1 to 3 are required to be in declaration scope that can't move to `extension`)
+
+For other declarations below, they will go to `4. (others)` and can be in arbitrary order:
+
+```
+- convenience initializers
+- instance computed properties
+- instance methods
+- type stored properties (NOTE: this rarely appears in practice because singleton is discouraged)
+- type computed properties
+- type methods
+- nested types
+```
+
+See also: [[Proposal] Top-priority member-variable and initializer declarations](https://github.com/Babylonpartners/ios-playbook/pull/74)
 
 ### Protocol Conformance
 
@@ -316,7 +343,7 @@ class TestDatabase : Database {
 }
 ```
 
-* Long lines should be wrapped at around 70 characters. A hard limit is intentionally not specified.
+* Long lines should be wrapped at around 120 characters. A hard limit is intentionally not specified.
 
 * Avoid trailing whitespaces at the ends of lines.
 
@@ -398,7 +425,7 @@ func reticulateSplines(spline: [Double]) -> Bool {
 }
 ```
 
-For functions with long signatures, more than 120 characters, put each parameter on a new line and add an extra indent on subsequent lines. Note that the closing parenthesis aligns with the f in `func`. This is not how Xcode indents these blocks of code so keep an eye out for violations of this guideline.
+For functions with long signatures, more than the recommended length, put each parameter on a new line and add an extra indent on subsequent lines. Note that the closing parenthesis aligns with the f in `func`. This is _not_ how Xcode indents these blocks of code so keep an eye out for violations of this guideline.
 
 ```swift
 func reticulateSplines(

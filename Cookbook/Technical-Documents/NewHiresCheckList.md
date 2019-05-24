@@ -80,6 +80,7 @@ shell script. Here's how to get the iOS project up and running:
      - Including whitespace-only lines
      - Default line endings: macOS / Unix (LF)
      - Convert existing files on save
+     - Page guide at column: 120 characters
 
 1. Configure the Xcode **Text Editing -> Indentation** preferences as follows:
      - Prefer indent using: Spaces
@@ -90,6 +91,8 @@ shell script. Here's how to get the iOS project up and running:
 1. Compile the project 🎉
 
 ## What's next?
+
+1. Refer to the [Fastlane Match](FastlaneMatch.md#day-to-day-development) document if you want to run the app on your own iOS devices.
 
 1. It can be useful to create a command line alias for `pod` to `bundle exec pod` so that you are guaranteed to always be running the correct version of Cocoapods.
 
