@@ -11,6 +11,9 @@
     1. Providing visibility to potential blockers to the wider audience.
     2. Escalating abnormal influx of bugs, so the release, as a whole, can be reassessed.
 4. Making sure they can dedicate enough time for the release. In case this is not possible (due to other squad commitments), please inform the iOS chapter lead.
+5. General bug fixing for minor tasks. For more complex ones:
+    1. Delegate the bug to the relevant squad/person. 
+    2. If the bug is too complex to be fixed within the release window, please toggle off the feature and inform the Product Manager. 
 
 ### 2. Release step-by-step
 
