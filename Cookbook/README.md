@@ -9,6 +9,7 @@ iOS Cookbook 👩‍🍳
 * [Adopt the `Current` struct to hold global dependencies](./Proposals/ControlTheWorld.md)
 * [Posting Analytics Events to Snowplow](./Technical-Documents/SnowplowHowTo.md)
 * [Use builders as functions](./Proposals/BuildersToFunctions.md)
+* [Adding Frameworks/Modules to the project](./Technical-Documents/AddingFrameworks.md)
 
 ##### ... build my feature with Bento 🍱
 
