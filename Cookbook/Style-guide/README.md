@@ -762,8 +762,6 @@ Only explicitly use `open`, `public`, and `internal` when you require a full acc
 
 Use access control as the leading property specifier. The only things that should come before access control are the `static` specifier or attributes such as `@IBAction`, `@IBOutlet` and `@discardableResult`.
 
-Use `private`, `fileprivate`, `internal`, and `public` access-level modifiers on each function implemented in an extension, rather than having a single access-level modifier for the entire extension.
-
 **Preferred**:
 ```swift
 private let message = "Great Scott!"
@@ -779,6 +777,22 @@ fileprivate let message = "Great Scott!"
 
 class TimeMachine {
   lazy dynamic private var fluxCapacitor = FluxCapacitor()
+}
+```
+
+Use `private`, `fileprivate`, `internal`, and `public` access-level modifiers on each function implemented in an extension, rather than having a single access-level modifier for the entire extension.
+
+**Preferred**:
+```swift
+extension TimeMachine {
+  fileprivate var fluxCapacitor = FluxCapacitor()
+}
+```
+
+**Not Preferred**:
+```swift
+fileprivate extension TimeMachine {
+  var fluxCapacitor = FluxCapacitor()
 }
 ```
 
