@@ -92,6 +92,8 @@ shell script. Here's how to get the iOS project up and running:
 
 ## What's next?
 
+1. Refer to the [Fastlane Match](FastlaneMatch.md#day-to-day-development) document if you want to run the app on your own iOS devices.
+
 1. It can be useful to create a command line alias for `pod` to `bundle exec pod` so that you are guaranteed to always be running the correct version of Cocoapods.
 
 1. [Install additional tools and ask access for the various services we use](ToolsAndServices.md).

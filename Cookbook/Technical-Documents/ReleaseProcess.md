@@ -11,6 +11,9 @@
     1. Providing visibility to potential blockers to the wider audience.
     2. Escalating abnormal influx of bugs, so the release, as a whole, can be reassessed.
 4. Making sure they can dedicate enough time for the release. In case this is not possible (due to other squad commitments), please inform the iOS chapter lead.
+5. General bug fixing for minor tasks. For more complex ones:
+    1. Delegate the bug to the relevant squad/person. 
+    2. If the bug is too complex to be fixed within the release window, please toggle off the feature and inform the Product Manager. 
 
 **The objective is to ship the release build as soon as possible whilst maintaining the quality bar and addressing every bug raised by QA**.
 When dealing with a particularly complicated bug (one that would require a rather significant effort to address) the release engineer should speak with either Andreaa Papillon (Native Apps' Product Manager) or Lilla Szulyovszky (Native Apps' Delivery Manager) as every release is managed and signed-off by the Native Apps squad.
@@ -26,10 +29,11 @@ There are usually two release engineers working at any given time. It goes witho
 <br/>	*It starts at the end of the sprint (typically when the new sprint starts on Monday)*
 
 1. Cut a release branch:  Create a new branch from develop and push to origin (e.g `release/3.2.0`).
+1. Create a slack channel to discuss anything relative to the release (e.g. `ios_release_3_2_0`).
 1. Bump the release version by triggering its command (eg. `/release babylon:3.2.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
     * This creates a test Tesflight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
-1. Trigger a hockey build from that branch using its command (eg. `/distribute release/3.2.0:babylon`) in `#ios-build`.
-1. Create and send the issue list to the Product Manager: In console run `git log --since="2018-11-26" --pretty=format:%s  > issue_list.txt` (use the date when the sprint started).
+1. Trigger a hockey build from that branch using its command (eg. `/hockeyapp Babylon branch:release/3.17.0`) in `#ios-build`.
+1. Create and share the changelog in `#ios-launchpad`: In console run `git log --since="2018-11-26" --pretty=format:%s  > issue_list.txt` (use the date when the sprint started). Ask the channel for the expected release notes from each squad if they are releasing anything.
 1. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
     1. On the sidebar click `+ Version or Platform` and select `iOS`.
     1. Input the new version number.
@@ -86,6 +90,7 @@ The release process starts when the first build is provided to QA and ends when 
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
+| 3.16.0  | David Rodrigues <br> Ben Henshall | Automated: `6h 50m`<br>Manual: `19h 35min`| `CNSMR-1556: 2h30m` <br> `CNSMR-1537: 3h` <br> `CNSMR-1525: 1h` <br> `CNSMR-1438: 1h` <br> `CNSMR-1437: 2h` <br> `CNSMR-1555: 1h` <br> `CNSMR-1540: 4h` | Total: **40h55m** | 13.05.2019 | 16.05.2019 |
 | 3.15.0                   | Sergey Shulga <br> Joao Pereira <br> Michael Brown | Automated: `7h 37m`<br>Manual: `24h 15 min`| `CNSMR-1449: 1h` <br> `CNSMR-1443: 12h` <br> `CNSMR-1381: 2h` <br> `CNSMR-1438: 30min` <br> `CNSMR-1430: 30min` <br> `CNSMR-1413: 20min` <br> `CNSMR-1412: 20min` <br> `CNSMR-1375: 20min` <br> `CNSMR-1391: 15min` | Total: **49h07m** | 29.04.2019 | 07.05.2019 |
 | 3.14.0                   | Giorgos Tsiapaliokas <br>Yasuhiro Inami | Automated: `07h28m`<br>Manual: `24h10m`| `NRX-506: 2h` <br> `NRX-495: 30m` <br> `NRX-501: 30m` <br> `CNSMR-1323: 30m` | Total: **35h08m** | 15.04.2019 | 23.04.2019 |
 | 3.13.0                   | Anders Ha <br> Viorel Mihalache | Automated: `07h`<br>Manual: `19h`| `CNSMR-1183: 3h` <br> `CNSMR-1181: 2h` | Total: **31h** | 1.04.2019 | 4.04.2019 | 
@@ -102,7 +107,13 @@ The release process starts when the first build is provided to QA and ends when 
 | 3.3.0                    | David Rodrigues                  | Automated: `09h40`<br>Manual: `14h`<br>| `UA-8268: 1h`<br>`UA-8269: 1h30`<br>`UA-8252: 5h`<br>| Total: **1d7h10min** | | |
 | 3.2.0                    | Danilo Aliberti                  | Automated: `12h53`<br>Manual: `10h`<br>| `UA-8166: 4h`<br>`UA-8149: 2d`<br>`UA-8187: 3h`<br>| Total: **3d6h** | | |
 
+### 4a. SDK Release calendar
+
+| Version | Associated App Version | Release Engineer(s)  | Engineering effort          | Total effort  | Cut-off date  | Release date  |
+|---------|------------------------|----------------------|-----------------------------|---------------|---------------|-------------------|
+| 0.7.0 | 3.16.0 | David Rodrigues <br> Ben Henshall | CNSMR-1589: 3h (Involved a lot of waiting due to dependency on DevOps)<br>Expired GitHub token issue: 2h | 4h30m | 17.05.2019 | 21.05.2019 |
 
 ### 5. Post-mortem
 
 If the release did not go as expected, request a meeting with the iOS team so that the reasons for this failure are analyzed and addressed in order to minimize similar problems in the future.
+

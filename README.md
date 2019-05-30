@@ -20,6 +20,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Name                    | Contact                                                       |
 |-------------------------|---------------------------------------------------------------|
 | Adam Borek              | [@TheAdamBorek](https://twitter.com/TheAdamBorek)             |
+| Adrian Śliwa            | [@adiki91](https://twitter.com/adiki91)                       |
 | Ana Catarina Figueiredo | [@AnnKatFig](https://twitter.com/AnnKatFig)                   |
 | Anders Ha               | [@_andersha](https://twitter.com/_andersha)                   |
 | Anil Puttabuddhi        | [@anilputtabuddhi](https://github.com/anilputtabuddhi)        |
@@ -36,10 +37,12 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Martin Nygren           |                                                               |
 | Michael Brown           | [@mluisbrown](https://twitter.com/mluisbrown)                 |
 | Michał Kwiecień         | [@kwiecien_co](https://twitter.com/kwiecien_co)               |
+| Nicola Di Pol           | [@nicola.dipol](https://github.com/horothesun)                |
 | Olivier Halligon        | [@AliSoftware](https://twitter.com/aligatr)                   |
 | Rui Peres               | [@peres](https://twitter.com/peres)                           |
 | Sergey Shulga           | [@SergDort](https://twitter.com/SergDort)                     |
 | Simon Cass              | [@codercass](https://twitter.com/codercass)                   |
+| Jakub Tomanik           | [@jtomanik](https://github.com/jtomanik)                      |
 | Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
 | Witold Skibniewski      |                                                               |
 | Yasuhiro Inami          | [@inamiy](https://twitter.com/inamiy)                         |
@@ -54,17 +57,18 @@ By definition, members work on their respective squad, although they are free to
 | Squad Name                    | Members                          | Availability | Public slack channel |
 |-------------------------------|----------------------------------| ------------ | -------------------- |
 | SDK                           | Viorel, Simon                    |    2/3       | [#sdk_squad](https://babylonhealth.slack.com/archives/CC5JNDGJJ) |
-| Consultation                  | Ilya                             |    1/1       | |
+| Consultation                  | Ilya, Adrian                     |    2/2       | |
 | Booking                       | Witold                           |    1/1       |  |
 | Prescriptions                 | Adam                             |    1/1       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
 | Healthcheck                   | Ben, Catarina                    |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
-| Native/Core                   | Giorgos, Jason, Martin, Inami    |    4/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
+| Native/Core                   | Giorgos, Jason, Martin, Inami, Jakub    |    5/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
 | Professional Services         | Chitra             |    1/3      | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
 | Enrolment and Integrity       | Diego                            |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Core Experience               | Sergey, Yuri                     |    2/2       | [#core-experience](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
 | Health Management             | David, João                      |    2/2       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) |
 | Monitor                       | Anders, Joshua, Michal           |    3/3       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
-| Triage UI                     | Michael, Danilo    |    1/2       | [#squad_triage_ui](https://babylonhealth.slack.com/archives/CE6H6SLRX) |
+| Tests and Kits                | Nicola                           |    1/1       | [#test-and-kits](https://babylonhealth.slack.com/messages/CGCDJA8CD) |
+| Triage UI                     | Michael, Danilo    |    2/2       | [#squad_triage_ui](https://babylonhealth.slack.com/archives/CE6H6SLRX) |
 | Women's Health                | Anil                             |    1/1       | [#womenshealthteam](https://babylonhealth.slack.com/archives/CFX73S4P5) |
 
 

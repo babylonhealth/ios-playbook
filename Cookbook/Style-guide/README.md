@@ -175,6 +175,33 @@ let colour = "red"
 
 Use extensions to organize your code into logical blocks of functionality. Add `MARK`s if they help with it.
 
+### Declaration Order
+
+Data type declaration must follow the ordering rule 1 to 3:
+
+```
+1. instance stored properties (struct), or enum cases
+2. designated initializer
+3. deinit
+4. (others)
+```
+
+(Note that rule 1 to 3 are required to be in declaration scope that can't move to `extension`)
+
+For other declarations below, they will go to `4. (others)` and can be in arbitrary order:
+
+```
+- convenience initializers
+- instance computed properties
+- instance methods
+- type stored properties (NOTE: this rarely appears in practice because singleton is discouraged)
+- type computed properties
+- type methods
+- nested types
+```
+
+See also: [[Proposal] Top-priority member-variable and initializer declarations](https://github.com/Babylonpartners/ios-playbook/pull/74)
+
 ### Protocol Conformance
 
 In particular, when adding protocol conformance to a type, prefer adding a separate extension for the protocol methods. This keeps the related methods grouped together with the protocol.
