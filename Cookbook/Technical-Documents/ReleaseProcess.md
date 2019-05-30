@@ -15,6 +15,14 @@
     1. Delegate the bug to the relevant squad/person. 
     2. If the bug is too complex to be fixed within the release window, please toggle off the feature and inform the Product Manager. 
 
+**The objective is to ship the release build as soon as possible whilst maintaining the quality bar and addressing every bug raised by QA**.
+When dealing with a particularly complicated bug (one that would require a rather significant effort to address) the release engineer should speak with either Andreaa Papillon (Native Apps' Product Manager) or Lilla Szulyovszky (Native Apps' Delivery Manager) as every release is managed and signed-off by the Native Apps squad.
+The bug's corresponding feature should be disabled altogether using its feature switch (if applicable). Such a bug would subsequently be handled by its respective squad.
+
+Release duties have priority over regular squad duties. Please inform your squad of your unavailability before starting to work in the release. As with every other week, twenty percent of your work hours overall are to be allocated towards making the release a reality.
+
+There are usually two release engineers working at any given time. It goes without saying that both engineers need to work together and that constant feedback is vital.
+
 ### 2. Release step-by-step
 
 **Phase 1: Initiation**
@@ -104,3 +112,8 @@ The release process starts when the first build is provided to QA and ends when 
 | Version | Associated App Version | Release Engineer(s)  | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|------------------------|----------------------|-----------------------------|---------------|---------------|-------------------|
 | 0.7.0 | 3.16.0 | David Rodrigues <br> Ben Henshall | CNSMR-1589: 3h (Involved a lot of waiting due to dependency on DevOps)<br>Expired GitHub token issue: 2h | 4h30m | 17.05.2019 | 21.05.2019 |
+
+### 5. Post-mortem
+
+If the release did not go as expected, request a meeting with the iOS team so that the reasons for this failure are analyzed and addressed in order to minimize similar problems in the future.
+
