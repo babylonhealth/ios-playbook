@@ -780,7 +780,7 @@ class TimeMachine {
 }
 ```
 
-Use `private`, `fileprivate`, `internal`, and `public` access-level modifiers on each function implemented in an extension, rather than having a single access-level modifier for the entire extension.
+Use `private`, `fileprivate`, `internal`, and `public` access-level modifiers on each property, type or function declared in an `extension`, rather than having a single access-level modifier for the entire `extension`.
 
 **Preferred**:
 ```swift
