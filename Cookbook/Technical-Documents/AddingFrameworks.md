@@ -1,6 +1,6 @@
 # Adding Frameworks to the project
 
-Out project uses a modular architecture, with the app being split in separate projects in the workspace, each producing a framework for one of those modules.
+Our project uses a modular architecture, with the app being split in separate projects in the workspace, each producing a framework for one of those modules.
 
 This means that we share internal frameworks among different projects through the same workspace. But there are a few quirks of how Xcode currently manages it, and needs manual settings to work properly.
 
