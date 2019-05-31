@@ -110,7 +110,7 @@ The available Navigation Behaviours are
 
 
 As an example of that if we have a `Renderer` called `MyFeatureRenderer` then we can extend it and 
-comfort to `NavigationBehavioursProvider`
+comform to `NavigationBehavioursProvider`
 
 
 ```swift
