@@ -40,7 +40,7 @@ Creating a Pull Request
 	* don't forget labels (note: it's better to set them after the PR is created, as GitHub sometimes fails with 405 status code and we don't know why)
 * Explicitly request review from or mention team mates you specifically want to involve in the discussion (in addition to the ones that will be assigned to it automatically by PullAssigners)
 * Self-review your changes, adding comments where you think you can get questions (it may worth adding these as code or documentation comments). Tip: if you spot small issues you can use GitHub suggestions and apply them right away
-* Keep your pull requests small, ideally they shouldn't be more than **800 additions/deletions**
+* Keep your pull requests small, ideally they shouldn't be more than **800 additions** (Danger will make a warning if this exceeds 850 additions)
 * Create a draft PR for work that is in progress, but only do that if you seek for opinions on your work
 * Mark a PR with the "Blocked" label if it has any dependency that should stop it from being merged (it's fine for pull requests to be both "blocked" and "ready for review", but it shouldn't be "ready for review" and "wip")
 * Give other team members a reasonable time to review your changes, if the change is critical use "Top priority" label and post it in the team channel
@@ -94,7 +94,7 @@ Responding to feedback
 PR Parties
 --------
 
-To improve collaboration, we take time to review pull request together in small groups every week (on Monday). This is what we call "PR parties".
+To improve collaboration, we take time to review pull request together in small groups every week. This is what we call "PR parties".
 
 - Each group should include at least one senior developer. 
 - Each group will have a few pull requests assigned to them
