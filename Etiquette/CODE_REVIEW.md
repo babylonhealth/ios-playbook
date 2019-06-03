@@ -18,14 +18,14 @@ Everyone
 * If you feel annoyed at something/someone, don't make it affect your or others' work. Talk to a friend, go for a walk, meditate, switch to something else.
 * Talk synchronously, e.g. call or in person, if there are too many "I didn't understand" or "Alternative solution:" comments. Prefer not to use chat for that. Post a follow-up
   comment summarizing the discussion.
-* Avoid selective ownership of code ("mine", "not mine", "yours"). Prefer referring to it as `our code`.
-* Use "we" instead of "you", unless asking for opinion of specific individual ("What do you think ...?", but "Here we are doing ... What if we ...?",)
+* Avoid selective ownership of code ("mine", "not mine", "yours"). Prefer referring to it as `our` code.
+* Use "we" instead of "you", unless asking for someone's opinion ("What do you think ...?", but "Here we are doing ... What if we ...?",)
 * Avoid using terms that could be seen as referring to personal traits. ("dumb",
   "stupid", "insane"). Assume everyone is intelligent and well-meaning.
 * Be aware of negative bias with online communication. (If content is neutral, we assume the tone is negative.) Can you use positive language as opposed to neutral?
-* When using emojis be aware that their meaning can be different for different individuals - winking smile may not be always innocent
+* When using emojis be aware that their meaning can be different for different individuals (e.g. a winking smile may not be always innocent)
 * Same with any other media format you decide to use
-* Do not expect your comments to be answered immediately. If you need an answer fast - talk in person (the same applies to the Slack messages)
+* Do not expect your comments to be answered immediately. If you need an answer fast — talk directly with the person (the same applies to the Slack messages)
 * Accept that it's fine to have disagreements and it's hard to please everyone
 
 
@@ -35,15 +35,15 @@ Creating a Pull Request
 * When creating your branches, name them using a format like `<author>/<ticket>` or `<author>/<ticket>-<shortdescription>`
 * Carefully fill in the pull request template:
 	* the title of the PR should follow the format `[XXX-123] Description of the change`, starting with a ticket number
-	* explain the context and motivation, don’t assume familiarity with the history. Highlight how the goal was achieved without going too much into details - people tend not to read long descriptions and if the long explanation is needed, then just a single pull request is probably not gonna be enough (i.e. the change may need to go through the proposal process or design review). 
+	* explain the context and motivation, don’t assume familiarity with the history. Highlight how the goal was achieved without going too much into details - people tend not to read long descriptions and if a long explanation is needed, then a single pull request is probably not going to be enough (i.e. the change may need to go through the proposal process or design review). 
 	* don't strip out parts of the template unless it is absolutely irrelevant to the changes (i.e. change in the build script does not need any screenshots as it does not touch UI)
 	* don't forget labels (note: it's better to set them after the PR is created, as GitHub sometimes fails with 405 status code and we don't know why)
 * Explicitly request review from or mention team mates you specifically want to involve in the discussion (in addition to the ones that will be assigned to it automatically by PullAssigners)
 * Self-review your changes, adding comments where you think you can get questions (it may worth adding these as code or documentation comments). Tip: if you spot small issues you can use GitHub suggestions and apply them right away
 * Keep your pull requests small, ideally they shouldn't be more than **800 additions/deletions**
 * Create a draft PR for work that is in progress, but only do that if you seek for opinions on your work
-* Mark PR with the "Blocked" label if it has any dependency that should stop it from being merged (it's fine for pull request be both "blocked" and "ready for review", but it shouldn't be "ready for review" and "wip")
-* Give your team mates a reasonable time to review your changes, if the change is critical use "Top priority" label and post it in the team channel
+* Mark a PR with the "Blocked" label if it has any dependency that should stop it from being merged (it's fine for pull requests to be both "blocked" and "ready for review", but it shouldn't be "ready for review" and "wip")
+* Give other team members a reasonable time to review your changes, if the change is critical use "Top priority" label and post it in the team channel
 * Do not leave stale pull requests, seek for help/actions or close them (make sure you don't delete your local branch if you may need it later). If you find one that appears to have been stale for a week, please warn the author. After two weeks it can be closed with a note after a discussion of its current status with the author.
 * It's our common effort to push product forward and we all do equally valuable work. Keep that in mind when creating a PR: try to review some of other's PRs, and avoid having more than X PRs opened at the same time
 
@@ -51,7 +51,7 @@ Creating a Pull Request
 Reviewing a Pull Request
 --------
 
-* Accept that many programming decisions are opinions. Discuss tradeoffs, which
+* Accept that many programming decisions are opinions. Discuss tradeoffs, which one
   you prefer, and reach a resolution quickly. There are always multiple ways of doing things, and they may be equally acceptable
 * Focus not on finding flaws in the code (no one writes perfect code) but on understanding the change in the first place
 * Encourage things you like, try not only comment on what you don't like
@@ -63,7 +63,7 @@ Reviewing a Pull Request
 * Approve changes if you are confident about them. 
 * If you are the first reviewer to approve the changes add the label "Needs one reviewer" so that others can see which PRs already have a feedback and which don't have any yet.
 * Comment on the changes if something is not clear to you and needs further clarification or actions
-* If you are not familiar with the domain ask for more context (better in person) rather than skipping to something more familiar
+* If you are not familiar with the domain ask for more context (better directly to the author) rather than skipping to something more familiar
 * Ask, don't tell. ("What do you think about...?", "How about ...?", "Should we try ...?")
 * Be brief but clear in your comments (code review is not about proving who is more correct or knows more)
 * Unless explicitly asked for it do not suggest code to be written in a specific way - let the author to find or suggest a solution themselves, they may come up with a better one
@@ -83,7 +83,7 @@ Responding to feedback
 * If a reviewer seems aggressive or angry or otherwise personal, consider if it is intended to be read that way and ask the person for clarification of intent, in person if possible. Do not escalate online discussions.
 * If you can't reach agreement seek for more opinions
 * Don't be too defensive about your code, someone will rewrite it anyway sooner or later (it might be yourself as well)
-* Try to answer all comments, don't make teammates feel like you are ignoring them. You can review your own code for that instead of sending individual replies so that all your answers are posted at once.
+* Try to answer all comments, don't make your colleagues feel like you are ignoring them. You can review your own code for that instead of sending individual replies so that all your answers are posted at once.
 * Add "work in progress" label while addressing review comments
 * Re-request review when you addressed the comments (either implementing suggested change or replying to the comment) and label it with "Ready for review" again
 * Do not rebase and force-push to your pull request branch after you have received any comments, use merge instead. This allows reviewers to view changes on the PR since their last review, rather than re-reviewing a lot of the code they have already reviewed. All pull requests are squashed when they are merged into the base branch so the history of your changes won't matter. It's fine to rebase and force-push if there are no comments.
@@ -105,6 +105,6 @@ Pull Assigners
 
 To balance the workload and avoid knowledge silos we use [Pull Assigners](https://pullpanda.com/assigner) to assign reviewers.
 
-- Each pull request will be assigned to three random reviewers from the team
-- Two approvals are enough to merge pull request (there shouldn't be pending requests for changes though)
+- Each pull request will be assigned to three random reviewers from the team (PS: if the PullAssigners bot seems stuck, try to de-assign it and re-assign it.)
+- Two approvals are enough to merge a pull request (there shouldn't be pending requests for changes though and you should address any other pending questions or comments)
 - Anyone else is still encouraged to review any pull request and author can request reviews from specific teammates
