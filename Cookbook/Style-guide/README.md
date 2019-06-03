@@ -232,8 +232,6 @@ Since the compiler does not allow you to re-declare protocol conformance in a de
 
 For UIKit view controllers, consider grouping lifecycle, custom accessors, and IBAction in separate class extensions.
 
-Use `private`, `fileprivate`, `internal`, and `public` visibility qualifiers on each function implemented in a protocol extension, rather than have a single qualifier for the entire protocol extension.
-
 ### Unused Code
 
 Unused (dead) code, including Xcode template code and placeholder comments should be removed.
@@ -806,6 +804,22 @@ fileprivate let message = "Great Scott!"
 
 class TimeMachine {
   lazy dynamic private var fluxCapacitor = FluxCapacitor()
+}
+```
+
+Use `private`, `fileprivate`, `internal`, and `public` access-level modifiers on each property, type or function declared in an `extension`, rather than having a single access-level modifier for the entire `extension`.
+
+**Preferred**:
+```swift
+extension TimeMachine {
+  fileprivate var fluxCapacitor = FluxCapacitor()
+}
+```
+
+**Not Preferred**:
+```swift
+fileprivate extension TimeMachine {
+  var fluxCapacitor = FluxCapacitor()
 }
 ```
 
