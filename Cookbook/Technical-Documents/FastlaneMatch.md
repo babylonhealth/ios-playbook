@@ -1,65 +1,74 @@
 Fastlane Match
 ==============
 
-Fastlane match is a tool for managing certificates and provisioning profiles centrally. It downloads certificates and profiles from a GitHub repository or Google Cloud Storage bucket. For safety, centrally stored files are encrypted.
+We use [Fastlane Match](https://docs.fastlane.tools/actions/match/) to share code-signing identities across the team and CI. We have configured it to store the identities in our private git repo
 
-**TL;DR;**
+**Caution**
 
-- Please do not use Match with `--readonly false` unless you really need that and you know what you are doing
-- Please don't use Xcode code signing capabilities ("Download Manual Profiles" or "Manage Certificates" buttons in Xcode's preferences pane) and don't change automatic code signing in the project settings. Always use Match.
-- If you see an error when running Match, make sure you specified the correct parameters. Consult with `fastlane/Matchfile` and `fastlane/Appfile` to inspect defaults
+- Use Match with `--readonly false` **only if** you need to generate/regenerate profiles. Otherwise existing builds on Hockeyapp will become invalid. By default it is run with `--readonly true`
+- **DO NOT** use Xcode code signing capabilities ("Download Manual Profiles" or "Manage Certificates" buttons in Xcode's preferences pane) and don't change automatic code signing in the project settings. Always use Match.
 
-## Installing Certificates and Provisioning Profiles Locally
+## Download and install code signing identities on your machine
 
-### Day to day development
-
-First you need to add a developer account to your Xcode settings in `Preferences -> Accounts` menu. For that you should use a shared account (credentials are stored in the 1Password team vault). _Do not download or try to update any code signing documents via "Download Manual Profiles" or "Manage Certificates" buttons to avoid more unneeded certificates on the portal._
-
-To install development certificates locally, run:
+1. Add shared developer account credentials from 1Password to your Xcode settings in `Preferences -> Accounts` menu. 
+2. Run 
 
 ```shell
- $ bundle exec fastlane match development --team_id <enterprise team id>
+ $ bundle exec fastlane match {{Type}} --team_id {{Team-ID}} 
 ```
 
-On the first run you will be asked a password to decrypt the repository managed by Match. The password is stored in the teams 1Password vault. After you entered the password Match will install latest development certificates for all the app targets listed in the `fastlane/Matchfile` in `app_identifier` function (not scoped to particular lane with `for_lane` function). 
-Match checks if the certificates and profiles are valid and will prompt you if there is an issue. By default it is configured to run in readonly mode so it will not regenerate any certificates or profiles if they are not valid.
+Note:- 
+* We have 2 developer teams - Enterprise and App-store 
+* Following options can be used for the command above:
 
-If you need to build the app locally and run it on a device that is not yet added to the development portal you need to follow these steps:
+| Code signing identities for | Type param| Team-ID param    |
+|-----------------------------|-----------|-------------------
+|Day-to-day development       |development|Enterprise team ID|
+|Hockeyapp                    |enterprise |Enterprise team ID|
 
-- register the device manually on the portal. Make sure you do that in the correct team: it should be added to the enterprise team, not to the AppStore team
-- run Match to update development certificates and include this new device:
+3. On prompt for password to decrypt the repository, enter the one from 1Password vault.
 
-```
-bundle exec fastlane match development --team_id <enterprise team id> --force_for_new_devices --readonly false
-```
-
-This will regenerate the development profiles and certificates, including all new registered devices in them.
-
-Certificates and provisioning profiles for enterprise builds (Hockey App) or release builds (Testflight and the App Store) can also be downloaded. Normally, this is not needed – as those tasks are usually executed on Circle CI and not locally – but might be necessary for some tasks.
+To troubleshoot, refer to `fastlane/Matchfile`, `fastlane/Appfile` and [documentation](https://docs.fastlane.tools/actions/match/)
 
 ### TestFlight & AppStore
 
 To install certificates and provisioning profiles for creating a Testflight or App Store build locally, run the command
 
 ```shell
- $ bundle exec fastlane match appstore --git_branch <appstore team id> --team_id <appstore team id> --app_identifier <appstore bundle id>
+ $ bundle exec fastlane match appstore --team_id <appstore team id> --git_branch <appstore team id> --app_identifier <appstore bundle id>
 ```
 
-Note: The reason to specify individual app identifiers is that otherwise if AppStore bundle ids are added to the default set of identifiers Match will try to load certificates that may not exist for some apps on the portal, as those apps are registered in different teams.
+Note: 
+- More on `--git-branch` option [below](#several-targets-and-teams)
+- The reason to specify individual app identifiers is that otherwise if AppStore bundle ids are added to the default set of identifiers Match will try to load certificates that may not exist for some apps on the portal, as those apps are registered in different teams.
 
-### HockeyApp builds
+## Renew expired profiles
+
+(At the time of writing this, `fastlane` could not renew expired profiles automatically or using a command although the documentation mentions that it does)
+- Renew the profile on Apple developer center
+- Run the following command 
 
 ```shell
- $ bundle exec fastlane match enterprise --team_id <enterprise team id>
+ $ bundle exec fastlane match appstore --team_id <appstore team id> --git_branch <appstore team id> --app_identifier <appstore bundle id> --readonly false
 ```
+Note: We specify `app-identifier` so that other valid profiles are not re-generated by mistake
 
-More information about available options can be found below and in the fastlane match [documentation](https://docs.fastlane.tools/actions/match/).
+## Add new device for development
+
+- Register device manually on the portal in enterpirse team account
+- Run the following command
+
+```
+bundle exec fastlane match development --team_id <enterprise team id> --force_for_new_devices --readonly false
+```
 
 ## Several Targets and Teams
 
-The recommended practice is to have one branch per team. Enterprise team related certificates (development and distribution) are stored in the develop branch of the certificates repo managed by Match. Appstore releated certificates (distribution) are stored in the branch named by the AppStore team id.
+- As recommended, we store identities related to different teams on different branches in our fastlane match git repository
+- On `develop` branch, enterprise-account (develop and hockeyapp) related identities are stored
+- On `{{AppStore team id}}` branch, Testflight & Appstore related identities (distribution) are stored
 
-It can happen that code signing certificates for more than one target or type are needed for a build. This can be handled by making several calls to match. This is how it can be done in a Ruby script, note that the `git_branch` argument refers to the branch in fastlane match repository:
+On CI, code signing certificates for more than one target or type are needed for a build. This can be handled by making several calls to match. 
 
 ```ruby
 match(app_identifier: "com.best.app.ever.seriously", type: "adhoc", git_branch: "best_app_ever_ad_hoc_signing")
@@ -72,8 +81,6 @@ The corresponding shell commands would be
 fastlane match adhoc --app_identifier com.best.app.ever.seriously --git_branch best_app_ever_ad_hoc_signing
 fastlane match development --app_identifier com.best.app.ever.seriously --git_branch best_app_ever_dev_signing
 ```
-
-When running the command without any parameters, or with some of them omitted, the remaining values will be loaded from the `fastlane/Matchfile`  and `fastlane/Appfile` files.
 
 ## Update Contents Manually
 
