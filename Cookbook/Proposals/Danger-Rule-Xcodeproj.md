@@ -7,7 +7,7 @@
 
 This proposal suggests to add some Danger rules checking for `xcodeproj` consistenty.
 
-It is dependent on [#110 - Integrate Danger](https://github.com/Babylonpartners/ios-playbook/pull/110) being accepted first.
+It is a follow-up on [#110 - Integrate Danger](https://github.com/Babylonpartners/ios-playbook/pull/110).
 
 ## Motivation
 
@@ -27,7 +27,17 @@ Other mistakes like unexpected files in target membership could lead to files en
 
 ## Proposed solution
 
-* We can use a simple "find" in every `*.pbxproj` for the strings `/* (null) */` and `name = "Recovered References";`, and make Danger generate an inline comment on the found line(s) if any
+We propose to use Danger rules to analyze the pbxproj and find all those issues during review:
+
+All those rules listed below, if implemented in the `Dangerfile`, will help us:
+
+* Keep the Project files sanitised and avoid commiting invalid pbxproj files, which are often the result of merge conflicts.
+* Be aware of potential higher risks of a merge gone wrong on a pbxproj file, to avoid commiting a corrupted pbxproj (e.g. one that could still be readable by `xcodebuild` but in which a reference to an image file got removed from the pbxproj due to a bad merge, making the app crash at runtime)
+* Avoid including large chunk of unrelevant resources (like test snapshots) in the final bundle
+
+### Null / Recovered References
+
+We can use a simple "find" in every `*.pbxproj` for the strings `/* (null) */` and `name = "Recovered References";`, and make Danger generate an inline comment on the found line(s) if any
 
 This can be done pretty easily with Ruby, conceptually this will look like the logic below:
 
@@ -41,7 +51,9 @@ pbxprojs.each do |filename|
 end
 ```
 
-* Using the `xcodeproj` gem (which is already part of our dependencies as it's used by `cocoapods`), we can also quickly analyze the structure of the project and detect resources that shouldn't have been added to build phases.
+### Unexpected Resources in Target
+
+Using the `xcodeproj` gem (which is already part of our dependencies as it's used by `cocoapods`), we can also quickly analyze the structure of the project and detect resources that shouldn't have been added to build phases.
 
 The draft ruby code below would for example loop on all `pbxproj` files modified by the PR, and for each of those Xcode projects, loop on all their targets to check if the "Resources Build Phase" of each target contain any of the files we want to forbid there:
 
@@ -59,27 +71,28 @@ pbxprojs.each do |project_file|
 end
 ```
 
-* We can use a similar logic to warn about `Info.plist` files added to targets' resource phases by mistake.
-* We can also use a similar rule to prevent `__Snapshots__` directories be added in resources... and even to be added as reference to any `xcodeproj` at all.
+We can use this logic to warn about those type of files/folders added to targets' resource phases by mistake:
+ - `.xcconfig` files
+ - `Info.plist` 
+ - `__Snapshots__` directories
 
+### Detect tests not added to scheme
 
-
-All those rules listed above, if implemented in the `Dangerfile`, will help us:
-
-* Keep the Project files sanitised and avoid commiting invalid pbxproj files, which are often the result of merge conflicts.
-* Be aware of potential higher risks of a merge gone wrong on a pbxproj file, to avoid commiting a corrupted pbxproj (e.g. one that could still be readable by `xcodebuild` but in which a reference to an image file got removed from the pbxproj due to a bad merge, making the app crash at runtime)
-* Avoid including large chunk of unrelevant resources (like test snapshots) in the final bundle
+We could once again use the `xcodeproj` gem to detect if any new tests file is properly added to a test target, and that the corresponding test is enabled in the test action in the scheme, to ensure that no tests are skipped.
 
 ## Impact on existing codebase
 
 This would not impact the source code of our project at all.
+
 This would only impact our code review process by providing additional informal messages to make us aware of potential risks or issues we could have otherwise missed.
+
+Only possible impact would be in the time taken by the `Danger Checks` step on CI, but it only takes 4 seconds for now and is run in parallel of all the other jobs (`test_babylon` & co), so even if it takes a few more seconds, it wont impact the total time for all checks to finish, and if that could help us detect risk of merge conflicts and prevent bugs, it's still worth it.
 
 ## Alternatives considered
 
-* Don't implement those rules at all. We believe the cost of adding those rules (once/if a `Dangerfile` has been introduced by [#110](https://github.com/Babylonpartners/ios-playbook/pull/110) that is) is quite small for a useful gain via automated feedback on those though.
+* Don't implement those rules at all. We believe the cost of adding those rules is quite small for a useful gain via automated feedback on those though.
 
-* Only implement a subset of those rules. Given that they are closely related and that their logic is similar, small and focused, we don't see the benefit of not implementing one if we start implement the others. Especially if we already use `Xcodeproj` to dig into the structure of each modified pbxproj, we might as well do all 3 checks while we are there.
+* Only implement a subset of those rules. Given that they are closely related and that their logic is similar, small and focused, we don't see the benefit of not implementing one if we start implement the others. Especially if we already use `Xcodeproj` to dig into the structure of each modified pbxproj, we might as well do all those checks while we are there.
 
 * Use an external tool to lint the pbxproj files
   * There are a couple of projects on GitHub that are aimed to lint pbxproj files consistency ([xcprojectlint](https://github.com/americanexpress/xcprojectlint), [ProjLint](https://github.com/JamitLabs/ProjLint), ...)
