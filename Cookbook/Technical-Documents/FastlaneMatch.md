@@ -44,9 +44,9 @@ We specify individual app identifiers instead of adding all App Store bundle ids
 
 ## Renew expired profiles
 
-(At the time of writing this, `fastlane` could not renew expired profiles automatically or using a command although the documentation mentions that it does)
+(As of June 2019, `fastlane` could not renew expired profiles automatically or using a command although the documentation mentions that it does)
 - Renew the profile on Apple developer center
-- Run the following command 
+- Run the following command to update central git repository with new profile
 
 ```shell
  $ bundle exec fastlane match appstore --team_id <appstore team id> --git_branch <appstore team id> --app_identifier <appstore bundle id> --readonly false
