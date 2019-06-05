@@ -17,7 +17,7 @@ We use [Fastlane Match](https://docs.fastlane.tools/actions/match/) to share cod
  $ bundle exec fastlane match {{Type}} --team_id {{Team-ID}} 
 ```
 
-Note:- 
+Note:
 * We have 2 developer teams - Enterprise and App-store 
 * Following options can be used for the command above:
 
@@ -40,7 +40,7 @@ To install certificates and provisioning profiles for creating a Testflight or A
 
 Note: 
 - More on `--git-branch` option [below](#several-targets-and-teams)
-- The reason to specify individual app identifiers is that otherwise if AppStore bundle ids are added to the default set of identifiers Match will try to load certificates that may not exist for some apps on the portal, as those apps are registered in different teams.
+We specify individual app identifiers instead of adding all App Store bundle ids to the default set as Match would otherwise attempt to load certificates that do not exist in the portal. This is because some of our app ids are registered with teams that belong to our partners.
 
 ## Renew expired profiles
 
@@ -55,7 +55,7 @@ Note: We specify `app-identifier` so that other valid profiles are not re-genera
 
 ## Add new device for development
 
-- Register device manually on the portal in enterpirse team account
+- Register device manually on the portal in the enterprise team account
 - Run the following command
 
 ```
