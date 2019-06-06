@@ -16,12 +16,23 @@ It is a follow-up on [#110 - Integrate Danger](https://github.com/Babylonpartner
 This means that some mistakes have ended up in `develop` in the past, like:
 
 * `(null)` references and `"Recovered References"` groups in `pbxproj` files
+* Invalid or Orphan UUIDs in `pbxproj` files (†)
 * Files being added as part of a target membership while they shouldn't:
   * Snapshot files
   * xcconfig files
   * Info.plist files
+* Files expected to be in a target but are not (especially tests that we might forget to include and are thus not run)
 
-Some of those mistakes, especially `(null)` and "Recovered References" in `pbxproj`, are generally the result of merge conflicts; so their appearances during a PR could be an indicator that something else could have gone wrong during the merge of the pbxproj file. It's generally a good incentive to double-check that there was no other side effect from the pbxproj merge.
+(†) For example this is the kind of warnings we can see when running `bundle exec pod install` and the projects manipulated by CocoaPods contain some invalid UUIDs:
+
+```
+`<PBXGroup path=`Tests` UUID=`F26256AC222EC21500DD5E7B`>` attempted to initialize an object with an unknown UUID. `5FFC934E2296E0980088BFAA` for attribute: `children`. This can be the result of a merge and  the unknown UUID is being discarded.
+`<PBXGroup path=`DesignLibrary` UUID=`F26256A8222EC21500DD5E7B`>` attempted to initialize an object with an unknown UUID. `5F76D723229456BA00EC6CBC` for attribute: `children`. This can be the result of a merge and  the unknown UUID is being discarded.
+`<PBXSourcesBuildPhase UUID=`A65543DE1F50510600BAABE4`>` attempted to initialize an object with an unknown UUID. `5F76D724229456BA00EC6CBC` for attribute: `files`. This can be the result of a merge and  the unknown UUID is being discarded.
+`<PBXSourcesBuildPhase UUID=`58E92B48208799C90037BD6A`>` attempted to initialize an object with an unknown UUID. `5FFC934F2296E0980088BFAA` for attribute: `files`. This can be the result of a merge and  the unknown UUID is being discarded.
+```
+
+Some of those mistakes, especially `(null)`, "Recovered References" and invalid UUIDs in `pbxproj`, are generally the result of merge conflicts; so their appearances during a PR could be an indicator that something else could have gone wrong during the merge of the pbxproj file. It's generally a good incentive to double-check that there was no other side effect from the pbxproj merge.
 
 Other mistakes like unexpected files in target membership could lead to files ending up in the final bundle uploaded to the AppStore, and in addition to being useless in the final `ipa`, bloat the app size for no reason.
 
@@ -50,6 +61,26 @@ pbxprojs.each do |filename|
   end
 end
 ```
+
+### Invalid UUIDs
+
+This is about detecting orphan or invalid UUIDs in the projects, which are printed by to STDERR when parsing the project using `xcodeproj`:
+
+```
+<PBXGroup path=`Tests` UUID=`F26256AC222EC21500DD5E7B`>` attempted to initialize an object with an unknown UUID. `5FFC934E2296E0980088BFAA` for attribute: `children`. This can be the result of a merge and  the unknown UUID is being discarded.
+```
+
+We can intercept the warnings printed by `xcodeproj`, and transform them into warnings in the Danger comment, using this kind of snippet that we just have to declare before even using the `Xcodeproj::Project.open(...)` we use for all other rules:
+
+```ruby
+module Xcodeproj::UserInterface
+  def self.warn(message)
+    Danger.warn message
+  end  
+end
+```
+
+We could even go one step further and parse the warnings for those invalid UUIDs in order to then detect on which line that UUID is in the related `pbxproj` file and make the warning comment be inline.
 
 ### Unexpected Resources in Target
 
