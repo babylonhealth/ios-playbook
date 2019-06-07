@@ -88,6 +88,15 @@ Nevertheless, this would require that everyone relied exclusively on NVL compone
 
 ### Translation errors
 
+Translations are particularly hard to catch during PR code reviews, especially if a lot of new phrases are added at once.
+While, in theory, we have a fastlane set up to deal with these translations there is always the risk that developers mistype the localization key when setting up a new static var.
+
+As such, I'd like to suggest another rule for Danger that would:
+    1. detect new static String variables in every Localizable.swift file.
+    2. if we detected a new static variable we would then scan the localization string file (`Babylon/Supporting Files/Localization/en.lproj/Localizable.strings`) and look for that key
+
+We would need to whitelist `Localizable.*\.swift` in order to make this work.
+
 ### Feedbacks must have the `when` prefix
 
 Feedbacks should use the `when` prefix in their names.
