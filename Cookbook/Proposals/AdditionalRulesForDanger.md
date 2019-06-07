@@ -34,9 +34,6 @@ Enforcing the rule with Danger wouldn't cause those issues but we would only be 
 
 Therefore, I would suggesting using Danger to enforce it.
 
-### Mutating Current in `setUp()` but not restoring it in `tearDown()`
-
-
 ### Monitoring ViewController lifecycle directly instead of relying on `ScreenLifecycleEvent`
 
 With the introduction of `ScreenLifecycleEvent`, developers should no longer manually monitor the viewController's lifecycle events.
@@ -86,6 +83,18 @@ The sheer number of warnings immediately excludes SwiftLint; Danger would be our
 
 Nevertheless, this would require that everyone relied exclusively on NVL components and I am not sure this is the case right now.
 
+
+### Mutating Current in `setUp()` but not restoring it in `tearDown()`
+
+This principle applies not only to Current but actually to every other object as well: everything mutated in `setUp()` must necessarily be restored in `tearDown()`. Nevertheless, mutations to `Current` are the prime suspect for a number of flaky tests so it would make sense to try and address this first.
+
+To do so, we'd
+1. start by whitelisting every test file (`.*Tests.*`)
+2. use the following regex to detect cahnges: `Current\..*\ = `.
+(...)
+
+<WIP> this is going to be hard to do :/ need to rethink this </WIP>
+
 ### Translation errors
 
 Translations are particularly hard to catch during PR code reviews, especially if a lot of new phrases are added at once.
@@ -109,9 +118,9 @@ In any case, this rule's usefulness is limited once we consider the fact that ou
 
 ## Impact on existing codebase
 
-While our codebase itself would not suffer any impact at all, our code review process would now have additional comments that would warn us of a particular situation. Should a PR contain numerous anti-patterns that break our rules the bot could spam the PR with these warnings.
+While our codebase itself would not suffer any impact at all, our code review process would now have additional comments that would warn us of a particular situation. Should a PR contain numerous anti-patterns that break our rules the bot could potentially spam the PR with these warnings, depending on the way Danger's rules are implemented.
 
-Furthermore, we would be increasing Danger's processing time (although for the time being it is nearly negligible) so this is a minor drawback that we could live with, in my honest opinion.
+Furthermore, we would be increasing Danger's processing time - although for the time being this is nearly negligible (roughly 4 seconds) - so this is a minor drawback that we could easily live with, in my honest opinion.
 
 ## Alternatives considered
 
