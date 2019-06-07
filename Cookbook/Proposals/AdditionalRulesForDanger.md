@@ -86,14 +86,18 @@ Nevertheless, this would require that everyone relied exclusively on NVL compone
 
 ### Mutating Current in `setUp()` but not restoring it in `tearDown()`
 
-This principle applies not only to Current but actually to every other object as well: everything mutated in `setUp()` must necessarily be restored in `tearDown()`. Nevertheless, mutations to `Current` are the prime suspect for a number of flaky tests so it would make sense to try and address this first.
+The rule is simple: every object (susceptible to global mutation) that is mutated in `setUp()` must be restored in `tearDown()`.
+Mutations in `Current` in particular are the prime suspects of a number of flaky tests that have been recently affecting our test suite.
 
-To do so, we'd
-1. start by whitelisting every test file (`.*Tests.*`)
-2. use the following regex to detect cahnges: `Current\..*\ = `.
-(...)
+In order to detect this problem we have to use Danger since SwiftLint only accepts regular expressions.
+We would have to whitelist every test file (`.*Tests.*`) and use Danger to manually parse the test line-by-line until the `setUp()` function was found. 
 
-<WIP> this is going to be hard to do :/ need to rethink this </WIP>
+If found, we need to make a counter that increases by one each time a curly bracket and does the reverse when a closing curly bracket appears. Once the counter reaches zero again, then we've successfully delimited the contents of the `setUp()` function and we'd use the following regex to detect changes in Current: `Current\..*\ = `.
+
+The algorithm is then be executed once more but for the `tearDown()` method instead.
+If the number of changes inside each function matches, then no issue would be found. If not, then Current appeared to have been mutated but not restored; we'd issue a warning for the lines in which the algorithm detected a change and alert the developers in GitHub.
+
+Nevertheless, this rule is rather naïve because we have no actual way of detecting if Current was reset or not; that would require compiling and runniing the actual Swift code. Therefore, this approach is not a silver bullet or anything remotely similar but it would still be useful for one use case in particular: should the developer forget to restore Current, this rule will alert us of this situation.
 
 ### Translation errors
 
