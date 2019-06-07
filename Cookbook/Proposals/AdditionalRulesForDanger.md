@@ -32,6 +32,8 @@ b) mean that we'd have to refactor all of them to get rid of the already tremend
 
 Enforcing the rule with Danger wouldn't cause those issues but we would only be able to detect new occurences of this anti-pattern since Danger will only inspect changes made in pull requests.
 
+Therefore, I would suggesting using Danger to enforce it.
+
 ### Mutating Current in `setUp()` but not restoring it in `tearDown()`
 
 
@@ -67,11 +69,11 @@ As of June 7th, 2019, we still have 16 results in 13 different files.
 
 In order to detect this, we could simply monitor occurences of the following regex:
 
-`.*signal(for: #selector(UIViewController`
+`\.signal\(for: \#selector\(UIViewController\.`
 
 We'd have to restrict this rule to Builders and FlowControllers only, therefore we'd have to whitelist files that matched `.*Builder.swift` and `.*FlowController.swift`.
 
-This rule could 
+This rule could be enforced with either tool but I'd recommend using SwiftLint for this since due to the low number of warnings it would trigger in the current state of our database. Also, I believe we should try to use Danger for particularly important warnings in order not to spam the pull request with comments.
 
 
 ### Deprecated calls of DesignLibrary components (aka pre-NVL components)
