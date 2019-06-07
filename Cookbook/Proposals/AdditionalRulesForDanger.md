@@ -23,7 +23,7 @@ We will now go through the list of suggested rules and consider:
 Custom ViewModels should not be defined as part of our tests; we should rely on `StubViewModel`s (from `BabylonSnapshotTestUtilities`) instead (although, in theory, setting up custom ViewModels could be useful in particular circumstances).
 
 This rule would be rather simple to enforce via Danger, using the following regex: `class .*ViewModel\W` inside every test file. 
-To do so, we should whitelist every file that matched `.*Tests.*`.
+To do so, we should whitelist every file that matched `Tests.*`.
 
 Nevertheless, as of June 7th, 2019, we have 254 occurences of this rule in 251 files. 
 As such, I believe this rule should only be enforced via Danger because using SwiftLint to monitor this would:
@@ -71,12 +71,20 @@ In order to detect this, we could simply monitor occurences of the following reg
 
 `\.signal\(for: \#selector\(UIViewController\.`
 
-We'd have to restrict this rule to Builders and FlowControllers only, therefore we'd have to whitelist files that matched `.*Builder.swift` and `.*FlowController.swift`.
+We'd have to restrict this rule to Builders and FlowControllers only, therefore we'd have to whitelist filenames that matched `.*Builder.swift` and `.*FlowController.swift`.
 
 This rule could be enforced with either tool but I'd recommend using SwiftLint for this since due to the low number of warnings it would trigger in the current state of our database. Also, I believe we should try to use Danger for particularly important warnings in order not to spam the pull request with comments.
 
 
 ### Deprecated calls of DesignLibrary components (aka pre-NVL components)
+
+Given that NVL is scheduled for release within two weeks, using NVL components is pivotal to Babylon's overall look and feel.
+With the exception of the empty space component (even though it has its own NVL equivalent), every other pre-NVL component should trigger a warning.
+
+The following regex currently yields 1333 results in 216 files: `Component\.(?!EmptySpace)\b`.
+The sheer number of warnings immediately excludes SwiftLint; Danger would be our only option.
+
+Nevertheless, this would require that everyone relied exclusively on NVL components and I am not sure this is the case right now.
 
 ### Translation errors
 
