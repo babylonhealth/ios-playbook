@@ -22,17 +22,23 @@ We will now go through the list of suggested rules and consider:
 
 Custom ViewModels should not be defined as part of our tests; we should rely on `StubViewModel`s (from `BabylonSnapshotTestUtilities`) instead (although, in theory, setting up custom ViewModels could be useful in particular circumstances).
 
-This rule would be rather simple to enforce via Danger, using the following regex: `class .*ViewModel\W` inside every test file (that matched `.*Tests.*`).
+This rule would be rather simple to enforce via Danger, using the following regex: `class .*ViewModel\W` inside every test file. 
+To do so, we should whitelist every file that matched `.*Tests.*`.
 
-In any case, we would only be able to detect new occurences of this anti-pattern. Pre-existing test files would not be analyzed since Danger will only inspect changes made in pull requests, therefore we should fix these pre-existing occurences in any case.
+Nevertheless, as of June 7th, 2019, we have 254 occurences of this rule in 251 files. 
+As such, I believe this rule should only be enforced via Danger because using SwiftLint to monitor this would:
+a) trigger 254 new warnings
+b) mean that we'd have to refactor all of them to get rid of the already tremendous amount of warnings we currently have (~500); this would require a rather significant effort for very little benefit.
+
+Enforcing the rule with Danger wouldn't cause those issues but we would only be able to detect new occurences of this anti-pattern since Danger will only inspect changes made in pull requests.
 
 ### Mutating Current in `setUp()` but not restoring it in `tearDown()`
 
 
 ### Monitoring ViewController lifecycle directly instead of relying on `ScreenLifecycleEvent`
 
-With the introduction of `ScreenLifecycleEvent`, developers no longer require custom ViewControllers to intercept screen lifecycle events.
-This kind of monitoring can now easily be done in `BoxViewModel`'s that conform to `ScreenLifecycleAware` via `send(_: ScreenLifecycleEvent)`.
+With the introduction of `ScreenLifecycleEvent`, developers should no longer manually monitor the viewController's lifecycle events.
+Instead, this kind of monitoring can now easily be done through `BoxViewModel`'s that conform to `ScreenLifecycleAware` via `send(_: ScreenLifecycleEvent)`.
 
 Here's a brief example of how it was typically done in both Builders and FlowControllers:
 
@@ -59,9 +65,14 @@ func send(_ event: ScreenLifecycleEvent) {
 
 As of June 7th, 2019, we still have 16 results in 13 different files.
 
-In order to detect this, we could simply monitor occurences of the following regex (in both Builders and FlowControllers, of course):
+In order to detect this, we could simply monitor occurences of the following regex:
 
 `.*signal(for: #selector(UIViewController`
+
+We'd have to restrict this rule to Builders and FlowControllers only, therefore we'd have to whitelist files that matched `.*Builder.swift` and `.*FlowController.swift`.
+
+This rule could 
+
 
 ### Deprecated calls of DesignLibrary components (aka pre-NVL components)
 
