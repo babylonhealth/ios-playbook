@@ -90,6 +90,14 @@ Nevertheless, this would require that everyone relied exclusively on NVL compone
 
 ### Feedbacks must have the `when` prefix
 
+Feedbacks should use the `when` prefix in their names.
+In order to detect violations of this practice, we could use the following regex `static func (?!when).* -> Feedback<State,`.
+Regarding the whitelist, we'd apply this rule to every ViewModel.
+
+Currently, our codebase contains 38 occurences spread across 29 files which makes it a good candidate for SwiftLint. 
+
+In any case, this rule's usefulness is limited once we consider the fact that our feedback functions are usually spread across multiple lines. The regex's complexity would increase a lot and, to be entirely honest, I'm unsure the benefits outweight the downsides.
+
 ## Impact on existing codebase
 
 While our codebase itself would not suffer any impact at all, our code review process would now have additional comments that would warn us of a particular situation. Should a PR contain numerous anti-patterns that break our rules the bot could spam the PR with these warnings.
