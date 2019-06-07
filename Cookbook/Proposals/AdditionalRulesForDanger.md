@@ -9,14 +9,15 @@ The goal of this proposal is to introduce several new rules for Danger and/or Sw
 
 ## Motivation
 
-We have a large and particularly opinionated codebase (one could say "avant-gard" even) with significant deprecated code to address.
-New engineers face a somewhat steep learning curve before mastering our practices and even experienced engineers make mistakes, so these rules would surely benefit everyone. These rules are already known to us - we apply them on our PR reviews on a daily basis, after all - but, nevertheless, why rely on memory alone when we can automate them?
+We have a large and particularly opinionated codebase (one could say "avant-gard" even) with a significant amount of deprecated code to address. New engineers face a somewhat steep learning curve before mastering our practices and the fact that we have at times two or three ways of addressing a particular problem (mostly due to legacy code) only brings more confusion to the mix.
+
+SwiftLint and Danger are two invaluable tools that we can continue to leverage in order improve issue detection before these reach the `develop` branch. The rules I am about to introduce are already known to us - we apply them on our PR reviews on a daily basis, after all - but, nevertheless, why rely on memory alone when we can automate them?
 
 ## Proposed solution
 
 We will now go through the list of suggested rules and consider:
-    a) if it should be applied to our codebase at all
-    b) which tool should be we use to minimize further occurrences of the problem at hand
+    a) if they should be applied to our codebase (at all)
+    b) which tool (therefore, which approach) should we use to minimize further occurrences of the problem at hand
 
 ### Custom ViewModels in the test suite
 
@@ -26,13 +27,10 @@ This rule would be rather simple to enforce via Danger, using the following rege
 To do so, we should whitelist every file that matched `Tests.*`.
 
 Nevertheless, as of June 7th, 2019, we have 254 occurences of this rule in 251 files. 
-As such, I believe this rule should only be enforced via Danger because using SwiftLint to monitor this would:
-a) trigger 254 new warnings
-b) mean that we'd have to refactor all of them to get rid of the already tremendous amount of warnings we currently have (~500); this would require a rather significant effort for very little benefit.
 
-Enforcing the rule with Danger wouldn't cause those issues but we would only be able to detect new occurences of this anti-pattern since Danger will only inspect changes made in pull requests.
+As such, I believe this rule should only be enforced via Danger because using SwiftLint to monitor this would trigger 254 new warnings  (obviously). Since we already have a tremendous amount of warnings (~500), we'd have to refactor all of these new warnigs just to get back to our starting point. This would require a rather significant effort for very little benefit.
 
-Therefore, I would suggesting using Danger to enforce it.
+On the other hand, enforcing the rule with Danger wouldn't cause those issues but we would only be able to detect new occurences of this anti-pattern since Danger will only inspect changes made in pull requests.
 
 ### Monitoring ViewController lifecycle directly instead of relying on `ScreenLifecycleEvent`
 
