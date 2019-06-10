@@ -74,7 +74,7 @@ This rule could be enforced with either tool but I'd recommend using SwiftLint f
 ### Deprecated calls of DesignLibrary components (aka pre-NVL components)
 
 Given that NVL is scheduled for release within two weeks, using NVL components is pivotal to Babylon's overall look and feel.
-With the exception of the empty space component (even though it has its own NVL equivalent), every other pre-NVL component should trigger a warning.
+With the exception of the empty space component (even though it has its own NVL equivalent), every other pre-NVL component used inside Renderer should trigger a warning.
 
 The following regex currently yields 1333 results in 216 files: `Component\.(?!EmptySpace)\b`.
 The sheer number of warnings immediately excludes SwiftLint; Danger would be our only option.
