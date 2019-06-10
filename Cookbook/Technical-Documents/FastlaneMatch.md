@@ -40,7 +40,7 @@ To troubleshoot, refer to `fastlane/Matchfile`, `fastlane/Appfile` and [document
 
 For TestFlight and AppStore, we use certificates and profiles from our App Store developer team
 
-If need arises to create Testflight or App Store build on your machine, run the following command
+If need arises to create a Testflight or App Store build on your machine, run the following command
 
 ```shell
  $ bundle exec fastlane match appstore --team_id {{appstore TeamID}} --git_branch {{appstore TeamID}} --app_identifier {{appstore bundleID}}
