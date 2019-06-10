@@ -11,7 +11,9 @@ The goal of this proposal is to introduce several new rules for Danger and/or Sw
 
 We have a large and particularly opinionated codebase (one could say "avant-gard" even) with a significant amount of deprecated code to address. New engineers face a somewhat steep learning curve before mastering our practices and the fact that we have at times two or three ways of addressing a particular problem (mostly due to legacy code) only brings more confusion to the mix.
 
-SwiftLint and Danger are two invaluable tools that we can continue to leverage in order improve issue detection before these reach the `develop` branch. The rules I am about to introduce are already known to us - we apply them on our PR reviews on a daily basis, after all - but, nevertheless, why rely on memory alone when we can automate them?
+As such, at times it can ben confusing for newcomers to know what to do and what to avoid. Also, even for experienced engineers make mistakes so this proposal aims to lower the cognitive workload by making the rules more explicit and by improving automated issue detection. SwiftLint and Danger are two invaluable tools that we can and should continue to leverage in order to achieve these goals.  All of this will help prevent problems before these reach the `develop` branch. 
+
+The rules I am about to introduce are already known to us - we apply them on our PR reviews on a daily basis, after all - but, nevertheless, why rely on memory alone when we can automate them?
 
 ## Proposed solution
 
