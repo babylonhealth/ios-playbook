@@ -1,4 +1,4 @@
-# UI Automation with XCTest
+# UI Automation with XCTest & Gherkin
 As part of our UI automation we utilize the open source Gherkin framework [Links with title](https://github.com/net-a-porter-mobile/XCTest-Gherkin "XCTest-Gherkin") to make the test cases more readable and use the screen object model to improve maintainability of the test code.
 
 ## Step Definitions
