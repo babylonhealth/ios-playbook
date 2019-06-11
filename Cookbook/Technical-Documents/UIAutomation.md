@@ -7,7 +7,7 @@ In order to support the Gherkin syntax, communally referred to as cucumber, we u
 ##Naming Convention
 Step definitions are broken down into a number of key actions, each with their own naming convention.Though not all our steps have been updated to this convention.
 
-###User Actions
+### User Actions
 For user actions we use the prefix "I" do something, for example
 ```javascript
 step("I consent to switching NHS GP")
