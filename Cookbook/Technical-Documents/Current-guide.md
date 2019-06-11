@@ -1,6 +1,6 @@
 # `Current` Guide - how to use it in Babylon iOS Project
 
-### Where is that? 
+### Where can I find it?
 - `Current` is the global instance of the `World` type which is located in the `BabylonDependencies.framework`. 
 Its purpose is to provide convenient access to the instances that should be shared between different parts of the app (cross-cutting concerns). For more information please read the [How Control the World](/Cookbook/Proposals/ControlTheWorld.md) document.
 
