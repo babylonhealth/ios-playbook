@@ -56,7 +56,7 @@ It depends a lot on the squad. For Enrolment and Integrity, for example, most me
 There are very few at the moment.
 
 ### Is there a gym/field/court close to your office for physical activity?
-There is a commercial gym close by, a park, and a barebones gym in the office. There’s also free yoga twice a week and a football club
+There is a commercial gym close by, a park, and a barebones gym in the office. There’s also free yoga twice a week and a weekly 5-a-side football game.
 
 ### Do people feel comfortable calling attention to systemic issues/heavily “band-aid”-ed systems?
 Yes, we have anonymous company level Q&A and peakon surveys. [this is my experience].
