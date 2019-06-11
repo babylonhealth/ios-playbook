@@ -18,7 +18,7 @@ We currently run on CircleCI
 
 ### How many apps/targets/schemes?
 
-We have a main app and a few white-label apps.
+We have the main app and a few white-label apps.
 
 We use a modular architecture, so our app workspace is split into 9 Xcode projects for modules and apps, 3 projects for test utilities and shared features, and 4 projects related to our SDK, not counting the Pods project (and our OSS projects)
 
