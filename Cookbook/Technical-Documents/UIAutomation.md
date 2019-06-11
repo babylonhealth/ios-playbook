@@ -15,7 +15,7 @@ step("I click done on appointment confirmation screen")
 step("I tap on the child account holder")
 ```
 
-###System State or Responses
+### System State or Responses
 In order to check a state in the application or if the application has completed a action we use "the"
 ```javascript
 step("the Prescription screen with delivery address is displayed")
