@@ -47,7 +47,7 @@ TODO
 ### How many meetings do you have in a day?
 It depend on the squad you’re assigned. For Enrolment and Integrity I counted 18 in a typical sprint, so that averages to ~2 a day. Note that quite a few of them are optional.
 
-Interviews, sometimes, can take up some time. It's usually, at maximum, one hour per week.
+Interviews, sometimes, can take up some time. It's usually, at maximum, one hour per week. Reviewing tests is also part of your day-to-day duties. Every engineer, including juniors, is involved in this (both interviewing and reviewing tests).
 
 ### Does your calendar look like a losing game of tetris? Do you have large continuous uninterrupted hours?
 It depends a lot on the squad. For Enrolment and Integrity, for example, most meetings are on the first Monday and Tuesday of the sprint. For Triage and Health Management this is not the case and are more spread out.
