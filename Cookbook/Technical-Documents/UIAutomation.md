@@ -23,7 +23,7 @@ step("the Settings screen is displayed")
 step("the user is returned to the home screen")
 ```
 
-###Non User Actions
+### Non User Actions
 This is intended as a catch all for "mocked" or "simulated" or "API" call, these normally begin with "a" but not always. These are normally part of the Given component of the test scenarios in order to speed up tests.
 ```javascript
 step("a registered verified user logs in with \"(.*?)\" credentials")
