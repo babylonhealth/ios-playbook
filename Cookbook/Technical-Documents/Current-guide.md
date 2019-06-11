@@ -14,7 +14,7 @@ Its purpose is to provide convenient access to the instances that should be shar
 let locale = Locale(identifier: "haw_US")
 Current = World(autoupdatingLocale: locale)
 ```
-
+- reset the instance of `Current` to the default in the `tearDown` method
 #### Don't
 - access `Current` from any other layer other than `Builder`. All the other layers (`ViewModel`, `FlowController`, `ViewController`, `Model`, `BusinessController`) continue to receive their dependencies through injection when created by the builder, preferably at initialisation time;
 - inject `current` as a dependency;
