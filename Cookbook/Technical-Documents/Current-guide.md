@@ -18,7 +18,7 @@ Current = World(autoupdatingLocale: locale)
 #### Don't
 - access `Current` from any other layer other than `Builder`. All the other layers (`ViewModel`, `FlowController`, `ViewController`, `Model`, `BusinessController`) continue to receive their dependencies through injection when created by the builder, preferably at initialisation time;
 - inject `current` as a dependency;
-- try to mutate `Current`. In `Release` configuration it's a constant `let`;
+- try to mutate `Current` (excluding Tests). In `Release` configuration it's a constant `let`;
 ```swift
 #if DEBUG
 public var Current: World = .production
