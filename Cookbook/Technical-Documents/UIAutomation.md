@@ -4,7 +4,7 @@ As part of our UI automation we utilize the open source Gherkin framework [Links
 ##Step Definitions
 In order to support the Gherkin syntax, communally referred to as cucumber, we use XCTest-Gherkin. This allows test scenarios to be written in a human readable language which can match the description in TestRail. Gherkin uses a set of keywords to give structure and meaning to executable step definitions. When defining these step definition we use a naming convention.
 
-##Naming Convention
+## Naming Convention
 Step definitions are broken down into a number of key actions, each with their own naming convention.Though not all our steps have been updated to this convention.
 
 ### User Actions
