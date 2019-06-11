@@ -9,10 +9,17 @@ Its purpose is to provide convenient access to the instances that should be shar
 #### Do
 - access `Current` **only** from topmost `AppDelegate` until `Builder`s layer
 - pass the required dependencies down the chain;
-- create a customized version to fit your specific needs **for tests** and set it in the test `setUp` method
+- create a customized version to fit your specific needs **for tests** and set it in the test `setUp` method. Please reset it on the `tearDown` method 
 ```swift
-let locale = Locale(identifier: "haw_US")
-Current = World(autoupdatingLocale: locale)
+override func setUp() {
+    let utc = TimeZone(identifier: "UTC")!
+    let locale = Locale(identifier: "en_GB")
+    Current = World(autoupdatingTimeZone: utc, autoupdatingLocale: locale)
+}
+
+override func tearDown() {
+    Current = .production // which returns a new `World()`
+}
 ```
 - reset the instance of `Current` to the default in the `tearDown` method
 #### Don't
