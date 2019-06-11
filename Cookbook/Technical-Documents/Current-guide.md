@@ -9,7 +9,7 @@ Its purpose is to provide convenient access to the instances that should be shar
 #### Dos
 - access `Current` **only** from `Builder`s layer;
 - pass the required dependencies down the chain;
-- create a customised version to fit your specific needs **for tests**;
+- create a customized version to fit your specific needs **for tests** and set it in the test `setUp` method
 ```swift
 let locale = Locale(identifier: "haw_US")
 Current = World(autoupdatingLocale: locale)
