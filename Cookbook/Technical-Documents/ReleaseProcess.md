@@ -28,14 +28,14 @@ There are usually two release engineers working at any given time. It goes witho
 **Phase 1: Initiation**
 <br/>	*It starts at the end of the sprint (typically when the new sprint starts on Monday)*
 
-1. Cut a release branch by creating a new branch from develop and pusing it to `origin`
+1. Cut a release branch by creating a new branch from develop and push it to `origin`
   * For releases concerning both Babylon and Telus at once (most common case), name it `release/{version}` (e.g. `release/3.2.0`)
   * For releases specific to only Babylon or only Telus, or for releases for other apps (Bupa, NHS111, ...), name it `release/{appname}/{version}` (e.g. `release/bupa/3.2.0`)
 1. Create a slack channel to discuss anything relative to the release (e.g. `ios_release_3_2_0`).
 1. Bump the release version by triggering its command (eg. `/release babylon:3.2.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
   * This creates a test TestFlight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
 1. Trigger a hockey build from that branch using its command (eg. `/hockeyapp Babylon branch:release/3.17.0`) in `#ios-build`.
-1. Create the CRP ticket and release notes thru the `#ios-launchpad` channel
+1. Create the CRP ticket and release notes through the `#ios-launchpad` channel
   *  Create the CRP ticket by triggering its command (eg. `/crp ios branch:release/3.2.0`) – this will also compute the changelog for this release (from the commit list) as part of the CRP ticket
   *  Ask the channel for the expected release notes from each squad if they are releasing anything.
 1. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
