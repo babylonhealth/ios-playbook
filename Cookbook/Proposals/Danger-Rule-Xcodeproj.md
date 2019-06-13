@@ -62,6 +62,8 @@ pbxprojs.each do |filename|
 end
 ```
 
+In addition to the pseudo-code above, we should also make Danger post in the main PR comment with suggestions on how to solve those null and recovered references. Especially instead of blindly remove them, the PR author should carefully look at the changes, to ensure no file was accidentally removed / turned to `(null)` while it shouldned (re-doing the Xcodeproj merge manually if necessary), as removing those `(null)` lines is sometimes the solution, but not always.
+
 ### Invalid UUIDs
 
 This is about detecting orphan or invalid UUIDs in the projects, which are printed by to STDERR when parsing the project using `xcodeproj`:
@@ -81,6 +83,8 @@ end
 ```
 
 We could even go one step further and parse the warnings for those invalid UUIDs in order to then detect on which line that UUID is in the related `pbxproj` file and make the warning comment be inline.
+
+In addition to the pseudo-code above, we should also make Danger post in the main PR comment with suggestions on how to solve those orphan UUIDs. Especially instead of blindly remove them, the PR author should carefully look at the changes, to ensure no file was accidentally removed or that the orphan references were indeed removed by another PR (re-doing the Xcodeproj merge manually if necessary), as removing those orphan UUIDs is sometimes the solution, but not always.
 
 ### Unexpected Resources in Target
 
@@ -110,7 +114,9 @@ We can use this logic to warn about those type of files/folders added to targets
 
 ### Detect tests not added to scheme
 
-We could once again use the `xcodeproj` gem to detect if any new tests file is properly added to a test target, and that the corresponding test is enabled in the test action in the scheme, to ensure that no tests are skipped.
+~We could once again use the `xcodeproj` gem to detect if any new tests file is properly added to a test target, and that the corresponding test is enabled in the test action in the scheme, to ensure that no tests are skipped.~
+
+> _[EDIT] This rule was rejected during the proposal meeting, see PR comments_
 
 ## Impact on existing codebase
 
