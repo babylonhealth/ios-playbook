@@ -106,6 +106,7 @@ We can use this logic to warn about those type of files/folders added to targets
  - `.xcconfig` files
  - `Info.plist` 
  - `__Snapshots__` directories
+ - `.md` files (especially we have one `README.md`, maybe more in the future)
 
 ### Detect tests not added to scheme
 
