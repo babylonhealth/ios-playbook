@@ -37,7 +37,7 @@ On the other hand, enforcing the rule with Danger wouldn't cause those issues bu
 ### Monitoring ViewController lifecycle directly instead of relying on `ScreenLifecycleEvent`
 
 With the introduction of `ScreenLifecycleEvent`, developers should no longer manually monitor the viewController's lifecycle events.
-Instead, this kind of monitoring can now easily be done through `BoxViewModel`'s that conform to `ScreenLifecycleAware` via `send(_: ScreenLifecycleEvent)`.
+Instead, this kind of monitoring can now easily be done via the `send(_: ScreenLifecycleEvent)` method.
 
 Here's a brief example of how it was typically done in both Builders and FlowControllers:
 
