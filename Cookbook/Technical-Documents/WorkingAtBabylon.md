@@ -9,6 +9,7 @@ Working in the iOS team
 This document is modelled after Robin Malhotra's [Questions to ask your iOS interviewer](https://github.com/codeOfRobin/Questions-to-ask-your-interviewer-iOS). It aims to provide a few answers to how we work at Babylon and our process is structured.
 
 ### Where do we store our code?
+
 We use Github. We have a central repo that hosts the main and white label apps, and a [few Open Source projects](https://github.com/search?q=topic%3Aios+org%3ABabylonpartners+fork%3Atrue) that we created and rely on.
 
 ## Continuous Integration
@@ -26,11 +27,8 @@ Each module project has 2 targets on average: one for the framework, one for the
 ### How big is your Fastfile?
 It's around 250 lines of code at the moment, with about 15-20 lanes for beta testing, daily and custom builds, etc. This file however includes multiple other files, especially in fastlane/Lanes and fastlane/Actions too, making the code dedicated to fastlane quite bigger.
 
-### Does it have several environment references?
 ### Can you dry run a lane on your machine right now?
 Yes.
-
-### Codesigning?
 
 * What architectural patterns are you using to make development easier or more consistent? What problems with your current approach have you come across after settling on one (if you have one)?
 
@@ -42,7 +40,7 @@ Slack, as a non-trivial part of the team is remote. Zoom for meetings of more th
 No.
 
 ### When was the last time someone worked a late night/weekend in order to meet a deadline?
-TODO
+It's very rare, honestly. Most people that work late do so on their own accord. The office is pretty empty after 6pm.
 
 ### How many meetings do you have in a day?
 It s on the squad you’re assigned to. For Enrolment and Integrity I counted 18 in a typical sprint, so that averages to ~2 a day. Note that quite a few of them are optional. Not all of the meetings, though, are the "let's discuss x" type of meetings. For example, we hold a PR party weekly where we, in groups, try to speed up the review process.
