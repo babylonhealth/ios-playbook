@@ -12,9 +12,10 @@ This feature improves overall UI debugging iteration speed.
 1. Add a new case in `enum DebugBuilderPattern`
 2. Create a (mock) builder in `DebugAuthenticatedRootBuilder`
 3. Update `Settings.bundle/Root.plist` by adding a new case key
+    - NOTE: There exists multiple `Settings.bundle`s due to multiple app targets
 4. Build and launch your app at least once after those changes, so that the Settings app can now discover the new values in the `Root.plist`
-4. Set `Settings.bundle`'s userDefaults flag via `Settings.app`
-5. Launch the app
+5. Set `Settings.bundle`'s userDefaults flag via `Settings.app`
+6. Launch the app
 
 ## Example
 
