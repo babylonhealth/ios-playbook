@@ -35,7 +35,7 @@ iOS Cookbook 👩‍🍳
 * [Introduce "fish" operator (Kleisli composition)](./Proposals/Fish_Operator.md)
 
 ##### ... learn about other topics 🏔
-
+* [Apple Pay](./Technical-Documents/Apple_Pay.md)
 * [Strings and Localisation](./Technical-Documents/Lokalise.md)
 * [Outstanding Technical Debt and Legacy Code](./Technical-Documents/TechnicalDebt.md)
     * [BBAddAdditionalPatientInformationViewControllerV2](./Technical-Documents/BBAddAdditionalPatientInformationViewControllerV2.md)
