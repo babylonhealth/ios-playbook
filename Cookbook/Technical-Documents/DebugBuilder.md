@@ -21,7 +21,7 @@ This feature improves overall UI debugging iteration speed.
 
 ```diff
  public enum DebugBuilderPattern: String {
-     case none
+     case disabled
      ...
 
 +    // NOTE: Add a new debug builder case here.
