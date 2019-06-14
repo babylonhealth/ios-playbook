@@ -1,0 +1,4 @@
+# Global rule for the whole codebase. Every PR needs to be reviewed by at least one permanent team member.
+# This empty team will act as a proxy for the PullAssigner bot. When a new PR arrives, PullAssigner will be triggered,
+# which will then pick members from the iOS-Admin team
+* @Babylonpartners/iOS-PullAssigner

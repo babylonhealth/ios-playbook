@@ -54,6 +54,7 @@ Uncontroversial, non-additive changes such as misspellings, grammar or compiler 
 * [Organization and Bundle Identifier](#organization-and-bundle-identifier)
 * [Copyright Statement](#copyright-statement)
 * [References](#references)
+* [SwiftLint rules](#swiftlint-rules)
 
 ## Correctness
 
@@ -75,7 +76,7 @@ Descriptive and consistent naming makes software easier to read and understand. 
 - naming methods for their side effects
   - verb methods follow the -ed, -ing rule for the non-mutating version
   - noun methods follow the formX rule for the mutating version
-  - boolean types should read like assertions (`isLoading`, `isHidden`, etc)
+  - boolean types should read like assertions (`isLoading`, `isHidden`, `isFalse`, etc)
   - protocols that describe _what something is_ should read as nouns
   - protocols that describe _a capability_ should end in _-able_ or _-ible_
   - if protocols are tightly bound to their implementations, it's ok to suffix the protocol name with `Protocol`
@@ -172,7 +173,34 @@ let colour = "red"
 
 ## Code Organization
 
-Use extensions to organize your code into logical blocks of functionality. Do not use `// MARK: -` comments.
+Use extensions to organize your code into logical blocks of functionality. Add `MARK`s if they help with it.
+
+### Declaration Order
+
+Data type declaration must follow the ordering rule 1 to 3:
+
+```
+1. instance stored properties (struct), or enum cases
+2. designated initializer
+3. deinit
+4. (others)
+```
+
+(Note that rule 1 to 3 are required to be in declaration scope that can't move to `extension`)
+
+For other declarations below, they will go to `4. (others)` and can be in arbitrary order:
+
+```
+- convenience initializers
+- instance computed properties
+- instance methods
+- type stored properties (NOTE: this rarely appears in practice because singleton is discouraged)
+- type computed properties
+- type methods
+- nested types
+```
+
+See also: [[Proposal] Top-priority member-variable and initializer declarations](https://github.com/Babylonpartners/ios-playbook/pull/74)
 
 ### Protocol Conformance
 
@@ -203,8 +231,6 @@ class MyViewController: UIViewController, UITableViewDataSource, UIScrollViewDel
 Since the compiler does not allow you to re-declare protocol conformance in a derived class, it is not always required to replicate the extension groups of the base class. This is especially true if the derived class is a terminal class and a small number of methods are being overridden. When to preserve the extension groups is left to the discretion of the developer.
 
 For UIKit view controllers, consider grouping lifecycle, custom accessors, and IBAction in separate class extensions.
-
-Use `private`, `fileprivate`, `internal`, and `public` visibility qualifiers on each function implemented in a protocol extension, rather than have a single qualifier for the entire protocol extension.
 
 ### Unused Code
 
@@ -315,7 +341,7 @@ class TestDatabase : Database {
 }
 ```
 
-* Long lines should be wrapped at around 70 characters. A hard limit is intentionally not specified.
+* Long lines should be wrapped at around 120 characters. A hard limit is intentionally not specified.
 
 * Avoid trailing whitespaces at the ends of lines.
 
@@ -397,7 +423,7 @@ func reticulateSplines(spline: [Double]) -> Bool {
 }
 ```
 
-For functions with long signatures, more than 120 characters, put each parameter on a new line and add an extra indent on subsequent lines. Note that the closing parenthesis aligns with the f in `func`. This is not how Xcode indents these blocks of code so keep an eye out for violations of this guideline.
+For functions with long signatures, more than the recommended length, put each parameter on a new line and add an extra indent on subsequent lines. Note that the closing parenthesis aligns with the f in `func`. This is _not_ how Xcode indents these blocks of code so keep an eye out for violations of this guideline.
 
 ```swift
 func reticulateSplines(
@@ -410,12 +436,14 @@ func reticulateSplines(
 }
 ```
 
-Don't use `(Void)` to represent the lack of an input; simply use `()`. Use `Void` instead of `()` for closure and function outputs.
+Don't use `(Void)` to represent the lack of an input; simply use `()`.
+Use `Void` instead of `()` for closure outputs.
+Don't use `Void` for function outputs as it is redundant.
 
 **Preferred**:
 
 ```swift
-func updateConstraints() -> Void {
+func updateConstraints() {
   // magic happens here
 }
 
@@ -779,6 +807,22 @@ class TimeMachine {
 }
 ```
 
+Use `private`, `fileprivate`, `internal`, and `public` access-level modifiers on each property, type or function declared in an `extension`, rather than having a single access-level modifier for the entire `extension`.
+
+**Preferred**:
+```swift
+extension TimeMachine {
+  fileprivate var fluxCapacitor = FluxCapacitor()
+}
+```
+
+**Not Preferred**:
+```swift
+fileprivate extension TimeMachine {
+  var fluxCapacitor = FluxCapacitor()
+}
+```
+
 ## Control Flow
 
 Prefer the `for-in` style of `for` loop over the `while-condition-increment` style.
@@ -998,3 +1042,40 @@ let message = "You cannot charge the flux " +
 * [The Swift Programming Language](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/index.html)
 * [Using Swift with Cocoa and Objective-C](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/BuildingCocoaApps/index.html)
 * [Swift Standard Library Reference](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/index.html)
+
+## SwiftLint rules
+
+This is the complete list of rules that are currently enabled on our linter, or will be in the future:
+- [ ] generic_type_name
+- [ ] duplicate_imports
+- [ ] unused_import
+- [ ] vertical_whitespace_closing_braces
+- [ ] vertical_whitespace_opening_braces
+- [x] void_return
+- [ ] trailing_comma
+- [ ] trailing_semicolon
+- [ ] closure_spacing
+- [ ] closure_parameter_position
+- [ ] comma
+- [ ] leading_whitespace
+- [ ] let_var_whitespace
+- [ ] operator_whitespace
+- [ ] return_arrow_whitespace
+- [ ] statement_position
+- [ ] trailing_newline
+- [ ] trailing_whitespace
+- [ ] colon
+- [ ] multiline_arguments
+- [ ] multiline_arguments_brackets
+- [ ] multiline_parameters
+- [ ] multiline_parameters_brackets
+- [ ] multiple_closures_with_trailing_closure
+- [ ] multiline_function_chains
+- [ ] convenience_type
+- [ ] redundant_type_annotation
+- [ ] redundant_void_return
+- [ ] syntactic_sugar
+- [ ] private_over_fileprivate
+- [ ] yoda_condition
+- [ ] opening_brace
+- [ ] control_statement
