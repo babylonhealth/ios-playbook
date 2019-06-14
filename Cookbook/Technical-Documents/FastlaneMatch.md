@@ -63,7 +63,7 @@ Note: We specify `app-identifier` so that other valid profiles are not re-genera
 
 ## Add new device for development
 
-- Run `bundle exec fastlane add_device` locally, it will ask you for the name of the device and its udid or register device manually on the portal in the enterprise team account
+- Run `bundle exec fastlane add_device` locally, it will ask you for the name of the device and its udid. You can also register your device manually on the portal in the enterprise team account
 - Run the following command
 
 ```
