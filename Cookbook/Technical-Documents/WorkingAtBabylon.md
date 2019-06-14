@@ -22,16 +22,16 @@ We have the main app and a few white-label apps.
 
 We use a modular architecture, so our app workspace is split into 9 Xcode projects for modules and apps, 3 projects for test utilities and shared features, and 4 projects related to our SDK, not counting the Pods project (and our OSS projects)
 
-Each module project has 3 targets on average: one for the framework, one for the Unit Test and one for Snapshot tests when applicable. The app project has 18 targets (6*3) given our white-labelling variants.
+Each module project has 2 targets on average: one for the framework, one for the tests (Unit, UI, Snapshot). The app project has 2 targets (6*2) given our white-labelling variants.
 ### How big is your Fastfile?
-It's around 250 lines of code at the moment, with about 15-20 lanes for beta testing, daily and custom builds, etc.
+It's around 250 lines of code at the moment, with about 15-20 lanes for beta testing, daily and custom builds, etc. This file however includes multiple other files, especially in fastlane/Lanes and fastlane/Actions too, making the code dedicated to fastlane quite bigger.
 
 ### Does it have several environment references?
 ### Can you dry run a lane on your machine right now?
 Yes.
 
 ### Codesigning?
-  
+
 * What architectural patterns are you using to make development easier or more consistent? What problems with your current approach have you come across after settling on one (if you have one)?
 
 ## Team/People
@@ -45,7 +45,7 @@ No.
 TODO
 
 ### How many meetings do you have in a day?
-It depend on the squad you’re assigned. For Enrolment and Integrity I counted 18 in a typical sprint, so that averages to ~2 a day. Note that quite a few of them are optional.
+It s on the squad you’re assigned to. For Enrolment and Integrity I counted 18 in a typical sprint, so that averages to ~2 a day. Note that quite a few of them are optional. Not all of the meetings, though, are the "let's discuss x" type of meetings. For example, we hold a PR party weekly where we, in groups, try to speed up the review process.
 
 Interviews, sometimes, can take up some time. It's usually, at maximum, one hour per week. Reviewing tests is also part of your day-to-day duties. Every engineer, including juniors, is involved in this (both interviewing and reviewing tests).
 
@@ -56,7 +56,8 @@ It depends a lot on the squad. For Enrolment and Integrity, for example, most me
 There are very few at the moment.
 
 ### Is there a gym/field/court close to your office for physical activity?
-There is a commercial gym close by, a park, and a barebones gym in the office. There’s also free yoga twice a week and a weekly 5-a-side football game.
+West: there is a commercial gym close by, a park, and a barebones gym in the office. There’s also free yoga twice a week and a weekly 5-a-side football game.
+East: commercial gym close by.
 
 ### Do people feel comfortable calling attention to systemic issues/heavily “band-aid”-ed systems?
 Yes, we have anonymous company level Q&A and peakon surveys. [this is my experience].
@@ -95,4 +96,3 @@ There is usually a product person in each squad that leads this, but everyone is
 
 ### Do you consider the societal impact of the products you’re making?
 Yes. We wouldn't be here otherwise.
-
