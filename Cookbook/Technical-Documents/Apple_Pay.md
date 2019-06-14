@@ -13,7 +13,7 @@ There is a lane which can configure the project in order to
 
 Just execute `bundle exec fastlane setup_babylon_for_apple_pay_testing` and the project now is suitable for testing Apple Pay!
 
-Also there some user sandbox accounts in `1Password`.
+Also there are some user sandbox accounts in `1Password`.
 
 ### NOTICE
 After the execution of `bundle exec fastlane setup_babylon_for_apple_pay_testing` the project will be modified, these changes must __not__ 
