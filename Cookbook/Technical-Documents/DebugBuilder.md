@@ -5,7 +5,7 @@ Debug Builder
 
 The above PR introduces `DebugAuthenticatedRootBuilder` which allows to directly show a target view builder after authentication.
 
-This feature improves overall UI debugging iteration speed.
+This feature improves the overall iteration speed for UI debugging.
 
 ## How to make a debug-builder
 
