@@ -43,7 +43,7 @@ No.
 It's very rare, honestly. Most people that work late do so on their own accord. The office is pretty empty after 6pm.
 
 ### How many meetings do you have in a day?
-It s on the squad you’re assigned to. For Enrolment and Integrity I counted 18 in a typical sprint, so that averages to ~2 a day. Note that quite a few of them are optional. Not all of the meetings, though, are the "let's discuss x" type of meetings. For example, we hold a PR party weekly where we, in groups, try to speed up the review process.
+It depends on the squad you’re assigned to. For Enrolment and Integrity I counted 18 in a typical sprint, so that averages to ~2 a day. Note that quite a few of them are optional. Not all of the meetings, though, are the "let's discuss x" type of meetings. For example, we hold a PR party weekly where we, in groups, try to speed up the review process.
 
 Interviews, sometimes, can take up some time. It's usually, at maximum, one hour per week. Reviewing tests is also part of your day-to-day duties. Every engineer, including juniors, is involved in this (both interviewing and reviewing tests).
 
