@@ -30,7 +30,6 @@ It's around 250 lines of code at the moment, with about 15-20 lanes for beta tes
 ### Can you dry run a lane on your machine right now?
 Yes.
 
-
 ## Team/People
 ### comms - slack?
 Slack, as a non-trivial part of the team is remote. Zoom for meetings of more than 2-3 people.
