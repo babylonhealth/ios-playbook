@@ -30,7 +30,6 @@ It's around 250 lines of code at the moment, with about 15-20 lanes for beta tes
 ### Can you dry run a lane on your machine right now?
 Yes.
 
-* What architectural patterns are you using to make development easier or more consistent? What problems with your current approach have you come across after settling on one (if you have one)?
 
 ## Team/People
 ### comms - slack?
