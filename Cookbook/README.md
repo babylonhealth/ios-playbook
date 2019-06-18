@@ -19,6 +19,7 @@ iOS Cookbook 👩‍🍳
 
 ##### ... learn how the iOS team works 🛠
 
+* [A general FAQ about the day-to-day experience of working at Babylon](./Technical-Documents/WorkingAtBabylon.md)
 * [Code Owners - Restoring developer's efficiency](./Proposals/CODEOWNERS.md)
 * [iOS Team style guide](./Style-guide/)
 * [New hires checklist](./Technical-Documents/NewHiresCheckList.md)
