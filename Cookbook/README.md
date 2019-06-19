@@ -42,6 +42,6 @@ iOS Cookbook 👩‍🍳
     * [BBAddAdditionalPatientInformationViewControllerV2](./Technical-Documents/BBAddAdditionalPatientInformationViewControllerV2.md)
 
 * [UI Automation with Gherkin](./Technical-Documents/UIAutomation.md)
-* [Fastlane Match](./Technical-Documents/FastlaneMatch.md)
+* [Code Signing with Fastlane Match](./Technical-Documents/FastlaneMatch.md)
 * [How to invoke CI jobs from Slack](./Technical-Documents/SlackCIIntegration.md)
 * [Xcode Tips & Tricks](Technical-Documents/XcodeTips.md)
