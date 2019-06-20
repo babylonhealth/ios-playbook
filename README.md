@@ -14,6 +14,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 4. [The Cookbook 👩‍🍳](/Cookbook/README.md)
 5. [Interview process 📝](/Interview/README.md)
 6. [Code of conduct ❤️](/Etiquette/README.md)
+7. [Code review etiquette](/Etiquette/CODE_REVIEW.md)
 
 ## 1. Who's in the team
 
