@@ -35,6 +35,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Jason Dobo              | [@jasondobo](https://github.com/jasondobo)                    |
 | João Pereira            | [@NSMyself](https://twitter.com/nsmyself)                     |
 | Joshua Simmons          | [@j531](https://github.com/j531)                              |
+| Julien Ducret           | [@brocoo](https://github.com/brocoo)                          |
 | Martin Nygren           |                                                               |
 | Michael Brown           | [@mluisbrown](https://twitter.com/mluisbrown)                 |
 | Michał Kwiecień         | [@kwiecien_co](https://twitter.com/kwiecien_co)               |
@@ -61,7 +62,7 @@ By definition, members work on their respective squad, although they are free to
 | Consultation                  | Ilya, Adrian                     |    2/2       | |
 | Booking                       | Witold                           |    1/1       |  |
 | Prescriptions                 | Adam                             |    1/1       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
-| Healthcheck                   | Ben, Catarina                    |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
+| Healthcheck                   | Ben, Catarina, Julien            |    3/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
 | Native/Core                   | Giorgos, Jason, Martin, Inami, Jakub    |    5/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
 | Professional Services         | Chitra             |    1/3      | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
 | Enrolment and Integrity       | Diego                            |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
