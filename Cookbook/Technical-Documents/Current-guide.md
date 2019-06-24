@@ -4,6 +4,10 @@
 - `Current` is the global instance of the `World` type which is located in the `BabylonDependencies.framework`. 
 Its purpose is to provide convenient access to the instances that should be shared between different parts of the app (cross-cutting concerns). For more information please read the [How Control the World](/Cookbook/Proposals/ControlTheWorld.md) document.
 
+## Beyond the Proposal
+All the properties in `Current` must have their initial values provided at initialisation time. 
+But that's not the reality for all of them. These `async` properties have their initial value provided in the `SharedAppDelegate` through the method `setupCurrent`. Only after that, the whole world is ready to be used.
+
 ## `Do`s and `Don't`s
 
 #### Do
