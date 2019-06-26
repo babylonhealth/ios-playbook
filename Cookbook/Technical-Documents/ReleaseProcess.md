@@ -5,9 +5,9 @@
 
   The release engineer responsibilities are, but not limited to:
 
- 1. Own the entire release process (step-by-step).
- 2. Provide visibility, at all stages, of the release to the wider audience (e.g. squad, tribe and iOS chapter lead).
- 3. Collaborate with QA by:
+1. Own the entire release process (step-by-step).
+2. Provide visibility, at all stages, of the release to the wider audience (e.g. squad, tribe and iOS chapter lead).
+3. Collaborate with QA by:
     1. Providing visibility to potential blockers to the wider audience.
     2. Escalating abnormal influx of bugs, so the release, as a whole, can be reassessed.
 4. Making sure they can dedicate enough time for the release. In case this is not possible (due to other squad commitments), please inform the iOS chapter lead.
@@ -16,7 +16,8 @@
     2. If the bug is too complex to be fixed within the release window, please toggle off the feature and inform the Product Manager. 
 
 **The objective is to ship the release build as soon as possible whilst maintaining the quality bar and addressing every bug raised by QA**.
-When dealing with a particularly complicated bug (one that would require a rather significant effort to address) the release engineer should speak with either Andreaa Papillon (Native Apps' Product Manager) or Lilla Szulyovszky (Native Apps' Delivery Manager) as every release is managed and signed-off by the Native Apps squad.
+
+When dealing with a particularly complicated bug (one that would require a rather significant effort to address) the release engineer should speak with either Andreea Papillon (Native Apps' Product Manager) or Lilla Szulyovszky (Native Apps' Delivery Manager) as every release is managed and signed-off by the Native Apps squad.  
 The bug's corresponding feature should be disabled altogether using its feature switch (if applicable). Such a bug would subsequently be handled by its respective squad.
 
 Release duties have priority over regular squad duties. Please inform your squad of your unavailability before starting to work in the release. As with every other week, twenty percent of your work hours overall are to be allocated towards making the release a reality.
@@ -25,31 +26,32 @@ There are usually two release engineers working at any given time. It goes witho
 
 ## 2. Release step-by-step
 
-**Phase 1: Initiation**
-<br/>	*It starts at the end of the sprint (typically when the new sprint starts on Monday)*
+### Phase 1: Initiation
+*It starts at the end of the sprint (typically when the new sprint starts on Monday)*
 
-1. Cut a release branch by creating a new branch from develop and push it to `origin`
-  * For releases concerning both Babylon and Telus at once (most common case), name it `release/{version}` (e.g. `release/3.2.0`)
-  * For releases specific to only Babylon or only Telus, or for releases for other apps (Bupa, NHS111, ...), name it `release/{appname}/{version}` (e.g. `release/bupa/3.2.0`)
-1. Create a slack channel to discuss anything relative to the release (e.g. `ios_release_3_2_0`).
-1. Bump the release version by triggering its command (eg. `/release babylon:3.2.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
+1. Cut a release branch
+   * Create a new branch from `develop`, and be sure to name it using the `release/{appname}/{version}` convention (e.g. `release/babylon/4.1.0`) – where `appname` is one of `babylon`, `telus`, `nhs111` or `bupa`
+   * Push the branch to `origin`
+1. Create a slack channel to discuss anything relative to the release (e.g. `ios_release_4_1_0`).
+1. Bump the release version by triggering the Slack command (eg. `/release babylon:3.2.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
   * This creates a test TestFlight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
-1. Trigger a hockey build from that branch using its command (eg. `/hockeyapp Babylon branch:release/3.17.0`) in `#ios-build`.
-1. Create the CRP ticket and release notes through the `#ios-launchpad` channel
-  *  Create the CRP ticket by triggering its command (eg. `/crp ios branch:release/3.2.0`) – this will also compute the changelog for this release (from the commit list) as part of the CRP ticket
-  *  Ask the channel for the expected release notes from each squad if they are releasing anything.
+1. Trigger a hockey build from that branch using its command (eg. `/hockeyapp Babylon branch:release/babylon/4.1.0`) in `#ios-build`.
+1. Create the CRP ticket by triggering the Slack command (eg. `/crp ios branch:release/babylon/4.1.0`) in `#ios-launchpad`
+   * This will also generate the CHANGELOG (from the commit list) automatically to include it in the CRP ticket
+   * Your PM should then be able to see that the CRP ticket has been created, and can further manually complete the CRP ticket with any additional information (clinical risk, etc) from here
+1. Ask the `#ios-launchpad` channel for the expected release notes from each squad if they are releasing anything.
 1. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
   1. On the sidebar click `+ Version or Platform` and select `iOS`.
   1. Input the new version number.
 
-**Phase 2: Test and fix bugs**
-<br/>	*It starts after the Hockey build has been delivered and it can take several cycles*
+### Phase 2: Test and fix bugs
+*It starts after the Hockey build has been delivered and it can take several cycles*
 
 1. Testers will then begin their work against the build you just created.
 1. Any hotfix should target that branch, and you, as the release engineer, are responsible for double checking that the hotfix's PR is pointing to the release branch (instead of `develop`). The issue for the hotfix should be added to the release JIRA board.
 
-**Phase 3: Submit TestFlight builds to App Store Connect**
-<br/>	*It starts after all opened issues had been adressed and can take several cycles until QA's approval*
+### Phase 3: Submit TestFlight builds to App Store Connect
+*It starts after all opened issues had been adressed and can take several cycles until QA's approval*
 
 1. Triger a new release build in the `#ios-build` channel
 1. Obtain the release notes from the Product Manager and update them in the [AppStoreConnect](https://appstoreconnect.apple.com)
@@ -57,8 +59,8 @@ There are usually two release engineers working at any given time. It goes witho
 1. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues) ❗️ NOTE: Remember to submit compliance info for that build.
 1. By now, QA should be notified that there is a new version in TestFlight.
 
-**Phase 4: Submit for release in App Store Connect**
-<br/>	*It starts after QA has signed off a particular build and can take several cycles until Apple's approval*
+### Phase 4: Submit for release in App Store Connect
+*It starts after QA has signed off a particular build and can take several cycles until Apple's approval*
 
 1. Make sure *Manually release this version* is selected in `Version Release`.
 2. When submitting to release, you are asked if the app uses the Advertising Identifier (IDFA). The answer is YES. You are then presented with three options please select as followed:
@@ -66,14 +68,13 @@ There are usually two release engineers working at any given time. It goes witho
 	2. ✅ Attribute this app installation to a previously served advertisement
 	3. ✅ Attribute an action taken within this app to a previously served advertisement
 
-**Phase 5: Closure**
-<br/>	*It starts after the app is accepted by Apple and final internal approval*
+### Phase 5: Closure
+*It starts after the app is accepted by Apple and final internal approval*
 
 1. Send the build to TestFlight Beta (external testing). Select the `External Testers` group.
 1. Press `Release this version` in App Store Connect
-1. Create tag(s) on the release commit and create GitHub releases for each app
-  - Make sure you create one tag and one GitHub release for each app released on the AppStore (eg. one for Babylon and one for Telus, in the most common case of joint releases of those two – even if they end up pointing to the same commit)
-  - Use the `{appname}/{version}` format for the tag name (eg. `babylon/3.2.0` or `telus/3.2.0`)
+1. Create a tag named `{appname}/{version}` (e.g. `babylon/4.1.0`) on the release commit and create a GitHub release for that new tag
+  - Make sure you create separate tags (and GitHub releases) for each app released on the AppStore (eg. Babylon 4.1.0 and Telus 4.1.0 would each have their own `babylon/4.1.0` and `telus/4.1.0` tags)
   - Set the body of the GitHub release to the content of the Release Notes for the app
   - Attach the binary as an artefact to the GitHub release (if you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
 1. Merge the changes back to develop.
@@ -83,8 +84,8 @@ There are usually two release engineers working at any given time. It goes witho
 
 1. Ask SDK team (#sdk_squad) about the SDK version number.
 1. Cut a release branch for the SDK from the app release branch, using the `sdk/{version}` naming convention (eg. `sdk/0.5.0`)
-1. Create a CRP ticket by triggering its command (eg. `/crp sdk branch:0.5.0`) in Slack
-  - This will create the CRP ticket for the SDK, only including in the CHANGELOG field of the CRP the commits messages containing `[SDK-xxx]` or `#SDK` – filtering out the other commits (that are considered app-only changes if not containing those tags)
+1. Create a CRP ticket by triggering its command (eg. `/crp ios branch:release/sdk/0.5.0`) in Slack
+  - This will create the CRP ticket for the SDK, only including in the CHANGELOG field of the CRP the commits messages containing `[SDK-xxx]` or `#SDK` – filtering out the other commits, that are considered app-only changes if not containing those tags
   - See also the [Internal SDK Release Process](https://engineering.ops.babylontech.co.uk/docs/cicd-deployments/#mobile-sdk-releases-ios-android) for more info.
 1. Create PR and update the SDK changelog `SDK/CHANGELOG.md` to add the release version and date
   - this document will be distributed alongside the SDK and used to document changes to SDK consumers, so the list of changes here could be worded differently from the CHANGELOG used in the CRP ticket if necessary
