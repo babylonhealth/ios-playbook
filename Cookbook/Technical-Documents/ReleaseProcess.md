@@ -34,7 +34,7 @@ There are usually two release engineers working at any given time. It goes witho
    * Push the branch to `origin`
 1. Create a slack channel to discuss anything relative to the release (e.g. `ios_release_4_1_0`).
 1. Bump the release version by triggering the Slack command (eg. `/release babylon:3.2.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
-  * This creates a test TestFlight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
+  * This creates a TestFlight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
 1. Trigger a hockey build from that branch using its command (eg. `/hockeyapp Babylon branch:release/babylon/4.1.0`) in `#ios-build`.
 1. Create the CRP ticket by triggering the Slack command (eg. `/crp ios branch:release/babylon/4.1.0`) in `#ios-launchpad`
    * This will also generate the CHANGELOG (from the commit list) automatically to include it in the CRP ticket
