@@ -6,7 +6,8 @@ iOS Cookbook 👩‍🍳
 ##### ... learn about our architecture 🏠
 
 * [Implementing features with ReactiveFeedback](http://ilya.puchka.me/implementing-features-with-reactivefeedback/)
-* [Adopt the `Current` struct to hold global dependencies](./Proposals/ControlTheWorld.md)
+* [Adopt the `Current` struct to hold global dependencies](./Proposals/ControlTheWorld.md) 
+    * [following the `Current Guide`](./Technical-Documents/Current-guide.md)
 * [Posting Analytics Events to Snowplow](./Technical-Documents/SnowplowHowTo.md)
 * [Use builders as functions](./Proposals/BuildersToFunctions.md)
 * [Adding Frameworks/Modules to the project](./Technical-Documents/AddingFrameworks.md)
@@ -19,6 +20,7 @@ iOS Cookbook 👩‍🍳
 
 ##### ... learn how the iOS team works 🛠
 
+* [A general FAQ about the day-to-day experience of working at Babylon](./Technical-Documents/WorkingAtBabylon.md)
 * [Code Owners - Restoring developer's efficiency](./Proposals/CODEOWNERS.md)
 * [iOS Team style guide](./Style-guide/)
 * [New hires checklist](./Technical-Documents/NewHiresCheckList.md)
@@ -35,12 +37,12 @@ iOS Cookbook 👩‍🍳
 * [Introduce "fish" operator (Kleisli composition)](./Proposals/Fish_Operator.md)
 
 ##### ... learn about other topics 🏔
-
+* [Apple Pay](./Technical-Documents/Apple_Pay.md)
 * [Strings and Localisation](./Technical-Documents/Lokalise.md)
 * [Outstanding Technical Debt and Legacy Code](./Technical-Documents/TechnicalDebt.md)
     * [BBAddAdditionalPatientInformationViewControllerV2](./Technical-Documents/BBAddAdditionalPatientInformationViewControllerV2.md)
 
-* ✏️ What is Gherkin (the `Given` / `When` / `Then` / `And` formatting used by QA) and how can I determine its correctness in QA PRs
-* [Fastlane Match](./Technical-Documents/FastlaneMatch.md)
+* [UI Automation with Gherkin](./Technical-Documents/UIAutomation.md)
+* [Code Signing with Fastlane Match](./Technical-Documents/FastlaneMatch.md)
 * [How to invoke CI jobs from Slack](./Technical-Documents/SlackCIIntegration.md)
 * [Xcode Tips & Tricks](Technical-Documents/XcodeTips.md)

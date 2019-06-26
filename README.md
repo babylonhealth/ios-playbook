@@ -14,6 +14,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 4. [The Cookbook 👩‍🍳](/Cookbook/README.md)
 5. [Interview process 📝](/Interview/README.md)
 6. [Code of conduct ❤️](/Etiquette/README.md)
+7. [Code review etiquette](/Etiquette/CODE_REVIEW.md)
 
 ## 1. Who's in the team
 
@@ -29,11 +30,13 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Danilo Aliberti         |                                                               |
 | David Rodrigues         | [@dmcrodrigues](https://twitter.com/dmcrodrigues)             |
 | Diego Petrucci          | [@diegopetrucci](https://twitter.com/diegopetrucci)           |
+| Emese Toth              | [@emeseuk](https://github.com/emeseuk)           |
 | Giorgos Tsiapaliokas    | [@gtsiap](https://github.com/gtsiap)                          |
 | Ilya Puchka             | [@ilyapuchka](https://twitter.com/ilyapuchka)                 |
 | Jason Dobo              | [@jasondobo](https://github.com/jasondobo)                    |
 | João Pereira            | [@NSMyself](https://twitter.com/nsmyself)                     |
 | Joshua Simmons          | [@j531](https://github.com/j531)                              |
+| Julien Ducret           | [@brocoo](https://github.com/brocoo)                          |
 | Martin Nygren           |                                                               |
 | Michael Brown           | [@mluisbrown](https://twitter.com/mluisbrown)                 |
 | Michał Kwiecień         | [@kwiecien_co](https://twitter.com/kwiecien_co)               |
@@ -60,8 +63,8 @@ By definition, members work on their respective squad, although they are free to
 | Consultation                  | Ilya, Adrian                     |    2/2       | |
 | Booking                       | Witold                           |    1/1       |  |
 | Prescriptions                 | Adam                             |    1/1       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
-| Healthcheck                   | Ben, Catarina                    |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
-| Native/Core                   | Giorgos, Jason, Martin, Inami, Jakub    |    5/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
+| Healthcheck                   | Ben, Catarina, Julien            |    3/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
+| Native/Core                   | Giorgos, Jason, Martin, Inami, Emese    |    5/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
 | Professional Services         | Chitra             |    1/3      | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
 | Enrolment and Integrity       | Diego                            |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Core Experience               | Sergey, Yuri                     |    2/2       | [#core-experience](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
@@ -82,4 +85,3 @@ By definition, members work on their respective squad, although they are free to
 | Wall-E                        | David, Rui               |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Wall-E.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Wall-E/stargazers/)    |
 | [Stevenson](https://github.com/Babylonpartners/Stevenson)                     | Ilya                     |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/Stevenson.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/Stevenson/stargazers/) |
 | Style guide                   | Diego                    |    WIP       |
-| [UIFlow](https://github.com/Babylonpartners/UIFlow)                        | Diego                    |    [![GitHub stars](https://img.shields.io/github/stars/BabylonPartners/UIFlow.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/BabylonPartners/UIFlow/stargazers/)       |
