@@ -27,8 +27,7 @@ When merging develop into your branch, if the project file has been changed in b
 ```
 - Then whenever you run into a project file conflict you can resolve it with:
 `git mergetool --tool=mergepbx [Project File]`
-ex: `git mergetool --tool=mergepbx Babylon.xcodeproj/project.pbxproj`
-
+e.g: `git mergetool --tool=mergepbx Babylon.xcodeproj/project.pbxproj`
 
 ### Console logs
 
