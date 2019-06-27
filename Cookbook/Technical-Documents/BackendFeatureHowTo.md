@@ -16,7 +16,7 @@ Imagine some endpoint on the backend returns this piece of JSON:
 }
 ```
 
-First, we want to define some data types, to which we will map this JSON. This is known as a /response/.
+First, we want to define some data types, to which we will map this JSON. This is known as a *response*.
 
 ### Response
 A `Response` is a data type which wraps the whole response returned from a network call. In many cases it is unnecessary, just like in this example, where there is only one key. For the sake of this exercise, let's stick with it though. A later section will describe a way to extract the contents directly without creating a separate data type.
@@ -34,7 +34,7 @@ struct City: Equatable, Decodable {
 
 Note that we put `Decodable` directly on the structs in this simple case, but in general you'll want to put it in an extension because some customisation is needed when decoding the objects. This will be shown in a later section.
 
-When the response data type is ready, the next thing you'll want to create is a /service/. But before that, a few words about a /backend resource/.
+When the response data type is ready, the next thing you'll want to create is a *service*. But before that, a few words about a *backend resource*.
 
 ### Backend resource
 `BackendResource` is an abstraction over a network request, allowing to provide all the necessary context to actually perform it.
@@ -57,7 +57,7 @@ As you can see, it contains everything that the network layer may need to make a
 * request method
 * any additional headers we want to add
 
-A /service/ that we are about to define is responsible for generating a `BackendResource` for each request that we want to make.
+A *service* that we are about to define is responsible for generating a `BackendResource` for each request that we want to make.
 
 ### Service
 The purpose of a `Service` is to provide a `BackendResource` to execute network requests. As you may have guessed, this is also a simple struct, used as a namespace.
@@ -83,7 +83,7 @@ The URL is defined as a path, which is then constructed into a full URL with a h
 
 `ConcreteAuth` is the type of auth this endpoint expects as there are several, for different backends.
 
-Now that we have our `BackendResource`, we can define a /business controller/ which will tie everything together and make the network call.
+Now that we have our `BackendResource`, we can define a *business controller* which will tie everything together and make the network call.
 
 However, first we need to learn about accessing backend resources.
 
@@ -147,7 +147,7 @@ struct State {
 The entities we're loading are usually supplied through an `Event`:
 ```
 enum Event {
-    case didLoad([City])
+    case didLoad(CitiesResponse)
 }
 ```
 
@@ -155,8 +155,8 @@ When the view model gets an event, `reduce` is called and we can set the new val
 ```
 static func reduce(state: State, event: Event) -> State {
     switch event {
-    case let .didLoad(cities):
-        return state.with(set(\.cities, cities))
+    case let .didLoad(citiesResponse):
+        return state.with(set(\.cities, citiesResponse.cities))
     }
 }
 ```
