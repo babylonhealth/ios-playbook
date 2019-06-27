@@ -27,4 +27,9 @@ When merging develop into your branch, if the project file has been changed in b
 ```
 - Then whenever you run into a project file conflict you can resolve it with:
 `git mergetool --tool=mergepbx [Project File]`
-ex: `git mergetool --tool=mergepbx Babylon.xcodeproj/project.pbxproj`
+e.g: `git mergetool --tool=mergepbx Babylon.xcodeproj/project.pbxproj`
+
+### Console logs
+
+- to disable autolayout warnings add `-_UIConstraintBasedLayoutLogUnsatisfiable NO` to the scheme launch arguments
+- to disable other system activity logs add `OS_ACTIVITY_MODE` environment variable with `disable` value
