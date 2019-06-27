@@ -29,15 +29,16 @@ There are usually two release engineers working at any given time. It goes witho
 ### Phase 1: Initiation
 *It starts at the end of the sprint (typically when the new sprint starts on Monday)*
 
-1. Cut a release branch
-   * Create a new branch from `develop`, and be sure to name it using the `release/{appname}/{version}` convention (e.g. `release/babylon/4.1.0`) – where `appname` is one of `babylon`, `telus`, `nhs111` or `bupa`
+1. Cut a release branch, naming it using the `release/{appname}/{version}` convention (with `{appname}` being one of `babylon`/`telus`/`bupa`/`nhs111`)
+   * If you are releasing the main Babylon app, create the new branch from `develop`, and name it `release/babylon/{version}` (e.g. `release/babylon/4.1.0`)
+   * If you're releasing another app (e.g. Telus, Bupa, NHS111), since they typically go thru the release process _only_ once the main Babylon app has been signed off by QA, you should create the new branch from the corresponding Babylon release branch that was recently already QA'd and signed off (e.g. `release/babylon/4.1.0`) instead of `develop`, and name your new branch using the same `release/{appname}/{version}` convention (e.g. `release/telus/4.1.0`)
    * Push the branch to `origin`
 1. Create a slack channel to discuss anything relative to the release (e.g. `ios_release_4_1_0`).
 1. Bump the release version by triggering the Slack command (eg. `/release babylon:4.1.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
   * This creates a TestFlight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
 1. Trigger a hockey build from that branch using its command (eg. `/hockeyapp Babylon branch:release/babylon/4.1.0`) in `#ios-build`.
 1. Create the CRP ticket by triggering the Slack command (eg. `/crp ios branch:release/babylon/4.1.0`) in `#ios-launchpad`
-   * This will also generate the CHANGELOG (from the commit list) automatically to include it in the CRP ticket
+   * This will also generate the CHANGELOG automatically (from the list of commits between the `release/{appname}/{version}` branch you mentioned and the tag for the latest version of the same product – i.e. the most recent `{appname}/*` tag) to include it in the CRP ticket
    * Your PM should then be able to see that the CRP ticket has been created, and can further manually complete the CRP ticket with any additional information (clinical risk, etc) from here
 1. Ask the `#ios-launchpad` channel for the expected release notes from each squad if they are releasing anything.
 1. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
