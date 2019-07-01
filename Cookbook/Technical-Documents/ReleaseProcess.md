@@ -77,7 +77,7 @@ There are usually two release engineers working at any given time. It goes witho
 1. Create a tag named `{appname}/{version}` (e.g. `babylon/4.1.0`) on the release commit and create a GitHub release for that new tag
    * Make sure you create separate tags (and GitHub releases) for each app released on the AppStore (eg. Babylon 4.1.0 and Telus 4.1.0 would each have their own `babylon/4.1.0` and `telus/4.1.0` tags)
    * Set the body of the GitHub release to the content of the Release Notes for the app
-   * Attach the binary as an artefact to the GitHub release (if you're using the automated release command, you can find the binary in the Artifacts top section in the CI build).
+   * Attach the zipped `xcarchive` as an artefact to the GitHub release (if you're using the automated release command, you can find the `*.xcarchive.zip` in the Artifacts top section in the CI build).
 1. Merge the changes back to develop.
 1. Update the [release calendar](#release-calendar)
 
