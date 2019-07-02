@@ -114,6 +114,42 @@ In short, to bring each small reducers to the same level and combine, we need `l
 
 And to `lift`, we need `Lens` and `Prism`.
 
+### `Feedback` composition
+
+`Lens` and `Prism` are useful for not only composing `Reducer` but also [`ReactiveFeedback.Feedback`](https://github.com/Babylonpartners/ReactiveFeedback/blob/0.6.0/ReactiveFeedback/Feedback.swift#L6).
+
+```swift
+struct Feedback<Action, State> {
+    let transform: (Signal<State>) -> Signal<Action>
+
+    /// Zero value for `+`.
+    static var empty: Feedback {
+        return Feedback { _ in .empty }
+    }
+
+    // Append operator, just like `+`.
+    static func <> (lhs: Feedback, rhs: Feedback) -> Feedback {
+        return Feedback { state in
+            Signal.merge(lhs.transform(state), rhs.transform(state))
+        }
+    }
+}
+
+extension Feedback {
+    public func lift<SuperState>(state lens: Lens<SuperState, State>) -> Feedback<Action, SuperState> {
+        return Feedback<Action, SuperState> { superState in
+            self.transform(superState.map(lens.get))
+        }
+    }
+
+    public func lift<SuperAction>(action prism: Prism<SuperAction, Action>) -> Feedback<SuperAction, State> {
+        return Feedback<SuperAction, State> { state in
+            self.transform(state).map(prism.review)
+        }
+    }
+}
+```
+
 ## Example
 
 ```swift
@@ -136,12 +172,15 @@ let subReducer1 = Reducer<Sub1Action, Sub1State> { action, state in
     }
 }
 
+let subFeedback1: Feedback<Sub1Action, Sub1State> = .empty
+
 // MARK: - Component 2 (isolated from Main & Component 1)
 //---------------------------------------------------------
 
 enum Sub2Action { ... }
 struct Sub2State { ... }
 let subReducer2: Reducer<Sub2Action, Sub2State> = ...
+let subFeedback2: Feedback<Sub2Action, Sub2State> = ...
 
 // MARK: - Main
 //---------------------------------------------------------
@@ -182,14 +221,25 @@ extension Lens where Whole == MainState, Part == Sub1State {
 ...
 
 let mainReducer: Reducer<MainAction, MainState> =
-    sub1
+    subReducer1
         .lift(action: .sub1Action)
         .lift(state: .sub1State)
     <>
-    sub2
+    subReducer2
+        .lift(action: .sub2Action)
+        .lift(state: .sub2State)
+
+let mainFeedback: Feedback<MainAction, MainState> =
+    subFeedback1
+        .lift(action: .sub1Action)
+        .lift(state: .sub1State)
+    <>
+    subFeedback2
         .lift(action: .sub2Action)
         .lift(state: .sub2State)
 ```
+
+Please notice how consistent the compositions of various types can be achieved with the same syntax!
 
 ## Impact on existing codebase
 
