@@ -197,7 +197,7 @@ extension Prism where Whole == MainAction, Part == Sub1Action {
             guard case let .sub1(action) = $0 else { return nil }
             return action
         },
-        review: MainAction.sub1Action
+        review: .sub1
     )
 }
 
