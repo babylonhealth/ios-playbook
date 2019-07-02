@@ -27,8 +27,8 @@ Please keep in mind that this document is in a continuous state of flux, with ne
 - How would you architect the navigation in a complex application with many screens without using storyboards segues?
 - Are you familiar with `Design Patterns` and the `Gang of Four` book?
 - What is your opinion on the use of the `Singleton` pattern? What are its pros and cons?
-- Are you familiar with `Dependency Inversion`? If so, what is it good for?
-- And what about the `inversion` principle?
+- Are you familiar with `Dependency Injection`? If so, what is it good for?
+- And what about the `Dependency Inversion` principle?
 - Is immutability a good thing? Why or why not?
 - Can you briefly describe 3 design patterns used in iOS development, other than `MVC` and `Singleton`, and what situations they're best suitable for?
 - Can you describe the similarities and difference between the `Delegation` and `Observer` patterns?
