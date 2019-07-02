@@ -43,7 +43,7 @@ struct Prism<Whole, Part> {
 
 - `Lens` is a pair of "getter" and "setter" (similar to `WritableKeyPath<A, B>`, but more composable)
 - `Prism` is a pair of:
-    - `preview` (tryGet): Tries to get an associated value of particular enum case from whole enum cases, which is failurable
+    - `preview` (tryGet): Tries to get an associated value of particular enum case from whole enum cases, which is failable
     - `review` (inject): Creates whole enum from particular case (i.e. `case` as enum constructor)
 
 While `Lens` is useful for traversing `struct` members, `Prism` is useful for traversing `enum` cases.
