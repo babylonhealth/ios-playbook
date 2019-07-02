@@ -5,13 +5,13 @@
 
 ## Introduction
 
-This proposal adds functional `Lens` and `Prism` ideas to break down `reducer` / `state` / `event` (`action`) in [ReactiveFeedback](https://github.com/Babylonpartners/ReactiveFeedback) so that we can create a large application from small component compositions.
+This proposal adds functional [`Lens` and `Prism`](#functional-lens--prism) to break down `reducer` / `state` / `event` (`action`) in [ReactiveFeedback](https://github.com/Babylonpartners/ReactiveFeedback) so that we can create a large application from small component compositions.
 
 ## Motivation
 
 In Babylon.app, we are using [ReactiveFeedback](https://github.com/Babylonpartners/ReactiveFeedback) to control states, side-effects, and feedback loops to define a particular screen (view controller) behavior, owned by `ViewModel`.
 
-However, this `ViewModel` can easily become too complex as `reducer: State -> Event -> State` grows large.
+However, this `ViewModel` can easily become too complex as `reducer: (State, Event) -> State` grows large with tons of pattern-matching.
 
 Unfortunately, splitting into multiple `ViewModel`s is not a clever solution, as managing multiple `ReactiveFeedback`s that interact with each other tends to be hard to control.
 
@@ -26,29 +26,34 @@ The basic idea can be found in @mbrandonw ’s talk:
 ### Functional `Lens` & `Prism`
 
 ```swift
-/// e.g. A = whole struct, B = partial struct
-struct Lens<A, B> {
-    let get: (A) -> B
-    let set: (A, B) -> A
+/// For accessing struct members.
+/// e.g. Whole = whole struct (members), Part = partial member
+struct Lens<Whole, Part> {
+    let get: (Whole) -> Part
+    let set: (Whole, Part) -> Whole
 }
 
-/// e.g. A = one of enum case, B = its associated value
-struct Prism<A, B> {
-    let preview: (A) -> B? // simplified from `A -> Either<A, B>`, a dual of `set`
-    let review: (B) -> A   // a dual of `get`
+/// For accessing enum cases.
+/// e.g. Whole = all possible enum cases, B = partial case
+struct Prism<Whole, Part> {
+    let preview: (Whole) -> Part?
+    let review: (Part) -> Whole
 }
 ```
 
-- `Lens` is a pair of getter and setter (similar to `WritableKeyPath<A, B>`, but more composable)
-- `Prism` is a dual of `Lens`, reversing its arrows
+- `Lens` is a pair of "getter" and "setter" (similar to `WritableKeyPath<A, B>`, but more composable)
+- `Prism` is a pair of:
+    - `preview` (tryGet): Tries to get an associated value of particular enum case from whole enum cases, which is failurable
+    - `review` (inject): Creates whole enum from particular case (i.e. `case` as enum constructor)
 
 While `Lens` is useful for traversing `struct` members, `Prism` is useful for traversing `enum` cases.
-Because in ReactiveFeedback, `State` is normally defined as `struct` and `Event` is `enum`, we need both features to be able to transform `reducer` into arbitrary structure.
+Because in ReactiveFeedback, `State` is normally defined as `struct` and `Event` is `enum`,
+we need both features to be able to transform `reducer` and `feedback` into arbitrary structure.
 
 ### `Reducer`
 
 ```swift
-struct Reducer<Action, State>: Monoid {
+struct Reducer<Action, State> {
     let reduce: (Action, State) -> State
 
     init(_ reduce: @escaping (Action, State) -> State) {
@@ -144,32 +149,46 @@ let subReducer2: Reducer<Sub2Action, Sub2State> = ...
 enum MainAction {
     case sub1(Sub1Action)
     case sub2(Sub2Action)
-
-    enum prism { // NOTE: Can codegen
-        static let sub1Action = Prism<MainAction, Sub1Action> = ...
-        static let sub2Action = Prism<MainAction, Sub2Action> = ...
-    }
+    ...
 }
+
+extension Prism where Whole == MainAction, Part == Sub1Action {
+    static let sub1Action = Prism(
+        preview: {
+            guard case let .sub1Action(action) = $0 else { return nil }
+            return action
+        },
+        review: AppAction.sub1Action
+    )
+}
+
+...
 
 struct MainState {
     var sub1: Sub1State
     var sub2: Sub2State
     // var shared: ...  /* NOTE: Shared state can belong to here */
-
-    enum lens { // NOTE: Can codegen
-        static let sub1State = Prism<MainState, Sub1State> = ...
-        static let sub2State = Prism<MainState, Sub2State> = ...
-    }
 }
+
+extension Lens where Whole == MainState, Part == Sub1State {
+    static let sub1State = Lens(
+        get: { $0.sub1 },
+        set: { whole, part in
+            whole.with { $0.sub1 = part }
+        }
+    )
+}
+
+...
 
 let mainReducer: Reducer<MainAction, MainState> =
     sub1
-        .lift(action: MainAction.prism.sub1Action)
-        .lift(state: MainState.lens.sub1State)
+        .lift(action: .sub1Action)
+        .lift(state: .sub1State)
     <>
     sub2
-        .lift(action: MainAction.prism.sub2Action)
-        .lift(state: MainState.prism.sub2State)
+        .lift(action: .sub2Action)
+        .lift(state: .sub2State)
 ```
 
 ## Impact on existing codebase
@@ -178,4 +197,4 @@ This proposal will affect all construction of `ViewModel` and `RAF`, but we can 
 
 ## Alternatives considered
 
-N/A
+TBD
