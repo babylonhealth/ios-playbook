@@ -10,7 +10,7 @@ Put implementationf of mocks next to the implementation of the protocol
 ## Motivation
 
 
-- Improves Desccoverability of mocks
+- Improves Discoverability of mocks
 - Prevents mocks duplication (Because we usually define mocks in the `FrameworkTests` target which means they can only be used there)
 - Easy to change mock implementation once public API changes
 
