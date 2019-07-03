@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Put implementationf of mocks next to the implementation of the protocol
+Put implementation of mocks next to the implementation of the protocol
 
 ## Motivation
 
