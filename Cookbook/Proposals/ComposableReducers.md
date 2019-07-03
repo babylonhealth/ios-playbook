@@ -120,7 +120,7 @@ And to `lift`, we need `Lens` and `Prism`.
 
 ```swift
 struct Feedback<Action, State> {
-    let transform: (Signal<State>) -> Signal<Action>
+    let transform: (Signal<State, NoError>) -> Signal<Action, NoError>
 
     /// Zero value for `+`.
     static var empty: Feedback {
