@@ -182,6 +182,30 @@ private static func whenLoading(
 
 Note that `citiesBusinessController` is provided as a parameter to the feedback function and doesn't require `self`.
 
+There is one last piece of the puzzle missing: how does the view model get the concrete class of the business controller? This involves something called a *builder*, which is responsible for constructing objects and providing the dependencies they need.
+
+### Builder
+A builder, usually defined as a `struct`, is used to construct what essentially are screens (i.e. view controllers) at runtime, which is why it's using concrete classes. During testing, view models, business controllers and renderers are tested separately, so there is no need for a builder to bring it all together.
+
+The relevant part of a builder, where we provide our new business controller to the view model, may be implemented like this:
+``` swift
+protocol CitiesBuildingMaterials {
+    let session: AuthenticatedAccessible
+}
+
+struct CitiesBuilder {
+    func make(with buildingMaterials: CitiesBuildingMaterials) -> UIViewController {
+        let session = buildingMaterials.session
+
+        let viewModel = CitiesViewModel(
+            citiesBusinessController: CitiesBusinessController(accessible: session)
+        )
+
+        …
+    }
+}
+```
+
 ### Feature structure
 The business controller, service and related data types should all be grouped in an `API` directory if they are all for the same single feature:
 ```
