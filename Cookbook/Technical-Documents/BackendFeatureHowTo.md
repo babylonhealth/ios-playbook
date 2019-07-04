@@ -169,7 +169,9 @@ Now `state.cities` contains the values we fetched and parsed from the network!
 
 In order to trigger loading, we define a `Feedback` and transform a network response in order to conform to the signature of the effect:
 ``` swift
-private static func whenLoading() -> Feedback<State, Event> {
+private static func whenLoading(
+    citiesBusinessController: CitiesBusinessControllerProtocol
+) -> Feedback<State, Event> {
     return Feedback(predicate: ^\.isLoading) { _ -> SignalProducer<Event, NoError> in
         citiesBusinessController.fetch()   // SignalProducer<CitiesResponse, CoreError>
             .map(Event.didLoad)            // SignalProducer<Event, CoreError>
