@@ -67,7 +67,7 @@ The purpose of a `Service` is to provide a `BackendResource` to execute network 
 As a rule, `GET` requests are named starting with `fetch`:
 ``` swift
 struct CitiesService {
-    static func fetchCitiesResource() -> BackendResource<Void, CitiesResponse, ConcreteAuth> {
+    static func fetchCitiesResource() -> BackendResource<Void, CitiesResponse, KongAuth> {
         let citiesPath = "/v1/cities"
         return BackendResource(
             path: .api(.core, citiesPath),
@@ -83,7 +83,7 @@ The `Service` usually provides `static` functions with parameters needed to crea
 
 The URL is defined as a path, which is then constructed into a full URL with a helper enum. This accommodates the use of different environments while not requiring any changes from the clients.
 
-`ConcreteAuth` is the type of auth this endpoint expects as there are several, for different backends.
+`KongAuth` is the concrete type of auth this endpoint expects as there is also `ClinicalAuth`, used for different backend endpoints.
 
 Now that we have our `BackendResource`, we can define a *business controller* which will tie everything together and make the network call.
 
@@ -100,7 +100,7 @@ func access<Request, Response>(_ resource: BackendResource<Request, Response, No
 You may have noticed `NoAuth` in the signature – this is only good for unauthenticated requests, like fetching data before the user logs in. After that, you'll likely want to use `AuthenticatedAccessible` which provides a slightly different method:
 
 ``` swift
-func access<Request, Response>(_ resource: BackendResource<Request, Response, ConcreteAuth>, with request: Request) -> SignalProducer<Response, CoreError>
+func access<Request, Response>(_ resource: BackendResource<Request, Response, KongAuth>, with request: Request) -> SignalProducer<Response, CoreError>
 ```
 
 Using either `Accessible` or `AuthenticatedAccessible`, you can perform the network request defined by a backend resource, and this is exactly what we do in the business controller.
