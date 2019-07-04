@@ -206,6 +206,8 @@ struct CitiesBuilder {
 }
 ```
 
+Note that the approach to builders will be changed with the “[Builders to functions](../Proposals/BuildersToFunctions.md)” proposal, and they will become free functions.
+
 ### Feature structure
 The business controller, service and related data types should all be grouped in an `API` directory if they are all for the same single feature:
 ```
