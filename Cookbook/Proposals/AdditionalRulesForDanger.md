@@ -11,7 +11,11 @@ The goal of this proposal is to minimize the mental overhead of both author and 
 
 We have a large and particularly opinionated codebase (one could say "avant-gard" even) with a significant amount of deprecated code to address. New engineers face a somewhat steep learning curve before mastering our practices and the fact that we have at times two or three ways of addressing a particular problem (mostly due to legacy code) only brings more confusion to the mix.
 
-As such, at times it can ben confusing for newcomers to know what to do and what to avoid. Also, even for experienced engineers make mistakes so this proposal aims to lower the cognitive workload by making the rules more explicit and by improving automated issue detection. SwiftLint and Danger are two invaluable tools that we can and should continue to leverage in order to achieve these goals. Additionally, we can (and should) also rely on deprecation warnings given their easiness of use and the fact that they clearly show the developer that such a method shouldn't be used before any code is actually written.
+As such, at times it can ben confusing for newcomers to know what to do and what to avoid. Also, even for experienced engineers make mistakes so this proposal aims to lower the cognitive workload by making the rules more explicit and by improving automated issue detection. SwiftLint and Danger are two invaluable tools that we can and should continue to leverage in order to achieve these goals. The former should be prioritized since it bestows us with early detection: a developer would type an infraction and SwiftLint would automatically trigger a warning and/or error before the PR was created (unlike Danger). On the other hand, SwiftLint relies on regexes to evalute its own rules and, as such, certain issues cannot be easily mitigated using SwiftLint only.
+
+Danger, on the other hand, is a lot more flexible but it only looks at changes made when opening a PR (and by then it can be too late).
+
+Additionally, we can (and should) also rely on deprecation warnings given their easiness of use and the fact that they clearly show the developer that such a method shouldn't be used before any code is actually written.
 
 All of this will help prevent problems before the PR is merged, thus preventing such bad practices from reaching the `develop` branch. As mentioned, it will also minimize mental overhead for reviewers and authors alike and will lead to a more developer-friendly codebase.
 
@@ -25,13 +29,13 @@ We will now go through the list of suggested rules and consider:
 
 ### Custom ViewModels in the test suite
 
-Custom ViewModels should not be defined as part of our tests; we should rely on generic `StubViewModel`s (from `BabylonSnapshotTestUtilities`) instead. By using custom ViewModels nstead of stubbing the ones we already have technically we aren't testing the actual ViewModels, but the ones we've just created for the purpose of this test (which, depending on the actual implementation, may not be the exact same thing).
+Custom ViewModels should not be defined as part of our tests; we should rely on generic `StubViewModel`s (from `BabylonSnapshotTestUtilities`) instead. By using custom ViewModels instead of stubbing the ones we already have technically we aren't testing the actual ViewModels, but the ones we've just created for the purpose of this test (which, depending on the actual implementation, may not be the exact same thing).
 
 Still, in theory, setting up custom ViewModels could be useful in some particular circumstances (eg:  when testing a Renderer and we need our ViewModel to hold some value that we cannot define via the initializers and/or easily get the state machine to the point where we need it to be).
 
 Nevertheless, as of July 3rd, 2019, we have 33 occurences of this malpractice.
 
-This rule would be rather simple to enforce via SwiftLint, using the following regex: `class .*ViewModel\W` inside every test file (thus, whitelist every file that matched `Tests.*`). Furthermore, we should implement a modified version of `verifyScreenForAllSizesAndVisualLanguages` that accepted only `StubViewModel`s and deprecate the old one. Using these two techniques I believe this malpractice can be expunged from our codebase very quickly.
+This rule would be rather simple to enforce via SwiftLint, using the following regex: `class .*ViewModel\W` inside every test file. Furthermore, we should implement a modified version of `verifyScreenForAllSizesAndVisualLanguages` that accepted only `StubViewModel`s and deprecate the old one. Using these two techniques I believe this malpractice can be expunged from our codebase very quickly.
 
 ### Monitoring ViewController lifecycle directly instead of relying on `ScreenLifecycleEvent`
 
@@ -83,23 +87,63 @@ b) using Danger to raise a comment whenever a PR is raised
 
 In this particular case I believe we could use both approaches actually.
 
-### Mutating Current in `setUp()` but not restoring it in `tearDown()`
+### Detect Current usage outside Builders et al
 
-The rule is simple: every object (susceptible to global mutation) that is mutated in `setUp()` must be restored in `tearDown()`.
-Mutations in `Current` in particular are the prime suspects of a number of flaky tests that have been recently affecting our test suite.
+`Current` is a very powerful concept. Since its usage is only allowed in a very restrict number of places we should enable automatic monitoring in order to prevent it from being abused throughout our codebase.
 
-In order to detect this problem we have to use Danger since SwiftLint only accepts regular expressions.
-We would have to whitelist every test file (`.*Tests.*`) and use Danger to manually parse the test line-by-line until the `setUp()` function was found. 
+`Current` should only be allowed in:
+- `AppDelegate.swift`
+- `DesignLibrary.swift`
+- `World.swift`
+- Builders (using the `*Builder(\+.*).swift` regex)
+- `*AppConfiguration.swift`
+- AppDependencies
+- Tests, [since Current is using a mock version of itself in `SnapshotTestCase.swift`'s `setUp` method](https://github.com/Babylonpartners/babylon-ios/pull/7806/files#diff-74895f4da31ec40d83d342bf612540b4R17)
 
-If found, we need to make a counter that increases by one each time a curly bracket and does the reverse when a closing curly bracket appears. Once the counter reaches zero again, then we've successfully delimited the contents of the `setUp()` function and we'd use the following regexes to detect changes in Current: 
-a) `Current\..*\ = `.
-b) `Current.changeTheme\(.*`
-c) `Current.set\(.*`
+In order to detect this, SwiftLint would likely be our best bet since it can easily detect these issues in real-time and warn us.
+Here is a possible implementation, as suggested by Olivier Halligon:
 
-The algorithm is then be executed once more but for the `tearDown()` method instead.
-If the number of changes inside each function matches, then no issue would be found. If not, then Current appeared to have been mutated but not restored; we'd issue a warning for the lines in which the algorithm detected a change and alert the developers in GitHub using Danger.
+```custom_rules:
+  world_current:
+    excluded: # Files in which it's OK to use Current
+     - ".*Builder(\+.*)?\\.swift"
+     - "World\\.swift"
+     - "AppDelegate\.swift"
+     - ".*AppConfiguration\.swift"
+     - "AppConfiguration.swift" # For depreciation warnings
+    name: "Current:World usage"
+    regex: "\wCurrent\."
+    message: "You should only use Current in Builders"
+    severity: warning```
 
-Nevertheless, this rule is rather naïve because we have no actual way of detecting if Current was reset or not; that would require compiling and running the actual Swift code. Therefore, this approach is not a silver bullet or anything remotely similar but it would still be useful for one use case in particular: should the developer forget to restore Current, this rule will alert us of this situation.
+Nevertheless, Current is still being used in a lot of places (598 results across 144 files) and we should go through every case individually before commiting to a decision:
+
+Very-probably not OK in:
+ - ReceiptRenderer (locale, tz)
+ - *ViewModel
+   - CountryCodePickerViewModel (locale)
+   - MetricDetailsViewModel (now)
+   - AvatarViewModel (default params for init: calendar, now)
+   - AddAddressViewModel ( |> analytics.track)
+ - AdditionalInfoForm
+ - VisualDependencies.swift (restrictedAgeDatePickerStyle)
+ 
+  - *FlowController (abTestingService)
+   - PrescriptionFlowController
+   - HomeFlowController
+ - *ViewController: viewWillAppear: Current.analyticsService.track
+   - MapViewController
+   - IntroViewController
+ - FocusedChatViewController (locale)
+ 
+ - Debug*
+    - DebugHomeRenderer (renderVisualLanguageSwitch, check current VL)
+    - DebugSignUpAccountGenerator
+ - Other
+   - MockReceiptDTO: date = ...(locale, tz)
+   - BabylonBoxViewController (init(..., appearance = Current....))
+   - OpeningHoursFormatter
+   - LocalNotificationService: extension DebugAction, check abTestingService
 
 ### Translation errors
 
