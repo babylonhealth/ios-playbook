@@ -34,23 +34,26 @@ In the _Excluded Source File Names_ we exclude any language (`.lproj/`) previous
 In the _Included Source File Names_ we include the languages (`.lproj/`) set in the above mentioned `app_languages` array:
 `${APP_LANGUAGES}` in Babylon US for example it is en-US.lproj/* es-US.lproj/*
 
-
-
 ## How to add a new or changing an existing key/value
 ### Add a new key/value
-TBD
+In Lokalise, select the corresponding project. 
+Click on the `Add key ⌘K` button
+- `key` - Give a name for the key following the bread-crumb style. For example: `add_family_member_email_placeholder`, `biometric_touchid_primer_description` or `biometric_touchid_primer_description`
+    
+- `Base language value`: The actual string value corresponding to the first language in the list. Placeholders are supported with the `@%` where dynamic values are expected. 
 
 ### Edit a key/value
-TBD
+Search and select the key you'd like to update and change any language you need. The languages you may not have the values will be marked as `Not-verified` and the translators will take care.
 
 ## How to add a new Locale
-TBD
+- In Lokalise project, click on the `+` plus button beside other flags. Find the desired language on the list, and then add it.
+- In the iOS project, in the file `lokalise` (under the fastlane folder), add the language code (`en_US` for example) in the `langs` parameter for the desired target. `langs: 'es_US,en_US'` (comma separated without space). 
 
 ## Pull from lokalise
 Check [Lokalise pull guide](https://github.com/Babylonpartners/ios-playbook/blob/master/Cookbook/Technical-Documents/Lokalise.md)
 
 ## Commit just your changes
-TBD
+Stage just your changes (additions and editions) on git. Don't stage any additions nor change that you don't recognize. It's really nice to be proactive but not in this case. It might cause unspected/premature changes. Yes, discard others's changes.
 
 ## Target specific localizable - Lokalise project and `strings` files
 TBD
