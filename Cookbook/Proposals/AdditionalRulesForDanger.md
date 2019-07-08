@@ -99,7 +99,7 @@ c) `Current.set\(.*`
 The algorithm is then be executed once more but for the `tearDown()` method instead.
 If the number of changes inside each function matches, then no issue would be found. If not, then Current appeared to have been mutated but not restored; we'd issue a warning for the lines in which the algorithm detected a change and alert the developers in GitHub using Danger.
 
-Nevertheless, this rule is rather naïve because we have no actual way of detecting if Current was reset or not; that would require compiling and running the actual Swift code.
+Nevertheless, this rule is rather naïve because we have no actual way of detecting if Current was reset or not; that would require compiling and running the actual Swift code. Therefore, this approach is not a silver bullet or anything remotely similar but it would still be useful for one use case in particular: should the developer forget to restore Current, this rule will alert us of this situation.
 
 ### Translation errors
 
