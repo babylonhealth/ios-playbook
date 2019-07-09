@@ -205,4 +205,4 @@ Furthermore, we would be increasing Danger's processing time - although for the 
 
 * Don't implement these rules at all
 
-Regardless of what we chose, the should still strive for reducing our tremendous amount of warnings because if we had a lower amount then we could leverage SwiftLint even further by adding more rules that would detecting new issues. While this would, in turn, raise the number of warnings yet again we would then be able to detect new problematic cases in real-time.
+Regardless of what we chose, we should still strive to reduce the tremendous amount of warnings our codebase currently has.
