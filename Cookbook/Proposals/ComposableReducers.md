@@ -48,8 +48,8 @@ struct Prism<Whole, Part> {
 
     static func >>> <Part2>(l: Prism<Whole, Part>, r: Prism<Part, Part2>) -> Prism<Whole, Part2> {
         return Prism<Whole, Part2>(
-            preview: { a in l.tryGet(a).flatMap(r.tryGet) },
-            review: { a in l.inject(r.inject(a)) }
+            preview: { a in l.preview(a).flatMap(r.preview) },
+            review: { a in l.review(r.review(a)) }
         )
     }
 }
