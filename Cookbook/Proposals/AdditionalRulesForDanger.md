@@ -89,7 +89,7 @@ In this particular case I believe we could use both approaches actually.
 
 ### Detect Current usage outside Builders et al
 
-`Current` is a very powerful concept whose usage is only allowed in a very restrict number of places. Check [Current Guide](./Technical-Documents/Current-guide.md). As such, we should enable automatic monitoring in order to prevent it from being abused throughout our codebase. Nevertheless, Current is still being used in a lot of places (598 results across 144 files) and we should go through every case individually before commiting to a decision:
+`Current` is a very powerful concept whose usage is only allowed in a very restrict number of places. More detailed information about Current can be found [here in our Current Guide](../Technical-Documents/Current-guide.md). As such, we should enable automatic monitoring in order to prevent it from being abused throughout our codebase. Nevertheless, Current is still being used in a lot of places (598 results across 144 files) and we should go through every case individually before commiting to a decision:
 
 `Current` should only be allowed in:
 - `AppDelegate.swift`
