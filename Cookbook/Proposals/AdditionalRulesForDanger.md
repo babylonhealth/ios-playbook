@@ -89,7 +89,7 @@ In this particular case I believe we could use both approaches actually.
 
 ### Detect Current usage outside Builders et al
 
-`Current` is a very powerful concept. Since its usage is only allowed in a very restrict number of places we should enable automatic monitoring in order to prevent it from being abused throughout our codebase.
+`Current` is a very powerful concept whose usage is only allowed in a very restrict number of places. As such, we should enable automatic monitoring in order to prevent it from being abused throughout our codebase. Nevertheless, Current is still being used in a lot of places (598 results across 144 files) and we should go through every case individually before commiting to a decision:
 
 `Current` should only be allowed in:
 - `AppDelegate.swift`
@@ -98,12 +98,12 @@ In this particular case I believe we could use both approaches actually.
 - Builders (using the `*Builder(\+.*).swift` regex)
 - `*AppConfiguration.swift`
 - AppDependencies
-- Tests, [since Current is using a mock version of itself in `SnapshotTestCase.swift`'s `setUp` method](https://github.com/Babylonpartners/babylon-ios/pull/7806/files#diff-74895f4da31ec40d83d342bf612540b4R17)
 
 In order to detect this, SwiftLint would likely be our best bet since it can easily detect these issues in real-time and warn us.
-Here is a possible implementation, as suggested by Olivier Halligon:
+Here is a possible implementation:
 
-```custom_rules:
+```
+custom_rules:
   world_current:
     excluded: # Files in which it's OK to use Current
      - ".*Builder(\+.*)?\\.swift"
@@ -114,36 +114,61 @@ Here is a possible implementation, as suggested by Olivier Halligon:
     name: "Current:World usage"
     regex: "\wCurrent\."
     message: "You should only use Current in Builders"
-    severity: warning```
+    severity: warning
+```
 
-Nevertheless, Current is still being used in a lot of places (598 results across 144 files) and we should go through every case individually before commiting to a decision:
+However, we have numerous cases that need to be analyzed one by one:
 
-Very-probably not OK in:
  - ReceiptRenderer (locale, tz)
+
  - *ViewModel
    - CountryCodePickerViewModel (locale)
    - MetricDetailsViewModel (now)
    - AvatarViewModel (default params for init: calendar, now)
    - AddAddressViewModel ( |> analytics.track)
+ 
  - AdditionalInfoForm
  - VisualDependencies.swift (restrictedAgeDatePickerStyle)
  
   - *FlowController (abTestingService)
    - PrescriptionFlowController
    - HomeFlowController
- - *ViewController: viewWillAppear: Current.analyticsService.track
+
+ - *ViewController:
    - MapViewController
    - IntroViewController
- - FocusedChatViewController (locale)
+   - FocusedChatViewController (locale)
  
  - Debug*
     - DebugHomeRenderer (renderVisualLanguageSwitch, check current VL)
     - DebugSignUpAccountGenerator
+
  - Other
-   - MockReceiptDTO: date = ...(locale, tz)
-   - BabylonBoxViewController (init(..., appearance = Current....))
+   - MockReceiptDTO (locale, tz)
+   - BabylonBoxViewController (appearance)
    - OpeningHoursFormatter
    - LocalNotificationService: extension DebugAction, check abTestingService
+
+
+### Mutating Current in `setUp()` but not restoring it in `tearDown()`
+
+Every object (susceptible to global mutation) that is mutated in `setUp()` must be restored in `tearDown()`.
+
+Mutations in `Current` in particular are the prime suspects of a number of flaky tests that have been recently affecting our test suite. [While some mitigations have been implemented to minimize this problem](https://github.com/Babylonpartners/babylon-ios/pull/7806/files#diff-74895f4da31ec40d83d342bf612540b4R17), there are still plenty of cases through which Current could be modified and our team would be none the wiser.
+
+In order to detect this problem we have to use Danger since SwiftLint only accepts regular expressions.
+We would have to whitelist every test file (`.*Tests.*`) and use Danger to manually parse the test line-by-line until the `setUp()` function was found. 
+
+If found, we need to make a counter that increases by one each time a curly bracket and does the reverse when a closing curly bracket appears. Once the counter reaches zero again, then we've successfully delimited the contents of the `setUp()` function and we'd use the following regexes to detect changes in Current: 
+a) `Current\..*\ = `.
+b) `Current.changeTheme\(.*`
+c) `Current.set\(.*`
+
+The algorithm is then be executed once more but for the `tearDown()` method instead.
+If the number of changes inside each function matches, then no issue would be found. If not, then Current appeared to have been mutated but not restored; we'd issue a warning for the lines in which the algorithm detected a change and alert the developers in GitHub using Danger.
+
+Nevertheless, this rule is rather naïve because we have no actual way of detecting if Current was reset or not; that would require compiling and running the actual Swift code. Therefore, this approach is not a silver bullet or anything remotely similar but it would still be useful for one use case in particular: should the developer forget to restore Current, this rule will alert us of this situation. Furthermore, it can easily be side-stepped if the mutations and resets are done in auxiliar methods instead.
+
 
 ### Translation errors
 
@@ -153,11 +178,10 @@ As such, I'd like to suggest another rule for Danger that would:
     1. detect new static String variables in every Localizable.swift file.
     2. if we detected a new static variable we would then scan the localization.string files and look for that key; if we didn't find them that would mean that there was probably a typo and the actual translation would never  appear on-screen (only the key itself).
 
-Having said that, our handling of L10n could definitely be improved 
-
 Furthermore, the reverse situation would also be problematic (albeit at a different scale): a key in the `.strings` file without an equivalent constant in its Swift counterpart would likely mean that the developer had added unused strings to the project. This would also be detectable using Danger.
 
 We would need to whitelist `Localizable.*\.swift` as well as the actual `Localizable.string` files in order to implement both rules.
+
 
 ### Feedbacks must have the `when` prefix
 
