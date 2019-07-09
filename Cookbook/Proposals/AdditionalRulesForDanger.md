@@ -1,6 +1,6 @@
 # Additional rules for Danger and SwiftLint
 
-* Author: João Pereira
+* Author: João Pereira, Olivier Halligon, Danilo Aliberti
 * Review Manager: TBD
 
 ## Introduction
