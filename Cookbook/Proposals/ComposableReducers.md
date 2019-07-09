@@ -31,6 +31,13 @@ The basic idea can be found in @mbrandonw ’s talk:
 struct Lens<Whole, Part> {
     let get: (Whole) -> Part
     let set: (Whole, Part) -> Whole
+
+    static func >>> <Part2>(l: Lens<Whole, Part>, r: Lens<Part, Part2>) -> Lens<Whole, Part2> {
+        return Lens<Whole, Part2>(
+            setter: { a, c in l.setter(a, r.setter(l.getter(a), c)) },
+            getter: { r.getter(l.getter($0)) }
+        )
+    }
 }
 
 /// For accessing enum cases.
@@ -38,6 +45,13 @@ struct Lens<Whole, Part> {
 struct Prism<Whole, Part> {
     let preview: (Whole) -> Part?
     let review: (Part) -> Whole
+
+    static func >>> <Part2>(l: Prism<Whole, Part>, r: Prism<Part, Part2>) -> Prism<Whole, Part2> {
+        return Prism<Whole, Part2>(
+            preview: { a in l.tryGet(a).flatMap(r.tryGet) },
+            review: { a in l.inject(r.inject(a)) }
+        )
+    }
 }
 ```
 
@@ -47,8 +61,94 @@ struct Prism<Whole, Part> {
     - `review` (inject): Creates whole enum from particular case (i.e. `case` as enum constructor)
 
 While `Lens` is useful for traversing `struct` members, `Prism` is useful for traversing `enum` cases.
+
 Because in ReactiveFeedback, `State` is normally defined as `struct` and `Event` is `enum`,
 we need both features to be able to transform `reducer` and `feedback` into arbitrary structure.
+
+#### Why `Prism` ?
+
+The power of `Prism` shines when they make composition using `>>>`.
+
+For example, consider refactoring gigantic `enum Event` that has flattened cases:
+
+```swift
+/// 999 flattened cases, oh my! 🤯
+enum Event {
+    case button1(String)
+    case button2(String)
+    case button3(String)
+    ...
+    case button999(String)
+
+    var button1: String? { ... }
+}
+
+let event: Event = Event.button1("OK")
+let ok: String? = event.button1
+```
+
+into a more structured nested `enum`s (so that we can focus on each sub-domains):
+
+```swift
+// NOTE: Splitted into subdomains
+enum Event {
+    case sub1(Sub1Event)
+    case sub2(Sub2Event)
+    ...
+    var sub1: Sub1Event? { ... }
+
+    enum Sub1Event {
+        case button1(String)
+        case button2(String)
+
+        var button1: String? { ... }
+    }
+    enum Sub2Event {
+        case button3(String)
+    }
+}
+
+// Because it has one level deeper, the code becomes longer than previous example.
+let event: Event = Event.sub1(.button1("OK"))
+let ok: String? = event.sub1?.button1
+```
+
+But this kind of code becomes more and more verbose if we have more deeply nested structure,
+e.g. `Event.sub(.sub2(.sub3(.sub4(.sub5(.button1("OK"))))))`, which is not scalable.
+
+To alleviate this situation, `Prism` composition can be used:
+
+```swift
+extension Prism where Whole == Event, Part == Sub1Event {
+    static let sub1Prism = Prism(...)
+}
+
+extension Prism where Whole == Sub1Event, Part == String {
+    static let button1Prism = Prism(...)
+}
+
+let deepPrism = .sub1Prism >>> .button1Prism
+
+let event = deepPrism.review("OK") // Event.sub.tap("OK")
+deepPrism.preview(event)           // Optional("OK")
+```
+
+And for many more deeply nested structure:
+
+```swift
+let deepPrism = .sub1Prism >>> .sub2Prism >>> .sub3Prism
+    >>> .sub4Prism >>> .sub5Prism >>> .button1Prism
+
+let event = deepPrism.review("OK") // Event.sub(.sub2(.sub3(.sub4(.sub5(.button1("OK"))))))
+deepPrism.preview(event)           // Optional("OK")
+```
+
+For more information about `Lens` and `Prism`, please see following links:
+
+- [Brandon Williams \- Lenses in Swift \- YouTube](https://www.youtube.com/watch?v=ofjehH9f-CU)
+- [Lenses and Prisms in Swift: a pragmatic approach \| Fun iOS](https://broomburgo.github.io/fun-ios/post/lenses-and-prisms-in-swift-a-pragmatic-approach/)
+- [Making your own Code Formatter in Swift \- Speaker Deck](https://speakerdeck.com/inamiy/making-your-own-code-formatter-in-swift?slide=41)
+    - Adds `Lens >>> Prism` composition (called `AffineTraversal`) for further accessing the deeply nested structure
 
 ### `Reducer`
 
@@ -74,7 +174,7 @@ struct Reducer<Action, State> {
 }
 ```
 
-`Reducer` is a wrapper type around `reduce: (Action, State) -> State` function that conforms to `Monoid` (has "zero" and "+") to combine 2 reducers into one.
+`Reducer` is a wrapper type around `reduce: (Action, State) -> State` function that can combine 2 reducers into one (has "zero" and "+" called "monoid").
 
 By using this `append`ing capability, we can create more complex `Reducer` from splitted `SubReducer`s.
 
