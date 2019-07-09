@@ -154,7 +154,7 @@ However, we have numerous cases that need to be analyzed one by one:
 
 Every object (susceptible to global mutation) that is mutated in `setUp()` must be restored in `tearDown()`.
 
-Mutations in `Current` in particular are the prime suspects of a number of flaky tests that have been recently affecting our test suite. [While some mitigations have been implemented to minimize this problem](https://github.com/Babylonpartners/babylon-ios/pull/7806/files#diff-74895f4da31ec40d83d342bf612540b4R17), there are still plenty of cases through which Current could be modified and our team would be none the wiser.
+Mutations in `Current` in particular are the prime suspects of a number of flaky tests that have been recently affecting our test suite. [While some mitigations have been implemented to minimize this problem](https://github.com/Babylonpartners/babylon-ios/pull/7806/files#diff-74895f4da31ec40d83d342bf612540b4R17), there are still plenty of cases through which Current could be modified and our team would be none the wiser, like extending the linked solution to Unit and UI Test cases base classes.
 
 In order to detect this problem we have to use Danger since SwiftLint only accepts regular expressions.
 We would have to whitelist every test file (`.*Tests.*`) and use Danger to manually parse the test line-by-line until the `setUp()` function was found. 
