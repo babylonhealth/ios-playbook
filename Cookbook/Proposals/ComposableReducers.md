@@ -347,4 +347,97 @@ This proposal will affect all construction of `ViewModel` and `RAF`, but we can 
 
 ## Alternatives considered
 
-TBD
+### 1. Split into un-composable multiple ViewModels
+
+```swift
+class MainViewModel {
+    let state: Property<MainState> // ReactiveFeedback
+    let route: Signal<MainRoute>
+
+    let sub1: Sub1ViewModel
+    let sub2: Sub2ViewModel
+
+    init(...) {
+        self.state = Property(
+            ...,
+            feedbacks: [
+                sub1.route.toFeedback(...),
+                sub2.route.toFeedback(...),
+                ...
+            ]
+        )
+
+        self.route = self.state.filterMap(MainRoute.init)
+    }
+
+    class Sub1ViewModel {
+        let state: Property<Sub1State> // ReactiveFeedback
+        let route: Signal<Sub1Route>   // NOTE: This is rather an output for `ViewModel`
+    }
+
+    class Sub2ViewModel {
+        ... // same goes here
+    }
+}
+```
+
+While this also works, there are problems that:
+
+- There are multiple `ReactiveFeedback`s in each ViewModel, so that each `state` becomes isolated from each other and hard to sync
+    - It is hard to define what is the "single source of truth (state)" for rendering `View`
+        - Is it `MainViewModel.state` or `Signal.combineLatest(sub1.state, sub2.state)` or mixture of both?
+        - It depends on how we define `MainState`
+- Same issue can be said for how we define `MainRoute` alongside `Sub_N_Route` (N = 1,2,...)
+- Since it's not easy to compose multiple `ReactiveFeedback`s, we probably end up by writing a lot of manual FRP stream pipeline to workaround
+
+### 2. Composable Reducers without `Lens` and `Prism`
+
+cf. See [Discussion](https://github.com/Babylonpartners/ios-playbook/pull/171#discussion_r299147437).
+
+```swift
+// Domain: Main -> Sub1 -> Sub2 -> Sub3
+
+func reducer(state: State, event: Event) -> Event {
+    switch event {
+    case .sub1(sub1Event):
+        return state.set(\.sub1, sub1Reducer(state: state.sub1, event: sub1Event))
+    ...
+    }
+}
+
+func sub1Reducer(state: Sub1State, event: Sub1Event) -> Sub1Event {
+    switch event {
+    case .sub2(sub2Event):
+        return state.set(\.sub2, sub2Reducer(state: state.sub2, event: sub2Event))
+    ...
+    }
+}
+
+func sub2Reducer(state: Sub2State, event: Sub2Event) -> Sub2Event {
+    switch event {
+    case .sub3(sub3Event):
+        return state.set(\.sub3, sub3Reducer(state: state.sub3, event: sub3Event))
+    ...
+    }
+}
+
+func sub3Reducer(state: Sub3State, event: Sub3Event) -> Sub3Event {
+    switch event {
+    case .tap:
+        return state.set(\.status, .showAlert)
+    ...
+    }
+}
+```
+
+While this reducer split work with relatively simple syntax rule, we still need quite a lot of effort to write down boilerplate pattern-matching code for each nested level.
+And unfortunately, all of them are NOT reusable.
+
+By using `Lens` and `Prism` compositions, it becomes as simple as:
+
+```swift
+let reducer: Reducer<Action, State> =
+    sub3Reducer
+        .lift(action: .sub3Event >>> .sub2Event >>> .sub1Event)
+        .lift(state: .sub3State >>> .sub2State >>> .sub1State)
+```
