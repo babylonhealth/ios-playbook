@@ -37,6 +37,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | João Pereira            | [@NSMyself](https://twitter.com/nsmyself)                     |
 | Joshua Simmons          | [@j531](https://github.com/j531)                              |
 | Julien Ducret           | [@brocoo](https://github.com/brocoo)                          |
+| Konrad Muchowicz        | [@konrad-em](https://github.com/konrad-em)                    |
 | Martin Nygren           |                                                               |
 | Michael Brown           | [@mluisbrown](https://twitter.com/mluisbrown)                 |
 | Michał Kwiecień         | [@kwiecien_co](https://twitter.com/kwiecien_co)               |
@@ -62,7 +63,7 @@ By definition, members work on their respective squad, although they are free to
 | SDK                           | Viorel, Simon                    |    2/3       | [#sdk_squad](https://babylonhealth.slack.com/archives/CC5JNDGJJ) |
 | Consultation                  | Ilya, Adrian                     |    2/2       | |
 | Booking                       | Witold                           |    1/1       |  |
-| Prescriptions                 | Adam                             |    1/1       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
+| Prescriptions                 | Adam, Konrad                     |    2/2       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
 | Healthcheck                   | Ben, Catarina, Julien            |    3/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
 | Native/Core                   | Giorgos, Jason, Martin, Inami, Emese    |    5/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
 | Professional Services         | Chitra             |    1/3      | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
