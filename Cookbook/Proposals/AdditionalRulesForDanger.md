@@ -29,13 +29,13 @@ We will now go through the list of suggested rules and consider:
 
 ### Detecting custom ViewModels in snapshot tests
 
-Custom ViewModels should not be defined as part of our tests; we should rely on generic `StubViewModel`s (from `BabylonSnapshotTestUtilities`) instead. By using custom ViewModels instead of stubbing the ones we already have technically we aren't testing the actual ViewModels, but the ones we've just created for the purpose of this test (which, depending on the actual implementation, may not be the exact same thing).
+Custom ViewModels should not be defined as part of our snapshot tests; we should rely on generic `StubViewModel`s (from `BabylonSnapshotTestUtilities`) instead. By using custom ViewModels instead of stubbing the ones we already have technically we aren't testing the actual ViewModels, but the ones we've just created for the purpose of this test (which, depending on the actual implementation, may not be the exact same thing).
 
 Still, in theory, setting up custom ViewModels could be useful in some particular circumstances (eg:  when testing a Renderer and we need our ViewModel to hold some value that we cannot define via the initializers and/or easily get the state machine to the point where we need it to be).
 
 Nevertheless, as of July 3rd, 2019, we have 33 occurences of this malpractice.
 
-This rule would be rather simple to enforce via SwiftLint, using the following regex: `class .*ViewModel\W` inside every test file. Furthermore, we should implement a modified version of `verifyScreenForAllSizesAndVisualLanguages` that accepted only `StubViewModel`s and deprecate the old one. Using these two techniques I believe this malpractice can be expunged from our codebase very quickly.
+This rule would be rather simple to enforce via SwiftLint, using the following regex: `class .*ViewModel\W` inside every snapshot test file. Furthermore, we should implement a modified version of `verifyScreenForAllSizesAndVisualLanguages` that accepted only `StubViewModel`s and deprecate the old one. Using these two techniques I believe this malpractice can be expunged from our codebase very quickly.
 
 ### Monitoring ViewController lifecycle directly instead of relying on `ScreenLifecycleEvent`
 
