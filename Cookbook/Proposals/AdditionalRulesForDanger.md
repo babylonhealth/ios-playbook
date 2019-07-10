@@ -27,7 +27,7 @@ We will now go through the list of suggested rules and consider:
     a) if they should be applied to our codebase (either partially or completely)
     b) which approach should we use to minimize further occurrences of the problem at hand
 
-### Custom ViewModels in the test suite
+### Detecting custom ViewModels in snapshot tests
 
 Custom ViewModels should not be defined as part of our tests; we should rely on generic `StubViewModel`s (from `BabylonSnapshotTestUtilities`) instead. By using custom ViewModels instead of stubbing the ones we already have technically we aren't testing the actual ViewModels, but the ones we've just created for the purpose of this test (which, depending on the actual implementation, may not be the exact same thing).
 
