@@ -92,20 +92,25 @@ In this particular case I believe we could use both approaches actually.
 
 Every object (susceptible to global mutation) that is mutated in `setUp()` must be restored in `tearDown()`.
 
-Mutations in `Current` in particular are the prime suspects of a number of flaky tests that have been recently affecting our test suite. [While some mitigations have been implemented to minimize this problem](https://github.com/Babylonpartners/babylon-ios/pull/7806/files#diff-74895f4da31ec40d83d342bf612540b4R17), there are still plenty of cases through which Current could be modified and our team would be none the wiser, like extending the linked solution to Unit and UI Test cases base classes.
+Mutations in `Current` in particular are the prime suspects of a number of flaky tests that have been recently affecting our test suite. [While some mitigations have been implemented to minimize this problem](https://github.com/Babylonpartners/babylon-ios/pull/7806/files#diff-74895f4da31ec40d83d342bf612540b4R17), these are restricted to snapshot tests for the time being. Ideally, this solution should be extended to Unit and UI Test cases but that lies outside the scope of this proposal.
 
-In order to detect this problem we have to use Danger since SwiftLint only accepts regular expressions.
-We would have to whitelist every test file (`.*Tests.*`) and use Danger to manually parse the test line-by-line until the `setUp()` function was found. 
+Until that is implemented, we could alternatively monitor mutations in Current by counting the number of times Current is changed in the `setup()` and `tearDown()` methods. We would have to whitelist every test file (`.*Tests.*`) and use Danger to manually parse the test line-by-line.
 
-If found, we need to make a counter that increases by one each time a curly bracket and does the reverse when a closing curly bracket appears. Once the counter reaches zero again, then we've successfully delimited the contents of the `setUp()` function and we'd use the following regexes to detect changes in Current: 
-a) `Current\..*\ = `.
-b) `Current.changeTheme\(.*`
-c) `Current.set\(.*`
+1) Find the `setUp()` function inside the test file. If found, we would determine the boundaries of this function (by counting each time an open curly bracket appears and doing the reverse for closing curly brackets) and we'd use the following regexes to detect changes in Current: 
+    a) `Current\..*\ = `.
+    b) `Current.changeTheme\(.*`
+    c) `Current.set\(.*`
 
-The algorithm is then be executed once more but for the `tearDown()` method instead.
-If the number of changes inside each function matches, then no issue would be found. If not, then Current appeared to have been mutated but not restored; we'd issue a warning for the lines in which the algorithm detected a change and alert the developers in GitHub using Danger.
+2) Repeat step 1 but for `tearDown()` instead.
 
-Nevertheless, this rule is rather naïve because we have no actual way of detecting if Current was reset or not; that would require compiling and running the actual Swift code. Therefore, this approach is not a silver bullet or anything remotely similar but it would still be useful for one use case in particular: should the developer forget to restore Current, this rule will alert us of this situation. Furthermore, it can easily be side-stepped if the mutations and resets are done in auxiliar methods instead.
+3) Assess if the number of changes inside each function matches.
+    a) if so, then no issue would be found
+    b) if not, then Current appeared to have been mutated but not restored; we'd issue a warning for the lines in which the algorithm detected a change and alert the developers in GitHub using Danger.
+
+Nevertheless, this rule is rather naïve because we have no actual way of detecting if Current was reset or not; it would merely indicate that in all likeliness the developer has forgotten to restore Current since the number of changes in both methods does not match.
+Additionally, there are plenty of cases through developers could modify Current and easily side-step this rule (eg: if the mutations and resets were made in auxiliar methods instead).
+
+As such, this approach is not a silver bullet or anything remotely similar; such a feature would require compiling and running the actual Swift code, not to mention that we'd have to make Current conform to Equatable.
 
 
 ### Translation errors
