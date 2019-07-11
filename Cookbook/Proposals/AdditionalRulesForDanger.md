@@ -121,9 +121,13 @@ As such, I'd like to suggest another rule for Danger that would:
     1. detect new static String variables in every Localizable.swift file.
     2. if we detected a new static variable we would then scan the localization.string files and look for that key; if we didn't find them that would mean that there was probably a typo and the actual translation would never  appear on-screen (only the key itself).
 
-Furthermore, the reverse situation would also be problematic (albeit at a different scale): a key in the `.strings` file without an equivalent constant in its Swift counterpart would likely mean that the developer had added unused strings to the project. This would also be detectable using Danger.
+Furthermore, the reverse situation would also be problematic (albeit at a different scale): a key in the `.strings` file without an equivalent constant in its Swift counterpart would likely mean that the developer had added unused strings to the project. This would also be detectable using Danger. 
 
-We would need to whitelist `Localizable.*\.swift` as well as the actual `Localizable.string` files in order to implement both rules.
+On the other hand:
+- we have no reliable way of mapping the association between each target and their respective strings
+- this process should be automated by using SwiftGen instead
+
+We would need to whitelist `Localizable.*\.swift` as well as the `Localizable.string` and its corresponding target-specific files in order to implement both rules.
 
 
 ### Feedbacks must have the `when` prefix
