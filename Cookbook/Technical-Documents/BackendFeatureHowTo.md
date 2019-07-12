@@ -236,6 +236,56 @@ Features
 ## Advanced topics
 With the simple case covered, let's move on to more difficult topics.
 
+Most of those are revolving around customising decoding and encoding at the `Service` level with `BackendResource`, so at first let's describe what a *parser* is.
+
+### Parser
+
+`Parser` is a namespace for a set of functions which encode and decode objects with `JSONSerialization` and generally return either a `SignalProducer` or a `Result`. There is much more going under the hood, so it's worth to study the source code.
+
+We are mostly interested in two fuctions, the first is `parse` to decode the response:
+``` swift
+static func parse<T>(_ data: Data) -> Result<T, CoreError> where T: Decodable
+```
+
+Other overloads can also take a custom `JSONDecoder`, a JSON key and specify whether to fail parsing or skip malformed elements. We'll look at these options shortly.
+
+The second function is `encode` to produce the request:
+``` swift
+static func encode<T>(_ item: T) -> Result<Data, CoreError> where T: Encodable
+```
+
+`encode` can also take a custom `JSONEncoder`.
+
+`BackendResource` uses `Parser` to decode and encode responses and requests, and we can use it ourselves to customise how that is happening by overriding response and request handlers on `BackendResource`.
+
+`BackendResource` takes two additional parameters, `request` and `response`, which have the following signatures:
+``` swift
+typealias RequestHandler = (Request, JSONEncoder) -> Result<Data, CoreError>
+typealias ResponseHandler = (Data, URLResponse) -> Result<Response, CoreError>
+```
+
+Essentially, if we specify a simple encodable `Request`, internally this happens:
+``` swift
+extension BackendResource where Request: Encodable, Response: Decodable {
+    public init(…) {       // We don't specify request or response here.
+        self.init(         // But in this init they are required.
+            …
+            request: Parser.encode,
+            response: { data, _ in Parser.parse(data) }
+        )
+    }
+}
+```
+
+Let's see some examples of how we might customise this behaviour in various situations.
+
+
+
+
+
+
+
+
 ### Use `Parser` to get JSON values directly
 `response: { data, _ in Parser.parse(data, key: "content", strategy: .prune) }`
 ### Control value mapping with a `Decodable` extension
