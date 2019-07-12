@@ -279,6 +279,70 @@ extension BackendResource where Request: Encodable, Response: Decodable {
 
 Let's see some examples of how we might customise this behaviour in various situations.
 
+### Don't create a Response type for single-key JSON
+
+Given the JSON from our simple example, we might as well not create `CitiesResponse` just to wrap the request, and use the `key` parameter on the parser to “key” into the data (get it?).
+
+In our `CitiesService`, the call would be:
+``` swift
+static func fetchCitiesResource() -> BackendResource<Void, [City], KongAuth> {
+    return BackendResource(
+        path: .api(.core, citiesPath),
+        method: .GET,
+        response: { data, _ in Parser.parse(data, key: "cities", strategy: .prune) }
+    )
+}
+```
+
+What this does is decodes the array of cities directly from JSON, without the need for intermediate data structures. This works well for simple responses.
+
+Note that our `BackendResource` signature now has `[Cities]` in it instead of `CitiesResponse`.
+
+One other new thing here is the `strategy` parameter in the `Parser` call. The parameter is an enum applying specifically to arrays, and it has two cases:
+1. `prune` (which we used in the call) skips any value in the array which could not be decoded. If one or more of the cities fails to be decoded, in the worst case we would get an empty array.
+2. `strict` fails the whole parsing if one of the child values could not be parsed i.e. you would get an error.
+
+Another way to approach this situation would be to define a custom `Decodable` extension for `CitiesResponse` which would filter out malformed cities, but more on this later.
+
+### Supply a custom JSON decoder to BackendResource
+
+When field names or dates are involved, we can pass our own `JSONDecoder` to the `BackendResource` initialiser instead of working in the `ResponseHandler` closure.
+
+This is especially useful if e.g. on the backend your city has a field `city_name` but in your `City` struct it's defined as `cityName`. This case is handled by an option on a JSON decoder:
+``` swift
+struct CitiesService {
+    // `internal` access level to allow for testing.
+    internal static let jsonDecoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }()
+
+    static func fetchCitiesResource() -> BackendResource<Void, CitiesResponse, KongAuth> {
+        let citiesPath = "/v1/cities"
+        return BackendResource(
+            path: .api(.core, citiesPath),
+            method: .GET,
+            decoder: jsonDecoder
+        )
+    }
+}
+```
+
+We simply pass our `JSONDecoder` as a parameter when creating the `BackendResource`, which is executed internally as:
+``` swift
+extension BackendResource {
+    public init(
+        …
+        decoder: JSONDecoder
+    ) {
+        self.init(
+            …
+            response: { data, _ in Parser.parse(data, decoder: decoder) }
+        )
+    }
+}
+```
 
 
 
@@ -286,13 +350,11 @@ Let's see some examples of how we might customise this behaviour in various situ
 
 
 
-### Use `Parser` to get JSON values directly
-`response: { data, _ in Parser.parse(data, key: "content", strategy: .prune) }`
+
 ### Control value mapping with a `Decodable` extension
     cards = try values.decodeArraySafely([HomeHubCard].self, forKey: .cards)
     throw decoder.dataCorrupted("Can't decode CreateAppointmentError")
     NotEmptyDecodable
-### Use a custom response handler
 ### Use a custom request encoder
 ``` swift
 static func obtainQuestions(socialSecurityNumberSuffix: String) -> BackendResource<Void, IDologyResponseDTO, KongAuth> {
