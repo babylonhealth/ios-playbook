@@ -51,7 +51,7 @@ The other way to find an element is using an `XCUIElementQuery` which can either
 - `let element = app.navigationBars[NavigationBars.pageHeader]` Returns a single `XCUIElement` or throws an error if there are multiple matches
  - `let queryWithIdentifier = app.navigationBars.matching(identifier: NavigationBars.pageHeader)` Returns a `XCUIElementQuery` array with multiple `XCUIElement`
 - `let queryWithOutIdentifier = app.navigationBars` Returns a `XCUIElementQuery` array with all navigation bars on screen
-- `let queryWithSingleResult  = app.navigationBars.firsrMatch` Returns the first `XCUIElment` matching the `XCUIElementQuery` and is the only method that stops searching on the first match, while the other methods will search the entire view hierarchy.
+- `let queryWithSingleResult  = app.navigationBars.firstMatch` Returns the first `XCUIElment` matching the `XCUIElementQuery` and is the only method that stops searching on the first match, while the other methods will search the entire view hierarchy.
 
 ## Updating Locators
 
@@ -66,6 +66,73 @@ fileprivate enum NavigationBar {
 ```
 
 While this will fix the test, it is susceptible to future changes. In this case time permitting, we should attempt to define an `accessibilityIdentifier` for the element and then update the enum to use this identifier. This is not always possible as in the case with chat responses, but it is something we should strive for in order to make our tests more stable and maintainable, reducing the amount of updates needed in the future.
+
+### Using AccessibilityContent
+
+It is now possible to directly use accessibility identifiers defined during implementation time without resorting to raw strings.
+
+There is a namespace `AccessibilityContent` in `BabylonDependencies` that should be used by developers to define accessibility identifiers for controls, grouped by screen, for example for Promo Code Entry screen we define a `PromoCode` enum with child controls:
+
+``` swift
+public enum AccessibilityContent {
+    public enum PromoCode: String {
+        case codeCell
+    }
+}
+```
+
+After this identifier has been set on a control, we can `import BabylonDependencies` in a Screen implementation in automation, and update the query to use this identifier:
+
+``` swift
+let promofield = app.tables
+    .cells[AccessibilityContent.PromoCode.codeCell]
+    .textFields
+    .firstMatch
+```
+
+Note that the identifier is usually set on the cell itself rather than its internal components, as automation has problems finding elements otherwise.
+
+### Taking advantage of ScreenNaming for screen identifiers
+
+The fact that view models conform to `ScreenNaming` for analytics tracking can be used in automation, because e.g. `BabylonBoxViewController` automatically sets the screen's accessibility identifier to the view model's `screenName`:
+
+``` swift
+if let screenName = (viewModel as? ScreenNaming)?.screenName, view.accessibilityIdentifier == nil {
+    view.accessibilityIdentifier = screenName
+}
+```
+
+However, we should not be using the enums from the analytics namespace directly, as they serve a different purpose, unlike entries in `AccessibilityContent` that are used specifically for accessibility. Still, these identifiers are more stable than relying on copy. If there are other implementations of a screen not using Bento, the accessibility identifier can be set manually on the view controller to match the Bento version.
+
+A common pattern for a screen is to define its title in a `NavigationBars` enum and check for that:
+
+``` swift
+class NotificationsScreen: BaseScreen {
+    fileprivate enum NavigationBars {
+        case pageHeader = "Notifications"
+    }
+
+    func isScreenDisplayed() -> Bool {
+        let header = app.navigationBars[NavigationBars.pageHeader]
+        return tryWait(for: header, with: .exists, timeout: normalWait)
+    }
+}
+```
+
+Instead, we define a `ScreenName` enum with the screen's accessibility identifier and modify the `isScreenDisplayed` function to search for it:
+
+``` swift
+class NotificationsScreen: BaseScreen {
+    fileprivate enum ScreenName {
+        case notifications = "notifications/overview"
+    }
+
+    func isScreenDisplayed() -> Bool {
+        let header = app.otherElements[ScreenName.notifications]
+        return tryWait(for: header, with: .exists, timeout: waitToLoad)
+    }
+}
+```
 
 ### Updating Queries
 
