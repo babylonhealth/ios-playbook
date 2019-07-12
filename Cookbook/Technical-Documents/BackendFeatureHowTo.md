@@ -232,3 +232,46 @@ Features
     ├── CitiesFlowController.swift
     └── CitiesBuilder.swift
 ```
+
+## Advanced topics
+With the simple case covered, let's move on to more difficult topics.
+
+### Use `Parser` to get JSON values directly
+`response: { data, _ in Parser.parse(data, key: "content", strategy: .prune) }`
+### Control value mapping with a `Decodable` extension
+    cards = try values.decodeArraySafely([HomeHubCard].self, forKey: .cards)
+    throw decoder.dataCorrupted("Can't decode CreateAppointmentError")
+    NotEmptyDecodable
+### Use a custom response handler
+### Use a custom request encoder
+``` swift
+static func obtainQuestions(socialSecurityNumberSuffix: String) -> BackendResource<Void, IDologyResponseDTO, KongAuth> {
+        return BackendResource(
+            path: .api(.ai, "/identity-verification/v1/session/"),
+            method: .POST,
+            request: { _, encoder in
+                Parser.encode(
+                    ["ssnLast4": socialSecurityNumberSuffix],
+                    encoder: encoder
+)
+}
+)
+    }
+    
+        static var post: BackendResource<AddressDTO, RegisteredAddressDTO, KongAuth> {
+        return BackendResource(path: .api(.core, "/api/v1/patients/\(KongAuth.patientId)/addresses"), method: .POST, request: { address, _ in
+            return Parser.encode(["address": address])
+        })
+    }
+```
+### Supply a custom `JSONDecoder` to `BackendResource`
+internal static var jsonDecoder
+encoder.dateEncodingStrategy = .formatted(DateFormatHelpers.justDateFormatter)
+### Supply a custom `JSONEncoder`
+encoder.keyEncodingStrategy = .convertToSnakeCase
+
+different ways to achieve the same thing
+### Using a `Request` type to access a `BackendResource`
+### Using a custom response error
+AddressBusinessController
+case .network(.server(422, _)):
