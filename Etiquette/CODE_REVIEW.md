@@ -59,7 +59,7 @@ Reviewing a Pull Request
 * Do not try to make everything perfect (it never will be and otherwise we'll never deliver anything), but do not compromise on quality
 * Do not comment if you don't have any suggestions to address your comment
 * Use GitHub suggestions as much as possible
-* If you feel strong against the change - please use `Request changes` and explain why you are doing that. **Any comment left in the PR is taken as a suggestion, and it's up to the author's discretion to accept them or not, except if you use `Request changes`.**
+* If you feel strongly against the change - please use `Request changes` and explain why you are doing that. **Any comment left in the PR is taken as a suggestion, and it's up to the author's discretion to accept them or not, except if you use `Request changes`.**
 * Approve changes if you are confident about them. 
 * If you are the first reviewer to approve the changes add the label "Needs one reviewer" so that others can see which PRs already have a feedback and which don't have any yet.
 * Comment on the changes if something is not clear to you and needs further clarification or actions
