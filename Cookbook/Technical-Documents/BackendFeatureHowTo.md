@@ -308,7 +308,7 @@ Another way to approach this situation would be to define a custom `Decodable` e
 
 When field names or dates are involved, we can pass our own `JSONDecoder` to the `BackendResource` initialiser instead of working in the `ResponseHandler` closure.
 
-This is especially useful if e.g. on the backend your city has a field `city_name` but in your `City` struct it's defined as `cityName`. This case is handled by an option on a JSON decoder:
+This is especially useful if e.g. on the backend your city has a field `city_name` but in your `City` struct it's defined as `cityName`. This case is handled by an option on the JSON decoder:
 ``` swift
 struct CitiesService {
     // `internal` access level to allow for testing.
@@ -344,46 +344,73 @@ extension BackendResource {
 }
 ```
 
+### Define a Request type to use with BackendResource
+Let's enhance our Cities business controller and add the ability to order a delivery. For simplicity, let's say this request can only succeed or return an error to avoid defining a response type.
 
-
-
-
-
-
-
-### Control value mapping with a `Decodable` extension
-    cards = try values.decodeArraySafely([HomeHubCard].self, forKey: .cards)
-    throw decoder.dataCorrupted("Can't decode CreateAppointmentError")
-    NotEmptyDecodable
-### Use a custom request encoder
+If we wanted to send a POST request with a body, we would first need to define a Request type to be serialised, which means it has to conform to `Encodable`, e.g.
 ``` swift
-static func obtainQuestions(socialSecurityNumberSuffix: String) -> BackendResource<Void, IDologyResponseDTO, KongAuth> {
-        return BackendResource(
-            path: .api(.ai, "/identity-verification/v1/session/"),
-            method: .POST,
-            request: { _, encoder in
-                Parser.encode(
-                    ["ssnLast4": socialSecurityNumberSuffix],
-                    encoder: encoder
-)
+struct Address: Encodable {
+    let firstLine: String
+    …
+    let postcode: String?
 }
-)
-    }
-    
-        static var post: BackendResource<AddressDTO, RegisteredAddressDTO, KongAuth> {
-        return BackendResource(path: .api(.core, "/api/v1/patients/\(KongAuth.patientId)/addresses"), method: .POST, request: { address, _ in
-            return Parser.encode(["address": address])
-        })
-    }
 ```
-### Supply a custom `JSONDecoder` to `BackendResource`
-internal static var jsonDecoder
-encoder.dateEncodingStrategy = .formatted(DateFormatHelpers.justDateFormatter)
-### Supply a custom `JSONEncoder`
-encoder.keyEncodingStrategy = .convertToSnakeCase
 
-different ways to achieve the same thing
-### Using a `Request` type to access a `BackendResource`
-### Using a custom response error
-AddressBusinessController
-case .network(.server(422, _)):
+After that, in our Service we would add a method to return a new `BackendResource`:
+``` swift
+static func requestDelivery() -> BackendResource<Address, Void, KongAuth> {
+    return BackendResource(
+        path: .api(.core, "/v1/cities/delivery"),
+        method: .POST
+    )
+}
+```
+
+Notice that we put `Address` as `Request` in `BackendResource`, but it is not actually used anywhere in the method, why is that? Remember that `BackendResource` is only a description of a network request and not its content. 
+
+This is why we define a new method and supply the actual `Address` object in the business controller:
+``` swift
+func requestDelivery(to address: Address) -> SignalProducer<Never, CoreError> {
+    let resource = CitiesService.requestDelivery()
+    return accessible.access(resource, with: address)
+}
+```
+
+Using a signal producer with the signature `<Never, CoreError>` is a common pattern to represent that the network request can either succeed or result in a network error of some sort.
+
+Notice that we are finally specifying the second parameter on `accessible.access(…)` to make a request with a body, which should match the `Request` type we defined on the `BackendResource` that is returned from the Service.
+
+### Create or modify a POST request body with Parser
+
+Now imagine that instead of supplying the address literally, we must now wrap it in a JSON dictionary. Clearly, it's a chore to define a wrapper type for `Address` only to specify a single key. Instead, we can take advantage that we can use `Parser` with requests as well as with responses.
+
+Our definition in the Service would now become:
+``` swift
+static func requestDelivery() -> BackendResource<Address, Void, KongAuth> {
+    return BackendResource(
+        path: .api(.core, "/v1/cities/delivery"),
+        method: .POST,
+        request: { address, _ in
+            return Parser.encode(["address": address])
+        }
+    )
+```
+
+The `BackendResource` signature stays the same but now, where does the `address` parameter come from in the `request` closure? Remember that the signature for the request handler is `(Request, JSONEncoder) -> Result<Data, CoreError>`, so this handler is instantiated with the object which is passed by e.g. `AuthenticatedAccessible` with its `access` method (see previous section).
+
+Using the request handler closure, we could even define the `Request` type on `BackendResource` as `Void` and still create a request body:
+``` swift
+static func obtainQuestions(query: String) -> BackendResource<Void, [Question], KongAuth> {
+    return BackendResource(
+        path: .api(.core, "/v1/questions"),
+        method: .POST,
+        request: { _, encoder in
+            Parser.encode(["question_query": query], encoder: encoder)
+        }
+    )
+}
+```
+
+In this made-up request we create the request body from scratch using the parameter we pass to the method on Service. Note that while it can be done for very simple requests, it's still preferable to define a separate type if there is more than one parameter, otherwise Service and Business Controller would become a spaghetti with multiple parameters passed through. As we discussed earlier, when a `Request` type is defined on `BackendResource`, we don't have to pass the object into the Service directly and it only exists in the business controller, which is much cleaner.
+
+Also note that while in this case we're using a built-in JSON encoder (passed into the request handler closure) we could define, like in one of the previous section, a custom `JSONEncoder` and configure it in the way we wanted, while not touching the `Request` type as, for example, it would need to be mapped differently elsewhere.
