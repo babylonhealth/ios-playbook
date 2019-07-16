@@ -1,4 +1,4 @@
-## Adopt SwiftGen for localisable strings
+## Adopt SwiftGen for localizable strings
 
 * Author: David Rodrigues
 * Review Manager: Danilo Aliberti
