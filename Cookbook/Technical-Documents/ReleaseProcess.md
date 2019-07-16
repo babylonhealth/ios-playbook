@@ -90,7 +90,7 @@ There are usually two release engineers working at any given time. It goes witho
    * See also the [Internal SDK Release Process](https://engineering.ops.babylontech.co.uk/docs/cicd-deployments/#mobile-sdk-releases-ios-android) for more info.
 1. Create PR and update the SDK changelog `SDK/CHANGELOG.md` to add the release version and date
    * this document will be distributed alongside the SDK and used to document changes to SDK consumers, so the list of changes here could be worded differently from the CHANGELOG used in the CRP ticket if necessary
-1. Trigger a hockey build from that branch using its command (eg. `/fastlane distribute_sdk_v2 version:0.5.0 branch:release/sdk/0.5.0`) in `#ios-build`.
+1. Trigger a hockey build from that branch using its command (eg. `/fastlane distribute_sdk version:0.5.0 branch:release/sdk/0.5.0`) in `#ios-build`.
 1. Update the Sample app to point to the latest SDK release and ensure it still compiles
 
 ## 4. Release calendar
