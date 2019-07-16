@@ -90,28 +90,29 @@ In this particular case I believe we could use both approaches actually.
 
 ### Mutating Current in `setUp()` but not restoring it in `tearDown()`
 
-Every object (susceptible to global mutation) that is mutated in `setUp()` must be restored in `tearDown()`.
+~~Every object (susceptible to global mutation) that is mutated in `setUp()` must be restored in `tearDown()`.~~
 
-Mutations in `Current` in particular are the prime suspects of a number of flaky tests that have been recently affecting our test suite. [While some mitigations have been implemented to minimize this problem](https://github.com/Babylonpartners/babylon-ios/pull/7806/files#diff-74895f4da31ec40d83d342bf612540b4R17), these are restricted to snapshot tests for the time being. Ideally, this solution should be extended to Unit and UI Test cases but that lies outside the scope of this proposal.
+~~Mutations in `Current` in particular are the prime suspects of a number of flaky tests that have been recently affecting our test suite. [While some mitigations have been implemented to minimize this problem](https://github.com/Babylonpartners/babylon-ios/pull/7806/files#diff-74895f4da31ec40d83d342bf612540b4R17), these are restricted to snapshot tests for the time being. Ideally, this solution should be extended to Unit and UI Test cases but that lies outside the scope of this proposal.~~
 
-Until that is implemented, we could alternatively monitor mutations in Current by counting the number of times Current is changed in the `setup()` and `tearDown()` methods. We would have to whitelist every test file with the exception of snapshot tests (see link above) using the regex `\b(?!Snapshot)(.*Tests)` and then use Danger to manually parse the test line-by-line.
+~~Until that is implemented, we could alternatively monitor mutations in Current by counting the number of times Current is changed in the `setup()` and `tearDown()` methods. We would have to whitelist every test file with the exception of snapshot tests (see link above) using the regex `\b(?!Snapshot)(.*Tests)` and then use Danger to manually parse the test line-by-line.~~
 
-1) Find the `setUp()` function inside the test file. If found, we would determine the boundaries of this function (by counting each time an open curly bracket appears and doing the reverse for closing curly brackets) and we'd use the following regexes to detect changes in Current: 
+~~1) Find the `setUp()` function inside the test file. If found, we would determine the boundaries of this function (by counting each time an open curly bracket appears and doing the reverse for closing curly brackets) and we'd use the following regexes to detect changes in Current:
     a) `Current\..*\ = `.
     b) `Current.changeTheme\(.*`
-    c) `Current.set\(.*`
+    c) `Current.set\(.*`~~
 
-2) Repeat step 1 but for `tearDown()` instead.
+~~2) Repeat step 1 but for `tearDown()` instead.~~
 
-3) Assess if the number of changes inside each function matches.
+~~3) Assess if the number of changes inside each function matches.
     a) if so, then no issue would be found
-    b) if not, then Current appeared to have been mutated but not restored; we'd issue a warning for the lines in which the algorithm detected a change and alert the developers in GitHub using Danger.
+    b) if not, then Current appeared to have been mutated but not restored; we'd issue a warning for the lines in which the algorithm detected a change and alert the developers in GitHub using Danger.~~
 
-Nevertheless, this rule is rather naïve because we have no actual way of detecting if Current was reset or not; it would merely indicate that in all likeliness the developer has forgotten to restore Current since the number of changes in both methods does not match.
-Additionally, there are plenty of cases through developers could modify Current and easily side-step this rule (eg: if the mutations and resets were made in auxiliar methods instead).
+~~Nevertheless, this rule is rather naïve because we have no actual way of detecting if Current was reset or not; it would merely indicate that in all likeliness the developer has forgotten to restore Current since the number of changes in both methods does not match.
+Additionally, there are plenty of cases through developers could modify Current and easily side-step this rule (eg: if the mutations and resets were made in auxiliar methods instead).~~
 
-As such, this approach is not a silver bullet or anything remotely similar; such a feature would require compiling and running the actual Swift code, not to mention that we'd have to make Current conform to Equatable.
+~~As such, this approach is not a silver bullet or anything remotely similar; such a feature would require compiling and running the actual Swift code, not to mention that we'd have to make Current conform to Equatable.~~
 
+This rule was rejected.
 
 ### Translation errors
 
