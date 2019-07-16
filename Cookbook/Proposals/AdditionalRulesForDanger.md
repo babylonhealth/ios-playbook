@@ -127,7 +127,7 @@ On the other hand:
 - we have no reliable way of mapping the association between each target and their respective strings
 - this process should be automated by using SwiftGen instead
 
-We would need to whitelist `Localizable.*\.swift` as well as the `Localizable.string` and its corresponding target-specific files in order to implement both rules.
+We would need to whitelist `Localizable.*\.swift` as well as the `Localizable.string` and its corresponding target-specific files (TargetSpecificLocalizable.strings) in order to implement both rules.
 
 
 ### Feedbacks must have the `when` prefix
