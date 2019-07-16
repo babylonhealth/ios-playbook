@@ -30,7 +30,7 @@ Rarely, but sometimes, we cannot use `BabylonBoxViewController`. I'd like to gui
 - The order of section may change in the article. I'd like to make this article about 1k words long. 
 - Naming of sections may be changed in the future (to sound better)
 - Sections marked as `(optional)` may be skipped if I find the article gets too big and overwhelming.
-- Once it's accepted by @simon & @rui I'll change the PR to be "draft" and I'm going to work on the article in this file below the `----`. Before the final merge I'm going to delete the outline.
+- Once it's accepted by @scass91 and @RuiAAPeres I'll change the PR to be "draft" and I'm going to work on the article in this file below the `----`. Before the final merge I'm going to delete the outline.
 --------------------------------------------------------------------------------------------------------------------------------
 # The Article:
 To be added... Stay tuned 😎
