@@ -16,6 +16,8 @@ GatewayManager supplies global dependencies to legacy Objective-C code. There wa
 | InsuranceViewController | Clinical Records | CNSMR-942 |
 | BBAddAdditionalPatientInformationViewControllerV2 | Clinical Records | Might be dead code but will be deleted as part of CNSMR-947 |
 
+Bento versions that use the design library are currently (July 2019) being worked. Some have been completed but are still under feature switches to be released.
+
 Some additional information about [BBAddAdditionalPatientInformationViewControllerV2](./BBAddAdditionalPatientInformationViewControllerV2.md)
 
 ## Free Standing Swift View Controllers that should be Moved to Bento.
@@ -26,10 +28,15 @@ Some additional information about [BBAddAdditionalPatientInformationViewControll
 | SegmentedViewController | Currently only used in Healthcheck to show the the two bands with organs and layers. Should probably be moved from BabylonUI. |
 | IntroViewController | Could potentially be merged with InfoViewController. |
 
+Both `InfoViewController` and `IntroViewController` can be deleted once the NHS on-boarding journey has been refactored, as of July 2019 this is work in progress.
+
 ## View Models and Controllers that use Forms V2.
 
 Forms V2 is no longer maintained and we should refactor these view controllers to use Bento.
 Porting these view controllers to Bento will also make it easier to apply an app wide style guide (design library).
+
+//TODO: Remove view controllers that have been completed.
+//TODO: Add a column describing the impact.
 
 | View Model | Comments |
 | ---------- | -------- |
@@ -59,9 +66,20 @@ Porting these view controllers to Bento will also make it easier to apply an app
 | NHSRegistrationStep1ViewController | NRX-361 |
 | NHSRegistrationStep2ViewController | NRX-186 |
 
+## Bento View Controllers that need to be Updated to use the Design Library.
+
+//TODO: Create a list of Bento view controllers that don't use the design library.
+
+## App Configuration files and Shared Content
+
+//TODO: Need to be updated in preparation for integrating product and feature configurator.
+
 ## Accessing Business Controllers Directly instead of using the SDK.
 
 Some of these business controllers are not defined inside the SDK. Most of them will be moved to the SDK, but some of them will stay in the Babylon project. Once the first, complete version of the SDK has been published there should not be any business controllers left in BabylonCore. Business controllers that are defined outside the SDK should have a documenting comment that explain why they are not part of the SDK.
+
+//TODO: Update this list.
+//TODO: Add a column describing the impact.
 
 | Business Controller | Accessed From |
 | ------------------- | ------------- |
@@ -115,3 +133,9 @@ Although much improved since version two was released, there is still a fair amo
 ## Adapt the Code to Employ Current.
 
 Entities that have been moved to Current are still accessed via `AppDependencies`. Our agreed approach was to inject entities from Current into builder initialisers as default arguments. Before we extend Current to include more app wide content we should refactor how what is already available is accessed.
+
+// TODO: Has this been completed?
+
+## Move Babylon UK Specific Code from the Main Project.
+
+//TODO: Is there anything more than the NHS stuff?
