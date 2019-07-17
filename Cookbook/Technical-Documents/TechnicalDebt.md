@@ -8,7 +8,7 @@ Technical debt and legacy code has a sad tendency to build up in any software pr
 GatewayManager supplies global dependencies to legacy Objective-C code. There was plenty of code in version one and two of the Babylon app that relied heavily on singletons.
 
 | Objective-C view Controllers | Location | JIRA Tickets | Comments |
-| ---------------------------- | ---------| -------- | |
+| ---------------------------- | ---------| -------- | -------- |
 | BillingInformationViewController | Clinical Records | CNSMR-930 | |
 | EditMembershipCodeViewController | Clinical Records | CNSMR-934 | |
 | MembershipTableViewController | Me Tab | CNSMR-926 | |
