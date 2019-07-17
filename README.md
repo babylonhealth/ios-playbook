@@ -77,7 +77,7 @@ By definition, members work on their respective squad, although they are free to
 | Tests and Kits                | Michal                               |    1/1       | [#test-and-kits](https://babylonhealth.slack.com/messages/CGCDJA8CD) |
 | Triage UI                     | Michael, Danilo                      |    2/2       | [#squad_triage_ui](https://babylonhealth.slack.com/archives/CE6H6SLRX) |
 | Women's Health                | Anil                                 |    1/1       | [#womenshealthteam](https://babylonhealth.slack.com/archives/CFX73S4P5) |
-| US Professional Services      | Greg, Sam, Patrick                   |    3/3       | |
+| US Professional Services      | Greg, Sam, Patrick                   |    3/3       | [#us-engineering](https://babylonhealth.slack.com/archives/CEE6CD37E) |
 
 
 ## 3. OSS-maintained projects
