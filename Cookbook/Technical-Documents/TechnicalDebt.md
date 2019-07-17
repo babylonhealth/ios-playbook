@@ -7,14 +7,14 @@ Technical debt and legacy code has a sad tendency to build up in any software pr
 
 GatewayManager supplies global dependencies to legacy Objective-C code. There was plenty of code in version one and two of the Babylon app that relied heavily on singletons.
 
-| Objective-C view Controllers | Location | Comments |
-| ---------------------------- | ---------| -------- |
-| BillingInformationViewController | Clinical Records | CNSMR-930 |
-| EditMembershipCodeViewController | Clinical Records | CNSMR-934 |
-| MembershipTableViewController | Me Tab | CNSMR-926 |
-| SurveyViewController | Clinical Records | CNSMR-937 |
-| InsuranceViewController | Clinical Records | CNSMR-942 |
-| BBAddAdditionalPatientInformationViewControllerV2 | Clinical Records | Might be dead code but will be deleted as part of CNSMR-947 |
+| Objective-C view Controllers | Location | JIRA Tickets | Comments |
+| ---------------------------- | ---------| -------- | |
+| BillingInformationViewController | Clinical Records | CNSMR-930 | |
+| EditMembershipCodeViewController | Clinical Records | CNSMR-934 | |
+| MembershipTableViewController | Me Tab | CNSMR-926 | |
+| SurveyViewController | Clinical Records | CNSMR-937 | |
+| InsuranceViewController | Clinical Records | CNSMR-942 | |
+| BBAddAdditionalPatientInformationViewControllerV2 | Clinical Records | | Might be dead code but will be deleted as part of CNSMR-947 |
 
 Bento versions that use the design library are currently (July 2019) being worked. Some have been completed but are still under feature switches to be released.
 
@@ -36,39 +36,106 @@ Forms V2 is no longer maintained and we should refactor these view controllers t
 Porting these view controllers to Bento will also make it easier to apply an app wide style guide (design library).
 
 //TODO: Remove view controllers that have been completed.
-//TODO: Add a column describing the impact.
 
-| View Model | Comments |
-| ---------- | -------- |
-| AppointmentCancellationViewModel | CNSMR-950, CNSMR-951 |
-| AppointmentConsultationNotesViewModel | CNSMR-952, CNSMR-953 |
-| AppointmentDetailsViewModel | CNSMR-954, CNSMR-955 |
-| AppointmentNotesViewModel | CNSMR-956, CNSMR-957 |
-| AppointmentPrescriptionViewModel | CE-30 |
-| AppointmentReferralViewModel | CNSMR-958, CNSMR-959 |
-| AppointmentReferralsViewModel | CNSMR-960, CNSMR-961 |
-| AppointmentReplayViewModel | CNSMR-962, CNSMR-963 |
-| AppointmentListViewModel | CNSMR-964, CNSMR-965 |
-| BookAppointmentViewModel | CNSMR-966, CNSMR-967 |
-| PractitionerDetailsViewModel | CNSMR-968, CNSMR-969 |
-| ChatHistoryViewModel | CNSMR-970, CNSMR-971 |
-| MedicalHistoryViewModel | CNSMR-972, CNSMR-973 |
-| PersonalDetailsViewModel | CNSMR-974, CNSMR-975 |
-| InfoItemsViewModel | CNSMR-976, CNSMR-977 |
-| GPDetailsViewModel | CNSMR-978, CNSMR-979 |
-| AddAddressViewModel | CNSMR-980, CNSMR-981 |
-| PrivacySettingsViewModel | AV-334 |
-| ChooseCountryViewModel | AV-338 |
-| ForgotPasswordViewModel | CNSMR-904 |
-| NotificationsViewModel | AV-342 |
-| ProfileViewModel | AV-340 |
-| SignInViewModel | AV-332 |
-| NHSRegistrationStep1ViewController | NRX-361 |
-| NHSRegistrationStep2ViewController | NRX-186 |
+| View Model | JIRA tickets | Code Ownership | Comments |
+| ---------- | -------- | -------- | -------- |
+| AppointmentCancellationViewModel | CNSMR-950, CNSMR-951 | | |
+| AppointmentConsultationNotesViewModel | CNSMR-952, CNSMR-953 | | |
+| AppointmentDetailsViewModel | CNSMR-954, CNSMR-955 | | |
+| AppointmentNotesViewModel | CNSMR-956, CNSMR-957 | | |
+| AppointmentPrescriptionViewModel | CE-30 | | |
+| AppointmentReferralViewModel | CNSMR-958, CNSMR-959 | | |
+| AppointmentReferralsViewModel | CNSMR-960, CNSMR-961 | | |
+| AppointmentReplayViewModel | CNSMR-962, CNSMR-963 | | |
+| AppointmentListViewModel | CNSMR-964, CNSMR-965 | | |
+| BookAppointmentViewModel | CNSMR-966, CNSMR-967 | | |
+| PractitionerDetailsViewModel | CNSMR-968, CNSMR-969 | | |
+| ChatHistoryViewModel | CNSMR-970, CNSMR-971 | | |
+| MedicalHistoryViewModel | CNSMR-972, CNSMR-973 | | |
+| PersonalDetailsViewModel | CNSMR-974, CNSMR-975 | | |
+| InfoItemsViewModel | CNSMR-976, CNSMR-977 | | |
+| GPDetailsViewModel | CNSMR-978, CNSMR-979 | | |
+| AddAddressViewModel | CNSMR-980, CNSMR-981 | | |
+| PrivacySettingsViewModel | AV-334 | | |
+| ChooseCountryViewModel | AV-338 | | |
+| ForgotPasswordViewModel | CNSMR-904 | | |
+| NotificationsViewModel | AV-342 | | |
+| ProfileViewModel | AV-340 | | |
+| SignInViewModel | AV-332 | | |
+| NHSRegistrationStep1ViewController | NRX-361 | | |
+| NHSRegistrationStep2ViewController | NRX-186 | | |
 
 ## Bento View Controllers that need to be Updated to use the Design Library.
 
-//TODO: Create a list of Bento view controllers that don't use the design library.
+`Bento` and its component library `BentoKit` predates the design library. Consequenly there are a number of `BoxRenderer` classes that need to be refactored to employ the design library.
+
+### Renderers that do not employ the design library
+
+| Renderer | JIRA tickets | Code Ownership | Comments |
+| ---------- | -------- | -------- |  -------- |
+| PrescriptionRenderer | | | |
+| PrescriptionDeliveryOptionsRenderer | | | |
+| ChatMenuRenderer | | | |
+| SymptomSelectorRenderer | | | |
+| MessageReportRenderer | | | |
+| PGMConditionDetailsRenderer | | | |
+| PGMConditionDetailsRenderer | | | |
+| ClinicalRecordsRenderer | | | |
+| PGMReportRenderer | | | |
+| GPAtHandDetailsRenderer | | | |
+| PharmaciesRenderer | | | |
+| ClinicalRecordsRenderer | | | |
+| MetricDetailsRenderer | | | |
+| QuestionnaireRenderer | | | |
+| UserFeedbackRatingRenderer | | | |
+| MapSearchResultsRenderer | | | |
+| PlaceListRenderer | | | |
+| ChooseAssessmentRenderer | | | |
+| DetailRenderer | | | |
+| HealthOverviewRenderer | | | |
+| RiskSortMenuRenderer | | | |
+| DiseaseRisksRenderer | | | |
+| ActionsRenderer | | | |
+| AdditionalInfoFormRenderer | | | |
+| RatingRenderer | | | |
+| ChooseStateRenderer | | | |
+| AddressListRenderer | | | |
+| ShopConfirmationRenderer | | | |
+| ChooseProviderRenderer | | | |
+| PaymentPlansRenderer | | | |
+| SubscriptionConfirmationRenderer | | | |
+| SubscriptionsRenderer | | | |
+| EligibilityCheckRenderer | | | |
+| NHSSwitchV2Renderer | | | |
+| NHSConfirmationSwitchRenderer | | | |
+| NHSSummaryRenderer | | | |
+| NotificationsV2Renderer | | | |
+| PaymentRenderer | | | |
+| AddCardRenderer | | | |
+| ChoosePaymentMethodRenderer | | | |
+| TestsAndKitsKitsInfoRenderer | | | |
+| ChooseSponsorRenderer | | | |
+
+### Helpers that are not using the design library
+
+| Renderer | JIRA tickets | Code Ownership | Comments |
+| ---------- | -------- | -------- |  -------- |
+| InfoRendererV2 | | | |
+| RichTextRenderer | | | Uses both the design library and `BentoKit` |
+| GetStartedRenderer | | | Uses both the design library and `BentoKit` |
+| IntroductionRenderer  | | | Uses both the design library and `BentoKit` |
+
+### Renderers that mixes the design library with BentoKit
+
+Direct references to `BentoKit` components are probably left overs from porting the renderer to use the design library.
+
+| Renderer | JIRA tickets | Code Ownership | Comments |
+| ---------- | -------- | -------- |  -------- |
+| ManageSyncRenderer | | | |
+| DashboardRenderer | | | |
+| NHSOnboardingV2Renderer | | | |
+| NHSRegistrationStep1V2Renderer | | | |
+| TestsAndKitsDetailRenderer | | | |
 
 ## App Configuration files and Shared Content
 
