@@ -8,11 +8,13 @@
 
 ### Creating a new test case
 
-To create a test case for a view model use an Xcode template called `BentoViewModelTests` and provide the view model name (without `ViewModel` suffix). This template will create a basic structure for the test case that you will need to adjust to your specific implementation.
+To create a test case for a view model use the Xcode template `BentoViewModelTests` and provide the view model name (without `ViewModel` suffix). This template will create a basic structure for the test case that you will need to adjust to your specific implementation.
+
+E.g: your feature is called `MyFeature` and it has a `MyFeatureViewModel`. You just need to name the file `MyFeature`, the template will automatically add the proper suffix making it `MyFeatureViewModelTests`.
 
 ### Writing a test
 
-When implementing a test use `perform(stub:when:assert:)` herlper method from `BabylonTestUtilities`.
+When implementing a test use the `perform(stub:when:assert:)` helper method from `BabylonTestUtilities`.
 
 Example:
 
