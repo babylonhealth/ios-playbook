@@ -102,7 +102,7 @@ extension SnowplowTracker {
 
 ## Unit tests for Snowplow events
 
-Use `MockSnowplowTrackingEnvironment` to accumulate all the tracking events, and then compare them using `[AnyEquatble]` array as shown below:
+Use `MockSnowplowTrackingEnvironment` to accumulate all the tracking events, and then compare them using `[AnyEquatable]` array as shown below:
 
 ```swift
 class AchievementUnlockedEventTests: XCTestCase {
