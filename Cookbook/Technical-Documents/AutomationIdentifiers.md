@@ -94,17 +94,7 @@ Note that you may need to set the identifier on the cell itself rather than its 
 
 It is also preferable to always use `.matching(.cell, identifier: …).firstMatch` rathen than a subscript (`[…]`) as the subscript variant only expects a single match. If, for some reason, there are several, it will throw an error.
 
-### Taking advantage of ScreenNaming for screen identifiers
-
-The fact that view models conform to `ScreenNaming` for analytics tracking can be used in automation, because e.g. `BabylonBoxViewController` automatically sets the screen's accessibility identifier to the view model's `screenName`:
-
-``` swift
-if let screenName = (viewModel as? ScreenNaming)?.screenName, view.accessibilityIdentifier == nil {
-    view.accessibilityIdentifier = screenName
-}
-```
-
-However, we should not be using the enums from the analytics namespace directly, as they serve a different purpose, unlike entries in `AccessibilityContent` that are used specifically for accessibility. Still, these identifiers are more stable than relying on copy. If there are other implementations of a screen not using Bento, the accessibility identifier can be set manually on the view controller to match the Bento version.
+### Using identifiers to find screens
 
 A common pattern for a screen is to define its title in a `NavigationBars` enum and check for that:
 
@@ -121,20 +111,40 @@ class NotificationsScreen: BaseScreen {
 }
 ```
 
-Instead, we define a `ScreenName` enum with the screen's accessibility identifier and modify the `isScreenDisplayed` function to search for it:
+Instead, we can define the screen identifier in `AccessibilityContent`…
+``` swift
+public enum AccessibilityContent {
+    public enum Notifications: String {
+        case screenName = "notificationsScreen"
+    }
+}
+```
+
+…and then set it as an accessibility identifier on the `Screen` in our `Renderer`:
+``` swift
+func render(state: State) -> Screen<SectionID, NodeID> {
+    return Screen(
+        title: localization.title,
+        …
+        accessibilityIdentifier: AccessibilityContent.Notifications.screenName.rawValue
+    )
+}
+```
+
+This identifier is then set either on the table or collection view (rather than the root view), depending on which flavour of the `BoxViewController` we are using for rendering the screen.
+
+Now we can modify the `isScreenDisplayed` function to search for it:
 
 ``` swift
 class NotificationsScreen: BaseScreen {
-    fileprivate enum ScreenName {
-        case notifications = "notifications/overview"
-    }
-
     func isScreenDisplayed() -> Bool {
-        let header = app.otherElements[ScreenName.notifications]
+        let header = app.tables[AccessibilityContent.Notifications.screenName.rawValue]
         return tryWait(for: header, with: .exists, timeout: waitToLoad)
     }
 }
 ```
+
+We are using subscript access here rather than `.matching(…)` because we only expect one instance of the screen's identifier present at one time.
 
 ### Updating Queries
 
@@ -160,4 +170,4 @@ For example in the registration screen I would recommend the following for the "
 - **"letsGo"**
 
 However for the first name field as this is present in multiple screens I would use:
-- **"registerFirstName"**
+    - **"registerFirstName"**
