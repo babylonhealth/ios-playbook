@@ -24,7 +24,7 @@ Some additional information about [BBAddAdditionalPatientInformationViewControll
 
 | View Controller | Comments |
 | --------------- | -------- |
-| InfoViewController | Could be replaced with a Bento Component for scrolling through a couple of info screens. Only used for the GP @ hand on-boarding so could be moved from BabylonUI. |
+| InfoViewController | Could be replaced with a Bento Component for scrolling through a couple of info screens. Only used for the GP @ hand on-boarding so could be moved from BabylonUI. Used when `isV4IDVerificationEnabled == false`|
 | SegmentedViewController | Currently only used in Healthcheck to show the the two bands with organs and layers. Should probably be moved from BabylonUI. |
 | IntroViewController | Could potentially be merged with InfoViewController. |
 
@@ -47,7 +47,7 @@ Porting these view controllers to Bento will also make it easier to apply an app
 | AppointmentReferralViewModel | CNSMR-958, CNSMR-959 | | |
 | AppointmentReferralsViewModel | CNSMR-960, CNSMR-961 | | |
 | AppointmentReplayViewModel | CNSMR-962, CNSMR-963 | | |
-| AppointmentListViewModel | CNSMR-964, CNSMR-965 | | |
+| AppointmentListViewModel | CNSMR-964, CNSMR-965 | | Used when `isNewAppointmentsEnabled == false`|
 | BookAppointmentViewModel | CNSMR-966, CNSMR-967 | | |
 | PractitionerDetailsViewModel | CNSMR-968, CNSMR-969 | | |
 | ChatHistoryViewModel | CNSMR-970, CNSMR-971 | | |
@@ -58,12 +58,13 @@ Porting these view controllers to Bento will also make it easier to apply an app
 | AddAddressViewModel | CNSMR-980, CNSMR-981 | | |
 | PrivacySettingsViewModel | AV-334 | | |
 | ChooseCountryViewModel | AV-338 | | |
-| ForgotPasswordViewModel | CNSMR-904 | | |
-| NotificationsViewModel | AV-342 | | |
-| ProfileViewModel | AV-340 | | |
-| SignInViewModel | AV-332 | | |
-| NHSRegistrationStep1ViewController | NRX-361 | | |
-| NHSRegistrationStep2ViewController | NRX-186 | | |
+| ForgotPasswordViewModel | CNSMR-904 | | Used when `isNewForgotPasswordEnabled == false` |
+| NotificationsViewModel | AV-342 | | Used when `isNewNotificationsEnabled == false` |
+| SignInViewModel | AV-332 | | Used when `isNewSigninEnabled == false`|
+| NHSRegistrationStep1ViewController | NRX-361 | | Used when `isV4NHSRegistrationStep1And2Enabled == false` |
+| NHSRegistrationStep2ViewController | NRX-186 | | Used when `isV4NHSRegistrationStep1And2Enabled == false` |
+| RedemptionViewModel | CNSMR-921 | | Used when `isNewRedemptionEnabled ==false ` |
+| OnboardingViewModel | AV-118 | | Used when `isNewWelcomeScreenEnabled == false` |
 
 ## Bento View Controllers that need to be Updated to use the Design Library.
 
@@ -110,7 +111,7 @@ Porting these view controllers to Bento will also make it easier to apply an app
 | NHSConfirmationSwitchRenderer | | | |
 | NHSSummaryRenderer | | | |
 | NotificationsV2Renderer | | | |
-| PaymentRenderer | | | |
+| PaymentRenderer | | | Used when `isNewPaymentsAvailable == false` |
 | AddCardRenderer | | | |
 | ChoosePaymentMethodRenderer | | | |
 | TestsAndKitsKitsInfoRenderer | | | |
