@@ -67,7 +67,7 @@ By definition, members work on their respective squad, although they are free to
 | Condition Management          | Catarina, João                              |    2/2       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) |
 | Consultation                  | Ilya, Adrian, Chitra                        |    3/2       | |
 | Core Experience               | Sergey, Yuri                                |    2/2       | [#core-exp-squad](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
-| Early Feedback                | Danilo                                      |    1/1       | [#early_feedback](https://babylonhealth.slack.com/messages/CLGA76GG7) |
+| Early Feedback                | Danilo                                      |    1/1       | [#early_feedback](https://babylonhealth.slack.com/archives/CLGA76GG7) |
 | Enrolment and Integrity       | Diego                                       |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Healthcheck                   | Ben, Julien                                 |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
 | Monitor                       | Anders, Joshua, Nicola                      |    3/3       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
@@ -75,7 +75,7 @@ By definition, members work on their respective squad, although they are free to
 | Prescriptions                 | Adam, Konrad                                |    2/2       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
 | Professional Services         | Simon                                       |    1/3       | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
 | SDK                           | Viorel                                      |    1/3       | [#sdk_squad](https://babylonhealth.slack.com/archives/CC5JNDGJJ) |
-| Tests & Kits                  | Michal                                      |    1/1       | [#test-and-kits](https://babylonhealth.slack.com/messages/CGCDJA8CD) |
+| Tests & Kits                  | Michal                                      |    1/1       | [#test-and-kits](https://babylonhealth.slack.com/archives/CGCDJA8CD) |
 | Triage                        | Michael                                     |    1/1       | [#triage](https://babylonhealth.slack.com/messages/CE6H6SLRX) |
 | US Professional Services      | Greg, Sam, Patrick                          |    3/3       | [#us-engineering](https://babylonhealth.slack.com/archives/CEE6CD37E) |
 | Women's Health                | Anil                                        |    1/1       | [#womenshealthteam](https://babylonhealth.slack.com/archives/CFX73S4P5) |
