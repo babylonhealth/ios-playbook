@@ -61,23 +61,23 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 By definition, members work on their respective squad, although they are free to work in different squads if the work load justifies it.
 
 
-| Squad Name                    | Members                              | Availability | Public slack channel |
-|-------------------------------|--------------------------------------| ------------ | -------------------- |
-| SDK                           | Viorel, Simon                        |    2/3       | [#sdk_squad](https://babylonhealth.slack.com/archives/CC5JNDGJJ) |
-| Consultation                  | Ilya, Adrian                         |    2/2       | |
-| Booking                       | Witold                               |    1/1       | |
-| Prescriptions                 | Adam, Konrad                         |    2/2       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
-| Healthcheck                   | Ben, Catarina, Julien                |    3/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
-| Native/Core                   | Giorgos, Jason, Martin, Inami, Emese |    5/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
-| Professional Services         | Chitra                               |    1/3       | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
-| Enrolment and Integrity       | Diego                                |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
-| Core Experience               | Sergey, Yuri                         |    2/2       | [#core-experience](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
-| Health Management             | David, João                          |    2/2       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) |
-| Monitor                       | Anders, Joshua, Nicola               |    3/3       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
-| Tests and Kits                | Michal                               |    1/1       | [#test-and-kits](https://babylonhealth.slack.com/messages/CGCDJA8CD) |
-| Triage UI                     | Michael, Danilo                      |    2/2       | [#squad_triage_ui](https://babylonhealth.slack.com/archives/CE6H6SLRX) |
-| Women's Health                | Anil                                 |    1/1       | [#womenshealthteam](https://babylonhealth.slack.com/archives/CFX73S4P5) |
-| US Professional Services      | Greg, Sam, Patrick                   |    3/3       | [#us-engineering](https://babylonhealth.slack.com/archives/CEE6CD37E) |
+| Squad Name                    | Members                                     | Availability | Public slack channel |
+|-------------------------------|---------------------------------------------| ------------ | -------------------- |
+| Booking                       | Witold                                      |    1/1       | |
+| Condition Management          | Catarina, João                              |    2/2       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) |
+| Consultation                  | Ilya, Adrian, Chitra                        |    3/2       | |
+| Core Experience               | Sergey, Yuri                                |    2/2       | [#core-experience](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
+| Enrolment and Integrity       | Diego                                       |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
+| Healthcheck                   | Ben, Julien                                 |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
+| Monitor                       | Anders, Joshua, Nicola                      |    3/3       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
+| Native Apps                   | Giorgos, Jason, Martin, Inami, Emese, David |    6/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
+| Prescriptions                 | Adam, Konrad                                |    2/2       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
+| Professional Services         | Simon                                       |    1/3       | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
+| SDK                           | Viorel                                      |    1/3       | [#sdk_squad](https://babylonhealth.slack.com/archives/CC5JNDGJJ) |
+| Tests & Kits                  | Michal                                      |    1/1       | [#test-and-kits](https://babylonhealth.slack.com/messages/CGCDJA8CD) |
+| Triage UI                     | Michael, Danilo                             |    2/2       | [#squad_triage_ui](https://babylonhealth.slack.com/archives/CE6H6SLRX) |
+| US Professional Services      | Greg, Sam, Patrick                          |    3/3       | [#us-engineering](https://babylonhealth.slack.com/archives/CEE6CD37E) |
+| Women's Health                | Anil                                        |    1/1       | [#womenshealthteam](https://babylonhealth.slack.com/archives/CFX73S4P5) |
 
 
 ## 3. OSS-maintained projects
