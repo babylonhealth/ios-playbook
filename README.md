@@ -75,7 +75,8 @@ By definition, members work on their respective squad, although they are free to
 | Professional Services         | Simon                                       |    1/3       | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
 | SDK                           | Viorel                                      |    1/3       | [#sdk_squad](https://babylonhealth.slack.com/archives/CC5JNDGJJ) |
 | Tests & Kits                  | Michal                                      |    1/1       | [#test-and-kits](https://babylonhealth.slack.com/messages/CGCDJA8CD) |
-| Triage UI                     | Michael, Danilo                             |    2/2       | [#squad_triage_ui](https://babylonhealth.slack.com/archives/CE6H6SLRX) |
+| Triage                        | Michael                                     |    1/1       | [#triage](https://babylonhealth.slack.com/messages/CE6H6SLRX) |
+| Early Feedback                | Danilo                                      |    1/1       | [#early_feedback](https://babylonhealth.slack.com/messages/CLGA76GG7) |
 | US Professional Services      | Greg, Sam, Patrick                          |    3/3       | [#us-engineering](https://babylonhealth.slack.com/archives/CEE6CD37E) |
 | Women's Health                | Anil                                        |    1/1       | [#womenshealthteam](https://babylonhealth.slack.com/archives/CFX73S4P5) |
 
