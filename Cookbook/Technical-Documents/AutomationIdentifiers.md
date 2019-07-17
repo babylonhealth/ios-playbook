@@ -85,12 +85,14 @@ After this identifier has been set on a control, we can `import BabylonDependenc
 
 ``` swift
 let promofield = app.tables
-    .cells[AccessibilityContent.PromoCode.codeCell]
+    .matching(.cell, identifier: AccessibilityContent.PromoCode.codeCell)
     .textFields
     .firstMatch
 ```
 
-Note that the identifier is usually set on the cell itself rather than its internal components, as automation has problems finding elements otherwise.
+Note that you may need to set the identifier on the cell itself rather than its internal components, as automation may have problems finding elements otherwise.
+
+It is also preferable to always use `.matching(.cell, identifier: …).firstMatch` rathen than a subscript (`[…]`) as the subscript variant only expects a single match. If, for some reason, there are several, it will throw an error.
 
 ### Taking advantage of ScreenNaming for screen identifiers
 
