@@ -170,4 +170,4 @@ For example in the registration screen I would recommend the following for the "
 - **"letsGo"**
 
 However for the first name field as this is present in multiple screens I would use:
-    - **"registerFirstName"**
+- **"registerFirstName"**
