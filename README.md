@@ -65,13 +65,14 @@ By definition, members work on their respective squad, although they are free to
 |-------------------------------|---------------------------------------------| ------------ | -------------------- |
 | Booking                       | Witold                                      |    1/1       | |
 | Condition Management          | Catarina, João                              |    2/2       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) |
-| Consultation                  | Ilya, Adrian, Chitra                        |    3/2       | |
+| Consultation                  | Adrian, Chitra                              |    2/2       | |
 | Core Experience               | Sergey, Yuri                                |    2/2       | [#core-exp-squad](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
+| Dev Experience                | Ilya, Olivier, David                        |    3/3       | |
 | Early Feedback                | Danilo                                      |    1/1       | [#early_feedback](https://babylonhealth.slack.com/archives/CLGA76GG7) |
 | Enrolment and Integrity       | Diego                                       |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Healthcheck                   | Ben, Julien                                 |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
 | Monitor                       | Anders, Joshua, Nicola                      |    3/3       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
-| Native Apps                   | Giorgos, Jason, Martin, Inami, Emese, David |    6/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
+| Native Apps                   | Giorgos, Jason, Martin, Inami, Emese        |    6/6       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
 | Prescriptions                 | Adam, Konrad                                |    2/2       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
 | Professional Services         | Simon                                       |    1/3       | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
 | SDK                           | Viorel                                      |    1/3       | [#sdk_squad](https://babylonhealth.slack.com/archives/CC5JNDGJJ) |
