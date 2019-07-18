@@ -16,7 +16,7 @@ GatewayManager supplies global dependencies to legacy Objective-C code. There wa
 | InsuranceViewController | Clinical Records | CNSMR-942 | |
 | BBAddAdditionalPatientInformationViewControllerV2 | Clinical Records | | Might be dead code but will be deleted as part of CNSMR-947 |
 
-Bento versions that use the design library are currently (July 2019) being worked. Some have been completed but are still under feature switches to be released.
+Bento versions that use the design library are currently (July 2019) being worked on. Some have been completed but are still under feature switches.
 
 Some additional information about [BBAddAdditionalPatientInformationViewControllerV2](./BBAddAdditionalPatientInformationViewControllerV2.md)
 
@@ -204,8 +204,10 @@ Work has been carried out to access common content through `Current` instead of 
 
 `VisualDependencies` consists of four parts, `appColors`, `brandColors`, `brandGlobalDefaults` and `styles`. Accessing `appColors` throgh visual dependenies is deprecated in favour of using the design library. Serving the content in `brandGlobalDefaults` via the design library is expected to be straightforward. How `brandColors` should be handled is a non-trival question that is also related to planned services for app and feature configuration.
 
-The last, `styles`, serves look and feel for `Forms` and `FormsV2` and is not needed by the design library. It will thus be dead code once the refactoring to NVL has been completed. 
+The last, `styles`, serves look and feel for `Forms` and `FormsV2` and is not needed by the design library. It will thus be dead code once the refactoring to NVL has been completed.
 
 ## Move Babylon UK Specific Code from the Main Project.
 
-//TODO: Is there anything more than the NHS stuff?
+Currently a lot of the code for handling the NHS registration process and other GP @ Hand related tasks recide in the main app target. There are also some NHS related entities in the `BabylonClinicalRecordsUI` project. NHS related code is obviously not needed for Telus, US or KSA needs to be moved to the `BabylonNHS` project. Before moving some the project initialisations need to be changed to receive either instances or factory methods for business controllers and child builders.
+
+It must be noted that moving NHS related code will be easier to do once the refactoring to employ the design library has been completed. This is currently (July 2019) work in progress.
