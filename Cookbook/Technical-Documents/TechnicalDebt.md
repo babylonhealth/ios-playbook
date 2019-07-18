@@ -103,7 +103,7 @@ Porting these view controllers to Bento will also make it easier to apply an app
 | AddressListRenderer | | | |
 | ShopConfirmationRenderer | | | |
 | ChooseProviderRenderer | | | |
-| PaymentPlansRenderer | | | |
+| PaymentPlansRenderer | CNSMR-1739 | Native Apps | |
 | SubscriptionConfirmationRenderer | | | |
 | SubscriptionsRenderer | | | |
 | EligibilityCheckRenderer | | | |
