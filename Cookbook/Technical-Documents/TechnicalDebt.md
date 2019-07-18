@@ -198,11 +198,13 @@ Some of these business controllers are not defined inside the SDK. Most of them 
 
 Although much improved since version two was released, there is still a fair amount of confusing legacy code left in the tab bar flow controller and associated builders. Now that all content has been refactored to be based on reactive functional programming, flow controllers and builders it is possible to align `ExchangeableTabBarBuilder` and `TabContentBuilder` entities to follow our general design pattern. For historical reasons some flow controllers acts have logic for building view controllers. The `BabylonTabBarViewModel` should be able to forward all routing events to the appropriate flow controller. Some networking logic should be removed from `BabylonTabBarViewModel`. These deviations from our standard architecture makes it difficult to understand the code and changes often result in long and confusing discussions.
 
-## Adapt the Code to Employ Current.
+## Retire VisualDependencies and AppDependencies.
 
-Entities that have been moved to Current are still accessed via `AppDependencies`. Our agreed approach was to inject entities from Current into builder initialisers as default arguments. Before we extend Current to include more app wide content we should refactor how what is already available is accessed.
+Work has been carried out to access common content through `Current` instead of `AppDependencies`. The only entity that currently (July 2019) remains in `AppDependencies` is `VisualDependencies`. This has proven to be a tricky thing to move refactor. Most of the `VisualDependencies` is UI related and should thus not be defined in `BabylonDependencies`.
 
-// TODO: Has this been completed?
+`VisualDependencies` consists of four parts, `appColors`, `brandColors`, `brandGlobalDefaults` and `styles`. Accessing `appColors` throgh visual dependenies is deprecated in favour of using the design library. Serving the content in `brandGlobalDefaults` via the design library is expected to be straightforward. How `brandColors` should be handled is a non-trival question that is also related to planned services for app and feature configuration.
+
+The last, `styles`, serves look and feel for `Forms` and `FormsV2` and is not needed by the design library. It will thus be dead code once the refactoring to NVL has been completed. 
 
 ## Move Babylon UK Specific Code from the Main Project.
 
