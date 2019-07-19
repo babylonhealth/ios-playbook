@@ -35,21 +35,19 @@ Both `InfoViewController` and `IntroViewController` can be deleted once the NHS 
 Forms V2 is no longer maintained and we should refactor these view controllers to use Bento.
 Porting these view controllers to Bento will also make it easier to apply an app wide style guide (design library).
 
-//TODO: Remove view controllers that have been completed.
-
 | View Model | JIRA tickets | Code Ownership | Comments |
 | ---------- | -------- | -------- | -------- |
-| AppointmentCancellationViewModel | CNSMR-950, CNSMR-951 | | |
-| AppointmentConsultationNotesViewModel | CNSMR-952, CNSMR-953 | | |
-| AppointmentDetailsViewModel | CNSMR-954, CNSMR-955 | | |
-| AppointmentNotesViewModel | CNSMR-956, CNSMR-957 | | |
-| AppointmentPrescriptionViewModel | CE-30 | | |
-| AppointmentReferralViewModel | CNSMR-958, CNSMR-959 | | |
-| AppointmentReferralsViewModel | CNSMR-960, CNSMR-961 | | |
-| AppointmentReplayViewModel | CNSMR-962, CNSMR-963 | | |
-| AppointmentListViewModel | CNSMR-964, CNSMR-965 | | Used when `isNewAppointmentsEnabled == false`|
-| BookAppointmentViewModel | CNSMR-966, CNSMR-967 | | |
-| PractitionerDetailsViewModel | CNSMR-968, CNSMR-969 | | |
+| AppointmentCancellationViewModel | ~CNSMR-950, CNSMR-951~ | Booking/Native Apps | Will be retired once the iOS part of CNSMR-1737 has been completed. |
+| AppointmentConsultationNotesViewModel | ~CNSMR-952, CNSMR-953~ | Booking/Native Apps | Will be retired once the iOS part of CNSMR-1737 has been completed. |
+| AppointmentDetailsViewModel | ~CNSMR-954, CNSMR-955~ | Booking/Native Apps | Will be retired once the iOS part of CNSMR-1737 has been completed. |
+| AppointmentNotesViewModel | ~CNSMR-956, CNSMR-957~ | Booking/Native Apps | Will be retired once the iOS part of CNSMR-1737 has been completed. |
+| AppointmentPrescriptionViewModel | ~CE-30~ | Booking/Native Apps | Will be retired once the iOS part of CNSMR-1737 has been completed. |
+| AppointmentReferralViewModel | ~CNSMR-958, CNSMR-959~ | Booking/Native Apps | Will be retired once the iOS part of CNSMR-1737 has been completed. |
+| AppointmentReferralsViewModel | ~CNSMR-960, CNSMR-961~ | Booking/Native Apps | Will be retired once the iOS part of CNSMR-1737 has been completed. |
+| AppointmentReplayViewModel | ~CNSMR-962, CNSMR-963~ | Booking/Native Apps | Will be retired once the iOS part of CNSMR-1737 has been completed. |
+| AppointmentListViewModel | ~CNSMR-964, CNSMR-965~ | Booking/Native Apps | Used when `isNewAppointmentsEnabled == false`. Will be retired once the iOS part of CNSMR-1737 has been completed. |
+| BookAppointmentViewModel | ~CNSMR-966, CNSMR-967~ | Booking/Native Apps | Will be retired once the iOS part of CNSMR-1737 has been completed. |
+| PractitionerDetailsViewModel | ~CNSMR-968, CNSMR-969~ | Booking/Native Apps | Will be retired once the iOS part of CNSMR-1737 has been completed. |
 | ChatHistoryViewModel | CNSMR-970, CNSMR-971 | | |
 | MedicalHistoryViewModel | CNSMR-972, CNSMR-973 | | |
 | PersonalDetailsViewModel | CNSMR-974, CNSMR-975 | | |
