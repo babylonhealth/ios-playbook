@@ -1,4 +1,4 @@
-# How ton configure Pull Assigners for Babylon repos
+# How to configure Pull Assigners for Babylon repos
 
 ## Introduction
 
@@ -9,7 +9,7 @@ The aim of this document is to explain how to configure `Pull Assigner` on our B
 - We will use the `CODEOWNERS` file to make GitHub always assign a special GitHub team (called the proxy team in Pull Assigner's parlance) to all our Pull Requests
 - That special GitHub team will in fact be managed by Pull Assigners, which will detect when that team is added as a reviewer
 - Pull Assigner will then pick N reviewers from a GitHub team listing all possible reviewers, then unassign the "proxy team"
-- Optionally, we could also require each PR of a repository to always have an approval from a subset of people (the ones owning the responsibility of the code)
+- Optionally, we could also require each PR of a repository to always have an approval from a subset of people (the ones owning the responsibility of the code) – like we did for our bots repository owned by the Developer Experience squad
 
 ## Configure GitHub Teams
 
@@ -18,26 +18,26 @@ The aim of this document is to explain how to configure `Pull Assigner` on our B
 1. First you need a GitHub team containing the list of all the people you want Pull Assigner to pick reviewers from.
 
    * For the iOS repos, we use the team `@Babylonpartners/iOS-Admin` for this, which should contain every iOS developer that are on our team. So if you need the same list of reviewers, you can just use this one instead of creating one.
-   * If you need a different list to pick your reviewers from, you'd need to create a team via [this page on GitHub](https://github.com/orgs/Babylonpartners/new-team), and once it's created, go to the team's page and add Members to that new team ([e.g. here for `ios-bot-owners`](https://github.com/orgs/Babylonpartners/teams/ios-bot-owners/members))
+   * If you need a different list to pick your reviewers from, you'd need to create a team via [this page on GitHub](https://github.com/orgs/Babylonpartners/new-team), and once it's created, go to the team's page and add Members to that new team ([e.g. here for `ios-admin`](https://github.com/orgs/Babylonpartners/teams/ios-admin/members))
 
-2. Next, **make sure that this GitHub team –containing the people you want as reviewers– has access to your repository**, via the "Repositories" tab in the team's page ([e.g. here for `ios-bot-owners`](https://github.com/orgs/Babylonpartners/teams/ios-bot-owners/repositories))
+2. Next, **make sure that this GitHub team –containing the people you want as reviewers– has access to your repository**, via the "Repositories" tab in the team's page ([e.g. here for `ios-admin`](https://github.com/orgs/Babylonpartners/teams/ios-admin/repositories))
 
 ### The proxy team to trigger Pull Assigners
 
 1. Now, we will need another, separate, GitHub team –called the "Proxy team" in Pull Assigner's vocabulary– which will be the team that you'll assign to your PRs via `CODEOWNERS` to trigger Pull Assigner on those PRs (†)
 
-   * For the iOS repos, the proxy team we use –to assign people from the `@Babylonpartners/iOS-Admin` to our PRs– is called `@Babylonpartners/iOS-PullAssigner`, so if you are using the same list of people from `iOS-Admin` you can use the `iOS-PullAssigner` proxy team directly without creating a new one
+   * For the iOS repos, the proxy team we use –to assign people from the `@Babylonpartners/iOS-Admin` to our PRs– is called `@Babylonpartners/iOS-PullAssigner`, so if you are using the same list of people from `iOS-Admin` you can also use the `iOS-PullAssigner` for your proxy team directly without creating a new one
    * If instead you created a separate team because for your case the list of people in `iOS-Admin` wasn't matching the people you wanted to assign PRs for your repo, you'll need to [create a new GitHub team again](https://github.com/orgs/Babylonpartners/new-team), but this time leave it with no member in it (since it will only act as proxy)
 
-2. Then, again, **make sure that the proxy team has access to your repository**, via the "Repositories" tab in the team's page (e.g. https://github.com/orgs/Babylonpartners/teams/ios-pullassigner/repositories)
+2. Next, **make sure that the proxy team has access to your repository**, via the "Repositories" tab in the team's page (e.g. https://github.com/orgs/Babylonpartners/teams/ios-pullassigner/repositories)
 
 > _(†) Side note: This proxy team is not strictly necessary, but if you don't use a proxy team and instead use the team you just declared above directly, that means that everybody will be notified every time a new PR is created and `CODEOWNERS` affects that team containing all your reviewers to pick from, before that team gets removed from the reviewers by Pull Assigners once it has assigned only N people from the team. This is why using a proxy team without any member in it to trigger Pull Assigner is usually preferrable_
 
 ### Configure Pull Assigners with those GitHub teams
 
-If you're reusing the `iOS-Admin` and `iOS-PullAssigner` teams for your repo setup, you have nonthing special to configure on https://pullreminders.com as those teams are already configured. You can skip to the next section.
+If you are reusing the `iOS-Admin` and `iOS-PullAssigner` teams for your repo setup, you have nothing special to configure on https://pullreminders.com as those GitHub teams are already configured in Pull Assigner; so you can skip to the next section.
 
-If you've created new teams (team listing reviewers + proxy team) because you need to act on a different list of people for your repo, you'll need to log in to https://pullreminders.com and add the GitHub teams to Pull Assigner's configuration via [this screen](https://pullreminders.com/installs/6124714/assigner)
+But if you have created new teams (team listing reviewers + proxy team) –because you needed to act on a different list of people for your repo– you'll need to log in to https://pullreminders.com and add the GitHub teams to Pull Assigner's configuration via [this screen](https://pullreminders.com/installs/6124714/assigner)
 
  - Click "Add Team"
  - Select the team containing all your potential reviewers in the dropdown menu
@@ -53,9 +53,9 @@ From there they should be able to edit the "PullAssigner" app's settings and add
 
 ## The `CODEOWNERS` file
 
-Now we need to ensure that the proxy team (e.g. `iOS-PullAssigners` is automatically affected as reviewer on all new PRs.
+Now we need to ensure that the proxy team (e.g. `iOS-PullAssigners`) is automatically affected as reviewer on all new PRs.
 
-For this, you just need to create a `.github/CODEOWNERS` file in your repo (if you have a `CODEOWNERS` file already at the root of your repository, we advise to move it inside a `.github/` directory to clean up your repo root), with the following content:
+For this, you just need to create a `.github/CODEOWNERS` file in your repo with the following content (if you have a `CODEOWNERS` file already at the root of your repository, we advise to move it inside a `.github/` directory to clean up your repo root)
 
 ```
 # Global rule for the whole codebase.
@@ -69,7 +69,7 @@ Of course, if you created a separate proxy team instead of using our common `iOS
 
 ## GitHub PRs configuration (protected branches)
 
-In all our repos, we configured GitHub to have the main branch (`master` in most repositories, `develop` in the main app's repository) be a protected branch. To do that, go to your repository's settings, under the "Branches" tab on the left, then edit the rules for the protected branch (use "Add rule" if you don't have a protected branch already) and ensure you have:
+In all our repos, we configured GitHub to have the main branch (`master` in most repositories, `develop` in the main app's repository) be a protected branch. To ensure that we also require at least 2 approvals, go to your repository's settings, under the "Branches" tab on the left, then edit the rules for the protected branch (use "Add rule" if you don't have a protected branch already) and ensure you have:
 
  - Require pull request reviews before merging
    - Required approving reviews: 2
@@ -78,7 +78,7 @@ In all our repos, we configured GitHub to have the main branch (`master` in most
 
 ### If you want to always require at least one review from specific list of owners
 
-If you want to enfore your PRs to always be at least reviewed by a smaller list of people, in addition to the people Pull Assigner will assign randomly to all new PRs, you could also add a team of those people as owners of your codebase and use "Require review from Code Owners".
+If you want to enforce your PRs to always be approved someone from a smaller, fixed list of people (like the "main owners of the repo"), in addition to the people Pull Assigner will assign randomly to all new PRs, you could also add a team of those people as owners of your codebase, and use "Require review from Code Owners" on your protected branch.
 
 That's what we use for our bot repos `Stevenson` and `Wall-E`, as we want the always have at least one person from the Developer Experience squad –who is responsible for maintaining the bots– to approve PRs in those bot repositories, in addition to Pull Assigner randomly assigning other people from the rest of the team to distrubute review work.
 
@@ -100,3 +100,5 @@ To achieve a similar setup for your repository:
     ```
 
 4. Go back to your repository's settings in GitHub, under the protected branches (see previous section), and check the checkbox for "Require review from Code Owners"
+
+This way, no PR could be merged unless at least one person from the teams listed in `CODEOWNERS` approves it, and in this case since the `iOS-PullAssigner` team is empty, that means at least one person from `ios-bot-owner` has to approve the PR – even if 2 other people affected to the PR by Pull Assigners already approved it
