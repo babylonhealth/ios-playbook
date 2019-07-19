@@ -138,7 +138,7 @@ Direct references to `BentoKit` components are probably left overs from porting 
 
 ## App Configuration Files and Shared Content
 
-//TODO: Need to be updated in preparation for integrating product and feature configurator.
+Content that is currently defined in per target app configuration files will in the future be served dynamically. At this moment in time (July 2019) we don't know how this will impact our codebase.
 
 ## Accessing Business Controllers Directly instead of using the SDK.
 
@@ -181,6 +181,26 @@ Some of these business controllers are not defined inside the SDK. Most of them 
 | TestsAndKitsBusinessControllerProtocol | Babylon | Babylon | |
 | RedemptionBusinessControllerProtocol | BabylonCore | Babylon | |
 
+## BabylonCore should only Contain SDK Related Entities.
+
+BabylonCore is part of the SDK and its public entities should all be relevant for our partners. Ideally this would only be data types that are needed by more than one SDK, but business logic that is re-used in several SDKs might have to be defined in BabylonCore. Below is an incomplete table for what should be moved out. Owing to the fact that we not yet (July 2019) completed all SDKs it is not possible to say exactly what should be moved out of BabylonCore.
+
+| Folder | Comments |
+| ------ | -------- |
+| Rating | Should probably be defined in BabylonDependencies |
+| Bundle | Belongs in the main project |
+| Measurement | Possible options are BabylonDependencies or BabylonHealthManagement |
+| AdditionalInfo/Monitor | Belongs in the BabylonMonitor project |
+| Analytics | Belongs in BabylonDependencies |
+| AppDelegate | Belongs in the main project |
+| Image | Should probably be defined in BabylonDependencies |
+| Notifications | Possible options are BabylonDependencies or the main project |
+| Persistence | Belongs in the main project |
+| Validation | Probably belongs in BabylonUI |
+
+Please note that suggested destinations are a bit approximate.
+
+What should be done with content in the `Utilities` folder is non-trivial. It contains a lot of useful definitions that we want to use in the SDK. Our clients might, however, prefer their own operator definitions.
 
 ## Main Tab Bar and Navigation.
 
