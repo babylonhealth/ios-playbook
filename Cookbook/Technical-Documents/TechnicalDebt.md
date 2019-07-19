@@ -136,7 +136,7 @@ Direct references to `BentoKit` components are probably left overs from porting 
 | NHSRegistrationStep1V2Renderer | | | |
 | TestsAndKitsDetailRenderer | | | |
 
-## App Configuration files and Shared Content
+## App Configuration Files and Shared Content
 
 //TODO: Need to be updated in preparation for integrating product and feature configurator.
 
@@ -144,52 +144,42 @@ Direct references to `BentoKit` components are probably left overs from porting 
 
 Some of these business controllers are not defined inside the SDK. Most of them will be moved to the SDK, but some of them will stay in the Babylon project. Once the first, complete version of the SDK has been published there should not be any business controllers left in BabylonCore. Business controllers that are defined outside the SDK should have a documenting comment that explain why they are not part of the SDK.
 
-//TODO: Update this list.
-//TODO: Add a column describing the impact.
-
-| Business Controller | Accessed From |
-| ------------------- | ------------- |
-| AppointmentBusinessControllerProtocol | BabylonAppointmentsUI, Babylon |
-| AddressBusinessControllerProtocol | BabylonAppointmentsUI, BabylonUI, Babylon |
-| PractitionerBusinessController | BabylonAppointmentsUI |
-| PatientBusinessControllerProtocol | BabylonAppointmentsUI, BabylonClinicalRecordsUI, BabylonUI, Babylon |
-| PrescriptionBusinessControllerProtocol | BabylonAppointmentsUI, Babylon |
-| PharmaciesBusinessControllerProtocol | BabylonAppointmentsUI, BabylonClinicalRecordsUI |
-| ImageBusinessControllerProtocol | BabylonAppointmentsUI, BabylonClinicalRecordsUI, BabylonMonitor, Babylon |
-| BookAppointmentBusinessControllerProtocol | BabylonAppointmentsUI |
-| PrivacyBusinessControllerProtocol | BabylonAppointmentsUI, BabylonChatBotUI, BabylonUI |
-| PublicHealthcareIdentifierBusinessController | BabylonAppointmentsUI, BabylonClinicalRecordsUI, BabylonUI, Babylon |
-| SearchAssistantBusinessController | BabylonChatBotUI |
-| MedicalHistoryBusinessController | BabylonClinicalRecordsUI |
-| GenderBusinessControllerProtocol | BabylonClinicalRecordsUI, BabylonUI, Babylon |
-| GeolocationBusinessController | BabylonClinicalRecordsUI, BabylonUI |
-| InfoItemsBusinessControllerProtocol | BabylonClinicalRecordsUI |
-| MapsBusinessControllerProtocol | BabylonClinicalRecordsUI |
-| GPDetailsBusinessController | BabylonClinicalRecordsUI |
-| HealthcheckReportBusinessControllerProtocol | BabylonMonitor, BabylonUI, Babylon |
-| ReferAFriendBusinessControllerProtocol | BabylonUI, Babylon |
-| RatingBusinessController | BabylonUI |
-| FamilyBusinessControllerProtocol | BabylonUI |
-| RedemptionBusinessController | Babylon |
-| RegionBusinessControllerProtocol | Babylon |
-| EligibilityCheckBusinessControllerProtocol | Babylon |
-| NotificationPayloadBusinessControllerProtocol | Babylon |
-| SignInPrivacyBusinessControllerProtocol | Babylon |
-| PaymentsBusinessControllerProtocol | Babylon |
-| PDSQueueBusinessControllerProtocol | Babylon |
-| LocationEligibilityBusinessController | Babylon |
-| PostCodeEligibilityBusinessControllerProtocol | Babylon |
-| SignUpBusinessController | Babylon |
-| SignUpPrivacyBusinessController | Babylon |
-| ForgotPasswordBusinessControllerProtocol | Babylon |
-| FamilyBusinessControllerProtocol | Babylon |
-| OnfidoBusinessControllerProtocol | Babylon |
-| PDSBusinessControllerProtocol | Babylon |
-| NHSBusinessController | Babylon |
-| CreditCardsBusinessControllerProtocol | Babylon |
-| TestsAndKitsBusinessControllerProtocol | Babylon |
-| RedemptionBusinessControllerProtocol | Babylon |
-| ForgotPasswordBusinessController | Babylon|
+| Business Controller | Defined In | Accessed From | Comments |
+| ------------------- | ------------- | ------------- | ------------- |
+| AppointmentBusinessControllerProtocol | BabylonAppointmentsSDK |BabylonAppointmentsUI, Babylon | |
+| AddressBusinessControllerProtocol | BabylonCore | BabylonAppointmentsUI, BabylonUI, Babylon | |
+| PractitionerBusinessController | BabylonAppointmentsSDK | BabylonAppointmentsUI | |
+| PatientBusinessControllerProtocol | BabylonCore | BabylonAppointmentsUI, BabylonClinicalRecordsUI, BabylonChatBotUI, BabylonMonitor, BabylonUI, Babylon | |
+| PrescriptionBusinessControllerProtocol | BabylonAppointmentsSDK | BabylonAppointmentsUI, Babylon | |
+| PharmaciesBusinessControllerProtocol | BabylonCore | BabylonAppointmentsUI, BabylonClinicalRecordsUI | |
+| ImageBusinessControllerProtocol | BabylonCore | BabylonAppointmentsUI, BabylonClinicalRecordsUI, BabylonHealthManagementUI, BabylonMonitor, Babylon | |
+| BookAppointmentBusinessControllerProtocol | BabylonAppointmentsSDK | BabylonAppointmentsUI | |
+| PrivacyBusinessControllerProtocol | BabylonCore | BabylonAppointmentsUI, BabylonChatBotUI, BabylonUI, Babylon | |
+| PublicHealthcareIdentifierBusinessController | BabylonCore | BabylonAppointmentsUI, BabylonClinicalRecordsUI, BabylonUI, Babylon | |
+| SearchAssistantBusinessController | BabylonChatBotUI | BabylonChatBotUI | |
+| MedicalHistoryBusinessController | BabylonCore | BabylonClinicalRecordsUI | |
+| GeolocationBusinessController | BabylonCore | BabylonClinicalRecordsUI, BabylonUI, Babylon | |
+| InfoItemsBusinessControllerProtocol | BabylonCore | BabylonClinicalRecordsUI | |
+| GPDetailsBusinessController | BabylonCore | BabylonClinicalRecordsUI | |
+| HealthcheckReportBusinessControllerProtocol | BabylonMonitor | BabylonMonitor, Babylon | |
+| ReferAFriendBusinessControllerProtocol | BabylonCore | BabylonUI, Babylon | |
+| RatingBusinessControllerProtocol | BabylonCore | BabylonUI | |
+| FamilyBusinessControllerProtocol | BabylonCore | BabylonUI, Babylon | |
+| RedemptionBusinessController | BabylonCore | Babylon | |
+| RegionBusinessControllerProtocol | Babylon | Babylon | |
+| NotificationPayloadBusinessControllerProtocol | Babylon | Babylon | |
+| SignInPrivacyBusinessControllerProtocol | BabylonCore | BabylonAppointmentsUI, Babylon | |
+| PaymentsBusinessControllerProtocol | Babylon | Babylon | |
+| LocationEligibilityBusinessController | Babylon | Babylon | |
+| PostCodeEligibilityBusinessControllerProtocol | Babylon | Babylon | |
+| SignUpPrivacyBusinessController | BabylonCore | Babylon | |
+| ForgotPasswordBusinessControllerProtocol | BabylonCore | Babylon | |
+| OnfidoBusinessControllerProtocol | Babylon | Babylon | |
+| PDSBusinessControllerProtocol | Babylon | Babylon | |
+| NHSBusinessController | Babylon | Babylon | |
+| CreditCardsBusinessControllerProtocol | Babylon | Babylon | |
+| TestsAndKitsBusinessControllerProtocol | Babylon | Babylon | |
+| RedemptionBusinessControllerProtocol | BabylonCore | Babylon | |
 
 
 ## Main Tab Bar and Navigation.
