@@ -31,7 +31,7 @@ So, in a nutshell:
 3. `Builder`
 4. `FlowController`
 
-are the 4 key interfaces to achieve Babylon iOS Architecture, as well as:
+are the 4 core entities to achieve Babylon iOS Architecture, as well as:
 
 - `Bento.BoxViewController` (universal class for rendering `UITableView`)
 
