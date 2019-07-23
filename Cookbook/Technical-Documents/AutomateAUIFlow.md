@@ -1,28 +1,46 @@
 
+
 # Testing Conventions: Automating a UI Flow [DRAFT]
-Testing a story can be completed using different techniques and levels of the test pyramid. The method used is dependant on the functionality being implemented. Given the time and maintenance cost associated with front end UI testing we should endeavour to use unit, integration and snap shots where possible. Though there will alway be cases where front end automation is either the best or only solution, this article explains how we automate these flows.
+When testing a story, functionality can normally be tested at multiple levels of test pyramid and nearly always at the UI level. *So the question becomes were do we want to test and why*. As a geneal rule to lower in the testing pyramid you can test the more efficent and resource inespensive a test is, for example unit or inegration or snapshot tests.
+
+Testing at the UI level should be utilised for funciotnality that can't be fully tested at other levels or to test a end to end flow or requires subjective evaulation i.e. video. Once we have decided to create a UI test, the next stage is to decide if we should automate the test scenareo and should be agreed between QA and Dev. 
+
+UI automation facilitates regular regression testing and earlier identification of bugs prior to a release. This article explains how we automate a UI flow for a iOS applciaiotn.
 
 # Test Scenarios
-To begin with we need to decide what flows we want to automate at the UI level. Once QA and Dev have agreed to automate a UI flow, the first stage is define the test. The tests are normally defined by QA after discussion with Dev and written in the gherkin, wit these tests stored in TestRail. 
+Once QA and Dev have agreed to automate a UI flow, we will define the test sceanrio. Tests are normally defined by QA after discussion with Dev and written in the [gherkin](https://cucumber.io/docs/gherkin/), with the test stored in TestRail.
 
 # Preparation
 ## Automation Components
-Before we start automating a flow, we need to understand the primary components used in automation, in order to understand how we create tests. For a completely new functional area you would be expected implement code in the following areas. The design pattern selected was based on Cucumber with Page Object Model.
+Before starting, we need to understand the components used in automation, in order to understand how to create tests. For completely new functional you will be expected to implement code in the following areas. The design pattern selected was based on Cucumber and the Page Object Model.
 
 ### Feature Files
-The feature files contain test scenarios written using the [Gherkin](https://cucumber.io/docs/gherkin/) syntax. The naming convention for the file itself is normally `functionality` `sub-functionality` *Feature.swift*. For example `AppointmentsFamilyFeature.swift`. These files should contain all test scenarios for the specified area.
+Feature files contain the test scenarios written in [Gherkin](https://cucumber.io/docs/gherkin/) syntax. The naming convention for the file itself is normally `functionality` `sub-functionality` *Feature.swift*. For example `AppointmentsFamilyFeature.swift`. These files should contain all test scenarios for the specified area in roder to facilitate targted testing of fucntional areas.
 
 ### Step definitions
-The steps definitions are used to link the human readable Gherkin to user actions controlled  through a screen object. The framework selected was [xctest-gherkin](https://github.com/net-a-porter-mobile/XCTest-Gherkin). The framework use regex to search for the corresponding step and facilitates passing in parameters. It is at this level where we should be asserting screen states, performing actions or grouping *cross screen* actions. A detailed naming convention for step definitions is [here](https://github.com/Babylonpartners/ios-playbook/blob/master/Cookbook/Technical-Documents/UIAutomation.md).
+Steps definitions are used to link the human readable Gherkin to user actions, implmented in screen objects. The framework selected was [xctest-gherkin](https://github.com/net-a-porter-mobile/XCTest-Gherkin). The framework uses regex to search for the corresponding step and facilitates passing in upto two parameters. 
+
+It is at this level where we should be asserting screen states, performing actions or grouping *cross screen* actions. A detailed naming convention for step definitions is defined [here](https://github.com/Babylonpartners/ios-playbook/blob/master/Cookbook/Technical-Documents/UIAutomation.md).
 
 ### Screen Objects
-Screen objects contain methods that invoke user actions, check the screen state or group *single screen* actions, in line with the single responsibility principle. State checks should be asserted at the step definition level and not within the screen object itself. When grouping multiple actions it should magic logical sense, for example `enterCredentials` can call both `enterEmail` and `enterPassword`. Accessibility identifiers for XCUIElement should be stored within the corresponding screen object, normally as a *enum*. A detailed naming convention for accessibility identifiers can be found [here](https://github.com/Babylonpartners/ios-playbook/blob/master/Cookbook/Technical-Documents/AutomationIdentifiers.md).
+Screen objects contain the code that controls the user interface, check screen states or in limited cases groups *single screen* actions. Scrren objects should adher to the single responsibility principle. 
+
+#### State Checks
+State check functions are intended to *evaluate* the screen under tests and return a value. In pratise these fall, into three categories but are not limited to these. Code to check if something is displayed ```func isScreenDisplayed() -> Bool``` or ```func isCardDisplayed(for card: HomeScreenCards) -> Bool```. The paramater being passed in can come from the feature file or the stepdefinition. The third common one is to retrieve a value or count from the screen ```func pharmaciesCount() -> Int```. The return value should be evaluated at the step level and the passed or failed based on the result.
+
+#### Interface Interactions
+Interactions are intended to cover user actions on the screen, if we look at the login screen we would find functions like ```func enterEmail(_ email: String)``` or ```func enterPassword()```. We can also group common actions so long as they are within the scope of the screen and make logical sense, staying with the login screen we could have a ```func enterCredentialsAndLogin(email: String)```
+
+#### Accessibility identifiers
+Accessibility identifiers for **XCUIElement** should be stored within the screen object, normally in a *enum* for each element type. And then referenced from the functions using ```Cells.passwordField```. This ensure that idenfiers are only stored once in the code and can be updated with a single change.
+
+A detailed naming convention for accessibility identifiers can be found [here](https://github.com/Babylonpartners/ios-playbook/blob/master/Cookbook/Technical-Documents/AutomationIdentifiers.md).
 
 ### API Calls
-It may be necessary to add support for an API request as part of the test scenario, for example booking an appointment, adding family or prescribing a prescription. The key reasoning for these requests are to streamline automation and reduce user action duplication. This way tests can begin in the desired state, and reduce test execution time. The normal way to do this is to extend `APIInterface` with the request specific to the area under tests `APIInterface+Appointment`
+In order to optimise test scenarios and exeuction times, we utilise API calls to control the state of the applicaiton under test. For example when testing family appointments we can use the API to add family memebers of any type to a users account or prescribe medication. The reasoning for this is to speed up the tests and reduce duplicate through the removal of common actions. This way the test can begin in controled state. This is normally done through extending `APIInterface` with the request specific to the area under tests `APIInterface+Appointment`
 
 # Automate a flow
-For the article we will go through a truncated set of steps necessary to automate a simple login UI flow.
+We will now go through a abridged set of development tasks necessary to automate a simple login UI flow.
 
 ```swift
 	func test_login_as_uk_user() {
@@ -56,7 +74,7 @@ Before we continue it's worth looking at the documentation for [XCTest-Gherkin](
 For this example we will pass in the *country* as a parameter, we need to write a regex capture group and define the data type. This part of of the step `\"(.*?)\"` will capture the parameter, I user `\"` as a method to demote the boundary of the parameter though this is not technically needed. We can also as per the pod specify only certain parameters, or restrict the value. For this step we will take any value and define it as a `String`. 
  
 ## Screen Objects
-Screen objects are intended to contain all the code and identifiers relating to the screen. We will define three functions 
+Screen objects are intended to contain all the code and identifiers relating to the screen. Fcuntions will normally fall into 3 main types, checking the state fo the screen, interacting with a element or gourping multiple actions that are contain wiithin the scope of the screen. For the article we will define three functions 
 
 ```swift
     func enterCredentialsFor(email: String) {
