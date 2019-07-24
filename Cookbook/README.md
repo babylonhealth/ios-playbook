@@ -32,6 +32,7 @@ iOS Cookbook 👩‍🍳
 
 * [Replace `iOSSnapshotTestCase` library with `SnapshotTesting`](./Proposals/SnapshotTesting.md)
 * [Automation Identifiers](./Technical-Documents/AutomationIdentifiers.md)
+* [Testing view models](./Technical-Documents/UnitTestingViewModels.md)
 
 ##### ... learn functional programming 🚀
 
@@ -42,7 +43,6 @@ iOS Cookbook 👩‍🍳
 * [Strings and Localisation](./Technical-Documents/Lokalise.md)
 * [Outstanding Technical Debt and Legacy Code](./Technical-Documents/TechnicalDebt.md)
     * [BBAddAdditionalPatientInformationViewControllerV2](./Technical-Documents/BBAddAdditionalPatientInformationViewControllerV2.md)
-
 * [UI Automation with Gherkin](./Technical-Documents/UIAutomation.md)
 * [Code Signing with Fastlane Match](./Technical-Documents/FastlaneMatch.md)
 * [How to invoke CI jobs from Slack](./Technical-Documents/SlackCIIntegration.md)
