@@ -20,7 +20,7 @@ The aim of this document is to explain how to configure `Pull Assigner` on our B
    * For the iOS repos, we use the team `@Babylonpartners/iOS-Admin` for this, which should contain every iOS developer that are on our team. So if you need the same list of reviewers, you can just use this one instead of creating one.
    * If you need a different list to pick your reviewers from, you'd need to create a team via [this page on GitHub](https://github.com/orgs/Babylonpartners/new-team), and once it's created, go to the team's page and add Members to that new team ([e.g. here for `iOS-Admin`](https://github.com/orgs/Babylonpartners/teams/iOS-Admin/members))
 
-2. Next, **make sure that this GitHub team –containing the people you want as reviewers– has access to your repository**, via the "Repositories" tab in the team's page ([e.g. here for `ios-admin`](https://github.com/orgs/Babylonpartners/teams/ios-admin/repositories))
+2. Next, **make sure that this GitHub team –containing the people you want as reviewers– has access to your repository**, via the "Repositories" tab in the team's page ([e.g. here for `iOS-Admin`](https://github.com/orgs/Babylonpartners/teams/iOS-Admin/repositories))
 
 ### The proxy team to trigger Pull Assigners
 
