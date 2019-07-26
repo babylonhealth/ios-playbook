@@ -33,6 +33,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Emese Toth              | [@emeseuk](https://github.com/emeseuk)           |
 | Giorgos Tsiapaliokas    | [@gtsiap](https://github.com/gtsiap)                          |
 | Ilya Puchka             | [@ilyapuchka](https://twitter.com/ilyapuchka)                 |
+| James Birtwell          | [@jimmybee](https://github.com/jimmybee)
 | Jason Dobo              | [@jasondobo](https://github.com/jasondobo)                    |
 | João Pereira            | [@NSMyself](https://twitter.com/nsmyself)                     |
 | Joshua Simmons          | [@j531](https://github.com/j531)                              |
@@ -69,7 +70,7 @@ By definition, members work on their respective squad, although they are free to
 | Core Experience               | Sergey, Yuri                                |    2/2       | [#core-exp-squad](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
 | Dev Experience                | Ilya, Olivier, David                        |    3/3       | |
 | Early Feedback                | Danilo                                      |    1/1       | [#early_feedback](https://babylonhealth.slack.com/archives/CLGA76GG7) |
-| Enrolment and Integrity       | Diego                                       |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
+| Enrolment and Integrity       | Diego, James                                |    2/2       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Healthcheck                   | Ben, Julien                                 |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
 | Monitor                       | Anders, Joshua, Nicola                      |    3/3       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
 | Native Apps                   | Giorgos, Jason, Martin, Inami, Emese        |    5/5       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
