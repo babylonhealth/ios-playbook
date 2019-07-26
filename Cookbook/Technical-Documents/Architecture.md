@@ -47,7 +47,7 @@ Overall structure looks like this:
 
 ```
 struct Builder
-├── struct ViewModel: Bento.BoxViewModel
+├── class ViewModel: Bento.BoxViewModel
 │  ├── Property<State>          // ReactiveFeedback
 │  ├── Signal<Route>            // Routing (Output)
 │  ├── send: (Action) -> Void   // User Input
