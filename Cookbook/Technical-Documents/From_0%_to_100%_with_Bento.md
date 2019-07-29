@@ -19,8 +19,8 @@ I want this section to be a guide with code samples, line by line, how to write 
 - What is `AnyRenderable`
 - What Operators can I use?
 
-## Writing a custom component (optional)
-**Introduction** to Design Library. Why is it there and how is it related with Bento? How can I write my own component if I need a custom component? Here I'll mention what Atomic components are.
+## How to write a component which is not in Design Library 
+**Introduction** to Design Library. Why is it there and how is it related with Bento? How do I find a component I need to use? What to do if I cannot find a component?
 
 ## BabylonBoxViewController from scratch (optional)
 Note: I'm still thinking if that should be a part of the article.
@@ -31,6 +31,8 @@ Rarely, but sometimes, we cannot use `BabylonBoxViewController`. I'd like to gui
 - Naming of sections may be changed in the future (to sound better)
 - Sections marked as `(optional)` may be skipped if I find the article gets too big and overwhelming.
 - Once it's accepted by @scass91 and @RuiAAPeres I'll change the PR to be "draft" and I'm going to work on the article in this file below the `----`. Before the final merge I'm going to delete the outline.
---------------------------------------------------------------------------------------------------------------------------------
+---- 
 # The Article:
 To be added... Stay tuned 😎
+
+
