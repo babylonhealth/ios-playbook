@@ -33,7 +33,7 @@ The proposed solution contains a set of rules which should be followed during ma
 ## Impact on existing codebase
 
 Unfortunately, in our codebase icons and images are located in different places. If we will agree on above set of rules, they should be applied for newly created assets. We should also make an effort to eliminated technical debt and migrate all existing icons into `BabylonDependencies`.
-Keeping every icon and image in one location potentially shouldn’t increase the size of the target application on the condition that the app would use all our features frameworks.
+Keeping every icon and image in one location potentially shouldn’t increase the size of the target application on the condition that the app has all our frameworks linked.
 ## Alternatives considered
 
 1. We could try to systematize the way we include assets in specific feature frameworks but it can cause problems described in the motivation section.
