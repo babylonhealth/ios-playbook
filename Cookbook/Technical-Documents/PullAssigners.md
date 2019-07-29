@@ -41,7 +41,9 @@ But if you have created new teams (team listing reviewers + proxy team) you'll n
 
  - Click "Add Team"
  - Select the real (not proxy) team you've created before in the dropdown menu
- - Configure the team in the next screen, especially the number of reviewers to assign, the algorithm, but also the proxy team you previously created, and select to delete that (proxy) team review request after assigning reviewers.
+ - Configure the team in the next screen, especially the number of reviewers to assign, the algorithm, but also the proxy team you previously created, and select to delete that (proxy) team review request after assigning reviewers (†).
+
+ (†) Note that if your repository's protected branch is configured with "Require review from Code Owners" checked, then any team in your `CODEOWNERS` will stay assigned as reviewer – which means that your proxy team, being typically part of your `CODEOWNERS` itself, won't be removed from your PR even if you chose "Delete after assigning reviewer(s)" for the "Team review request" setting in your https://pullreminders.com setup. It will only be able to be deleted if the "Require review from Code Owners" setting is unchecked in your repo.
 
 ## Update GitHub's PullAssigner app settings
 

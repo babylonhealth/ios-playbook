@@ -47,3 +47,4 @@ iOS Cookbook 👩‍🍳
 * [Code Signing with Fastlane Match](./Technical-Documents/FastlaneMatch.md)
 * [How to invoke CI jobs from Slack](./Technical-Documents/SlackCIIntegration.md)
 * [Xcode Tips & Tricks](Technical-Documents/XcodeTips.md)
+* [Configure PullAssigner on our repos](Technical-Documents/PullAssigners.md)
