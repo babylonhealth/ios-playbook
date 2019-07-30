@@ -28,22 +28,22 @@ The current approach works, as we would expect, but there's a couple of caveats 
 
 ##### 1. Maintenance
 
-This types at the moment are created and managed by us manually which means any new addition/edition/removal needs to be done by us. This may not look very significant but considering the number of strings, more than 3k, it is a lot to be maintained/extended.
+These types at the moment are created and managed by us manually which means any new addition/change/removal needs to be done by us. This may not look very significant but considering the number of strings, more than 3k, it is a lot to be maintained/extended.
 
 ##### 2. Safety
 
-While this types are useful for development by enabling autocomplete they don't provide any safety since we can add a new property for a new key without necessarily adding the new string.
+While these types are useful for development by enabling autocomplete they don't provide any safety since we can add a new property for a new key without necessarily adding the new string.
 
 ### Proposed Solution
 
-SwiftGen is a code generator which is able to generate all this types and properties automatically by running a script which would fix the two main problems that we have with the current approach.
+SwiftGen is a code generator which is able to generate all these types and properties automatically by running a script which would fix the two main problems that we have with the current approach.
 
 - Maintenance will be zero because everything will be mapped based on the localisable strings;
 - Compile-time type safety will be guaranteed because everything will be generated from the localizable strings making it impossible to use something without being in the strings file or keep using something that was deleted.
 
 SwiftGen also supports strings with dynamic input generating a function to be called with all the parameters which also ensures safety as we clearly know that a certain string requires some dynamic values.
 
-We still need to ensure this script is correctly executed every time that we add/edit/remove a string but that's a easier task to manage over the current approach.
+We still need to ensure this script is correctly executed every time that we add/edit/remove a string but that's an easier task to manage compared to the current approach.
 
 ### Implementation
 
