@@ -68,7 +68,7 @@ By definition, members work on their respective squad, although they are free to
 | Condition Management          | Catarina, João                              |    2/2       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) |
 | Consultation                  | Adrian, Chitra                              |    2/2       | |
 | Core Experience               | Sergey, Yuri                                |    2/2       | [#core-exp-squad](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
-| Dev Experience                | Ilya, Olivier, David                        |    3/3       | |
+| Dev Experience                | Ilya, Olivier, David                        |    3/3       | [#mobile-tooling](https://babylonhealth.slack.com/messages/CL3QSC2NM) |
 | Early Feedback                | Danilo                                      |    1/1       | [#early_feedback](https://babylonhealth.slack.com/archives/CLGA76GG7) |
 | Enrolment and Integrity       | Diego, James                                |    2/2       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Healthcheck                   | Ben, Julien                                 |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
