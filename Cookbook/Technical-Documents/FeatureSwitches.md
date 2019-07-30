@@ -85,10 +85,11 @@ Depending on the use case we are using different ways to define Feature Switches
 
 	Then you need to add a remote config in the [Firebase console](https://console.firebase.google.com) with the same string key. For that navigate to the `Remote Config` page in the `Grow` section of the side menu and tap "Add parameter".
 
+	![](Assets/adding-remote-config-flag.png)
 
 	To control the value of this feature flag we can define values for different "conditions" which are based on the application bundle id and the build version (not the app semantic version number). You can reuse existing conditions (don't mix them with those used for Android app unless you agree to use the same flag for both platforms) or create a new condtion on the `Condtions` page. To create a new condition you need to specify the app bundle identifier and optionally a regular expression for build number (you can use http://gamon.webfactional.com/regexnumericrangegenerator/ to create it)
 	
-	
+	![](Assets/adding-remote-config-condition.png)
 
 	**Note that default value is `false` again!**
 	
