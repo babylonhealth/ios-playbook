@@ -49,6 +49,13 @@ We still need to ensure this script is correctly executed every time that we add
 
 Adopting SwiftGen won't be a trivial task and would require a certain level of investment from us.
 
+
+##### Workflow
+
+Our current workflow consists of pulling the strings manually and then only include the ones that are part of our current work. Adopting SwiftGen does not require any changes in our workflow so it should be kept unchanged, we should pull the strings and then run the script to generate the symbols manually. This file should be committed along with the strings to the repository to ensure we test the code without any external variables, e.g. if for some reason the generation fails we will get a failure while testing the PR on CI.
+
+Considering there's two steps involved, pulling the strings and then run SwiftGen to generate the symbols, and based on the fact that apply some filtering we should discard any strings unrelated with our work before running SwiftGen otherwise we will end with symbols that will need to be discarded too.
+
 ##### Namespacing
 
 Based on how we have our keys defined we won't be able to mangle them into namespaces directly, we will have a huge flat list with all the strings. This can be changed but requires a major refactor of the keys to define the respective vertical/domain/module.
