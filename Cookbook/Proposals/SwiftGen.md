@@ -1,9 +1,9 @@
-## Adopt SwiftGen for localizable strings
+# Adopt SwiftGen for localizable strings
 
 * Author: David Rodrigues
 * Review Manager: Danilo Aliberti
 
-### Introduction
+## Introduction
 
 Localisable strings by themselves are not a hard thing to use but for apps with a significant number of strings it's entirely impossible to remember or discover easily the respective key to use.
 
@@ -22,19 +22,19 @@ public struct LocalizationUI {
 }
 ```
 
-### Problems
+## Problems
 
 The current approach works, as we would expect, but there's a couple of caveats in it.
 
-##### 1. Maintenance
+#### 1. Maintenance
 
 These types at the moment are created and managed by us manually which means any new addition/change/removal needs to be done by us. This may not look very significant but considering the number of strings, more than 3k, it is a lot to be maintained/extended.
 
-##### 2. Safety
+#### 2. Safety
 
 While these types are useful for development by enabling autocomplete they don't provide any safety since we can add a new property for a new key without necessarily adding the new string.
 
-### Proposed Solution
+## Proposed Solution
 
 SwiftGen is a code generator which is able to generate all these types and properties automatically by running a script which would fix the two main problems that we have with the current approach.
 
@@ -45,25 +45,25 @@ SwiftGen also supports strings with dynamic input generating a function to be ca
 
 We still need to ensure this script is correctly executed every time that we add/edit/remove a string but that's an easier task to manage compared to the current approach.
 
-### Implementation
+## Implementation
 
 Adopting SwiftGen won't be a trivial task and would require a certain level of investment from us.
 
-##### Location
+#### Location
 
 All the symbols that we have at the moment are defined in `BabylonDependencies` and there's no reason to change this so everything can be kept as is.
 
-##### Workflow
+#### Workflow
 
 Our current workflow consists of pulling the strings manually and then only include the ones that are part of our current work. Adopting SwiftGen does not require any changes in our workflow so it should be kept unchanged, we should pull the strings and then run the script to generate the symbols manually. This file should be committed along with the strings to the repository to ensure we test the code without any external variables, e.g. if for some reason the generation fails we will get a failure while testing the PR on CI.
 
 Considering there's two steps involved, pulling the strings and then run SwiftGen to generate the symbols, and based on the fact that apply some filtering we should discard any strings unrelated with our work before running SwiftGen otherwise we will end with symbols that will need to be discarded too.
 
-##### Namespacing
+#### Namespacing
 
 Based on the convention that SwiftGen follows, `module.any_key`, and how we have our keys defined, `module_any_key`, we won't be able to mangle them into namespaces directly, we will have a huge flat list with all the strings. There's two options that we can take.
 
-###### 1. Proposed: Rename all the keys
+##### 1. Proposed: Rename all the keys
 
 An alternative is to manually rename all the keys to ensure we set up the module/namespace as expected. This give us more control and ensures we can name everything in a meaningful way but requires more work from us.
 
@@ -79,7 +79,7 @@ This would help significantly and will require just changes in the codebase at t
 
 It also allows a great level of flexibility since we will be able to structure the modules in a meaningful way or simply keep the current namespace that we already have in our own custom-written symbols.
 
-###### 2. Alternative: Custom template
+##### 2. Alternative: Custom template
 
 We can investigate if we can write our own template to treat the first `_` as the module separator and avoid renaming all the keys to have namespacing.
 
@@ -103,20 +103,20 @@ enum L10n {
   }
 ```
 
-##### Target Specific Localization
+#### Target Specific Localization
 
 We current have two sets of strings, the main localization and one target specific to allow further customisation if/when needed. This requires custom handling where we query the target specific table first and only then we fallback to the main table. SwiftGen has support to search in other strings files but considering our specific flow we may need to write our own custom template to ensure we keep the same flow.
 
-##### Tests
+#### Tests
 
 We have a couple of tests using localisable strings from the tests bundle and they will be impacted with this change. The alternative is to use the main bundle for them which can cause more failures with snapshot testing depending how often the strings get updated after being introduced. Alternatively, we can write our own custom template to keep the existent flow.
 
-### Alternatives
+## Alternatives
 
 There are other code generators that we can use as an alternative but SwiftGen seems the most popular in the community and we have the creator in our team 😃, if we have any issue we can have a great level of support.
 
 The other alternative is to keep the current approach and don't make any changes although keep the problems stated above since they are not easily solvable.
 
-### Future
+## Future
 
 Assuming this gets accepted we could use it to extend to asset catalogs and colors.
