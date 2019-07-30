@@ -36,10 +36,16 @@ At the same time all these places (local/Firebase feature switches, app configur
 
 We use app configuration type (and types related to it) to define "static" feature switches things that are hardcoded in the app and are cuased by different requirements for the products. I.e. one app can define that it should use a new feature flow while another does not use it.
 This brings more clarity in what values are defined for what apps, we don't have to consult Firebase config and we don't risk accidently changing the value. We also don't need to wait for firebase config to be fetched and don't risk not having a right value when Firebase fails. At the same time it makes us to repeat all the configurations in each target which is a lot of boilerplate for a simple flag and these configs grew a lot over time, or to use protocol extensions with default values which makes it trickier to understand the actual value for particular target as we need to make sure this default is not overriden anywhere else.
+It also might be not very clear what's the difference between local feature switch and app configuration why we need both and when we should prefer one over another as they both provide a similar functionality.
+
+### Local Feature Switches boilerplate
+
+It takes a lot of boilerplate to define a local feature switch - we need to change the code in several places (in one file though), need to manually add an entry to the `Root.plist` and make sure that it's in the right place and in the write file. We need to make sure we move it to the different section (for remote feature toggles) if we move the flag to the Firebase, otherwise we won't be able to override it in the Settings app and it will always have a default value if we override any other flag.
+
 
 ### Debugging
 
-It's not clear what feature switches affect what screens. It's frustrating to go through a complex flow and then realise that the right feature switch was not turned on/off in the Settings app or local overrides were active and to go through the flow again (as we don't ebserve changes in the feature switches in runtime and require application restart).
+It's not clear what feature switches affect what screens. It's somtimes frustrating to go through a complex flow and then realise that the right feature switch was not turned on/off in the Settings app or local overrides were active and to go through the flow again (as we don't observe changes in the feature switches at runtime and require application to restart).
 
 
 ## Proposed solution
