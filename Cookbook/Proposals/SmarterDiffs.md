@@ -1,4 +1,4 @@
-# Imporoving view models' unit tests
+# Improving view models' unit tests
 
 * Author(s): Ilya Puchka
 * Review Manager: TBD
