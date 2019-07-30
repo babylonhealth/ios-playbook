@@ -47,6 +47,7 @@ Everyone knows you hit **Cmd-U** to start testing… right?
 It's annoying when your tests fail, but even more annoying to try and compare the failed snapshots in */tmp/SnapshotFailures/*. Thankfully, Xcode can help you out.
 
 After you've run the tests, in the Test Navigator (**Cmd-9**) open the latest test report, switch to Failed tests and you'll find XCTAttachments for before, after and diff attached to the failed test:
+
 ![Test Navigator Attachments](./Assets/test-navigator-attachments.png)
 
 ## Errors when pulling code/switching branches
