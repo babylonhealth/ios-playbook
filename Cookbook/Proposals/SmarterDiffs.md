@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Our current approach to testing view models is described in [this doc](Cookbook/Technical-Documents/UnitTestingViewModels.md). This approach enforces the tests to follow "arrange-act-assert" pattern. If we forget about ergonomics of closures it works pretty well. But when it comes to assert section we have few options in how it can be implemented each with their own issues.
+Our current approach to testing view models is described in [this doc](../Technical-Documents/UnitTestingViewModels.md). This approach enforces the tests to follow "arrange-act-assert" pattern. If we forget about ergonomics of closures it works pretty well. But when it comes to assert section we have few options in how it can be implemented each with their own issues.
 
 #### Option 1 - assert states one by one
 
