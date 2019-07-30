@@ -103,7 +103,11 @@ enum L10n {
   }
 ```
 
-#### Target Specific Localization
+##### Migration and adoption
+
+After getting SwiftGen integrated in the project any new features should rely on it to generate the relevant symbols and the existent ones should be migrated over time, there's no need to migrate everything at once. We will also apply the _Boy Scout Rule_ to speed up the transition, which means any change in one screen/feature not using SwiftGen should be migrated as part of those changes, with the only exception being release hotfixes.
+
+##### Target Specific Localization
 
 We current have two sets of strings, the main localization and one target specific to allow further customisation if/when needed. This requires custom handling where we query the target specific table first and only then we fallback to the main table. SwiftGen has support to search in other strings files but considering our specific flow we may need to write our own custom template to ensure we keep the same flow.
 
