@@ -55,9 +55,9 @@ All the symbols that we have at the moment are defined in `BabylonDependencies` 
 
 #### Workflow
 
-Our current workflow consists of pulling the strings manually and then only include the ones that are part of our current work. Adopting SwiftGen does not require any changes in our workflow so it should be kept unchanged, we should pull the strings and then run the script to generate the symbols manually. This file should be committed along with the strings to the repository to ensure we test the code without any external variables, e.g. if for some reason the generation fails we will get a failure while testing the PR on CI.
+Our current workflow consists of pulling the strings manually and then only include the ones that are part of our current work. Adopting SwiftGen does not require any changes in our workflow so it should be kept unchanged, we should pull the strings and then run the script to generate the symbols manually.
 
-Considering there's two steps involved, pulling the strings and then run SwiftGen to generate the symbols, and based on the fact that apply some filtering we should discard any strings unrelated with our work before running SwiftGen otherwise we will end with symbols that will need to be discarded too.
+However, to certify we don't change the localisable strings without running SwiftGen we will integrate it as a new step part of our `Build Phases` and ignore the resulting file from being committed, that would avoid potential and unnecessary conflicts.
 
 #### Namespacing
 
@@ -109,7 +109,7 @@ We current have two sets of strings, the main localization and one target specif
 
 #### Tests
 
-We have a couple of tests using localisable strings from the tests bundle and they will be impacted with this change. The alternative is to use the main bundle for them which can cause more failures with snapshot testing depending how often the strings get updated after being introduced. Alternatively, we can write our own custom template to keep the existent flow.
+We are in the process of moving our entire localisation to `BabylonDependencies` and as soon as we get it that done we won't have any issues with the tests otherwise we need to have a way to specify from which bundle from which the strings should be loaded.
 
 ## Alternatives
 
