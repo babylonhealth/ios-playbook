@@ -296,7 +296,7 @@ static func fetchCitiesResource() -> BackendResource<Void, [City], KongAuth> {
 
 What this does is decodes the array of cities directly from JSON, without the need for intermediate data structures. This works well for simple responses.
 
-Note that our `BackendResource` signature now has `[Cities]` in it instead of `CitiesResponse`.
+Note that our `BackendResource` signature now has `[City]` in it instead of `CitiesResponse`.
 
 One other new thing here is the `strategy` parameter in the `Parser` call. The parameter is an enum applying specifically to arrays, and it has two cases:
 1. `prune` (which we used in the call) skips any value in the array which could not be decoded. If one or more of the cities fails to be decoded, in the worst case we would get an empty array.
