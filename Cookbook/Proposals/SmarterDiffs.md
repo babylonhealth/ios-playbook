@@ -39,7 +39,7 @@ expect(states).to(equal([
 ]))
 ```
 
-This eliminates the issue of the first approach when some state changes may be ignored by the test. It comes with a cost of actually creating all the intermediate states that might not be directly related to what test is testing which adds some amount of boilerplate. Another issue is that when this single assert fails it's very hard to extract what actually cuased this failure from the error message until we go and check each states separately. First option also suffers from this issue when each state consists of a lot of properties but it becomes much worse with a single assert.
+This eliminates the issue of the first approach when some state changes may be ignored by the test. It comes with a cost of actually creating all the intermediate states that might not be directly related to what test is testing which adds some amount of boilerplate. Another issue is that when this single assert fails it's very hard to extract what actually caused this failure from the error message until we go and check each states separately. First option also suffers from this issue when each state consists of a lot of properties but it becomes much worse with a single assert.
 
 ## Motivation
 
@@ -49,7 +49,7 @@ As demonstrated our current approaches suffer from few issues which result in no
 
 To improve the experience with debugging test failures we propose to use a smarter diffing approach as in [this library](https://github.com/krzysztofzablocki/Difference) by Krzysztof Zabłocki. The idea is that when comparing two instances we will be using `Mirror` type and `dump` function to first get stored properties and then get their textual representation and this way combine a in-memory snapshot of the value. This way we can recursively compare each property and only include those that differ in the final failure message. 
 
-The fact that `Mirror` only provides access to stored properties is not an issue as computed properties are products of stored properties (or in case of enums of the enum cases and thier associated values) and for same stored properties values should return the same result.
+The fact that `Mirror` only provides access to stored properties is not an issue as computed properties are products of stored properties (or in case of enums of the enum cases and their associated values) and for same stored properties values should return the same result.
 
 Example:
 
@@ -92,6 +92,6 @@ This approach can be rolled out gradually and used for new test (Xcode templates
 
 ## Alternatives considered
 
-As an alternative we can inforce asserting on individual states insteead of all states which will make diffs less of an issue. But as mentioned before it will not eliminate it.
+As an alternative we can enforce asserting on individual states instead of all states which will make diffs less of an issue. But as mentioned before it will not eliminate it.
 
-Another alternative would be to use snapshot testing that we already use for UI tests. It will make our assert just a call to a single `assertSnapshot` function. But at the same time it will mean that all the snapshots will be writtent into the files rather than explicitly stated in the test code. This will decrease the boilerplate we will have to write in tests manually but will make it harder to understand test expectations as as we will need to search through text files to find values we need.
+Another alternative would be to use snapshot testing that we already use for UI tests. It will make our assert just a call to a single `assertSnapshot` function. But at the same time it will mean that all the snapshots will be written into the files rather than explicitly stated in the test code. This will decrease the boilerplate we will have to write in tests manually but will make it harder to understand test expectations as as we will need to search through text files to find values we need.
