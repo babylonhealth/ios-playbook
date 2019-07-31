@@ -78,7 +78,7 @@ There are usually two release engineers working at any given time. It goes witho
    * Make sure you create separate tags (and GitHub releases) for each app released on the AppStore (eg. Babylon 4.1.0 and Telus 4.1.0 would each have their own `babylon/4.1.0` and `telus/4.1.0` tags)
    * Set the body of the GitHub release to the content of the Release Notes for the app
    * Attach the zipped `xcarchive` as an artefact to the GitHub release (if you're using the automated release command, you can find the `*.xcarchive.zip` in the Artifacts top section in the CI build).
-1. Merge the changes back to develop.
+1. Merge develop into the release branch, solve the conflicts (if there are any), and then add the `merge` label — which is set up to `squash and merge`.
 1. Update the [release calendar](#release-calendar)
 
 ## 3. SDK Release
