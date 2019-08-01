@@ -16,7 +16,7 @@ Identification of `XCUIElement`s in automation code should be done in the screen
 
 #### Identifiers
 
-The identifiers are either declared in `AccessibilityContent` (see “Using AccessibilityContent” below), or defined as strings in a Screen Object namespace using a private enum or injected into the constructor of Screen Object. As you can see from the example below, we have used both accessibility identifiers and the text within the element to locate `XCUIElement`s.
+The identifiers are either declared in `AccessibilityContent` (see “[Using AccessibilityContent](#using-accessibilitycontent)” below), or defined as strings in a Screen Object namespace using a private enum or injected into the constructor of Screen Object. As you can see from the example below, we have used both accessibility identifiers and the text within the element to locate `XCUIElement`s.
 
 ##### Chatbot Bento Screen
 
