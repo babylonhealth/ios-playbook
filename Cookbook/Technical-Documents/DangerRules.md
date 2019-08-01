@@ -10,11 +10,19 @@ If you plan to add a new Danger rule:
  * Make sure you keep the main `Dangerfile` clean: the main file is supposed to only call `check_*` functions defined in other files, not to contain actual rule implementations
  * Make sure you document the new rule here
 
+## Danger documentation updates
+
+> * Declared in: `danger-ci/danger.rb`
+> * Function: `check_danger_config_changed`
+> * Type: 📖 informative message
+
+This rule simply reminds us to update this very documentation when the Danger configuration is changed (when any file in `danger-ci/*` is modified), so that we keep the documentation in sync with the actual rules.
+
 ## PR Size
 
-> Declared in: `danger-ci/pr_size.rb`  
-> Function: `check_pr_size`
-> Type: ⚠️ warning
+> * Declared in: `danger-ci/pr_size.rb`
+> * Function: `check_pr_size`
+> * Type: ⚠️ warning
 
 This rule warns us if the number of inserted lines in the PR is above 850.
 
@@ -24,12 +32,12 @@ This rule is only a warning because we don't want it to block PRs, as there are 
 
 ## Podfile Checks
 
-> Declared in: `danger-ci/pods.rb`
+> * Declared in: `danger-ci/pods.rb`
 
 ### Check that Podfile.lock has been properly committed
 
-> Function: `check_podfile_lock_committed`  
-> Type: 🚫 failure
+> * Function: `check_podfile_lock_committed`
+> * Type: 🚫 failure
 
 This rule is to alert us if we **forgot to commit the changes made in `Podfile.lock`**. This can happen if:
 
@@ -39,8 +47,8 @@ This rule is to alert us if we **forgot to commit the changes made in `Podfile.l
 
 ### Inform if dependencies might have change
 
-> Function: `check_dependencies_changed`  
-> Type: 📖 informative message
+> * Function: `check_dependencies_changed`
+> * Type: 📖 informative message
 
 This rule is just to inform (informative message, no error nor warning) when the PR contains changes in the `Podfile.lock`, in order to **raise awareness to reviewers about changes in dependencies**.
 
@@ -48,12 +56,12 @@ The goal is to suggest them to take extra care in reviewing why we needed those 
 
 ## SDK Checks
 
-> _Declared in: `danger-ci/sdk.rb`_
+> * Declared in: `danger-ci/sdk.rb`
 
 ### Mark changes to SDK with `#SDK` (or `#IgnoreSDKChanges`)
 
-> Function: `check_sdk_hashtag`  
-> Type: 🚫 failure
+> * Function: `check_sdk_hashtag`  
+> * Type: 🚫 failure
 
 This rule is to:
 
@@ -73,8 +81,8 @@ This PR made SDK changes (which need to appear in CRP) but they are not worth a 
 
 ### Ensure SDK CHANGELOG is updated on PRs releasing the SDK
 
-> Function: `check_sdk_release_changelog`  
-> Type: ⚠️ warning
+> * Function: `check_sdk_release_changelog`
+> * Type: ⚠️ warning
 
 This rule ensures that, when we do a **PR to make a public SDK release** (i.e. to merge a `release/sdk/*` branch), **the `SDK/CHANGELOG.md` has been updated**.
 
@@ -82,12 +90,12 @@ Especially that in the top section title we **replace `## x.x.x (TBD)` with the 
 
 ## pbxproj checks
 
-> Declared in: `danger-ci/pbxproj.rb`
+> * Declared in: `danger-ci/pbxproj.rb`
 
 ### Warn for unexpected resources in targets
 
-> Function: `check_unexpected_resource_files`  
-> Type: 🚫 failure
+> * Function: `check_unexpected_resource_files`
+> * Type: 🚫 failure
 
 This rule ensure that we didn't accidentally add some Xcode-specific files to a target's "Copy Resource Files" phase, as those files are only used by Xcode or for documentation or tests, but that shouldn't end up in the final framework or app.
 
@@ -95,8 +103,8 @@ This rule currently checks for `*.xcconfig`, `*.md`, `*Info.plist` and any file 
 
 ### Warn about `null` references
 
-> Function: `check_null_references`  
-> Type: 🚫 failure (+ inline comments as warnings)
+> * Function: `check_null_references`
+> * Type: 🚫 failure (+ inline comments as warnings)
 
 During a merge of Xcode project gone bad, `(null)` references can appear in the `.pbxproj` file.
 
@@ -106,8 +114,8 @@ When that happens, we need to understand what went wrong during the `pbxproj` me
 
 ### Warn about orphan UUIDs
 
-> Function: `check_orphan_uuids`  
-> Type: 🚫 failure (+ inline comments as warnings)
+> * Function: `check_orphan_uuids`
+> * Type: 🚫 failure (+ inline comments as warnings)
 
 During a merge of Xcode project gone bad, orphan UUDS can appear in the `.pbxproj` file.
 
