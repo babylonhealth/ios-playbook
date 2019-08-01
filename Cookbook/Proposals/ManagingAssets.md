@@ -2,11 +2,11 @@
 # Managing Assets
 
 * Author(s): Adrian Śliwa
-* Review Manager: TBD
+* Review Manager: Danilo Aliberti
 
 ## Introduction
 
-Babylon's iOS application is a large and advanced software project. This project consisting of many frameworks. Each of them consists of many tools or features, most of which need icons or images to be fully implemented. The goal of this proposal is to standardise the way of adding, changing, removing and accessing assets in our codebase.
+Babylon's iOS application is a large and advanced software project. This project consists of many frameworks. Each of them consists of many tools or features, most of which need icons or images to be fully implemented. The goal of this proposal is to standardise the way of adding, changing, removing and accessing assets in our codebase.
 
 ## Motivation
 
@@ -40,6 +40,18 @@ Keeping every icon and image in one location potentially shouldn’t increase th
 1. We could try to systematize the way we include assets in specific feature frameworks but it can cause problems described in the motivation section.
 
 2. Instead of accessing icons or images by subscripts `designLibrary.tokens.icons.iconography[.close]` we could use new feature of Swift 5.1 `@dynamicMemberLookup` which could be combined with `KeyPath`. Then we could write just `designLibrary.tokens.icons.close`.
-
+To achieve that firstly we have to mark `struct Icons` with `@dynamicMemberLookup`. Then `ImageIdentifier` has to become `struct` with `String` properties with default value:
+```
+struct ImageIdentifier {
+	let close = "close"
+}
+```
+Later we need create property `let imageIdentifier = ImageIdentifier()` inside `struct Icons`. Having all of these we can finally write dynamicMember subscript:
+```
+subscript(dynamicMember keyPath: KeyPath<ImageIdentifier, String>) -> UIImage {
+    return Icons.image(for: imageIdentifier[keyPath: keyPath])
+}
+```
+And finally use it like: `designLibrary.tokens.icons.close`. The only drawback of this approach is the fact that for new icons we have to create new property and assign the default value to it compared to just create new enum case with the name matching asset name.
 3. We are going to use SwiftGen tool to auto-generate localizable strings identifiers. Having that tool in place we could also use it to generate assets identifiers.
 
