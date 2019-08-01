@@ -45,7 +45,7 @@ This rule is to alert us if we **forgot to commit the changes made in `Podfile.l
  - We modified the `Podfile` and ran `pod install` but forgot to include the `Podfile.lock` in the commit
  - We modified the `Podfile` once, ran `pod install` and committed the `Podfile.lock` changes for that first modification in one commit… but then later re-modified the `Podfile` and forgot to commit the second change to `Podfile.lock` (which means that the PR will contain changes in `Podfile.lock`, but not the expected ones)
 
-### Inform if dependencies might have change
+### Inform if dependencies might have changed
 
 > * Function: `check_dependencies_changed`
 > * Type: 📖 informative message
@@ -117,10 +117,10 @@ When that happens, we need to understand what went wrong during the `pbxproj` me
 > * Function: `check_orphan_uuids`
 > * Type: 🚫 failure (+ inline comments as warnings)
 
-During a merge of Xcode project gone bad, orphan UUDS can appear in the `.pbxproj` file.
+During a merge of Xcode project gone bad, orphan UUIDs can appear in the `.pbxproj` file.
 
 _Context: The `pbxproj` format is such that it contains a list of file references (with an associated UUID) listing all the files that are in the pbxproj, then points to those references in the various parts of the `pbxproj` (for example in the "Compile Sources" build phase part, to reference which files are included in that build phase). If a `pbxproj` merge went wrong, sometimes the line declaring the file reference (and its UUID) could be deleted during the bad merge while other lines in the pbxproj referencing that UUID would still remain._
 
-This rule will warn you if any part of the pbxproj reference an UUID that got accidentally removed. (Note: you should see similar warnings when you run `pod install` in your terminal and it warns about an unknown UUID)
+This rule will warn you if any part of the pbxproj references an UUID that got accidentally removed. (Note: you should see similar warnings when you run `pod install` in your terminal and it warns about an unknown UUID)
 
-When that happens, you need to figure out if the removal of the file was intended as part of your PR (and if so, fix trhe merge by also removing the lines pointing to that now-deleted file reference), or if the removal of the file from the pbxproj was unintented (and if so, restore it). You could do that by editing the `pbxproj` manually, but if possible it's even better if you can fix it in Xcode (e.g. by removing the offending file from the project and add it again)
+When that happens, you need to figure out if the removal of the file was intended as part of your PR (and if so, fix the merge by also removing the lines pointing to that now-deleted file reference), or if the removal of the file from the pbxproj was unintented (and if so, restore it). You could do that by editing the `pbxproj` manually, but if possible it's even better if you can fix it in Xcode (e.g. by removing the offending file from the project and add it again)
