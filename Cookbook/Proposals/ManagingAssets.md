@@ -52,7 +52,7 @@ subscript(dynamicMember keyPath: KeyPath<ImageIdentifier, String>) -> UIImage {
     return Icons.image(for: imageIdentifier[keyPath: keyPath])
 }
 ```
-And finally use it like: `designLibrary.tokens.icons.close`. The only drawback of this approach is the fact that for new icons we have to create new property and assign the default value to it compared to just create new enum case with the name matching asset name.
+And finally use it like: `designLibrary.tokens.icons.close`. The only drawback of this approach is the fact that for new icons we have to create new property and assign the default value to it, compared to just create new `enum` `case` with the name matching asset name.
 
 3. We are going to use SwiftGen tool to auto-generate localizable strings identifiers. Having that tool in place we could also use it to generate assets identifiers.
 
