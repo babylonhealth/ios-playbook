@@ -43,7 +43,7 @@ This rule is to alert us if we **forgot to commit the changes made in `Podfile.l
 
  - We modified the `Podfile` but forgot to do `bundle exec pod install` afterwards
  - We modified the `Podfile` and ran `pod install` but forgot to include the `Podfile.lock` in the commit
- - We modified the `Podfile` once, ran `pod install` and commited the `Podfile.lock` changes for that first modification in one commit, but then later re-modified the `Podfile` and forgot to commit the second change to `Podfile.lock` (which means that the PR will contain changes in `Podfile.lock`, but not the expected ones)
+ - We modified the `Podfile` once, ran `pod install` and committed the `Podfile.lock` changes for that first modification in one commit… but then later re-modified the `Podfile` and forgot to commit the second change to `Podfile.lock` (which means that the PR will contain changes in `Podfile.lock`, but not the expected ones)
 
 ### Inform if dependencies might have change
 
