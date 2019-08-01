@@ -43,7 +43,7 @@ Keeping every icon and image in one location potentially shouldn’t increase th
 To achieve that firstly we have to mark `struct Icons` with `@dynamicMemberLookup`. Then `ImageIdentifier` has to become `struct` with `String` properties with default value:
 ```
 struct ImageIdentifier {
-	let close = "close"
+    let close = "close"
 }
 ```
 Later we need create property `let imageIdentifier = ImageIdentifier()` inside `struct Icons`. Having all of these we can finally write dynamicMember subscript:
