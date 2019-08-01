@@ -25,9 +25,9 @@ This rule is only a warning because we don't want it to block PRs, as there are 
 
 > Declared in: `danger-ci/pods.rb`
 
-### Check that Podfile.lock has been properly commited
+### Check that Podfile.lock has been properly committed
 
-> Function: `check_podfile_lock_commited`  
+> Function: `check_podfile_lock_committed`  
 > Type: 🚫 failure
 
 This rule is to alert us if we **forgot to commit the changes made in `Podfile.lock`**. This can happen if:
