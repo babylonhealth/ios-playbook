@@ -15,7 +15,7 @@ Even though feature switches in essens is a trivial thing our current apporach t
 
 Currently we provide a way to override any feature switch through toggles in the Settings system app. For that we need to include `Root.plist` file in the app bundle. Values of these switches are then written to the user defaults which we use as a source of values. But they are written to the user defaults only after they are interacted at least once. That said if overrides are enabled but you never change the value nothing will be written to the user defaults. This is not affected by default value set in the `Root.plist`, it only affects the intial position of the switch. How we solve it now is by reading these default values from plist and storing them in user defaults when application starts before we read these values (see `registerSettingsDefaults` in `Settings.swift`). Not just it is defined on the wrong type (`Settings` type is used to store some local user state data like if they completed some onboarding, not feature switches and this is not something that we allow to override with `Root.plist` AFAIK), but also this way changing default value in the `Root.plist` will affect all our targets as they all share this file, which makes us to create a second file just for our primary target. This makes it very confusing for developers to understand what they need to do to enable their feature for release so that it does not affect other targets if that's the requirement.
 
-Without this syncing we would have to deal with optionals for all the switches, probably falling back to their defaults, defined in code. That also highlights another issue with `Root.plist`, that we need to repeat default value in the code and in the plist and make sure they allign to avoid confusion.
+Without this syncing we would have to deal with optionals for all the switches, falling back to their defaults, defined in code. That also highlights another issue with `Root.plist`, that we need to repeat default value in the code and in the plist and make sure they allign to avoid confusion.
 
 Another issue caused by using `Root.plist` and overrides in this way is when we move from Local feature switch used during development to Remote feature switch used on a final stage of the feautre rollout we have to remember to move the plist entry for this switch from one section to another. Otherwise there will be no way to override it during testing.
 
@@ -53,7 +53,7 @@ It's not clear what feature switches affect what screens. It's somtimes frustrat
 ## Proposed solution
 
 To address these issues we suggest the following changes in our feature switches architecture:
-	
+
 1. Feature toggles and static configurations related to the particular feature should be defined in this feature module instead of shared module or in the app. This follows interface segregation principle and goes along with improving modularisation - one won't need to change common module with feature switches and recompile all of it (and potentially everything else) when they only need to recompile module that uses this feature switch. This way we also configure our frameworks the same way as we configure any other 3rd party framework and can use the similar infrastrauctore for that (i.e. dedicated instances responsibule for configuring each feature rather than doing that all in the app delegate).
 
 2. Replace `AppConfigurationProtocol` and all related protocols with structs. This will decrease amount of boilerplate we have to write when adding new application configuration. Application configuration will be only concerned with application level configurations which are not directly related to any feature module.
@@ -62,10 +62,8 @@ To address these issues we suggest the following changes in our feature switches
 
 4. Root.plist should be generated based on the code that declares feature switches.
 
-	
-	
 ## Detailed design
-	
+
 ### Module specific feature switches
 
 Each type of feature switch will be implemented with it's own type to make its semantics clear. We will need `LocalFeatureSwitch` and `RemoteFeatureSwitch` types. When later we introduce a new produt configurator service we defined new type `ProductFeatureSwitch`. They all will have a common `value` property and each provider will have a `get(valueForKey: String)` method and should store their properties in a dictionary.
@@ -74,28 +72,28 @@ Each type of feature switch will be implemented with it's own type to make its s
 // In BabylonDependencies
 
 public struct RemoteFeatureSwitch<T> {
-	let provider = Current.abTestingService
-	var value: T {
-		return provider.get(valueForKey: self.key)
-	}
-  	// Name to be used to generate entries for Root.plist using SwiftSyntax
-	let name: String
-	// key to query the value from provider and key for UserDefaults
-	let key: String
+    let provider = Current.abTestingService
+    var value: T {
+        return provider.get(valueForKey: self.key)
+    }
+    // Name to be used to generate entries for Root.plist using SwiftSyntax
+    let name: String
+    // key to query the value from provider and key for UserDefaults
+    let key: String
 }
 
 public struct LocalFeatureSwitch<T> {
-	let provider = Current.userDefaults
-	var value: T { ... }
-	let name: String
-	let key: String
+    let provider = Current.userDefaults
+    var value: T { ... }
+    let name: String
+    let key: String
 }
 
 public struct ProductFeatureSwitch<T> {
-	let provider = Current.productConfigurator
-	var value: T { ... }
-	let name: String
-	let key: String
+    let provider = Current.productConfigurator
+    var value: T { ... }
+    let name: String
+    let key: String
 }
 ```
 
@@ -109,50 +107,50 @@ typealias ABTest = RemoteFeatureSwitch
 Remote Feature Switches we fetch from Firebase all together and under the hood they are just abstract key-value pairs. So to access them in a module the module should be initialised with this abstract collection of key-value pairs (or access it via `Current` as in examples) so that it can get from it values it cares about and store them for later use.
 
 These feature switches should be separate from static configuration (implemented ATM via `AppConfiguration`) but both should be defined and stored inside the module. This way we break up the monolythic `AppConfiguration` and allow static configuration be configured separately from dynamic feature switches which get their values at runtime.
-	
+
 With patient details situation is a bit different because this data is associated with a `PatientDTO`. We can refactor it so that `PatientDTO` stores abstract key-value pairs and pass it to the frameworks after patient details are retrieved similarly with Firebase remote config (or similarly access it via `Current` when these patient details will be moved there). But we suggest to address this type of feature switches separately as this work depends on other work related to how the app works with patient details. In future these feature switches can become just a new type of switch like `PatientFeatureSwitch` which will use `Current.patient.details` as their provider.
-	
+
 Inside the module we can extend `World` with a module specific namespace and keep its feature switches and configurations separate from the rest of `World` properties.
 
 ```swift
 // In the feature framework
 extension Current {
-	private static private(set) var someFeature: SomeFeatureModule!
-	
-	// way for the app to set static configurations for the feature
-	public func configureSomeFeature(
-		config: SomeFeatureModule.Configuration
-	) {
-		World.someFeature = SomeFeatureModel(config: config)
-	}
-	
-	public var someFeature: FeatureModule {
-		return World.someFeature
-	}
-	
-	public struct SomeFeatureModule {
-	   
-		public let featureSwitches: FeatureSwitches
-	
-		// dynamic feature switches
-		public struct FeatureSwitches {
-			public let isNewFeatureEnabled = RemoteFeatureSwitch<Bool>(
-				name: “New feature”,
-				key: “is_new_feature_enabled”
-			)
-			public let inProgressFeatureEnabled = LocalFeatureSwitch<Bool>(
-				name: “Another feature”,
-				key: “is_another_feature_enabled”
-			)
-		}
-		
-		// static configurations
-		public let config: Configuration
-		
-		public struct Configuration {
-			public let someAppSpecificConfiguration: Bool // can have a default value
-		}
-	}
+    private static private(set) var someFeature: SomeFeatureModule!
+    
+    // way for the app to set static configurations for the feature
+    public func configureSomeFeature(
+        config: SomeFeatureModule.Configuration
+    ) {
+        World.someFeature = SomeFeatureModel(config: config)
+    }
+    
+    public var someFeature: FeatureModule {
+        return World.someFeature
+    }
+    
+    public struct SomeFeatureModule {
+       
+        public let featureSwitches: FeatureSwitches
+    
+        // dynamic feature switches
+        public struct FeatureSwitches {
+            public let isNewFeatureEnabled = RemoteFeatureSwitch<Bool>(
+                name: “New feature”,
+                key: “is_new_feature_enabled”
+            )
+            public let inProgressFeatureEnabled = LocalFeatureSwitch<Bool>(
+                name: “Another feature”,
+                key: “is_another_feature_enabled”
+            )
+        }
+        
+        // static configurations
+        public let config: Configuration
+        
+        public struct Configuration {
+            public let someAppSpecificConfiguration: Bool // can have a default value
+        }
+    }
 }
 ```
 
@@ -162,13 +160,13 @@ If the type of the switch changes (i.e. from local to remote switch) we change i
 
 ```swift
 extension World.SomeFeatureModule {
-	public func get<T>(_ keyPath: KeyPath<RemoteFeatureSwitch<T>, World.SomeFeatureModule.FeatureSwitches>) -> T {
-	    return featureSwitches.keyPath[keyPath].value
-	}
-	
-	public func get<T>(_ keyPath: KeyPath<T, World.SomeFeatureModule.Configuration>) -> T {
-	    return config.keyPath[keyPath]
-	}	
+    public func get<T>(_ keyPath: KeyPath<RemoteFeatureSwitch<T>, World.SomeFeatureModule.FeatureSwitches>) -> T {
+        return featureSwitches.keyPath[keyPath].value
+    }
+    
+    public func get<T>(_ keyPath: KeyPath<T, World.SomeFeatureModule.Configuration>) -> T {
+        return config.keyPath[keyPath]
+    }
 }
 ```
 
@@ -176,20 +174,20 @@ With Swift 5.1 we can improve this a bit with property wrappers which will allow
 
 ```swift
 @RemoteFeatureSwitch(
-	name: “New feature”,
-	key: “is_new_feature_enabled”
+    name: “New feature”,
+    key: “is_new_feature_enabled”
 )
 var isNewFeatureEnabled: Bool
 ```
 
 Also we will be able to use `dynamicMemberLookup` with keypaths instead of custom getters or subscripts so that we wil be able to access dynamic feature switches or static configuration as `Current.someFeature.isNewFeatureEnabled` instead of `Current.someFeatures.get(\.isNewFeatureEnabled)`
-	
+
 ### "Сoncretize" app configurations
 
 We already moved `AppConfigurationProtocol` to `BabylonDependencies` so that the instance of app configuration is a part of `Current`. But that does not solve all the issues with amount of boilerplate we have to write to add a new configuration and discoverability of values.
-	
+
 To solve these issues we propose to replace `protocol AppConfigurationProtocol` with concrete `struct AppConfiguration` defined in `BabylonDependencies` and initialise it with application specific values in a target specific code. This will reduce amount of boilerplate to write, but will still require us to change code multiple times in each target when something changes in this struct. I.e. when we add a new feature switch to `AppConfiguration` we will need to add it to the paramters that we pass to it's initializer in each target. We can use default values where possible to avoid that. For that we should agree that default values are always `false` so that we can definetely know what is the value if it is not passed to the constructor. Protocol and default protocol implementations achive the same result but with much more boilerplate (remember point-free issue about using value types instead of protocols)
-	
+
 All feature specific configuration should be moved to the corresponding feature frameworks and should use concrete structs instead of protocols that then `AppConfiguration` extends. `AppConfiguration` should only be concerned with application level configurations (i.e. enabled tabs or privacy notices urls).
 
 3. All feature switches access points should be moved to the `Current` and consequentially should be only used in builders - view models, flow controllers and renderers should have them injected through their constructors. Currently we only have `Current.abTestingService` but we have global `LocalFeatureSwitches`
@@ -211,11 +209,10 @@ Currently used types for feature switches should be deprecated and either replac
 
 ```swift
 let isNewFeatureEnabled = FeatureSwitch(
-	name: “New feature”,
-	key: “is_new_feature_enabled”,
-	provider: Current.abTestingService,
+    name: “New feature”,
+    key: “is_new_feature_enabled”,
+    provider: Current.abTestingService,
 )
 ```
 
-With that we loose the ability to explisitly specify flags for A/B tests.
-
+With that we loose the ability to explisitly specify flags for A/B tests unless we separate Firebase provider into separate providers for remote configs and for A/B tests.
