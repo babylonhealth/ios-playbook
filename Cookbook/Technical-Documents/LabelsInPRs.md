@@ -35,9 +35,9 @@ A product vertical corresponds to a big feature of the product.
 A project horizontal corresponds to an area of the project that has an horizontal impact, means it has impact in most or all the verticals in the project.
 
 - <span style="background-color:#d4c5f9; color:black; font-weight:600">Automation Tests 🤖</span> - introduction of automation tests
-- <span style="background-color:#a3f7e2; color:black; font-weight:600">Linter 🧹</span> - style guide work
 - <span style="background-color:#fcfc50; color:black; font-weight:600">Localisation 🌐</span> - updating localizable strings or working in the localization system of the project
-- <span style="background-color:#8631bf; color:white; font-weight:600">Infrastructure 🛠</span> - working in the foundation of the project.
+- <span style="background-color:#8631bf; color:white; font-weight:600">Infrastructure 🛠</span> - working in the foundation of the project like network layer.
+- <span style="background-color:#2fcbe0; color:black; font-weight:600">Tooling 🔨</span> - working in tools like CircleCI, Danger, Linter.
 
 ### <a name="branding"></a>Branding
 We have several projects that contain a subset of functionalities from the main babylon app. These apps also have different flavours in terms of UI. 
@@ -47,13 +47,12 @@ The labels to define work that is done in each different project are:
 - <span style="background-color:#1d76db; color:white; font-weight:600">BUPA 🤕</span> - work in the BUPA app
 - <span style="background-color:#0052cc; color:white; font-weight:600">NHS 👩‍⚕️</span> - work in the GP and hand app
 - <span style="background-color:#9746e2; color:white; font-weight:600">Telus 🇨🇦</span> - work in the Telus app
-- <span style="background-color:#2f2799; color:white; font-weight:600">US :us:</span> - work in the US app
+- <span style="background-color:#2f2799; color:white; font-weight:600">US 🇺🇸</span> - work in the US app
 
 ### <a name="stage"></a>Stage
 Informs in which stage of development the PR is. These labels are used to know which PRs can be reviewed. They are also use to trigger our CI jobs.
 
 - <a name="merge"></a><span style="background-color:#FF7F50; color:black; font-weight:600">Merge</span> - The PR is ready to be merged. It will be positioned in the queue to wait for our CI system to run all the tests. Only if every test has passed it will be merged.
-
 - <a name="needs_reviewer"></a><span style="background-color:#ce3799; color:white; font-weight:600">Needs one reviewer 🙏</span> - The PR has one approval and is waiting for one more review.
 - <a name="ready_review"></a><span style="background-color:#0e8a16; color:white; font-weight:600">Ready for Review 🚀</span> - The work on the PR is finished and it is ready to be reviewed.
 - <a name="in_progress"></a><span style="background-color:#fbca04; color:black; font-weight:600">work in progress 🚧</span> - The work on the PR is not finished and is not ready to be reviewed.
