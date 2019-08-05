@@ -77,12 +77,19 @@ Depending on the use case we are using different ways to define Feature Switches
 	
 4. **Firebase remote config**
 
-	These feature switches are another kind of remote feature switches and use Firebase Remote Config as a backend. To add a new Firebase remote config you need to add a new "variant" variable in the `ABTestVariant` in `ABTesting.swift`
+	These feature switches are another kind of remote feature switches and use Firebase Remote Config as a backend. To add a new Firebase remote config you need to add a new "variant" variable in the `ABTestVariant` in `ABTesting.swift` and its default to `FirebaseABTestingService.keysAndNSObjectValues`
 	
 	```swift
 	static let isNewFeatureEnabled = makeBoolVariant(key: "is_new_feature_enabled", defaultValue: false)
 	```
-
+	
+	```swift
+        let keysAndNSObjectValues = [
+	    ...,
+	    ABTestVariant.isNewFeatureEnabled.keyAndDefault,
+	]
+	```
+	
 	Then you need to add a remote config in the [Firebase console](https://console.firebase.google.com) with the same string key. For that navigate to the `Remote Config` page in the `Grow` section of the side menu and tap "Add parameter".
 
 	![](Assets/adding-remote-config-flag.png)
