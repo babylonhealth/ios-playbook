@@ -102,7 +102,7 @@ We will assume `("I enter credentials for a \"United Kingdom\" user")` does not 
         }
 ```
 
-Before we continue it's worth looking at the documentation for [XCTest-Gherkin](https://github.com/net-a-porter-mobile/XCTest-Gherkin/blob/master/README.md) to understand how steps definitions work.
+Before we continue it's worth looking at the documentation for [XCTest-Gherkin](https://github.com/net-a-porter-mobile/XCTest-Gherkin/blob/master/README.md) to understand [how steps definitions work](https://github.com/net-a-porter-mobile/XCTest-Gherkin/blob/master/README.md#step-definitions).
 
 #### Paramaters
 In order to make the step more robust we will pass in the **country** as a parameter, we need to write a regex capture group and define the data type. This part of the step `\"(.*?)\"` will capture the parameter, I user `\"` as a method to demote the boundary of the parameter though this is not technically needed to make the code work, but more of a coding style for readability. The Pod's documentation details that up to two parameters can be passed in, but can be both complex or primitive types. Complex types allow us to pass in objects. For this step we will take any value and define it as a `String`. 
