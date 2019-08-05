@@ -76,7 +76,7 @@ When not using mocking, We use real API requests to control the state of the app
 We will now go through a set of truncated steps to automation a UI flow. Below is the example test scenario we intend to add.
 
 ```swift
-	func test_login_as_uk_user() {
+    func test_login_as_uk_user() {
         Given("I tap the login option in the Start up screen")
         And("I enter credentials for a \"United Kingdom\" user")
         And("the password field is secure")
