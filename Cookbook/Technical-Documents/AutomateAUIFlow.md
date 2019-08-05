@@ -1,5 +1,5 @@
 # Testing Conventions: Automating a UI Flow [DRAFT]
-In order to complete a story we need to verify what is delivered. Testing functionality can *normally* be done at multiple levels of test pyramid and nearly always at the UI level. *So the question becomes were do we want to test and why*. As a general rule to lower in the pyramid you can test the more efficient and resource inexpensive it is, for example unit, integration or snapshot tests. 
+In order to complete a story we need to verify what is delivered. Testing functionality can *normally* be done at multiple levels of test pyramid and nearly always at the UI level. *So the question becomes were do we want to test and why*. As a general rule the lower in the pyramid you can test the more efficient and resource inexpensive it is, for example unit, integration or snapshot tests. 
 
 We do not want to test at the UI level simply because we can. And should be utilised for functionality that *can't be fully covered at other levels* or *verify an end to end flow* or *requires subjective evaluation* i.e. video. Once we have decided to create a UI test, the next stage is to decide if we should automate with input from the squads QA's and Dev's.
 
