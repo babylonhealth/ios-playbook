@@ -111,7 +111,7 @@ In order to make the step more robust we will pass in the **country** as a param
 Screen objects are intended to contain all code relating to a screen. Functions will normally fall into three main types as defined [here](#Screen-Objects). Here are some of the interaction functions we need to create for our test.
 
 ```swift
-    func enterCredentialsFor(_ email: String) {
+    func enterCredentialsFor(_ email: String) { ... }
 		...
     }
 
