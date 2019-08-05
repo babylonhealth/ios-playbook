@@ -31,7 +31,6 @@ A product vertical corresponds to a big feature of the product.
 - <span style="background-color:#f9d0c4; color:black; font-weight:600">SDK 💸</span> - any work done in the SDK vertical
 - <span style="background-color:#006b75; color:white; font-weight:600">Triage UI 🏥</span> - any work done in the Triage UI vertical
 
-
 ### <a name="project-horizontals"></a>Project horizontals
 A project horizontal corresponds to an area of the project that has an horizontal impact, means it has impact in most or all the verticals in the project.
 
@@ -39,7 +38,6 @@ A project horizontal corresponds to an area of the project that has an horizonta
 - <span style="background-color:#a3f7e2; color:black; font-weight:600">Linter 🧹</span> - style guide work
 - <span style="background-color:#fcfc50; color:black; font-weight:600">Localisation 🌐</span> - updating localizable strings or working in the localization system of the project
 - <span style="background-color:#8631bf; color:white; font-weight:600">Infrastructure 🛠</span> - working in the foundation of the project.
-
 
 ### <a name="branding"></a>Branding
 We have several projects that contain a subset of functionalities from the main babylon app. These apps also have different flavours in terms of UI. 
@@ -66,13 +64,11 @@ Flags if there is something preventing the PR from being merged that is unrelate
 - <a name="blocked"></a><span style="background-color:#000000; color:white; font-weight:600">Blocked ✋</span> - the PR is waiting for another task to be complete - this task can be a backend task, a product decision or another PR.
 - <a name="blocking"></a><span style="background-color:#d93f0b; color:white; font-weight:600">Blocking other PRs 🙅‍♀️</span> - the PR is blocking other PRs from resuming their work or from being merged. The PR with this label should have priority over the PRs that are being blocked by this one.
 
-
 ### <a name="emergency"></a>Emergency
 Alerts when a PR is required to be merged. This is used in emergency situations like a hot fix or a piece of work that is mandatory to go in the release that is about to ship.
 
 - <span style="background-color:#e00000; color:white; font-weight:600">Feature at risk 🚑</span> - A PR that has to go in the next release that will ship in 2 days or less. This PR has priority to be reviewed over all the other PRs that are not in emergency.
 - <span style="background-color:#fcc1ba; color:black; font-weight:600">Hotfix 🆘</span> - The PR has priority to be reviewed because it has a hot fix for release that is currently in Production.
-
 
 ### <a name="extra"></a>Extra
 These tags are used to give extra context to the PR.
@@ -81,9 +77,6 @@ These tags are used to give extra context to the PR.
 - <span style="background-color:#c79ee2; color:black; font-weight:600">Housekeeping 🏡</span> - The PR includes some work that won't change any functionality - it just removes clutter from the project.
 - <span style="background-color:#bfdadc; color:black; font-weight:600">Refactoring 🏗️</span> - The PR has refactoring work. Refactoring work is usually work that involves rewritting a part of the project that had technical debt. This work usually doesn't have any visual changes (UI/UX changes).
 - <span style="background-color:#bfdadc; color:white; font-weight:600">Trivial 👶</span> - The PR takes 1-2 minutes to review (an example can be a PR that only involves updading localizable strings).
-
-
-
 
 ## 2. The rules
 
@@ -96,7 +89,6 @@ There are a few rules we should consider when applying labels to a PR.
 
 A PR should always contain at least one label that belongs to these groups. Multiple labels from these groups can be added to a PR because a piece of work can have impact in more than one area.
 
-
 ### [**Stage**](#stage)
 
 In this group a mixed of rules are applied. 
@@ -106,7 +98,6 @@ A PR can:
 - have [one reviewer](#needs_reviewer) label only if it is [ready for review](#ready_review).
 - have [merge](#merge) label only if it is [ready for review](#ready_review), has two approvals and no changes requested.
 
-
 ### [**Status**](#status)
 
 A PR can have one or both of these labels dependending on the blocking chain. However, it is very unusual and not ideal that a PR is in a situation where it needs both labels at the same time.
@@ -115,7 +106,6 @@ There is some specific information that is mandatory to be present in the PR des
 
 - [Blocked](#blocked) - Describe the reason why it is blocked. If it is being blocked by another PR or JIRA Ticket, these should be mentioned.
 - [Blocking other PRs](#blocking) - Describe the reason why it is blocking other PRs. It should mentioned which PRs are being blocked by it.
-
 
 ### [**Emergency**](#emergency)
 
