@@ -240,7 +240,7 @@ Now that were written out API calls and implemented our screen object we can com
             self.registerUser(withEmail: email, forCountry: user)
             
             LoginScreen().enterCredentialsFor(email)
-            LoginScreen(). tapLogin()            
+            LoginScreen().tapLogin()            
         }
 ```
 
