@@ -16,7 +16,7 @@ Identification of `XCUIElement`s in automation code should be done in the screen
 
 #### Identifiers
 
-The identifiers are strings defined in a Screen Object namespace using a private enum or injected into the constructor of Screen Object. As you can see from the example below, we have used both accessibility identifiers and the text within the element to locate `XCUIElement`s.
+The identifiers are either declared in `AccessibilityContent` (see “[Using AccessibilityContent](#using-accessibilitycontent)” below), or defined as strings in a Screen Object namespace using a private enum or injected into the constructor of Screen Object. As you can see from the example below, we have used both accessibility identifiers and the text within the element to locate `XCUIElement`s.
 
 ##### Chatbot Bento Screen
 
@@ -84,15 +84,15 @@ public enum AccessibilityContent {
 After this identifier has been set on a control, we can `import BabylonDependencies` in a Screen implementation in automation, and update the query to use this identifier:
 
 ``` swift
-let promofield = app.tables
-    .matching(.cell, identifier: AccessibilityContent.PromoCode.codeCell)
+let promofield = app.tables.cells
+    .matching(identifier: AccessibilityContent.PromoCode.codeCell)
     .textFields
     .firstMatch
 ```
 
 Note that you may need to set the identifier on the cell itself rather than its internal components, as automation may have problems finding elements otherwise.
 
-It is also preferable to always use `.matching(.cell, identifier: …).firstMatch` rathen than a subscript (`[…]`) as the subscript variant only expects a single match. If, for some reason, there are several, it will throw an error.
+It is also preferable to always use `.matching(identifier: …).firstMatch` rathen than a subscript (`[…]`) as the subscript variant only expects a single match. If, for some reason, there are several, it will throw an error.
 
 ### Using identifiers to find screens
 
