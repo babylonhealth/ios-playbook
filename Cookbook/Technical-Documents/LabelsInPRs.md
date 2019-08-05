@@ -1,4 +1,4 @@
-# How to label a Pull Request
+# How to add Labels to a Pull Request
 
 
 We use labels in our Pull Requests to be able to categorize and prioritize our work. Some specific labels are also used to trigger our CI jobs.
