@@ -32,7 +32,7 @@ A product vertical corresponds to a big feature of the product.
 - <span style="background-color:#006b75; color:white; font-weight:600">Triage UI 🏥</span> - any work done in the Triage UI vertical
 
 ### <a name="project-horizontals"></a>Project horizontals
-A project horizontal corresponds to an area of the project that has an horizontal impact, means it has impact in most or all the verticals in the project.
+A project horizontal corresponds to an area of the project that has an horizontal impact, meaning it has impact in most or all the verticals in the project.
 
 - <span style="background-color:#d4c5f9; color:black; font-weight:600">Automation Tests 🤖</span> - introduction of automation tests
 - <span style="background-color:#a3f7e2; color:black; font-weight:600">Linter 🧹</span> - style guide work
