@@ -16,7 +16,7 @@ For our project we decided to create an automation framework utilising [Cucumber
 Feature files contain the test scenarios written in [Gherkin](https://cucumber.io/docs/gherkin/). The naming convention for the file itself is `functionality` `sub-functionality` *Feature.swift*. For example `AppointmentsFamilyFeature.swift`. These files should contain all test scenarios for the specified area in order to facilitate targeted testing of features.
 
 ### Step definitions
-Steps definitions are used to link the human readable Gherkin to user actions, implemented in screen objects. The library selected was [xctest-gherkin](https://github.com/net-a-porter-mobile/XCTest-Gherkin) which is installed as a Pod. The library uses regex to search for the corresponding step and facilitates passing in parameters. 
+Steps definitions are used to link the human readable Gherkin to user actions, implemented in screen objects. The library selected was [xctest-gherkin](https://github.com/net-a-porter-mobile/XCTest-Gherkin). The library uses regex to search for the corresponding step and facilitates passing in parameters. 
 
 It is at this level where we should be asserting screen states, grouping *cross screen* actions or completing a single action. A detailed naming convention for step definitions is defined [here](https://github.com/Babylonpartners/ios-playbook/blob/master/Cookbook/Technical-Documents/UIAutomation.md).
 
