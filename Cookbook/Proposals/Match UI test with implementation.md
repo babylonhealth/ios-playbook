@@ -13,7 +13,7 @@ Lately we had quite a lot of UI automation test failures which decrease the spee
 
 ## Proposed solution
 
-I believe that we can achieve that by marking some kind of mark comments that can be recognized by Danger which would  be able to trigger corresponding UI test
+I believe that we can achieve that by adding some kind of mark style comments that can be recognized by Danger which would  be able to trigger the corresponding UI test
 e.g
 
 ```swift
