@@ -24,7 +24,7 @@ final class SomeViewModel {}
 final class SomeRendere { }
 ```
 
-And if `OnBoardingFeature` is missing or spell wrong then it would fail on CI for example.
+And if `SomeFeature` is missing or spelled wrong then it would fail on CI, for example.
 
 ## Impact on existing codebase
 
