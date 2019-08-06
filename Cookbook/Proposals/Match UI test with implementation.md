@@ -21,7 +21,7 @@ e.g
 final class SomeViewModel {}
 
 // UITestCase: SomeFeature
-final class SomeRendere { }
+final class SomeRenderer { }
 ```
 
 And if `SomeFeature` is missing or spelled wrong then it would fail on CI, for example.
