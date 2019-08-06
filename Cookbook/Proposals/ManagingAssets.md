@@ -25,7 +25,7 @@ The proposed solution contains a set of rules which should be followed during ma
 1. All new icons and images we are going to use should be added to `BabylonDependencies.framework` in `Assets.xcassets` catalog 
 2. `struct DesignLibrary.Tokens` should have another property for icons `public let icons: Icons`
 3. Then we have to add a new case to `enum ImageIdentifier` which will be embedded in `struct Icons`.
-4. To access e.g. close icon we could use subscripts `designLibrary.tokens.icons[.close]`
+4. To access e.g. close icon we could use `subscript`: `designLibrary.tokens.icons[.close]`
 5. If we are updating an icon we should check if any other place uses it. If so and that other place shouldn't be updated we should create a new icon with an updated design.
 6. If we are removing some code which is using some icons we should check if that code was the last place which was using given icon, if so icon should be deleted from `Assets.xcassets`.
 7. To support the overriding of standard icons in white label apps we should update `ImageCatalogueAware.image(for imageIdentifier:in bundle: compatibleWith traitCollection:) -> UIImage` to firstly access image from `Bundle.main` and then fallback to `BabylonDependencies` if image was not overridden. We can also add support to specify from which location we would like to access given image.
@@ -52,6 +52,8 @@ subscript(dynamicMember keyPath: KeyPath<ImageIdentifier, String>) -> UIImage {
 }
 ```
 And finally use it like: `designLibrary.tokens.icons.close`. The only drawback of this approach is the fact that for new icons we have to create new property and assign the default value to it, compared to just create new `enum` `case` with the name matching asset name. The small benefit here is to have a little bit better syntax while keeping adding new assets simple.
+
+// TODO add `static let close` solution
 
 // TODO (I'm going to extend this section with POC)
 3. We are going to use SwiftGen tool to auto-generate localizable strings identifiers (https://github.com/Babylonpartners/ios-playbook/pull/187). Having that tool in place we could also use it to generate assets identifiers.
