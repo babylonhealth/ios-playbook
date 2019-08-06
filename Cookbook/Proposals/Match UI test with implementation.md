@@ -9,7 +9,7 @@ The goal is to match the implementation of a feature with a corresponding UI tes
 
 ## Motivation
 
-Lately we had quite a lot of UI automation test failures which decrease the speed witch we can make a release and distracts automation QAs to do this unnecessary work.
+Lately we had quite a lot of UI automation test failures which decrease the speed which we can make a release and distracts automation QAs to do this unnecessary work.
 
 ## Proposed solution
 
