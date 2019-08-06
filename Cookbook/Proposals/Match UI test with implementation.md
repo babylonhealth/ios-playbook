@@ -28,7 +28,7 @@ And if `OnBoardingFeature` is missing or spell wrong then it would fail on CI fo
 
 ## Impact on existing codebase
 
-No impact on the existing codebase can be achieved gradually by having a Danger rule to remind people to mark `ViewModel` and `Renderer` files with `UITestCase` marker.
+No impact on the existing codebase. These changes can be made gradually by having a Danger rule to remind people to mark `ViewModel` and `Renderer` files with the appropriate `UITestCase` marker.
 
 ## Alternatives considered
 
