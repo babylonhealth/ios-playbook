@@ -38,7 +38,7 @@ Unfortunately, in our codebase assets are located in different places. If we wil
 
 1. We could try to systematize the way we include assets in specific feature frameworks but it can cause problems described in the motivation section.
 
-2. Instead of accessing icons or images by subscripts `designLibrary.tokens.icons.iconography[.close]` we could use new feature of Swift 5.1 `@dynamicMemberLookup` which could be combined with `KeyPath`. Then we could write just `designLibrary.tokens.icons.close`.
+2. Instead of accessing icons or images by subscripts `designLibrary.tokens.icons[.close]` we could use new feature of Swift 5.1 `@dynamicMemberLookup` which could be combined with `KeyPath`. Then we could write just `designLibrary.tokens.icons.close`.
 To achieve that firstly we have to mark `struct Icons` with `@dynamicMemberLookup`. Then `ImageIdentifier` has to become `struct` with `String` properties with default value:
 ```
 struct ImageIdentifier {
