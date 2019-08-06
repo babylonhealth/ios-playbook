@@ -55,6 +55,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Greg Bryant             |                                                               |
 | Sam Francis             |                                                               |
 | Patrick Westmeyer       |                                                               |
+| Daniel Spindelbauer     | [@sdaniel55](https://twitter.com/sdaniel55)                   |
 
 
 ## 2. Which squad each individual belongs to, and its availability.
