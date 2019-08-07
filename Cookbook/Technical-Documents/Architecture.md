@@ -82,8 +82,8 @@ struct Screen0FlowController {
     ...
     func handle(_ route: Route) {
         switch route {
-        case ...:
-            let screen1ViewController = Screen1Builder(...).make(...)
+        case let .screen1(screen1ID):
+            let screen1ViewController = Screen1Builder(id: screen1ID).make(...)
             navigationFlow.present(screen1ViewController) // accesses `UINavigationController` to push "Screen1"
         }
     }
@@ -238,8 +238,8 @@ class ViewModel: Bento.BoxViewModel {
             predicate: { $0.status.isSubmitting },
             effects: { state -> SignalProducer<Event, NoError> in
                 return self.validate(state: state)
-                    .flatMap(.merge) { data in
-                        self.fetchNextScreen(data)
+                    .flatMap(.merge) { validatedData in
+                        self.fetchDetails(validatedData)
                     }
                     .materializeResults()
                     .map(Event.didFinishSubmit)
