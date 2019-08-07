@@ -13,7 +13,9 @@ To not prepare for an interview is simply rude. How to best prepare does, howeve
 Discuss what we can do to make a probably nervous candidate feel welcome and respected.
 
 ### Look for what the Candidate can bring
-Diverse teams are well known to be more productive but at the same time a new hire should enough about the technology we use for their intended level. How can one think about structuring an interview to learn something about what the candidate brings that we don't have already while not forgetting to ask about essential skills.
+Diverse teams are well known to be more productive so when interviewing we are interested to learn about experiences and knowledge that we currently don't have in the team. At the same time we need new hires to be able to work with the technology we are using. Realistically, candidates who bring in a wealth of knowledge about technology we are not using will not also be experts in the technology. How can we think about structuring an interview with these somewhat conflicting goals.
+
+but at the same time a new hire should enough about the technology we use for their intended level. How can one think about structuring an interview to learn something about what the candidate brings that we don't have already while not forgetting to ask about essential skills.
 
 ###  Let the Candidate have the Floor
 - It is not your interview
