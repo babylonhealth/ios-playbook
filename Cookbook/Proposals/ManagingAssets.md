@@ -80,7 +80,7 @@ Subscript for SwiftGen will look like this:
 ```
 @dynamicMemberLookup
 public struct Icons {
-	let asset = Asset()
+    let asset = Asset()
 
     public subscript(dynamicMember keyPath: KeyPath<Asset, ImageAsset>) -> UIImage {
         return asset[keyPath: keyPath].image
