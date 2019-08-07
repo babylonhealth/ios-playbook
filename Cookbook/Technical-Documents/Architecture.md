@@ -208,7 +208,7 @@ class ViewModel: Bento.BoxViewModel {
             initial: .initial,
             reduce: ViewModel.reduce,
             feedbacks: [
-                actionsPipe.feedback,
+                eventPipe.feedback,
                 ViewModel.whenSubmitting(...)
             ]
         )
