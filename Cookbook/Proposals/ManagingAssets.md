@@ -75,6 +75,19 @@ $SRCROOT/../swiftgen/bin/swiftgen
 sed -i -e 's/enum/struct/g' $SRCROOT/AssetsDependencies/assets-images.swift
 sed -i -e 's/static let/let/g' $SRCROOT/AssetsDependencies/assets-images.swift
 ```
+
+Subscript for SwiftGen will look like this:
+```
+@dynamicMemberLookup
+public struct Icons {
+	let asset = Asset()
+
+    public subscript(dynamicMember keyPath: KeyPath<Asset, ImageAsset>) -> UIImage {
+        return asset[keyPath: keyPath].image
+    }
+}
+```
+
 Having all this pieces in place adding new asset will be very simple and will include two steps only:
 1. Adding assets to the catalog
 2. And just use it like e.g: `designLibrary.tokens.icons.close` (it will cause the error which will be fixed during compliation).
