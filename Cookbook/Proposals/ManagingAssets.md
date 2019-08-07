@@ -64,11 +64,10 @@ enum Asset {
 Then you can use it like this:
 ```
 let closeImage = UIImage(asset: Asset.close) 
-
+```
 or 
-
+```
 let sameCloseImage = Asset.close.image
-
 ```
 Ultimately we would like to limit SwiftGen impact on our codebase at absolute minimum. That's why I think we can use it alongside with `@dynamicMemberLookup`. There are couple of issues which has to be resolved first. If we want use `KeyPath` we would have be able to create instance of Asset. It's not possible with 0-case enum that's why we should change it to struct. Another thing is to change `static let`s to just `let`s because `Dynamic key path member lookup cannot refer to static member 'close'`. To match this requirements we could add new Run Script phase similar to this:
 ```
