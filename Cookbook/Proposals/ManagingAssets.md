@@ -37,7 +37,7 @@ Unfortunately, in our codebase assets are located in different places. If we wil
 ## Alternatives considered
 
 1. We could try to systematize the way we include assets in specific feature frameworks but it can cause problems described in the motivation section.
-
+	
 2. Instead of accessing icons or images by subscripts `designLibrary.tokens.icons[.close]` we could use new feature of Swift 5.1 `@dynamicMemberLookup` which could be combined with `KeyPath`. Then we could write just `designLibrary.tokens.icons.close`.
 To achieve that firstly we have to mark `struct Icons` with `@dynamicMemberLookup`. Then `ImageIdentifier` has to become `struct` with `String` properties with default value:
 ```
@@ -53,8 +53,30 @@ subscript(dynamicMember keyPath: KeyPath<ImageIdentifier, String>) -> UIImage {
 ```
 And finally use it like: `designLibrary.tokens.icons.close`. The only drawback of this approach is the fact that for new icons we have to create new property and assign the default value to it, compared to just create new `enum` `case` with the name matching asset name. The small benefit here is to have a little bit better syntax while keeping adding new assets simple.
 
-// TODO add `static let close` solution
-
-// TODO (I'm going to extend this section with POC)
 3. We are going to use SwiftGen tool to auto-generate localizable strings identifiers (https://github.com/Babylonpartners/ios-playbook/pull/187). Having that tool in place we could also use it to generate assets identifiers.
+
+`SwiftGen` is generating 0-case enum called `Assets` with `static let` corresponding to a given asset:
+```
+enum Asset {
+    static let close = ImageAsset(name: "Close")
+}
+```
+Then you can use it like this:
+```
+let closeImage = UIImage(asset: Asset.close) 
+
+or 
+
+let sameCloseImage = Asset.close.image
+
+```
+Ultimately we would like to limit SwiftGen impact on our codebase at absolute minimum. That's why I think we can use it alongside with `@dynamicMemberLookup`. There are couple of issues which has to be resolved first. If we want use `KeyPath` we would have be able to create instance of Asset. It's not possible with 0-case enum that's why we should change it to struct. Another thing is to change `static let`s to just `let`s because `Dynamic key path member lookup cannot refer to static member 'close'`. To match this requirements we could add new Run Script phase similar to this:
+```
+$SRCROOT/../swiftgen/bin/swiftgen
+sed -i -e 's/enum/struct/g' $SRCROOT/AssetsDependencies/assets-images.swift
+sed -i -e 's/static let/let/g' $SRCROOT/AssetsDependencies/assets-images.swift
+```
+Having all this pieces in place adding new asset will be very simple and will include two steps only:
+1. Adding assets to the catalog
+2. And just use it like e.g: `designLibrary.tokens.icons.close` (it will cause the error which will be fixed during compliation).
 
