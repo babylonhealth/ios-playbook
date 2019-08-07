@@ -284,7 +284,7 @@ struct Renderer: BoxRenderer {
                     placeholder: state.placeholder,
                     image: state.image,
                     didTapImage: { observer(.didTapImage) },
-                    accessibilityIdentifier: String(describing: id)
+                    accessibilityIdentifier: ...
                 )
             )
             |---+ Node(
