@@ -4,10 +4,18 @@ How to Conduct a Technical Interview
 ====================================
 
 ### Remember what You Want to Achieve
+
+
 Best possible outcome from an interview is a new hire who makes great contributions to your organisation, your team and thrives as a member in your team. In this section I will try to say something about the mindset required to interview a candidate successfully.
 
-### Be prepared
-To not prepare for an interview is simply rude. How to best prepare does, however, depend on the kind of interview.
+### Be Prepared
+When a candidate arrives at Babylon for an interview he or she has already made a big effort. A candidate will probably have had to take time off work, may have had to travel a long way to get here and have made the effort to prepare and send us a sample of their work. The candidate will always have invested a lot more effort into the interview than you will do. To not set off enough time to prepare for the interview is very disrespectful.
+
+For an interview around skills and knowledge about technologies I want to know about the candidate's education and previous work experience. I try to look for any technologies that the candidate knows about that I am unfamiliar with. If there are any I like to have a quick look at a product spec or something similar.
+
+Reviewing the candidate's sample work I prefer to not read their CV. Instead I want to focus on what I think can be improved in their sample project. Again I am especially interested in discussing any libraries or design patterns that I am not familiar with.
+
+For a cultural interview I like to know a bit about where the candidate is from, type of eduction and general experience. I do, however, not want to read the CV or sample project. This is to avoid being too biased about what to expect from the candidate. If I for some reason cannot get our internal recruiter to supply this information I prefer to tell the candidate that in order to have an unbiased discussion I have not looked their CV, cover letter or sample project. 
 
 ### Make the Candidate Feel Welcome
 Discuss what we can do to make a probably nervous candidate feel welcome and respected.
