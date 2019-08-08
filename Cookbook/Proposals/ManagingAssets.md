@@ -85,5 +85,5 @@ public struct Icons {
 
 Having all this pieces in place adding new asset will be very simple and will include two steps only:
 1. Adding assets to the catalog
-2. And just use it like e.g: `designLibrary.tokens.icons.close` (it will cause the error which will be fixed during compliation).
+2. And just use it like e.g: `designLibrary.tokens.icons.close` (Xcode will report an error that will be fixed by recompiling).
 
