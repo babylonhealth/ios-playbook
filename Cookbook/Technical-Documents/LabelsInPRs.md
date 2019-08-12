@@ -40,7 +40,7 @@ A project horizontal corresponds to an area of the project that has an horizonta
 - <span style="background-color:#8631bf; color:white; font-weight:600">Infrastructure 🛠</span> - working in the foundation of the project.
 
 ### <a name="branding"></a>Branding
-We have several projects that contain a subset of functionalities from the main babylon app. These apps also have different flavours in terms of UI. 
+We have several projects which contain a subset of functionalities from the main babylon app. These apps also have different flavours in terms of UI. 
 
 The labels to define work that is done in each different project are:
 
