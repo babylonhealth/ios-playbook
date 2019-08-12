@@ -237,7 +237,7 @@ Now that were written out API calls and implemented our screen object we can com
 
 ```swift
         step("I enter credentials for a \"(.*?)\" user") { (user: String) in
-        	  let email = self.generateRandomEmail()
+          let email = self.generateRandomEmail()
             self.registerUser(withEmail: email, forCountry: user)
             
             LoginScreen().enterCredentialsFor(email)
