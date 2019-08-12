@@ -18,44 +18,11 @@ Managing assets is not a difficult engineering problem but without standardised 
 
 To make sure we won't have duplicated assets in the project and all of them will be accessible in all places where we implement features, all of us should agree on uniform rules about how and where we should add new assets and how we should manage them.
 
+To automate process of generating assets' identifiers we are going to use SwiftGen (agreed solution for Localization https://github.com/Babylonpartners/ios-playbook/pull/187). Having that tool in place we could also use it to generate assets' identifiers.
 
 ## Proposed solution
 
-The proposed solution contains a set of rules which should be followed during manipulation of our assets (this example covers case for icons and analogous solution should be applied for other kinds of assets):
-1. All new icons and images we are going to use should be added to `BabylonDependencies.framework` in `Assets.xcassets` catalog 
-2. `struct DesignLibrary.Tokens` should have another property for icons `public let icons: Icons`
-3. Then we have to add a new case to `enum ImageIdentifier` which will be embedded in `struct Icons`.
-4. To access e.g. close icon we could use `subscript`: `designLibrary.tokens.icons[.close]`
-5. If we are updating an icon we should check if any other place uses it. If so and that other place shouldn't be updated we should create a new icon with an updated design.
-6. If we are removing some code which is using some icons we should check if that code was the last place which was using given icon, if so icon should be deleted from `Assets.xcassets`.
-7. To support the overriding of standard icons in white label apps we should update `ImageCatalogueAware.image(for imageIdentifier:in bundle: compatibleWith traitCollection:) -> UIImage` to firstly access image from `Bundle.main` and then fallback to `BabylonDependencies` if image was not overridden. We can also add support to specify from which location we would like to access given image.
-
-## Impact on existing codebase
-
-Unfortunately, in our codebase assets are located in different places. If we will agree on above set of rules, they should be applied for newly created assets. We should also make an effort to eliminate technical debt and migrate all existing assets into `BabylonDependencies`. During that process, we should have in mind that eventually, we will use SwiftGen for assets and it is good opportunity to improve assets' names for SwiftGen integration. Keeping every asset in one location potentially shouldn’t increase the size of the target application on the condition that the app has all our frameworks linked.
-
-## Alternatives considered
-
-1. We could try to systematize the way we include assets in specific feature frameworks but it can cause problems described in the motivation section.
-	
-2. Instead of accessing icons or images by subscripts `designLibrary.tokens.icons[.close]` we could use new feature of Swift 5.1 `@dynamicMemberLookup` which could be combined with `KeyPath`. Then we could write just `designLibrary.tokens.icons.close`.
-To achieve that firstly we have to mark `struct Icons` with `@dynamicMemberLookup`. Then `ImageIdentifier` has to become `struct` with `String` properties with default value:
-```
-struct ImageIdentifier {
-    let close = "close"
-}
-```
-Later we need create property `let imageIdentifier = ImageIdentifier()` inside `struct Icons`. Having all of these we can finally write dynamicMember subscript:
-```
-subscript(dynamicMember keyPath: KeyPath<ImageIdentifier, String>) -> UIImage {
-    return Icons.image(for: imageIdentifier[keyPath: keyPath])
-}
-```
-And finally use it like: `designLibrary.tokens.icons.close`. The only drawback of this approach is the fact that for new icons we have to create new property and assign the default value to it, compared to just create new `enum` `case` with the name matching asset name. The small benefit here is to have a little bit better syntax while keeping adding new assets simple.
-
-3. We are going to use SwiftGen tool to auto-generate localizable strings identifiers (https://github.com/Babylonpartners/ios-playbook/pull/187). Having that tool in place we could also use it to generate assets identifiers.
-
-`SwiftGen` is generating 0-case enum called `Assets` with `static let` corresponding to a given asset:
+`SwiftGen` is generating 0-case enum called `Asset` with `static let`s corresponding to a given asset:
 ```
 enum Asset {
     static let close = ImageAsset(name: "Close")
@@ -69,9 +36,47 @@ or
 ```
 let sameCloseImage = Asset.close.image
 ```
-Ultimately we would like to limit SwiftGen impact on our codebase to absolute minimum. That's why I think we can use it alongside with `@dynamicMemberLookup`. There are couple of issues which has to be resolved first. If we want to use `KeyPath` we would have to be able to create an instance of `Asset`. It's not possible with 0-case enum that's why we should change it to `struct`. Another thing is to change `static let`s to just `let`s because `Dynamic key path member lookup cannot refer to static member 'close'`. To match this requirements we can just create custom templates in SwiftGen.
 
-Subscript for SwiftGen's `Asset` will look like this:
+Untimatelly we would like to have a solution which allows us just add new asset and be able to use it immediatelly:
+1. To add new asset e.g. `close icon` to the project it just need to be placed in `Assets.xcassets` catalog in `BabylonDependencies.framework`
+2. And then just use it like e.g: `designLibrary.tokens.icons[Asset.close]` (Xcode will report an error that will be fixed by recompiling).
+
+To achive this level of simplicity we have to:
+1. Extend `SwiftGen` configuration to create identifiers for assets.
+2. Add `struct`s to `DesignLibrary.Tokens`/`DesignLibrary` for each type of asset we are supproting e.g. `struct Icons`.
+3. Add `subscript` to particular `struct` responsible for accessing given asset e.g.:
+```
+subscript(imageAsset: ImageAsset) -> UIImage {
+    get {
+        return imageAsset.image
+    }
+}
+```
+This example uses implementation of accessing actual image provided by `SwiftGen`. To support the overriding of standard icons in white label apps we should update this implementation to firstly access image from `Bundle.main` and then fallback to `BabylonDependencies` if image was not overridden. We can also add support to specify from which location we would like to access given image.
+
+Besides standard rules of adding new assets we should also take care when:
+1. We are updating an icon we should check if any other place uses it. If so and that other place shouldn't be updated we should create a new icon with an updated design.
+2. If we are removing some code which is using some icons we should check if that code was the last place which was using given icon, if so icon should be deleted from `Assets.xcassets`. This step could be automated: if we are not using specific image its identifier won't be used across the project. We can write the script which is checking the usage of every asset and when it is not used anywhere the asset in `Assets.xcassets` catalog can be deleted.
+
+## Impact on existing codebase
+
+Unfortunately, in our codebase assets are located in different places. If we will agree on above set of rules, they should be applied for newly created assets. We should also make an effort to eliminate technical debt and migrate all existing assets into `BabylonDependencies`. During that process, we should have in mind it is good opportunity to improve assets' names for SwiftGen integration. Keeping every asset in one location potentially shouldn’t increase the size of the target application on the condition that the app has all our frameworks linked.
+
+## Alternatives considered
+
+1. We could try to systematize the way we include assets in specific feature frameworks but it can cause problems described in the motivation section.
+	
+2. Instead of accessing icons or images by subscripts `designLibrary.tokens.icons[Asset.close]` we could use new feature of Swift 5.1 `@dynamicMemberLookup` which could be combined with `KeyPath`. Then we could write just `designLibrary.tokens.icons.close`.
+To achieve that firstly we have to mark `struct Icons` with `@dynamicMemberLookup`. Then `enum Asset` has to become `struct`. Its `static let`s has to became just `let`s because `Dynamic key path member lookup cannot refer to static member 'close'`. To match this requirements we can just create custom templates in SwiftGen.
+`struct Asset` will look like this:
+```
+public struct Asset {
+    public let add = ImageAsset(name: "Add")
+    public let close = ImageAsset(name: "Close")
+  ...
+}
+```
+Then we have to write special subscript:
 ```
 @dynamicMemberLookup
 public struct Icons {
@@ -82,8 +87,4 @@ public struct Icons {
     }
 }
 ```
-
-Having all this pieces in place adding new asset will be very simple and will include two steps only:
-1. Adding assets to the catalog
-2. And just use it like e.g: `designLibrary.tokens.icons.close` (Xcode will report an error that will be fixed by recompiling).
-
+Having this this pieces in place call side will be really simple and clean: `designLibrary.tokens.icons.close`
