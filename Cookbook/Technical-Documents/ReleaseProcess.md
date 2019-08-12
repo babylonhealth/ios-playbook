@@ -90,7 +90,7 @@ There are usually two release engineers working at any given time. It goes witho
    * See also the [Internal SDK Release Process](https://engineering.ops.babylontech.co.uk/docs/cicd-deployments/#mobile-sdk-releases-ios-android) for more info.
 1. Create PR and update the SDK changelog `SDK/CHANGELOG.md` to add the release version and date
    * this document will be distributed alongside the SDK and used to document changes to SDK consumers, so the list of changes here could be worded differently from the CHANGELOG used in the CRP ticket if necessary
-1. Trigger a hockey build from that branch using its command (eg. `/fastlane distribute_sdk_v2 version:0.5.0 branch:release/sdk/0.5.0`) in `#ios-build`.
+1. Trigger a hockey build from that branch using its command (eg. `/fastlane distribute_sdk version:0.5.0 branch:release/sdk/0.5.0`) in `#ios-build`.
 1. Update the Sample app to point to the latest SDK release and ensure it still compiles
 
 ## 4. Release calendar
@@ -106,6 +106,8 @@ The release process starts when the first build is provided to QA and ends when 
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
+| 4.3.0  | Julien Ducret <br> Diego Petrucci | Automated<br><br> Parallel execution: `1h 54min` Serial execution: `8h 41min`<br><br>Manual: `24h 50min`| `CE-517: 30min`<br> `CNSMR-2143: 2days`<br> `CNSMR-2395: 0.5day`<br> `CNSMR-2333: 30min`<br> `CNSMR-2334: 30min`<br> `MON-4916: 30min`<br> `MON-4916: 30min`<br> `MON-4964: 30min`<br> `CE-512: 3hrs`<br> `CNSMR-2363: 1hr 30min`<br> `CNSMR-2338: 30min`<br> `CNSMR-2337: 60min`<br>  | Total: **44h 01min** | 22.07.2019 | 30.07.2019 |
+| 4.2.0  | Viorel Mihalache <br> Joshua Simmons | Automated: `8h 41min`<br>Manual: `24h 30min`| `AV-852: 3h`<br>`CNSMR-2173: 2h`<br>`NRX-724: 30min`<br>`CNSMR-2147: 8h`<br>`NCSMR-2167: 30min`<br>`NRX-720: 30min`<br>`CNSMR-2164: 30min`<br>`CNSMR-2162: 30min`<br>`AV-843: 30min`<br> | Total: **49h 11min** | 08.07.2019 | 15.07.2019 |
 | 4.1.0  | Martin Nygren <br> Adam Borek | Automated: `8h 57min`<br>Manual: `24h 15min`| `NRX-686 and NRX-687: 8h`<br> `CNSMR-1947: 1.5h`<br>`CNSMR-1952: 2h`<br>`Other release duties: 9.5h` | Total: **54h25m** | 24.06.2019 | 01.07.2019 |
 | 4.0.1  | Ilya Puchka | Automated: - <br>Manual: `1h 30min`| `GW-668: 16h` | Total: **17h30m** | 20.06.2019 | 21.06.2019 |
 | 4.0.0  | Anders Ha <br> Ilya Puchka | Automated: `8h 21m`<br>Manual: `37h 00min`| `AV-519: 17h` <br> `NRX-649: 2h` <br> `AV-677: 3h` <br> `CNSMR-1811: 1h` <br> `AV-704: 1.5h` <br> `AV-701: 16h` <br> `AV-737: 1.5h` <br> `AV-736: 2.5h` <br> | Total: **90h** | 10.06.2019 | 18.06.2019 |
