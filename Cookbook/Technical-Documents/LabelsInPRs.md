@@ -52,7 +52,7 @@ The labels to define work that is done in each different project are:
 ### <a name="stage"></a>Stage
 Informs in which stage of development the PR is. These labels are used to know which PRs can be reviewed. They are also use to trigger our CI jobs.
 
-- <a name="merge"></a><span style="background-color:#FF7F50; color:black; font-weight:600">Merge</span> - The PR is ready to be merged. It will be positioned in the queue to wait for our CI system to run all the tests. Only if every test has passed it will be merged.
+- <a name="merge"></a><span style="background-color:#FF7F50; color:black; font-weight:600">Merge</span> - The PR is ready to be merged. Our bot picks up when that label is added and will automatically add the PR in the queue to merge back develop and wait for our CI system to run all the tests. Only if every test has passed the bot will merge it.
 
 - <a name="needs_reviewer"></a><span style="background-color:#ce3799; color:white; font-weight:600">Needs one reviewer 🙏</span> - The PR has one approval and is waiting for one more review.
 - <a name="ready_review"></a><span style="background-color:#0e8a16; color:white; font-weight:600">Ready for Review 🚀</span> - The work on the PR is finished and it is ready to be reviewed.
