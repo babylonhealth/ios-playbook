@@ -1,12 +1,12 @@
 # How to add Labels to a Pull Request
 
 
-We use labels in our Pull Requests to be able to categorize and prioritize our work. Some specific labels are also used to trigger our CI jobs.
+We use labels in our Pull Requests to be able to categorize and prioritize our work. Some are also used to trigger our CI jobs.
 
 
 ## 1. The labels
 
-At the moment we have 26 labels in our repository. They can be separated into 4 groups:
+At the moment our labels can be separated into 4 groups:
 
 - [Product verticals](#product-verticals)
 
@@ -32,7 +32,7 @@ A product vertical corresponds to a big feature of the product.
 - <span style="background-color:#006b75; color:white; font-weight:600">Triage UI 🏥</span> - any work done in the Triage UI vertical
 
 ### <a name="project-horizontals"></a>Project horizontals
-A project horizontal corresponds to an area of the project that has an horizontal impact, means it has impact in most or all the verticals in the project.
+A project horizontal corresponds to an area of the project that has an horizontal impact, meaning it has impact in most or all the verticals in the project.
 
 - <span style="background-color:#d4c5f9; color:black; font-weight:600">Automation Tests 🤖</span> - introduction of automation tests
 - <span style="background-color:#fcfc50; color:black; font-weight:600">Localisation 🌐</span> - updating localizable strings or working in the localization system of the project
@@ -40,7 +40,7 @@ A project horizontal corresponds to an area of the project that has an horizonta
 - <span style="background-color:#2fcbe0; color:black; font-weight:600">Tooling 🔨</span> - working in tools like CircleCI, Danger, Linter.
 
 ### <a name="branding"></a>Branding
-We have several projects that contain a subset of functionalities from the main babylon app. These apps also have different flavours in terms of UI. 
+We have several projects which contain a subset of functionalities from the main babylon app. These apps also have different flavours in terms of UI. 
 
 The labels to define work that is done in each different project are:
 
@@ -52,13 +52,14 @@ The labels to define work that is done in each different project are:
 ### <a name="stage"></a>Stage
 Informs in which stage of development the PR is. These labels are used to know which PRs can be reviewed. They are also use to trigger our CI jobs.
 
-- <a name="merge"></a><span style="background-color:#FF7F50; color:black; font-weight:600">Merge</span> - The PR is ready to be merged. It will be positioned in the queue to wait for our CI system to run all the tests. Only if every test has passed it will be merged.
+- <a name="merge"></a><span style="background-color:#FF7F50; color:black; font-weight:600">Merge</span> - The PR is ready to be merged. Our bot picks up when this label is added. It will then automatically add the PR in the queue to merge back develop. Once merged it waits for our CI system to run all the tests. Only if every test has passed the bot will merge the PR.
+
 - <a name="needs_reviewer"></a><span style="background-color:#ce3799; color:white; font-weight:600">Needs one reviewer 🙏</span> - The PR has one approval and is waiting for one more review.
 - <a name="ready_review"></a><span style="background-color:#0e8a16; color:white; font-weight:600">Ready for Review 🚀</span> - The work on the PR is finished and it is ready to be reviewed.
 - <a name="in_progress"></a><span style="background-color:#fbca04; color:black; font-weight:600">work in progress 🚧</span> - The work on the PR is not finished and is not ready to be reviewed.
 
 ### <a name="status"></a>Status
-Flags if there is something preventing the PR from being merged that is unrelated with review requests or failling builds.
+Flags if there is something preventing the PR from being merged that is unrelated with review requests or failing builds.
 
 - <a name="blocked"></a><span style="background-color:#000000; color:white; font-weight:600">Blocked ✋</span> - the PR is waiting for another task to be complete - this task can be a backend task, a product decision or another PR.
 - <a name="blocking"></a><span style="background-color:#d93f0b; color:white; font-weight:600">Blocking other PRs 🙅‍♀️</span> - the PR is blocking other PRs from resuming their work or from being merged. The PR with this label should have priority over the PRs that are being blocked by this one.
