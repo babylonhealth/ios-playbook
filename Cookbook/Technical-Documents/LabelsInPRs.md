@@ -68,7 +68,7 @@ Flags if there is something preventing the PR from being merged that is unrelate
 Alerts when a PR is required to be merged. This is used in emergency situations like a hot fix or a piece of work that is mandatory to go in the release that is about to ship.
 
 - <span style="background-color:#e00000; color:white; font-weight:600">Feature at risk 🚑</span> - A PR that has to go in the next release that will ship in 2 days or less. This PR has priority to be reviewed over all the other PRs that are not in emergency.
-- <span style="background-color:#fcc1ba; color:black; font-weight:600">Hotfix 🆘</span> - The PR has priority to be reviewed because it has a hot fix for release that is currently in Production.
+- <span style="background-color:#fcc1ba; color:black; font-weight:600">Hotfix 🆘</span> - The PR has priority to be reviewed because it has a hot fix targeted to the current release branch.
 
 ### <a name="extra"></a>Extra
 These tags are used to give extra context to the PR.
@@ -94,7 +94,7 @@ A PR should always contain at least one label that belongs to these groups. Mult
 In this group a mixed of rules are applied. 
 A PR can:
 
-- be either [ready for review](#ready_review) or still [in progress](#in_progress). It can't be in both stages at the same time. This means the labels representing both these stages can't be present in the same instant.
+- be either [ready for review](#ready_review) or still [in progress](#in_progress). These are mutually exclusive. It means the labels representing both these stages can't be present in the same instant.
 - have [one reviewer](#needs_reviewer) label only if it is [ready for review](#ready_review).
 - have [merge](#merge) label only if it is [ready for review](#ready_review), has two approvals and no changes requested.
 
