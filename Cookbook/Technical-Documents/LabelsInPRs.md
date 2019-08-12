@@ -59,7 +59,7 @@ Informs in which stage of development the PR is. These labels are used to know w
 - <a name="in_progress"></a><span style="background-color:#fbca04; color:black; font-weight:600">work in progress 🚧</span> - The work on the PR is not finished and is not ready to be reviewed.
 
 ### <a name="status"></a>Status
-Flags if there is something preventing the PR from being merged that is unrelated with review requests or failling builds.
+Flags if there is something preventing the PR from being merged that is unrelated with review requests or failing builds.
 
 - <a name="blocked"></a><span style="background-color:#000000; color:white; font-weight:600">Blocked ✋</span> - the PR is waiting for another task to be complete - this task can be a backend task, a product decision or another PR.
 - <a name="blocking"></a><span style="background-color:#d93f0b; color:white; font-weight:600">Blocking other PRs 🙅‍♀️</span> - the PR is blocking other PRs from resuming their work or from being merged. The PR with this label should have priority over the PRs that are being blocked by this one.
