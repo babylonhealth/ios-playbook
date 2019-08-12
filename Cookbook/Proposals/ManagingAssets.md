@@ -37,7 +37,7 @@ or
 let sameCloseImage = Asset.close.image
 ```
 
-Untimatelly we would like to have a solution which allows us just add new asset and be able to use it immediatelly:
+Ultimately we would like to have a solution which allows us just add new asset and be able to use it immediatelly:
 1. To add new asset e.g. `close icon` to the project it just need to be placed in `Assets.xcassets` catalog in `BabylonDependencies.framework`
 2. And then just use it like e.g: `designLibrary.tokens.icons[Asset.close]` (Xcode will report an error that will be fixed by recompiling).
 
