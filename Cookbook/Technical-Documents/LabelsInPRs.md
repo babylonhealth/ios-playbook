@@ -50,7 +50,7 @@ The labels to define work that is done in each different project are:
 - <span style="background-color:#2f2799; color:white; font-weight:600">US 🇺🇸</span> - work in the US app
 
 ### <a name="stage"></a>Stage
-Informs in which stage of development the PR is. These labels are used to know which PRs can be reviewed. They are also use to trigger our CI jobs.
+Informs in which stage of development the PR is. These labels are used to know which PRs can be reviewed. They are also used to trigger our CI jobs.
 
 - <a name="merge"></a><span style="background-color:#FF7F50; color:black; font-weight:600">Merge</span> - The PR is ready to be merged. Our bot picks up when this label is added. It will then automatically add the PR in the queue to merge back develop. Once merged it waits for our CI system to run all the tests. Only if every test has passed the bot will merge the PR.
 
