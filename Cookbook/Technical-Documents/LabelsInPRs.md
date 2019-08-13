@@ -56,7 +56,7 @@ Informs in which stage of development the PR is. These labels are used to know w
 
 - <a name="needs_reviewer"></a><span style="background-color:#ce3799; color:white; font-weight:600">Needs one reviewer 🙏</span> - The PR has one approval and is waiting for one more review.
 - <a name="ready_review"></a><span style="background-color:#0e8a16; color:white; font-weight:600">Ready for Review 🚀</span> - The work on the PR is finished and it is ready to be reviewed.
-- <a name="in_progress"></a><span style="background-color:#fbca04; color:black; font-weight:600">work in progress 🚧</span> - The work on the PR is not finished and is not ready to be reviewed.
+- <a name="in_progress"></a><span style="background-color:#fbca04; color:black; font-weight:600">Work in progress 🚧</span> - The work on the PR is not finished and is not ready to be reviewed.
 
 ### Status
 Flags if there is something preventing the PR from being merged that is unrelated with review requests or failing builds.
