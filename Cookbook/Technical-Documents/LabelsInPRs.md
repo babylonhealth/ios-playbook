@@ -68,7 +68,7 @@ Flags if there is something preventing the PR from being merged that is unrelate
 Alerts when a PR is required to be merged. This is used in emergency situations like a hot fix or a piece of work that is mandatory to go in the release that is about to ship.
 
 - <span style="background-color:#e00000; color:white; font-weight:600">Feature at risk 🚑</span> - A PR that has to go in the next release that will ship in 2 days or less. This PR has priority to be reviewed over all the other PRs that are not in emergency.
-- <span style="background-color:#fcc1ba; color:black; font-weight:600">Hotfix 🆘</span> - The PR has priority to be reviewed because it has a hot fix targeted to the current release branch.
+- <span style="background-color:#fcc1ba; color:black; font-weight:600">Hotfix 🆘</span> - The PR has priority to be reviewed because it has a hot fix targeting the current release branch.
 
 ### <a name="extra"></a>Extra
 These tags are used to give extra context to the PR.
