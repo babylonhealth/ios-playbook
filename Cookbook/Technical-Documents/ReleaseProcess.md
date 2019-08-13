@@ -55,7 +55,7 @@ There are usually two release engineers working at any given time. It goes witho
 *It starts after all opened issues had been adressed and can take several cycles until QA's approval*
 
 1. Triger a new release build in the `#ios-build` channel
-1. Obtain the release notes from the Product Manager and update them in the [AppStoreConnect](https://appstoreconnect.apple.com)
+1. Obtain the release notes from the Product Manager and update them in the [AppStoreConnect](https://appstoreconnect.apple.com). Be aware that the release notes has 2 localised versions: English UK (which contains references to the NHS) and another English (Australian by August/2019) for the other territories (the rest of the world). Paste the release notes on both if just one is provided in the #ios-launchpad.
 1. Enable the new release version in [AppStoreConnect](https://appstoreconnect.apple.com).
 1. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues) ❗️ NOTE: Remember to submit compliance info for that build.
 1. By now, QA should be notified that there is a new version in TestFlight.
@@ -101,13 +101,14 @@ The release process starts when the first build is provided to QA and ends when 
 
 1. Automated QA effort (e.g. `5h`)
 2. Manual QA effort (e.g. `3h`)
-3. Delta between the jira ticket being open and marked as `done` or `wont fix`, for Engineering effort. (e.g. `UA-8289: 1h30`)
+3. Delta between the jira ticket being open and marked as `done` or `wont fix`, for Engineering effort. (e.g. `UA-8289: 1h30`). Consider only tickets that were raised during the release period, checking that their creation dates were after the release branch cut. 
 4. Total effort
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
-| 4.3.0  | Julien Ducret <br> Diego Petrucci | Automated<br><br> Parallel execution: `1h 54min` Serial execution: `8h 41min`<br><br>Manual: `24h 50min`| `CE-517: 30min`<br> `CNSMR-2143: 2days`<br> `CNSMR-2395: 0.5day`<br> `CNSMR-2333: 30min`<br> `CNSMR-2334: 30min`<br> `MON-4916: 30min`<br> `MON-4916: 30min`<br> `MON-4964: 30min`<br> `CE-512: 3hrs`<br> `CNSMR-2363: 1hr 30min`<br> `CNSMR-2338: 30min`<br> `CNSMR-2337: 60min`<br>  | Total: **44h 01min** | 22.07.2019 | 30.07.2019 |
-| 4.2.0  | Viorel Mihalache <br> Joshua Simmons | Automated: `8h 41min`<br>Manual: `24h 30min`| `AV-852: 3h`<br>`CNSMR-2173: 2h`<br>`NRX-724: 30min`<br>`CNSMR-2147: 8h`<br>`NCSMR-2167: 30min`<br>`NRX-720: 30min`<br>`CNSMR-2164: 30min`<br>`CNSMR-2162: 30min`<br>`AV-843: 30min`<br> | Total: **49h 11min** | 08.07.2019 | 15.07.2019 |
+| 4.4.0 |Danilo Aliberti <br> Sergey Shulga | Automated: Parallel execution: 1 hour 28 minutes<br> Serial execution: 10 hours 15 minutes <br><br>Manual: 22 Hours 45 Minutes | `CNSMR-2521: 5days`, <br>`NRX-790: backend issue not resolved`, <br>`CNSMR-2515: 19 hours`, <br>`AV-910: 2days`, <br>`CNSMR-2509: 1day`, <br>`CNSMR-2506: 1day, 5hours`, <br>`CNSMR-2503: 1day, 1hour 10minutes`, <br>`CNSMR-2502: 6days and an hour`, <br>`CNSMR-2506: 1day, 5hours`| Total: **18d 7h 10m** | 05.08.2019 | 12.08.2019 |
+| 4.3.0  | Julien Ducret <br> Diego Petrucci | Automated<br><br> Parallel execution: `1h 54min` Serial execution: `8h 41min`<br><br>Manual: `24h 50min`| `CE-517: 30min`<br> `CNSMR-2143: 2days`<br> `CNSMR-2395: 0.5day`<br> `CNSMR-2333: 30min`<br> `CNSMR-2334: 30min`<br> `MON-4916: 30min`<br> `MON-4916: 30min`<br> `MON-4964: 30min`<br> `CE-512: 3hrs`<br> `CNSMR-2363: 1hr 30min`<br> `CNSMR-2338: 30min`<br> `CNSMR-2337: 60min`<br>  | Total: **44h 01m** | 22.07.2019 | 30.07.2019 |
+| 4.2.0  | Viorel Mihalache <br> Joshua Simmons | Automated: `8h 41min`<br>Manual: `24h 30min`| `AV-852: 3h`<br>`CNSMR-2173: 2h`<br>`NRX-724: 30min`<br>`CNSMR-2147: 8h`<br>`NCSMR-2167: 30min`<br>`NRX-720: 30min`<br>`CNSMR-2164: 30min`<br>`CNSMR-2162: 30min`<br>`AV-843: 30min`<br> | Total: **49h 11m** | 08.07.2019 | 15.07.2019 |
 | 4.1.0  | Martin Nygren <br> Adam Borek | Automated: `8h 57min`<br>Manual: `24h 15min`| `NRX-686 and NRX-687: 8h`<br> `CNSMR-1947: 1.5h`<br>`CNSMR-1952: 2h`<br>`Other release duties: 9.5h` | Total: **54h25m** | 24.06.2019 | 01.07.2019 |
 | 4.0.1  | Ilya Puchka | Automated: - <br>Manual: `1h 30min`| `GW-668: 16h` | Total: **17h30m** | 20.06.2019 | 21.06.2019 |
 | 4.0.0  | Anders Ha <br> Ilya Puchka | Automated: `8h 21m`<br>Manual: `37h 00min`| `AV-519: 17h` <br> `NRX-649: 2h` <br> `AV-677: 3h` <br> `CNSMR-1811: 1h` <br> `AV-704: 1.5h` <br> `AV-701: 16h` <br> `AV-737: 1.5h` <br> `AV-736: 2.5h` <br> | Total: **90h** | 10.06.2019 | 18.06.2019 |
