@@ -36,7 +36,7 @@ or
 ### Usage 
 
 Ultimately we would like to have a solution which allows us just add new asset and be able to use it immediately: 
-1. To add new asset e.g. `close icon` to the project it just should be placed in `Assets.xcassets` catalog in `BabylonDependencies.framework` 
+1. To add new asset e.g. close icon to the project it just should be placed in `Assets.xcassets` catalog in `BabylonDependencies.framework` 
 2. And then just use it like e.g: `Asset.close.image` (Xcode will report an error that will be fixed by recompiling). 
 
 To achieve this level of simplicity we have to extend the `SwiftGen` configuration to create identifiers for assets. 
