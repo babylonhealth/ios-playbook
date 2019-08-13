@@ -55,7 +55,7 @@ There are usually two release engineers working at any given time. It goes witho
 *It starts after all opened issues had been adressed and can take several cycles until QA's approval*
 
 1. Triger a new release build in the `#ios-build` channel
-1. Obtain the release notes from the Product Manager and update them in the [AppStoreConnect](https://appstoreconnect.apple.com). Be aware that the release notes (and all the App Record) has 2 localized versions: English UK (which contains references to the NHS) and another English (Australian by August/2019) for the other territories. Paste the release notes on both. 
+1. Obtain the release notes from the Product Manager and update them in the [AppStoreConnect](https://appstoreconnect.apple.com). Be aware that the release notes has 2 localised versions: English UK (which contains references to the NHS) and another English (Australian by August/2019) for the other territories (the rest of the world). Paste the release notes on both if just one is provided in the #ios-launchpad.
 1. Enable the new release version in [AppStoreConnect](https://appstoreconnect.apple.com).
 1. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues) ❗️ NOTE: Remember to submit compliance info for that build.
 1. By now, QA should be notified that there is a new version in TestFlight.
