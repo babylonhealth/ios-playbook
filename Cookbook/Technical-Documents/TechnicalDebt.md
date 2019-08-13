@@ -224,3 +224,29 @@ It must be noted that moving NHS related code will be easier to do once the refa
 Our architecture and requirements have changed a lot since the inception of the `Octopus` project. One main change is that today we build several apps from the code in the `Babylon` project. Maintaining source code that is used in several targets is an expensive task. Changes made might need to be tested for all targets. Shared source code does also introduce dependencies between parts that are supposed to be decoupled and independent. It is also worth noting that the role of `BabylonCore` has changed with the introduction of `BabylonSDK`.
 
 How to best minimise shared code and optimise independence is currently being analysed. Tentatively the proposed solution is to create one framework with app level features and move the rest into a separate framework.
+
+## Snapshot tests that use a bespoke `ViewModel` instead of `StubViewModel`.
+
+| Snapshot Test View Model | Defined In |
+| ------------------------ | ---------- |
+| PrescriptionDeliveryOptionsRendererSnapshotTests | BabylonAppointmentsUI |
+| MessageHelpRendererSnapshotTests | BabylonChatBotUISnapshotTests |
+| ChatMenuRendererSnapshotTests | BabylonChatBotUISnapshotTests |
+| MessageReportRendererSnapshotTests | BabylonChatBotUISnapshotTests |
+| PGMConditionDetailsRendererSnapshotTests | BabylonChatBotUISnapshotTests |
+| ManageSyncRendererSnapshotTests | BabylonHealthManagementUITests |
+| HealthPlansRendererSnapshotTests | BabylonHealthManagementUITests |
+| RepeatPrescriptionsListRendererSnapshotTests | BabylonNHSTests |
+| RepeatPrescriptionsDetailsSnapshotTests | BabylonNHSTests |
+| AddressListRendererSnapshotTests | BabylonUISnapshotTests |
+| ChooseProviderRendererSnapshotTests | BabylonUS-UnitTests |
+| ForgotPasswordRendererV2Tests | BabylonUnit-Tests |
+| RequiredInfoRendererSnapshotTests | BabylonUnit-Tests |
+| PDSRetryRendererSnapshotTests | BabylonUnit-Tests |
+| ContactSupportRendererSnapshotTests | BabylonUnit-Tests |
+| NHSOnboardingV2SnapshotTests | BabylonUnit-Tests |
+| RedemptionRendererV2Tests | BabylonUnit-Tests |
+| RedemptionAdditionalRendererV2Tests | BabylonUnit-Tests |
+| SignInV2RendererSnapshotTests | BabylonUnit-Tests |
+| ChooseSponsorRendererSnapshotTests | BabylonUS-UnitTests |
+| InsuranceDetailsRendererSnapshotTests | BabylonUnit-Tests |
