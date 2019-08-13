@@ -6,7 +6,7 @@ We use labels in our Pull Requests to be able to categorize and prioritize our w
 
 ## 1. The labels
 
-At the moment our labels can be separated into 4 groups:
+At the moment our labels can be separated into the following groups:
 
 - [Product verticals](#product-verticals)
 
