@@ -43,7 +43,32 @@ We agreed to have a flat structure for assets which increases discoverability (t
 
 ### Overriding 
 
-// TODO - research more solution for this problem This example uses the implementation of accessing the actual image provided by `SwiftGen`. To support the overriding of standard icons in white label apps we should update this implementation to firstly access the image from `Bundle.main` and then fallback to `BabylonDependencies` if the image was not overridden. We can also add support to specify from which location we would like to access the given image. 
+To support the overriding of standard icons in white label apps we should update `SwiftGen` implementation to firstly access the image from `Bundle.main` which will pick target specific image and then fallback to `BabylonDependencies` if the image was not overridden. By using `SwiftGen`'s' custom template we can provide implementation like this:
+```
+public struct ImageAsset {
+  public fileprivate(set) var name: String
+
+  public var image: AssetImageTypeAlias {
+    let bundle = Bundle(for: BundleToken.self)
+    let img = image(for: Bundle.main) ?? image(for: bundle)
+    guard let result = img else { fatalError("Unable to load image named \(name).") }
+    return result
+  }
+
+  private func image(for bundle: Bundle) -> AssetImageTypeAlias? {
+    #if os(iOS) || os(tvOS)
+    let image = AssetImageTypeAlias(named: name, in: bundle, compatibleWith: nil)
+    #elseif os(OSX)
+    let image = bundle.image(forResource: NSImage.Name(name))
+    #elseif os(watchOS)
+    let image = AssetImageTypeAlias(named: name)
+    #endif
+    return image
+  }
+}
+```
+
+We should also configure SwiftGen to generate identifiers for additional assets provided by application-specific targets. We can configure `SwiftGen` to name `enum`s like `enum TargetAsset` to not have conflicts with BabylonDependencies' `enum Asset`.
 
 ### Other rules
  
