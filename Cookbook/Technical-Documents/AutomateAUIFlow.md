@@ -91,7 +91,10 @@ We will now go through a set of truncated steps to automate a UI flow. Below is 
     }
 ```
 ## Feature
-We need to select the appropriate *feature file* for the test scenario, for this example we will use `LoginFeature.swift` which already contains a number of sign in tests. Please **note** *that if you add a new Feature file, Xcode will automatically add the file to the default scheme causing it to be included in a Unit Test run, you will have to manually exclude it, or your PR will fail*. To begin with copy the test into the feature file ensuring you follow the `XCTest-Gherkin` formatting otherwise the code will fail to compile.
+We need to select the appropriate *feature file* for the test scenario, for this example we will use `LoginFeature.swift` which already contains a number of sign in tests. To begin with copy the test into the feature file updating the scenario to follow the [XCTest-Gherkin](https://github.com/net-a-porter-mobile/XCTest-Gherkin) formatting, otherwise the code will fail to compile. For this example were writing a single test `scenario` though `XCTest-Gherkin` also supports `scenario outlines`.
+
+##### Exception
+Please **note** *that if you add a new Feature file, Xcode will automatically add the file to the default scheme causing it to be included in a Unit Test run, you will have to manually exclude it, or your PR will fail*.
 
 ## Step Definitions
 ### Existing Step
@@ -252,6 +255,17 @@ In Babylon we decided to run the tests using a **Fastlane** lane and a separate 
 
 # How and when do we run UI tests
 Once a new test has been added and if a new feature file was created also added to **UILanes**  the tests will be run nightly as per our CircleCI yml file. Once a lane has been run the results will be published the #ios-build channel for anyone in the team to see, though normally the support engineer and senior Automation Engineer will review the results.
+
+# Running Tests
+The `Fastlane` lanes defines in `UILanes` will be run nightly on CircleCI using the **develop** source and **PreProd (AWS)** environment. If you want to run the UI tests for your branch you can use the following command from the **ios-build** channel in slack.
+
+```
+/fastlane ui_test_babylon_smoke branch:release/babylon/4.4.0
+```
+
+Change `ui_test_babylon_smoke` to the required lane and `release/babylon/4.4.0` to the branch to be tested. As the name of lanes is regularly changing I would refer to the `UILanes` file in source for the current lanes. This will start the build once resources are available though CircleCI is slower than your local machines. I would recommend leaving the full regression run on CircleCI to be run once a night.
+
+
 
 
 
