@@ -4,7 +4,7 @@ How to Conduct a Technical Interview
 ====================================
 
 ### Remember what You Want to Achieve
-
+In an interview you always want the candidate to do well. It is important that you approach the interview in a positive mode. To leave your desk a little bit earlier to give yourself a change to relax a bit, maybe get a cup of tea or coffee. The last thing you want to do is to rush to the interview really pissed off about a rude, mystery compilation error Xcode throw in your face.
 
 Best possible outcome from an interview is a new hire who makes great contributions to your organisation, your team and thrives as a member in your team. In this section I will try to say something about the mindset required to interview a candidate successfully.
 
@@ -15,7 +15,7 @@ For an interview around skills and knowledge about technologies I want to know a
 
 Reviewing the candidate's sample work I prefer to not read their CV. Instead I want to focus on what I think can be improved in their sample project. Again I am especially interested in discussing any libraries or design patterns that I am not familiar with.
 
-For a cultural interview I like to know a bit about where the candidate is from, type of eduction and general experience. I do, however, not want to read the CV or sample project. This is to avoid being too biased about what to expect from the candidate. If I for some reason cannot get our internal recruiter to supply this information I prefer to tell the candidate that in order to have an unbiased discussion I have not looked their CV, cover letter or sample project. 
+For a cultural interview I like to know a bit about where the candidate is from, type of eduction and general experience. I do, however, not want to read the CV or sample project. This is to avoid being too biased about what to expect from the candidate. If I for some reason cannot get our internal recruiter to supply this information I prefer to tell the candidate that in order to have an unbiased discussion I have not looked their CV, cover letter or sample project.
 
 ### Make the Candidate Feel Welcome
 Discuss what we can do to make a probably nervous candidate feel welcome and respected.
