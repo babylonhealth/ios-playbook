@@ -106,7 +106,6 @@ Porting these view controllers to Bento will also make it easier to apply an app
 | SubscriptionsRenderer | | | |
 | EligibilityCheckRenderer | | | |
 | NHSSwitchV2Renderer | | | |
-| NHSConfirmationSwitchRenderer | | | |
 | NHSSummaryRenderer | | | |
 | NotificationsV2Renderer | | | |
 | PaymentRenderer | | | Used when `isNewPaymentsAvailable == false` |
@@ -133,7 +132,7 @@ Direct references to `BentoKit` components are probably left overs from porting 
 | ManageSyncRenderer | | | |
 | DashboardRenderer | | | |
 | NHSOnboardingV2Renderer | | | |
-| NHSRegistrationStep1V2Renderer | | | |
+| NHSRegistrationStep1V2Renderer | | | Contains direct references to `Component.OptionPicker` and `Component.DatePicker` |
 | TestsAndKitsDetailRenderer | | | |
 
 ## App Configuration Files and Shared Content
@@ -216,6 +215,8 @@ The last, `styles`, serves look and feel for `Forms` and `FormsV2` and is not ne
 
 ## Move Babylon UK Specific Code from the Main Project.
 
-Currently a lot of the code for handling the NHS registration process and other GP @ Hand related tasks recide in the main app target. There are also some NHS related entities in the `BabylonClinicalRecordsUI` project. NHS related code is obviously not needed for Telus, US or KSA needs to be moved to the `BabylonNHS` project. Before moving some the project initialisations need to be changed to receive either instances or factory methods for business controllers and child builders.
+Currently a lot of the code for handling the NHS registration process and other GP @ Hand related tasks reside in the main app target. There are also some NHS related entities in the `BabylonClinicalRecordsUI` project. NHS related code is obviously not needed for Telus, US or KSA needs to be moved to the `BabylonNHS` project. Before moving some the project initialisations need to be changed to receive either instances or factory methods for business controllers and child builders.
 
 It must be noted that moving NHS related code will be easier to do once the refactoring to employ the design library has been completed. This is currently (July 2019) work in progress.
+
+## Minimise code that is shared between several targets.
