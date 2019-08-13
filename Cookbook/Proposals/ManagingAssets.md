@@ -23,7 +23,11 @@ To automate the process of generating assets' identifiers we are going to use Sw
 ## Proposed solution 
 
 `SwiftGen` is generating 0-case enum called `Asset` with `static let`s corresponding to a given asset: 
-``` enum Asset { static let close = ImageAsset(name: "Close") } ``` 
+``` 
+enum Asset {
+    static let close = ImageAsset(name: "Close") 
+}
+``` 
 Then you can use it like this: 
 ``` let closeImage = UIImage(asset: Asset.close) ``` 
 or 
