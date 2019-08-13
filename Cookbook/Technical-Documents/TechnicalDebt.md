@@ -220,3 +220,7 @@ Currently a lot of the code for handling the NHS registration process and other 
 It must be noted that moving NHS related code will be easier to do once the refactoring to employ the design library has been completed. This is currently (July 2019) work in progress.
 
 ## Minimise code that is shared between several targets.
+
+Our architecture and requirements have changed a lot since the inception of the `Octopus` project. One main change is that today we build several apps from the code in the `Babylon` project. Maintaining source code that is used in several targets is an expensive task. Changes made might need to be tested for all targets. Shared source code does also introduce dependencies between parts that are supposed to be decoupled and independent. It is also worth noting that the role of `BabylonCore` has changed with the introduction of `BabylonSDK`.
+
+How to best minimise shared code and optimise independence is currently being analysed. Tentatively the proposed solution is to create one framework with app level features and move the rest into a separate framework.
