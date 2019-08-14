@@ -268,7 +268,7 @@ Once a new test has been added and if a new feature file was created also added 
 ## Running Tests
 The `Fastlane` lanes defined in `UILanes` will be run nightly on CircleCI using the **develop** source and **PreProd (AWS)** environment. If you want to run the UI tests for your branch you can use the following command from the **ios-build** channel in slack.
 
-```
+```ruby
 /fastlane ui_test_babylon_smoke branch:release/babylon/4.4.0
 ```
 
