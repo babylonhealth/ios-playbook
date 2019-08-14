@@ -1,7 +1,15 @@
 # Testing Conventions: Automating a UI Flow
+# Table of Contents
+1. [Why We Automate](#Why-We-Automate)
+2. [Test Scenarios](#Test-Scenarios)
+3. [Preparation](#Preparation)
+4. [Automate a Flow](#Automate-a-Flow)
+5. [Test Execution](#Test-Execution)
+
+# Why We Automate
 In order to complete a story we need to verify what is delivered. Testing functionality can *normally* be done at multiple levels of test pyramid and nearly always at the UI level. *So the question becomes where do we want to test and why*. As a general rule the lower in the pyramid we test the more efficient and resource inexpensive it is, for example unit, integration or snapshot tests. 
 
-UI testing should be utilised for functionality that *can't be fully covered at other levels* or *verify an end to end flow* or *requires subjective evaluation* i.e. video. When it is required to test at the UI level, the next stage is to decide if we should automate, this should be decided with input from the squads QA's and Dev's.
+UI testing should be utilised for functionality that *can't be fully covered at other levels* or *verify an end to end flow* or *requires subjective evaluation* i.e. video. For features where UI level testing is required, the next stage is to decide if we should automate, this should be decided with input from the squads QA's and Dev's.
 
 At its heart we automate to facilitate *regular* regression testing and earlier identification of bugs without the overhead of manual testing. This article explains how we automate a UI flow for a iOS application using [XCTest for UI testing](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/09-ui_testing.html).
 
@@ -76,7 +84,7 @@ When not mocking API calls, we use real API requests to control the state of the
 
 In some cases the `APIInterface` will use the **BabylonSDK** to make the network request rather than making it directly from code. This method gives better coverage of Babylon releases and tests integration.
 
-# Automate a flow
+# Automate a Flow
 We will now go through a set of truncated steps to automate a UI flow. Below is the example test scenario we intend to add.
 
 ```swift
@@ -250,13 +258,14 @@ Now that were written out API calls and implemented our screen object we can com
 
 On completion the user will be signed in with a new user created at the API level for the specified country.
 
-# Test Scheme
+# Test Execution
+## Test Scheme
 In Babylon we decided to run the tests using a **Fastlane** lane and a separate scheme. The scheme created was called **BabylonAppUITests** and will need to be selected before attempting to run any UI tests. However this had the unforeseen impact that when Xcode began to support parallel test execution, **Fastlane** did not. To solve this in the short term multiple lanes were created to allow testing to be completed in parallel. Though we may want to consider using **Fastlane** if they do not fully support Xcode. features. 
 
-# How and when do we run UI tests
+## How and when do we run UI tests
 Once a new test has been added and if a new feature file was created also added to **UILanes**  the tests will be run nightly as per our CircleCI yml file. Once a lane has been run the results will be published the #ios-build channel for anyone in the team to see, though normally the support engineer and senior Automation Engineer will review the results.
 
-# Running Tests
+## Running Tests
 The `Fastlane` lanes defined in `UILanes` will be run nightly on CircleCI using the **develop** source and **PreProd (AWS)** environment. If you want to run the UI tests for your branch you can use the following command from the **ios-build** channel in slack.
 
 ```
