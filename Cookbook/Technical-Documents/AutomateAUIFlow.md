@@ -112,7 +112,7 @@ We will assume `("I enter credentials for a \"United Kingdom\" user")` does not 
 Before we continue it's worth looking at the documentation for [XCTest-Gherkin](https://github.com/net-a-porter-mobile/XCTest-Gherkin/blob/master/README.md) to understand [how steps definitions work](https://github.com/net-a-porter-mobile/XCTest-Gherkin/blob/master/README.md#step-definitions).
 
 #### Paramaters
-In order to make the *step* more robust we can pass in the **country** as a parameter, we need to write a regex capture group and define the data type. This part of the step `\"(.*?)\"` will capture the parameter, I user `\"` as a method to demote the boundary of the parameter though this is not technically needed to make the code work, but more of a coding style for readability. The Pod's documentation details that up to two parameters can be passed in, but can be both complex or primitive types. Complex types allow us to pass in objects. For this step we will take any value and define it as a `String`. 
+In order to make the *step* more robust we can pass in the **country** as a parameter, we need to write a regex capture group and define the data type. This part of the step `\"(.*?)\"` will capture the parameter, We've used `\"` as a method to demote the boundary of the parameter though this is not technically needed to make the code work, but more of a coding style for readability. The Pod's documentation details that up to two parameters can be passed in, but can be both complex or primitive types. Complex types allow us to pass in objects. For this step we will take any value and define it as a `String`. 
  
 ## Screen Objects
 Screen objects are intended to contain all code relating to a screen. Functions will normally fall into three main types as defined [here](#Screen-Objects). Here are some of the interaction functions we need to create for our test.
@@ -178,7 +178,7 @@ Once you have the base query now you need an accessibility identifier, we will s
 
 Then we search for the specific *XCUIElement*, the most common and readable method is ```app.tables.cells.textFields[TextFields.email]``` which will find the *XCUIElement*, but has potential drawbacks. The framework will search the entire view hierarchy for matches and throw an exception if multiple matches are found. The exception makes sense as the return type is `XCUIElement` and not `XCUIElementQuery`.
 
-An alternate solution or for cases were you want to find an element and know that there are potentially multiple matches, I would suggest using a `XCUIElementQuery` combined with `.firstMatch`. Giving us alternate code for locating the element, ```app.tables.cells.textFields.matching(identifier: TextFields.email).firstMatch```. One thing to note with `.firstMatch` is that it will stop the query on the first match, making the query technically faster.
+An alternate solution or for cases were you want to find an element and know that there are potentially multiple matches, we would suggest using a `XCUIElementQuery` combined with `.firstMatch`. Giving us alternate code for locating the element, ```app.tables.cells.textFields.matching(identifier: TextFields.email).firstMatch```. One thing to note with `.firstMatch` is that it will stop the query on the first match, making the query technically faster.
 
 Of course if you want to find all elements matching a criteria or Predicate, you can remove `.firstMatch` and get all matches contained within a `XCUIElementQuery`
 
@@ -210,10 +210,10 @@ This gives us the following code:
     }
 ```
 
-The one exception is **Bento** which has a habit of duplicating elements in the accessibility hierarchy, for example the `loginButton` in the hierarchy above appears twice. For this case I would use `XCUIElementQuery` with `.firstMatch`. 
+The one exception is **Bento** which has a habit of duplicating elements in the accessibility hierarchy, for example the `loginButton` in the hierarchy above appears twice. For this case we would use `XCUIElementQuery` with `.firstMatch`. 
 
 #### Interact with Element
-Now that we have the element, we can interact with it. I won't repeat what is already included in Apple documentation. I will simply cover the two functions we use in out screen object. For the password and email field we need to enter the text, to do this we use `element.typeText(text)` the problem with this function is that is requires the element to have keyboard focus. You solved this by tapping on the element using `element.tap()` prior to using `typeText`.
+Now that we have the element, we can interact with it. We won't repeat what is already included in Apple documentation. We will simply cover the two functions we use in out screen object. For the password and email field we need to enter the text, to do this we use `element.typeText(text)` the problem with this function is that is requires the element to have keyboard focus. You solved this by tapping on the element using `element.tap()` prior to using `typeText`.
 
 Rather than duplicate this code in both functions we have a *helper* function in *BaseScreen.swift*. This helper does a bit more in that it also verifies the state of the button and wait for the desired state up to a specified timeout.
 
@@ -229,7 +229,7 @@ Rather than duplicate this code in both functions we have a *helper* function in
     }
 ```
 
-For pressing the login button we can either use **waitAndTap** or call **tap** directly, which is slightly faster. The helpers functions are intended to stabilise test execution by checking the state of an element before interacting or proceeding, and while this has worked in making the tests much more reliable, it has a performance impact. I would only recommend using these types of helpers when needed, in this example for pressing the login button I will just use the frameworks API directly.
+For pressing the login button we can either use **waitAndTap** or call **tap** directly, which is slightly faster. The helpers functions are intended to stabilise test execution by checking the state of an element before interacting or proceeding, and while this has worked in making the tests much more reliable, it has a performance impact. We would only recommend using these types of helpers when needed, in this example for pressing the login button we will just use the frameworks API directly.
 
 ## API Interface
 We created a class **APIInterface.swift** to contain code relating to creating requests, creating and parsing json's. This class is extended with functionality specific extensions to handle request for a particular area **APIInterface+Appointments.swift**. These classes are written in pure Swift and only use *BabylonCore* with no additional Pods. 
@@ -263,7 +263,7 @@ The `Fastlane` lanes defined in `UILanes` will be run nightly on CircleCI using 
 /fastlane ui_test_babylon_smoke branch:release/babylon/4.4.0
 ```
 
-Change `ui_test_babylon_smoke` to the required lane and `release/babylon/4.4.0` to the branch to be tested. As the name of lanes is regularly changing I would refer to the `UILanes` file in source for the current lanes. This will start the build once resources are available though CircleCI is slower than your local machines. I would recommend leaving the full regression run on CircleCI to be run once a night.
+Change `ui_test_babylon_smoke` to the required lane and `release/babylon/4.4.0` to the branch to be tested. As the name of the lanes are regularly changing we would recommend referring to the `UILanes` file in source for a list off the current lanes. This will start the build once resources are available though CircleCI is slower than your local machines. We recommend leaving the full regression run on CircleCI to be run once a night.
 
 
 
