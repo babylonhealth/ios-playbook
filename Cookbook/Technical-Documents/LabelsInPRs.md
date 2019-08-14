@@ -24,59 +24,58 @@ At the moment our labels can be separated into the following groups:
 ### Product verticals
 A product vertical corresponds to a big feature of the product. 
 
-- <span style="background-color:#2BBBBB; color:black; font-weight:600">Health Management 🍄</span> - any work done in the health management vertical
-- <span style="background-color:#5319e7; color:white; font-weight:600">Healthcheck 👩‍⚕️</span> - any work done in the healthcheck vertical
-- <span style="background-color:#25fcb8; color:black; font-weight:600">Payments 💰</span> - any work done in the payments vertical
-- <span style="background-color:#d3cb34; color:black; font-weight:600">Prescriptions 💊</span> - any work done in the prescriptions vertical
-- <span style="background-color:#f9d0c4; color:black; font-weight:600">SDK 💸</span> - any work done in the SDK vertical
-- <span style="background-color:#006b75; color:white; font-weight:600">Triage UI 🏥</span> - any work done in the Triage UI vertical
+- ![Health Management 🍄](https://img.shields.io/static/v1?label&message=Health%20Management%20🍄&color=2BBBBB) - any work done in the health management vertical
+- ![Healthcheck 👩‍⚕️](https://img.shields.io/static/v1?label&message=Healthcheck%20👩‍⚕️&color=5319e7) - any work done in the healthcheck vertical
+- ![Payments 💰](https://img.shields.io/static/v1?label&message=Payments%20💰&color=25fcb8) - any work done in the payments vertical
+- ![Prescriptions 💊](https://img.shields.io/static/v1?label&message=Prescriptions%20💊&color=d3cb34) - any work done in the prescriptions vertical
+- ![SDK 💸](https://img.shields.io/static/v1?label&message=SDK%20💸&color=f9d0c4) - any work done in the SDK vertical
+- ![Triage UI 🏥](https://img.shields.io/static/v1?label&message=Triage%20UI%20🏥&color=006b75&messageColor=f9d0c4) - any work done in the Triage UI vertical
 
 ### Project horizontals
 A project horizontal corresponds to an area of the project that has an horizontal impact, meaning it has impact in most or all the verticals in the project.
 
-- <span style="background-color:#d4c5f9; color:black; font-weight:600">Automation Tests 🤖</span> - introduction of automation tests
-- <span style="background-color:#fcfc50; color:black; font-weight:600">Localisation 🌐</span> - updating localizable strings or working in the localization system of the project
-- <span style="background-color:#8631bf; color:white; font-weight:600">Infrastructure 🛠</span> - working in the foundation of the project like network layer.
-- <span style="background-color:#2fcbe0; color:black; font-weight:600">Tooling 🔨</span> - working in tools like CircleCI, Danger, Linter.
+- ![Automation Tests 🤖](https://img.shields.io/static/v1?label&message=Automation%20Tests%20🤖&color=d4c5f9) - introduction of automation tests
+- ![Localisation 🌐](https://img.shields.io/static/v1?label&message=Localisation%20🌐&color=fcfc50) - updating localizable strings or working in the localization system of the project
+- ![Infrastructure 🛠](https://img.shields.io/static/v1?label&message=Infrastructure%20🛠&color=8631bf) - working in the foundation of the project like network layer.
+- ![Tooling 🔨](https://img.shields.io/static/v1?label&message=Tooling%20🔨&color=2fcbe0) - working in tools like CircleCI, Danger, Linter.
 
 ### Branding
 We have several projects which contain a subset of functionalities from the main babylon app. These apps also have different flavours in terms of UI. 
 
 The labels to define work that is done in each different project are:
 
-- <span style="background-color:#1d76db; color:white; font-weight:600">BUPA 🤕</span> - work in the BUPA app
-- <span style="background-color:#0052cc; color:white; font-weight:600">NHS 👩‍⚕️</span> - work in the GP and hand app
-- <span style="background-color:#9746e2; color:white; font-weight:600">Telus 🇨🇦</span> - work in the Telus app
-- <span style="background-color:#2f2799; color:white; font-weight:600">US 🇺🇸</span> - work in the US app
+- ![BUPA 🤕](https://img.shields.io/static/v1?label&message=BUPA%20🤕&color=1d76db) - work in the BUPA app
+- ![NHS 👩‍⚕️](https://img.shields.io/static/v1?label&message=NHS%20👩‍⚕️&color=0052cc) - work in the GP and hand app
+- ![Telus 🇨🇦](https://img.shields.io/static/v1?label&message=Telus%20&color=9746e2)🇨🇦 - work in the Telus app
+- ![US 🇺🇸](https://img.shields.io/static/v1?label&message=US%20&color=2f2799) 🇺🇸 - work in the US app
 
 ### Stage
 Informs in which stage of development the PR is. These labels are used to know which PRs can be reviewed. They are also used to trigger our CI jobs.
 
-- <a name="merge"></a><span style="background-color:#FF7F50; color:black; font-weight:600">Merge</span> - The PR is ready to be merged. Our bot picks up when this label is added. It will then automatically add the PR in the queue to merge the PRs in order. Once dequeued, it will first merge back develop into the PR, then wait for our CI system to run all the tests. Only if every test has passed the bot will finally merge the PR.
-
-- <a name="needs_reviewer"></a><span style="background-color:#ce3799; color:white; font-weight:600">Needs one reviewer 🙏</span> - The PR has one approval and is waiting for one more review.
-- <a name="ready_review"></a><span style="background-color:#0e8a16; color:white; font-weight:600">Ready for Review 🚀</span> - The work on the PR is finished and it is ready to be reviewed.
-- <a name="in_progress"></a><span style="background-color:#fbca04; color:black; font-weight:600">work in progress 🚧</span> - The work on the PR is not finished and is not ready to be reviewed.
+- ![Merge](https://img.shields.io/static/v1?label&message=Merge&color=FF7F50) - The PR is ready to be merged. Our bot picks up when this label is added. It will then automatically add the PR in the queue to merge the PRs in order. Once dequeued, it will first merge back develop into the PR, then wait for our CI system to run all the tests. Only if every test has passed the bot will finally merge the PR.
+- ![Needs one reviewer 🙏](https://img.shields.io/static/v1?label&message=Needs%20one%20reviewer🙏%20&color=ce3799) - The PR has one approval and is waiting for one more review.
+- ![Ready for Review 🚀](https://img.shields.io/static/v1?label&message=Ready%20for%20Review🚀&color=0e8a16) - The work on the PR is finished and it is ready to be reviewed.
+- ![Work in progress 🚧](https://img.shields.io/static/v1?label&message=Work%20in%20progress%20🚧&color=fbca04) - The work on the PR is not finished and is not ready to be reviewed.
 
 ### Status
 Flags if there is something preventing the PR from being merged that is unrelated with review requests or failing builds.
 
-- <a name="blocked"></a><span style="background-color:#000000; color:white; font-weight:600">Blocked ✋</span> - the PR is waiting for another task to be complete - this task can be a backend task, a product decision or another PR.
-- <a name="blocking"></a><span style="background-color:#d93f0b; color:white; font-weight:600">Blocking other PRs 🙅‍♀️</span> - the PR is blocking other PRs from resuming their work or from being merged. The PR with this label should have priority over the PRs that are being blocked by this one.
+- ![Blocked ✋](https://img.shields.io/static/v1?label&message=Blocked%20✋&color=000000) - the PR is waiting for another task to be complete - this task can be a backend task, a product decision or another PR.
+- ![Blocking other PRs 🙅‍♀️](https://img.shields.io/static/v1?label&message=Blocking%20other%20PRs%20🙅‍♀️&color=d93f0b) - the PR is blocking other PRs from resuming their work or from being merged. The PR with this label should have priority over the PRs that are being blocked by this one.
 
 ### Emergency
 Alerts when a PR is required to be merged. This is used in emergency situations like a hot fix or a piece of work that is mandatory to go in the release that is about to ship.
 
-- <span style="background-color:#e00000; color:white; font-weight:600">Feature at risk 🚑</span> - A PR that has to go in the next release that will ship in 2 days or less. This PR has priority to be reviewed over all the other PRs that are not in emergency.
-- <span style="background-color:#fcc1ba; color:black; font-weight:600">Hotfix 🆘</span> - The PR has priority to be reviewed because it has a hot fix targeting the current release branch.
+- ![Feature at risk 🚑](https://img.shields.io/static/v1?label&message=Feature%20at%20risk%20🚑&color=e00000) - A PR that has to go in the next release that will ship in 2 days or less. This PR has priority to be reviewed over all the other PRs that are not in emergency.
+- ![Hotfix 🆘](https://img.shields.io/static/v1?label&message=Hotfix%20🆘&color=fcc1ba) - The PR has priority to be reviewed because it has a hot fix targeting the current release branch.
 
 ### Extra
 These tags are used to give extra context to the PR.
 
-- <span style="background-color:#ff69b4; color:black; font-weight:600">Bug 🐛</span> - The PR fixes a bug.
-- <span style="background-color:#c79ee2; color:black; font-weight:600">Housekeeping 🏡</span> - The PR includes some work that won't change any functionality - it just removes clutter from the project.
-- <span style="background-color:#bfdadc; color:black; font-weight:600">Refactoring 🏗️</span> - The PR has refactoring work. Refactoring work is usually work that involves rewritting a part of the project that had technical debt. This work usually doesn't have any visual changes (UI/UX changes).
-- <span style="background-color:#bfdadc; color:white; font-weight:600">Trivial 👶</span> - The PR takes 1-2 minutes to review (an example can be a PR that only involves updading localizable strings).
+- ![Bug 🐛](https://img.shields.io/static/v1?label&message=Bug%20🐛&color=ff69b4) - The PR fixes a bug.
+- ![Housekeeping 🏡](https://img.shields.io/static/v1?label&message=Housekeeping%20🏡&color=c79ee2) - The PR includes some work that won't change any functionality - it just removes clutter from the project.
+- ![Refactoring 🏗️](https://img.shields.io/static/v1?label&message=Refactoring%20🏗️&color=bfdadc) - The PR has refactoring work. Refactoring work is usually work that involves rewritting a part of the project that had technical debt. This work usually doesn't have any visual changes (UI/UX changes).
+- ![Trivial 👶](https://img.shields.io/static/v1?label&message=Trivial%20👶&color=ce3799) - The PR takes 1-2 minutes to review (an example can be a PR that only involves updading localizable strings).
 
 ## 2. The rules
 
