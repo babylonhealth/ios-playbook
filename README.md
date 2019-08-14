@@ -66,12 +66,12 @@ By definition, members work on their respective squad, although they are free to
 | Squad Name                    | Members                                     | Availability | Public slack channel | What is the squad's area of competence? |
 |-------------------------------|---------------------------------------------| ------------ | -------------------- | --- |
 | Booking                       | Witold                                      |    1/1       | |
-| Condition Management          | Catarina, João, Daniel, Diego                      |    3/3       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) | 
+| Condition Management          | Catarina, João, Daniel, Diego                      |    4/4       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) | 
 | Consultation                  | Adrian, Chitra                              |    2/2       | |
 | Core Experience               | Sergey, Yuri                                |    2/2       | [#core-exp-squad](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
 | Dev Experience                | Ilya, Olivier, David                        |    3/3       | [#mobile-tooling](https://babylonhealth.slack.com/messages/CL3QSC2NM) |
 | Early Feedback                | Danilo                                      |    1/1       | [#early_feedback](https://babylonhealth.slack.com/archives/CLGA76GG7) |
-| Enrolment and Integrity       | James                                |    2/2       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
+| Enrolment and Integrity       | James                                |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Healthcheck                   | Ben, Julien                                 |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
 | Monitor                       | Anders, Joshua, Nicola                      |    3/3       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
 | Native Apps                   | Giorgos, Jason, Martin, Inami, Emese        |    5/5       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
