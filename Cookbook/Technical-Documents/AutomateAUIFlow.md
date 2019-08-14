@@ -213,7 +213,7 @@ This gives us the following code:
 The one exception is **Bento** which has a habit of duplicating elements in the accessibility hierarchy, for example the `loginButton` in the hierarchy above appears twice. For this case I would use `XCUIElementQuery` with `.firstMatch`. 
 
 #### Interact with Element
-Now that we have the element, we can interact with it. I wont repeat what is already included in Apple documentation. I will simply cover the two functions we use in out screen object. For the password and email field we need to enter the text, to do this we use `element.typeText(text)` the problem with this function is that is requires the element to have keyboard focus. You solved this by tapping on the element using `element.tap()` prior to using `typeText`.
+Now that we have the element, we can interact with it. I won't repeat what is already included in Apple documentation. I will simply cover the two functions we use in out screen object. For the password and email field we need to enter the text, to do this we use `element.typeText(text)` the problem with this function is that is requires the element to have keyboard focus. You solved this by tapping on the element using `element.tap()` prior to using `typeText`.
 
 Rather than duplicate this code in both functions we have a *helper* function in *BaseScreen.swift*. This helper does a bit more in that it also verifies the state of the button and wait for the desired state up to a specified timeout.
 
