@@ -78,10 +78,10 @@ By definition, members work on their respective squad, although they are free to
 | Prescriptions                 | Adam, Konrad                                |    2/2       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
 | Professional Services         | Simon                                       |    1/3       | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
 | SDK                           | Viorel                                      |    1/3       | [#sdk_squad](https://babylonhealth.slack.com/archives/CC5JNDGJJ) |
+| Tenancy & Features            | Anil                                        |    1/1       | [#ten-and-feats](https://babylonhealth.slack.com/messages/CHJB79CFR) |
 | Tests & Kits                  | Michal                                      |    1/1       | [#test-and-kits](https://babylonhealth.slack.com/archives/CGCDJA8CD) |
 | Triage                        | Michael                                     |    1/1       | [#triage](https://babylonhealth.slack.com/messages/CE6H6SLRX) |
 | US Professional Services      | Greg, Sam, Patrick                          |    3/3       | [#us-engineering](https://babylonhealth.slack.com/archives/CEE6CD37E) |
-| Women's Health                | Anil                                        |    1/1       | [#womenshealthteam](https://babylonhealth.slack.com/archives/CFX73S4P5) |
 
 
 ## 3. OSS-maintained projects
