@@ -257,7 +257,7 @@ In Babylon we decided to run the tests using a **Fastlane** lane and a separate 
 Once a new test has been added and if a new feature file was created also added to **UILanes**  the tests will be run nightly as per our CircleCI yml file. Once a lane has been run the results will be published the #ios-build channel for anyone in the team to see, though normally the support engineer and senior Automation Engineer will review the results.
 
 # Running Tests
-The `Fastlane` lanes defines in `UILanes` will be run nightly on CircleCI using the **develop** source and **PreProd (AWS)** environment. If you want to run the UI tests for your branch you can use the following command from the **ios-build** channel in slack.
+The `Fastlane` lanes defined in `UILanes` will be run nightly on CircleCI using the **develop** source and **PreProd (AWS)** environment. If you want to run the UI tests for your branch you can use the following command from the **ios-build** channel in slack.
 
 ```
 /fastlane ui_test_babylon_smoke branch:release/babylon/4.4.0
