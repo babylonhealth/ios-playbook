@@ -63,8 +63,8 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 By definition, members work on their respective squad, although they are free to work in different squads if the work load justifies it.
 
 
-| Squad Name                    | Members                                     | Availability | Public slack channel | What is the squad's area of competence? |
-|-------------------------------|---------------------------------------------| ------------ | -------------------- | --- |
+| Squad Name                    | Members                                     | Availability | Public slack channel |
+|-------------------------------|---------------------------------------------| ------------ | -------------------- |
 | Booking                       | Witold                                      |    1/1       | |
 | Condition Management          | Catarina, João, Dan S., Diego                      |    4/4       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) | 
 | Consultation                  | Adrian, Chitra                              |    2/2       | |
