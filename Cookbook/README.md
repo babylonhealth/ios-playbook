@@ -27,6 +27,7 @@ iOS Cookbook 👩‍🍳
 * [New hires checklist](./Technical-Documents/NewHiresCheckList.md)
 * [Writing a Proposal](./Technical-Documents/WritingAProposal.md)
 * [Release Process](./Technical-Documents/ReleaseProcess.md)
+* [How to add Labels to a Pull Request](./Technical-Documents/LabelsInPRs.md)
 
 ##### ... test my app 🌳
 
