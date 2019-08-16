@@ -25,6 +25,7 @@ iOS Cookbook 👩‍🍳
 * [Code Owners - Restoring developer's efficiency](./Proposals/CODEOWNERS.md)
 * [iOS Team style guide](./Style-guide/)
 * [New hires checklist](./Technical-Documents/NewHiresCheckList.md)
+* [What I don't know, but should](./ThatIDontKnow.md)
 * [Writing a Proposal](./Technical-Documents/WritingAProposal.md)
 * [Release Process](./Technical-Documents/ReleaseProcess.md)
 * [How to add Labels to a Pull Request](./Technical-Documents/LabelsInPRs.md)
