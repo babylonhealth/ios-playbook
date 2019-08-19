@@ -19,7 +19,7 @@ Q: What did you like during your first week?
 > “Team welcoming both iOS and squad ”
 
 ## You’ll never walk alone…
-As you will notice due to the rapid growth things in Babilon can and will change often and quickly. While this may look scary do not worry you are working with amazing people and everyone wants to help you. You have the right to ask questions and seek out help from people in the team and other co-workers. To make this task easier here’s, an incomplete, list of people that can help you.
+As you will notice due to the rapid growth things in Babylon can and will change often and quickly. While this may look scary do not worry you are working with amazing people and everyone wants to help you. You have the right to ask questions and seek out help from people in the team and other co-workers. To make this task easier here’s, an incomplete, list of people that can help you.
 
 ### Your manager
 Your manager will be the first person from the iOS team that you’ll see after the induction workshop on your first day. He, or she, should introduce you to your buddy, your squad and other co-workers.
