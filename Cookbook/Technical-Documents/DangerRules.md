@@ -26,7 +26,12 @@ This rule simply reminds us to update this very documentation when the Danger co
 
 This rule warns us if the number of inserted lines in the PR is above 850.
 
+ℹ️ Binary files are counted as "1 line changes" for the purpose of this rule, in order to count as changes to be reviewed but only count as 1 single change.  
+This means that the number of insertions/deletions reported by GitHub on your PR might slightly differ from the "number of lines" considered by this Danger rules if you have binary files in your PR.
+
 _Note: We have an informal limit of 800 lines for PRs, but since it's only informal, we decided to only make Danger put a message if we're more then 50 lines over that informal limit._
+
+If this rule is triggered, an table is also added showing some stats (the table is hidden behind a disclosure triangle) about the number of changes per various categories of content (Feature Code, Test Code, pbxproj, Binary files, ...). Thoe goal of this table is to better understand how the code of the PR is distributed, hopefully giving the author and reviewers some ideas on how to split the PR if needed (e.g. one PR with just the code for the Builder separated from the PR adding the VM)
 
 This rule is only a warning because we don't want it to block PRs, as there are some rare exceptions where we allow the limit to be exceeded, as long as it's justified by the author (e.g. a refactoring PR)
 
