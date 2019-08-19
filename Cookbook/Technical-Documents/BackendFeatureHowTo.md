@@ -232,3 +232,185 @@ Features
     ├── CitiesFlowController.swift
     └── CitiesBuilder.swift
 ```
+
+## Advanced topics
+With the simple case covered, let's move on to more difficult topics.
+
+Most of those are revolving around customising decoding and encoding at the `Service` level with `BackendResource`, so at first let's describe what a *parser* is.
+
+### Parser
+
+`Parser` is a namespace for a set of functions which encode and decode objects with `JSONSerialization` and generally return either a `SignalProducer` or a `Result`. There is much more going under the hood, so it's worth to study the source code.
+
+We are mostly interested in two fuctions, the first is `parse` to decode the response:
+``` swift
+static func parse<T>(_ data: Data) -> Result<T, CoreError> where T: Decodable
+```
+
+Other overloads can also take a custom `JSONDecoder`, a JSON key and specify whether to fail parsing or skip malformed elements. We'll look at these options shortly.
+
+The second function is `encode` to produce the request:
+``` swift
+static func encode<T>(_ item: T) -> Result<Data, CoreError> where T: Encodable
+```
+
+`encode` can also take a custom `JSONEncoder`.
+
+`BackendResource` uses `Parser` to decode and encode responses and requests, and we can use it ourselves to customise how that is happening by overriding response and request handlers on `BackendResource`.
+
+`BackendResource` takes two additional parameters, `request` and `response`, which have the following signatures:
+``` swift
+typealias RequestHandler = (Request, JSONEncoder) -> Result<Data, CoreError>
+typealias ResponseHandler = (Data, URLResponse) -> Result<Response, CoreError>
+```
+
+Essentially, if we specify a simple encodable `Request`, internally this happens:
+``` swift
+extension BackendResource where Request: Encodable, Response: Decodable {
+    public init(…) {       // We don't specify request or response here.
+        self.init(         // But in this init they are required.
+            …
+            request: Parser.encode,
+            response: { data, _ in Parser.parse(data) }
+        )
+    }
+}
+```
+
+Let's see some examples of how we might customise this behaviour in various situations.
+
+### Don't create a Response type for single-key JSON
+
+Given the JSON from our simple example, we might as well not create `CitiesResponse` just to wrap the request, and use the `key` parameter on the parser to “key” into the data (get it?).
+
+In our `CitiesService`, the call would be:
+``` swift
+static func fetchCitiesResource() -> BackendResource<Void, [City], KongAuth> {
+    return BackendResource(
+        path: .api(.core, citiesPath),
+        method: .GET,
+        response: { data, _ in Parser.parse(data, key: "cities", strategy: .prune) }
+    )
+}
+```
+
+What this does is decodes the array of cities directly from JSON, without the need for intermediate data structures. This works well for simple responses.
+
+Note that our `BackendResource` signature now has `[City]` in it instead of `CitiesResponse`.
+
+One other new thing here is the `strategy` parameter in the `Parser` call. The parameter is an enum applying specifically to arrays, and it has two cases:
+1. `prune` (which we used in the call) skips any value in the array which could not be decoded. If one or more of the cities fails to be decoded, in the worst case we would get an empty array.
+2. `strict` fails the whole parsing if one of the child values could not be parsed i.e. you would get an error.
+
+Another way to approach this situation would be to define a custom `Decodable` extension for `CitiesResponse` which would filter out malformed cities, but more on this later.
+
+### Supply a custom JSON decoder to BackendResource
+
+When field names or dates are involved, we can pass our own `JSONDecoder` to the `BackendResource` initialiser instead of working in the `ResponseHandler` closure.
+
+This is especially useful if e.g. on the backend your city has a field `city_name` but in your `City` struct it's defined as `cityName`. This case is handled by an option on the JSON decoder:
+``` swift
+struct CitiesService {
+    // `internal` access level to allow for testing.
+    internal static let jsonDecoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }()
+
+    static func fetchCitiesResource() -> BackendResource<Void, CitiesResponse, KongAuth> {
+        let citiesPath = "/v1/cities"
+        return BackendResource(
+            path: .api(.core, citiesPath),
+            method: .GET,
+            decoder: jsonDecoder
+        )
+    }
+}
+```
+
+We simply pass our `JSONDecoder` as a parameter when creating the `BackendResource`, which is executed internally as:
+``` swift
+extension BackendResource {
+    public init(
+        …
+        decoder: JSONDecoder
+    ) {
+        self.init(
+            …
+            response: { data, _ in Parser.parse(data, decoder: decoder) }
+        )
+    }
+}
+```
+
+### Define a Request type to use with BackendResource
+Let's enhance our Cities business controller and add the ability to order a delivery. For simplicity, let's say this request can only succeed or return an error to avoid defining a response type.
+
+If we wanted to send a POST request with a body, we would first need to define a Request type to be serialised, which means it has to conform to `Encodable`, e.g.
+``` swift
+struct Address: Encodable {
+    let firstLine: String
+    …
+    let postcode: String?
+}
+```
+
+After that, in our Service we would add a method to return a new `BackendResource`:
+``` swift
+static func requestDelivery() -> BackendResource<Address, Void, KongAuth> {
+    return BackendResource(
+        path: .api(.core, "/v1/cities/delivery"),
+        method: .POST
+    )
+}
+```
+
+Notice that we put `Address` as `Request` in `BackendResource`, but it is not actually used anywhere in the method, why is that? Remember that `BackendResource` is only a description of a network request and not its content. 
+
+This is why we define a new method and supply the actual `Address` object in the business controller:
+``` swift
+func requestDelivery(to address: Address) -> SignalProducer<Never, CoreError> {
+    let resource = CitiesService.requestDelivery()
+    return accessible.access(resource, with: address)
+}
+```
+
+Using a signal producer with the signature `<Never, CoreError>` is a common pattern to represent that the network request can either succeed or result in a network error of some sort.
+
+Notice that we are finally specifying the second parameter on `accessible.access(…)` to make a request with a body, which should match the `Request` type we defined on the `BackendResource` that is returned from the Service.
+
+### Create or modify a POST request body with Parser
+
+Now imagine that instead of supplying the address literally, we must now wrap it in a JSON dictionary. Clearly, it's a chore to define a wrapper type for `Address` only to specify a single key. Instead, we can take advantage that we can use `Parser` with requests as well as with responses.
+
+Our definition in the Service would now become:
+``` swift
+static func requestDelivery() -> BackendResource<Address, Void, KongAuth> {
+    return BackendResource(
+        path: .api(.core, "/v1/cities/delivery"),
+        method: .POST,
+        request: { address, _ in
+            return Parser.encode(["address": address])
+        }
+    )
+```
+
+The `BackendResource` signature stays the same but now, where does the `address` parameter come from in the `request` closure? Remember that the signature for the request handler is `(Request, JSONEncoder) -> Result<Data, CoreError>`, so this handler is instantiated with the object which is passed by e.g. `AuthenticatedAccessible` with its `access` method (see previous section).
+
+Using the request handler closure, we could even define the `Request` type on `BackendResource` as `Void` and still create a request body:
+``` swift
+static func obtainQuestions(query: String) -> BackendResource<Void, [Question], KongAuth> {
+    return BackendResource(
+        path: .api(.core, "/v1/questions"),
+        method: .POST,
+        request: { _, encoder in
+            Parser.encode(["question_query": query], encoder: encoder)
+        }
+    )
+}
+```
+
+In this made-up request we create the request body from scratch using the parameter we pass to the method on Service. Note that while it can be done for very simple requests, it's still preferable to define a separate type if there is more than one parameter, otherwise Service and Business Controller would become a spaghetti with multiple parameters passed through. As we discussed earlier, when a `Request` type is defined on `BackendResource`, we don't have to pass the object into the Service directly and it only exists in the business controller, which is much cleaner.
+
+Also note that while in this case we're using a built-in JSON encoder (passed into the request handler closure) we could define, like in one of the previous sections, a custom `JSONEncoder` and configure it in the way we wanted, while not touching the `Request` type as, for example, it would need to be mapped differently elsewhere.
