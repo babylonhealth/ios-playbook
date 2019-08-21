@@ -6,7 +6,7 @@ iOS Cookbook 👩‍🍳
 ##### ... learn about our architecture 🏠
 
 * [Implementing features with ReactiveFeedback](http://ilya.puchka.me/implementing-features-with-reactivefeedback/)
-* [Implementing features that work with the backend](./TechnicalDocuments/BackendFeatureHowTo.md)
+* [Implementing features that work with the backend](./Technical-Documents/BackendFeatureHowTo.md)
 * [Adopt the `Current` struct to hold global dependencies](./Proposals/ControlTheWorld.md) 
     * [following the `Current Guide`](./Technical-Documents/Current-guide.md)
 * [Posting Analytics Events to Snowplow](./Technical-Documents/SnowplowHowTo.md)
