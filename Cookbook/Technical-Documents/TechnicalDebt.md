@@ -62,7 +62,7 @@ Porting these view controllers to Bento will also make it easier to apply an app
 | NHSRegistrationStep1ViewController | NRX-361 | | Used when `isV4NHSRegistrationStep1And2Enabled == false` |
 | NHSRegistrationStep2ViewController | NRX-186 | | Used when `isV4NHSRegistrationStep1And2Enabled == false` |
 | RedemptionViewModel | CNSMR-921 | | Used when `isNewRedemptionEnabled ==false ` |
-| OnboardingViewModel | AV-118 | | Used when `isNewWelcomeScreenEnabled == false` |
+| OnboardingViewModel | CNSMR-2581 | iOS Chapter Goal | Used when `isNewWelcomeScreenEnabled == false` |
 
 ## Bento View Controllers that need to be Updated to use the Design Library.
 
