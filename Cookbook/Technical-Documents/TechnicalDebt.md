@@ -160,7 +160,7 @@ Some of these business controllers are not defined inside the SDK. Most of them 
 | GeolocationBusinessController | BabylonCore | BabylonClinicalRecordsUI, BabylonUI, Babylon | |
 | InfoItemsBusinessControllerProtocol | BabylonCore | BabylonClinicalRecordsUI | |
 | GPDetailsBusinessController | BabylonCore | BabylonClinicalRecordsUI | |
-| HealthcheckReportBusinessControllerProtocol | BabylonMonitor | BabylonMonitor, Babylon | |
+| HealthcheckReportBusinessControllerProtocol | BabylonMonitor | BabylonMonitor, Babylon | Will likely sit outside of the SDK, as the Healthcheck report is not available on other environments outside of the UK. |
 | ReferAFriendBusinessControllerProtocol | BabylonCore | BabylonUI, Babylon | |
 | RatingBusinessControllerProtocol | BabylonCore | BabylonUI | |
 | FamilyBusinessControllerProtocol | BabylonCore | BabylonUI, Babylon | |
