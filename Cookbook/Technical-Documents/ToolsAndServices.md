@@ -15,6 +15,7 @@
 | [zoom.us](https://zoom.us/) | Video Conferences | Create account with BabylonHealth email-Id. You will have access to basic plan (you can join invites without an account but will need one to create conferences)|
 | VPN | Remote Access to our intranet and internal domains | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) |
 | [CircleCI](https://circleci.com/gh/Babylonpartners) | See CI jobs and logs | Use your GitHub login |
+| [Pull Panda](https://pullreminders.com) | Stats on PRs and reminders for when you've been asked for a review | Use your GitHub login |
 | [HockeyApp](https://rink.hockeyapp.net/) | see OTA builds sent internally to QA | Ask support engineer in the iOS team channel on Slack to invite you to the org |
 | [Firebase](https://console.firebase.google.com/u/1/) | View crash reports, performance monitoring | Ask Rui or David for access |
 

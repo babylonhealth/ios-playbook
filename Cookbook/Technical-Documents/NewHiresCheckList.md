@@ -35,11 +35,6 @@ As an iOS Engineer, you should be in the following Slack channels:
 	- `#demo_frontend`
 	- `#developers`
 
-* Slack Apps
-	- pull-reminders
-	- peakon
-	- betterworks
-
 Make sure you also join your Tribe/Squad's Slack channels.
 
 ## Install prerequisites
