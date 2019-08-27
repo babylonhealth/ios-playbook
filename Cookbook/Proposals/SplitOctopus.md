@@ -1,7 +1,7 @@
 # Split Octopus codebase
 
 * Author(s): Giorgos Tsiapaliokas
-* Review Manager: TBD
+* Review Managers: David Rodrigues, Yasuhiro Inami, Olivier Halligon
 
 ## Introduction
 
