@@ -51,6 +51,10 @@ Option 2 will be easier for the team to review the changes but it will require b
 
 Personally I prefer option 2.
 
+## Octopus Analysis
+
+Octopus analysis can be found [here.](https://docs.google.com/spreadsheets/d/1nu7L6vwQcET1fYas1Ccj6vlqHJRtsdaXQ94LaXjvXkQ/edit#gid=0)
+
 ## Impact on existing codebase
 
 Although this is a breaking change, most likely it won't affect the enginners much.
