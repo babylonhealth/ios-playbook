@@ -1,4 +1,4 @@
-# How to deal with Localizations [draft]
+# How to deal with Localizations
 
 In project we can add a new Localization. But that is not in target level. Babylon needs to have a different sets of languages/locales per product.
 
