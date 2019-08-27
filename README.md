@@ -73,7 +73,7 @@ By definition, members work on their respective squad, although they are free to
 | Enrolment and Integrity       | James                                |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
 | Healthcheck                   | Ben, Julien                                 |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
 | Monitor (Bulbasaur)           | Joshua, Dan                                 |    2/2       | |
-| Monitor (Charmander)          | Anders                                      |    1/1       |  |
+| Monitor (Charmander)          | Anders                                      |    1/2       |  |
 | Monitor (Squirtle)            | Daniel H., Diego                            |    2/2       |  |
 | Native Apps                   | Giorgos, Jason, Martin, Inami, Emese        |    5/5       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
 | Prescriptions                 | Adam, Konrad                                |    2/2       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
