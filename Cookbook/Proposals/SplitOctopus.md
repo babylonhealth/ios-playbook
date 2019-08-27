@@ -5,7 +5,7 @@
 
 ## Introduction
 
-From the early versions of the codebase Octopus was the place were  features were added.
+From the early versions of the codebase Octopus was the place were features were added.
 Unfortunately Octopus hasn't adapted as the rest of the codebase has.
 In the iOS codebase we use frameworks in order to organize the code and Octopus isn't one.
 
@@ -25,6 +25,16 @@ The first framework will be used as a container for small features and it should
 The second framework will contain anything else which was in Octopus.
 This framework can depend on any other framework.
 
+Converting Octopus into two frameworks
+- should improve the build time of the app
+- will reduce the time which is required for unit tests to be executed
+- will allow better code organization
+- engineers won't be limited in any way
+
+In the initial split `BabylonFeatures` will host all the features which satisfy the dependencies requirement.
+After the initial split it will be up to each squad to decide the appropriate place for their code.
+
+By having these two frameworks we will improve the developer experience and provide the same level of flexibility as before. 
 
 ## Impact on existing codebase
 
