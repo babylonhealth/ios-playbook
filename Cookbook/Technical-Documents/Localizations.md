@@ -38,7 +38,7 @@ In the _Included Source File Names_ we include the languages (`.lproj/`) set in 
 ### Add a new key/value
 In Lokalise, select the corresponding project. 
 Click on the `Add key ⌘K` button
-- `key` - Give a name for the key following the bread-crumb style. For example: `add_family_member_email_placeholder`, `biometric_touchid_primer_description` or `biometric_touchid_primer_description`
+- `key` - Give a name for the key following the bread-crumb style. For example: `add_family_member_email_placeholder`, `biometric_touchid_primer_description`.
     
 - `Base language value`: The actual string value corresponding to the first language in the list. Placeholders are supported with the `@%` where dynamic values are expected. 
 
@@ -56,7 +56,72 @@ Check [Lokalise pull guide](https://github.com/Babylonpartners/ios-playbook/blob
 Stage just your changes (additions and editions) on git. Don't stage any additions nor change that you don't recognize. It's really nice to be proactive but not in this case. It might cause unspected/premature changes. Yes, discard others's changes.
 
 ## Target specific localizable - Lokalise project and `strings` files
-TBD
+
+As the name suggests, it's a `.strings` file that contains texts intended to be present **only** in a specific app target.
+The values in this file will be priority over the main file value.
+<br><br>
+E.g: <br>
+In `Babylon/Supporting Files/Localization/Localizable.strings`:<br>
+```"consultation_gp_details_name" = "GP Name:";```<br>
+<br>
+And in `Babylon/Brand/Telus/TargetSpecificLocalizable.strings`:<br>
+```"consultation_gp_details_name" = "Doctor Name:";```<br>
+<br>
+When we run the target **Telus**, the value will be taken from the target specific file.
+`Doctor Name:`
+
+Whereas when we run **Babylon** the value will be the main one. 
+`GP Name:`
+
+This prioritization happens in the static method [`LocalizationCore.localizedName`](https://github.com/Babylonpartners/babylon-ios/blob/develop/SDK/BabylonCore/BabylonCore/Utilities/LocalizationCore.swift#L14) that basically tries first to get the value for such key from the Specific file and if the result is still the key itself, then it fallsback to the main value. 
+
+```swift
+public static func localizedName(key: String, bundle: Bundle = Bundle.main) -> String {
+    let targetLocalizationString = NSLocalizedString(key, tableName: "TargetSpecificLocalizable", comment: "")
+    let targetHasKey = targetLocalizationString != key
+    return targetHasKey ? targetLocalizationString : NSLocalizedString(key, bundle: bundle, comment: "")
+}
+```
+
+Such approach allows other targets to have treir custom keys' values when, for some reason, the user uses the device in British English.
+
+Not only that, but also avoids us to have useless and risky repetitions like:<br>
+```"consultation_gp_details_name_babylon" = "GP Name:";```<br>
+```"consultation_gp_details_name_telus" = "Doctor Name:";```<br>
+in the same file released for all apps. 
+
+### How to create a key/value that goes to this file? (lokalise key configuration + fastlane output file location)
+Considering you are working in an app (different than the main Babylon UK). A project in Lokalise is needed. Then when you need to have a custom value for a certain key. 
+
+#### In www.lokalise.co:
+
+1. Create a new key: Click on the `Add key ⌘K` button
+2. Add the exact same key as it is in the Babylon (Lokalise) Project. Also its custom value.
+3. Click on `Advanced` and in `Assigned to file` select in the dropdown `TargetSpecificLocalizable.strings`. If it's the first time, `New file...` then add the before mentioned `TargetSpecificLocalizable.strings`.
+
+#### In `Babylon/fastlane/Lanes/lokalise`:
+1. Create a lane that will pull the string values into the custom file:
+Consider that the app name here is `FooBar` and that you have the real `projectId` from Lokalise:
+```ruby
+# lokalise_pull FooBar
+lane :lokalise_pull_foobar do
+	lokalise_pull(
+		projectId: "0000000000000000000000.11111111", 
+		destinationFolder: "../Babylon/Brand/FooBar/",	
+		noLanguageFolders: "1", 
+		langs: "en, fr"
+	)
+end
+```
+2. The detail to highlight here is the `destinationFolder: "../Babylon/Brand/FooBar/"` combined with the given `fileName` in each key entry, it'll compose the full path of the custom file. 
+
+3. The last detail to take care are the `langs` that should reflect the `APP_LANGUAGES` array in the app target's Build Settings / User defined. 
+
+4. Then finally run the brand new command: 
+```sh
+bundle exec fastlane lokalise_pull_foobar
+```
+The new target specific file should appear in your git diff. ✨
 
 ## Lokalise: add comments and screenshots when possible.
 Comments and screenshots are important complementary **contexts** for the translators.
