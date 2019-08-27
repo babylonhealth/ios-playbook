@@ -35,11 +35,6 @@ As an iOS Engineer, you should be in the following Slack channels:
 	- `#demo_frontend`
 	- `#developers`
 
-* Slack Apps
-	- pull-reminders
-	- peakon
-	- betterworks
-
 Make sure you also join your Tribe/Squad's Slack channels.
 
 ## Install prerequisites
@@ -66,7 +61,7 @@ Make sure you also join your Tribe/Squad's Slack channels.
 Most of the work to get the iOS project up and running is automated inside a
 shell script. Here's how to get the iOS project up and running:
 
-1. [Generate](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) & add the SSH key to your [GitHub account](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account)
+1. [Generate](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key), add the SSH key to your [GitHub account](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account) and [authorise](https://help.github.com/en/articles/authorizing-an-ssh-key-for-use-with-a-saml-single-sign-on-organization) it for use with single sign on.
 
 1. Run the `ios-onboarding` Bash script inside the `scripts` directory of this
    repo. It requires a `CODE_DIRECTORY` argument which is the parent directory
