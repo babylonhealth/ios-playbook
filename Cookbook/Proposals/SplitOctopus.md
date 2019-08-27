@@ -36,6 +36,21 @@ After the initial split it will be up to each squad to decide the appropriate pl
 
 By having these two frameworks we will improve the developer experience and provide the same level of flexibility as before. 
 
+### Transition Period
+
+Splitting Octopus will require some time since it's not trivial.
+There are two approaches 
+
+1. Split everything at once
+2. Initially create empty frameworks and then move each subdirectory of Octopus piece by piece.
+
+Option 1 has the drawback of keeping everything in a large PR and updating this PR constantly.
+Also IMO having such a massive PR will make it more error prone.
+
+Option 2 will be easier for the team to review the changes but it will require better coordination in order to make sure that the two new frameworks will be used instead of Octopus.
+
+Personally I prefer option 2.
+
 ## Impact on existing codebase
 
 Although this is a breaking change, most likely it won't affect the enginners much.
