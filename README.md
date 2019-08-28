@@ -17,6 +17,10 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 
 ## 1. Who are we? 
 
+We're organised in Squads. Each squad can be composed of iOS, Android and QA Engineers, as well as Designers and a Delivery Manager, all working on the same part of the app.
+
+Some of the roles are transverse to all the squads:
+
 <!--
   DO NOT EDIT MANUALLY: This table has been generated from scripts/squads.yml
   TO UPDATE THIS TABLE:
@@ -36,11 +40,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
       <td>Michael Brown</td><td><a href='https://github.com/mluisbrown'>@mluisbrown</a></td><td><a href='https://twitter.com/mluisbrown'>@mluisbrown</a></td></tr>
 </table>
 
-----
-
-We're organised in Squads. Each squad is composed of iOS, Android and QA Engineers, and a Delivery Manager.
-
-The table below only list the squads in which our iOS Engineers take part, and only list the iOS developers in those respective squads.
+The rest of the iOS Engineers work in the following squads:
 
 <!--
   DO NOT EDIT MANUALLY: This table has been generated from scripts/squads.yml
