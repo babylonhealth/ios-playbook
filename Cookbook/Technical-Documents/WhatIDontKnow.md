@@ -176,7 +176,7 @@ Note: This is only available from our internal network or through the VPN
 
 [Engineering at Babylon](https://engineering.ops.babylontech.co.uk/)
 
-Why you should read it: It provides a nice overview of the engineering across the whole Babylon.
+Why you should read it: It provides a nice overview of engineering across whole Babylon.
 
 [Remote Working at Babylon](https://docs.google.com/document/d/1hjKtx1pPL_pxhLEuW-46w2XwxsC-mkw3Cp5uaHB2P8c/edit#)
 
