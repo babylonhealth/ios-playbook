@@ -17,15 +17,13 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 
 ## 1. Who are we? 
 
-==================================
-
 | Roles  | Names |
 | ------ | ----- | 
 | **Engineering Manager** | Rui Peres • [Twitter](https://twitter.com/peres) • [GitHub](https://github.com/RuiAAPeres)  |
 | **Chapter Leads** | Ana Catarina Figueiredo • [Twitter](https://twitter.com/AnnKatFig) • [GitHub](https://github.com/AnnKatF)  <br>  David Rodrigues • [Twitter](https://twitter.com/dmcrodrigues) • [GitHub](https://github.com/dmcrodrigues) |
 | **Squad Tech Leads** | Michael Brown • [Twitter](https://twitter.com/mluisbrown) |
 
-==================================
+<br>
 
 | Squad                         | Engineers                      |
 |-------------------------------|------------------------------- |
