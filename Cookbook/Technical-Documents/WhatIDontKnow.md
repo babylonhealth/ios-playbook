@@ -94,7 +94,7 @@ This is our FAQ section. Every question that you may have have a short answer an
 
 Why you should read it: In this document, we keep track of who, what and when of our team
 
-[iOS Goals H2 (July - December)](https://docs.google.com/spreadsheets/d/1nI1RAdsP2nJiUzsvCE9LHQH11-OIPNSHZvpMPUQal_o/edit#gid=1533898989)
+[iOS Goals H2 (July - December)](https://docs.google.com/spreadsheets/d/1nI1RAdsP2nJiUzsvCE9LHQH11-OIPNSHZvpMPUQal_o/edit#gid=0)
 
 Why you should read it: Here, the iOS team collaborates on it's goals (unrelated to squad goals). Typically, these goals include addressing tech debts, refactoring the code for modernisation and implementing features which make development more efficient and more robust
 
