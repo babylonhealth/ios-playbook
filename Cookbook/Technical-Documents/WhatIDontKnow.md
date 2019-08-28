@@ -2,7 +2,7 @@
 
 ## Congratulations you’ve joined Babylon...
 Welcome to the amazing iOS team! 
-Babylon is a fast-growing company as you could see we are onboarding ~ 30 people weekly many of them engineers like yourself. Our team is scattered across three offices: London West, London East and US office. On top of that, we have fully remote teammates. As you can imagine this poses almost biblical challenges, but don’t worry :)
+Babylon is a fast-growing company. Currently, we are on-boarding ~30 new-starters weekly. Many of them are engineers like yourself. Our team is scattered across three offices: London West, London East and US office. On top of that, we have fully remote teammates. As you can imagine this poses almost biblical challenges, but don’t worry :)
 
 ## Like others before you...
 The first week can be overwhelming. New code-base, emails and non-stop messages on Slack can make for a mind-numbing first experience. We don’t promise the information fire hose stops after the first day, but just hear what people who went through before you said:
