@@ -27,7 +27,7 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Anil Puttabuddhi        | [@anilputtabuddhi](https://github.com/anilputtabuddhi)        |
 | Ben Henshall            | [@Ben_Henshall](https://twitter.com/ben_henshall?lang=en)     |
 | Chitra Kotwani          | [@ChitraKotwani](https://twitter.com/chitrakotwani)           |
-| Daniel Haight           |                                                               |
+| Daniel Haight           | [@Daniel1of1](https://github.com/daniel1of1)                  |
 | Danilo Aliberti         |                                                               |
 | David Rodrigues         | [@dmcrodrigues](https://twitter.com/dmcrodrigues)             |
 | Diego Petrucci          | [@diegopetrucci](https://twitter.com/diegopetrucci)           |
