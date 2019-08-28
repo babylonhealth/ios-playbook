@@ -8,83 +8,44 @@ iOS Playbook 📚
 
 At Babylon, we firmly believe that **transparency** is a core value that should be present in everything we do. This playbook embodies that value by giving an overview of how we work:
 
-1. [Who's in the team 👨‍👩‍👧‍👦](#1-whos-in-the-team)
-2. [Which squad each individual belongs to, and its availability 🏠](#2-which-squad-each-individual-belongs-to-and-its-availability)
-3. [OSS-maintained projects 🚀](#3-oss-maintained-projects)
-4. [The Cookbook 👩‍🍳](/Cookbook/README.md)
-5. [Interview process 📝](/Interview/README.md)
-6. [Code of conduct ❤️](/Etiquette/README.md)
-7. [Code review etiquette](/Etiquette/CODE_REVIEW.md)
+1. [Who's in the team 👨‍👩‍👧‍👦](#1-who-are-we)
+2. [OSS-maintained projects 🚀](#2-oss-maintained-projects)
+3. [The Cookbook 👩‍🍳](/Cookbook/README.md)
+4. [Interview process 📝](/Interview/README.md)
+5. [Code of conduct ❤️](/Etiquette/README.md)
+6. [Code review etiquette](/Etiquette/CODE_REVIEW.md)
 
-## 1. Who's in the team
+## 1. Who are we? 
 
-| Name                    | Contact                                                       |
-|-------------------------|---------------------------------------------------------------|
-| Adam Borek              | [@TheAdamBorek](https://twitter.com/TheAdamBorek)             |
-| Adrian Śliwa            | [@adiki91](https://twitter.com/adiki91)                       |
-| Ana Catarina Figueiredo | [@AnnKatFig](https://twitter.com/AnnKatFig)                   |
-| Anders Ha               | [@_andersha](https://twitter.com/_andersha)                   |
-| Anil Puttabuddhi        | [@anilputtabuddhi](https://github.com/anilputtabuddhi)        |
-| Ben Henshall            | [@Ben_Henshall](https://twitter.com/ben_henshall?lang=en)     |
-| Chitra Kotwani          | [@ChitraKotwani](https://twitter.com/chitrakotwani)           |
-| Danilo Aliberti         |                                                               |
-| David Rodrigues         | [@dmcrodrigues](https://twitter.com/dmcrodrigues)             |
-| Diego Petrucci          | [@diegopetrucci](https://twitter.com/diegopetrucci)           |
-| Emese Toth              | [@emeseuk](https://github.com/emeseuk)           |
-| Giorgos Tsiapaliokas    | [@gtsiap](https://github.com/gtsiap)                          |
-| Ilya Puchka             | [@ilyapuchka](https://twitter.com/ilyapuchka)                 |
-| James Birtwell          | [@jimmybee](https://github.com/jimmybee)
-| Jason Dobo              | [@jasondobo](https://github.com/jasondobo)                    |
-| João Pereira            | [@NSMyself](https://twitter.com/nsmyself)                     |
-| Joshua Simmons          | [@j531](https://github.com/j531)                              |
-| Julien Ducret           | [@brocoo](https://github.com/brocoo)                          |
-| Konrad Muchowicz        | [@konrad-em](https://github.com/konrad-em)                    |
-| Martin Nygren           |                                                               |
-| Michael Brown           | [@mluisbrown](https://twitter.com/mluisbrown)                 |
-| Michał Kwiecień         | [@kwiecien_co](https://twitter.com/kwiecien_co)               |
-| Nicola Di Pol           | [@nicola.dipol](https://github.com/horothesun)                |
-| Olivier Halligon        | [@AliSoftware](https://twitter.com/aligatr)                   |
-| Rui Peres               | [@peres](https://twitter.com/peres)                           |
-| Sergey Shulga           | [@SergDort](https://twitter.com/SergDort)                     |
-| Simon Cass              | [@codercass](https://twitter.com/codercass)                   |
-| Jakub Tomanik           | [@jtomanik](https://github.com/jtomanik)                      |
-| Viorel Mihalache        | [@viorelMO](https://twitter.com/viorelMO)                     |
-| Witold Skibniewski      |                                                               |
-| Yasuhiro Inami          | [@inamiy](https://twitter.com/inamiy)                         |
-| Yuri Karabatov          | [@karabatov](https://twitter.com/karabatov)                   |
-| Greg Bryant             |                                                               |
-| Sam Francis             |                                                               |
-| Patrick Westmeyer       |                                                               |
-| Daniel Spindelbauer     | [@sdaniel55](https://twitter.com/sdaniel55)                   |
+==================================
+
+| Roles  | Names |
+| ------ | ----- | 
+| **Engineering Manager** | Rui Peres • [Twitter](https://twitter.com/peres) • [GitHub](https://github.com/RuiAAPeres)  |
+| **Chapter Leads** | Ana Catarina Figueiredo • [Twitter](https://twitter.com/AnnKatFig) • [GitHub](https://github.com/AnnKatF)  <br>  David Rodrigues • [Twitter](https://twitter.com/dmcrodrigues) • [GitHub](https://github.com/dmcrodrigues) |
+| **Squad Tech Leads** | Michael Brown • [Twitter](https://twitter.com/mluisbrown) |
+
+==================================
+
+| Squad                         | Engineers                      |
+|-------------------------------|------------------------------- |
+| **Booking** <br> Face to face appointment booking. | Witold Skibniewski • [GitHub](https://github.com/mr-v)|
+| **Consultation** <br> Flows for all the consultation like prescriptions and video consultation. | Adrian Śliwa • [Twitter](https://twitter.com/adiki91) • [GitHub](https://github.com/adiki) <br> Chitra Kotwani • [Twitter](https://twitter.com/chitrakotwani) • [GitHub](https://github.com/chitrakotwani)|
+|**Core Experience** <br> General user experience in the app. | Emese Toth • [GitHub](https://github.com/emeseuk) <br> Giorgos Tsiapaliokas • [GitHub](https://github.com/gtsiap) <br> Sergey Shulga • [Twitter](https://twitter.com/SergDort) • [GitHub](https://github.com/sergdort) <br> Yuri Karabatov • [Twitter](https://twitter.com/karabatov) • [GitHub](https://github.com/karabatov)|
+|**Native Apps Platform** <br> Engineering work like tooling, CI and development processes. | David Rodrigues • [Twitter](https://twitter.com/dmcrodrigues) • [GitHub](https://github.com/dmcrodrigues) <br> Ilya Puchka • [Twitter](https://twitter.com/ilyapuchka) • [GitHub](https://github.com/ilyapuchka) <br> Yasuhiro Inami • [Twitter](https://twitter.com/inamiy) • [GitHub](https://github.com/inamiy) <br> Martin Nygren • [GitHub](https://github.com/zzcgumn) <br>  Olivier Halligon • [Twitter](https://twitter.com/aligatr) • [GitHub](https://github.com/AliSoftware)|
+|**GP @ Hand** <br> End to end journey for NHS registration. | James Birtwell • [GitHub](https://github.com/jimmybee) |
+|**Healthcheck** <br> Overview of your health using a 3D body model (avatar). | Ben Henshall • [Twitter](https://twitter.com/ben_henshall?lang=en) • [GitHub](https://github.com/Ben-Henshall) <br> Julien Ducret • [Twitter](https://github.com/brocoo) • [GitHub](https://github.com/brocoo) |
+| **Monitor** <br> Monitoring health metrics like activity, blood, urine, ... | Anders Ha • [Twitter](https://twitter.com/_andersha) • [GitHub](https://github.com/andersio) <br> Daniel Haight • [GitHub](https://github.com/Daniel1of1) <br> Daniel Spindelbauer • [Twitter](https://twitter.com/sdaniel55) • [GitHub](https://github.com/sdaniel55) <br> Diego  Petrucci • [Twitter](https://twitter.com/diegopetrucci) • [GitHub](https://github.com/diegopetrucci) <br> Joshua Simmons • [GitHub](https://github.com/j531) |
+| **Prescriptions** <br> Precriptions functionality. | Adam Borek • [Twitter](https://twitter.com/TheAdamBorek) • [GitHbu](https://github.com/TheAdamBorek) <br> Konrad Muchowicz • [GitHub](https://github.com/konrad-em)
+| **Professional Services** | Simon Cass • [Twitter](https://twitter.com/codercass) • [GitHub](https://github.com/scass91)|
+| **SDK** <br> Develop and mantain the SDK frameworks. | Viorel Mihalache • [Twitter](https://twitter.com/viorelMO) • [GitHub](https://github.com/viorel15) |
+| **Tenancy & Features** | Anil Puttabuddhi • [GitHub](https://github.com/anilputtabuddhi) |
+| **Test Kits** <br> Managing everything related to Babylon do-at-home tests. | Michał Kwiecień • [Twitter](https://twitter.com/kwiecien_co) • [GitHub](https://github.com/MichalTKwiecien)|
+| **Triage** <br> Chatbot functionality. | Danilo Aliberti • [GitHub](https://github.com/daniloaliberti) <br> Michael Brown • [Twitter](https://twitter.com/mluisbrown) • [GitHub](https://github.com/mluisbrown) |
+| **US Professional Services** <br> Features for app in the US. | Greg Bryant <br> Patrick Westmeyer • [GitHub](https://github.com/bh-pwestmeyer) <br> Sam Francis • [GitHub](https://github.com/SamFrancis-Babylon) |
 
 
-## 2. Which squad each individual belongs to, and its availability.
-
-By definition, members work on their respective squad, although they are free to work in different squads if the work load justifies it.
-
-
-| Squad Name                    | Members                                     | Availability | Public slack channel |
-|-------------------------------|---------------------------------------------| ------------ | -------------------- |
-| Booking                       | Witold                                      |    1/1       | |
-| Condition Management          | Catarina, João, Dan S., Diego                      |    4/4       | [#health-mgmt-public](https://babylonhealth.slack.com/archives/CCNHJUXLH) | 
-| Consultation                  | Adrian, Chitra                              |    2/2       | |
-| Core Experience               | Sergey, Yuri                                |    2/2       | [#core-exp-squad](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
-| Dev Experience                | Ilya, Olivier, David                        |    3/3       | [#mobile-tooling](https://babylonhealth.slack.com/messages/CL3QSC2NM) |
-| Early Feedback                | Danilo                                      |    1/1       | [#early_feedback](https://babylonhealth.slack.com/archives/CLGA76GG7) |
-| Enrolment and Integrity       | James                                |    1/1       | [#ei-squad](https://babylonhealth.slack.com/archives/CGR4D5NKX) |
-| Healthcheck                   | Ben, Julien                                 |    2/3       | [#healthcheck_tribe](https://babylonhealth.slack.com/archives/C7995CX3R) |
-| Monitor                       | Anders, Joshua, Daniel H.                      |    3/3       | [#patient-metrics-team](https://babylonhealth.slack.com/archives/CE37S5W9Z) |
-| Native Apps                   | Giorgos, Jason, Martin, Inami, Emese        |    5/5       | [#nativeapps_public](https://babylonhealth.slack.com/archives/CE5P8LRNH) |
-| Prescriptions                 | Adam, Konrad                                |    2/2       | [#prescription-squad](https://babylonhealth.slack.com/archives/C88TCM9JB) |
-| Professional Services         | Simon                                       |    1/3       | [#telus](https://babylonhealth.slack.com/archives/CAJ7YQZ5Z) |
-| SDK                           | Viorel                                      |    1/3       | [#sdk_squad](https://babylonhealth.slack.com/archives/CC5JNDGJJ) |
-| Tenancy & Features            | Anil                                        |    1/1       | [#ten-and-feats](https://babylonhealth.slack.com/messages/CHJB79CFR) |
-| Tests & Kits                  | Michal                                      |    1/1       | [#test-and-kits](https://babylonhealth.slack.com/archives/CGCDJA8CD) |
-| Triage                        | Michael                                     |    1/1       | [#triage](https://babylonhealth.slack.com/messages/CE6H6SLRX) |
-| US Professional Services      | Greg, Sam, Patrick                          |    3/3       | [#us-engineering](https://babylonhealth.slack.com/archives/CEE6CD37E) |
-
-
-## 3. OSS-maintained projects
+## 2. OSS-maintained projects
 
 | Project name                  | Owner(s)                 | Stars        |
 |-------------------------------|--------------------------| ------------ |
