@@ -160,7 +160,7 @@ Why you should read it: The chart at the bottom should show you the whole pictur
 
 [Pointfree](https://www.pointfree.co/)
 
-Why you should read it: This is almost a Bible to us when it comes to functional programming in Swift.
+Why you should read it: Our codebase is heavily inspired by the concepts there. If you go through the lectures, you will understand much better what we do in our codebase and why.
 
 ## Life in Babylon
 Those resources contain practical tips about living in our offices or as a remote worker. Floors, toilets, conference rooms, lunch places and so on. 
