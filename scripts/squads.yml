@@ -105,7 +105,7 @@ squads:
         github: scass91
         twitter: codercass
   - name: SDK
-    desc: Develop and mantain the SDK frameworks.
+    desc: Develop and maintain the SDK frameworks.
     members: 
       - name: Viorel Mihalache
         github: viorel15

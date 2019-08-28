@@ -84,7 +84,7 @@ The table below only list the squads in which our iOS Engineers take part, and o
       <tr><td>Konrad Muchowicz</td><td><a href='https://github.com/konrad-em'>@konrad-em</a></td><td></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Professional Services</strong><br/></td>
       <td>Simon Cass</td><td><a href='https://github.com/scass91'>@scass91</a></td><td><a href='https://twitter.com/codercass'>@codercass</a></td></tr>
-    <tr><td rowspan='1' valign='top'><strong>SDK</strong><br/>Develop and mantain the SDK frameworks.</td>
+    <tr><td rowspan='1' valign='top'><strong>SDK</strong><br/>Develop and maintain the SDK frameworks.</td>
       <td>Viorel Mihalache</td><td><a href='https://github.com/viorel15'>@viorel15</a></td><td><a href='https://twitter.com/viorelMO'>@viorelMO</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Tenancy & Features</strong><br/></td>
       <td>Anil Puttabuddhi</td><td><a href='https://github.com/anilputtabuddhi'>@anilputtabuddhi</a></td><td></td></tr>
