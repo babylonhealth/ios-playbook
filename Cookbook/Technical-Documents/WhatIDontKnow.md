@@ -44,7 +44,7 @@ How to be a good buddy?
 You may be still confused by the name, but a squad is a cross-functional, autonomous team working towards common goals. Get to know them well during your onboarding time. They will be more than happy to explain and help you with day-to-day work. Check what are your squad slack channels, calendar groups and JIRA board and make sure that you are added to them.
 
 ### The iOS team
-One of the greatest sources of our collective knowledge is a #ios-questions slack channel. You can ask there any question and the whole team will try to help you.
+One of the greatest sources of our collective knowledge is #ios-questions slack channel. You should search for your question there before asking it. We encourage to ask your questions on this channel as opposed to asking it in private chat.
 
 ## In the tower of Babel
 When working in such a vibrant and dynamic environment it is very easy to lose a track of things that should happen. This is a shortlist of topics that should help you to get through the onboarding time.
