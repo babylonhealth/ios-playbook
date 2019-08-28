@@ -20,21 +20,22 @@ I am sure we can do better than this :)
 Split Octopus into two different frameworks.
 The proposed names are `BabylonFeatures` and `BabylonApp`.
 
-The first framework will be used as a container for small features and it should depend only on `BabylonCore`, `BabylonUI`, `BabylonDepedencies` and `BabylonSDK`.
+The first framework will be used as a container for features which
+- depend only on `BabylonCore`, `BabylonUI`, `BabylonDepedencies` and `BabylonSDK`
+- don't depend on any third party SDKs
 
-The second framework will contain anything else which was in Octopus.
-This framework can depend on any other framework.
+The second framework will be more flexibile with less restrictions, features in this framework
+- can depend on other Babylon framework
+- can depend on any third party SDK
+
+In the initial split Octopus will be splitted in the new two frameworks and then it Octopus will be removed from the codebase.
+After the initial split it will be up to each squad to decide the appropriate place for their code.
 
 Converting Octopus into two frameworks
 - should improve the build time of the app
 - will reduce the time which is required for unit tests to be executed
 - will allow better code organization
-- engineers won't be limited in any way
-
-In the initial split `BabylonFeatures` will host all the features which satisfy the dependencies requirement.
-After the initial split it will be up to each squad to decide the appropriate place for their code.
-
-By having these two frameworks we will improve the developer experience and provide the same level of flexibility as before. 
+- engineers won't be limited in any way, since two frameworks will exist in order to host features depending on their dependencies
 
 ### Transition Period
 
