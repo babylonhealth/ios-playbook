@@ -19,28 +19,28 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 
 | Roles  | Names |
 | ------ | ----- | 
-| **Engineering Manager** | Rui Peres • [Twitter](https://twitter.com/peres) • [GitHub](https://github.com/RuiAAPeres)  |
-| **Chapter Leads** | Ana Catarina Figueiredo • [Twitter](https://twitter.com/AnnKatFig) • [GitHub](https://github.com/AnnKatF)  <br>  David Rodrigues • [Twitter](https://twitter.com/dmcrodrigues) • [GitHub](https://github.com/dmcrodrigues) |
-| **Squad Tech Leads** | Michael Brown • [Twitter](https://twitter.com/mluisbrown) |
+| **Engineering Manager** | Rui Peres • [🐦 @peres](https://twitter.com/peres) • [:octocat: @RuiAAPeres](https://github.com/RuiAAPeres)  |
+| **Chapter Leads** | Ana Catarina Figueiredo • [🐦 @AnnKatFig](https://twitter.com/AnnKatFig) • [:octocat: @AnnKatF](https://github.com/AnnKatF)  <br>  David Rodrigues • [🐦 @dmcrodrigues](https://twitter.com/dmcrodrigues) • [:octocat: @dmcrodrigues](https://github.com/dmcrodrigues) |
+| **Squad Tech Leads** | Michael Brown • [🐦 @mluisbrown](https://twitter.com/mluisbrown) • [:octocat: @mluisbrown](https://github.com/mluisbrown) |
 
 <br>
 
 | Squad                         | Engineers                      |
 |-------------------------------|------------------------------- |
-| **Booking** <br> Face to face appointment booking. | Witold Skibniewski • [GitHub](https://github.com/mr-v)|
-| **Consultation** <br> Flows for all the consultation like prescriptions and video consultation. | Adrian Śliwa • [Twitter](https://twitter.com/adiki91) • [GitHub](https://github.com/adiki) <br> Chitra Kotwani • [Twitter](https://twitter.com/chitrakotwani) • [GitHub](https://github.com/chitrakotwani)|
-|**Core Experience** <br> General user experience in the app. | Emese Toth • [GitHub](https://github.com/emeseuk) <br> Giorgos Tsiapaliokas • [GitHub](https://github.com/gtsiap) <br> Sergey Shulga • [Twitter](https://twitter.com/SergDort) • [GitHub](https://github.com/sergdort) <br> Yuri Karabatov • [Twitter](https://twitter.com/karabatov) • [GitHub](https://github.com/karabatov)|
-|**Native Apps Platform** <br> Engineering work like tooling, CI and development processes. | David Rodrigues • [Twitter](https://twitter.com/dmcrodrigues) • [GitHub](https://github.com/dmcrodrigues) <br> Ilya Puchka • [Twitter](https://twitter.com/ilyapuchka) • [GitHub](https://github.com/ilyapuchka) <br> Yasuhiro Inami • [Twitter](https://twitter.com/inamiy) • [GitHub](https://github.com/inamiy) <br> Martin Nygren • [GitHub](https://github.com/zzcgumn) <br>  Olivier Halligon • [Twitter](https://twitter.com/aligatr) • [GitHub](https://github.com/AliSoftware)|
-|**GP @ Hand** <br> End to end journey for NHS registration. | James Birtwell • [GitHub](https://github.com/jimmybee) |
-|**Healthcheck** <br> Overview of your health using a 3D body model (avatar). | Ben Henshall • [Twitter](https://twitter.com/ben_henshall?lang=en) • [GitHub](https://github.com/Ben-Henshall) <br> Julien Ducret • [Twitter](https://github.com/brocoo) • [GitHub](https://github.com/brocoo) |
-| **Monitor** <br> Monitoring health metrics like activity, blood, urine, ... | Anders Ha • [Twitter](https://twitter.com/_andersha) • [GitHub](https://github.com/andersio) <br> Daniel Haight • [GitHub](https://github.com/Daniel1of1) <br> Daniel Spindelbauer • [Twitter](https://twitter.com/sdaniel55) • [GitHub](https://github.com/sdaniel55) <br> Diego  Petrucci • [Twitter](https://twitter.com/diegopetrucci) • [GitHub](https://github.com/diegopetrucci) <br> Joshua Simmons • [GitHub](https://github.com/j531) |
-| **Prescriptions** <br> Precriptions functionality. | Adam Borek • [Twitter](https://twitter.com/TheAdamBorek) • [GitHub](https://github.com/TheAdamBorek) <br> Konrad Muchowicz • [GitHub](https://github.com/konrad-em)
-| **Professional Services** | Simon Cass • [Twitter](https://twitter.com/codercass) • [GitHub](https://github.com/scass91)|
-| **SDK** <br> Develop and mantain the SDK frameworks. | Viorel Mihalache • [Twitter](https://twitter.com/viorelMO) • [GitHub](https://github.com/viorel15) |
-| **Tenancy & Features** | Anil Puttabuddhi • [GitHub](https://github.com/anilputtabuddhi) |
-| **Test Kits** <br> Managing everything related to Babylon do-at-home tests. | Michał Kwiecień • [Twitter](https://twitter.com/kwiecien_co) • [GitHub](https://github.com/MichalTKwiecien)|
-| **Triage** <br> Chatbot functionality. | Danilo Aliberti • [GitHub](https://github.com/daniloaliberti) <br> Michael Brown • [Twitter](https://twitter.com/mluisbrown) • [GitHub](https://github.com/mluisbrown) |
-| **US Professional Services** <br> Features for app in the US. | Greg Bryant <br> Patrick Westmeyer • [GitHub](https://github.com/bh-pwestmeyer) <br> Sam Francis • [GitHub](https://github.com/SamFrancis-Babylon) |
+| **Booking** <br> Face to face appointment booking. | Witold Skibniewski • [:octocat: @mr-v](https://github.com/mr-v)|
+| **Consultation** <br> Flows for all the consultation like prescriptions and video consultation. | Adrian Śliwa • [🐦 @adiki91](https://twitter.com/adiki91) • [:octocat: @adiki](https://github.com/adiki) <br> Chitra Kotwani • [🐦 @chitrakotwani](https://twitter.com/chitrakotwani) • [:octocat: @chitrakotwani](https://github.com/chitrakotwani)|
+|**Core Experience** <br> General user experience in the app. | Emese Toth • [:octocat: @emeseuk](https://github.com/emeseuk) <br> Giorgos Tsiapaliokas • [:octocat: GitHub](https://github.com/gtsiap) <br> Sergey Shulga • [🐦 @SergDort](https://twitter.com/SergDort) • [:octocat: @sergdort](https://github.com/sergdort) <br> Yuri Karabatov • [🐦 @karabatov](https://twitter.com/karabatov) • [:octocat: @karabatov](https://github.com/karabatov)|
+|**Native Apps Platform** <br> Engineering work like tooling, CI and development processes. | David Rodrigues • [🐦 @dmcrodrigues](https://twitter.com/dmcrodrigues) • [:octocat: @dmcrodrigues](https://github.com/dmcrodrigues) <br> Ilya Puchka • [🐦 @ilyapuchka](https://twitter.com/ilyapuchka) • [:octocat: @ilyapuchka](https://github.com/ilyapuchka) <br> Yasuhiro Inami • [🐦 @inamiy](https://twitter.com/inamiy) • [:octocat: @inamiy](https://github.com/inamiy) <br> Martin Nygren • [:octocat: @zzcgumn](https://github.com/zzcgumn) <br>  Olivier Halligon • [🐦 @aligatr](https://twitter.com/aligatr) • [:octocat: @AliSoftware](https://github.com/AliSoftware)|
+|**GP @ Hand** <br> End to end journey for NHS registration. | James Birtwell • [:octocat: @jimmybee](https://github.com/jimmybee) |
+|**Healthcheck** <br> Overview of your health using a 3D body model (avatar). | Ben Henshall • [🐦 @ben_henshall](https://twitter.com/ben_henshall) • [:octocat: @Ben-Henshall](https://github.com/Ben-Henshall) <br> Julien Ducret • [:octocat: @brocoo](https://github.com/brocoo) |
+| **Monitor** <br> Monitoring health metrics like activity, blood, urine, ... | Anders Ha • [🐦 @_andersha](https://twitter.com/_andersha) • [:octocat: @andersio](https://github.com/andersio) <br> Daniel Haight • [:octocat: @Daniel1of1](https://github.com/Daniel1of1) <br> Daniel Spindelbauer • [🐦 @sdaniel55](https://twitter.com/sdaniel55) • [:octocat: @sdaniel55](https://github.com/sdaniel55) <br> Diego  Petrucci • [🐦 @diegopetrucci](https://twitter.com/diegopetrucci) • [:octocat: GitHub](https://github.com/diegopetrucci) <br> Joshua Simmons • [:octocat: @j531](https://github.com/j531) |
+| **Prescriptions** <br> Precriptions functionality. | Adam Borek • [🐦 @TheAdamBorek](https://twitter.com/TheAdamBorek) • [:octocat: @TheAdamBorek](https://github.com/TheAdamBorek) <br> Konrad Muchowicz • [:octocat: @konrad-em](https://github.com/konrad-em) |
+| **Professional Services** | Simon Cass • [🐦 @codercass](https://twitter.com/codercass) • [:octocat: @scass91](https://github.com/scass91)|
+| **SDK** <br> Develop and mantain the SDK frameworks. | Viorel Mihalache • [🐦 @viorelMO](https://twitter.com/viorelMO) • [:octocat: @viorel15](https://github.com/viorel15) |
+| **Tenancy & Features** | Anil Puttabuddhi • [:octocat: @anilputtabuddhi](https://github.com/anilputtabuddhi) |
+| **Test Kits** <br> Managing everything related to Babylon do-at-home tests. | Michał Kwiecień • [🐦 @kwiecien_co](https://twitter.com/kwiecien_co) • [:octocat: @MichalTKwiecien](https://github.com/MichalTKwiecien)|
+| **Triage** <br> Chatbot functionality. | Danilo Aliberti • [:octocat: @daniloaliberti](https://github.com/daniloaliberti) <br> Michael Brown • [🐦 @mluisbrown](https://twitter.com/mluisbrown) • [:octocat: @mluisbrown](https://github.com/mluisbrown) |
+| **US Professional Services** <br> Features for app in the US. | Greg Bryant <br> Patrick Westmeyer • [:octocat: @bh-pwestmeyer](https://github.com/bh-pwestmeyer) <br> Sam Francis • [:octocat: @SamFrancis-Babylon](https://github.com/SamFrancis-Babylon) |
 
 
 ## 2. OSS-maintained projects
