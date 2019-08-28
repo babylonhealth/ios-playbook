@@ -180,4 +180,4 @@ Why you should read it: It provides a nice overview of the engineering across th
 
 [Remote Working at Babylon](https://docs.google.com/document/d/1hjKtx1pPL_pxhLEuW-46w2XwxsC-mkw3Cp5uaHB2P8c/edit#)
 
-Why you should read it: If you work remotely this contains a bunch of useful info.
+Why you should read it: If you work remotely, this contains a bunch of useful tips.
