@@ -41,7 +41,7 @@ How to be a good buddy?
 >Treat it as you would introduce a friend, who is new to your city: Introduce them to locals, give them some resources so they can navigate on their own, and help them form a plan their first few weeks.
 
 ### Your squad
-You may be still confused by the name, but a squad is an awesome group of people with who you will be working with. Get to know them well during your onboarding time. They will be more than happy to explain and help you with day-to-day work. Check what are your squad slack channels, calendar groups and JIRA board and make sure that you are added to them.
+You may be still confused by the name, but a squad is a cross-functional, autonomous team working towards common goals. Get to know them well during your onboarding time. They will be more than happy to explain and help you with day-to-day work. Check what are your squad slack channels, calendar groups and JIRA board and make sure that you are added to them.
 
 ### The iOS team
 One of the greatest sources of our collective knowledge is a #ios-questions slack channel. You can ask there any question and the whole team will try to help you.
