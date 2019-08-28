@@ -17,31 +17,87 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 
 ## 1. Who are we? 
 
-| Roles  | Names |
-| ------ | ----- | 
-| **Engineering Manager** | Rui Peres &nbsp;[🐦 @peres](https://twitter.com/peres) \| [:octocat: @RuiAAPeres](https://github.com/RuiAAPeres)  |
-| **Chapter Leads** | Ana Catarina Figueiredo &nbsp;[🐦 @AnnKatFig](https://twitter.com/AnnKatFig) \| [:octocat: @AnnKatF](https://github.com/AnnKatF)  <br>  David Rodrigues &nbsp;[🐦 @dmcrodrigues](https://twitter.com/dmcrodrigues) \| [:octocat: @dmcrodrigues](https://github.com/dmcrodrigues) |
-| **Squad Tech Leads** | Michael Brown &nbsp;[🐦 @mluisbrown](https://twitter.com/mluisbrown) \| [:octocat: @mluisbrown](https://github.com/mluisbrown) |
+<!--
+  DO NOT EDIT MANUALLY: This table has been generated from scripts/squads.yml
+  TO UPDATE THIS TABLE:
+   - update scripts/squads.yml
+   - run `scripts/squad.rb --update` to update the `README.md` section
+   - (alternatively, `scripts/squad.rb` without `--update` lets you copy/paste the HTML yourself)
+-->
 
-<br>
+<table>
+  <thead><th>Role</th><th>Person</th><th>GitHub</th><th>Twitter</th></thead>
+    <tr><td rowspan='1' valign='top'><strong>Engineering Manager</strong></td>
+      <td>Rui Peres</td><td><a href='https://github.com/RuiAAPeres'>@RuiAAPeres</a></td><td><a href='https://twitter.com/peres'>@peres</a></td></tr>
+    <tr><td rowspan='2' valign='top'><strong>Chapter Leads</strong></td>
+      <td>Ana Catarina Figueiredo</td><td><a href='https://github.com/AnnKatF'>@AnnKatF</a></td><td><a href='https://twitter.com/AnnKatFig'>@AnnKatFig</a></td></tr>
+      <tr><td>David Rodrigues</td><td><a href='https://github.com/dmcrodrigues'>@dmcrodrigues</a></td><td><a href='https://twitter.com/dmcrodrigues'>@dmcrodrigues</a></td></tr>
+    <tr><td rowspan='1' valign='top'><strong>Squad Tech Leads</strong></td>
+      <td>Michael Brown</td><td><a href='https://github.com/mluisbrown'>@mluisbrown</a></td><td><a href='https://twitter.com/mluisbrown'>@mluisbrown</a></td></tr>
+</table>
 
-| Squad                         | Engineers                      |
-|-------------------------------|------------------------------- |
-| **Booking** <br> Face to face appointment booking. | Witold Skibniewski • [:octocat: @mr-v](https://github.com/mr-v)|
-| **Consultation** <br> Flows for all the consultation like prescriptions and video consultation. | Adrian Śliwa • [🐦 @adiki91](https://twitter.com/adiki91) • [:octocat: @adiki](https://github.com/adiki) <br> Chitra Kotwani • [🐦 @chitrakotwani](https://twitter.com/chitrakotwani) • [:octocat: @chitrakotwani](https://github.com/chitrakotwani)|
-|**Core Experience** <br> General user experience in the app. | Emese Toth • [:octocat: @emeseuk](https://github.com/emeseuk) <br> Giorgos Tsiapaliokas • [:octocat: GitHub](https://github.com/gtsiap) <br> Sergey Shulga • [🐦 @SergDort](https://twitter.com/SergDort) • [:octocat: @sergdort](https://github.com/sergdort) <br> Yuri Karabatov • [🐦 @karabatov](https://twitter.com/karabatov) • [:octocat: @karabatov](https://github.com/karabatov)|
-|**Native Apps Platform** <br> Engineering work like tooling, CI and development processes. | David Rodrigues • [🐦 @dmcrodrigues](https://twitter.com/dmcrodrigues) • [:octocat: @dmcrodrigues](https://github.com/dmcrodrigues) <br> Ilya Puchka • [🐦 @ilyapuchka](https://twitter.com/ilyapuchka) • [:octocat: @ilyapuchka](https://github.com/ilyapuchka) <br> Yasuhiro Inami • [🐦 @inamiy](https://twitter.com/inamiy) • [:octocat: @inamiy](https://github.com/inamiy) <br> Martin Nygren • [:octocat: @zzcgumn](https://github.com/zzcgumn) <br>  Olivier Halligon • [🐦 @aligatr](https://twitter.com/aligatr) • [:octocat: @AliSoftware](https://github.com/AliSoftware)|
-|**GP @ Hand** <br> End to end journey for NHS registration. | James Birtwell • [:octocat: @jimmybee](https://github.com/jimmybee) |
-|**Healthcheck** <br> Overview of your health using a 3D body model (avatar). | Ben Henshall • [🐦 @ben_henshall](https://twitter.com/ben_henshall) • [:octocat: @Ben-Henshall](https://github.com/Ben-Henshall) <br> Julien Ducret • [:octocat: @brocoo](https://github.com/brocoo) |
-| **Monitor** <br> Monitoring health metrics like activity, blood, urine, ... | Anders Ha • [🐦 @_andersha](https://twitter.com/_andersha) • [:octocat: @andersio](https://github.com/andersio) <br> Daniel Haight • [:octocat: @Daniel1of1](https://github.com/Daniel1of1) <br> Daniel Spindelbauer • [🐦 @sdaniel55](https://twitter.com/sdaniel55) • [:octocat: @sdaniel55](https://github.com/sdaniel55) <br> Diego  Petrucci • [🐦 @diegopetrucci](https://twitter.com/diegopetrucci) • [:octocat: GitHub](https://github.com/diegopetrucci) <br> Joshua Simmons • [:octocat: @j531](https://github.com/j531) |
-| **Prescriptions** <br> Precriptions functionality. | Adam Borek • [🐦 @TheAdamBorek](https://twitter.com/TheAdamBorek) • [:octocat: @TheAdamBorek](https://github.com/TheAdamBorek) <br> Konrad Muchowicz • [:octocat: @konrad-em](https://github.com/konrad-em) |
-| **Professional Services** | Simon Cass • [🐦 @codercass](https://twitter.com/codercass) • [:octocat: @scass91](https://github.com/scass91)|
-| **SDK** <br> Develop and mantain the SDK frameworks. | Viorel Mihalache • [🐦 @viorelMO](https://twitter.com/viorelMO) • [:octocat: @viorel15](https://github.com/viorel15) |
-| **Tenancy & Features** | Anil Puttabuddhi • [:octocat: @anilputtabuddhi](https://github.com/anilputtabuddhi) |
-| **Test Kits** <br> Managing everything related to Babylon do-at-home tests. | Michał Kwiecień • [🐦 @kwiecien_co](https://twitter.com/kwiecien_co) • [:octocat: @MichalTKwiecien](https://github.com/MichalTKwiecien)|
-| **Triage** <br> Chatbot functionality. | Danilo Aliberti • [:octocat: @daniloaliberti](https://github.com/daniloaliberti) <br> Michael Brown • [🐦 @mluisbrown](https://twitter.com/mluisbrown) • [:octocat: @mluisbrown](https://github.com/mluisbrown) |
-| **US Professional Services** <br> Features for app in the US. | Greg Bryant <br> Patrick Westmeyer • [:octocat: @bh-pwestmeyer](https://github.com/bh-pwestmeyer) <br> Sam Francis • [:octocat: @SamFrancis-Babylon](https://github.com/SamFrancis-Babylon) |
+----
 
+We're organised in Squads. Each squad is composed of iOS, Android and QA Engineers, and a Delivery Manager.
+
+The table below only list the squads in which our iOS Engineers take part, and only list the iOS developers in those respective squads.
+
+<!--
+  DO NOT EDIT MANUALLY: This table has been generated from scripts/squads.yml
+  TO UPDATE THIS TABLE:
+   - update scripts/squads.yml
+   - run `scripts/squad.rb --update` to update the `README.md` section
+   - (alternatively, `scripts/squad.rb` without `--update` lets you copy/paste the HTML yourself)
+-->
+
+<table>
+  <thead><th>Squad</th><th>iOS Dev</th><th>GitHub</th><th>Twitter</th></thead>
+    <tr><td rowspan='1' valign='top'><strong>Booking</strong><br/>Face to face appointment booking.</td>
+      <td>Witold Skibniewski</td><td><a href='https://github.com/mr-v'>@mr-v</a></td><td></td></tr>
+    <tr><td rowspan='2' valign='top'><strong>Consultation</strong><br/>Flows for all the consultation like prescriptions and video consultation.</td>
+      <td>Adrian Śliwa</td><td><a href='https://github.com/adiki'>@adiki</a></td><td><a href='https://twitter.com/adiki91'>@adiki91</a></td></tr>
+      <tr><td>Chitra Kotwani</td><td><a href='https://github.com/chitrakotwani'>@chitrakotwani</a></td><td><a href='https://twitter.com/chitrakotwani'>@chitrakotwani</a></td></tr>
+    <tr><td rowspan='4' valign='top'><strong>Core Experience</strong><br/>General user experience in the app.</td>
+      <td>Emese Toth</td><td><a href='https://github.com/emeseuk'>@emeseuk</a></td><td></td></tr>
+      <tr><td>Giorgos Tsiapaliokas</td><td><a href='https://github.com/gtsiap'>@gtsiap</a></td><td></td></tr>
+      <tr><td>Sergey Shulga</td><td><a href='https://github.com/sergdort'>@sergdort</a></td><td><a href='https://twitter.com/SergDort'>@SergDort</a></td></tr>
+      <tr><td>Yuri Karabatov</td><td><a href='https://github.com/karabatov'>@karabatov</a></td><td><a href='https://twitter.com/karabatov'>@karabatov</a></td></tr>
+    <tr><td rowspan='5' valign='top'><strong>Native Apps Platform</strong><br/>Engineering work like tooling, CI and development processes.</td>
+      <td>David Rodrigues</td><td><a href='https://github.com/dmcrodrigues'>@dmcrodrigues</a></td><td><a href='https://twitter.com/dmcrodrigues'>@dmcrodrigues</a></td></tr>
+      <tr><td>Ilya Puchka</td><td><a href='https://github.com/ilyapuchka'>@ilyapuchka</a></td><td><a href='https://twitter.com/ilyapuchka'>@ilyapuchka</a></td></tr>
+      <tr><td>Yasuhiro Inami</td><td><a href='https://github.com/inamiy'>@inamiy</a></td><td><a href='https://twitter.com/inamiy'>@inamiy</a></td></tr>
+      <tr><td>Martin Nygren</td><td><a href='https://github.com/zzcgumn'>@zzcgumn</a></td><td></td></tr>
+      <tr><td>Olivier Halligon</td><td><a href='https://github.com/AliSoftware'>@AliSoftware</a></td><td><a href='https://twitter.com/aligatr'>@aligatr</a></td></tr>
+    <tr><td rowspan='1' valign='top'><strong>GP @ Hand</strong><br/>End to end journey for NHS registration.</td>
+      <td>James Birtwell</td><td><a href='https://github.com/jimmybee'>@jimmybee</a></td><td></td></tr>
+    <tr><td rowspan='2' valign='top'><strong>Healthcheck</strong><br/>Overview of your health using a 3D body model (avatar).</td>
+      <td>Ben Henshall</td><td><a href='https://github.com/Ben-Henshall'>@Ben-Henshall</a></td><td><a href='https://twitter.com/ben_henshall'>@ben_henshall</a></td></tr>
+      <tr><td>Julien Ducret</td><td><a href='https://github.com/brocoo'>@brocoo</a></td><td></td></tr>
+    <tr><td rowspan='5' valign='top'><strong>Monitor</strong><br/>Monitoring health metrics like activity, blood, urine, ...</td>
+      <td>Anders Ha</td><td><a href='https://github.com/andersio'>@andersio</a></td><td><a href='https://twitter.com/_andersha'>@_andersha</a></td></tr>
+      <tr><td>Daniel Haight</td><td><a href='https://github.com/Daniel1of1'>@Daniel1of1</a></td><td></td></tr>
+      <tr><td>Daniel Spindelbauer</td><td><a href='https://github.com/sdaniel55'>@sdaniel55</a></td><td><a href='https://twitter.com/sdaniel55'>@sdaniel55</a></td></tr>
+      <tr><td>Diego  Petrucci</td><td><a href='https://github.com/diegopetrucci'>@diegopetrucci</a></td><td><a href='https://twitter.com/diegopetrucci'>@diegopetrucci</a></td></tr>
+      <tr><td>Joshua Simmons</td><td><a href='https://github.com/j531'>@j531</a></td><td></td></tr>
+    <tr><td rowspan='2' valign='top'><strong>Prescriptions</strong><br/>Precriptions functionality.</td>
+      <td>Adam Borek</td><td><a href='https://github.com/TheAdamBorek'>@TheAdamBorek</a></td><td><a href='https://twitter.com/TheAdamBorek'>@TheAdamBorek</a></td></tr>
+      <tr><td>Konrad Muchowicz</td><td><a href='https://github.com/konrad-em'>@konrad-em</a></td><td></td></tr>
+    <tr><td rowspan='1' valign='top'><strong>Professional Services</strong><br/></td>
+      <td>Simon Cass</td><td><a href='https://github.com/scass91'>@scass91</a></td><td><a href='https://twitter.com/codercass'>@codercass</a></td></tr>
+    <tr><td rowspan='1' valign='top'><strong>SDK</strong><br/>Develop and mantain the SDK frameworks.</td>
+      <td>Viorel Mihalache</td><td><a href='https://github.com/viorel15'>@viorel15</a></td><td><a href='https://twitter.com/viorelMO'>@viorelMO</a></td></tr>
+    <tr><td rowspan='1' valign='top'><strong>Tenancy & Features</strong><br/></td>
+      <td>Anil Puttabuddhi</td><td><a href='https://github.com/anilputtabuddhi'>@anilputtabuddhi</a></td><td></td></tr>
+    <tr><td rowspan='1' valign='top'><strong>Test Kits</strong><br/>Managing everything related to Babylon do-at-home tests.</td>
+      <td>Michał Kwiecień</td><td><a href='https://github.com/MichalTKwiecien'>@MichalTKwiecien</a></td><td><a href='https://twitter.com/kwiecien_co'>@kwiecien_co</a></td></tr>
+    <tr><td rowspan='2' valign='top'><strong>Triage</strong><br/>Chatbot functionality.</td>
+      <td>Danilo Aliberti</td><td><a href='https://github.com/daniloaliberti'>@daniloaliberti</a></td><td></td></tr>
+      <tr><td>Michael Brown</td><td><a href='https://github.com/mluisbrown'>@mluisbrown</a></td><td><a href='https://twitter.com/mluisbrown'>@mluisbrown</a></td></tr>
+    <tr><td rowspan='3' valign='top'><strong>US Professional Services</strong><br/>Features for app in the US.</td>
+      <td>Greg Bryant</td><td></td><td></td></tr>
+      <tr><td>Patrick Westmeyer</td><td><a href='https://github.com/bh-pwestmeyer'>@bh-pwestmeyer</a></td><td></td></tr>
+      <tr><td>Sam Francis</td><td><a href='https://github.com/SamFrancis-Babylon'>@SamFrancis-Babylon</a></td><td></td></tr>
+</table>
 
 ## 2. OSS-maintained projects
 

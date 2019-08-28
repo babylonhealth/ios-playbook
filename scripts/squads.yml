@@ -1,0 +1,138 @@
+roles:
+  - name: Engineering Manager
+    members:
+      - name: Rui Peres
+        twitter: peres
+        github: RuiAAPeres
+  - name: Chapter Leads
+    members:
+      - name: Ana Catarina Figueiredo
+        twitter: AnnKatFig
+        github: AnnKatF
+      - name: David Rodrigues
+        twitter: dmcrodrigues
+        github: dmcrodrigues
+  - name: Squad Tech Leads
+    members:
+      - name: Michael Brown
+        twitter: mluisbrown
+        github: mluisbrown
+squads:
+  - name: Booking
+    desc: Face to face appointment booking.
+    members:
+      - name: Witold Skibniewski 
+        github: mr-v
+  - name: Consultation
+    desc: Flows for all the consultation like prescriptions and video consultation.
+    members:
+      - name: Adrian Śliwa
+        twitter: adiki91
+        github: adiki
+      - name: Chitra Kotwani
+        twitter: chitrakotwani
+        github: chitrakotwani
+  - name: Core Experience
+    desc: General user experience in the app.
+    members:
+      - name: Emese Toth
+        github: emeseuk
+      - name: Giorgos Tsiapaliokas
+        github: gtsiap
+      - name: Sergey Shulga
+        twitter: SergDort
+        github: sergdort
+      - name: Yuri Karabatov
+        twitter: karabatov
+        github: karabatov
+  - name: Native Apps Platform
+    desc: Engineering work like tooling, CI and development processes.
+    members: 
+      - name: David Rodrigues
+        github: dmcrodrigues
+        twitter: dmcrodrigues
+      - name: Ilya Puchka
+        github: ilyapuchka
+        twitter: ilyapuchka
+      - name: Yasuhiro Inami
+        github: inamiy
+        twitter: inamiy
+      - name: Martin Nygren
+        github: zzcgumn
+      - name:  Olivier Halligon
+        github: AliSoftware
+        twitter: aligatr
+  - name: GP @ Hand
+    desc: End to end journey for NHS registration.
+    members: 
+      - name: James Birtwell
+        github: jimmybee 
+  - name: Healthcheck
+    desc: Overview of your health using a 3D body model (avatar).
+    members: 
+      - name: Ben Henshall
+        github: Ben-Henshall
+        twitter: ben_henshall
+      - name: Julien Ducret
+        github: brocoo 
+  - name: Monitor
+    desc: Monitoring health metrics like activity, blood, urine, ...
+    members: 
+      - name: Anders Ha
+        github: andersio
+        twitter: _andersha
+      - name: Daniel Haight
+        github: Daniel1of1
+      - name: Daniel Spindelbauer
+        github: sdaniel55
+        twitter: sdaniel55
+      - name: Diego  Petrucci
+        github: diegopetrucci
+        twitter: diegopetrucci
+      - name: Joshua Simmons
+        github: j531 
+  - name: Prescriptions
+    desc: Precriptions functionality.
+    members: 
+      - name: Adam Borek
+        github: TheAdamBorek
+        twitter: TheAdamBorek
+      - name: Konrad Muchowicz
+        github: konrad-em 
+  - name: Professional Services
+    members: 
+      - name: Simon Cass
+        github: scass91
+        twitter: codercass
+  - name: SDK
+    desc: Develop and mantain the SDK frameworks.
+    members: 
+      - name: Viorel Mihalache
+        github: viorel15
+        twitter: viorelMO 
+  - name: Tenancy & Features
+    members: 
+      - name: Anil Puttabuddhi
+        github: anilputtabuddhi
+  - name: Test Kits
+    desc: Managing everything related to Babylon do-at-home tests.
+    members: 
+      - name: Michał Kwiecień
+        github: MichalTKwiecien
+        twitter: kwiecien_co
+  - name: Triage
+    desc: Chatbot functionality.
+    members: 
+      - name: Danilo Aliberti
+        github: daniloaliberti
+      - name: Michael Brown
+        github: mluisbrown
+        twitter: mluisbrown 
+  - name: US Professional Services
+    desc: Features for app in the US.
+    members: 
+      - name: Greg Bryant
+      - name: Patrick Westmeyer
+        github: bh-pwestmeyer
+      - name: Sam Francis
+        github: SamFrancis-Babylon
