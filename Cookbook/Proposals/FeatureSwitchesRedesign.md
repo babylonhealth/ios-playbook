@@ -5,11 +5,11 @@
 
 ## Introduction
 
-This proposal aims to define a unified approach to defining and accessing feature switches comming from various sources in our code base.
+This proposal aims to define a unified approach to defining and accessing feature switches coming from various sources in our code base.
 
 ## Motivation
 
-Even though feature switches in essens is a trivial thing our current apporach to them suffers from multiple issues of difference importance.
+Even though feature switches, in essence, are a trivial thing, our current approach to them suffers from multiple issues of differing importance.
 
 ### Root plist and default values
 
@@ -17,24 +17,24 @@ Currently we provide a way to override any feature switch through toggles in the
 
 Without this syncing we would have to deal with optionals for all the switches, falling back to their defaults, defined in code. That also highlights another issue with `Root.plist`, that we need to repeat default value in the code and in the plist and make sure they allign to avoid confusion.
 
-Another issue caused by using `Root.plist` and overrides in this way is when we move from Local feature switch used during development to Remote feature switch used on a final stage of the feautre rollout we have to remember to move the plist entry for this switch from one section to another. Otherwise there will be no way to override it during testing.
+Another issue caused by using `Root.plist` and overrides in this way is when we move from Local feature switch used during development to Remote feature switch used on a final stage of the feature rollout we have to remember to move the plist entry for this switch from one section to another. Otherwise there will be no way to override it during testing.
 
 Having a wrong key name in the plist is also the issue that is very easy to miss.
 
 
 ### Firebase switches semantics
 
-ATM we use Firebase Remote Config and A/B Tests features at the same time. While indeed for the client it does not matter if the value of a switch is set as a result of a running A/B test or is simply a remote config flag (in fact Firebase A/B Tests are built on top of Remote Config) there are situations when understanding the difference between flags being used for A/B tests or not when reading code instead of consulting with Firebase console is helpful. Right now all our Firebase switches are expressed as A/B test variants though. That created a lot of confusion when we had to consolidate and remove few feature switches related to the NVL and had to figure out if any of them are actually running A/B tests (as the names were not very helpful to identify if some configs were related to NVL or something else on the screens affected by NVL).
+At the moment, we use Firebase Remote Config and A/B Tests features at the same time. While indeed for the client it does not matter if the value of a switch is set as a result of a running A/B test or is simply a remote config flag (in fact Firebase A/B Tests are built on top of Remote Config) there are situations when understanding the difference between flags being used for A/B tests or not when reading code instead of consulting with Firebase console is helpful. Right now all our Firebase switches are expressed as A/B test variants though. That created a lot of confusion when we had to consolidate and remove few feature switches related to the NVL and had to figure out if any of them are actually running A/B tests (as the names were not very helpful to identify if some configs were related to NVL or something else on the screens affected by NVL).
 
 
 ### Point of access
 
 There is no single way of accessing feature switches in code. Local feature switches are defined in one place, Firebase feature switches are defined in another place, we also have static app configurations and consumer network feature switches (in patient details). It does not create a lot of friction but can be cumbersome to replace local feature switch with remote when feature is due to release.
-At the same time all these places (local/Firebase feature switches, app configuration) became a dumping ground for the switchies for various features of the app, even when they have their own modules. And its not uncommon to have conflicts between PRs which both introduce Firebase feature switches for different issues.
+At the same time all these places (local/Firebase feature switches, app configuration) became a dumping ground for the switches for various features of the app, even when they have their own modules. And its not uncommon to have conflicts between PRs which both introduce Firebase feature switches for different issues.
 
 ### App configuration boilerplate
 
-We use app configuration type (and types related to it) to define "static" feature switches things that are hardcoded in the app and are cuased by different requirements for the products. I.e. one app can define that it should use a new feature flow while another does not use it.
+We use app configuration type (and types related to it) to define "static" feature switches things that are hardcoded in the app and are caused by different requirements for the products. I.e. one app can define that it should use a new feature flow while another does not use it.
 
 This brings more clarity in what values are defined for what apps, we don't have to consult Firebase config and we don't risk accidently changing the value. We also don't need to wait for firebase config to be fetched and don't risk not having a right value when Firebase fails. 
 
@@ -66,7 +66,7 @@ To address these issues we suggest the following changes in our feature switches
 
 ### Module specific feature switches
 
-Each type of feature switch will be implemented with it's own type to make its semantics clear. We will need `LocalFeatureSwitch` and `RemoteFeatureSwitch` types. When later we introduce a new produt configurator service we defined new type `ProductFeatureSwitch`. They all will have a common `value` property and each provider will have a `get(valueForKey: String)` method and should store their properties in a dictionary.
+Each type of feature switch will be implemented with its own type to make its semantics clear. We will need `LocalFeatureSwitch` and `RemoteFeatureSwitch` types. When later we introduce a new product configurator service we define a new type: `ProductFeatureSwitch`. They all will have a common `value` property and each provider will have a `get(valueForKey: String)` method and should store their properties in a dictionary.
 
 ```swift
 // In BabylonDependencies
@@ -180,13 +180,13 @@ With Swift 5.1 we can improve this a bit with property wrappers which will allow
 var isNewFeatureEnabled: Bool
 ```
 
-Also we will be able to use `dynamicMemberLookup` with keypaths instead of custom getters or subscripts so that we wil be able to access dynamic feature switches or static configuration as `Current.someFeature.isNewFeatureEnabled` instead of `Current.someFeatures.get(\.isNewFeatureEnabled)`
+Also we will be able to use `dynamicMemberLookup` with keypaths instead of custom getters or subscripts so that we will be able to access dynamic feature switches or static configuration as `Current.someFeature.isNewFeatureEnabled` instead of `Current.someFeatures.get(\.isNewFeatureEnabled)`
 
 ### "Сoncretize" app configurations
 
 We already moved `AppConfigurationProtocol` to `BabylonDependencies` so that the instance of app configuration is a part of `Current`. But that does not solve all the issues with amount of boilerplate we have to write to add a new configuration and discoverability of values.
 
-To solve these issues we propose to replace `protocol AppConfigurationProtocol` with concrete `struct AppConfiguration` defined in `BabylonDependencies` and initialise it with application specific values in a target specific code. This will reduce amount of boilerplate to write, but will still require us to change code multiple times in each target when something changes in this struct. I.e. when we add a new feature switch to `AppConfiguration` we will need to add it to the paramters that we pass to it's initializer in each target. We can use default values where possible to avoid that. For that we should agree that default values are always `false` so that we can definetely know what is the value if it is not passed to the constructor. Protocol and default protocol implementations achive the same result but with much more boilerplate (remember point-free issue about using value types instead of protocols)
+To solve these issues we propose to replace `protocol AppConfigurationProtocol` with concrete `struct AppConfiguration` defined in `BabylonDependencies` and initialise it with application specific values in a target specific code. This will reduce amount of boilerplate to write, but will still require us to change code multiple times in each target when something changes in this struct. I.e. when we add a new feature switch to `AppConfiguration` we will need to add it to the parameters that we pass to it's initializer in each target. We can use default values where possible to avoid that. For that we should agree that default values are always `false` so that we can definetely know what is the value if it is not passed to the constructor. Protocol and default protocol implementations achive the same result but with much more boilerplate (remember point-free issue about using value types instead of protocols)
 
 All feature specific configuration should be moved to the corresponding feature frameworks and should use concrete structs instead of protocols that then `AppConfiguration` extends. `AppConfiguration` should only be concerned with application level configurations (i.e. enabled tabs or privacy notices urls).
 
@@ -194,7 +194,7 @@ All feature specific configuration should be moved to the corresponding feature 
 
 4. Root.plist should be generated based on the code that declared feature switches.
 
-For that we can use SwiftSyntax to analyze the content of the files which define feature switches (based on the file naming convetion) and generate entry in the plist for each of them. This way we don't have to deal with plist manually and have a single source of thruth for defining feature switches. The plist will be ignored by git and will be generated as part of build step only in DEBUG configuration, so we don't have to strip it from release builds.
+For that we can use SwiftSyntax to analyze the content of the files which define feature switches (based on the file naming convetion) and generate entry in the plist for each of them. This way we don't have to deal with plist manually and have a single source of truth for defining feature switches. The plist will be ignored by git and will be generated as part of build step only in DEBUG configuration, so we don't have to strip it from release builds.
 
 
 ## Impact on existing codebase
@@ -203,7 +203,7 @@ Currently used types for feature switches should be deprecated and either replac
 
 ## Alternatives considered
 
-- Keep all the feature switches in one place in the `BabylonDependencies`. The main downside of this approach if that it goes against modularity - we will need to change flags in the `BabylonDependencies` and rebuild it instead of changing it just in the feature framework and rebuilding only it. It can also trigger rebuild of all other frameworks depending on the `BabylonDependencies` as we know how Xcode incremental builds are unrelyiable.
+- Keep all the feature switches in one place in the `BabylonDependencies`. The main downside of this approach if that it goes against modularity - we will need to change flags in the `BabylonDependencies` and rebuild it instead of changing it just in the feature framework and rebuilding only it. It can also trigger rebuild of all other frameworks depending on the `BabylonDependencies` as we know how Xcode incremental builds are unreliable.
 
 - Provider can be a parameter of generic `FeatureSwitch` type instad of having separate types for each provider:
 
@@ -215,4 +215,4 @@ let isNewFeatureEnabled = FeatureSwitch(
 )
 ```
 
-With that we loose the ability to explisitly specify flags for A/B tests unless we separate Firebase provider into separate providers for remote configs and for A/B tests.
+With that we loose the ability to explicitly specify flags for A/B tests unless we separate Firebase provider into separate providers for remote configs and for A/B tests.
