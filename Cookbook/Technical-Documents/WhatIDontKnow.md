@@ -96,7 +96,7 @@ Why you should read it: In this document, we keep track of who, what and when of
 
 [iOS Goals H2 (July - December)](https://docs.google.com/spreadsheets/d/1nI1RAdsP2nJiUzsvCE9LHQH11-OIPNSHZvpMPUQal_o/edit#gid=1533898989)
 
-Why you should read it: Here you can see our goals not related to daily squad work.
+Why you should read it: Here, the iOS team collaborates on it's goals (unrelated to squad goals). Typically, these goals include addressing tech debts, refactoring the code for modernisation and implementing features which make development more efficient and more robust
 
 ### Jargon translator
 In our team’s daily conversations very often you will encounter strangely looking/sounding terms. This section is to help you get familiar with both our technical jargon and cultural references. Only here you can learn what does :renderable: mean on the Slack :)
