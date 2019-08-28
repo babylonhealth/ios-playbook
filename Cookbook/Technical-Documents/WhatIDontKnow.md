@@ -1,6 +1,6 @@
 # What I don't know, but should
 
-## Congratulations you’ve joined Babylon...
+## Congratulations! You've joined Babylon...
 Welcome to the amazing iOS team! 
 Babylon is a fast-growing company. Currently, we are on-boarding ~30 new-starters weekly. Many of them are engineers like yourself. Our team is scattered across three offices: London West, London East and US office. On top of that, we have fully remote teammates. As you can imagine this poses almost biblical challenges, but don’t worry :)
 
