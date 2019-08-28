@@ -19,9 +19,9 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 
 | Roles  | Names |
 | ------ | ----- | 
-| **Engineering Manager** | Rui Peres • [🐦 @peres](https://twitter.com/peres) • [:octocat: @RuiAAPeres](https://github.com/RuiAAPeres)  |
-| **Chapter Leads** | Ana Catarina Figueiredo • [🐦 @AnnKatFig](https://twitter.com/AnnKatFig) • [:octocat: @AnnKatF](https://github.com/AnnKatF)  <br>  David Rodrigues • [🐦 @dmcrodrigues](https://twitter.com/dmcrodrigues) • [:octocat: @dmcrodrigues](https://github.com/dmcrodrigues) |
-| **Squad Tech Leads** | Michael Brown • [🐦 @mluisbrown](https://twitter.com/mluisbrown) • [:octocat: @mluisbrown](https://github.com/mluisbrown) |
+| **Engineering Manager** | Rui Peres [🐦 @peres](https://twitter.com/peres) • [:octocat: @RuiAAPeres](https://github.com/RuiAAPeres)  |
+| **Chapter Leads** | Ana Catarina Figueiredo [🐦 @AnnKatFig](https://twitter.com/AnnKatFig) [:octocat: @AnnKatF](https://github.com/AnnKatF)  <br>  David Rodrigues [🐦 @dmcrodrigues](https://twitter.com/dmcrodrigues) [:octocat: @dmcrodrigues](https://github.com/dmcrodrigues) |
+| **Squad Tech Leads** | Michael Brown [🐦 @mluisbrown](https://twitter.com/mluisbrown) [:octocat: @mluisbrown](https://github.com/mluisbrown) |
 
 <br>
 
