@@ -92,7 +92,7 @@ This is our FAQ section. Every question that you may have have a short answer an
 
 [iOS Team Plan End 2018 - 2019](https://docs.google.com/spreadsheets/d/1kdY3edy_TeqIGH_7VnZzElxgVo_qD2z4EF-arWNShyw/edit#gid=0)
 
-Why you should read it: This document shows Who, What When in our team
+Why you should read it: In this document, we keep track of who, what and when of our team
 
 [iOS Goals H2 (July - December)](https://docs.google.com/spreadsheets/d/1nI1RAdsP2nJiUzsvCE9LHQH11-OIPNSHZvpMPUQal_o/edit#gid=1533898989)
 
