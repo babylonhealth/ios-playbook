@@ -99,7 +99,7 @@ Why you should read it: In this document, we keep track of who, what and when of
 Why you should read it: Here, the iOS team collaborates on it's goals (unrelated to squad goals). Typically, these goals include addressing tech debts, refactoring the code for modernisation and implementing features which make development more efficient and more robust
 
 ### Jargon translator
-In our team’s daily conversations very often you will encounter strangely looking/sounding terms. This section is to help you get familiar with both our technical jargon and cultural references. Only here you can learn what does :renderable: mean on the Slack :)
+In our team’s daily conversations very often you will encounter strangely looking/sounding terms. This section is to help you get familiar with both our technical jargon and cultural references. Only here you can learn what :renderable: means on the Slack :)
 
 #### What is NVL?
 
