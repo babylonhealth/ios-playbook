@@ -30,7 +30,7 @@ Why you should read it: This will tell you how your first 3 months at Babylon sh
 
 ### Your buddy
 When you start, you will be paired up with a colleague - who has some work experience in Babylon
-Think of this buddy as your mentor, as the go-to person if you have any questions. They should answer technical questions, introduce the team, and even walk you through some code or pair programming.
+Think of this buddy as your mentor and go-to person if you have any questions. They should answer technical questions, introduce you to the team, and even walk you through some code or do pair-programming with you.
 
 - [iOS Buddy Onboarding Checklist](https://docs.google.com/spreadsheets/d/1nKxNwAWdscPjIDOqrKpyU7zefF1fBuad0STXe2R0WiA/edit#gid=0)
 
