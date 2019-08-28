@@ -27,13 +27,14 @@ At Babylon, we firmly believe that **transparency** is a core value that should 
 | Anil Puttabuddhi        | [@anilputtabuddhi](https://github.com/anilputtabuddhi)        |
 | Ben Henshall            | [@Ben_Henshall](https://twitter.com/ben_henshall?lang=en)     |
 | Chitra Kotwani          | [@ChitraKotwani](https://twitter.com/chitrakotwani)           |
+| Daniel Haight           | [@Daniel1of1](https://github.com/daniel1of1)                  |
 | Danilo Aliberti         |                                                               |
 | David Rodrigues         | [@dmcrodrigues](https://twitter.com/dmcrodrigues)             |
 | Diego Petrucci          | [@diegopetrucci](https://twitter.com/diegopetrucci)           |
-| Emese Toth              | [@emeseuk](https://github.com/emeseuk)           |
+| Emese Toth              | [@emeseuk](https://github.com/emeseuk)                        |
 | Giorgos Tsiapaliokas    | [@gtsiap](https://github.com/gtsiap)                          |
 | Ilya Puchka             | [@ilyapuchka](https://twitter.com/ilyapuchka)                 |
-| James Birtwell          | [@jimmybee](https://github.com/jimmybee)
+| James Birtwell          | [@jimmybee](https://github.com/jimmybee)                      |
 | Jason Dobo              | [@jasondobo](https://github.com/jasondobo)                    |
 | João Pereira            | [@NSMyself](https://twitter.com/nsmyself)                     |
 | Joshua Simmons          | [@j531](https://github.com/j531)                              |
