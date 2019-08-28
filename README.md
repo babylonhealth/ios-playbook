@@ -77,7 +77,7 @@ The table below only list the squads in which our iOS Engineers take part, and o
       <td>Anders Ha</td><td><a href='https://github.com/andersio'>@andersio</a></td><td><a href='https://twitter.com/_andersha'>@_andersha</a></td></tr>
       <tr><td>Daniel Haight</td><td><a href='https://github.com/Daniel1of1'>@Daniel1of1</a></td><td></td></tr>
       <tr><td>Daniel Spindelbauer</td><td><a href='https://github.com/sdaniel55'>@sdaniel55</a></td><td><a href='https://twitter.com/sdaniel55'>@sdaniel55</a></td></tr>
-      <tr><td>Diego  Petrucci</td><td><a href='https://github.com/diegopetrucci'>@diegopetrucci</a></td><td><a href='https://twitter.com/diegopetrucci'>@diegopetrucci</a></td></tr>
+      <tr><td>Diego Petrucci</td><td><a href='https://github.com/diegopetrucci'>@diegopetrucci</a></td><td><a href='https://twitter.com/diegopetrucci'>@diegopetrucci</a></td></tr>
       <tr><td>Joshua Simmons</td><td><a href='https://github.com/j531'>@j531</a></td><td></td></tr>
     <tr><td rowspan='2' valign='top'><strong>Prescriptions</strong><br/>Precriptions functionality.</td>
       <td>Adam Borek</td><td><a href='https://github.com/TheAdamBorek'>@TheAdamBorek</a></td><td><a href='https://twitter.com/TheAdamBorek'>@TheAdamBorek</a></td></tr>
