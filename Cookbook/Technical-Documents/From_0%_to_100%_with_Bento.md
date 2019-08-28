@@ -44,6 +44,9 @@ First of all, Bento is our internal library which allows us to write UI code in 
 Bento now is our internal library however we used to open source it. It has changed when Apple announced SwiftUI at WWDC 2019. We decided to move it under the main repo back then.
 ```
 
+## This is what we want to build
+![](/Users/adam.borek/Developer/babylon/images/bento01.png)
+
 ## Renderer
 I assume you are already kind of familiar with our Architecture. Quick recap, a typical screen is built from:
 - ViewController
@@ -59,12 +62,12 @@ Renderer purpose is to calculate a UI. I used the word calculate on purpose as w
 First things first. To create a Renderer you need to create a struct and conforms to `BoxRenderer`. This is what you get from the Xcode's template.
 
 ```swift
-struct RepeatPrescriptionListRenderer: BoxRenderer {
+struct ChoosePharmacyTypeRenderer: BoxRenderer {
     private let config: Config
-    private let observer: Sink<RepeatPrescriptionListViewModel.Action>
+    private let observer: Sink<ChoosePharmacyTypeViewModel.Action>
 
     init(
-        observer: @escaping Sink<RepeatPrescriptionListViewModel.Action>,
+        observer: @escaping Sink<ChoosePharmacyTypeViewModel.Action>,
         appearance: BabylonAppAppearance,
         config: Config
     ) {
@@ -72,7 +75,7 @@ struct RepeatPrescriptionListRenderer: BoxRenderer {
         self.observer = observer
     }
 
-    func render(state: RepeatPrescriptionListViewModel.State) -> Screen<SectionID, NodeID> {
+    func render(state: ChoosePharmacyTypeViewModel.State) -> Screen<SectionID, NodeID> {
         return Screen(title: "", box: .empty)
     }
 
@@ -85,7 +88,7 @@ struct RepeatPrescriptionListRenderer: BoxRenderer {
     }
 }
 
-extension RepeatPrescriptionListRenderer {
+extension ChoosePharmacyTypeRenderer {
     enum SectionID: Hashable {
         case first
     }
@@ -100,7 +103,7 @@ extension RepeatPrescriptionListRenderer {
 Your first question might be "What's a Config".The way how `BoxRenderer` is coupled with `BabylonBoxViewController` we cannot pass dependencies as we usually do in the init. Config is a way of injecting dependencies into a renderer.
 
 ```plain
- 12 Aug 2019 - Renderer has to be a struct as there is a problem with classes & memory management. Classes are not being deallocated. It may be fixed someday but it's still a case when I'm writing this article.
+ 12 Aug 2019 - Renderer has to be a struct as there is a problem with classes & memory management. Classes are not deallocated. It may be fixed someday but it's still a case when I'm writing this article.
 ```
 
 Now let's jump into the `render(state:)`. It returns a Screen. This is how it may look a Screen.
@@ -114,8 +117,176 @@ Now let's jump into the `render(state:)`. It returns a Screen. This is how it ma
     )
 ```
 
-With Screen you can modify many behaviour like alignment, whether you want separators or not. If you need to modify something which cannot be represented by a box I encourge you to take a look on the init of the Screen. Variables there pretty self explanatory.
+With Screen you can modify many behaviour like alignment, whether you want separators or not. If you need to modify something which cannot be represented by a box please take a look on the init of the `Screen`. Variables there are pretty self explanatory.
 
 What's the Box then?
 
-`Box` is rendered usually by `UITableView` or `UICollectionView`. Sometimes you may need a way to stick some part of the view to the bottom of a
+You can think of a `Box` as a representation of `UITableView` or `UICollectionView` in context of Bento. `Box` is made up from Sections and in sections there are nodes. Section is a representation of `UITableView`'s section while `Node` is a corresponding type to a row.
+
+Let's display the first row. First we need to do is to create a `Screen`:
+
+```swift
+    func render(state: ChoosePharmacyTypeViewModel.State) -> Screen<SectionID, NodeID> {
+        return Screen(
+            title: Localization.NHS.Prescriptions.pharamcyTypeTitle,
+            shouldUseSystemSeparators: true,
+            box: renderOptions()
+        )
+    }
+```
+
+`renderOptions()` job is to return `Box<SectionID, NodeID>`:
+
+```swift
+  private func renderOptions() -> Box<SectionID, NodeID> {
+        return .empty
+            |-+ Section(id: .first)
+            |---+ Node(
+                id: .collection,
+                component: appearance.row3(
+                    title: Localization.NHS.Prescriptions.collectionPharmacyOptionTitle,
+                    detail: Localization.NHS.Prescriptions.collectionPharmacyOptionSubtitle,
+                    image: Icon(
+                        template: appearance.tokens.icons.image(.pharmacy),
+                        backgroundColor: appearance.tokens.colors.grey50
+                    )
+                )
+        )        
+    }
+```
+
+1. `.empty` returns an empty `Box`
+2. `|-+` operator adds a Section into the box
+3. `|---+` adds a Node into a Section
+
+With `|-+` and `|---+` you can add many sections and rows into your Box.  
+
+Section and Node takes an ID as their arguments. The ID is needed for diff algorithm to calculate changes. 
+
+```
+Very often there is only single Section in the screen. In that case we name this Section's id as "first".
+```
+
+`Node` also takes a `component` which is a representation of a cell displayed on the screen. Component is actually a `Renderable`. With minimal luck you won't need to create a component by your own and it's waiting for you to be used inside the Design Library. Your job is to only fill it with values.
+
+Design Library is a library of **reusable** components created **both** by designers and developers. Whenever a designer from your squad needs to create a new screen, they should use components from that library which can be found in Zeplin. 
+
+From developer's point of view, the Design Library is a builder pattern with many functions, each returning a component. You can access the design library via `appearance` property. In the above example we used `row3`. 
+
+```
+In our codebase there is an additional scheme & target called "GalleryApp". You can find there all Design Library aomponents which have been written so far.
+```
+
+At this point you should be able to run the app and see the following:
+
+![](/Users/adam.borek/Developer/babylon/images/bento02.png)
+
+To display the 2nd row you just need to add 2nd row to the box:
+```swift
+    private func renderOptions() -> Box<SectionID, NodeID> {
+        return .empty
+            |-+ Section(id: .first)
+            |---+ Node(
+                id: .collection,
+                component: appearance.row3(
+                    title: Localization.NHS.Prescriptions.collectionPharmacyOptionTitle,
+                    detail: Localization.NHS.Prescriptions.collectionPharmacyOptionSubtitle,
+                    image: Icon(
+                        template: appearance.tokens.icons.image(.pharmacy),
+                        backgroundColor: appearance.tokens.colors.grey50
+                    )
+                )
+            )
+            |---+ Node(
+                id: .delivery,
+                component: appearance.row3(
+                    title: Localization.NHS.Prescriptions.deliveryPharmacyOptionTitle,
+                    detail: Localization.NHS.Prescriptions.deliveryPharmacyOptionSubtitle,
+                    image: Icon(
+                        template: appearance.tokens.icons.image(.ambulance),
+                        backgroundColor: appearance.tokens.colors.grey50
+                    )
+                )
+            )
+    }
+```
+
+To make it more readable you can extract render helper functions:
+
+```swift
+    private func renderOptions() -> Box<SectionID, NodeID> {
+        return .empty
+            |-+ Section(id: .first)
+            |---+ renderCollectionOption()
+            |---+ renderDeliveryOption()
+    }
+
+    private func renderCollectionOption() -> Node<NodeID> {
+        return Node(
+            id: .collection,
+            component: appearance.row3(
+                title: Localization.NHS.Prescriptions.collectionPharmacyOptionTitle,
+                detail: Localization.NHS.Prescriptions.collectionPharmacyOptionSubtitle,
+                image: Icon(
+                    template: appearance.tokens.icons.image(.pharmacy),
+                    backgroundColor: appearance.tokens.colors.grey50
+                )
+            )
+        )
+    }
+
+    private func renderDeliveryOption() -> Node<NodeID> {
+        return Node(
+            id: .delivery,
+            component: appearance.row3(
+                title: Localization.NHS.Prescriptions.deliveryPharmacyOptionTitle,
+                detail: Localization.NHS.Prescriptions.deliveryPharmacyOptionSubtitle,
+                image: Icon(
+                    template: appearance.tokens.icons.image(.ambulance),
+                    backgroundColor: appearance.tokens.colors.grey50
+                )
+            )
+        )
+    }
+```
+
+### Handle tapping on a row
+Right now you should be able to see 2 rows however tapping on them does nothing. 
+
+User's input (as any other event) can change ViewModel's state. As a result, user's input also need to go through Feedback dance. To distinguish user's input from other events, in ViewModel there is `enum Action`. Renderer gets a closure in the init under `observer` argument. All you need to do is to send a proper `Action` into the `observer`:
+
+
+```swift
+    private func renderCollectionOption() -> Node<NodeID> {
+        return Node(
+            id: .collection,
+            component: appearance.row3(
+                title: Localization.NHS.Prescriptions.collectionPharmacyOptionTitle,
+                detail: Localization.NHS.Prescriptions.collectionPharmacyOptionSubtitle,
+                image: Icon(
+                    template: appearance.tokens.icons.image(.pharmacy),
+                    backgroundColor: appearance.tokens.colors.grey50
+                ),
+                didTap: ^Action.didTapPharmacyCollection >>> observer
+            )
+        )
+    }
+
+    private func renderDeliveryOption() -> Node<NodeID> {
+        return Node(
+            id: .delivery,
+            component: appearance.row3(
+                title: Localization.NHS.Prescriptions.deliveryPharmacyOptionTitle,
+                detail: Localization.NHS.Prescriptions.deliveryPharmacyOptionSubtitle,
+                image: Icon(
+                    template: appearance.tokens.icons.image(.ambulance),
+                    backgroundColor: appearance.tokens.colors.grey50
+                ),
+                didTap: ^Action.didTapPharmacyDelivery >>> observer
+            )
+        )
+    }
+```
+
+
+The `^` and `>>>` are our operators to simplify our codebase. The `^` is a lift operator which lifts single value `Action.didTapPharmacyCollection` into a function `() -> Action`. Why do we need to do so? The `>>>` composition operator needs 2 functions `(A -> B) >>> (B -> C) = (A -> C)`. In our case 
