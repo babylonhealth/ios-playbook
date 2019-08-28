@@ -29,7 +29,7 @@ Your manager will be the first person from the iOS team that you’ll see after 
 Why you should read it: This will tell you how your first 3 months at Babylon should look like.
 
 ### Your buddy
-When you start you will be paired up with a colleague with some tenure at Babylon. 
+When you start, you will be paired up with a colleague - who has some work experience in Babylon
 Think of this buddy as your mentor, as the go-to person if you have any questions. They should answer technical questions, introduce the team, and even walk you through some code or pair programming.
 
 - [iOS Buddy Onboarding Checklist](https://docs.google.com/spreadsheets/d/1nKxNwAWdscPjIDOqrKpyU7zefF1fBuad0STXe2R0WiA/edit#gid=0)
