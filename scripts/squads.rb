@@ -59,7 +59,7 @@ squads_table = html_table('Squad', team['squads']) do |squad|
 end
 
 html = <<~HTML
-  We're organised in Squads. Each squad can be composed of iOS, Android and QA Engineers, as well as Designers and a Delivery Manager, all working on the same part of the app.
+  We're organised in Squads. Each squad can be composed of people from Engineering (iOS, Android, Web, Backend), Design and Product.
 
   Some of the roles are transverse to all the squads:
 
