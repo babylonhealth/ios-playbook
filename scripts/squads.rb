@@ -32,7 +32,7 @@ def html_table(title, rows_data, &title_block)
       DO NOT EDIT MANUALLY: This table has been auto-generated.
       TO UPDATE THIS TABLE:
        - update scripts/squads.yml
-       - run `scripts/squad.rb` to update the `README.md` sections
+       - run `scripts/squads.rb` to update the `README.md` sections
     -->
 
     <table>

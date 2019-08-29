@@ -26,7 +26,7 @@ Some of the roles are transverse to all the squads:
   DO NOT EDIT MANUALLY: This table has been auto-generated.
   TO UPDATE THIS TABLE:
    - update scripts/squads.yml
-   - run `scripts/squad.rb` to update the `README.md` sections
+   - run `scripts/squads.rb` to update the `README.md` sections
 -->
 
 <table>
@@ -48,7 +48,7 @@ The rest of the iOS Engineers work in the following squads:
   DO NOT EDIT MANUALLY: This table has been auto-generated.
   TO UPDATE THIS TABLE:
    - update scripts/squads.yml
-   - run `scripts/squad.rb` to update the `README.md` sections
+   - run `scripts/squads.rb` to update the `README.md` sections
 -->
 
 <table>
