@@ -27,7 +27,6 @@ def html_table(title, rows_data, &title_block)
   end
 
   <<~TABLE
-    <!-- begin:#{title} -->
     <!--
       DO NOT EDIT MANUALLY: This table has been auto-generated.
       TO UPDATE THIS TABLE:
@@ -39,7 +38,6 @@ def html_table(title, rows_data, &title_block)
       <thead><th>#{title}</th><th>Engineer</th><th>GitHub</th><th>Twitter</th></thead>
       #{rows.join("\n  ")}
     </table>
-    <!-- end:#{title} -->
   TABLE
 end
 
@@ -62,8 +60,8 @@ end
 # Update the README
 readme_file = File.expand_path('../README.md', File.dirname(__FILE__))
 content = File.read(readme_file)
-content.gsub!(/(\<\!-- begin:Role -->)(.*)(\<!-- end:Role -->)/m, roles_table.chomp)
-content.gsub!(/(\<\!-- begin:Squad -->)(.*)(\<!-- end:Squad -->)/m, squads_table.chomp)
+content.gsub!(/(\<\!-- begin:roles -->)(?:.*)(\<!-- end:roles -->)/m, "\\1\n#{roles_table}\\2")
+content.gsub!(/(\<\!-- begin:squads -->)(?:.*)(\<!-- end:squads -->)/m, "\\1\n#{squads_table}\\2")
 File.write(readme_file, content)
 
 puts "README.md file updated from the content of scripts/squads.yml"
