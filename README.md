@@ -21,12 +21,12 @@ We're organised in Squads. Each squad can be composed of people from Engineering
 
 Some of the roles are transverse to all the squads:
 
+<!-- begin:Role -->
 <!--
-  DO NOT EDIT MANUALLY: This table has been generated from scripts/squads.yml
+  DO NOT EDIT MANUALLY: This table has been auto-generated.
   TO UPDATE THIS TABLE:
    - update scripts/squads.yml
-   - run `scripts/squad.rb --update` to update the `README.md` section
-   - (alternatively, `scripts/squad.rb` without `--update` lets you copy/paste the HTML yourself)
+   - run `scripts/squad.rb` to update the `README.md` sections
 -->
 
 <table>
@@ -39,15 +39,16 @@ Some of the roles are transverse to all the squads:
     <tr><td rowspan='1' valign='top'><strong>Squad Tech Leads</strong></td>
       <td>Michael Brown</td><td><a href='https://github.com/mluisbrown'>@mluisbrown</a></td><td><a href='https://twitter.com/mluisbrown'>@mluisbrown</a></td></tr>
 </table>
+<!-- end:Role -->
 
 The rest of the iOS Engineers work in the following squads:
 
+<!-- begin:Squad -->
 <!--
-  DO NOT EDIT MANUALLY: This table has been generated from scripts/squads.yml
+  DO NOT EDIT MANUALLY: This table has been auto-generated.
   TO UPDATE THIS TABLE:
    - update scripts/squads.yml
-   - run `scripts/squad.rb --update` to update the `README.md` section
-   - (alternatively, `scripts/squad.rb` without `--update` lets you copy/paste the HTML yourself)
+   - run `scripts/squad.rb` to update the `README.md` sections
 -->
 
 <table>
@@ -98,6 +99,7 @@ The rest of the iOS Engineers work in the following squads:
       <tr><td>Patrick Westmeyer</td><td><a href='https://github.com/bh-pwestmeyer'>@bh-pwestmeyer</a></td><td></td></tr>
       <tr><td>Sam Francis</td><td><a href='https://github.com/SamFrancis-Babylon'>@SamFrancis-Babylon</a></td><td></td></tr>
 </table>
+<!-- end:Squad -->
 
 ## 2. OSS-maintained projects
 
