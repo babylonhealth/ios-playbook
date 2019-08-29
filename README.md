@@ -87,7 +87,7 @@ The rest of the iOS Engineers work in the following squads:
       <td>Simon Cass</td><td><a href='https://github.com/scass91'>@scass91</a></td><td><a href='https://twitter.com/codercass'>@codercass</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>SDK</strong><br/>Develop and maintain the SDK frameworks.</td>
       <td>Viorel Mihalache</td><td><a href='https://github.com/viorel15'>@viorel15</a></td><td><a href='https://twitter.com/viorelMO'>@viorelMO</a></td></tr>
-    <tr><td rowspan='1' valign='top'><strong>Tenancy & Features</strong><br/></td>
+    <tr><td rowspan='1' valign='top'><strong>Tenancy & Features</strong><br/>To integrate the new feature configurator.</td>
       <td>Anil Puttabuddhi</td><td><a href='https://github.com/anilputtabuddhi'>@anilputtabuddhi</a></td><td></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Test Kits</strong><br/>Managing everything related to Babylon do-at-home tests.</td>
       <td>Michał Kwiecień</td><td><a href='https://github.com/MichalTKwiecien'>@MichalTKwiecien</a></td><td><a href='https://twitter.com/kwiecien_co'>@kwiecien_co</a></td></tr>

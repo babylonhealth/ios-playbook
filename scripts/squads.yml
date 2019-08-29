@@ -198,6 +198,7 @@ squads:
     members: 
       - *Viorel
   - name: Tenancy & Features
+    desc: To integrate the new feature configurator.
     members: 
       - *Anil
   - name: Test Kits
