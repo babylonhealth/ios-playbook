@@ -30,7 +30,7 @@ Some of the roles are transverse to all the squads:
 -->
 
 <table>
-  <thead><th>Role</th><th>Person</th><th>GitHub</th><th>Twitter</th></thead>
+  <thead><th>Role</th><th>Engineer</th><th>GitHub</th><th>Twitter</th></thead>
     <tr><td rowspan='1' valign='top'><strong>Engineering Manager</strong></td>
       <td>Rui Peres</td><td><a href='https://github.com/RuiAAPeres'>@RuiAAPeres</a></td><td><a href='https://twitter.com/peres'>@peres</a></td></tr>
     <tr><td rowspan='2' valign='top'><strong>Chapter Leads</strong></td>
