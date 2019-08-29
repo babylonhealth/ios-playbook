@@ -152,7 +152,7 @@ squads:
     members:
       - *Adrian
       - *Chitra
-  - name: Core Experience
+  - name: Onboarding and navigation
     desc: General user experience in the app.
     members:
       - *Emese

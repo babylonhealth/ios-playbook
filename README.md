@@ -58,7 +58,7 @@ The rest of the iOS Engineers work in the following squads:
     <tr><td rowspan='2' valign='top'><strong>Consultation</strong><br/>Flows for all the consultation like prescriptions and video consultation.</td>
       <td>Adrian Śliwa</td><td><a href='https://github.com/adiki'>@adiki</a></td><td><a href='https://twitter.com/adiki91'>@adiki91</a></td></tr>
       <tr><td>Chitra Kotwani</td><td><a href='https://github.com/chitrakotwani'>@chitrakotwani</a></td><td><a href='https://twitter.com/chitrakotwani'>@chitrakotwani</a></td></tr>
-    <tr><td rowspan='4' valign='top'><strong>Core Experience</strong><br/>General user experience in the app.</td>
+    <tr><td rowspan='4' valign='top'><strong>Onboarding and navigation</strong><br/>General user experience in the app.</td>
       <td>Emese Toth</td><td><a href='https://github.com/emeseuk'>@emeseuk</a></td><td></td></tr>
       <tr><td>Giorgos Tsiapaliokas</td><td><a href='https://github.com/gtsiap'>@gtsiap</a></td><td></td></tr>
       <tr><td>Sergey Shulga</td><td><a href='https://github.com/sergdort'>@sergdort</a></td><td><a href='https://twitter.com/SergDort'>@SergDort</a></td></tr>
