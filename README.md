@@ -51,7 +51,7 @@ The rest of the iOS Engineers work in the following squads:
 -->
 
 <table>
-  <thead><th>Squad</th><th>Person</th><th>GitHub</th><th>Twitter</th></thead>
+  <thead><th>Squad</th><th>Engineer</th><th>GitHub</th><th>Twitter</th></thead>
     <tr><td rowspan='1' valign='top'><strong>Booking</strong><br/>Face to face appointment booking.</td>
       <td>Witold Skibniewski</td><td><a href='https://github.com/mr-v'>@mr-v</a></td><td></td></tr>
     <tr><td rowspan='2' valign='top'><strong>Consultation</strong><br/>Flows for all the consultation like prescriptions and video consultation.</td>
