@@ -83,7 +83,7 @@ The rest of the iOS Engineers work in the following squads:
     <tr><td rowspan='2' valign='top'><strong>Prescriptions</strong><br/>Precriptions functionality.</td>
       <td>Adam Borek</td><td><a href='https://github.com/TheAdamBorek'>@TheAdamBorek</a></td><td><a href='https://twitter.com/TheAdamBorek'>@TheAdamBorek</a></td></tr>
       <tr><td>Konrad Muchowicz</td><td><a href='https://github.com/konrad-em'>@konrad-em</a></td><td></td></tr>
-    <tr><td rowspan='1' valign='top'><strong>Professional Services</strong><br/></td>
+    <tr><td rowspan='1' valign='top'><strong>Partnerships Squad</strong><br/>Updating and maintaining the Telus app.</td>
       <td>Simon Cass</td><td><a href='https://github.com/scass91'>@scass91</a></td><td><a href='https://twitter.com/codercass'>@codercass</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>SDK</strong><br/>Develop and maintain the SDK frameworks.</td>
       <td>Viorel Mihalache</td><td><a href='https://github.com/viorel15'>@viorel15</a></td><td><a href='https://twitter.com/viorelMO'>@viorelMO</a></td></tr>

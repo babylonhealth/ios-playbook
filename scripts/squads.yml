@@ -189,7 +189,8 @@ squads:
     members: 
       - *Adam
       - *Konrad
-  - name: Professional Services
+  - name: Partnerships Squad
+    desc: Updating and maintaining the Telus app.
     members: 
       - *Simon
   - name: SDK
