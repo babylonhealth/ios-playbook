@@ -36,7 +36,7 @@ def html_table(title, rows_data, &title_block)
     -->
 
     <table>
-      <thead><th>#{title}</th><th>Person</th><th>GitHub</th><th>Twitter</th></thead>
+      <thead><th>#{title}</th><th>Engineer</th><th>GitHub</th><th>Twitter</th></thead>
       #{rows.join("\n  ")}
     </table>
     <!-- end:#{title} -->
