@@ -37,9 +37,9 @@ or
 
 ```
 extension DesignLibrary.Icons {
-	var closeImage: UIImage {
-		return image(name: "Close")
-	}
+    var closeImage: UIImage {
+        return image(name: "Close")
+    }
 }
 ```
 Than we could use it like this:
@@ -64,13 +64,13 @@ We agreed to have a flat structure for assets which increases discoverability (t
 To support the overriding of standard icons in white label apps we should update `SwiftGen` implementation to firstly access the image from `Bundle.main` which will pick target specific image and then fallback to `BabylonDependencies` if the image was not overridden. By using `SwiftGen`'s' custom template we can provide implementation like this:
 ```
 extension DesignLibrary.Icons {
-  public func image(name: String) -> UIImage {
-    let bundle = Bundle(for: BundleToken.self)
-    let img = UIImage(named: name, in: Bundle.main, compatibleWith: nil) 
-        ?? UIImage(named: name, in: bundle, compatibleWith: nil)
-    guard let result = img else { fatalError("Unable to load image named \(name).") }
-    return result
-  }
+    public func image(name: String) -> UIImage {
+        let bundle = Bundle(for: BundleToken.self)
+        let img = UIImage(named: name, in: Bundle.main, compatibleWith: nil) 
+            ?? UIImage(named: name, in: bundle, compatibleWith: nil)
+        guard let result = img else { fatalError("Unable to load image named \(name).") }
+        return result
+    }
 }
 ```
 
