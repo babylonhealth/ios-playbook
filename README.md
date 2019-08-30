@@ -91,8 +91,9 @@ The rest of the iOS Engineers work in the following squads:
       <td>Anil Puttabuddhi</td><td><a href='https://github.com/anilputtabuddhi'>@anilputtabuddhi</a></td><td></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Test Kits</strong><br/>Managing everything related to Babylon do-at-home tests.</td>
       <td>Michał Kwiecień</td><td><a href='https://github.com/MichalTKwiecien'>@MichalTKwiecien</a></td><td><a href='https://twitter.com/kwiecien_co'>@kwiecien_co</a></td></tr>
-    <tr><td rowspan='2' valign='top'><strong>Triage</strong><br/>Chatbot functionality.</td>
+    <tr><td rowspan='3' valign='top'><strong>Triage</strong><br/>Chatbot functionality.</td>
       <td>Danilo Aliberti</td><td><a href='https://github.com/daniloaliberti'>@daniloaliberti</a></td><td></td></tr>
+      <tr><td>João Pereira</td><td><a href='https://github.com/NSMyself'>@NSMyself</a></td><td><a href='https://twitter.com/NSMyself'>@NSMyself</a></td></tr>
       <tr><td>Michael Brown</td><td><a href='https://github.com/mluisbrown'>@mluisbrown</a></td><td><a href='https://twitter.com/mluisbrown'>@mluisbrown</a></td></tr>
     <tr><td rowspan='3' valign='top'><strong>US Professional Services</strong><br/>Features for app in the US.</td>
       <td>Greg Bryant</td><td></td><td></td></tr>

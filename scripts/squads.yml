@@ -68,6 +68,10 @@ team:
   - &James
     name: James Birtwell
     github: jimmybee
+  - &Joao
+    name: João Pereira
+    github: NSMyself
+    twitter: NSMyself
   - &Joshua
     name: Joshua Simmons
     github: j531
@@ -209,6 +213,7 @@ squads:
     desc: Chatbot functionality.
     members: 
       - *Danilo
+      - *Joao
       - *Michael
   - name: US Professional Services
     desc: Features for app in the US.
