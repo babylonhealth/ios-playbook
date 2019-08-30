@@ -53,7 +53,7 @@ The rest of the iOS Engineers work in the following squads:
 
 <table>
   <thead><th>Squad</th><th>Engineer</th><th>GitHub</th><th>Twitter</th></thead>
-    <tr><td rowspan='1' valign='top'><strong>Booking</strong><br/>Face to face appointment booking.</td>
+    <tr><td rowspan='1' valign='top'><strong>Appointments</strong><br/>Face to face appointment booking.</td>
       <td>Witold Skibniewski</td><td><a href='https://github.com/mr-v'>@mr-v</a></td><td></td></tr>
     <tr><td rowspan='2' valign='top'><strong>Consultation</strong><br/>Flows for all the consultation like prescriptions and video consultation.</td>
       <td>Adrian Śliwa</td><td><a href='https://github.com/adiki'>@adiki</a></td><td><a href='https://twitter.com/adiki91'>@adiki91</a></td></tr>
@@ -69,7 +69,7 @@ The rest of the iOS Engineers work in the following squads:
       <tr><td>Yasuhiro Inami</td><td><a href='https://github.com/inamiy'>@inamiy</a></td><td><a href='https://twitter.com/inamiy'>@inamiy</a></td></tr>
       <tr><td>Martin Nygren</td><td><a href='https://github.com/zzcgumn'>@zzcgumn</a></td><td></td></tr>
       <tr><td>Olivier Halligon</td><td><a href='https://github.com/AliSoftware'>@AliSoftware</a></td><td><a href='https://twitter.com/aligatr'>@aligatr</a></td></tr>
-    <tr><td rowspan='1' valign='top'><strong>GP @ Hand</strong><br/>End to end journey for NHS registration.</td>
+    <tr><td rowspan='1' valign='top'><strong>GP @ Hand Registrations</strong><br/>End to end journey for NHS registration.</td>
       <td>James Birtwell</td><td><a href='https://github.com/jimmybee'>@jimmybee</a></td><td></td></tr>
     <tr><td rowspan='2' valign='top'><strong>Healthcheck</strong><br/>Overview of your health using a 3D body model (avatar).</td>
       <td>Ben Henshall</td><td><a href='https://github.com/Ben-Henshall'>@Ben-Henshall</a></td><td><a href='https://twitter.com/ben_henshall'>@ben_henshall</a></td></tr>
@@ -83,7 +83,7 @@ The rest of the iOS Engineers work in the following squads:
     <tr><td rowspan='2' valign='top'><strong>Prescriptions</strong><br/>Precriptions functionality.</td>
       <td>Adam Borek</td><td><a href='https://github.com/TheAdamBorek'>@TheAdamBorek</a></td><td><a href='https://twitter.com/TheAdamBorek'>@TheAdamBorek</a></td></tr>
       <tr><td>Konrad Muchowicz</td><td><a href='https://github.com/konrad-em'>@konrad-em</a></td><td></td></tr>
-    <tr><td rowspan='1' valign='top'><strong>Partnerships Squad</strong><br/>Updating and maintaining the Telus app.</td>
+    <tr><td rowspan='1' valign='top'><strong>Partnerships</strong><br/>Updating and maintaining the Telus app.</td>
       <td>Simon Cass</td><td><a href='https://github.com/scass91'>@scass91</a></td><td><a href='https://twitter.com/codercass'>@codercass</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>SDK</strong><br/>Develop and maintain the SDK frameworks.</td>
       <td>Viorel Mihalache</td><td><a href='https://github.com/viorel15'>@viorel15</a></td><td><a href='https://twitter.com/viorelMO'>@viorelMO</a></td></tr>

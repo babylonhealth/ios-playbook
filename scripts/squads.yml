@@ -143,7 +143,7 @@ roles:
 # List of the Squads and their members
 #
 squads:
-  - name: Booking
+  - name: Appointments
     desc: Face to face appointment booking.
     members:
       - *Witold
@@ -167,7 +167,7 @@ squads:
       - *Inamiy
       - *Martin
       - *Olivier
-  - name: GP @ Hand
+  - name: GP @ Hand Registrations
     desc: End to end journey for NHS registration.
     members: 
       - *James
@@ -189,7 +189,7 @@ squads:
     members: 
       - *Adam
       - *Konrad
-  - name: Partnerships Squad
+  - name: Partnerships
     desc: Updating and maintaining the Telus app.
     members: 
       - *Simon
