@@ -13,13 +13,19 @@ Even though feature switches, in essence, are a trivial thing, our current appro
 
 ### Root plist and default values
 
-Currently we provide a way to override any feature switch through toggles in the Settings system app. For that we need to include `Root.plist` file in the app bundle. Values of these switches are then written to the user defaults which we use as a source of values. But they are written to the user defaults only after they are interacted at least once. That said if overrides are enabled but you never change the value nothing will be written to the user defaults. This is not affected by default value set in the `Root.plist`, it only affects the intial position of the switch. How we solve it now is by reading these default values from plist and storing them in user defaults when application starts before we read these values (see `registerSettingsDefaults` in `Settings.swift`). Not just it is defined on the wrong type (`Settings` type is used to store some local user state data like if they completed some onboarding, not feature switches and this is not something that we allow to override with `Root.plist` AFAIK), but also this way changing default value in the `Root.plist` will affect all our targets as they all share this file, which makes us to create a second file just for our primary target. This makes it very confusing for developers to understand what they need to do to enable their feature for release so that it does not affect other targets if that's the requirement.
+Currently we provide a way to override any feature switch through toggles in the Settings system app. For that we need to include `Root.plist` file in the app bundle. Values of these switches are then written to the user defaults which we use as a source of values. But for user defaults to be updated we have to interact with each switch at least once. The value in the user defaults is not affected by default value set in the `Root.plist`, it only affects the intial position of the switch in the Settings app. 
+How we solve it is by reading these default values from Root.plist and storing them in user defaults when application starts before we read these values (see `registerSettingsDefaults` in `Settings.swift`). 
+There ware few problems with this approach and with using Root.plist in general:
 
-Without this syncing we would have to deal with optionals for all the switches, falling back to their defaults, defined in code. That also highlights another issue with `Root.plist`, that we need to repeat default value in the code and in the plist and make sure they allign to avoid confusion.
+- it is defined not on the best suitable type. `Settings` type is used to store some local user state data, i.e. if user has completed some onboarding, which is separate from feature switches
 
-Another issue caused by using `Root.plist` and overrides in this way is when we move from Local feature switch used during development to Remote feature switch used on a final stage of the feature rollout we have to remember to move the plist entry for this switch from one section to another. Otherwise there will be no way to override it during testing.
+ - changing default value in the `Root.plist` will affect all our targets as they all share this file. This makes us to create a second plist file just for our primary target. This makes it very confusing for developers to understand what they need to do to enable their feature for release so that it does not affect other targets.
 
-Having a wrong key name in the plist is also the issue that is very easy to miss.
+- We need to repeat default value for feature switch in the code and in the Root.plist and make sure they allign to avoid confusion. But we use these default values differently - we use default value in the root plist to store it in user defaults and we use default value defained in code in case we can't get actual value from Firebase.
+
+- When we move from Local feature switch used during development to Remote feature switch used on a final stage of the feature rollout we have to remember to move the plist entry for this switch from one section to another. Otherwise there will be no way to override it during testing.
+
+- It is very easy to use a wrong key in the plist and in code.
 
 
 ### Firebase switches semantics
