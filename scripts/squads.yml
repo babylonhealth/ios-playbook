@@ -149,7 +149,7 @@ roles:
 #
 squads:
   - name: Appointments
-    desc: Face to face appointment booking.
+    desc: Appointment booking.
     members:
       - *Witold
   - name: Consultation
