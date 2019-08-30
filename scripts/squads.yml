@@ -1,0 +1,231 @@
+################################################################
+# All the members of our iOS team
+#   (For ease of diff/review, please try to keep ths list sorted alphabetically by first name)
+#   YAML tip: By using `&SomeName` to define a named anchor in front of each entry, we can reference it with `*SomeName` later in the rest of the YAML
+#
+team:
+  - &Adam
+    name: Adam Borek
+    github: TheAdamBorek
+    twitter: TheAdamBorek
+  - &Adrian
+    name: Adrian Śliwa
+    github: adiki
+    twitter: adiki91
+  - &Anders
+    name: Anders Ha
+    github: andersio
+    twitter: _andersha
+  - &Anil
+    name: Anil Puttabuddhi
+    github: anilputtabuddhi
+  - &Ben
+    name: Ben Henshall
+    github: Ben-Henshall
+    twitter: ben_henshall
+  - &Catarina
+    name: Ana Catarina Figueiredo
+    github: AnnKatF
+    twitter: AnnKatFig
+  - &Chesley
+    name: Chesley Stephens
+    github: cstephens-babylon
+  - &Chitra
+    name: Chitra Kotwani
+    github: chitrakotwani
+    twitter: chitrakotwani
+  - &DanielH
+    name: Daniel Haight
+    github: Daniel1of1
+  - &DanielS
+    name: Daniel Spindelbauer
+    github: sdaniel55
+    twitter: sdaniel55
+  - &Danilo
+    name: Danilo Aliberti
+    github: daniloaliberti
+  - &David
+    name: David Rodrigues
+    github: dmcrodrigues
+    twitter: dmcrodrigues
+  - &Diego
+    name: Diego Petrucci
+    github: diegopetrucci
+    twitter: diegopetrucci
+  - &Emese
+    name: Emese Toth
+    github: emeseuk
+  - &Giorgos
+    name: Giorgos Tsiapaliokas
+    github: gtsiap
+  - &Ilya
+    name: Ilya Puchka
+    github: ilyapuchka
+    twitter: ilyapuchka
+  - &Inami
+    name: Yasuhiro Inami
+    github: inamiy
+    twitter: inamiy
+  - &Jakub
+    name: Jakub Tomanik
+    github: jtomanik
+  - &James
+    name: James Birtwell
+    github: jimmybee
+  - &Joao
+    name: João Pereira
+    github: NSMyself
+    twitter: NSMyself
+  - &Joshua
+    name: Joshua Simmons
+    github: j531
+  - &Julien
+    name: Julien Ducret
+    github: brocoo
+  - &Konrad
+    name: Konrad Muchowicz
+    github: konrad-em
+  - &Martin
+    name: Martin Nygren
+    github: zzcgumn
+  - &Michael
+    name: Michael Brown
+    github: mluisbrown
+    twitter: mluisbrown
+  - &Michal
+    name: Michał Kwiecień
+    github: MichalTKwiecien
+    twitter: kwiecien_co
+  - &Olivier
+    name:  Olivier Halligon
+    github: AliSoftware
+    twitter: aligatr
+  - &Patrick
+    name: Patrick Westmeyer
+    github: bh-pwestmeyer
+  - &Rui
+    name: Rui Peres
+    github: RuiAAPeres
+    twitter: peres
+  - &Sam
+    name: Sam Francis
+    github: SamFrancis-Babylon
+  - &Sergey
+    name: Sergey Shulga
+    github: sergdort
+    twitter: SergDort
+  - &Simon
+    name: Simon Cass
+    github: scass91
+    twitter: codercass
+  - &Viorel
+    name: Viorel Mihalache
+    github: viorel15
+    twitter: viorelMO
+  - &Witold
+    name: Witold Skibniewski
+    github: mr-v
+  - &Yuri
+    name: Yuri Karabatov
+    github: karabatov
+    twitter: karabatov
+
+
+################################################################
+# Global roles transverse to the squads
+#
+roles:
+  - name: Engineering Manager
+    members:
+      - *Rui
+  - name: Chapter Leads
+    members:
+      - *Catarina
+      - *David
+  - name: Squad Tech Leads
+    members:
+      - *Michael
+
+
+################################################################
+# List of the Squads and their members
+#
+squads:
+  - name: Appointments
+    desc: Appointment booking.
+    members:
+      - *Witold
+  - name: Consultation
+    desc: Consultation experience related features including, but not limited to - audio/video call and replay quality, consultation feedback, pre-consultation preparation and reminders for consultation 
+    members:
+      - *Adrian
+      - *Chitra
+  - name: Onboarding and Navigation
+    desc: General user experience in the app.
+    members:
+      - *Emese
+      - *Giorgos
+      - *Sergey
+      - *Yuri
+  - name: Native Apps Platform
+    desc: Engineering work like tooling, CI and development processes.
+    members:
+      - *David
+      - *Ilya
+      - *Inami
+      - *Martin
+      - *Olivier
+  - name: GP @ Hand Registrations
+    desc: End to end journey for NHS registration.
+    members:
+      - *James
+  - name: Healthcheck
+    desc: Overview of your health using a 3D body model (avatar).
+    members:
+      - *Ben
+      - *Julien
+  - name: Identity
+    desc: Authentication and Authorization related work
+    members:
+      - *Jakub
+  - name: Monitor
+    desc: Monitoring health metrics like activity, blood, urine, ...
+    members:
+      - *Anders
+      - *DanielH
+      - *DanielS
+      - *Diego
+      - *Joshua
+  - name: Prescriptions
+    desc: Prescriptions functionality.
+    members:
+      - *Adam
+      - *Konrad
+  - name: Partnerships
+    desc: Updating and maintaining the Telus app.
+    members:
+      - *Simon
+  - name: SDK
+    desc: Develop and maintain the SDK frameworks.
+    members:
+      - *Viorel
+  - name: Tenancy & Features
+    desc: To integrate the new feature configurator.
+    members:
+      - *Anil
+  - name: Test Kits
+    desc: Managing everything related to Babylon do-at-home tests.
+    members:
+      - *Michal
+  - name: Triage
+    desc: Chatbot functionality.
+    members:
+      - *Danilo
+      - *Joao
+      - *Michael
+  - name: US Professional Services
+    desc: Features for app in the US.
+    members:
+      - *Chesley
+      - *Patrick
+      - *Sam
