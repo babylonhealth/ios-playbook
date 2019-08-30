@@ -156,7 +156,7 @@ squads:
     members:
       - *Witold
   - name: Consultation
-    desc: Flows for all the consultation like prescriptions and video consultation.
+    desc: Consultation experience related features including, but not limited to - audio/video call and replay quality, consultation feedback, pre-consultation preparation and reminders for consultation 
     members:
       - *Adrian
       - *Chitra
