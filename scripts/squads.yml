@@ -66,6 +66,9 @@ team:
     name: Yasuhiro Inami
     github: inamiy
     twitter: inamiy
+  - &Jakub
+    name: Jakub Tomanik
+    github: jtomanik
   - &James
     name: James Birtwell
     github: jimmybee
@@ -181,6 +184,10 @@ squads:
     members:
       - *Ben
       - *Julien
+  - name: Identity
+    desc: Authentication and Authorization related work
+    members:
+      - *Jakub
   - name: Monitor
     desc: Monitoring health metrics like activity, blood, urine, ...
     members:
@@ -190,7 +197,7 @@ squads:
       - *Diego
       - *Joshua
   - name: Prescriptions
-    desc: Precriptions functionality.
+    desc: Prescriptions functionality.
     members:
       - *Adam
       - *Konrad
