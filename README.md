@@ -66,7 +66,7 @@ By definition, members work on their respective squad, although they are free to
 
 | Squad Name                    | Members                                     | Availability | Public slack channel |
 |-------------------------------|---------------------------------------------| ------------ | -------------------- |
-| Booking                       | Witold                                      |    1/1       | |
+| Appointments                       | Witold                                      |    1/1       | |
 | Consultation                  | Adrian, Chitra                              |    2/2       | |
 | Core Experience               | Sergey, Yuri                                |    2/2       | [#core-exp-squad](https://babylonhealth.slack.com/archives/CCSE8JLK0) |
 | Dev Experience                | Ilya, Olivier, David                        |    3/3       | [#mobile-tooling](https://babylonhealth.slack.com/messages/CL3QSC2NM) |
