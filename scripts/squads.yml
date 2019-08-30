@@ -62,7 +62,7 @@ team:
     name: Ilya Puchka
     github: ilyapuchka
     twitter: ilyapuchka
-  - &Inamiy
+  - &Inami
     name: Yasuhiro Inami
     github: inamiy
     twitter: inamiy
@@ -157,7 +157,7 @@ squads:
     members:
       - *Adrian
       - *Chitra
-  - name: Onboarding and navigation
+  - name: Onboarding and Navigation
     desc: General user experience in the app.
     members:
       - *Emese
@@ -169,7 +169,7 @@ squads:
     members:
       - *David
       - *Ilya
-      - *Inamiy
+      - *Inami
       - *Martin
       - *Olivier
   - name: GP @ Hand Registrations
