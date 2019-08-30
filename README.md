@@ -96,7 +96,7 @@ The rest of the iOS Engineers work in the following squads:
       <tr><td>João Pereira</td><td><a href='https://github.com/NSMyself'>@NSMyself</a></td><td><a href='https://twitter.com/NSMyself'>@NSMyself</a></td></tr>
       <tr><td>Michael Brown</td><td><a href='https://github.com/mluisbrown'>@mluisbrown</a></td><td><a href='https://twitter.com/mluisbrown'>@mluisbrown</a></td></tr>
     <tr><td rowspan='3' valign='top'><strong>US Professional Services</strong><br/>Features for app in the US.</td>
-      <td>Greg Bryant</td><td></td><td></td></tr>
+      <td>Chesley Stephens</td><td><a href='https://github.com/cstephens-babylon'>@cstephens-babylon</a></td><td></td></tr>
       <tr><td>Patrick Westmeyer</td><td><a href='https://github.com/bh-pwestmeyer'>@bh-pwestmeyer</a></td><td></td></tr>
       <tr><td>Sam Francis</td><td><a href='https://github.com/SamFrancis-Babylon'>@SamFrancis-Babylon</a></td><td></td></tr>
 </table>

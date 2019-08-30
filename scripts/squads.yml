@@ -27,6 +27,9 @@ team:
     name: Ana Catarina Figueiredo
     github: AnnKatF
     twitter: AnnKatFig
+  - &Chesley
+    name: Chesley Stephens
+    github: cstephens-babylon
   - &Chitra
     name: Chitra Kotwani
     github: chitrakotwani
@@ -55,8 +58,6 @@ team:
   - &Giorgos
     name: Giorgos Tsiapaliokas
     github: gtsiap
-  - &Greg
-    name: Greg Bryant
   - &Ilya
     name: Ilya Puchka
     github: ilyapuchka
@@ -165,7 +166,7 @@ squads:
       - *Yuri
   - name: Native Apps Platform
     desc: Engineering work like tooling, CI and development processes.
-    members: 
+    members:
       - *David
       - *Ilya
       - *Inamiy
@@ -173,16 +174,16 @@ squads:
       - *Olivier
   - name: GP @ Hand Registrations
     desc: End to end journey for NHS registration.
-    members: 
+    members:
       - *James
   - name: Healthcheck
     desc: Overview of your health using a 3D body model (avatar).
-    members: 
+    members:
       - *Ben
       - *Julien
   - name: Monitor
     desc: Monitoring health metrics like activity, blood, urine, ...
-    members: 
+    members:
       - *Anders
       - *DanielH
       - *DanielS
@@ -190,34 +191,34 @@ squads:
       - *Joshua
   - name: Prescriptions
     desc: Precriptions functionality.
-    members: 
+    members:
       - *Adam
       - *Konrad
   - name: Partnerships
     desc: Updating and maintaining the Telus app.
-    members: 
+    members:
       - *Simon
   - name: SDK
     desc: Develop and maintain the SDK frameworks.
-    members: 
+    members:
       - *Viorel
   - name: Tenancy & Features
     desc: To integrate the new feature configurator.
-    members: 
+    members:
       - *Anil
   - name: Test Kits
     desc: Managing everything related to Babylon do-at-home tests.
-    members: 
+    members:
       - *Michal
   - name: Triage
     desc: Chatbot functionality.
-    members: 
+    members:
       - *Danilo
       - *Joao
       - *Michael
   - name: US Professional Services
     desc: Features for app in the US.
-    members: 
-      - *Greg
+    members:
+      - *Chesley
       - *Patrick
       - *Sam
