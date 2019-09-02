@@ -196,11 +196,9 @@ To solve these issues we propose to replace `protocol AppConfigurationProtocol` 
 
 All feature specific configuration should be moved to the corresponding feature frameworks and should use concrete structs instead of protocols that then `AppConfiguration` extends. `AppConfiguration` should only be concerned with application level configurations (i.e. enabled tabs or privacy notices urls).
 
-3. All feature switches access points should be moved to the `Current` and consequentially should be only used in builders - view models, flow controllers and renderers should have them injected through their constructors. Currently we only have `Current.abTestingService` but we have global `LocalFeatureSwitches`
+### Generating Root.plist
 
-4. Root.plist should be generated based on the code that declared feature switches.
-
-For that we can use SwiftSyntax to analyze the content of the files which define feature switches (based on the file naming convetion) and generate entry in the plist for each of them. This way we don't have to deal with plist manually and have a single source of truth for defining feature switches. The plist will be ignored by git and will be generated as part of build step only in DEBUG configuration, so we don't have to strip it from release builds.
+For that we can use SwiftSyntax (or simple parsing peachnism) to analyze the content of the files which define feature switches (based on the file naming convetion) and generate entry in the plist for each of them. This way we don't have to deal with plist manually and have a single source of truth for defining feature switches. The plist will be ignored by git and will be generated as part of build step only in DEBUG configuration, so we don't have to strip it from release builds.
 
 
 ## Impact on existing codebase
