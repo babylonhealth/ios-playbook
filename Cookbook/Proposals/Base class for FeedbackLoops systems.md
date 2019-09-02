@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Almost for all our screens, we implement ViewModels which are powered by the [ReactiveFeeedback](https://github.com/Babylonpartners/ReactiveFeedback).
+Almost for all our screens, we implement ViewModels which are powered by [ReactiveFeeedback](https://github.com/Babylonpartners/ReactiveFeedback).
 
 The current interface of VM looks like this
 
