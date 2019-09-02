@@ -136,7 +136,7 @@ This will allow us easier bind VM to a component e.g
 
 ```swift
 return Component(textDidChange: {
-   //This will still couse rerendering but we would not need to create an Event for it
+   // this will still cause rerendering but we would not need to create an Event for it
     snapshot.mutate(\.userName, value: $0)
 })
 ```
