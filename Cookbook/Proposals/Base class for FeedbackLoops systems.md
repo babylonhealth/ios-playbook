@@ -26,7 +26,7 @@ One of the main issues with this approach
 
 1. We need to implement `input` feedback in pretty much every VM which may lead to errors if do not schedule input correctly, for this we have `Feedback.input()` convenience extension
 
-2. If the screen contains a lot of input field we end up having a lot of event's that are just mutate one property of the `State` e.g
+2. If the screen contains a lot of input fields we end up having a lot of events that just mutate one property of the `State` e.g
 `Action.didChangeUserName(String)` `Action.didPickBirthDate(Date)`
  
 ## Proposed solution
