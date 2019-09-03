@@ -50,6 +50,8 @@ After you've run the tests, in the Test Navigator (**Cmd-9**) open the latest te
 
 ![Test Navigator Attachments](./Assets/test-navigator-attachments.png)
 
+You can view the same report on CircleCI by navigating to the job's Artifacts tab and opening `Users/distiller/project/output/scan/html/report.html`.
+
 ## Errors when pulling code/switching branches
 Various errors can occur when pulling code/switching branches. 
 Typically all that is needed is running `bundle exec pod install` and closing
