@@ -14,12 +14,12 @@ Babylon aims to hire only the most qualified people. That doesn't mean that a ca
 As such, these are the main areas the team will focus our assessment of candidates on:
 
 - Technical expertise
- - Languages (Swift, Java) and platforms (iOS)
- - Frameworks (UI testing with XCTest)
- - Knowledge of software testing practises (Manual and Automated)
- - Automation Architectural design patterns (POM, Cucumber)
- - Knowledge of iOS APIs
- - Knowledge of the development cycle
+   - Languages (Swift, Java) and platforms (iOS)
+   - Frameworks (UI testing with XCTest)
+   - Knowledge of software testing practises (Manual and Automated)
+   - Automation Architectural design patterns (Page Object Model, Cucumber)
+   - Knowledge of iOS APIs
+   - Knowledge of the development cycle
 - Interest in sharing one's knowledge
 - Interest in learning new knowledge
 - Interest in keeping oneself up to date
@@ -54,7 +54,7 @@ For the net stage we would like you to add new tests to improve coverage
 
 ### Framework
 
-For the final stage we would like to understand your knowledge of how UI automation works on iOS and how tests interact with the applicaiton
+For the final stage we would like to understand your knowledge of how UI automation works on iOS and how tests interact with the application
 
 - Make any improvements you feel are appropriate to the following and clearly stating why:
  - Update the test framework
