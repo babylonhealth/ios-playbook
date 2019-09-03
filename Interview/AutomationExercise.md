@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/Babylonpartners/ios-playbook/master/logo.png">
+<img src="../logo.png">
 </p>
 
 #Babylon 
