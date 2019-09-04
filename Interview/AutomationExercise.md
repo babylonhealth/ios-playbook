@@ -49,7 +49,7 @@ The project currently contains a number of UI test cases, for these tests we wou
 
 For the net stage we would like you to improve test coverage by adding new tests as follows:
 
-- Create any new tests you feel are appropriate
+- Create new tests to cover the scenarios you feel are more relevant
 - Write an explanation as to why the test is needed and what it covers
 
 ### Framework
