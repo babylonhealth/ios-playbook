@@ -59,7 +59,7 @@ This is the final stage and we would like to access your knowledge of:
 - UI automation tests and its interaction with the iOS application
 
 - Make any improvements you feel are appropriate to the following and clearly stating why:
- - Update the test framework
+ - Test framework
  - Application, to improve testability and test coverage.
 
  
