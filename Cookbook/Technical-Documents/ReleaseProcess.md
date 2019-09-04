@@ -81,7 +81,7 @@ There are usually two release engineers working at any given time. It goes witho
 1. Merge `release` branch back to `develop`:
 	* Open a PR from `release` branch targeting `develop`. 
 	* Set as reviewers all the engineers who contributed to the `release` branch.
-	* Set the Merge label once all the required reviewers have approved it.
+	* Set the _Merge_ label once all the required reviewers have approved it.
 1. Update the [release calendar](#release-calendar)
 
 ## 3. SDK Release
