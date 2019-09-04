@@ -5,7 +5,7 @@
 
 ## Introduction
 
-This proposal introduces a new **Root & TabBar Framework (`BabylonRootTab.framework`)** that is first presented in a private team meeting on 15 Aug 2019.
+This proposal introduces a new **Root & TabBar Framework (`BabylonRootTab.framework`)** that is aimed to **decouple Root and Tab from `Octopus`**.
 
 > Slide and Demo:
 > https://drive.google.com/drive/u/1/folders/1mzaBL8f_vwFwFRYjOHaIDB2gTwNOdmLq
