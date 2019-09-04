@@ -47,7 +47,7 @@ The project currently contains a number of UI test cases, for these tests we wou
 
 ### New Test Cases
 
-For the net stage we would like you to add new tests to improve coverage
+For the net stage we would like you to improve test coverage by adding new tests as follows:
 
 - Create any new tests you feel are appropriate
 - Write a explanation as to why the test is needed and what it covers
