@@ -38,7 +38,7 @@ To begin with please download the following open source [application](https://gi
 
 ### Existing Tests
 
-The project currently contains a number of UI test cases, for these tests we would like you to complete the following
+The project currently contains a number of UI test cases, for these tests we would like you to complete the following:
 
 - Add a comment to each test outlining what is being tested
 - Describe if you feel the test is appropriate or well written
