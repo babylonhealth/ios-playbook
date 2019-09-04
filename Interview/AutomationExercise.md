@@ -21,7 +21,7 @@ As such, these are the main areas the team will focus our assessment of candidat
    - Knowledge of iOS APIs
    - Knowledge of the development cycle
 - Interest in sharing one's knowledge
-- Interest in learning new knowledge
+- Interest in learning new competences
 - Interest in keeping oneself up to date
 - Ability to think and work independently
 - Ability to work in a large team
