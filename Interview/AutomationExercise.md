@@ -60,7 +60,7 @@ This is the final stage and we would like to access your knowledge of:
 
 - Make any improvements you feel are appropriate to the following and clearly stating why:
  - Update the test framework
- - Update the application to improve testing
+ - Application, to improve testability and test coverage.
 
  
 # Outcome
