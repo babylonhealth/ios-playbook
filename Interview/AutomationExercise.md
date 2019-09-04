@@ -50,16 +50,14 @@ As another part of the test we would like you to improve test coverage of the ap
 - Create new tests to cover the scenarios you feel are more relevant
 - Write an explanation as to why the test is needed and what it covers
 
-### Framework
+### Automation Concepts
 
-This is the final stage and we would like to access your knowledge of:
+We would like to access your knowledge of the XCTest framework and how an applications code can be developed to improve testability and reliability. While not required it would help if you could demonstrate the following while completing the previouse exercies. 
+
+- Understanding of XCTest and it's APIs
+- How the application code interacts with automation
+- Improvments to the application code to facilitate testing
 - UI automation in the iOS context
-- UI automation tests and its interaction with the iOS application
-
-- Considering this, we would like you to make the necessary improvements, and clearly stating why, to the following:
- - Update the test framework to improve automation stability
- - Application, to improve testability and test coverage.
-
  
 # Outcome
 
