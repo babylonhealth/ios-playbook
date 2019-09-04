@@ -65,7 +65,13 @@ This is the final stage and we would like to access your knowledge of:
  
 # Outcome
 
-Once you have finished updating the automation in the project please zip up your project and send it to use for review via the recruiter who initially contacted you. 
+Once you have finished the technical exercise please zip your project and send it to us for review via the recruiter who initially contacted you.
+
+We really appreciate and value the time a candidate spends to complete the test and we guarantee that any test will be carefully reviewed by our team of engineers. 
+
+Always expect to hear back from us.
+
+In the possibility that a test doesn't meet the Babylon standards, we will always give feedback detailing what we think are the good aspects of the test and what we think should be improved.
 
 #### We look forward to hearing from you!
 
