@@ -47,7 +47,7 @@ The project currently contains a number of UI test cases, for these tests we wou
 As another part of the test we would like you to improve test coverage of the app by adding new tests as follows:
 
 - Create new tests to cover the scenarios you feel are more relevant
-- Write an explanation as to why the test is needed and what it covers
+- Write an in code comment as to what the test covers
 
 ### Automation Concepts
 
