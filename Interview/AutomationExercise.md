@@ -9,7 +9,7 @@ At babylon, we firmly believe that **transparency** is a core value that should 
 
 ## Our expectations
 
-Babylon aims to hire only the most qualified people. That doesn't mean that a candidate must have several academic degrees or years of experience. We value **potential** equally as much as **knowledge** and **experience**. Above all, we value one's ability to **think independently**, **solve problems** and to **engage with colleagues**.
+Babylon aims to hire only the most qualified people. That doesn't mean that a candidate must have several academic degrees or years of experience. We value **potential** equally as much as **knowledge** and **experience**. Above all, we value one's ability to **think independently**, **solve problems**, and to **engage with colleagues**.
 
 As such, these are the main areas the team will focus our assessment of candidates on:
 
