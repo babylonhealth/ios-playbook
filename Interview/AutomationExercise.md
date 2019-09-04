@@ -40,7 +40,7 @@ To begin with please download the following open source [application](https://gi
 
 The project currently contains a number of UI test cases, for these tests we would like you to complete the following:
 
-- Add a comment to each test outlining what is being tested
+- Add a comment to each test outlining what is being tested, do you feel the test is appropriate or well written. (do that in the documentation comment for these tests)
 - Describe if you feel the test is appropriate or well written
 - Improve the test if you feel it requires improvement
 - Verify the state of the test
