@@ -54,7 +54,9 @@ For the net stage we would like you to improve test coverage by adding new tests
 
 ### Framework
 
-For the final stage we would like to understand your knowledge of how UI automation works on iOS and how tests interact with the application
+This is the final stage and we would like to access your knowledge of:
+- UI automation in the iOS context
+- UI automation tests and its interaction with the iOS application
 
 - Make any improvements you feel are appropriate to the following and clearly stating why:
  - Update the test framework
