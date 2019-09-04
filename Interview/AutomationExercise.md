@@ -2,8 +2,7 @@
 <img src="../logo.png">
 </p>
 
-#Babylon 
-# iOS Automation engineer technical exercise
+# Babylon iOS Automation engineer technical exercise
 
 At Babylon, we firmly believe that **transparency** is a core value that should be present in everything we do, and hiring the best person should reflect that belief. That is why we've defined a clear and open technical exercise to be completed by candidates applying for an iOS automation engineer role. 
 
