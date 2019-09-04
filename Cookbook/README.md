@@ -34,6 +34,7 @@ iOS Cookbook 👩‍🍳
 * [Replace `iOSSnapshotTestCase` library with `SnapshotTesting`](./Proposals/SnapshotTesting.md)
 * [Automation Identifiers](./Technical-Documents/AutomationIdentifiers.md)
 * [Testing view models](./Technical-Documents/UnitTestingViewModels.md)
+* [iOS Automation Technical Exercise](../Interview/AutomationExercise.md)
 
 ##### ... learn functional programming 🚀
 
