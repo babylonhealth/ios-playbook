@@ -14,7 +14,7 @@ Babylon aims to hire only the most qualified people. That doesn't mean that a ca
 As such, these are the main areas the team will focus our assessment of candidates on:
 
 - Technical expertise
-   - Languages (Swift, Java) and platforms (iOS)
+   - Language (Swift) and platform (iOS)
    - Frameworks (UI testing with XCTest)
    - Knowledge of software testing practises (Manual and Automated)
    - Automation Architectural design patterns (Page Object Model, Cucumber)
