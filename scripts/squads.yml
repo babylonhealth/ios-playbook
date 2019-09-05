@@ -189,7 +189,7 @@ squads:
     members:
       - *Jakub
   - name: Monitor
-    desc: Monitoring health metrics like activity, blood, urine, ...
+    desc: Help members manage and sustain a healthy lifestyle.
     members:
       - *Anders
       - *DanielH
