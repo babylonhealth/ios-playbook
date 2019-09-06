@@ -6,7 +6,7 @@ OOO time has to be requested and approved by your Line Manager and your Project 
 
 There are different types of OOO and each one of them have different requirements for requesting and for being notified.
 
-## Holidays 
+## Holidays 🌴
 
 As per contract, we are entitled to 25 holiday days per year. You can book your holidays at your convience, you might just need to sync first with your Squad and the other iOS engineers to see if everybody is OK with it. 
 
@@ -23,6 +23,7 @@ Ideally, you should give at least 2 weeks notice before taking any holiday but t
 1. [Send an event](#steps-to-configure-the-outlook-event) to the iOS Team Calendar and to your Squad email group
 1. Update the [Team Plan document](https://docs.google.com/spreadsheets/d/1kdY3edy_TeqIGH_7VnZzElxgVo_qD2z4EF-arWNShyw/edit?usp=sharing)
 1. Notify the iOS Team and your Squad via Slack on the working day before you go on holidays
+1. At the end of your last working day before going on holidays change your Slack status to 🌴**On holiday** and set to clear after your last holiday day.
 
 If there is a big impact in the iOS Team or in your Squad due to you being away, please communicate a few days before in the team specific slack channel and do a handover if needed.
 
@@ -37,7 +38,7 @@ If there is a big impact in the iOS Team or in your Squad due to you being away,
 1. Reminder: None
 1. Select Save & Close
 
-## Working from Home
+## Working from Home 🏡
 This section is only valid for non-remote employees.
 
 Working from home is a benefit and should be seen as such. 
@@ -54,5 +55,5 @@ When working from home you should notify in the the iOS team Slack channel when 
 
 ### Steps to notify
 
-Notify the iOS Team and your Squad via Slack on the working day before you are working from home. 
-Emergencies might happen that require you to work from home and only notify on the same day. That will be acceptable if there is a plausible reason for it.
+1. Notify the iOS Team and your Squad via Slack on the working day before you are working from home. Emergencies might happen that require you to work from home and only notify on the same day. That will be acceptable if there is a plausible reason for it.
+2. On the day you are working from home change your Slack status to 🏡 **Working remotely**.
