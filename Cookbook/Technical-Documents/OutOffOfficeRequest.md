@@ -45,7 +45,7 @@ If there is a big impact in the iOS Team or in your Squad due to you being away,
 1. Select Out of Office
 1. ✔️ Send automatic replies for account `<your outlook account>`
 1. Reply once to each sender with: `<Define a message mentioning the period you are on holidays>`
-1. ✔️ Only send replied suring this time period
+1. ✔️ Only send replies during this time period
 1. Start time: First day of your holiday 
 1. End time: Last day of your holiday
 
