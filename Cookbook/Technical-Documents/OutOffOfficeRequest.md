@@ -29,8 +29,7 @@ If there is a big impact in the iOS Team or in your Squad due to you being away,
 #### Steps to Configure the Outlook event
 1. Open Outlook 
 1. Select Calendar
-1. Select Appointment
-1. Select Invite
+1. Select Meeting
 1. To: `<iOS calendar email group>`, `<your squad email group>`
 1. Subject: `<Your name>` Holidays 🌴
 1. Duration: All-day event
