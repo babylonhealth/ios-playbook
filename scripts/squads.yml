@@ -30,6 +30,9 @@ team:
   - &Chesley
     name: Chesley Stephens
     github: cstephens-babylon
+  - &Tyler
+    name: Tyler Hargett
+    github: thargett-babylon
   - &Chitra
     name: Chitra Kotwani
     github: chitrakotwani
@@ -229,3 +232,4 @@ squads:
       - *Chesley
       - *Patrick
       - *Sam
+      - *Tyler
