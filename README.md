@@ -101,6 +101,7 @@ The rest of the iOS Engineers work in the following squads:
       <td>Chesley Stephens</td><td><a href='https://github.com/cstephens-babylon'>@cstephens-babylon</a></td><td></td></tr>
       <tr><td>Patrick Westmeyer</td><td><a href='https://github.com/bh-pwestmeyer'>@bh-pwestmeyer</a></td><td></td></tr>
       <tr><td>Sam Francis</td><td><a href='https://github.com/SamFrancis-Babylon'>@SamFrancis-Babylon</a></td><td></td></tr>
+      <tr><td>Tyler Hargett</td><td><a href='https://github.com/thargett-babylon'>@thargett-babylon</a></td><td></td></tr>
 </table>
 <!-- end:squads -->
 
