@@ -32,7 +32,7 @@ Following options can be used for the command above:
 |Day-to-day development       |development|Enterprise TeamID|
 |Hockeyapp                    |enterprise |Enterprise TeamID|
 
-(You can find the `TeamID` parameter by searching for `$team_ids` in `/fastlane/Appfile` under the main repo.)
+(You can find the `TeamID` parameter by searching for `$team_ids` in `/fastlane/Appfile` in the main repo.)
 
 3. On prompt for password to decrypt the repository, enter the one from 1Password vault.
 
