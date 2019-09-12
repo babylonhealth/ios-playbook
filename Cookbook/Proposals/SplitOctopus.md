@@ -11,50 +11,21 @@ In the iOS codebase we use frameworks in order to organize the code and Octopus 
 
 ## Motivation
 
-While there is still the need for having a place for small features Octopus has become a massive container which contains both features and services.
-Also from a tech POV Octopus is just a folder which is being reused in different targets.
-I am sure we can do better than this :)
+In it's current state Octopus is collection of services and features which is consumed
+by each target this requires some manual work for each target.
 
 ## Proposed solution
 
-Split Octopus into two different frameworks.
-The proposed names are `BabylonFeatures` and `BabylonApp`.
-
-The first framework will be used as a container for features which
-- depend only on `BabylonCore`, `BabylonUI`, `BabylonDepedencies` and `BabylonSDK`
-- don't depend on any third party SDKs
-
-The second framework will be more flexibile with less restrictions, features in this framework
-- can depend on other Babylon framework
-- can depend on any third party SDK
-
-In the initial split Octopus will be splitted in the new two frameworks and then it Octopus will be removed from the codebase.
-After the initial split it will be up to each squad to decide the appropriate place for their code.
-
-Converting Octopus into two frameworks
-- should improve the build time of the app
-- will reduce the time which is required for unit tests to be executed
-- will allow better code organization
-- engineers won't be limited in any way, since two frameworks will exist in order to host features depending on their dependencies
+We propose to convert Octopus into a framework with the name `BabylonOctopus`.
+By having Octopus as a framework it will be easier for each target to make use of Octopus' features and services.
+With this proposal there is still the need for splitting Octopus even further which will be addressed by other proposals
+in the future.
 
 ### Transition Period
 
-Splitting Octopus will require some time since it's not trivial.
-There are two approaches 
-
-1. Split everything at once
-2. Initially create empty frameworks and then move each subdirectory of Octopus piece by piece.
-
-Option 1 has the drawback of keeping everything in a large PR and updating this PR constantly.
-Also IMO having such a massive PR will make it more error prone.
-
-Option 2 will be easier for the team to review the changes but it will require better coordination in order to make sure that the two new frameworks will be used instead of Octopus.
-
-Personally I prefer option 2.
-
-## Octopus Analysis
-
-Octopus analysis can be found [here.](https://docs.google.com/spreadsheets/d/1nu7L6vwQcET1fYas1Ccj6vlqHJRtsdaXQ94LaXjvXkQ/edit#gid=0)
+Converting Octopus will require some time since it's not trivial.
+We propose to  initially create an empty framework and then move each subdirectory of Octopus piece by piece.
+This way it will be easier for the team to review the changes.
 
 ## Impact on existing codebase
 
@@ -62,4 +33,8 @@ Although this is a breaking change, most likely it won't affect the enginners mu
 
 ## Alternatives considered
 
-Leave it as is.
+1. Leave it as is.
+2. Convert Octopus to framework at once.
+The drawback of this alternative is that the team will have to review a large PR which
+is more error prone. Also we will need to maintain a branch with a lot of changes for a
+longer period of time.
