@@ -31,6 +31,7 @@ Rarely, but sometimes, we cannot use `BabylonBoxViewController`. I'd like to gui
 - Naming of sections may be changed in the future (to sound better)
 - Sections marked as `(optional)` may be skipped if I find the article gets too big and overwhelming.
 - Once it's accepted by @scass91 and @RuiAAPeres I'll change the PR to be "draft" and I'm going to work on the article in this file below the `----`. Before the final merge I'm going to delete the outline.
+
 ---- 
 # The Article (in progress):
 To be added... Stay tuned 😎
@@ -100,30 +101,30 @@ extension ChoosePharmacyTypeRenderer {
 
 ```
 
-Your first question might be "What's a Config".The way how `BoxRenderer` is coupled with `BabylonBoxViewController` we cannot pass dependencies as we usually do in the init. Config is a way of injecting dependencies into a renderer.
+Going from the top the first question you may ask is "What's a Config". As a result of how `BoxRenderer` is coupled with `BabylonBoxViewController` we cannot pass dependencies as we usually do in a init. Config is a way of injecting dependencies into a renderer.
 
 ```plain
- 12 Aug 2019 - Renderer has to be a struct as there is a problem with classes & memory management. Classes are not deallocated. It may be fixed someday but it's still a case when I'm writing this article.
+ 12 Aug 2019 - Renderer has to be a struct as there is a problem with classes & memory management. Classes are not deallocated. It may be fixed someday but it's still the case when I'm writing this article.
 ```
 
-Now let's jump into the `render(state:)`. It returns a Screen. This is how it may look a Screen.
+Now let's jump into the `render(state:)`. It returns a Screen. This is how a Screen may look like:
 ```swift
     return Screen(
-        title: screenTitle,
-				rightBarItems: [faqButton],
-				shouldUseSystemSeparators: false,
-				box: render(state),
-				pinnedToBottomBox: renderBottomButtons(state)
+	    title: screenTitle,
+	    rightBarItems: [faqButton],
+	    shouldUseSystemSeparators: false,
+	    box: render(state),
+	    pinnedToBottomBox: renderBottomButtons(state)
     )
 ```
 
-With Screen you can modify many behaviour like alignment, whether you want separators or not. If you need to modify something which cannot be represented by a box please take a look on the init of the `Screen`. Variables there are pretty self explanatory.
+With Screen you can modify many behaviour like alignment of the content on the screen, whether you want system's separators or not. If you need to modify something which cannot be represented by a box please take a look on the init of the `Screen`. Variables there are pretty self explanatory.
 
-What's the Box then?
+#### What's the Box then?
 
 You can think of a `Box` as a representation of `UITableView` or `UICollectionView` in context of Bento. `Box` is made up from Sections and in sections there are nodes. Section is a representation of `UITableView`'s section while `Node` is a corresponding type to a row.
 
-Let's display the first row. First we need to do is to create a `Screen`:
+Let's display the first row. First thing we need to do is to create a `Screen`:
 
 ```swift
     func render(state: ChoosePharmacyTypeViewModel.State) -> Screen<SectionID, NodeID> {
@@ -155,23 +156,25 @@ Let's display the first row. First we need to do is to create a `Screen`:
     }
 ```
 
-1. `.empty` returns an empty `Box`
+There is a little bit of magic in the snippet above. Let's define what is what:
+
+1. `.empty` returns an empty `Box` on which we can use Bento's operators
 2. `|-+` operator adds a Section into the box
 3. `|---+` adds a Node into a Section
 
-With `|-+` and `|---+` you can add many sections and rows into your Box.  
+With `|-+` and `|---+` you can add many sections and rows into your Box.
 
-Section and Node takes an ID as their arguments. The ID is needed for diff algorithm to calculate changes. 
+Sections and Nodes take an ID as their arguments. The ID is needed for diff algorithm to calculate changes between each UI calculation. ID is represented by enums (`enum SectionID` and `enum NodeID`).
 
 ```
-Very often there is only single Section in the screen. In that case we name this Section's id as "first".
+Very often there is only `single` Section in the screen. In that case we name this Section's id as "first".
 ```
 
-`Node` also takes a `component` which is a representation of a cell displayed on the screen. Component is actually a `Renderable`. With minimal luck you won't need to create a component by your own and it's waiting for you to be used inside the Design Library. Your job is to only fill it with values.
+`Node` also takes a `component` which is a representation of a cell displayed on the screen. Component is actually a `Renderable`. With minimal luck you won't need to create a component by your own as it's waiting for you to be used inside the Design Library. Your job is to only fill it with values.
 
 Design Library is a library of **reusable** components created **both** by designers and developers. Whenever a designer from your squad needs to create a new screen, they should use components from that library which can be found in Zeplin. 
 
-From developer's point of view, the Design Library is a builder pattern with many functions, each returning a component. You can access the design library via `appearance` property. In the above example we used `row3`. 
+From developer's point of view, the Design Library is a builder pattern with many functions, each returning a component. You can access the design library via `appearance` property in renderer. In the above example we used `row3`. 
 
 ```
 In our codebase there is an additional scheme & target called "GalleryApp". You can find there all Design Library aomponents which have been written so far.
@@ -211,7 +214,7 @@ To display the 2nd row you just need to add 2nd row to the box:
     }
 ```
 
-To make it more readable you can extract render helper functions:
+To make it more readable you can extract helper functions:
 
 ```swift
     private func renderOptions() -> Box<SectionID, NodeID> {
@@ -250,10 +253,10 @@ To make it more readable you can extract render helper functions:
     }
 ```
 
-### Handle tapping on a row
+#### Handle tapping on a row
 Right now you should be able to see 2 rows however tapping on them does nothing. 
 
-User's input (as any other event) can change ViewModel's state. As a result, user's input also need to go through Feedback dance. To distinguish user's input from other events, in ViewModel there is `enum Action`. Renderer gets a closure in the init under `observer` argument. All you need to do is to send a proper `Action` into the `observer`:
+User's input (as any other event) can change ViewModel's state. As a result, user's input also need to go through Feedback dance in ViewModel. To distinguish user's input from other events, in ViewModel there is `enum Action`. Renderer gets a closure in the init called `observer` which takes an `Action` and pass it to a ViewModel. All you need to do is to send a proper `Action` into the `observer`:
 
 
 ```swift
@@ -288,5 +291,153 @@ User's input (as any other event) can change ViewModel's state. As a result, use
     }
 ```
 
+The `^` and `>>>` are our operators to simplify our codebase. The `^` is a lift operator which lifts single value `Action.didTapPharmacyCollection` into a function `() -> Action`. Why do we need to do so? The `>>>` composition operator needs 2 functions `(A -> B) >>> (B -> C) = (A -> C)`. In our case it's `(Void -> Action) >>> (Action -> Void) = (Void -> Void)` where `didTap` requires `Void -> Void`. Everything matches! 
 
-The `^` and `>>>` are our operators to simplify our codebase. The `^` is a lift operator which lifts single value `Action.didTapPharmacyCollection` into a function `() -> Action`. Why do we need to do so? The `>>>` composition operator needs 2 functions `(A -> B) >>> (B -> C) = (A -> C)`. In our case 
+#### Multiple rows
+`---+` operator allows you only to append a single node to a section. Very often we need to display a list of models. Bento has also `---*` operator which serves this purpose. This is how it would like in the code;
+
+```swift
+func renderList(of prescriptions: [Prescription]) -> Box<SectionID, NodeID> {  
+	.empty
+	|-+ Section(id: .first)
+	|---* prescriptions.map { prescription in
+		return Node(
+			id: .prescription(prescription.id),
+			component: appearance.row1(title: prescription.drugName)
+}
+	 
+enum NodeID {
+	case prescription(id: String) 
+}
+```
+
+## How to create a fresh new component?
+Sometimes we need to create a new component. Usually it's because the component hasn't been used by another iOS dev. 
+
+What's the process? First of all, look at the checklist what needs to be done:
+
+### New component checklist
+1. Check if the component is in Zeplin under `Design System` tag
+2. If component it's there, you can implement it by adding a factory method as extension of ComponentsBuilder `extension DesignLibrary.ComponentsBuilder`
+3. Record snapshot tests
+4. Add a demo of the component into GalleryApp
+
+### Writing a new component
+Here we're going to focus on point 2. We are going to write a banner component:
+![](/Users/adam.borek/Developer/babylon/images/bento03.png)
+
+We build components by putting small blocks together, usually in a StackView. By small blocks I mean another components which we call `atomic components`. They are called `atomic` because those components are small, usually display a small unit as Label, ImageView, Line.
+
+The banner can be build from 2 images and 1 label. Let's put them all into a stack view:
+
+```swift
+    public func banner(
+        description: String,
+        leadingIcon: UIImage? = nil,
+        trailingIcon: UIImage? = nil,
+        iconsColor: UIColor? = nil,
+        didTap: (() -> Void)? = nil
+    ) -> AnyRenderable {
+        return [
+            leadingIcon.map { UI.Image(image: $0.withRenderingMode(.alwaysTemplate)) },
+            UI.Label(text: description, styleSheet: LabelStyleSheet()),
+            trailingIcon.map { UI.Image(image: $0.withRenderingMode(.alwaysTemplate)) }
+        ]
+        .stack(axis: .horizontal, spacing: 8, layoutMargins: 8)
+        .asAnyRenderable()
+    }
+```
+
+As you can see, we used 3 atomic components (ignore LabelStyleSheet for a sec) and then we put them all into a stackView.
+
+The code above compiles however it doesn't look as the design image. First of all, images should have fixed size and we should set `tintColor` on them as we use `.alwaysTemplate` rendering mode. We just need to add few more operators:
+
+
+```swift
+	leadingIcon.map {
+		UI.Image(
+			image: $0.withRenderingMode(.alwaysTemplate),
+			styleSheet: ImageViewStyleSheet()
+				   .compose(\.tintColor, iconsColor)
+		)
+	  .height(24)
+		.width(24)
+	},
+```
+
+`height` and `width` are 2 from few operators we have available in the codebase. They have been written in a way so the usage & syntax remind of SwiftUI.
+
+`ImageViewStyleSheet` is our own way to style components. The `UI.Image` is not a `UIView` subclass so it's light enough to be loaded all over again with each renderer's UI calculation. However, we need a way to style views. This is what StyleSheet is for. `compose` and key paths are a way of setting how a UIView should looks like. Stylesheets are about how something is drawn (colors, fonts, numberOfLines, transform) while operators are about layout, constraints etc.
+
+Coming back to the code, we also need to style the label. Again we are going to use a styleSheet:
+
+```swift
+	UI.Label(
+		text: description,
+    styleSheet: LabelStyleSheet()
+	    .compose(\.textColor, tokens.colors.white)
+	    .compose(\.font, font(fontAttributes: tokens.typography.body))
+			.compose(\.textAlignment, .center)
+			.compose(\.lineBreakMode, .byWordWrapping)
+	)
+```
+
+As a last thing we need to put all we have into a container and fill it with purple'ish color:
+
+```swift
+    .stack(axis: .horizontal, spacing: 8, layoutMargins: 8)
+    .container(
+        styleSheet: ViewStyleSheet()
+            .compose(\.backgroundColor, tokens.colors.primary)
+    )
+```
+
+This is how the entire function looks like:
+
+```swift
+    public func banner(
+        description: String,
+        leadingIcon: UIImage? = nil,
+        trailingIcon: UIImage? = nil,
+        iconsColor: UIColor? = nil,
+        didTap: (() -> Void)? = nil
+    ) -> AnyRenderable {
+            return [
+                leadingIcon.map {
+                    UI.Image(
+                        image: $0.withRenderingMode(.alwaysTemplate),
+                        styleSheet: ImageViewStyleSheet()
+                            .compose(\.tintColor, iconsColor)
+                    )
+                    .height(24)
+                    .width(24)
+                },
+
+                UI.Label(
+                    text: description,
+                    styleSheet: LabelStyleSheet()
+                        .compose(\.textColor, tokens.colors.white)
+                        .compose(\.font, font(fontAttributes: tokens.typography.body))
+                        .compose(\.textAlignment, .center)
+                        .compose(\.lineBreakMode, .byWordWrapping)
+                ),
+                trailingIcon.map {
+                    UI.Image(
+                        image: $0.withRenderingMode(.alwaysTemplate),
+                        styleSheet: ImageViewStyleSheet()
+                            .compose(\.tintColor, iconsColor)
+                    )
+                    .height(24)
+                    .width(24)
+                }
+        ]
+        .stack(axis: .horizontal, spacing: 8, layoutMargins: 8)
+        .container(
+            styleSheet: ViewStyleSheet()
+                .compose(\.backgroundColor, tokens.colors.primary)
+        )
+        .asAnyRenderable()
+    }
+```
+
+Of course in production code it would be nice to extract few helper functions to have smaller main banner function. 
