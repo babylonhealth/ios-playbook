@@ -38,7 +38,7 @@ There are usually two release engineers working at any given time. It goes witho
 1. Join the slack channel the QA has created (e.g. `ios_release_4_1_0`) to discuss anything related to this release.
 1. Bump the release version by triggering the Slack command (eg. `/testflight Babylon version:4.1.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
    * This creates a TestFlight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
-1. Trigger a hockey build from that branch using its command (eg. `/hockeyapp Babylon branch:release/babylon/4.1.0`) in `#ios-build`.
+1. Trigger the App Center build from that branch using its command (eg. `/appcenter Babylon branch:release/babylon/4.1.0`) in `#ios-build`.
 1. Create the CRP ticket by triggering the Slack command (eg. `/crp ios branch:release/babylon/4.1.0`) in `#ios-launchpad`
    * This will also generate the CHANGELOG automatically (from the list of commits between the `release/{appname}/{version}` branch you mentioned and the tag for the latest version of the same product – i.e. the most recent `{appname}/*` tag) to include it in the CRP ticket
    * Your PM should then be able to see that the CRP ticket has been created, and can further manually complete the CRP ticket with any additional information (clinical risk, etc) from here
@@ -48,7 +48,7 @@ There are usually two release engineers working at any given time. It goes witho
   1. Input the new version number.
 
 ### Phase 2: Test and fix bugs
-*It starts after the Hockey build has been delivered and it can take several cycles*
+*It starts after the App Center build has been delivered and it can take several cycles*
 
 1. Testers will then begin their work against the build you just created.
 1. Any hotfix should target that branch, and you, as the release engineer, are responsible for double checking that the hotfix's PR is pointing to the release branch (instead of `develop`). The issue for the hotfix should be added to the release JIRA board.
@@ -97,7 +97,7 @@ There are usually two release engineers working at any given time. It goes witho
    * See also the [Internal SDK Release Process](https://engineering.ops.babylontech.co.uk/docs/cicd-deployments/#mobile-sdk-releases-ios-android) for more info.
 1. Create PR and update the SDK changelog `SDK/CHANGELOG.md` to add the release version and date
    * this document will be distributed alongside the SDK and used to document changes to SDK consumers, so the list of changes here could be worded differently from the CHANGELOG used in the CRP ticket if necessary
-1. Trigger a hockey build from that branch using its command (eg. `/fastlane distribute_sdk version:0.5.0 branch:release/sdk/0.5.0`) in `#ios-build`.
+1. Trigger the App Center build from that branch using its command (eg. `/fastlane distribute_sdk version:0.5.0 branch:release/sdk/0.5.0`) in `#ios-build`.
 1. Update the Sample app to point to the latest SDK release and ensure it still compiles
 
 ## 4. Release calendar
