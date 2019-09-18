@@ -8,23 +8,24 @@ There are different types of OOO and each one of them have different requirement
 
 ## Holidays 🌴
 
-As per contract, we are entitled to 25 holiday days per year. You can book your holidays at your convience, you might just need to sync first with your Squad and the other iOS engineers to see if everybody is OK with it. 
+As per contract, we (contractors excluded) are entitled to 25 holiday days per year. You can book your holidays at your convience, you might just need to sync first with your Squad, including the iOS engineers in it, to see if every one is OK with it. 
 
 Ideally, you should give at least 2 weeks notice before taking any holiday but there are exceptions for emergency situations. If you want to book more than 5 consecutive days you ideally should give 4 weeks notice.
 
-### Steps to request
+### Request
 
+1. Check with the iOS Engineers in your squad that the work is covered during you absence.
 1. Ask for approval from your PM - only if approved you can proceed to the next steps.
-2. Communicate it to your line manager and mention your PM approval
-3. Request in Bamboo
+1. Communicate it to your line manager and mention your PM approval
+1. Request in Bamboo
 
-### Steps to notify
+### Notify
 
 1. [Send an event](#steps-to-configure-the-outlook-event) to the iOS Team Calendar and to your Squad email group
-1. Update the [Team Plan document](https://docs.google.com/spreadsheets/d/1kdY3edy_TeqIGH_7VnZzElxgVo_qD2z4EF-arWNShyw/edit?usp=sharing)
+1. Update the [Team Plan document](https://docs.google.com/spreadsheets/d/1kdY3edy_TeqIGH_7VnZzElxgVo_qD2z4EF-arWNShyw/edit?usp=sharing) 
 1. Notify the iOS Team and your Squad via Slack on the working day before you go on holidays.
 1. [Enable automatic reply message](#steps-to-configure-automatic-reply) in your babylon outlook account.
-1. At the end of your last working day before going on holidays change your Slack status to 🌴**On holiday** and set to clear after your last holiday day. 
+1. At the end of your last working day before going on holidays change your Slack status to 🌴**On holiday** and set to clear after your last holiday day.
 
 If there is a big impact in the iOS Team or in your Squad due to you being away, please communicate a few days before in the team specific slack channel and do a handover if needed.
 
@@ -50,6 +51,21 @@ If there is a big impact in the iOS Team or in your Squad due to you being away,
 1. End time: Last day of your holiday
 1. [ ] Also send replies to senders outside my organisation
 
+### Before leaving
+
+When we leave on holidays we should make sure we leave our work either finished or delegated to someone else. There are a couple of steps we should perform to reduce the impact of your absence.
+
+1. Try to finish any work in progress you have before you go.
+1. Resolve the reviews you have on your opened PRs and try to get them merged.
+1. In the event of not being able to complete 1. and/or 2. please sync with another iOS Engineer, ideally someone from your squad, and do a hangover. When hanging over an opened PR please make sure you add the iOS Engineer as `Assignee`.
+1. Add yourself to the PullReminder exclusion list to prevent you to be added as a PR reviewer while you are away. Follow the steps to do it:
+	1. Go to [pullreminders.com](https://pullreminders.com)
+	1. Sign in
+	1. Select Babylonpartners organization
+	1. Select iOS-PullAssigners team
+	1. Add yourself to the Excluded team members
+1. You have to remove yourself from the PullReminder exclusion list once you get back. Adding a Slack reminder (`/remind me to reactivate PullReminder on <date>`) before you leave might help you not to forget.
+
 ## Working from Home 🏡
 This section is only valid for non-remote employees.
 
@@ -59,13 +75,13 @@ The number of days may very depending on your personal situation and your squad�
 
 When working from home you should notify in the the iOS team Slack channel when you are away and when are you expecting to come back.
 
-### Steps to request
+### Request
 
 1. Ask for approval from your PM - only if approved you can proceed to the next steps.
 2. Communicate it to your line manager and mention your PM approval
 3. Request in Bamboo
 
-### Steps to notify
+### Notify
 
 1. Notify the iOS Team and your Squad via Slack on the working day before you are working from home. Emergencies might happen that require you to work from home and only notify on the same day. That will be acceptable if there is a plausible reason for it.
 2. On the day you are working from home change your Slack status to 🏡 **Working remotely**.
