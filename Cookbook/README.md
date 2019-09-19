@@ -28,6 +28,7 @@ iOS Cookbook 👩‍🍳
 * [Writing a Proposal](./Technical-Documents/WritingAProposal.md)
 * [Release Process](./Technical-Documents/ReleaseProcess.md)
 * [How to add Labels to a Pull Request](./Technical-Documents/LabelsInPRs.md)
+* [What was decided in the iOS chapter meetings](./echnical-Documents/MeetingOutcomes.md)
 
 ##### ... test my app 🌳
 
