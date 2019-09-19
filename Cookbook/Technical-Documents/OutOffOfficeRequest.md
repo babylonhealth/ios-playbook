@@ -24,8 +24,8 @@ Ideally, you should give at least 2 weeks notice before taking any holiday but t
 1. [Send an event](#steps-to-configure-the-outlook-event) to the iOS Team Calendar and to your Squad email group
 1. Update the [Team Plan document](https://docs.google.com/spreadsheets/d/1kdY3edy_TeqIGH_7VnZzElxgVo_qD2z4EF-arWNShyw/edit?usp=sharing) 
 1. Notify the iOS Team and your Squad via Slack on the working day before you go on holidays.
-1. [Enable automatic reply message](#steps-to-configure-automatic-reply) in your babylon outlook account.
-1. At the end of your last working day before going on holidays change your Slack status to 🌴**On holiday** and set to clear after your last holiday day.
+1. [Enable automatic reply message](#steps-to-configure-automatic-reply) in your Babylon Outlook account.
+1. At the end of your last working day before going on holidays change your Slack status to 🌴**On holiday** and set to clear after your last holiday day. 
 
 If there is a big impact in the iOS Team or in your Squad due to you being away, please communicate a few days before in the team specific slack channel and do a handover if needed.
 
@@ -44,12 +44,11 @@ If there is a big impact in the iOS Team or in your Squad due to you being away,
 1. Open Outlook 
 1. Select Tools
 1. Select Out of Office
-1. [x] Send automatic replies for account `<your outlook account>`
+1. ✔️ Send automatic replies for account `<your outlook account>`
 1. Reply once to each sender with: `<Define a message mentioning the period you are on holidays>`
-1. [x] Only send replied suring this time period
+1. ✔️ Only send replies during this time period
 1. Start time: First day of your holiday 
 1. End time: Last day of your holiday
-1. [ ] Also send replies to senders outside my organisation
 
 ### Before leaving
 
