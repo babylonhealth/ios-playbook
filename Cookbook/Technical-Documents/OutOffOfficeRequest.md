@@ -52,18 +52,20 @@ If there is a big impact in the iOS Team or in your Squad due to you being away,
 
 ### Before leaving
 
-When we leave on holidays we should make sure we leave our work either finished or delegated to someone else. There are a couple of steps we should perform to reduce the impact of your absence.
+When we leave on holidays we should make sure we leave our work either finished or delegated to someone else. There are a couple of steps that should be performed to reduce the impact of the absence.
 
-1. Try to finish any work in progress you have before you go.
-1. Resolve the reviews you have on your opened PRs and try to get them merged.
-1. In the event of not being able to complete 1. and/or 2. please sync with another iOS Engineer, ideally someone from your squad, and do a hangover. When hanging over an opened PR please make sure you add the iOS Engineer as `Assignee`.
-1. Add yourself to the PullReminder exclusion list to prevent you to be added as a PR reviewer while you are away. Follow the steps to do it:
-	1. Go to [pullreminders.com](https://pullreminders.com)
-	1. Sign in
-	1. Select Babylonpartners organization
-	1. Select iOS-PullAssigners team
-	1. Add yourself to the Excluded team members
-1. You have to remove yourself from the PullReminder exclusion list once you get back. Adding a Slack reminder (`/remind me to reactivate PullReminder on <date>`) before you leave might help you not to forget.
+1. Try to finish any work in progress before you go.
+1. Resolve the reviews on your opened PRs and try to get them merged.
+1. In the event of not being able to complete 1. and/or 2. please sync with another iOS Engineer, ideally someone from your squad, and do a handover. When handing over an opened PR please make sure you add the iOS Engineer as `Assignee`.
+1. [Add yourself to the PullReminder exclusion list](#steps-to-be-added-to-the-pullreminder-exclusion-list) to prevent you to be added as a PR reviewer while you are away. 
+1. Once you get back, you have to remove yourself from the PullReminder exclusion list. Adding a Slack reminder (`/remind me to reactivate PullReminder on <date>`) before you leave might help you not to forget.
+
+#### Steps to be added to the PullReminder exclusion list
+1. Go to [pullreminders.com](https://pullreminders.com)
+1. Sign in
+1. Select Babylonpartners organization
+1. Select iOS-PullAssigners team
+1. Add yourself to the Excluded team members
 
 ## Working from Home 🏡
 This section is only valid for non-remote employees.
