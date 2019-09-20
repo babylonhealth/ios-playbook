@@ -7,7 +7,7 @@
 The pipe forward operator is used to feed a value into a function.
 
 ### Form
-Pipe forward is of the form ((A), (A -> B)) -> B. It takes a value of type A, as well as a function of type A to B and returns a value of type B.
+Pipe forward is of the form `((A), (A -> B)) -> B`. It takes a value of type A, as well as a function of type A to B and returns a value of type B.
 
 ### Usage
 ```
@@ -48,7 +48,7 @@ routesObserver.send(route)
 
 In the first version, readability is much lower compared to the piped version. It's difficult to immediately realise what transformations are happening and what the "source" value is.
 
-The second version is more readable, but i'd argue not as much as the piped version.
+The second version is more readable, but I'd argue not as much as the piped version.
 The piped version clearly displays an uninterupted flow of data. The result of each individual step cannot be re-used or mutated during the chain of functions. 
 Version 2, however, leaves the variables available to re-use. This can be an advantage, but also tends to clutter the local scope more.
 
@@ -65,7 +65,7 @@ Version 2, however, leaves the variables available to re-use. This can be an adv
 Both the compose forward / compose backward operators are used to "glue" functions together to create larger functions.
 
 ### Form
-Compose forward is of the form ((A) -> B), (B) -> C) -> (A) -> C. It takes the output of the first function and plugs it into the second function.
+Compose forward is of the form `((A) -> B), (B) -> C) -> (A) -> C`. It takes the output of the first function and plugs it into the second function.
 
 ### Usage
 ```
@@ -168,7 +168,7 @@ There are two overloads for this specific operator:
 1. (A) -> () -> B
 This variant "lifts" a provided value into a function. 
 
-2. (KeyPath) -> (Root) -> Value
+2. `(KeyPath) -> (Root) -> Value`
 This variant is used to pull out some property of the Root object by providing a KeyPath.
 
 ### Usage
@@ -227,6 +227,4 @@ This example is equivalent to performing:
 What's great about this approach is that we can use properties of Root objects just like functions. In this previously seen example, we're now able to swap out the function `last` for a `KeyPath`- more reusable code!
 
 Again, the main benefit here is not having to open up additional closures. When we avoid closures, we enforce the rule that our chain of functions must follow the correct shapes. Its stricter than several statements done sequentially in a closure. It also encourages developers to build up smaller, more modular functions rather than using one-use closures everywhere.
-
-
 
