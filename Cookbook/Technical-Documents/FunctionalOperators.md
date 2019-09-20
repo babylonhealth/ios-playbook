@@ -165,7 +165,7 @@ The `^` (caret) operator is used to lift values to become functions.
 ### Form
 There are two overloads for this specific operator:
 
-1. (A) -> () -> B
+1. `(A) -> () -> B`
 This variant "lifts" a provided value into a function. 
 
 2. `(KeyPath) -> (Root) -> Value`
