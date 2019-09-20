@@ -4,7 +4,7 @@ A place to store all the outcomes from the iOS chapter meetings, in reversed chr
 
 Please always be mindful of not leaking sensitive information here. Double-check with your teammates to be sure, if you need to.
 
-### Banter
+### Banter, 19 Sept 2019
 iOS support engineer to tackle smaller BAU tickets during support down-time.
 
 Team activities TBD.
