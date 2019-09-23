@@ -151,9 +151,6 @@ This is not the case with version 2, as version 2 is a collection of statements 
 #### `<<< ` - Backwards composition
 `<<<` is the reversed version of `>>>`. It combines a function from the right-hand side with a function on the left-hand side. This can occasionally help with readability.
 
-#### `<> ` - Single-type composition
-`<>` is composition that applies between two values of the same type. For example, `5 |> incr <> incr <> incr <> incr` would produce 10 and is the same as `5 |> incr >>> incr >>> incr >>> incr` but with more accurate semantics.
-
 #### `>=>` - Kleisli composition
 Ilya has already provided a great explanation of its usage in [this proposal!](https://github.com/Babylonpartners/ios-playbook/blob/2e08f62675e00a84612b0315c909ce352137e464/Cookbook/Proposals/Fish_Operator.md)
 >The value of Kleisli composition is that it allows composition on functions which will not be composed with regular composition >>> because one of them returns result wrapped in some container (it can be Optional, Either or other kind of type that wraps value of another type in some way).
