@@ -2,7 +2,7 @@
 
 A place to store all the outcomes from the iOS chapter meetings, in reversed chronological order.
 
-Please always be mindful of not leaking sensitive information here. Double-check with your teammates to be sure, if you need to.
+Each entry should be updated by the meeting organizer after the meeting has ended. Please always be mindful of not leaking sensitive information here. Double-check with your teammates to be sure, if you need to.
 
 ### Banter, 19 Sept 2019
 iOS support engineer to tackle smaller BAU tickets during support down-time.
