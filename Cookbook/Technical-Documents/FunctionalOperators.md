@@ -60,6 +60,10 @@ Version 2, however, leaves the variables available to re-use. This can be an adv
 #### `?|>` - Optional pipe
 `?|>` applies the left-hand side value to the right-hand side function *if* the value is not nil. If the value is nil, the chain is broken and the chain of functions stops.
 
+### Further reading
+
+https://www.pointfree.co/episodes/ep1-functions#t141
+
 ## `>>>` - Compose forward
 
 Both the compose forward / compose backward operators are used to "glue" functions together to create larger functions.
@@ -155,6 +159,10 @@ This is not the case with version 2, as version 2 is a collection of statements 
 Ilya has already provided a great explanation of its usage in [this proposal!](https://github.com/Babylonpartners/ios-playbook/blob/2e08f62675e00a84612b0315c909ce352137e464/Cookbook/Proposals/Fish_Operator.md)
 >The value of Kleisli composition is that it allows composition on functions which will not be composed with regular composition >>> because one of them returns result wrapped in some container (it can be Optional, Either or other kind of type that wraps value of another type in some way).
 
+### Further reading
+
+https://www.pointfree.co/episodes/ep1-functions#t537
+
 ## `^` - Function lifting
 
 The `^` (caret) operator is used to lift values to become functions.
@@ -225,3 +233,6 @@ What's great about this approach is that we can use properties of Root objects j
 
 Again, the main benefit here is not having to open up additional closures. When we avoid closures, we enforce the rule that our chain of functions must follow the correct shapes. Its stricter than several statements done sequentially in a closure. It also encourages developers to build up smaller, more modular functions rather than using one-use closures everywhere.
 
+### Further reading
+
+https://www.pointfree.co/episodes/ep8-getters-and-key-paths#t1289
