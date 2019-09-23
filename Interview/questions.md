@@ -12,7 +12,6 @@ Please keep in mind that this document is in a continuous state of flux, with ne
 
 ### GENERAL, CV-related
 
- 1. List item
  1. Questions related to the information on the candidate's CV
  1. What technical books and blogs have you read or are reading at the moment?
  1. What conferences have you been to or plan on attending, if any?
