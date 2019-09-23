@@ -76,7 +76,7 @@ The rest of the iOS Engineers work in the following squads:
       <tr><td>Julien Ducret</td><td><a href='https://github.com/brocoo'>@brocoo</a></td><td></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Identity</strong><br/>Authentication and Authorization related work</td>
       <td>Jakub Tomanik</td><td><a href='https://github.com/jtomanik'>@jtomanik</a></td><td></td></tr>
-    <tr><td rowspan='5' valign='top'><strong>Monitor</strong><br/>Monitoring health metrics like activity, blood, urine, ...</td>
+    <tr><td rowspan='5' valign='top'><strong>Monitor</strong><br/>Help members manage and sustain a healthy lifestyle.</td>
       <td>Anders Ha</td><td><a href='https://github.com/andersio'>@andersio</a></td><td><a href='https://twitter.com/_andersha'>@_andersha</a></td></tr>
       <tr><td>Daniel Haight</td><td><a href='https://github.com/Daniel1of1'>@Daniel1of1</a></td><td></td></tr>
       <tr><td>Daniel Spindelbauer</td><td><a href='https://github.com/sdaniel55'>@sdaniel55</a></td><td><a href='https://twitter.com/sdaniel55'>@sdaniel55</a></td></tr>
@@ -97,10 +97,11 @@ The rest of the iOS Engineers work in the following squads:
       <td>Danilo Aliberti</td><td><a href='https://github.com/daniloaliberti'>@daniloaliberti</a></td><td></td></tr>
       <tr><td>João Pereira</td><td><a href='https://github.com/NSMyself'>@NSMyself</a></td><td><a href='https://twitter.com/NSMyself'>@NSMyself</a></td></tr>
       <tr><td>Michael Brown</td><td><a href='https://github.com/mluisbrown'>@mluisbrown</a></td><td><a href='https://twitter.com/mluisbrown'>@mluisbrown</a></td></tr>
-    <tr><td rowspan='3' valign='top'><strong>US Professional Services</strong><br/>Features for app in the US.</td>
+    <tr><td rowspan='4' valign='top'><strong>US Professional Services</strong><br/>Features for app in the US.</td>
       <td>Chesley Stephens</td><td><a href='https://github.com/cstephens-babylon'>@cstephens-babylon</a></td><td></td></tr>
       <tr><td>Patrick Westmeyer</td><td><a href='https://github.com/bh-pwestmeyer'>@bh-pwestmeyer</a></td><td></td></tr>
       <tr><td>Sam Francis</td><td><a href='https://github.com/SamFrancis-Babylon'>@SamFrancis-Babylon</a></td><td></td></tr>
+      <tr><td>Tyler Hargett</td><td><a href='https://github.com/thargett-babylon'>@thargett-babylon</a></td><td></td></tr>
 </table>
 <!-- end:squads -->
 

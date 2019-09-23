@@ -34,6 +34,7 @@ iOS Cookbook 👩‍🍳
 * [Replace `iOSSnapshotTestCase` library with `SnapshotTesting`](./Proposals/SnapshotTesting.md)
 * [Automation Identifiers](./Technical-Documents/AutomationIdentifiers.md)
 * [Testing view models](./Technical-Documents/UnitTestingViewModels.md)
+* [iOS Automation Technical Exercise](../Interview/AutomationExercise.md)
 
 ##### ... learn functional programming 🚀
 
@@ -50,3 +51,4 @@ iOS Cookbook 👩‍🍳
 * [How to invoke CI jobs from Slack](./Technical-Documents/SlackCIIntegration.md)
 * [Xcode Tips & Tricks](Technical-Documents/XcodeTips.md)
 * [Configure PullAssigner on our repos](Technical-Documents/PullAssigners.md)
+* [Accessing App Center builds](Technical-Documents/AppCenter.md)

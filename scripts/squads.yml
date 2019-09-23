@@ -30,6 +30,9 @@ team:
   - &Chesley
     name: Chesley Stephens
     github: cstephens-babylon
+  - &Tyler
+    name: Tyler Hargett
+    github: thargett-babylon
   - &Chitra
     name: Chitra Kotwani
     github: chitrakotwani
@@ -189,7 +192,7 @@ squads:
     members:
       - *Jakub
   - name: Monitor
-    desc: Monitoring health metrics like activity, blood, urine, ...
+    desc: Help members manage and sustain a healthy lifestyle.
     members:
       - *Anders
       - *DanielH
@@ -229,3 +232,4 @@ squads:
       - *Chesley
       - *Patrick
       - *Sam
+      - *Tyler
