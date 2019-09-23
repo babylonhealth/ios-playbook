@@ -10,7 +10,7 @@ The pipe forward operator is used to feed a value into a function.
 Pipe forward is of the form `((A), (A -> B)) -> B`. It takes a value of type A, as well as a function of type A to B and returns a value of type B.
 
 ### Usage
-```
+```swift
 func toString(_ integer: Int) -> String { 
     return "\(integer)"
 }
@@ -24,7 +24,7 @@ But, why? What's the point in this?
 
 Well, let's use an example from our codebase.
 
-```
+```swift
 error                               // NetworkError
     |> AlertError.make              // (NetworkError) -> AlertError
     |> Route.showAPIErrorAlert      // (AlertError) -> Route
@@ -34,7 +34,7 @@ error                               // NetworkError
 Here we take an error and apply several transformations to it, before emitting it through `routesObserver`. 
 
 This is the same logic, but without pipe:
-```
+```swift
 // Version 1
 routesObserver.send(Route.showAPIErrorAlert(AlertError.make(error)))
 
@@ -68,7 +68,7 @@ Both the compose forward / compose backward operators are used to "glue" functio
 Compose forward is of the form `((A) -> B), (B) -> C) -> (A) -> C`. It takes the output of the first function and plugs it into the second function.
 
 ### Usage
-```
+```swift
 func toString(_ integer: Int) -> String { 
     return "\(integer)"
 }
@@ -80,14 +80,14 @@ func last(_ string: String) -> Character? {
 // Version 1
 let getLastCharacter: (Int) -> Character? = toString >>> last
 [303, 808, 909]
-    .map(getLastCharacter) // Produces Array<Character>[3, 8, 9]
+    .map(getLastCharacter) // Produces Array<Character>["3", "8", "9"]
 ```
 This example is equivalent to performing:
-```
+```swift
 // Version 2
 [303, 808, 909]
     .map(toString)
-    .map(last)      // Produces Array<Character>[3, 8, 9]
+    .map(last)      // Produces Array<Character>["3", "8", "9"]
 ```
 
 What's most notable in this comparison is that version 1 is able to perform two functions in the same place as one. In the case of an array, this isn't a major effect as we can immediately map over the result, but there are situations where this isn't possible. A common usage of composition is when interacting with buttons.
@@ -98,7 +98,7 @@ Imagine a scenario where, when a button is tapped, we do the following:
 3. Convert it to a string
 4. Display the string on the screen
 
-```
+```swift
 struct Button {
     let didTap: () -> Void
 
@@ -156,7 +156,7 @@ This is not the case with version 2, as version 2 is a collection of statements 
 
 #### `>=>` - Kleisli composition
 Ilya has already provided a great explanation of its usage in [this proposal!](https://github.com/Babylonpartners/ios-playbook/blob/2e08f62675e00a84612b0315c909ce352137e464/Cookbook/Proposals/Fish_Operator.md)
-
+>The value of Kleisli composition is that it allows composition on functions which will not be composed with regular composition >>> because one of them returns result wrapped in some container (it can be Optional, Either or other kind of type that wraps value of another type in some way).
 
 ## `^` - Function lifting
 
@@ -165,7 +165,7 @@ The `^` (caret) operator is used to lift values to become functions.
 ### Form
 There are two overloads for this specific operator:
 
-1. `(A) -> () -> B`
+1. `(A) -> () -> A`
 This variant "lifts" a provided value into a function. 
 
 2. `(KeyPath) -> (Root) -> Value`
@@ -174,7 +174,7 @@ This variant is used to pull out some property of the Root object by providing a
 ### Usage
 
 1. "Lifting"
-```
+```swift
 enum Event {
     case didPressButton
 }
@@ -202,7 +202,7 @@ The ability to lift functions here is powerful as we no longer need to open a cl
 
 2. Combination with keyPath operator
 
-```
+```swift
 func toString(_ integer: Int) -> String { 
     return "\(integer)"
 }
@@ -214,14 +214,14 @@ func last(_ string: String) -> Character? {
 // Version 1
 let getLastCharacter: (Int) -> Character? = toString >>> ^\.last
 [303, 808, 909]
-    .map(getLastCharacter) // Produces Array<Character?>[3, 8, 9]
+    .map(getLastCharacter) // Produces Array<Character?>["3", "8", "9"]
 ```
 This example is equivalent to performing:
-```
+```swift
 // Version 2
 [303, 808, 909]
     .map(toString)
-    .map { $0.last }     // Produces Array<Character?>[3, 8, 9]
+    .map { $0.last }     // Produces Array<Character?>["3", "8", "9"]
 ```
 
 What's great about this approach is that we can use properties of Root objects just like functions. In this previously seen example, we're now able to swap out the function `last` for a `KeyPath`- more reusable code!
