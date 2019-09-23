@@ -79,8 +79,9 @@ There are usually two release engineers working at any given time. It goes witho
    * Set the body of the GitHub release to the content of the Release Notes for the app
    * Attach the zipped `xcarchive` as an artefact to the GitHub release (if you're using the automated release command, you can find the `*.xcarchive.zip` in the Artifacts top section in the CI build).
 1. Merge `release` branch back to `develop`:
-	* Open a PR from `release` branch targeting `develop`. 
+	* Open the Release PR ( PR from `release` branch targeting `develop`) which has been automatically created.
 	* Set as reviewers all the engineers who contributed to the `release` branch.
+	* Remove from reviewers list any engineer that has been added by the PullAssigner but haven't contributed to the release branch.
 	* Set the _Merge_ label once all the required reviewers have approved it.
 1. Update the [release calendar](#release-calendar)
 
