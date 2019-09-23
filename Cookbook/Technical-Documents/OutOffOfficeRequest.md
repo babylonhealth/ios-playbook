@@ -8,7 +8,7 @@ There are different types of OOO and each one of them have different requirement
 
 ## Holidays 🌴
 
-As per contract, we (contractors excluded) are entitled to 25 holiday days per year. You can book your holidays at your convience, you might just need to sync first with your Squad, including the iOS engineers in it, to see if every one is OK with it. 
+To promote a healthy work-life balance we should take 25 holiday days per year. You can book your holidays at your convience, you might just need to sync first with your Squad, including the iOS engineers in it, to see if every one is OK with it. 
 
 Ideally, you should give at least 2 weeks notice before taking any holiday but there are exceptions for emergency situations. If you want to book more than 5 consecutive days you ideally should give 4 weeks notice.
 
