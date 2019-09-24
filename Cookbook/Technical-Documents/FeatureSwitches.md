@@ -99,12 +99,61 @@ Depending on the use case we are using different ways to define Feature Switches
 	![](Assets/adding-remote-config-condition.png)
 
 	**Note that default value is `false` again!**
+	**Also not that condition is using a build number, even though the description mentions the app version. Be careful with these conditions when doing a release not from the head of develop branch (but i.e. doing a hot-fix release from the head of previous release) as the build numbers are constantly incremented with each CI run and don't depend on the app version.**
 	
 
 
 ## How to decide what feature flag to use
 
-TBD
+- Q: Are you working on a bug fix or a new feature/change in the existing feature?
+  A: 
+    - It's a bug
+
+       You don't need any kind of feature switch
+    - It's a feature
+
+        You may need a feature switch, read on
+
+- Q: Have you just started to work on the feature and it will take time to finish it, probably more than one sprint?
+  A: 
+    - Yes, it will take some time
+
+       Use a local feature switch
+    - No, the feature is small and can be finished in one sprint
+
+       You still may or may not need a feature switch, read on
+       
+- Q: Is the change related to something critical and we may want to be able to switch it back to previous implementation?
+    - Yes
+
+       While still working on the feature use a locl feature switch, when it is ready for release - convert it to Firebase Feature Switch
+    - No
+
+       Keep it as a local feature switch if you need one
+   
+- Q: Does the feature need to behave differently for different apps?
+    - Yes
+
+       Use Firebase feature switch with an app bundle id condition. If it's clear that feature will be availbale only for one app and not for others then it can be hardcoded in the AppConfiguration that the switch will be turned off (typically default is `false`) for particular apps. If you don't need a local or Firebase feature switch for the feature then just use AppConfiguration to define feature variants for different apps
+    - No, it's the same for all the apps
+
+       Use a local feature switch or Firebase feature switch without app bundle id condition (depending on previous answers)
+       
+- Q: Does the feature need to behave differently depending on the way user signs up for our services, i.e. through the partnership program or with some code?
+    - Yes
+
+       Use backend feature switch, this way it can depend on the user data, i.e. current consumer network.
+    - No
+
+       Use a local or Firebase feature switch (depending on previous answers)
+       
+- Q: Is there A/B test running for this feature/change?
+    - Yes
+
+       Use Firebase feature switch
+    - No
+
+       Use a local feature switch or app configuration (depending on previous answers)
 
 ## Phasing out feature switch
 
@@ -115,3 +164,4 @@ TBD
 - don't change the default value of the flag. We use `false` as default value for all the flags to make their behaviour more predictable and uniform (in oppsoite to having some flags have it `true` and some have it `false`).
 - start new feature development with a local feature switch. When you are going to release the feature convert it to remote feature switch. This way you don't have to use regular expression on the Firebase (if you use Firebase remote config) all the time, only if you need to change the value of the flag _after_ it was released.
 - do not introduce feature flags that affect each other. Each feature flag increases testing complexity as it introduces new combinations.
+- try to limit the usage of the feature switch using design patterns like strategy, delegate, facade etc.
