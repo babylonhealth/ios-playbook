@@ -32,7 +32,7 @@ Depending on the use case we are using different ways to define Feature Switches
     }
 	```
 	
-	Note: `ENABLE_FEATURE_FLAGS` compilation codition exists so that we are able to disable all the **local feature flags** in the builds that we provide for user testing. This flag should be used **only with local feature switches**.
+	Note: `ENABLE_FEATURE_FLAGS` compilation condition exists so that we are able to disable all the **local feature flags** in the builds that we provide for user testing. This flag should be used **only with local feature switches**.
 	
 	
 	4. add a new entry in the `Root.plist` for a toggle for this feature. The key name should be the same as the raw value of the case in `SettingsKeys` added before. The entry should be added after the `PSGroupSpecifier` item named `✨ Local Feature Switches ✨` and before `✨ Remote Feature Switches ✨` (this will visually group it with other local feature switches in the Settings app)
