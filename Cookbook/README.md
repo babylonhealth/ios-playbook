@@ -39,6 +39,7 @@ iOS Cookbook 👩‍🍳
 ##### ... learn functional programming 🚀
 
 * [Introduce "fish" operator (Kleisli composition)](./Proposals/Fish_Operator.md)
+* [Learn about our functional operators](./Technical-Documents/FunctionalOperators.md)
 
 ##### ... learn about other topics 🏔
 * [Apple Pay](./Technical-Documents/Apple_Pay.md)
