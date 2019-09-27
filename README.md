@@ -75,7 +75,7 @@ The rest of the iOS Engineers work in the following squads:
       <td>Ben Henshall</td><td><a href='https://github.com/Ben-Henshall'>@Ben-Henshall</a></td><td><a href='https://twitter.com/ben_henshall'>@ben_henshall</a></td></tr>
       <tr><td>Julien Ducret</td><td><a href='https://github.com/brocoo'>@brocoo</a></td><td></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Identity</strong><br/>Authentication and Authorization related work</td>
-      <td>Jakub Tomanik</td><td><a href='https://github.com/jtomanik'>@jtomanik</a></td><td></td></tr>
+      <td></td><td></td><td></td></tr>
     <tr><td rowspan='5' valign='top'><strong>Monitor</strong><br/>Help members manage and sustain a healthy lifestyle.</td>
       <td>Anders Ha</td><td><a href='https://github.com/andersio'>@andersio</a></td><td><a href='https://twitter.com/_andersha'>@_andersha</a></td></tr>
       <tr><td>Daniel Haight</td><td><a href='https://github.com/Daniel1of1'>@Daniel1of1</a></td><td></td></tr>
