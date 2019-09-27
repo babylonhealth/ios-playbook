@@ -47,13 +47,14 @@ iOS Cookbook 👩‍🍳
 * [Danger Rules to assist us during code review](./Technical-Documents/DangerRules.md)
 * [Code Signing with Fastlane Match](./Technical-Documents/FastlaneMatch.md)
 * [How to invoke CI jobs from Slack](./Technical-Documents/SlackCIIntegration.md)
+* [Configure PullAssigner on our repos](Technical-Documents/PullAssigners.md)
 * [What we tried to improve CI Build Time (type-checker optimisations, `cocoapods-binary`, CI cache…)](./Technical-Documents/BuildTime-Spikes-Report.md)
 
 ##### ... learn about other topics 🏔
+
 * [Apple Pay](./Technical-Documents/Apple_Pay.md)
 * [Strings and Localisation](./Technical-Documents/Lokalise.md)
 * [Outstanding Technical Debt and Legacy Code](./Technical-Documents/TechnicalDebt.md)
     * [BBAddAdditionalPatientInformationViewControllerV2](./Technical-Documents/BBAddAdditionalPatientInformationViewControllerV2.md)
 * [Xcode Tips & Tricks](Technical-Documents/XcodeTips.md)
-* [Configure PullAssigner on our repos](Technical-Documents/PullAssigners.md)
 * [Accessing App Center builds](Technical-Documents/AppCenter.md)
