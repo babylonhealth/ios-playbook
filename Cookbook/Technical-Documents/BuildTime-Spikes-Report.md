@@ -19,6 +19,8 @@ Build Times in Swift are known to be quite slow, but we could still try to find 
    Try to cache the products from `DerivedData` between runs for tests run on feature PRs  
    [ [CNSMR-2847](https://babylonpartners.atlassian.net/browse/CNSMR-2847) ]
 
+
+
 ## Helping the type-checker
 
 We've installed two Xcode warnings on all our projects to warn us if the type-checker took:
@@ -40,8 +42,9 @@ We found a lot of those across the codebase. Most common causes were mainly:
 
 Surprisingly, providing explicit types instead of relying on type inference didn't help that much, or at least not as much as the other techniques mentioned above.
 
-## Removing useless downloads from CI
 
+
+## Removing useless downloads from CI
 
 We observed that our CI pipeline did some actions that were not always needed.
 
@@ -50,6 +53,8 @@ One significant of those was that **we downlowded the _master specs repo_ of Coc
 Since we don't commit our `Pods/` folder but it's still cached on CI, that cache of `Pods/` is restored between CI jobs and runs if the checksum of `Podfile.lock` didn't change; which means if there's no pod being updated since last time that cache was generated, we won't even need that _master specs repo_ to begin with.
 
 We managed to win a couple of minutes for all our workflow runs just by only downloading the _master specs repo_ snapshot *only* if the checksum of the `Podfile.lock` file changed and the `Pods/` cache was thus invalidated (which is the only time requiring to `pod install` and to have that _master spec repo_ set up on the VM first).
+
+
 
 ## Migrating to CocoaPods-binary
 
@@ -69,6 +74,8 @@ The result is a `Pods.xcodeproj` for which each Pod target is already a pre-buil
 ### Spike's slow iterations cycle
 
 There have been several issues when trying to use `cocoapods-binary` on our project, that required mulitple iterations to try to make some progress.
+
+This spike involved some on-and-off work (as we often had to interrupt it to work on more urgent tickets) but mainly ran around summer of 2019. The tests were done using the lastest version of `cocoapods-binary` at that time, which was `0.4.4`.
 
 This spike was quite long to test and investigate, since:
 
