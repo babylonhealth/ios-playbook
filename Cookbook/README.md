@@ -19,7 +19,7 @@ iOS Cookbook 👩‍🍳
 * [Design Library](./Technical-Documents/DesignLibrary.md)
 * [Integrate with the Debug Window](./Technical-Documents/TheDebugWindow.md)
 
-##### ... learn how the iOS team works 🛠
+##### ... learn how the iOS team works 👩‍💻👨‍💻
 
 * [A general FAQ about the day-to-day experience of working at Babylon](./Technical-Documents/WorkingAtBabylon.md)
 * [Code Owners - Restoring developer's efficiency](./Proposals/CODEOWNERS.md)
@@ -41,15 +41,19 @@ iOS Cookbook 👩‍🍳
 * [Introduce "fish" operator (Kleisli composition)](./Proposals/Fish_Operator.md)
 * [Learn about our functional operators](./Technical-Documents/FunctionalOperators.md)
 
+##### ... learn about our tooling 🛠
+
+* [UI Automation with Gherkin](./Technical-Documents/UIAutomation.md)
+* [Danger Rules to assist us during code review](./Technical-Documents/DangerRules.md)
+* [Code Signing with Fastlane Match](./Technical-Documents/FastlaneMatch.md)
+* [How to invoke CI jobs from Slack](./Technical-Documents/SlackCIIntegration.md)
+* [What we tried to improve CI Build Time (type-checker optimisations, `cocoapods-binary`, CI cache…)](./Technical-Documents/BuildTime-Spikes-Report.md)
+
 ##### ... learn about other topics 🏔
 * [Apple Pay](./Technical-Documents/Apple_Pay.md)
 * [Strings and Localisation](./Technical-Documents/Lokalise.md)
 * [Outstanding Technical Debt and Legacy Code](./Technical-Documents/TechnicalDebt.md)
     * [BBAddAdditionalPatientInformationViewControllerV2](./Technical-Documents/BBAddAdditionalPatientInformationViewControllerV2.md)
-* [UI Automation with Gherkin](./Technical-Documents/UIAutomation.md)
-* [Danger Rules to assist us during code review](./Technical-Documents/DangerRules.md)
-* [Code Signing with Fastlane Match](./Technical-Documents/FastlaneMatch.md)
-* [How to invoke CI jobs from Slack](./Technical-Documents/SlackCIIntegration.md)
 * [Xcode Tips & Tricks](Technical-Documents/XcodeTips.md)
 * [Configure PullAssigner on our repos](Technical-Documents/PullAssigners.md)
 * [Accessing App Center builds](Technical-Documents/AppCenter.md)
