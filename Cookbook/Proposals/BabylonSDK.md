@@ -1,7 +1,7 @@
 # BabylonSDK factory for main API interfaces 
 
 * Author(s): Viorel Mihalache Oprea
-* Review Manager: ReviewManager
+* Review Managers: David Rodrigues, Yasuhiro Inami
 
 ## Introduction
 
