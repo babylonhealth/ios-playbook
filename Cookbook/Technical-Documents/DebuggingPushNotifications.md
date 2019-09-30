@@ -2,8 +2,10 @@
 
 To sucessfully debug Push Notification on your device make sure that you have proper configurations set up as described in this document.
 
-- [PubNub](#pubnub)
 - [TLDR](#tldr)
+- [PubNub](#pubnub)
+- [Key sets]()
+- [APNS certificates and environments]()
 
 ## PubNub
 
@@ -11,13 +13,20 @@ To sucessfully debug Push Notification on your device make sure that you have pr
 
 Each application that supports push notifications has a separate configuration on PubNub. Depending on your access level you may have access to all the apps (admin) or to specific apps. All the apps are grouped under `steven.hamblin` account.
 
-Each of the apps configurations contains multiple `key set`s for each of our backend environments, i.e. `dev` is a key set used on our dev environment, and so on. These key sets contain some private API keys that our notifications service uses to communicate with Pub Nub API and they are different for each environment.
+## Key Sets
 
-Each key set defines configuration for Pub Nub feautures, including push notifications. They contain FCM key (for Android, so ignore it) and push notifications certificate and APNS environment. For all of our non production environments we use enterprise certificate. For production environment we use AppStore certificate as that's the only environment that can be used in AppStore builds and we don't run any enterprise (Hockeyapp) builds against production environment.
+Each of the apps configurations contains multiple `key set`s for each of our backend environments, i.e. `dev` is a key set used on our dev environment, and so on. These key sets contain some private API keys that our notifications service uses to communicate with Pub Nub API and they are different for each environment. Each key set defines configuration for Pub Nub feautures, including push notifications. They contain FCM key (for Android, so ignore it) and push notifications certificate and APNS environment.
 
-Apart from certificate we need to set `APNS Environment`. This is not related to _our_ environments (dev, preprod or prod) but as the name of this setting says to APNS itself. It is possible to set this to Development or Production. Production environment is used to deliver notifications to the apps distributed through Hockeyapp, Testflight or AppStore. Development environment is used to send notifications to the apps deployed to device locally with Xcode.
+## APNS certificates and environments
 
-For iOS we have separate key sets for push and VoIP notifications because PubNub as of Sept 2019 didn't yet support using single certificate for both types of notifications. Key sets for push notifications are prefixed with `ios-push` and are associated with regular push notifications certificate instead of VoIP certificate. All the ceritificates for all the apps can be found in 1Password iOS vault.
+For PubNub to be able to deliver notifications to APNS correct and valid (not expired) certificate needs to be added to each key set. For all of our non-production environments we use enterprise certificates. For production environment we use AppStore certificates as that's the only environment that can be used in AppStore builds and we don't run any enterprise (Hockeyapp) builds against production environment.
+
+For iOS apps we have separate key sets for push and VoIP notifications because PubNub doesn't support using single certificate for both types of notifications (as of Sept 2019). Key sets for push notifications are prefixed with `ios-push` and are associated with regular push notifications certificate instead of VoIP certificate. All the ceritificates for all the apps can be found in 1Password iOS vault.
+
+Apart from certificate we need to set `APNS Environment` in each key set. This is not related to _our_ environments (dev, preprod or prod) but as the name of this setting suggests to APNS itself. It is possible to set this to Development or Production. Production environment is used to deliver notifications to the apps distributed through Hockeyapp, Testflight or AppStore. Development environment is used to send notifications to the apps deployed to device locally with Xcode.
+
+Example 1: to test notifications locally on pre-prod environment APNS environment for `preprod` and `preprod-ios-push` key sets should be set to `Development`
+Example 2: to test notifications on Hockeyapp build on pre-prod environment APNS environment for `preprod` and `preprod-ios-push` key sets should be set to `Production`
 
 ## TLDR
 When you are testing push notifications make sure that:
