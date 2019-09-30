@@ -128,6 +128,7 @@ class AchievementUnlockedEventTests: XCTestCase {
     }
 }
 ```
+Note: ViewModels conforming to the ScreenNaming protocol will not fire screen events as stand alone view models. 
 
 ## UI Tests for Snowplow Events
 
