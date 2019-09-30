@@ -4,8 +4,8 @@ To sucessfully debug Push Notification on your device make sure that you have pr
 
 - [TLDR](#tldr)
 - [PubNub](#pubnub)
-- [Key sets]()
-- [APNS certificates and environments]()
+- [Key sets](#key-sets)
+- [APNS certificates and environments](#apns-certificates-and-environments)
 
 ## PubNub
 
