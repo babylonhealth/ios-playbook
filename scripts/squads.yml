@@ -103,10 +103,6 @@ team:
   - &Patrick
     name: Patrick Westmeyer
     github: bh-pwestmeyer
-  - &Rui
-    name: Rui Peres
-    github: RuiAAPeres
-    twitter: peres
   - &Sam
     name: Sam Francis
     github: SamFrancis-Babylon
@@ -135,9 +131,6 @@ team:
 # Global roles transverse to the squads
 #
 roles:
-  - name: Engineering Manager
-    members:
-      - *Rui
   - name: Chapter Leads
     members:
       - *Catarina
