@@ -8,7 +8,7 @@ There are different types of OOO and each one of them have different requirement
 
 ## Holidays 🌴
 
-As per contract, we (contractors excluded) are entitled to 25 holiday days per year. You can book your holidays at your convience, you might just need to sync first with your Squad, including the iOS engineers in it, to see if every one is OK with it. 
+As per contract, we (contractors excluded) are entitled to 25 holiday days per year. You can book your holidays at your convenience, you might just need to sync first with your Squad, including the iOS engineers in it, to see if every one is OK with it. 
 
 Ideally, you should give at least 2 weeks notice before taking any holiday but there are exceptions for emergency situations. If you want to book more than 5 consecutive days you ideally should give 4 weeks notice.
 
@@ -89,9 +89,9 @@ When working from home you should notify in the the iOS team Slack channel when 
 
 ### Being remote
 
-For the majority of the engineers in the team, the office is our usual place of work. We are used to work next to our colleagues and is natural that we end up communicating more verbally. In the office everyone in your Squad is aware of where you are and what you are doing, so there is no need for us to keep notifying each other.
+For the majority of the engineers in the team, the office is the usual place of work. You usually sit next to your colleagues and everyone is usually aware of where you are and what you are doing.
 
-Working remotely requires a different mindset. We have to bear in mind that people in the office should still be aware of what is happening so you should:
+Working remotely requires a different mindset. You have to bear in mind that people in the office should still be aware of what is happening so you should:
 - Notify in Slack when your working day starts, finishes and any time you are off during the day. This should be written in the iOS-underground and in your Squad's Slack channels
 - In addition to the iOS stand-up notes, you should communicate what are you planning to do during the day in your Squad's stand-up if you have one or in your Squad's Slack channel.
 
