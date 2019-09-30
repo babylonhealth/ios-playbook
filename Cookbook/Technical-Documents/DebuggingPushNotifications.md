@@ -22,16 +22,16 @@ For iOS we have separate key sets for push and VoIP notifications because PubNub
 ## TLDR
 When you are testing push notifications make sure that:
 
-- the app is running against exepcted backend environment
-- PubNub configuration for this environment set to Production APNS Environment
+- The app is running against expected backend environment
+- PubNub configuration for this environment set to correct APNS Environment
 	- open the key set for this environment
 	- tap on "Replace  Certificate" button
 	- find the correct certificate PEM file in 1Password iOS vault and upload it
-		- for non production environment use Enterprise certificate
+		- for non-production environment use Enterprise certificate
 		- for production environment only use AppStore certificate (or simply just never change production key set)
 	- select proper APNS environment:
-		- for local builds (made from Xcode) select Development environment
+		- for local builds (built from Xcode) select Development environment
 		- for Hockeyapp builds select Production environment
 - make sure you notify in ios slack channel that you are changing PubNub environment
-- remember to change this configuration back when you are done and notificy ios channel
+- REMEMBER to change APNS environment back to production when you are done and notify ios slack channel. This is so that testers can continue testing notifications on AppCentre builds.
 - you are on Babylon-Partners WiFi network (West Office)
