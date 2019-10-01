@@ -43,4 +43,4 @@ When you are testing push notifications make sure that:
 		- for Hockeyapp builds select Production environment
 - make sure you notify in ios slack channel that you are changing PubNub environment
 - REMEMBER to change APNS environment back to production when you are done and notify ios slack channel. This is so that testers can continue testing notifications on AppCentre builds.
-- you are on Babylon-Partners WiFi network (West Office)
+- you are on Babylon-Partners WiFi network (if you are in the West Office)
