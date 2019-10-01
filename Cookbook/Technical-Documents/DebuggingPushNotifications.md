@@ -9,7 +9,7 @@ To sucessfully debug Push Notification on your device make sure that you have pr
 
 ## PubNub
 
-[Pub Nub](https://admin.pubnub.com/) is a service we use to deliver notifications to APNS (apple Push Notifications Service) or FCM (Firebase Cloud Messaging). If you don't have access to Pub Nub yet ask other members of the team to add your work email to our account.
+[Pub Nub](https://admin.pubnub.com/) is a service we use to deliver notifications to APNS (Apple Push Notifications Service) or FCM (Firebase Cloud Messaging). If you don't have access to Pub Nub yet ask other members of the team to add your work email to our account.
 
 Each application that supports push notifications has a separate configuration on PubNub. Depending on your access level you may have access to all the apps (admin) or to specific apps. All the apps are grouped under `steven.hamblin` account.
 
