@@ -78,8 +78,12 @@ There are usually two release engineers working at any given time. It goes witho
    * Make sure you create separate tags (and GitHub releases) for each app released on the AppStore (eg. Babylon 4.1.0 and Telus 4.1.0 would each have their own `babylon/4.1.0` and `telus/4.1.0` tags)
    * Set the body of the GitHub release to the content of the Release Notes for the app
    * Attach the zipped `xcarchive` as an artefact to the GitHub release (if you're using the automated release command, you can find the `*.xcarchive.zip` in the Artifacts top section in the CI build).
-1. Merge `develop` into the release branch, and resolve the conflicts (if any)
-1. Add the `Merge` label to the PR created by the bot to merge the release branch into `develop`.
+1. Merge `release` branch back to `develop`:
+	* Open the Release PR ( PR from `release` branch targeting `develop`) which has been automatically created.
+  * Resolve the conflicts (if any)
+	* Set as reviewers all the engineers who contributed to the `release` branch, and remove the ones automatically assigned by PullAssigners.
+	* Remove from reviewers list any engineer that has been added by the PullAssigner but haven't contributed to the release branch.
+	* Set the _Merge_ label once all the required reviewers have approved it.
 1. Update the [release calendar](#release-calendar)
 
 ## 3. SDK Release
