@@ -81,7 +81,7 @@ There are usually two release engineers working at any given time. It goes witho
 1. Merge `release` branch back to `develop`:
 	* Open the Release PR ( PR from `release` branch targeting `develop`) which has been automatically created.
   * Resolve the conflicts (if any)
-	* Set as reviewers all the engineers who contributed to the `release` branch.
+	* Set as reviewers all the engineers who contributed to the `release` branch, and remove the ones automatically assigned by PullAssigners.
 	* Remove from reviewers list any engineer that has been added by the PullAssigner but haven't contributed to the release branch.
 	* Set the _Merge_ label once all the required reviewers have approved it.
 1. Update the [release calendar](#release-calendar)
