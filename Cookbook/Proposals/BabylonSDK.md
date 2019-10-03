@@ -73,5 +73,9 @@ At the app level there also need to be some refactoring. To create and SDK there
 
 ## Alternatives considered
 
-An alternative would be to use singleton pattern in order to provide all SDK's through static methods. This will be identical to Babylon Android SDK but this does not fit with the general arhitecure of the Babylon iOS apps and SDK's.
+Android approach (https://github.com/Babylonpartners/babylon-android-sdk-sample#initialisation):
+BabylonCoreSDK is initialised in the App's onCreate() using `BabylonCoreSDK#init(Application, String consumerIdentifier)`
+Internal this initialisation is creating a singleton which any other singletons SDK can use.
+To obtain the Auth API for example tehy neet to call  `BabylonAuthSdk.getApiInstance()`
 
+An alternative would be to use singleton pattern in order to provide all SDK's through static methods. This will be identical to Babylon Android SDK but this does not fit with the general arhitecure of the Babylon iOS apps and SDK's.
