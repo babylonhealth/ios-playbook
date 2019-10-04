@@ -55,8 +55,12 @@ If there is a big impact in the iOS Team or in your Squad due to you being away,
 When we leave on holidays we should make sure we leave our work either finished or delegated to someone else. There are a couple of steps that should be performed to reduce the impact of the absence.
 
 1. Try to finish any work in progress before you go.
-1. Resolve the reviews on your opened PRs and try to get them merged.
+1. Resolve the reviews on your opened PRs and try to get them merged. 
 1. In the event of not being able to complete 1. and/or 2. please sync with another iOS Engineer, ideally someone from your squad, and do a handover. When handing over an opened PR please make sure you add the iOS Engineer as `Assignee`.
+1. Make sure your JIRA tickets are up-to-date. Any pending ticket should
+	1. Have a description of what is left to be done.
+	1. Who to contact if necessary.
+	1. If it's something urgent should be assigned to another team member and a proper handover should be done with that person.
 1. [Add yourself to the PullReminder exclusion list](#steps-to-be-added-to-the-pullreminder-exclusion-list) to prevent you to be added as a PR reviewer while you are away. 
 1. Once you get back, you have to remove yourself from the PullReminder exclusion list. Adding a Slack reminder (`/remind me to reactivate PullReminder on <date>`) before you leave might help you not to forget.
 
@@ -89,9 +93,8 @@ When working from home you should notify in the the iOS team Slack channel when 
 
 ### Being remote
 
-For the majority of the engineers in the team, the office is our usual place of work. We are used to work next to our colleagues and is natural that we end up communicating more verbally. In the office everyone in your Squad is aware of where you are and what you are doing, so there is no need for us to keep notifying each other.
-
-Working remotely requires a different mindset. We have to bear in mind that people in the office should still be aware of what is happening so you should:
+Our team is composed by people who work 100% remote and people who work a few days in the office and a few days remotely. To keep everyone up-to-date with everyone's schedule, what is happening in the project and to maintain a good level of cooperation between the engineers we need to be mindful of being active in the relevant channels (Slack, Email, Zoom).
+As part of your communication with your Squad and the iOS Team
 - Notify in Slack when your working day starts, finishes and any time you are off during the day. This should be written in the iOS-underground and in your Squad's Slack channels
 - In addition to the iOS stand-up notes, you should communicate what are you planning to do during the day in your Squad's stand-up if you have one or in your Squad's Slack channel.
 
