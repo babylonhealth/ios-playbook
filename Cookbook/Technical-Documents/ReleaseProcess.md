@@ -89,7 +89,7 @@ There are usually two release engineers working at any given time. It goes witho
 ## 3. SDK Release
 
 1. Ask SDK team (#sdk_squad) about the SDK version number.
-1. Cut a release branch for the SDK from the app release branch, using the `sdk/{version}` naming convention (eg. `sdk/0.5.0`)
+1. Cut a release branch for the SDK from the app release branch, using the `release/sdk/{version}` naming convention (eg. `release/sdk/0.5.0`)
 1. Create a CRP ticket by triggering its command (eg. `/crp ios branch:release/sdk/0.5.0`) in Slack
    * This will create the CRP ticket for the SDK, only including in the CHANGELOG field of the CRP the commits messages containing `[SDK-xxx]` or `#SDK` – filtering out the other commits, that are considered app-only changes if not containing those tags
    * See also the [Internal SDK Release Process](https://engineering.ops.babylontech.co.uk/docs/cicd-deployments/#mobile-sdk-releases-ios-android) for more info.
