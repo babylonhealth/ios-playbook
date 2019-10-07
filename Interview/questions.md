@@ -126,4 +126,4 @@ Please keep in mind that this document is in a continuous state of flux, with ne
  1. Knowledge about algorithms: sorting, searching and others.
 
 #### Thanks for your time! We look forward to hearing from you!
- 1. The [babylon health iOS team](http://github.com/Babylonpartners)
+The [babylon health iOS team](http://github.com/Babylonpartners)
