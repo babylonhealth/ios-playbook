@@ -94,7 +94,9 @@ When working from home you should notify in the the iOS team Slack channel when 
 ### Being remote
 
 Our team is composed by people who work 100% remote and people who work a few days in the office and a few days remotely. To keep everyone up-to-date with everyone's schedule, what is happening in the project and to maintain a good level of cooperation between the engineers we need to be mindful of being active in the relevant channels (Slack, Email, Zoom).
-As part of your communication with your Squad and the iOS Team
+As part of your communication with your Squad and the iOS Team you should:
+
 - Notify in Slack when your working day starts, finishes and any time you are off during the day. This should be written in the iOS-underground and in your Squad's Slack channels
 - In addition to the iOS stand-up notes, you should communicate what are you planning to do during the day in your Squad's stand-up if you have one or in your Squad's Slack channel.
 
+For more tips on remote working please visit Babylon's [Handbook for Remote Working](https://docs.google.com/document/d/1hjKtx1pPL_pxhLEuW-46w2XwxsC-mkw3Cp5uaHB2P8c/edit)
