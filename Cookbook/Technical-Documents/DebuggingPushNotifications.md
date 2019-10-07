@@ -7,6 +7,23 @@ To sucessfully debug Push Notification on your device make sure that you have pr
 - [Key sets](#key-sets)
 - [APNS certificates and environments](#apns-certificates-and-environments)
 
+## TLDR
+When you are testing push notifications make sure that:
+
+- The app is running against expected backend environment
+- [PubNub](#pubnub) configuration for this environment set to correct APNS Environment
+	- open the [key set](#key-sets) for this environment
+	- tap on "Replace Certificate" button
+	- find the correct certificate PEM file in 1Password iOS vault and upload it
+		- for non-production environment use Enterprise certificate
+		- for production environment only use AppStore certificate (**or simply just never change production key set**)
+	- select proper [APNS environment](#apns-certificates-and-environments):
+		- for local builds (built from Xcode) select Development environment
+		- for Hockeyapp builds select Production environment
+- make sure you notify in `#ios` slack channel that you are changing PubNub environment
+- REMEMBER to change APNS environment back to production when you are done and notify `#ios` slack channel. This is so that testing can continue on AppCentre builds.
+- if you are working from the West Office make sure you are on Babylon-Partners WiFi network as BabylonQA network may have issues with receiving push notifications
+
 ## PubNub
 
 [Pub Nub](https://admin.pubnub.com/) is a service we use to deliver notifications to APNS (Apple Push Notifications Service) or FCM (Firebase Cloud Messaging). If you don't have access to Pub Nub yet ask other members of the team to add your work email to our account.
@@ -25,22 +42,5 @@ For iOS apps we have separate key sets for push and VoIP notifications because P
 
 Apart from certificate we need to set `APNS Environment` in each key set. This is not related to _our_ environments (dev, preprod or prod) but as the name of this setting suggests to APNS itself. It is possible to set this to Development or Production. Production environment is used to deliver notifications to the apps distributed through Hockeyapp, Testflight or AppStore. Development environment is used to send notifications to the apps deployed to device locally with Xcode.
 
-Example 1: to test notifications locally on pre-prod environment APNS environment for `preprod` and `preprod-ios-push` key sets should be set to `Development`
-Example 2: to test notifications on Hockeyapp build on pre-prod environment APNS environment for `preprod` and `preprod-ios-push` key sets should be set to `Production`
-
-## TLDR
-When you are testing push notifications make sure that:
-
-- The app is running against expected backend environment
-- PubNub configuration for this environment set to correct APNS Environment
-	- open the key set for this environment
-	- tap on "Replace  Certificate" button
-	- find the correct certificate PEM file in 1Password iOS vault and upload it
-		- for non-production environment use Enterprise certificate
-		- for production environment only use AppStore certificate (or simply just never change production key set)
-	- select proper APNS environment:
-		- for local builds (built from Xcode) select Development environment
-		- for Hockeyapp builds select Production environment
-- make sure you notify in ios slack channel that you are changing PubNub environment
-- REMEMBER to change APNS environment back to production when you are done and notify ios slack channel. This is so that testing can continue on AppCentre builds.
-- if you are working from the West Office make sure you are on Babylon-Partners WiFi network as BabylonQA network may have issues with receiving push notifications
+_Example 1_: to test notifications locally on pre-prod environment APNS environment for `preprod` and `preprod-ios-push` key sets should be set to `Development`
+_Example 2_: to test notifications on Hockeyapp build on pre-prod environment APNS environment for `preprod` and `preprod-ios-push` key sets should be set to `Production`
