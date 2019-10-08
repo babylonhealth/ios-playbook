@@ -35,6 +35,7 @@ iOS Cookbook 👩‍🍳
 * [Automation Identifiers](./Technical-Documents/AutomationIdentifiers.md)
 * [Testing view models](./Technical-Documents/UnitTestingViewModels.md)
 * [iOS Automation Technical Exercise](../Interview/AutomationExercise.md)
+* [Debugging Push Notifications](./Technical-Documents/DebuggingPushNotifications.md)
 
 ##### ... learn functional programming 🚀
 
