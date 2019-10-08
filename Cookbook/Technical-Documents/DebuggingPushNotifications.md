@@ -43,4 +43,5 @@ For iOS apps we have separate key sets for push and VoIP notifications because P
 Apart from certificate we need to set `APNS Environment` in each key set. This is not related to _our_ environments (dev, preprod or prod) but as the name of this setting suggests to APNS itself. It is possible to set this to Development or Production. Production environment is used to deliver notifications to the apps distributed through Hockeyapp, Testflight or AppStore. Development environment is used to send notifications to the apps deployed to device locally with Xcode.
 
 _Example 1_: to test notifications locally on pre-prod environment APNS environment for `preprod` and `preprod-ios-push` key sets should be set to `Development`
+
 _Example 2_: to test notifications on Hockeyapp build on pre-prod environment APNS environment for `preprod` and `preprod-ios-push` key sets should be set to `Production`
