@@ -6,7 +6,9 @@
   The release engineer responsibilities are, but not limited to:
 
 1. Own the entire release process (step-by-step).
-2. Provide visibility, at all stages, of the release to the wider audience (e.g. squad, tribe and iOS chapter lead).
+2. Provide visibility of the release, at all stages, to the wider audience (e.g. squad, tribe and iOS chapter lead) by:
+	1. Tagging in the release Slack channel, anyone that is relevant to the release and to the issues that are raised.
+	2. Adding in the #ios-stand-up, a daily note with the status of the release (QA and bug fixing progress).
 3. Collaborate with QA by:
     1. Providing visibility to potential blockers to the wider audience.
     2. Escalating abnormal influx of bugs, so the release, as a whole, can be reassessed.
