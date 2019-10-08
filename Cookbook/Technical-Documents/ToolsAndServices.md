@@ -31,7 +31,7 @@
 
 * Slack bots
 
-  You can trigger CI jobs from Slack in the `ios-build` channel using slash commands. Check [this guide](./Technical-Documents/SlackCIIntegration.md) for details.  
+  You can trigger CI jobs from Slack in the `ios-build` channel using slash commands. Check [this guide](SlackCIIntegration.md) for details.  
 
 ## Optional tools
 
