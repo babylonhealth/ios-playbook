@@ -7,7 +7,7 @@
 | Slack | Chat with whole org. See channels of interest [here](NewHiresCheckList.md#slack). | You should have given access during your mini induction. Log in with your Babylon email and Okta |
 | 1Password | Access shared passwords used by various services in the team | [IT Support ticket];(https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) Specify in the ticket that access to iOS team vault is needed |
 | JIRA | Tickets of tasks and issues on your sprint | You should get an invitation email to join the BabylonPartners team after the [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) has been resolved |
-| Zeplin | Screen Designs | Ask `@adrian` on Slack for access to all the front-end projects |
+| Zeplin | Screen Designs | Ask support engineer in the iOS team channel on Slack for access to the project(s) |
 | GitHub | Repos for the app, the bots, the playbook... | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/248) to get added to the org. Make sure your Babylon email address is added to your account. |
 | [Lokalise](https://lokalise.co/projects) | Manage translations used by the app | Use iOS team vault on 1Password to gain access |
 | Confluence Spaces (iOS, your Tribe, ...) | Documentation for various processes | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) – You can also ask your PM or Tribe Lead which Spaces you need to be given access to. (Since we are moving away from Confluence this might not be necessary) |
