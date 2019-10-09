@@ -113,6 +113,7 @@ The release process starts when the first build is provided to QA and ends when 
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
+| 4.8.0| Giorgos Tsiapaliokas, Ben Henshall | Manual: `23h 00m` | `MS-204: 60m`<br>`MS-247: 15m`<br>`MS-262: 30m`<br>`MS-259: 5m`<br>`MON-5431: 2h`<br>`CNSMR-3029: 10m`<br>`CE-795: 10m`<br>`CE-799: 10m`<br>`GW-888: 15m`<br>`GW-957: 15m`<br>`APPTS-1752: 6h`<br>`GW-952: 8h`<br>`AV-1154: 1h` | Total: **19h 53m** | 30.09.2019 | 7.10.2019 |
 | 4.7.0| Joshua Simmons, Adrian Śliwa | Manual: `21h 55m`|`AV-1098: 15m`<br>`AV-1103: 30m`<br>`GW-865: 1h`<br>`GW-914: 1h`<br>`GW-927: 1h`<br>`GW-938: 1h`<br>`GW-913: 12h`<br>`CNSMR-2899: 1m`<br>`TES-409: 30m`<br>`APPTS-1637: 1h`<br>`CNSMR-2881: 45m`<br>`MON-5337: 15m`<br>`CNSMR-2901: 30m`| Total: **41h 41m** | 16.09.2019 | 23.09.2019 |
 | 4.6.1| Anders Ha, <br> Michał Kwiecień |Manual: `1h 15m`|`APPTS-1646: 12h`| Total: **13h 15m** | 09.09.2019 | 12.09.2019 |
 | 4.6.0| Anders Ha, <br> Michał Kwiecień |Manual: `24h 10m`|`MN-705: 1h`<br>`MS-99: 1h`<br>`CNSMR-2772: 1h`<br>`MS-98: 3h`<br>`MS-102: 1h`<br>`GW-805: 1h`<br>`AV-1023: 0.5h`<br>`CNSMR-2782: 1h`<br>`MS-111: 2h`<br>`CNSMR-2784: 2h`<br>`GW-878: 1h`<br>`CNSMR-2787: 2h`<br>`CNSMR-2788: 1h`<br>`MS-103: 0.5h`<br>`PRSCR-1328: 3h`<br>`PRSCR-1333: 0.5h`<br>`CNSMR-2808: 0.5h`<br>`CE-683: 2h`<br>`AV-1041: 1h`<br>`CNSMR-2563: 0.5h`<br>`CNSMR-2813: 0.5h`<br>`CNSMR-2814: 0.5h`<br>`CNSMR-2824: 0.5h`<br>`CNSMR-2480: 32h`| Total: **83h 10m** | 02.09.2019 | 10.09.2019 |
@@ -145,6 +146,7 @@ The release process starts when the first build is provided to QA and ends when 
 
 | Version | Associated App Version | Release Engineer(s)  | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|------------------------|----------------------|-----------------------------|---------------|---------------|-------------------|
+| 1.0.0 | 4.8.0 | Giorgos Tsiapaliokas <br> Ben Henshall | Nothing outside of release notes / running release command 🕺 | 0h | 07.10.2019 | 07.10.2019 |
 | 0.7.0 | 3.16.0 | David Rodrigues <br> Ben Henshall | CNSMR-1589: 3h (Involved a lot of waiting due to dependency on DevOps)<br>Expired GitHub token issue: 2h | 4h30m | 17.05.2019 | 21.05.2019 |
 
 ## 5. Post-mortem
