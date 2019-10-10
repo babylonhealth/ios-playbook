@@ -26,7 +26,7 @@ Build Times in Swift are known to be quite slow, but we could still try to find 
 We've installed two Xcode warnings on all our projects to warn us if the type-checker took:
 
  - More than 150ms on type-checking single expressions (`-Xfrontend -warn-long-expression-type-checking=150`)
- - More than 200ms on type-checking entire functions (`-Xfrontend -warn-long-function-bodies=200`
+ - More than 200ms on type-checking entire functions (`-Xfrontend -warn-long-function-bodies=200`)
 
 We found a lot of those across the codebase. Most common causes were mainly:
 
