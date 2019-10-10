@@ -121,6 +121,10 @@ team:
   - &Witold
     name: Witold Skibniewski
     github: mr-v
+  - &Vojtech
+    name: Vojtech Vrbka
+    github: vojtechvrbka
+    twitter: vojtechvrbka
   - &Yuri
     name: Yuri Karabatov
     github: karabatov
@@ -157,7 +161,6 @@ squads:
     desc: General user experience in the app.
     members:
       - *Emese
-      - *Giorgos
       - *Sergey
       - *Yuri
   - name: Native Apps Platform
@@ -180,7 +183,9 @@ squads:
   - name: Identity
     desc: Authentication and Authorization related work
     members:
-      - TBD
+      - *Giorgos
+      - *Michael
+      - *Vojtech
   - name: Monitor
     desc: Help members manage and sustain a healthy lifestyle.
     members:
@@ -215,7 +220,6 @@ squads:
     members:
       - *Danilo
       - *Joao
-      - *Michael
   - name: US Professional Services
     desc: Features for app in the US.
     members:
