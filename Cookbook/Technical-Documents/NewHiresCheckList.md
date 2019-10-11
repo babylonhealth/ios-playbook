@@ -35,6 +35,7 @@ As an iOS Engineer, you should be in the following Slack channels:
 	- `#ios-sdk`
 	- `#ios-oss`
 	- `#ios-meeting-outcomes`
+	- `#ios-pedia`
 
 * Others
 	- `#demo_frontend`
