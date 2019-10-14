@@ -21,7 +21,7 @@ When you are testing push notifications make sure that:
 		- for local builds (built from Xcode) select Development environment
 		- for App Center builds select Production environment
 - make sure you notify in `#ios` slack channel that you are changing PubNub environment
-- REMEMBER to change APNS environment back to production when you are done and notify `#ios` slack channel. This is so that testing can continue on AppCentre builds.
+- REMEMBER to change APNS environment back to production when you are done and notify `#ios` slack channel. This is so that testing can continue on App Center builds.
 - if you are working from the West Office make sure you are on Babylon-Partners WiFi network as BabylonQA network may have issues with receiving push notifications
 
 ## PubNub
