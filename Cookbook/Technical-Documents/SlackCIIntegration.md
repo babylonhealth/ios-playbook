@@ -1,6 +1,6 @@
 ## Slack CI Integration
 
-From time to time we need to trigger some CI jobs manually, for example to create a Hockeyapp or Testflight distribution build. This can be done easily from Slack Slash Commands powered by our bots, [Stevenson](https://github.com/Babylonpartners/Stevenson) and its predecessor Steve.
+From time to time we need to trigger some CI jobs manually, for example to create an App Center or TestFlight distribution build. This can be done easily from Slack Slash Commands powered by our bots, [Stevenson](https://github.com/Babylonpartners/Stevenson) and its predecessor Steve.
 
 ### Supported commands (Stevenson)
 
@@ -22,21 +22,21 @@ Note the names of the targets are following the names in the project.
 
 Tip: `/testflight help` will respond with instructions for this command.
 
-* #### `/hockeyapp`
+* #### `/appcenter`
 
-Creates a Hockeyapp build in **Debug** configuration for Hockeyapp distribution (beta). It requires the target name, **as they are defined in the project**, as the first parameter:
-
-```
-/hockeyapp Babylon
-```
-
-This will trigger the `hockeyapp` lane on the `develop` branch. You can additionally specify a branch:
+Creates an App Center build in **Debug** configuration for App Center distribution (beta). It requires the target name, **as they are defined in the project**, as the first parameter:
 
 ```
-/hockeyapp Babylon branch:ilya/CE-123
+/appcenter Babylon
 ```
 
-Tip: `/hockeyapp help` will respond with instructions for this command.
+This will trigger the `appcenter` lane on the `develop` branch. You can additionally specify a branch:
+
+```
+/appcenter Babylon branch:ilya/CE-123
+```
+
+Tip: `/appcenter help` will respond with instructions for this command.
 
 * #### `/fastlane`
 
@@ -73,7 +73,7 @@ Some of the commands are implemented in the older version of our bot. They are s
 
 * #### `/distribute` (deprecated)
 
-This command will make a beta build for Hockeyapp. It should be invoked in a format `/distribute branch:target`:
+This command will make a beta build for App Center. It should be invoked in a format `/distribute branch:target`:
 
 ```
 /distribute release/3.15.0:babylon
