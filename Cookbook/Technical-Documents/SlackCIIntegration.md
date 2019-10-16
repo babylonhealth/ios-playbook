@@ -69,15 +69,15 @@ Tip: `/crp help` will respond with instructions for this command.
 
 * #### `/stevenson`
 
-This command will run arbitrary workflow defined in out CI configuration. To see the list of supported formatats look for `parameters` section in the CircleCI config file.
+This command will run arbitrary workflow defined in our CI configuration. To see the list of supported workflows look for `parameters` section in the CircleCI config file.
 
-When running workflow you should specify parameters that are required for this workflow, unless they have default values. If parameter is missing or extra parameters are sent the build will fail and you will get an error message.
+When running a workflow you should specify parameters that are required for this workflow, unless they have default values. If a parameter is missing or extra parameters are sent the build will fail and you will get an error message.
 
 ```
-/stevenson test_pr branch:develop
+/stevenson ui_tests branch:develop
 ```
 
-You can also invoke all other command using `/stevenson` command, i.e.:
+You can also invoke all other commands using the `/stevenson` command, e.g.:
 
 ```
 /stevenson fastlane ui_test_babylon_smoke branch:develop device:"iPhone X"
