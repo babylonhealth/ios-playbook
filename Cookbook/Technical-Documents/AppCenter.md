@@ -1,4 +1,4 @@
-**If you want to know how to invite people, [click here](#adding-people-to the-organisation).**
+**If you want to know how to invite people, [click here](#adding-people-to-the-organisation).**
 
 # Accessing App Center builds
 
