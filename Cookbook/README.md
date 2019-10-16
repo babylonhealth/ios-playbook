@@ -54,4 +54,4 @@ iOS Cookbook 👩‍🍳
 * [How to invoke CI jobs from Slack](./Technical-Documents/SlackCIIntegration.md)
 * [Xcode Tips & Tricks](Technical-Documents/XcodeTips.md)
 * [Configure PullAssigner on our repos](Technical-Documents/PullAssigners.md)
-* [Accessing App Center builds](Technical-Documents/AppCenter.md)
+* [App Center](Technical-Documents/AppCenter.md)
