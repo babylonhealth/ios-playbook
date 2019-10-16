@@ -157,7 +157,7 @@ Depending on the use case we are using different ways to define Feature Switches
 
 ## Phasing out feature switch
 
-TBD
+This is yet to be defined.
 
 ## Dos and don'ts
 
