@@ -5,7 +5,7 @@ As iOS Engineers, we have Squad related work and we also have iOS Chapter work. 
 ## The duties
 
 * **Be available to answer any requests posted in the #ios and #ios-usa-support.** The engineer can either solve the request or delegate to someone who might know how to solve it.
-* **Pick up tickets from the iOS Platform backlog.** These are tickets that don't have any Squad as an owner and still need to be fixed.
+* **Pick up tickets from the iOS Platform backlog.** These are tickets that don't have any Squad as an owner and still need to be fixed. [Kanban board](https://babylonpartners.atlassian.net/secure/RapidBoard.jspa?rapidView=1100&projectKey=IOSP)
 * **Work in personal goals.** Personal goals should be tasks that will help you improve competences in your preferred areas. They are also important tasks that are used, in addition to other metrics, to evaluate your performance. 
 
 ## The schedule
