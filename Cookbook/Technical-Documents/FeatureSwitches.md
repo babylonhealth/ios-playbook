@@ -161,7 +161,7 @@ TBD
 
 ## Dos and don'ts
 
-- don't change the default value of the flag. We use `false` as default value for all the flags to make their behaviour more predictable and uniform (in oppsoite to having some flags have it `true` and some have it `false`).
-- start new feature development with a local feature switch. When you are going to release the feature convert it to remote feature switch. This way you don't have to use regular expression on the Firebase (if you use Firebase remote config) all the time, only if you need to change the value of the flag _after_ it was released.
-- do not introduce feature flags that affect each other. Each feature flag increases testing complexity as it introduces new combinations.
-- try to limit the usage of the feature switch using design patterns like strategy, delegate, facade etc.
+- Don't change the default value of the flag. We use `false` as default value for all the flags to make their behaviour more predictable and uniform (in opposite to having some flags have it `true` and some have it `false`).
+- Start new feature development with a local feature switch. When you are going to release the feature convert it to remote feature switch. This way you don't have to use a regular expression on Firebase (if you use Firebase remote config) all the time, only if you need to change the value of the flag _after_ it was released.
+- Do not introduce feature flags that affect each other. Each feature flag increases testing complexity as it introduces new combinations.
+- Try to limit the usage of the feature switch using design patterns like strategy, delegate, facade etc.
