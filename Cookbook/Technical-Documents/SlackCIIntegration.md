@@ -74,7 +74,7 @@ This command will run arbitrary workflow defined in out CI configuration. To see
 When running workflow you should specify parameters that are required for this workflow, unless they have default values. If parameter is missing or extra parameters are sent the build will fail and you will get an error message.
 
 ```
-/stevension test_pr branch:develop
+/stevenson test_pr branch:develop
 ```
 
 You can also invoke all other command using `/stevenson` command, i.e.:
