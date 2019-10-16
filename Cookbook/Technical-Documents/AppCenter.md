@@ -1,3 +1,5 @@
+**If you want to know how to invite people, [click here](#inviting-people-to-app center).**
+
 # Accessing App Center builds
 
 ### Steps to install
@@ -57,5 +59,28 @@ If this happened, follow these steps:
 	![app-center-iphone-profle-trust](./Assets/app-center/iphone-profle-trust.png)
 
 6. You should be able to launch the build now.
+
+
+# Adding people to the organisation
+App Center team currenty is working on integrating Azure Active Directory to App Center Auth but for now we still need to manually invite people. See [App Center ticket](https://github.com/microsoft/appcenter/issues/994) to check the progress on this.
+
+### Steps to invite
+
+1. Visit [App Center login page](https://appcenter.ms/sign-in) (using incognito mode to avoid logging you out from your personal account)
+
+2. Click `Sign in with email` on the bottom of the page.
+
+3. Use `App Center` credentials from iOS Team 1Password.
+
+4. On the left panel, select `Babylon Health` organization and go to `People` page.
+
+5. Inside `Collaborators` tab, invite someone using his/her `@babylonhealth.com` email.
+
+6. Switch to `Teams` tab and select the team you want to add person to. "BABYLON-TEAM" gives access to download builds for all of our projects so if you're not sure which one you should select, just invite there.
+
+7. Inside the team, add collaborator using his/her email (**Unfortunately, you can only add poeple that already accepted invitation to the organisation so you need to wait for them to accept**).
+
+
+
 
 
