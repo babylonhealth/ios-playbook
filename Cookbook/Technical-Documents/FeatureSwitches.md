@@ -2,25 +2,25 @@
 
 This document describes the process that should be followed when defining Features Switches.
 
-Depending on the use case we are using different ways to define Feature Switches in our code base. Feature Switches is not always some `Bool` value that can be either `true` or `false`, though most of the times it will be just a `Bool`, it can be a more complicated type that defines a conditional behaviour.
+Depending on the use case we are using different ways to define Feature Switches in our code base. A feature switch is not always some `Bool` value that can be either `true` or `false` (though most of the times it will be), it can be a more complicated type that defines a conditional behaviour.
 
 1. **Local feature switches**
 
-	These feature switches are defined in the `LocalFeatureSwitchesProtocol` and are stored in `UserDefaults`. **These feature switches are supposd to be used only during the development of any new feature so that the code for the feature can be integrated in the `develop` branch continuously.** As they are stored in `UserDefaults` they can be overriden during testing with Settings app. To add a new local feature switch do following:
+	These feature switches are defined in the `LocalFeatureSwitchesProtocol` and are stored in `UserDefaults`. **These feature switches are supposed to be used only during the development of any new feature so that the code for the feature can be integrated into the `develop` branch continuously.** As they are stored in `UserDefaults` they can be overridden during testing with Settings app. To add a new local feature switch do the following:
 
-	1. add a new case in the `SettingsKeys` enum for this feature flag in `LocalFeatureSwitches.swift`:
+	1. Add a new case in the `SettingsKeys` enum for this feature flag in `LocalFeatureSwitches.swift`:
 
 	```swift
 	case isNewFeatureEnabled
 	```	
 	
-	2. add a new property to the `LocalFeatureSwitchesProtocol` in `LocalFeatureSwitches.swift`:
+	2. Add a new property to the `LocalFeatureSwitchesProtocol` in `LocalFeatureSwitches.swift`:
 
 	```swift
 	static var isNewFeatureEnabled: Bool { get }
 	```
 	
-	3. add a default implementation of a feature switch property in the extension of `LocalFeatureSwitchesProtocol` in `LocalFeatureSwitches.swift`:
+	3. Add a default implementation in the extension of `LocalFeatureSwitchesProtocol` in `LocalFeatureSwitches.swift`:
 
 	```swift
     public static var isNewFeatureEnabled: Bool {
@@ -35,7 +35,7 @@ Depending on the use case we are using different ways to define Feature Switches
 	Note: `ENABLE_FEATURE_FLAGS` compilation condition exists so that we are able to disable all the **local feature flags** in the builds that we provide for user testing. This flag should be used **only with local feature switches**.
 	
 	
-	4. add a new entry in the `Root.plist` for a toggle for this feature. The key name should be the same as the raw value of the case in `SettingsKeys` added before. The entry should be added after the `PSGroupSpecifier` item named `✨ Local Feature Switches ✨` and before `✨ Remote Feature Switches ✨` (this will visually group it with other local feature switches in the Settings app)
+	4. Add a new entry in the `Root.plist` for a toggle for this feature. The key name should be the same as the raw value of the case in `SettingsKeys` added before. The entry should be added after the `PSGroupSpecifier` item named `✨ Local Feature Switches ✨` and before `✨ Remote Feature Switches ✨` (this will visually group it with other local feature switches in the Settings app)
 
 		1. if the feature is related to the Babylon app only it is enough to add the entry to the plist located at `Babylon/Brand/babylon/Settings.bundle`
 		2. if the feature is related to all our apps then the same entry should be added to the plist located at `Babylon/Supporting Files/Settings.bundle`
@@ -57,9 +57,9 @@ Depending on the use case we are using different ways to define Feature Switches
 
 2. **Application configuration**
 
-	Application configuration, as name implies, exists to specify application specific configuraitons, i.e. if a feature should be enabled or completely disabled for a specific app or if it should use a different content. To define a new application configuration you should add a new property to the `AppConfigurationProtocol` in `AppConfiguration.swift`. If the flag is related to a specific feature then it might be better to define it in the dedicated configuration struct/protocol, i.e. if the flog is related to `Appointments` we have `AppointmentsContentProtocol` for this purpose.
+	Application configuration, as name implies, exists to specify application specific configuraitons, i.e. if a feature should be enabled or completely disabled for a specific app or if it should use a different content. To define a new application configuration you should add a new property to the `AppConfigurationProtocol` in `AppConfiguration.swift`. If the flag is related to a specific feature then it might be better to define it in the dedicated configuration struct/protocol, i.e. if the flag is related to `Appointments` we have `AppointmentsContentProtocol` for this purpose.
 	
-	A difference with other Feature Switches is that Application Configuration is used when we know that the configuration is specific to specific app (not the locale, not the user's region or their consumer network) and other apps should have the same feature configured differently. Other Feature Switches are not target specific.
+	A difference with other Feature Switches is that Application Configuration is used when we know that the configuration is specific to a specific _app_ (not the locale, not the user's region or their consumer network) and other apps should have the same feature configured differently. Other Feature Switches are not target specific.
 	
 	It's however possible to have Application Configuration switch to be "driven" by a Local Feature switch or even Remote Feature Switch. This way we can both have a flexibility of these feature switches (that we can change their values remotely or from the Settings app) but we at the same time can override this configuration for other targets and we don't have to change the way how we access the flag in the code when for example we change from a local to remote feature switch.
 	
