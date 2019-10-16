@@ -79,8 +79,3 @@ App Center team is currently working on integrating Azure Active Directory to Ap
 6. Switch to the `Teams` tab and select the team you want to add the person to. "BABYLON-TEAM" gives access to download builds for all of our projects so if you're not sure which one you should select, just invite there.
 
 7. Inside the team, add collaborator using his/her email (**Unfortunately, you can only add people that already accepted an invitation to the organisation so you need to wait for them to accept**).
-
-
-
-
-
