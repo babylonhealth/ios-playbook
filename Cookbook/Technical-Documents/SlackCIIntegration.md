@@ -67,43 +67,23 @@ This command will create a CRP Jira ticket for the app release. Currently it onl
 
 Tip: `/crp help` will respond with instructions for this command.
 
-### Other commands (Steve)
+* #### `/stevenson`
 
-Some of the commands are implemented in the older version of our bot. They are still working as they should, but some of them are deprecated and running them will suggest you to run a new command. **They will still work as they used to until they are completely removed from Slack integration**
+This command will run arbitrary workflow defined in our CI configuration. To see the list of supported workflows look for `parameters` section in the CircleCI config file.
 
-* #### `/distribute` (deprecated)
-
-This command will make a beta build for App Center. It should be invoked in a format `/distribute branch:target`:
+When running a workflow you should specify parameters that are required for this workflow, unless they have default values. If a parameter is missing or extra parameters are sent the build will fail and you will get an error message.
 
 ```
-/distribute release/3.15.0:babylon
+/stevenson ui_tests branch:develop
 ```
 
-Note that target names are not following their naming in the project, they should be lowercased ("babylon", "bupa", "nhs111", "telus")
-
-* #### `release` (deprecated)
-
-This command will make a release build for Testflight. It should be invoked in a format `/release target:version`:
+You can also invoke all other commands using the `/stevenson` command, e.g.:
 
 ```
-/release babylon:3.15.0
+/stevenson fastlane ui_test_babylon_smoke branch:develop device:"iPhone X"
 ```
 
-Names of the targets are the same as for `/distribute` command. **This command does not properly support arbitrary branches so does not porperly work for targets other than Babylon**. For other targets use either `/testflight` or `/fastlane` commands.
-
-* #### `/distribute_sdk`
-
-This commands will make a new SDK release and upload it to Artifactory:
-
-```
-/distribute_sdk version:0.6.0
-```
-
-This will create a new release from `develop` branch. Aditionally you can specify a branch:
-
-```
-/distribute_sdk version:0.6.0 branch:develop
-```
+Tip: `/stevenson help` will respond with instructions for this command.
 
 ### Troubleshooting
 
