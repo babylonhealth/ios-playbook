@@ -74,8 +74,8 @@ App Center team is currently working on integrating Azure Active Directory to Ap
 
 4. On the left panel, select `Babylon Health` organization and go to the `People` page.
 
-5. Inside the `Collaborators` tab, invite someone using his/her `@babylonhealth.com` email.
+5. Inside the `Collaborators` tab, invite someone using their `@babylonhealth.com` email.
 
-6. Switch to the `Teams` tab and select the team you want to add the person to. "BABYLON-TEAM" gives access to download builds for all of our projects so if you're not sure which one you should select, just invite there.
+6. Switch to the `Teams` tab and select the team you want to add the person to. `BABYLON-TEAM` gives access to download builds for all of our projects so if you're not sure which one you should select, just invite there.
 
-7. Inside the team, add collaborator using his/her email (**Unfortunately, you can only add people that already accepted an invitation to the organisation so you need to wait for them to accept**).
+7. Inside the team, add the collaborator using their email (**Unfortunately, you can only add people that already accepted an invitation to the organisation so you need to wait for them to accept**).
