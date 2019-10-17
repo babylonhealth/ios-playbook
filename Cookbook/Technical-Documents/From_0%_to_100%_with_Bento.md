@@ -415,6 +415,6 @@ Generally speaking, Bento is our implementation of SwiftUI as we have started to
 
 The most important thing about Bento is it uses a UITableView or UICollectionView to render view and that's why it needs additional types as `Box` `Section` and `Node`.
 
-`DesignLibrary` is also used very close with Bento as from `DesignLibrary` we have all the **components** we can use to build screens with `Bento`. Keep in mind that **components** are not UIView subclasses. They are **light-weigh** structs based on which UIView classes are loaded later on.
+`DesignLibrary` is also used very close with Bento as from `DesignLibrary` we have all the **components** we can use to build screens with `Bento`. Keep in mind that **components** are not UIView subclasses. They are **light-weigh** structs based on which UIView classes are created later on.
 
 If you have any ideas on how this article can be improved let us know and don't forget... **"We accept PRs"** 😉
