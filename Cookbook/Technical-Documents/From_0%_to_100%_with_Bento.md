@@ -41,9 +41,9 @@ In this article I would answer few questions regarding Bento. If you are a new p
 ## What and why?
 First of all, Bento is our internal library which allows us to write UI code in a declarative way. This makes it faster to write the UI code. 
 
-```plain
-Bento now is our internal library however we used to open source it. It has changed when Apple announced SwiftUI at WWDC 2019. We decided to move it under the main repo back then.
-```
+Bento now is our internal library however it used to be an open source project. It has changed when Apple announced SwiftUI at WWDC 2019. We decided to move it under the main repo back then.
+
+The format of this article will be a step by step guide how to implement your first Renderer. Let's build something! 🏗
 
 ## This is what we want to build
 ![](/Users/adam.borek/Developer/babylon/images/bento01.png)
@@ -101,10 +101,10 @@ extension ChoosePharmacyTypeRenderer {
 
 ```
 
-Going from the top the first question you may ask is "What's a Config". As a result of how `BoxRenderer` is coupled with `BabylonBoxViewController` we cannot pass dependencies as we usually do in a init. Config is a way of injecting dependencies into a renderer.
+Going from the top the first question you may ask is "What's a Config". As a result of how `BoxRenderer` is coupled with `BabylonBoxViewController` we cannot pass dependencies as we usually do in an init. Config is a way of injecting dependencies into a renderer.
 
 ```plain
- 12 Aug 2019 - Renderer has to be a struct as there is a problem with classes & memory management. Classes are not deallocated. It may be fixed someday but it's still the case when I'm writing this article.
+ 12 Aug 2019 - Renderer has to be a struct as there is a problem with classes & memory management as classes are not deallocated. It may be fixed someday but it's still the case when I'm writing this article.
 ```
 
 Now let's jump into the `render(state:)`. It returns a Screen. This is how a Screen may look like:
@@ -340,7 +340,7 @@ The banner can be build from 2 images and 1 label. Let's put them all into a sta
     ) -> AnyRenderable {
         return [
             leadingIcon.map { UI.Image(image: $0.withRenderingMode(.alwaysTemplate)) },
-            UI.Label(text: description, styleSheet: LabelStyleSheet()),
+            UI.Label(text: description),
             trailingIcon.map { UI.Image(image: $0.withRenderingMode(.alwaysTemplate)) }
         ]
         .stack(axis: .horizontal, spacing: 8, layoutMargins: 8)
@@ -348,7 +348,7 @@ The banner can be build from 2 images and 1 label. Let's put them all into a sta
     }
 ```
 
-As you can see, we used 3 atomic components (ignore LabelStyleSheet for a sec) and then we put them all into a stackView.
+As you can see, we used 3 atomic components and then we put them all into a stackView.
 
 The code above compiles however it doesn't look as the design image. First of all, images should have fixed size and we should set `tintColor` on them as we use `.alwaysTemplate` rendering mode. We just need to add few more operators:
 
@@ -356,46 +356,39 @@ The code above compiles however it doesn't look as the design image. First of al
 ```swift
 	leadingIcon.map {
 		UI.Image(
-			image: $0.withRenderingMode(.alwaysTemplate),
-			styleSheet: ImageViewStyleSheet()
-				   .compose(\.tintColor, iconsColor)
+			image: $0.withRenderingMode(.alwaysTemplate)
 		)
+		.tintColor(iconsColor)
 	  .height(24)
 		.width(24)
 	},
 ```
 
-`height` and `width` are 2 from few operators we have available in the codebase. They have been written in a way so the usage & syntax remind of SwiftUI.
+`tintColor`, `height` and `width` are 3 from many operators we have available in the codebase. They have been written in a way so the usage & syntax remind of SwiftUI.
 
-`ImageViewStyleSheet` is our own way to style components. The `UI.Image` is not a `UIView` subclass so it's light enough to be loaded all over again with each renderer's UI calculation. However, we need a way to style views. This is what StyleSheet is for. `compose` and key paths are a way of setting how a UIView should looks like. Stylesheets are about how something is drawn (colors, fonts, numberOfLines, transform) while operators are about layout, constraints etc.
-
-Coming back to the code, we also need to style the label. Again we are going to use a styleSheet:
-
+Now is also a time to style the label:
 ```swift
-	UI.Label(
-		text: description,
-    styleSheet: LabelStyleSheet()
-	    .compose(\.textColor, tokens.colors.white)
-	    .compose(\.font, font(fontAttributes: tokens.typography.body))
-			.compose(\.textAlignment, .center)
-			.compose(\.lineBreakMode, .byWordWrapping)
-	)
+    UI.Label(
+			text: description
+    )
+		.textColor(tokens.colors.white)
+		.font(font(fontAttributes: tokens.typography.body))
+		.textAlignment(.center)
+		.lineBreakMode(.byWordWrapping),
 ```
 
 As a last thing we need to put all we have into a container and fill it with purple'ish color:
 
 ```swift
     .stack(axis: .horizontal, spacing: 8, layoutMargins: 8)
-    .container(
-        styleSheet: ViewStyleSheet()
-            .compose(\.backgroundColor, tokens.colors.primary)
-    )
+		.container()
+		.backgroundColor(tokens.colors.primary)
 ```
 
 This is how the entire function looks like:
 
 ```swift
-    public func banner(
+    public func banner3(
         description: String,
         leadingIcon: UIImage? = nil,
         trailingIcon: UIImage? = nil,
@@ -405,39 +398,38 @@ This is how the entire function looks like:
             return [
                 leadingIcon.map {
                     UI.Image(
-                        image: $0.withRenderingMode(.alwaysTemplate),
-                        styleSheet: ImageViewStyleSheet()
-                            .compose(\.tintColor, iconsColor)
+                        image: $0.withRenderingMode(.alwaysTemplate)
                     )
+                    .tintColor(iconsColor)
                     .height(24)
                     .width(24)
                 },
 
                 UI.Label(
-                    text: description,
-                    styleSheet: LabelStyleSheet()
-                        .compose(\.textColor, tokens.colors.white)
-                        .compose(\.font, font(fontAttributes: tokens.typography.body))
-                        .compose(\.textAlignment, .center)
-                        .compose(\.lineBreakMode, .byWordWrapping)
-                ),
+                    text: description
+                )
+                .textColor(tokens.colors.white)
+                .font(font(fontAttributes: tokens.typography.body))
+                .textAlignment(.center)
+                .lineBreakMode(.byWordWrapping),
+
                 trailingIcon.map {
                     UI.Image(
-                        image: $0.withRenderingMode(.alwaysTemplate),
-                        styleSheet: ImageViewStyleSheet()
-                            .compose(\.tintColor, iconsColor)
+                        image: $0.withRenderingMode(.alwaysTemplate)
                     )
+                    .tintColor(iconsColor)
                     .height(24)
                     .width(24)
                 }
         ]
         .stack(axis: .horizontal, spacing: 8, layoutMargins: 8)
-        .container(
-            styleSheet: ViewStyleSheet()
-                .compose(\.backgroundColor, tokens.colors.primary)
-        )
+        .container()
+        .backgroundColor(tokens.colors.primary)
         .asAnyRenderable()
     }
 ```
 
 Of course in production code it would be nice to extract few helper functions to have smaller main banner function. 
+
+#### Stylesheets
+In the implementation of Bento you may find some classes called Stylesheets. Those are an old way of styling our views, before we had operators like `.backgroundColor(_ color: UIColor)` or `.font(_ font: UIFont)`. Stylesheets used to defined **how** a view looks like. Keep in mind that now Stylesheet usage should be limited and replaced with operators.
