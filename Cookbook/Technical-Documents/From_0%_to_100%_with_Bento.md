@@ -73,7 +73,10 @@ extension ChoosePharmacyTypeRenderer {
 Going from the top the first question you may ask is **"What's a Config"**. As a result of how `BoxRenderer` is coupled with `BabylonBoxViewController` we cannot pass dependencies as we usually do in an init. Config is a way of **injecting dependencies** into a renderer.
 
 ```plain
- 12 Aug 2019 - Renderer has to be a struct as there is a problem with classes & memory management as classes are not deallocated. It may be fixed someday but it's still the case when I'm writing this article.
+ 12 Aug 2019 - Renderer has to be a struct as there is a problem 
+ with classes & memory management as classes are not 
+ deallocated. It may be fixed someday but it's still the case 
+ when I'm writing this article.
 ```
 
 Now let's jump into the `render(state:)`. It returns a Screen. This is how a Screen may look like:
@@ -136,7 +139,8 @@ With `|-+` and `|---+` you can add many sections and rows into your Box.
 Sections and Nodes take an ID as their arguments. The ID is needed for diff algorithm to calculate changes between each UI calculation. ID is represented by enums (`enum SectionID` and `enum NodeID`).
 
 ```
-Very often there is only a single Section on the screen. In that case, we name this Section's id as "first".
+Very often there is only a single Section on the screen. 
+In that case, we name this Section's id as "first".
 ```
 
 `Node` also takes a `component` which is a representation of a **cell** displayed on the screen. A component is a `Renderable`. With minimal luck, you won't need to create a component on your own as it's waiting for you to be used inside **the Design Library**. Your job is to only fill it with values.
@@ -146,7 +150,8 @@ Design Library is a library of **reusable** components created **both** by desig
 From a developer's point of view, the Design Library is a builder pattern with many functions, each returning a component. You can access the design library via `appearance` property in a renderer. In the above example, we used `row3`. 
 
 ```
-In our codebase, there is an additional scheme & target called "GalleryApp". You can find there all Design Library components which have been written so far.
+In our codebase, there is an additional scheme & target called "GalleryApp".
+You can find there all Design Library components which have been written so far.
 ```
 
 At this point you should be able to run the app and see the following:
