@@ -73,10 +73,8 @@ extension ChoosePharmacyTypeRenderer {
 Going from the top the first question you may ask is **"What's a Config"**. As a result of how `BoxRenderer` is coupled with `BabylonBoxViewController` we cannot pass dependencies as we usually do in an init. Config is a way of **injecting dependencies** into a renderer.
 
 ```plain
- 12 Aug 2019 - Renderer has to be a struct as there is a problem 
- with classes & memory management as classes are not 
- deallocated. It may be fixed someday but it's still the case 
- when I'm writing this article.
+ 12 Aug 2019 - Renderer has to be a struct as there is a problem with classes & memory management 
+ as classes are not deallocated. It may be fixed someday but it's still the case when I'm writing this article.
 ```
 
 Now let's jump into the `render(state:)`. It returns a Screen. This is how a Screen may look like:
