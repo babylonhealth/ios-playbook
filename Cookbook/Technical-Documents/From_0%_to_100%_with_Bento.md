@@ -36,7 +36,13 @@ Rarely, but sometimes, we cannot use `BabylonBoxViewController`. I'd like to gui
 # The Article (in progress):
 To be added... Stay tuned 😎
 
-In this article, I would like to answer a few questions regarding Bento. If you are a new person in the team and you have questions like: **"What is Bento?"**, **"Why do we use it?"**, **"How should I use it?"**, **"What's a renderable?"** then the article is for you.
+In this article, I would like to answer a few questions regarding Bento. If you are a new person in the team and you have questions like: 
+- **"What is Bento?"**, 
+- **"Why do we use it?"**, 
+- **"How should I use it?"**,
+- **"What's a renderable?"** 
+
+then the article is for you. However, I assume you are already kind of familiar with our Architecture.
 
 ## What and why?
 First of all, Bento is our **internal library** which allows us to write UI code in a declarative way. This makes it faster to write the UI code. 
@@ -49,7 +55,7 @@ The format of this article will be a step by step guide on how to implement your
 ![](/Users/adam.borek/Developer/babylon/images/bento01.png)
 
 ## Renderer
-I assume you are already kind of familiar with our Architecture. Quick recap, a typical screen is built from:
+As I said before, I assume you are already kind of familiar with our Architecture. Quick recap, a typical screen is built from:
 - ViewController
 - ViewModel
 - Renderer
@@ -254,7 +260,7 @@ To make it more readable you can extract helper functions:
 ```
 
 #### Handle tapping on a row
-Right now you should be able to see 2 rows however tapping on them does nothing. 
+Right now you should be able to see 2 rows; however, tapping on them does nothing. 
 
 A user's input (as any other event) can change ViewModel's state. As a result, a user's input also needs to go through Feedback dance in a ViewModel. To distinguish user's inputs from other events, in ViewModel there is an `enum Action`. Renderer gets a closure in the init called `observer` which takes an `Action` and passes it to a ViewModel. All you need to do is to **send** a proper `Action` into the `observer`:
 
@@ -311,7 +317,7 @@ enum NodeID {
 }
 ```
 
-## How to create a fresh new component?
+## How can I create a fresh new component?
 Sometimes we need to create a new component. Usually, it's because the component hasn't been used by another iOS dev. 
 
 What's the process? First of all, look at the checklist what needs to be done:
