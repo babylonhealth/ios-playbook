@@ -433,3 +433,12 @@ Of course in production code it would be nice to extract few helper functions to
 
 #### Stylesheets
 In the implementation of Bento you may find some classes called Stylesheets. Those are an old way of styling our views, before we had operators like `.backgroundColor(_ color: UIColor)` or `.font(_ font: UIFont)`. Stylesheets used to defined **how** a view looks like. Keep in mind that now Stylesheet usage should be limited and replaced with operators.
+
+## Summary
+Generally speaking Bento is our implementation of SwiftUI as we have started to use it at least a year before SwiftUI was announced. 
+
+The most important thing about Bento is it uses a UITableView or UICollectionView to render view and that's why it needs additional types as `Box` `Section` and `Node`.
+
+`DesignLibrary` is also used very close with Bento as from `DesignLibrary` we have all the **components** we can use to build screens with `Bento`. Keep in mind that **components** are not UIView subclasses. They are light-weigh structs based on which UIView classes are loaded later on.
+
+If you have any ideas how this article can be improved let us know and don't forget... "We accept PRs" 😉
