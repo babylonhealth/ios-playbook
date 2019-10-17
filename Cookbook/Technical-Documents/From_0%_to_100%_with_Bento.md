@@ -3,7 +3,7 @@ In this article, I would like to answer a few questions regarding Bento. If you 
 - **"What is Bento?"**, 
 - **"Why do we use it?"**, 
 - **"How should I use it?"**,
-- **"What's a renderable?"** 
+- **"What's renderable?"** 
 
 then the article is for you. However, I assume you are already kind of familiar with our Architecture.
 
