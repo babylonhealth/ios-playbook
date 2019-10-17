@@ -441,4 +441,6 @@ The most important thing about Bento is it uses a UITableView or UICollectionVie
 
 `DesignLibrary` is also used very close with Bento as from `DesignLibrary` we have all the **components** we can use to build screens with `Bento`. Keep in mind that **components** are not UIView subclasses. They are light-weigh structs based on which UIView classes are loaded later on.
 
-If you have any ideas how this article can be improved let us know and don't forget... "We accept PRs" 😉
+In case you are looking for more examples of Renderers which use Bento just search for Renderers which implement `BoxRenderer` in our codebase.
+
+At last I want to ask you if you have any ideas how this article can be improved let us know and don't forget... "We accept PRs" 😉
