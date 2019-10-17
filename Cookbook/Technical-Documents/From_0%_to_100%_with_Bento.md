@@ -159,7 +159,7 @@ At this point you should be able to run the app and see the following:
 
 ![](./Assets/bento-image-02.png)
 
-To display the 2nd row you just need to add 2nd row to the box:
+To display the 2nd row, you just need to add another row to the box:
 ```swift
     private func renderOptions() -> Box<SectionID, NodeID> {
         return .empty
