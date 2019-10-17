@@ -304,12 +304,13 @@ The `^` and `>>>` are our operators to simplify our codebase. The `^` is a lift 
 
 ```swift
 func renderList(of prescriptions: [Prescription]) -> Box<SectionID, NodeID> {  
-    .empty
-    |-+ Section(id: .first)
-    |---* prescriptions.map { prescription in
-        return Node(
-            id: .prescription(prescription.id),
-            component: appearance.row1(title: prescription.drugName)
+	return .empty
+		|-+ Section(id: .first)
+		|---* prescriptions.map { prescription in
+			return Node(
+				id: .prescription(prescription.id),
+				component: appearance.row1(title: prescription.drugName)
+			)
 }
      
 enum NodeID {
@@ -323,7 +324,8 @@ Sometimes we need to create a new component. Usually, it's because the component
 What's the process? First of all, look at the checklist what needs to be done:
 
 ### New component checklist
-1. Check if the component is in Zeplin under `Design System` tag
+<<<<<<< HEAD
+1. Check if the component is in Zeplin under `Design System` tag. Chase a designer if it's not there :)
 2. If the component is there, you can implement it by adding a factory method as an extension of the ComponentsBuilder `extension DesignLibrary.ComponentsBuilder`
 3. Record snapshot tests
 4. Add a demo of the component into GalleryApp
