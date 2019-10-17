@@ -16,7 +16,7 @@ When we want to make a significant change to our process, architecture, codestyl
 ### Make a Pull Request
 
 * Describe in a few words the purpose of the proposal in the PR body. Also mention any previous discussion (e.g. Slack) on the topic.
-* Copy-paste [the template dedicated to proposal PRs](https://raw.githubusercontent.com/Babylonpartners/ios-playbook/master/.github/PULL_REQUEST_TEMPLATE/proposal.md) at the end and fill it
+* Copy-paste [the template dedicated to proposal PRs](https://raw.githubusercontent.com/babylonhealth/ios-playbook/master/.github/PULL_REQUEST_TEMPLATE/proposal.md) at the end and fill it
 * Add the "Proposal" label to it
 * When all is ready, also add the "Ready for Review" label
 

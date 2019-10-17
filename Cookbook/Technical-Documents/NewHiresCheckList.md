@@ -8,11 +8,11 @@ You can find the list of services you'll need and how to get access to them in [
 
 Prior to starting, make sure you have a GitHub account (either your personal or new for Babylon) and that you have access to the following repositories:
 
-- [babylon-ios](https://github.com/Babylonpartners/babylon-ios)
-- [ios-charts](https://github.com/Babylonpartners/ios-charts)
-- [ios-private-podspecs](https://github.com/Babylonpartners/ios-private-podspecs)
-- [ios-build-distribution](https://github.com/Babylonpartners/ios-build-distribution)
-- [ios-fastlane-match](https://github.com/Babylonpartners/ios-fastlane-match)
+- [babylon-ios](https://github.com/babylonhealth/babylon-ios)
+- [ios-charts](https://github.com/babylonhealth/ios-charts)
+- [ios-private-podspecs](https://github.com/babylonhealth/ios-private-podspecs)
+- [ios-build-distribution](https://github.com/babylonhealth/ios-build-distribution)
+- [ios-fastlane-match](https://github.com/babylonhealth/ios-fastlane-match)
 
 See [section above](#access-to-services) if you don't have access yet.
 
@@ -97,7 +97,7 @@ shell script. Here's how to get the iOS project up and running:
 
 1. It can be useful to create a command line alias for `pod` to `bundle exec pod` so that you are guaranteed to always be running the correct version of CocoaPods.
 
-1. Add yourself to the team list in the [playbook](https://github.com/Babylonpartners/ios-playbook) by making your first PR 😉
+1. Add yourself to the team list in the [playbook](https://github.com/babylonhealth/ios-playbook) by making your first PR 😉
 
 1. Add shared `iOS Developers` calendar to your calendar on Outlook
 

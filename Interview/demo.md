@@ -88,4 +88,4 @@ Once again, please note that the requirements above are **mandatory**.
 We would like to see a **non-trivial** pull request you have made to a public open source project. This should be something you are proud of and where you show your technical skills. **It should also be related to iOS development** and aligned with what you will do on a day-to-day basis. 😊✨🌳
 
 #### Thanks for your time! We look forward to hearing from you!
-- The [babylon health iOS team](http://github.com/Babylonpartners)
+- The [babylon health iOS team](http://github.com/babylonhealth)
