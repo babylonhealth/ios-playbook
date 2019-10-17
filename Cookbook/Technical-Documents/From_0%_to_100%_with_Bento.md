@@ -287,7 +287,6 @@ Sometimes we need to create a new component. Usually, it's because the component
 What's the process? First of all, look at the checklist what needs to be done:
 
 ### New component checklist
-<<<<<<< HEAD
 1. Check if the component is in Zeplin under `Design System` tag. Chase a designer if it's not there :)
 2. If the component is there, you can implement it by adding a factory method as an extension of the ComponentsBuilder `extension DesignLibrary.ComponentsBuilder`
 3. Record snapshot tests
