@@ -52,7 +52,7 @@ Bento now is our internal library however it used to be an **open-source** proje
 The format of this article will be a step by step guide on how to implement your first **Renderer**. Let's build something! 🏗
 
 ## This is what we want to build
-![](/Users/adam.borek/Developer/babylon/images/bento01.png)
+![](./Assets/bento-image-01.png)
 
 ## Renderer
 As I said before, I assume you are already kind of familiar with our Architecture. Quick recap, a typical screen is built from:
@@ -188,7 +188,7 @@ In our codebase, there is an additional scheme & target called "GalleryApp". You
 
 At this point you should be able to run the app and see the following:
 
-![](/Users/adam.borek/Developer/babylon/images/bento02.png)
+![](./Assets/bento-image-02.png)
 
 To display the 2nd row you just need to add 2nd row to the box:
 ```swift
@@ -332,7 +332,7 @@ What's the process? First of all, look at the checklist what needs to be done:
 
 ### Writing a new component
 Here we're going to focus on point 2. We are going to write a banner component:
-![](/Users/adam.borek/Developer/babylon/images/bento03.png)
+![](Assets/bento-image-03.png)
 
 We build components by putting **small blocks together**, usually in a StackView. By small blocks, I mean other components which we call `atomic components`. They are called `atomic` because those components are small, usually display a **small unit** as Label, ImageView, plain UIView.
 
