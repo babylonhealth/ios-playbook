@@ -268,6 +268,12 @@ A user's input (as any other event) can change ViewModel's state. As a result, a
 
 The `^` and `>>>` are our operators to simplify our codebase. The `^` is a lift operator which lifts single value `Action.didTapPharmacyCollection` into a function `() -> Action`. Why do we need to do so? The `>>>` composition operator needs 2 functions `(A -> B) >>> (B -> C) = (A -> C)`. In our case it's `(Void -> Action) >>> (Action -> Void) = (Void -> Void)` where `didTap` requires `Void -> Void`. Everything matches! 
 
+</br>
+
+> To find out more on functional operator in our code base check out [this article](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/FunctionalOperators.md).
+
+</br>
+
 #### Multiple rows
 `---+` operator allows you only to append a single node to a section. Very often we need to display a list of models. Bento has also `---*` operator which serves this purpose. This is how it would like in the code:
 
