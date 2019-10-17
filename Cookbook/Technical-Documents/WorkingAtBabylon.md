@@ -10,7 +10,7 @@ This document is modelled after Robin Malhotra's [Questions to ask your iOS inte
 
 ### Where do we store our code?
 
-We use Github. We have a central repo that hosts the main and white label apps, and a [few Open Source projects](https://github.com/search?q=topic%3Aios+org%3ABabylonpartners+fork%3Atrue) that we created and rely on.
+We use GitHub. We have a central repo that hosts the main and white label apps, and a [few Open Source projects](https://github.com/search?q=topic%3Aios+org%3Ababylonhealth+fork%3Atrue) that we created and rely on.
 
 ## Continuous Integration
 ### What Continuous Integration service do you use?

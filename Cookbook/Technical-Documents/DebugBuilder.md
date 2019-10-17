@@ -1,7 +1,7 @@
 Debug Builder
 ======================
 
-[\[CNSMR\-1602\] Add \`DebugAuthenticatedRootBuilder\` for faster UI debugging iteration by inamiy · Pull Request \#7645 · Babylonpartners/babylon\-ios](https://github.com/Babylonpartners/babylon-ios/pull/7645)
+[\[CNSMR\-1602\] Add \`DebugAuthenticatedRootBuilder\` for faster UI debugging iteration by inamiy · Pull Request \#7645 · babylonhealth/babylon\-ios](https://github.com/babylonhealth/babylon-ios/pull/7645)
 
 The above PR introduces `DebugAuthenticatedRootBuilder` which allows to directly show a target view builder after authentication.
 

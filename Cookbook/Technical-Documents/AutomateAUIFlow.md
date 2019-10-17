@@ -26,7 +26,7 @@ These files contain the test scenarios written in [Gherkin](https://cucumber.io/
 ### Step definitions
 These files are used to link the human readable Gherkin to user actions, implemented in screen objects. The library selected was [xctest-gherkin](https://github.com/net-a-porter-mobile/XCTest-Gherkin). The library uses regex to search for the corresponding step and facilitates passing in parameters.
 
-It is at this level where we should be asserting screen states, grouping *cross screen* actions or completing a single action. A detailed naming convention for step definitions is defined [here](https://github.com/Babylonpartners/ios-playbook/blob/master/Cookbook/Technical-Documents/UIAutomation.md).
+It is at this level where we should be asserting screen states, grouping *cross screen* actions or completing a single action. A detailed naming convention for step definitions is defined [here](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/UIAutomation.md).
 
 ### Screen Objects
 These files are intended to contain all code that controls the user interface, checks the screen state or in limited cases groups *single screen* actions. Functions within a Screen objects should adhere to the single responsibility principle and should **never** reference another screen object.
@@ -77,7 +77,7 @@ The way we do this has evolved in the iOS team, rather than having Accessibility
 
 The historical method for handling identifiers was to define them in code and then define them again in the screen object, normally using a static *enum* for each element type. And then reference the identifier from the functions using ```Cells.passwordField```. This was to ensured *identifiers* are only defined once in each screen object and can be updated with a single change. 
 
-A detailed naming convention for accessibility identifiers can be found [here](https://github.com/Babylonpartners/ios-playbook/blob/master/Cookbook/Technical-Documents/AutomationIdentifiers.md).
+A detailed naming convention for accessibility identifiers can be found [here](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/AutomationIdentifiers.md).
 
 ### API Calls
 When not mocking API calls, we use real API requests to control the state of the application. For example using the client API in the family appointment tests to add family member or the clinical API to prescribe medication. By completing these actions at the API level it removes the requirement to complete them through the UI, reducing execution time, removing duplication and facilitating tests that start in a controlled state. These network requests are normally handled by extending `APIInterface` with functional specific requests for example `APIInterface+Appointment`
@@ -171,7 +171,7 @@ At the heart of iOS automation is [XCUIElement](https://developer.apple.com/docu
 For our test scenario we need to located three elements with each to have there own function, two to enter text and one to press a button. We already defined these functions, with two taking a String as a parameter. 
 
 #### Finding A Element
-Before beginning a more detail explanation of find element is [here](https://github.com/Babylonpartners/ios-playbook/blob/030750054285d8a21b562019053b40dbe56fc47e/Cookbook/Technical-Documents/AutomationIdentifiers.md#how-to-find-elements). 
+Before beginning a more detail explanation of find element is [here](https://github.com/babylonhealth/ios-playbook/blob/030750054285d8a21b562019053b40dbe56fc47e/Cookbook/Technical-Documents/AutomationIdentifiers.md#how-to-find-elements). 
 
 But for the purpose of this article we are trying to find the element as fast and simply as possible. To begin with we define a base query, which will reduces the search time and overhead. Looking at the view we can the *XCUIElement* is contained within a cell, which is within a table. So we use the base query `app.tables.cells`.
 

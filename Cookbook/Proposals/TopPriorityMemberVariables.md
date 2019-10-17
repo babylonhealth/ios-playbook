@@ -118,7 +118,7 @@ Requires many efforts for manual refactoring and resolving conflicts.
 
 ## Appendix
 
-See [#74](https://github.com/Babylonpartners/ios-playbook/pull/74) for more strict declaration order rule, but it is NOT a part of this proposal.
+See [#74](https://github.com/babylonhealth/ios-playbook/pull/74) for more strict declaration order rule, but it is NOT a part of this proposal.
 (This proposal only contains section 1 to 3)
 
 ```

@@ -6,7 +6,7 @@ Snowplow has published a schema with two frequently used event types. The first 
 
 # Posting Screen View Events from the iOS Client
 
-View controllers that are created with [BentoKit](https://github.com/Babylonpartners/Bento) and use the Babylon specialisation of [BoxViewController](https://github.com/Babylonpartners/Bento/blob/master/BentoKit/BentoKit/Screen/BoxViewController.swift) will post screen view events if the view model conforms to `ScreenNaming`.
+View controllers that are created with [BentoKit](https://github.com/babylonhealth/Bento) and use the Babylon specialisation of [BoxViewController](https://github.com/babylonhealth/Bento/blob/master/BentoKit/BentoKit/Screen/BoxViewController.swift) will post screen view events if the view model conforms to `ScreenNaming`.
 
 ```swift
 final class AwesomeRenderer: BoxRenderer {
@@ -166,4 +166,4 @@ This works by installing a mock server that receives the Snowplow traffic and ve
 - [Snowplow iOS Documentation](https://github.com/snowplow/snowplow/wiki/iOS-Tracker)
 - [Snowplow iOS Client Source Code](https://github.com/snowplow/snowplow-objc-tracker)
 - [IGLU and schema detection](https://github.com/snowplow/iglu/wiki/Iglu-technical-documentation)
-- [Event and schema definitions (Internal)](https://github.com/Babylonpartners/com.babylonhealth-schema-registry)
+- [Event and schema definitions (Internal)](https://github.com/babylonhealth/com.babylonhealth-schema-registry)

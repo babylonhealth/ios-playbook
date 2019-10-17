@@ -55,7 +55,7 @@ The other way to find an element is using an `XCUIElementQuery` which can either
 
 ## Updating Locators
 
-The quick solution is to simply update the enum. When an identifier's text has changed, this is very straightforward and simple. Update the text defined in the enum to the correct value and automation should start working. Resulting in Pull Requests like this https://github.com/Babylonpartners/babylon-ios/pull/6475
+The quick solution is to simply update the enum. When an identifier's text has changed, this is very straightforward and simple. Update the text defined in the enum to the correct value and automation should start working. Resulting in Pull Requests like this https://github.com/babylonhealth/babylon-ios/pull/6475
 
 ```swift
 fileprivate enum NavigationBar {
