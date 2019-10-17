@@ -167,7 +167,7 @@ To display the 2nd row you just need to add 2nd row to the box:
             |---+ Node(
                 id: .collection,
                 component: appearance.row3(
-                    title: Localization.NHS.Prescriptions.collectionPharmacyOptionTitle,
+                    title: Localization.collectionPharmacyOptionTitle,
                     detail: Localization.NHS.Prescriptions.collectionPharmacyOptionSubtitle,
                     image: Icon(
                         template: appearance.tokens.icons.image(.pharmacy),
