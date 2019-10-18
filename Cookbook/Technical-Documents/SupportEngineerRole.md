@@ -14,7 +14,7 @@ When an engineer is on support, these duties have higher priority over Squad dut
 
 ## Schedule
 
-A support engineer schedule restarts every sprint.<br>
+A support engineer schedule restarts every sprint.
 Every engineer on support is in this role for two consecutive days.
 
 The days an engineer is on support are defined as following:
