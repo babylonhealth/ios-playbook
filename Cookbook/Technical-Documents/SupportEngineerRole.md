@@ -3,7 +3,7 @@
 As iOS Engineers, we have Squad related work and we also have iOS Chapter work.
 
 The iOS Team duties are as important as Squad duties, although in some occasions one can have priority over the other.<br>
-When an engineer is in support these duties have high priority over Squad duties, however this can change if there is critical Squad work to be done. In this case the Support Engineer can ask an iOS Chapter Lead to be replaced in his support duties.
+When an engineer is on support, these duties have higher priority over Squad duties, however this can change if there is critical Squad work to be done. In this case, the Support Engineer can ask an iOS Chapter Lead to be replaced in their support duties.
 
 ## Duties
 
