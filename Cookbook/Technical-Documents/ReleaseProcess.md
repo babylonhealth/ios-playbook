@@ -113,7 +113,21 @@ The release process starts when the first build is provided to QA and ends when 
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
-| 4.9.1| Yuri Karabatov, Michael Brown | Manual: `1h` | `AV-1225: 1h` | Total: **2h** | 22.10.2019 | Pending |
+| 4.9.1| Michael Brown, Yuri Karabatov | Automated: N/A<br>Manual: `1h` | `AV-1225: 1h` | Total: **2h** | 22.10.2019 | Pending |
+| 4.9.0| Michael Brown, Yuri Karabatov | Automated: `X`<br>Manual: `26h` |
+`IOSP-200: 10m`
+`GW-990: 2h`
+`MS-304: 2h`
+`MON-5545: 30m`
+`AV-1181: 1h`
+`TES-481: 30m`
+`CE-846: 1h`
+`IOSP-15: 3h`
+`MS-315: 30m`
+`IOSP-221: 10m`
+`IOSP-209: 4h`
+`PRSCR-1405: 30m`
+`IOSP-233: 30m`
 | 4.8.0| Giorgos Tsiapaliokas, Ben Henshall | Manual: `23h 00m` | `MS-204: 60m`<br>`MS-247: 15m`<br>`MS-262: 30m`<br>`MS-259: 5m`<br>`MON-5431: 2h`<br>`CNSMR-3029: 10m`<br>`CE-795: 10m`<br>`CE-799: 10m`<br>`GW-888: 15m`<br>`GW-957: 15m`<br>`APPTS-1752: 6h`<br>`GW-952: 8h`<br>`AV-1154: 1h` | Total: **19h 53m** | 30.09.2019 | 7.10.2019 |
 | 4.7.0| Joshua Simmons, Adrian Śliwa | Manual: `21h 55m`|`AV-1098: 15m`<br>`AV-1103: 30m`<br>`GW-865: 1h`<br>`GW-914: 1h`<br>`GW-927: 1h`<br>`GW-938: 1h`<br>`GW-913: 12h`<br>`CNSMR-2899: 1m`<br>`TES-409: 30m`<br>`APPTS-1637: 1h`<br>`CNSMR-2881: 45m`<br>`MON-5337: 15m`<br>`CNSMR-2901: 30m`| Total: **41h 41m** | 16.09.2019 | 23.09.2019 |
 | 4.6.1| Anders Ha, <br> Michał Kwiecień |Manual: `1h 15m`|`APPTS-1646: 12h`| Total: **13h 15m** | 09.09.2019 | 12.09.2019 |
