@@ -38,7 +38,8 @@ If there is a big impact in the iOS Team or in your Squad due to you being away,
 1. Duration: All-day event
 1. Show as: Free
 1. Reminder: None
-1. Select Save & Close
+1. Request Responses: Off
+1. Hit "Send"
 
 #### Steps to Configure automatic reply
 1. Open Outlook 
