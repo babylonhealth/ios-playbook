@@ -41,7 +41,6 @@ If there is a big impact in the iOS Team or in your Squad due to you being away,
 1. Request Responses: Off
 1. Hit "Send"
 
-
 #### Steps to Configure automatic reply
 1. Open Outlook 
 1. Select Tools
