@@ -1,23 +1,23 @@
 # iOS Chapter Meetings
 
 As an engineer part of the iOS Chapter Team we have to collaborate with each other. The work we do in each of our squads contributes to the whole product and at the end of the Sprint we are all releasing the same app, together, as a team. 
-We should all be focused in delivering the work assigned from our squad and at the same time we should try to engage with the other iOS Engineers to keep the communication channel opened for any comment/question we might have.
+We should all be focused in delivering the work assigned from our squad and at the same time we should try to engage with the other iOS Engineers to keep the communication channel opened and to make everyone feel comfortable to raise any comment/question.
 We have scheduled a set of iOS Team specific meetings to ensure we communicate with each other, raise any issue, announce important events and are aware of the process and follow it.
 
 
 
 ## iOS Retro
 
-The place where we can raise anything that went well or not so well in our last 2 weeks of work. This can be anything related with the iOS Team in general or something from our Squads in particular but that we feel is relevant to raise. 
+The place where we can raise anything that went well or should be improved in our last 2 weeks of work. This can be anything related with the iOS Team in general or something from our Squads in particular but that we feel is relevant to raise. 
 
 Some of the issues you have in your squad are common to other squads. Those can be raised in this meeting to understand if it’s something that can be addressed. Additionally, the good achievements we have in our squads can and should also be raised in the retro so everyone is aware of the good work everyone is doing.
 
-This is a fortnightly meeting with only 15 minutes duration.
+This is a fortnightly meeting with 30 minutes duration.
 The schedule is the following:
 
 * For 2 weeks the board will be available in the [Trello Engineering Team](https://trello.com/iosengineeringteam) (Please look for the board with the title "Retro \<Date of the Retro>") so we can add items at any time during those 2 weeks.
-* The first minute will be for us to vote. (Tip: Hovering over a card and clicking "v" will add or remove a vote.)
-* The next 14 minutes will be to go through the 3 most voted items in the **Went Well** and **To Improve** columns and add any required action to the **Action Items** column. Each action have to have someone assign to it.
+* The first 2 minutes will be for us to vote. (Tip: Hovering over a card and clicking "v" will add or remove a vote.)
+* The next 28 minutes will be to go through the most voted items in the **Went Well** and **To Improve** columns and add any required action to the **Action Items** column. Each action have to have someone assigned to it.
 
 ## PR Parties
 
@@ -38,7 +38,7 @@ A PR Party Line-Up will be announced every Monday, Wednesday and Thursday.
 
 ## iOS Lunch & Learn
 
-The purpose of this meeting is to have weekly iOS learn sessions with the whole team.
+The purpose of this meeting is to have fortnight iOS learn sessions with the whole team.
 We will grab lunch before the meeting, we will sit together (physically or remotelly) and we will: 
 
 * Watch a video relevant to the iOS team.
@@ -54,3 +54,9 @@ Every meeting has an organizer that is responsible for:
 The schedule can be found [here](https://docs.google.com/spreadsheets/d/1kdY3edy_TeqIGH_7VnZzElxgVo_qD2z4EF-arWNShyw/edit#gid=0).
 
 Topics to be picked up can be found [here](https://docs.google.com/spreadsheets/d/1kdY3edy_TeqIGH_7VnZzElxgVo_qD2z4EF-arWNShyw/edit#gid=1037493294).
+
+## Banter
+
+An unstrutured meeting happening every week for 30 minutes. It is the place for us to speak about any topic we would like, can even be something completely unrelated with work. 
+It is frequently used to make small announcements and to have small discussions around a recent event.
+This meeting is optional.
