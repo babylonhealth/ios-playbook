@@ -33,7 +33,7 @@ git lfs install
 
 # Clone the iOS repository into the given code directory, if needed.
 if [[ ! -d "${target_directory}" ]]; then
-  git clone git@github.com:Babylonpartners/babylon-ios.git "${target_directory}"
+  git clone git@github.com:babylonhealth/babylon-ios.git "${target_directory}"
 fi
 cd "${target_directory}"
 

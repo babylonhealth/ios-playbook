@@ -2,7 +2,7 @@
 
 * Author(s): Anders Ha
 * Review Manager: Sergey Shulga
-* Implementation: [Bento#93](https://github.com/Babylonpartners/Bento/pull/93)
+* Implementation: [Bento#93](https://github.com/babylonhealth/Bento/pull/93)
 
 ## Introduction
 

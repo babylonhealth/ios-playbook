@@ -38,4 +38,4 @@ public let Current: World = .production
 #endif
 ```
 
-Proposal reference: [How Control the World](https://github.com/Babylonpartners/ios-playbook/blob/master/Cookbook/Proposals/ControlTheWorld.md)
+Proposal reference: [How Control the World](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Proposals/ControlTheWorld.md)

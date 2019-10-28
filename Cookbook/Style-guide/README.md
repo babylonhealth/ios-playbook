@@ -200,7 +200,7 @@ For other declarations below, they will go to `4. (others)` and can be in arbitr
 - nested types
 ```
 
-See also: [[Proposal] Top-priority member-variable and initializer declarations](https://github.com/Babylonpartners/ios-playbook/pull/74)
+See also: [[Proposal] Top-priority member-variable and initializer declarations](https://github.com/babylonhealth/ios-playbook/pull/74)
 
 ### Protocol Conformance
 

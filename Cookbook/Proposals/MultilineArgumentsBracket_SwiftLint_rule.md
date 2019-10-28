@@ -7,7 +7,7 @@
 The motivation to create this proposal is to not waste time fixing violations of a SwfitLint rule which we maybe wouldn't like to have, considering all pros & cons.
 
 ## Motivation
-In our [StyleGuide](https://github.com/Babylonpartners/ios-playbook/tree/master/Cookbook/Style-guide#function-declarations) we have a section about multiline arguments & parameters. Multiline function declaration or function calls should have their brackets in separate lines. To reduce our time spent on fixing such nits we can use SwiftLint to warns us about such issues.
+In our [StyleGuide](https://github.com/babylonhealth/ios-playbook/tree/master/Cookbook/Style-guide#function-declarations) we have a section about multiline arguments & parameters. Multiline function declaration or function calls should have their brackets in separate lines. To reduce our time spent on fixing such nits we can use SwiftLint to warns us about such issues.
 
 ## Proposed solution
 Turn on the following SwiftLint rules:
@@ -46,7 +46,7 @@ let success = reticulateSplines(
 ```
 This is all about having parameters/arguments in separate lines when we define/call multiple parameters/arguments functions.
 
-This time, the following examples show what else triggers the rule and how this can be fixed. Keep in mind that this is a list of changes which are not defined in the `Function Definition` or `Function Call` sections of the [StyleGuide](https://github.com/Babylonpartners/ios-playbook/tree/master/Cookbook/Style-guide#function-declarations), and so the style guide will need to be updated accordingly. I would say sometimes the code before a fix is more readable than after SwiftLint's fix.
+This time, the following examples show what else triggers the rule and how this can be fixed. Keep in mind that this is a list of changes which are not defined in the `Function Definition` or `Function Call` sections of the [StyleGuide](https://github.com/babylonhealth/ios-playbook/tree/master/Cookbook/Style-guide#function-declarations), and so the style guide will need to be updated accordingly. I would say sometimes the code before a fix is more readable than after SwiftLint's fix.
 
  1. **Trailing closure argument**:
 ```swift
@@ -107,7 +107,7 @@ return accessible.access(
 )
 ```
 
-More examples of changes that would need to be added can be found in [the sample PR](https://github.com/Babylonpartners/babylon-ios/pull/7246/files) I've created against develop. It's not ready to be merged. It's a result of running [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) & couple of manual changes.
+More examples of changes that would need to be added can be found in [the sample PR](https://github.com/babylonhealth/babylon-ios/pull/7246/files) I've created against develop. It's not ready to be merged. It's a result of running [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) & couple of manual changes.
 
 ## The question to be asked when reviewing this proposal
 Is it worth to have an automatic function parameters/arguments nits checking for the price of few additional changes in our style? 
