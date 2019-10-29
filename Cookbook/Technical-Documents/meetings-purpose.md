@@ -4,7 +4,7 @@ As an engineer part of the iOS Chapter Team we have to collaborate with each oth
 We should all be focused in delivering the work assigned from our squad and at the same time we should try to engage with the other iOS Engineers to keep the communication channel opened and to make everyone feel comfortable to raise any comment/question.
 We have scheduled a set of iOS Team specific meetings to ensure we communicate with each other, raise any issue, announce important events and are aware of the process and follow it.
 
-All the outcomes from these meetings are posted in the #ios-meeting-outcomes Slack channel along with it's recording.
+All the outcomes from these meetings are posted in the #ios-meeting-outcomes Slack channel along with its recording.
 
 ## iOS Retro
 
