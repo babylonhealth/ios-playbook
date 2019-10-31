@@ -1,6 +1,6 @@
 # iOS Chapter Meetings
 
-As an engineer part of the iOS Chapter Team we have to collaborate with each other. The work we do in each of our squads contributes to the whole product and at the end of the Sprint we are all releasing the same app, together, as a team. 
+As an engineer part of the iOS Chapter Team we have to collaborate with each other. The work we do in our squads contributes to the whole product and at the end of the Sprint we are all releasing the same app, together as a team. 
 We should all be focused in delivering the work assigned from our squad and at the same time we should try to engage with the other iOS Engineers to keep the communication channel open and make everyone feel comfortable to raise any comment/question.
 We have scheduled a set of iOS Team specific meetings to ensure we communicate with each other, raise any issue, announce important events and are aware of the process and follow it.
 
