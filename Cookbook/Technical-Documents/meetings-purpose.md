@@ -8,7 +8,7 @@ All the outcomes from these meetings are posted in the #ios-meeting-outcomes Sla
 
 ## iOS Retro
 
-The place where we can raise anything that went well or should be improved in our last 2 weeks of work. This can be anything related with the iOS Team in general or something from our Squads in particular but that we feel is relevant to raise. 
+The place where we can raise anything that went well or should be improved in our last 2 weeks of work. This can be anything related to the iOS Team in general or something from our Squads in particular but we feel relevant to raise. 
 
 Some of the issues you have in your squad are common to other squads. Those can be raised in this meeting to understand if it’s something that can be addressed. Additionally, the good achievements we have in our squads can and should also be raised in the retro so everyone is aware of the good work everyone is doing.
 
