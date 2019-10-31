@@ -20,7 +20,9 @@ For a cultural interview I like to know about where the candidate is from, type 
 
 ### Make the Candidate Feel Welcome and Appreciated
 
-Interviewing for a new job can be quite nerve racking. You want to make sure that the candidate feels relaxed and welcome to give him or her their best chance to give a good impression. Small things like meeting the candidate in the reception, ask if they want a drink or need a visit to the bathroom helps a lot. Acknowledging the effort made to come to the interview is important. Some small talk about how the journey was and how their day has been so far is often relaxing. Also, always thank the candidate for taking the time to come to the interview. Hearing that we are grateful for their effort will make the candidate feel valued and respected.
+Interviewing for a new job can be quite nerve racking. You want to make sure that the candidate feels relaxed and welcome to give him or her their best chance to give a good impression. Small things like meeting the candidate in the reception, ask if they want a drink or need a visit to the bathroom helps a lot. Acknowledging the effort made to come to the interview is important. Always thank the candidate for taking the time to come to the interview. Hearing that we are grateful for their effort will make the candidate feel valued and respected.
+
+Most of us find small talk about everyday events relaxing. Asking the candidate about the journey was and how their day has been can be a good way to make them feel welcome and at ease. This is, however, a little bit handle with care. Most of us is not the same as all of us and sooner or later you will interview a candidate who prefers to only talk about the topic for the interview.
 
 ### Look for what the Candidate can Bring
 
