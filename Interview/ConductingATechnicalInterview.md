@@ -12,6 +12,8 @@ It is important that you approach the interview in a positive frame of mind. I s
 
 When a candidate arrives at Babylon for an interview, he or she has already made a substantial effort. They will probably have had to take time off work; may have had to travel a long way to get here; and have prepared and sent us a sample of their work. The candidate will always have invested a lot more time into the interview process than you will have. Failing to properly prepare for the interview is very disrespectful.
 
+In the iOS team an interview will typically consist of four parts: discussion about the sample work; technical questions; working together with product and design and cultural fit. I like to prepare differently depending on which part of the interview that I doing. I try to focus on the part that I am doing without any bias from how I expect the candidate to do in the other parts.
+
 For an interview around skills and knowledge about technologies, I want to know about the candidate's education and previous work experience. I try to look for any technologies that the candidate knows about that I am unfamiliar with. If there are any, I like to have a quick look at a product spec or something similar.
 
 Reviewing the candidate's sample work I prefer to not read their CV. Instead I want to focus on what I think can be improved in their sample project. Again I am especially interested in discussing any libraries or design patterns that I have not worked with.
@@ -27,8 +29,6 @@ Most of us find small talk about everyday events relaxing. Asking the candidate 
 ### Look for what the Candidate can Bring
 
 Diverse teams are well known to be more productive. This implies that always looking for candidates that are familiar with our technology and architecture is a poor strategy. Looking for candidates that can hit the ground running instead of hiring talent that we can train might pay short term, but restricts the team's long-term capacity to deliver. Going forward we are very likely to have to adapt our architecture and add technologies that we are currently not using. New hires with experience in using technologies that we are not familiar with is a great way to expand the team's combined skillset.
-
-In the iOS team an interview will typically consist of four parts: discussion about the sample work; technical questions; working together with product and design and cultural fit. I like to prepare differently depending on which part of the interview that I doing. I try to focus on the part that I am doing without any bias from how I expect the candidate to do in the other parts.
 
 Interviewing for technical skills I like to start by asking the candidate about areas of expertise they would like to talk about. If this happens to be something that I don't know a lot about, I ask the candidate to explain it to me. People who are good at explaining are usually very good at learning. In general it is better to get the candidate to expand on a subject instead of just answering more questions.
 
