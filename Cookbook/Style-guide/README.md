@@ -381,7 +381,7 @@ Use self only when required by the compiler (in `@escaping` closures, or in init
 
 ## Computed Properties
 
-For conciseness, if a computed property is read-only, omit the get clause. The get clause is required only when a set clause is provided. For single-expressions, where the context is clear, use implicit returns:
+For conciseness, if a computed property is read-only, omit the get clause. The get clause is required only when a set clause is provided. For single-expressions where the context is clear, use implicit returns:
 
 **Preferred**:
 ```swift
