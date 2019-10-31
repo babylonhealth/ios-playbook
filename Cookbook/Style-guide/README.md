@@ -381,12 +381,18 @@ Use self only when required by the compiler (in `@escaping` closures, or in init
 
 ## Computed Properties
 
-For conciseness, if a computed property is read-only, omit the get clause. The get clause is required only when a set clause is provided. For single-expressions where the context is clear, use implicit returns:
+For conciseness, if a computed property is read-only, omit the get clause. The get clause is required only when a set clause is provided. For single-expressions where the context is clear, both explicit and implicit returns can be used:
 
 **Preferred**:
 ```swift
 var diameter: Double {
   radius * 2
+}
+
+// Or
+
+var diameter: Double {
+  return radius * 2
 }
 ```
 
@@ -462,11 +468,17 @@ func updateConstraints() -> () {
 typealias CompletionHandler = (result) -> ()
 ```
 
-For single-expression functions where the context is clear, use implicit returns:
+For single-expression functions where the context is clear, both explicit and implicit returns can be used:
 
 ```swift
 func encode(character: Character) -> String {
     character.encoded()
+}
+
+// Or
+
+func encode(character: Character) -> String {
+    return character.encoded()
 }
 ```
 
