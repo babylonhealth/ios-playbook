@@ -29,7 +29,7 @@ A PR Party Line-Up will be announced every Monday, Wednesday and Thursday.
 * The Line-Up will be posted in the #ios-meeting-outcomes Slack channel.
 * Each PR Party will be composed by 3-4 engineers and will have 3-4 PRs to review.
 * The PR Party schedule and duration will be decided by the group.
-* One of the engineers in each group will be the organizer (nominated by who defines the group). The organizer responsability is to :
+* One of the engineers in each group will be the organizer (nominated by who defines the group). The organizer's responsability is to:
     - create the slack group channel with the other participants
     - make sure a schedule is defined
     - kick-off the meeting
@@ -38,8 +38,8 @@ A PR Party Line-Up will be announced every Monday, Wednesday and Thursday.
 
 ## iOS Lunch & Learn
 
-The purpose of this meeting is to have fortnight iOS learn sessions with the whole team.
-We will grab lunch before the meeting, we will sit together (physically or remotelly) and we will: 
+The purpose of this meeting is to have fortnightly iOS learning sessions with the whole team.
+We will grab lunch before the meeting, sit together (physically or remotelly) and:
 
 * Watch a video relevant to the iOS team.
 * Watch a presentation done by someone in the team (full or lightning).
@@ -60,4 +60,3 @@ Topics to be picked up can be found [here](https://docs.google.com/spreadsheets/
 An unstrutured meeting happening every week for 30 minutes. It is the place for us to speak about any topic we would like, can even be something completely unrelated with work. 
 It is frequently used to make small announcements and to have small discussions around a recent event.
 This meeting is optional.
-
