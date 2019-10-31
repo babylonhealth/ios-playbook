@@ -17,7 +17,7 @@ The schedule is the following:
 
 * For 2 weeks the board will be available in the [Trello iOS Engineering Team](https://trello.com/iosengineeringteam) (Please look for the board with the title "Retro \<Date of the Retro>") so we can add items at any time during those 2 weeks.
 * The first 2 minutes will be for us to vote. (Tip: Hovering over a card and clicking "v" will add or remove a vote.)
-* The next 28 minutes will be to go through the most voted items in the **Went Well** and **To Improve** columns and add any required action to the **Action Items** column. Each action has to have someone assigned to it.
+* The rest of the minutes will be to go through the most voted items in the **Went Well** and **To Improve** columns and add any required action to the **Action Items** column. Each action has to have someone assigned to it.
 
 ## PR Parties
 
