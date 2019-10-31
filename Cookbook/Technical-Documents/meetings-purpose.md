@@ -21,8 +21,8 @@ The schedule is the following:
 
 ## PR Parties
 
-The PR Parties are meetings where a group of engineers will get together to review a bunch of PRs pre-defined. Usually the authors of these PRs will be in the group and they will go through their PRs and explain them.
-This will allow the authors to explain the solution in the PR, to open the discussion about it and to agree in an approach if required. In the ideal world, we would have all the PRs approved in the end of the meeting, but this is not the main purpose of the meeting. The purpose is to facilitate the discussion about the PR implementation.
+The PR Parties are meetings where a group of engineers will get together to review a bunch of PRs they're assigned to. Usually the authors of these PRs will be in the group and they will go through their PRs and explain them.
+This will allow the authors to explain the solution, to open the discussion about it and to agree on an approach if required. In an ideal world, we would have all the PRs approved by the end of the meeting, but this is not the main goal. The purpose is to facilitate the discussion about the PR implementation.
 
 A PR Party Line-Up will be announced every Monday, Wednesday and Thursday.
 
@@ -45,7 +45,7 @@ We will grab lunch before the meeting, sit together (physically or remotelly) an
 * Watch a presentation done by someone in the team (full or lightning).
 * Have a discussion about a topic that impacts the iOS team.
 
-Every meeting has an organizer that is responsible for:
+Every meeting has an organizer who is responsible for:
 
 * Setting up the zoom call
 * Book a room if in the office
@@ -57,6 +57,6 @@ Topics to be picked up can be found [here](https://docs.google.com/spreadsheets/
 
 ## Banter
 
-An unstrutured meeting happening every week for 30 minutes. It is the place for us to speak about any topic we would like, can even be something completely unrelated with work. 
-It is frequently used to make small announcements and to have small discussions around a recent event.
+An unstructured meeting happening every week for 30 minutes. It is the place for us to speak about any topic we would like, can even be something completely unrelated with work.
+It is frequently used to make small announcements and have small discussions around a recent event.
 This meeting is optional.
