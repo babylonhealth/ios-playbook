@@ -30,7 +30,7 @@ A PR Party Line-Up will be announced every Monday, Wednesday and Thursday.
 * Each PR Party will be composed by 3-4 engineers and will have 3-4 PRs to review.
 * The PR Party schedule and duration will be decided by the group.
 * One of the engineers in each group will be the organizer (nominated by who defines the group). The organizer's responsability is to:
-    - create the slack group channel with the other participants
+    - create the Slack channel with the other participants
     - make sure a schedule is defined
     - kick-off the meeting
     - post the outcome in the thread of the PR Party Line-Up message in Slack.
