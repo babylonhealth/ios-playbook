@@ -90,3 +90,23 @@ Tip: `/stevenson help` will respond with instructions for this command.
 * ATM we are hosting our bots on Heroku so they are being shut down when they are not in use, so sometimes you may see a timeout errors when trying to call a Stevenson command (Slack expects apps to respond in 3 seconds). You will still get the response shortly after that when build is triggered. Steve commands may also fail because of timeouts but it may not send the response even if the build actually started. In this case check the CI dashboard to see if the job was actually triggered - it should be if the command was correct.
 
 * You can find Stevenson app in the list of Slack apps and see all of its commands from there.
+
+## Pull requests comments
+
+Alternatively to slack commands you can trigger CI from pull request with a comment. Format of the comment follows exactly the format of the slack commands except they should be prefixed with a bot github user name and you don't need to specify the branch (it will always use the branch of PR and)
+
+You can invoke any lane with the following comment:
+
+```
+@ios-bot-babylon fastlane appcenter target:Babylon
+```
+
+Or you can invoke any workflow defined in our CircleCI config with the following comment:
+
+```
+@ios-bot-babylon test_pr
+```
+
+The same workflows as Slack command are supported. To see the list of supported workflows look for `parameters` section in the CircleCI config file.
+
+Note: you won't get any feedback in the PR with the results of the triggered command or wether it was correct or not (yet), but Slack messages with the result will be posted by the bot in #ios-build channel as usual when CI finishes reunning the jobs.
