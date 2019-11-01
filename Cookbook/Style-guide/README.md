@@ -385,9 +385,7 @@ For conciseness, if a computed property is read-only, omit the get clause. The g
 
 **Preferred**:
 ```swift
-var diameter: Double {
-  radius * 2
-}
+var diameter: Double { radius * 2 }
 
 // Or
 
