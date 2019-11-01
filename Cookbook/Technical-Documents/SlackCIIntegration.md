@@ -101,7 +101,7 @@ You can invoke any lane with the following comment:
 @ios-bot-babylon fastlane appcenter target:Babylon
 ```
 
-Or you can invoke any workflow defined in our CircleCI config with the following comment:
+Or you can invoke a workflow defined in our CircleCI config with the following comment:
 
 ```
 @ios-bot-babylon test_pr
