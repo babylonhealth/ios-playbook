@@ -5,6 +5,7 @@ iOS Cookbook 👩‍🍳
 
 ##### ... learn about our architecture 🏠
 
+* [Architecture Overview](./Technical-Documents/Architecture.md)
 * [Implementing features with ReactiveFeedback](http://ilya.puchka.me/implementing-features-with-reactivefeedback/)
 * [Implementing features that work with the backend](./Technical-Documents/BackendFeatureHowTo.md)
 * [Adopt the `Current` struct to hold global dependencies](./Proposals/ControlTheWorld.md) 
