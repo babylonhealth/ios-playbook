@@ -40,4 +40,3 @@ UI.Image(image: appearance.tokens.icons.image(.heartFilled))
     .width(24)
     .height(24)
 ```
-## Screen construction
