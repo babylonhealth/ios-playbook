@@ -62,13 +62,13 @@ We specify individual app identifiers instead of adding all App Store bundle ids
   
 - Run the following command to update match repository with new profile
 
-To update enterprise profile:
+To update the enterprise profile:
 
 ```shell
  $ bundle exec fastlane match enterprise --team_id {{enterprise teamID}} --app_identifier {{enterprise bundleID}} --readonly false
 ```
 
-To update appstore profile:
+To update the AppStore profile:
 
 ```shell
  $ bundle exec fastlane match appstore --team_id {{appstore teamID}} --git_branch {{appstore teamID}} --app_identifier {{appstore bundleID}} --readonly false
