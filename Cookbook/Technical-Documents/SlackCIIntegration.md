@@ -91,9 +91,9 @@ Tip: `/stevenson help` will respond with instructions for this command.
 
 * You can find Stevenson app in the list of Slack apps and see all of its commands from there.
 
-## Pull requests comments
+## Pull request comments
 
-Alternatively to slack commands you can trigger CI from pull request with a comment. Format of the comment follows exactly the format of the slack commands except they should be prefixed with a bot github user name and you don't need to specify the branch (it will always use the branch of PR and)
+Alternatively to Slack commands, you can trigger CI on a pull request with a comment. The format of the comment is the same as the Slack commands, except they should be prefixed with the bot's GitHub user name and you don't need to specify the branch (it will always use the branch of PR)
 
 You can invoke any lane with the following comment:
 
@@ -107,6 +107,6 @@ Or you can invoke a workflow defined in our CircleCI config with the following c
 @ios-bot-babylon test_pr
 ```
 
-The same workflows as Slack command are supported. To see the list of supported workflows look for `parameters` section in the CircleCI config file.
+The same workflows as Slack commands are supported. To see the list of supported workflows look for `parameters` section in the CircleCI config file.
 
-Note: you won't get any feedback in the PR with the results of the triggered command or wether it was correct or not (yet), but Slack messages with the result will be posted by the bot in #ios-build channel as usual when CI finishes reunning the jobs.
+Note: you won't get any feedback in the PR with the results of the triggered command or whether it was correct or not (yet), but Slack messages with the result will be posted by the bot in #ios-build channel as usual when CI finishes re-running the jobs.
