@@ -2,7 +2,7 @@
 
 ## Congratulations! You've joined Babylon...
 Welcome to the amazing iOS team! 
-Babylon is a fast-growing company. Currently, we are on-boarding ~30 new-starters weekly. Many of them are engineers like yourself. Our team is scattered across three offices: London West, London East and US office. On top of that, we have fully remote teammates. As you can imagine this poses almost biblical challenges, but don’t worry :)
+Babylon is a fast-growing company. Currently, we are on-boarding ~30 new-starters weekly. Many of them are engineers like yourself. Our iOS team is scattered across three offices: London West, London East, and the US office. On top of that, we have fully remote teammates. As you can imagine this poses almost biblical challenges, but don’t worry :)
 
 ## Like others before you...
 The first week can be overwhelming. New code-base, emails and non-stop messages on Slack can make for a mind-numbing first experience. We don’t promise the information fire hose stops after the first day, but just hear what people who went through before you said:
@@ -10,7 +10,7 @@ The first week can be overwhelming. New code-base, emails and non-stop messages 
 Q: What did you like during your first week?
 > “1-on-1 with Rui and squad PMs, meet team, talk a lot within the squad, pair with a couple of people on iOS team. Gone out to drinks with the squad :)”
 
-> “I found the team to be very helpful in the first while becoming familiar with the code ...”
+> “I found the team to be very helpful in the first week while becoming familiar with the code ...”
 
 > “Working in my squad on real tickets from day one”
 
@@ -22,14 +22,14 @@ Q: What did you like during your first week?
 As you will notice, due to the rapid growth, things in Babylon can and will change often and quickly. While this may look scary, do not worry - you are working with amazing people and everyone wants to help you. You have the right to ask questions and seek out help from people in the team and other co-workers. To make this task easier, here’s an incomplete list of people that can help you.
 
 ### Your manager
-Your manager will be the first person from the iOS team that you’ll see after the induction workshop on your first day. He, or she, should introduce you to your buddy, your squad and other co-workers.
+Your manager will be the first person from the iOS team you’ll see after the induction workshop on your first day. They should introduce you to your buddy, your squad, and other co-workers.
 
 - [iOS Onboarding Line Manager Checklist](https://docs.google.com/spreadsheets/d/1Cu_e1Ol4nkpDNawQOeCbho9xg5L02-1k-Y1YCZjBZ_c/edit#gid=0)
 
 Why you should read it: This will tell you how your first 3 months at Babylon should look like.
 
 ### Your buddy
-When you start, you will be paired up with a colleague - who has some work experience in Babylon
+When you start, you will be paired up with a colleague who has some work experience in Babylon
 Think of this buddy as your mentor and go-to person if you have any questions. They should answer technical questions, introduce you to the team, and even walk you through some code or do pair-programming with you.
 
 - [iOS Buddy Onboarding Checklist](https://docs.google.com/spreadsheets/d/1nKxNwAWdscPjIDOqrKpyU7zefF1fBuad0STXe2R0WiA/edit#gid=0)
@@ -41,13 +41,13 @@ How to be a good buddy?
 >Treat it as you would introduce a friend, who is new to your city: Introduce them to locals, give them some resources so they can navigate on their own, and help them form a plan their first few weeks.
 
 ### Your squad
-You may be still confused by the name, but a squad is a cross-functional, autonomous team working towards common goals. Get to know them well during your onboarding time. They will be more than happy to explain and help you with day-to-day work. Check what are your squad slack channels, calendar groups and JIRA board and make sure that you are added to them.
+You may be still confused by the name, but a squad is a cross-functional, autonomous team working towards common goals. Think of it as a mini-startup. Get to know them well during your onboarding time. They will be more than happy to explain and help you with day-to-day work. Check what are your squad slack channels, calendar groups and JIRA board and make sure that you are added to them.
 
 ### The iOS team
 One of the greatest sources of our collective knowledge is #ios-questions slack channel. You should search for your question there before asking it. We encourage to ask your questions on this channel as opposed to asking it in private chat.
 
 ## In the tower of Babel
-When working in such a vibrant and dynamic environment it is very easy to lose a track of things that should happen. This is a shortlist of topics that should help you to get through the onboarding time.
+When working in such a vibrant and dynamic environment it is very easy to lose track of things that should happen. This is a shortlist of topics that should help you to get through the onboarding time.
 
 ### Communication and Collaboration
 Effective and open communication is crucial in a company like Babylon. Without it, everything falls apart. If there is one thing you should remember from this guide let me suggest this:
@@ -96,7 +96,7 @@ Why you should read it: In this document, we keep track of who, what and when of
 
 [iOS Goals H2 (July - December)](https://docs.google.com/spreadsheets/d/1nI1RAdsP2nJiUzsvCE9LHQH11-OIPNSHZvpMPUQal_o/edit#gid=0)
 
-Why you should read it: Here, the iOS team collaborates on it's goals (unrelated to squad goals). Typically, these goals include addressing tech debts, refactoring the code for modernisation and implementing features which make development more efficient and more robust
+Why you should read it: Here, the iOS team collaborates on their goals (unrelated to squad goals). Typically, these goals include addressing tech debts, refactoring the code for modernisation, and implementing features which make development more efficient and more robust
 
 ### Jargon translator
 In our team’s daily conversations very often you will encounter strangely looking/sounding terms. This section is to help you get familiar with both our technical jargon and cultural references. Only here you can learn what :renderable: means on the Slack :)
