@@ -92,7 +92,7 @@ In this particular case I believe we could use both approaches actually.
 
 ~~Every object (susceptible to global mutation) that is mutated in `setUp()` must be restored in `tearDown()`.~~
 
-~~Mutations in `Current` in particular are the prime suspects of a number of flaky tests that have been recently affecting our test suite. [While some mitigations have been implemented to minimize this problem](https://github.com/Babylonpartners/babylon-ios/pull/7806/files#diff-74895f4da31ec40d83d342bf612540b4R17), these are restricted to snapshot tests for the time being. Ideally, this solution should be extended to Unit and UI Test cases but that lies outside the scope of this proposal.~~
+~~Mutations in `Current` in particular are the prime suspects of a number of flaky tests that have been recently affecting our test suite. [While some mitigations have been implemented to minimize this problem](https://github.com/babylonhealth/babylon-ios/pull/7806/files#diff-74895f4da31ec40d83d342bf612540b4R17), these are restricted to snapshot tests for the time being. Ideally, this solution should be extended to Unit and UI Test cases but that lies outside the scope of this proposal.~~
 
 ~~Until that is implemented, we could alternatively monitor mutations in Current by counting the number of times Current is changed in the `setup()` and `tearDown()` methods. We would have to whitelist every test file with the exception of snapshot tests (see link above) using the regex `\b(?!Snapshot)(.*Tests)` and then use Danger to manually parse the test line-by-line.~~
 

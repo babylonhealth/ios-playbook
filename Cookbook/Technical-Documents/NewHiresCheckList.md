@@ -1,16 +1,20 @@
 # New Hires Checklist
 
+## Access to services
+
+You can find the list of services you'll need and how to get access to them in [Tools and Services](ToolsAndServices.md).
+
 ## GitHub Access
 
-Prior to starting, make sure you have a Babylon GitHub account and that you have access to the following repositories:
+Prior to starting, make sure you have a GitHub account (either your personal or new for Babylon) and that you have access to the following repositories:
 
-- [babylon-ios](https://github.com/Babylonpartners/babylon-ios)
-- [ios-charts](https://github.com/Babylonpartners/ios-charts)
-- [ios-private-podspecs](https://github.com/Babylonpartners/ios-private-podspecs)
-- [ios-build-distribution](https://github.com/Babylonpartners/ios-build-distribution)
-- [ios-fastlane-match](https://github.com/Babylonpartners/ios-fastlane-match)
+- [babylon-ios](https://github.com/babylonhealth/babylon-ios)
+- [ios-charts](https://github.com/babylonhealth/ios-charts)
+- [ios-private-podspecs](https://github.com/babylonhealth/ios-private-podspecs)
+- [ios-build-distribution](https://github.com/babylonhealth/ios-build-distribution)
+- [ios-fastlane-match](https://github.com/babylonhealth/ios-fastlane-match)
 
-See [access to dev services](ToolsAndServices.md) if you don't have access yet.
+See [section above](#access-to-services) if you don't have access yet.
 
 ## Slack
 
@@ -30,15 +34,12 @@ As an iOS Engineer, you should be in the following Slack channels:
 	- `#ios-questions`
 	- `#ios-sdk`
 	- `#ios-oss`
+	- `#ios-meeting-outcomes`
+	- `#ios-pedia`
 
 * Others
 	- `#demo_frontend`
 	- `#developers`
-
-* Slack Apps
-	- pull-reminders
-	- peakon
-	- betterworks
 
 Make sure you also join your Tribe/Squad's Slack channels.
 
@@ -51,14 +52,14 @@ Make sure you also join your Tribe/Squad's Slack channels.
    teammate.) Make sure you download and install Xcode from the Apple Developer
    Center, rather than the App Store, to avoid unexpected automatic updates.
 
-1. Install Ruby 2.4. If you don't have Ruby or a version manager, you can use
-   RVM to set up Ruby 2.4:
+1. Install Ruby 2.6.3. If you don't have Ruby or a version manager, you can use
+   RVM to set it up:
 
     ```
     \curl -sSL https://get.rvm.io | bash -s stable
     source ~/.rvm/scripts/rvm
-    rvm install 2.4
-    rvm use 2.4
+    rvm install 2.6.3
+    rvm use 2.6.3
     ```
 
 ## Setup Guide
@@ -66,7 +67,7 @@ Make sure you also join your Tribe/Squad's Slack channels.
 Most of the work to get the iOS project up and running is automated inside a
 shell script. Here's how to get the iOS project up and running:
 
-1. [Generate](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) & add the SSH key to your [GitHub account](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account)
+1. [Generate](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key), add the SSH key to your [GitHub account](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account) and [authorise](https://help.github.com/en/articles/authorizing-an-ssh-key-for-use-with-a-saml-single-sign-on-organization) it for use with single sign on.
 
 1. Run the `ios-onboarding` Bash script inside the `scripts` directory of this
    repo. It requires a `CODE_DIRECTORY` argument which is the parent directory
@@ -94,11 +95,9 @@ shell script. Here's how to get the iOS project up and running:
 
 1. Refer to the [Fastlane Match](FastlaneMatch.md#day-to-day-development) document if you want to run the app on your own iOS devices.
 
-1. It can be useful to create a command line alias for `pod` to `bundle exec pod` so that you are guaranteed to always be running the correct version of Cocoapods.
+1. It can be useful to create a command line alias for `pod` to `bundle exec pod` so that you are guaranteed to always be running the correct version of CocoaPods.
 
-1. [Install additional tools and ask access for the various services we use](ToolsAndServices.md).
-
-1. Add yourself to the team list in the [playbook](https://github.com/Babylonpartners/ios-playbook) by making your first PR 😉
+1. Add yourself to the team list in the [playbook](https://github.com/babylonhealth/ios-playbook) by making your first PR 😉
 
 1. Add shared `iOS Developers` calendar to your calendar on Outlook
 

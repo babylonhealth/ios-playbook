@@ -163,7 +163,7 @@ Though just using closure with regular composition (`>>>`) seems to be the best 
 
 ## Reference
 
-https://github.com/Babylonpartners/babylon-ios/blob/c26fcec05dddafa71552cac970f18577fee0a1f1/BabylonChatBotUI/BabylonChatBotUI/Chat/MessageMenu/MessageMenuRenderer.swift#L98
+https://github.com/babylonhealth/babylon-ios/blob/c26fcec05dddafa71552cac970f18577fee0a1f1/BabylonChatBotUI/BabylonChatBotUI/Chat/MessageMenu/MessageMenuRenderer.swift#L98
 https://github.com/pointfreeco/swift-prelude/blob/master/Sources/Prelude/Optional.swift#L91
 https://www.pointfree.co/episodes/ep2-side-effects
 
