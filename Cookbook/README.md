@@ -5,8 +5,9 @@ iOS Cookbook 👩‍🍳
 
 ##### ... learn about our architecture 🏠
 
+* [Architecture Overview](./Technical-Documents/Architecture.md)
 * [Implementing features with ReactiveFeedback](http://ilya.puchka.me/implementing-features-with-reactivefeedback/)
-* [Implementing features that work with the backend](./TechnicalDocuments/BackendFeatureHowTo.md)
+* [Implementing features that work with the backend](./Technical-Documents/BackendFeatureHowTo.md)
 * [Adopt the `Current` struct to hold global dependencies](./Proposals/ControlTheWorld.md) 
     * [following the `Current Guide`](./Technical-Documents/Current-guide.md)
 * [Posting Analytics Events to Snowplow](./Technical-Documents/SnowplowHowTo.md)
@@ -28,17 +29,23 @@ iOS Cookbook 👩‍🍳
 * [What I don't know, but should](./ThatIDontKnow.md)
 * [Writing a Proposal](./Technical-Documents/WritingAProposal.md)
 * [Release Process](./Technical-Documents/ReleaseProcess.md)
+* [Support Engineer Role](./Technical-Documents/SupportEngineerRole.md)
 * [How to add Labels to a Pull Request](./Technical-Documents/LabelsInPRs.md)
+* [Requesting Out of Office time](./Technical-Documents/OutOffOfficeRequest.md)
+* [Team meetings](./Technical-Documents/meetings-purpose.md)
 
 ##### ... test my app 🌳
 
 * [Replace `iOSSnapshotTestCase` library with `SnapshotTesting`](./Proposals/SnapshotTesting.md)
 * [Automation Identifiers](./Technical-Documents/AutomationIdentifiers.md)
 * [Testing view models](./Technical-Documents/UnitTestingViewModels.md)
+* [iOS Automation Technical Exercise](../Interview/AutomationExercise.md)
+* [Debugging Push Notifications](./Technical-Documents/DebuggingPushNotifications.md)
 
 ##### ... learn functional programming 🚀
 
 * [Introduce "fish" operator (Kleisli composition)](./Proposals/Fish_Operator.md)
+* [Learn about our functional operators](./Technical-Documents/FunctionalOperators.md)
 
 ##### ... learn about other topics 🏔
 * [Apple Pay](./Technical-Documents/Apple_Pay.md)
@@ -51,3 +58,4 @@ iOS Cookbook 👩‍🍳
 * [How to invoke CI jobs from Slack](./Technical-Documents/SlackCIIntegration.md)
 * [Xcode Tips & Tricks](Technical-Documents/XcodeTips.md)
 * [Configure PullAssigner on our repos](Technical-Documents/PullAssigners.md)
+* [App Center](Technical-Documents/AppCenter.md)

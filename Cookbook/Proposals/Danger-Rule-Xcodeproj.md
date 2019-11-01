@@ -7,7 +7,7 @@
 
 This proposal suggests to add some Danger rules checking for `xcodeproj` consistenty.
 
-It is a follow-up on [#110 - Integrate Danger](https://github.com/Babylonpartners/ios-playbook/pull/110).
+It is a follow-up on [#110 - Integrate Danger](https://github.com/babylonhealth/ios-playbook/pull/110).
 
 ## Motivation
 
