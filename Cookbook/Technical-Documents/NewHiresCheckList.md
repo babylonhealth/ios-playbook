@@ -41,6 +41,10 @@ As an iOS Engineer, you should be in the following Slack channels:
 	- `#demo_frontend`
 	- `#developers`
 
+* Slack Apps
+	- pull-reminders
+	- peakon
+
 Make sure you also join your Tribe/Squad's Slack channels.
 
 ## Install prerequisites
@@ -91,6 +95,13 @@ shell script. Here's how to get the iOS project up and running:
 
 1. Compile the project 🎉
 
+## Other useful information
+
+- [Onboarding Line Manager Checklist](https://docs.google.com/spreadsheets/d/1Cu_e1Ol4nkpDNawQOeCbho9xg5L02-1k-Y1YCZjBZ_c/edit#gid=0): This will tell you how your first 3 months at Babylon should look like.
+- [Onboarding Buddy Checklist](https://docs.google.com/spreadsheets/d/1nKxNwAWdscPjIDOqrKpyU7zefF1fBuad0STXe2R0WiA/edit#gid=0): This will give you a good idea what you can expect during your onboarding. When you start, you will be paired up with a colleague who has some work experience in Babylon Think of this buddy as your mentor and go-to person if you have any questions. They should answer technical questions, introduce you to the team, and even walk you through some code or do pair-programming with you.
+- [iOS meetings you should know about](meetings-purpose.md)
+- [Handbook for Remote Working](https://docs.google.com/document/d/1hjKtx1pPL_pxhLEuW-46w2XwxsC-mkw3Cp5uaHB2P8c/edit#heading=h.kfpax1yhmxao)
+
 ## What's next?
 
 1. Refer to the [Fastlane Match](FastlaneMatch.md#day-to-day-development) document if you want to run the app on your own iOS devices.
@@ -104,4 +115,13 @@ shell script. Here's how to get the iOS project up and running:
 1. Don't hesitate to create a PR with an update to this `NewHiresCheckList` or the `ios-onboarding` script if you have spotted something is missing or could be improved.
 
 1. Ask your team lead to be invited to any upcoming/recurring meetings (like PR parties or sprint retros).
-   You'll also be invited to the `#newbabylonians` private Slack channel after your induction; feel free to ask there to be invited to recurring company meetings too, like the weekly company standups
+You'll also be invited to the `#newbabylonians` private Slack channel after your induction; feel free to ask there to be invited to recurring company meetings too, like the weekly company stand-ups
+
+### Reading list
+This is the list of docs, wikis, confluence pages and articles that we think you should read to get the context of how and what we are doing.
+
+- [iOS Cookbook](https://github.com/Babylonpartners/ios-playbook/blob/master/Cookbook/README.md): many of you technical questions will be answered here
+- [Style guide](https://github.com/Babylonpartners/ios-playbook/tree/master/Cookbook/Style-guide)
+[Babylon squads, tribes, chapters](https://sites.google.com/babylonhealth.com/induction/about-us/structure): to understand how the company is organised
+- [Pointfree](https://www.pointfree.co): Our codebase is heavily inspired by the concepts there. If you go through the lectures, you will understand much better what we do in our codebase and why
+- [Implementing features with ReactiveFeedback](https://ilya.puchka.me/implementing-features-with-reactivefeedback)
