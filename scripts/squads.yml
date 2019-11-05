@@ -30,9 +30,6 @@ team:
   - &Chesley
     name: Chesley Stephens
     github: cstephens-babylon
-  - &Tyler
-    name: Tyler Hargett
-    github: thargett-babylon
   - &Chitra
     name: Chitra Kotwani
     github: chitrakotwani
@@ -114,6 +111,9 @@ team:
     name: Simon Cass
     github: scass91
     twitter: codercass
+  - &Tyler
+    name: Tyler Hargett
+    github: thargett-babylon
   - &Viorel
     name: Viorel Mihalache
     github: viorel15
