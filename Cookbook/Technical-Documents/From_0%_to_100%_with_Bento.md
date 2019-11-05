@@ -1,11 +1,11 @@
 #  From 0% to 100% screen with Bento
-In this article, I would like to answer a few questions regarding Bento. If you are a new person in the team and you have questions like: 
+In this article, we would like to answer a few questions regarding Bento. If you are a new person in the team and you have questions like: 
 - **"What is Bento?"**, 
 - **"Why do we use it?"**, 
 - **"How should I use it?"**,
 - **"What's renderable?"** 
 
-then the article is for you. However, I assume you are already kind of familiar with our Architecture.
+then the article is for you. However, we assume you are already kind of familiar with our [Architecture](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/Architecture.md).
 
 ## What and why?
 First of all, Bento is our **internal library** which allows us to write UI code in a declarative way. This makes it faster to write the UI code. 
@@ -27,7 +27,7 @@ As I said before, I assume you are already kind of familiar with our Architectur
 
 In this article, we are going to focus on the **renderer** part. 
 
-Renderer's purpose is to **calculate** a UI. I used the word calculate on purpose as we express our UI as a function of state `UI = f(state)`. The function is named `func render(state: ViewModel.State) -> Screen<SectionId, ItemId>`.
+Renderer's purpose is to **calculate** a UI. We used the word calculate on purpose as we express our UI as a function of state `UI = f(state)`. The function is named `func render(state: ViewModel.State) -> Screen<SectionId, ItemId>`.
 
 First things first. To create a Renderer you need to create a struct and conforms to `BoxRenderer`. This is what you get from the Xcode's template.
 
@@ -308,7 +308,7 @@ What's the process? First of all, look at the checklist what needs to be done:
 Here we're going to focus on point 2. We are going to write a banner component:
 ![](Assets/bento-image-03.png)
 
-We build components by putting **small blocks together**, usually in a StackView. By small blocks, I mean other components which we call `atomic components`. They are called `atomic` because those components are small, usually display a **small unit** as Label, ImageView, plain UIView.
+We build components by putting **small blocks together**, usually in a StackView. By small blocks, we mean other components which we call `atomic components`. They are called `atomic` because those components are small, usually display a **small unit** as Label, ImageView, plain UIView.
 
 The banner can be build from 2 images and 1 label. Let's put them all into a stack view:
 
@@ -413,7 +413,7 @@ This is how the entire function looks like:
 
 Of course in production code, it would be nice to **extract** a few helper functions to have a **smaller** banner function. 
 
-#### Stylesheets
+#### Stylesheets (Deprecated)
 In the implementation of Bento you may find some classes called Stylesheets. Those are an **old way** of styling our views before we had operators like `.backgroundColor(_ color: UIColor)` or `.font(_ font: UIFont)`. Stylesheets used to define **how** a view looks like. Keep in mind that now Stylesheet's usage should be limited and **replaced with operators**.
 
 ## Summary
