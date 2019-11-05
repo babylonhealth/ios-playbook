@@ -48,6 +48,10 @@ team:
     name: David Rodrigues
     github: dmcrodrigues
     twitter: dmcrodrigues
+  - &Davide
+    name: Davide De Franceschi
+    github: defrenz
+    twitter: defrenz
   - &Diego
     name: Diego Petrucci
     github: diegopetrucci
@@ -199,6 +203,7 @@ squads:
     members:
       - *Adam
       - *Konrad
+      - *Davide
   - name: Partnerships
     desc: Updating and maintaining the Telus app.
     members:

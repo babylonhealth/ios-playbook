@@ -81,9 +81,10 @@ The rest of the iOS Engineers work in the following squads:
       <tr><td>Daniel Spindelbauer</td><td><a href='https://github.com/sdaniel55'>@sdaniel55</a></td><td><a href='https://twitter.com/sdaniel55'>@sdaniel55</a></td></tr>
       <tr><td>Diego Petrucci</td><td><a href='https://github.com/diegopetrucci'>@diegopetrucci</a></td><td><a href='https://twitter.com/diegopetrucci'>@diegopetrucci</a></td></tr>
       <tr><td>Joshua Simmons</td><td><a href='https://github.com/j531'>@j531</a></td><td></td></tr>
-    <tr><td rowspan='2' valign='top'><strong>Prescriptions</strong><br/>Prescriptions functionality.</td>
+    <tr><td rowspan='3' valign='top'><strong>Prescriptions</strong><br/>Prescriptions functionality.</td>
       <td>Adam Borek</td><td><a href='https://github.com/TheAdamBorek'>@TheAdamBorek</a></td><td><a href='https://twitter.com/TheAdamBorek'>@TheAdamBorek</a></td></tr>
       <tr><td>Konrad Muchowicz</td><td><a href='https://github.com/konrad-em'>@konrad-em</a></td><td></td></tr>
+      <tr><td>Davide De Franceschi</td><td><a href='https://github.com/defrenz'>@defrenz</a></td><td><a href='https://twitter.com/defrenz'>@defrenz</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Partnerships</strong><br/>Updating and maintaining the Telus app.</td>
       <td>Simon Cass</td><td><a href='https://github.com/scass91'>@scass91</a></td><td><a href='https://twitter.com/codercass'>@codercass</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>SDK</strong><br/>Develop and maintain the SDK frameworks.</td>
