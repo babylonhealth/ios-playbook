@@ -8,9 +8,10 @@ iOS Cookbook 👩‍🍳
 * [Architecture Overview](./Technical-Documents/Architecture.md)
 * [Implementing features with ReactiveFeedback](http://ilya.puchka.me/implementing-features-with-reactivefeedback/)
 * [Implementing features that work with the backend](./Technical-Documents/BackendFeatureHowTo.md)
-* [Adopt the `Current` struct to hold global dependencies](./Proposals/ControlTheWorld.md) 
+* [Adopt the `Current` struct to hold global dependencies](./Proposals/ControlTheWorld.md)
     * [following the `Current Guide`](./Technical-Documents/Current-guide.md)
 * [Posting Analytics Events to Snowplow](./Technical-Documents/SnowplowHowTo.md)
+* [Experiments and Feature Flags with Optimizely](./Technical-Documents/Optimizely.md)
 * [Use builders as functions](./Proposals/BuildersToFunctions.md)
 * [Adding Frameworks/Modules to the project](./Technical-Documents/AddingFrameworks.md)
 
