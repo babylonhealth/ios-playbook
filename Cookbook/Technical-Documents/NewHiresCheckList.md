@@ -98,6 +98,7 @@ shell script. Here's how to get the iOS project up and running:
 1. It can be useful to create a command line alias for `pod` to `bundle exec pod` so that you are guaranteed to always be running the correct version of CocoaPods.
 
 1. Add yourself to the team list in the [playbook](https://github.com/babylonhealth/ios-playbook) by making your first PR 😉
+   You can do this by editing `scripts/squads.yml` and then running `ruby scripts/squads.rb` which will update the list
 
 1. Add shared `iOS Developers` calendar to your calendar on Outlook
 

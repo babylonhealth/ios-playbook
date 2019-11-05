@@ -30,9 +30,6 @@ team:
   - &Chesley
     name: Chesley Stephens
     github: cstephens-babylon
-  - &Tyler
-    name: Tyler Hargett
-    github: thargett-babylon
   - &Chitra
     name: Chitra Kotwani
     github: chitrakotwani
@@ -51,6 +48,10 @@ team:
     name: David Rodrigues
     github: dmcrodrigues
     twitter: dmcrodrigues
+  - &Davide
+    name: Davide De Franceschi
+    github: defrenz
+    twitter: defrenz
   - &Diego
     name: Diego Petrucci
     github: diegopetrucci
@@ -114,6 +115,9 @@ team:
     name: Simon Cass
     github: scass91
     twitter: codercass
+  - &Tyler
+    name: Tyler Hargett
+    github: thargett-babylon
   - &Viorel
     name: Viorel Mihalache
     github: viorel15
@@ -199,6 +203,7 @@ squads:
     members:
       - *Adam
       - *Konrad
+      - *Davide
   - name: Partnerships
     desc: Updating and maintaining the Telus app.
     members:
