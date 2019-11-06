@@ -1,41 +1,35 @@
-Code Review Etiquette
-===========
+# Code Review Etiquette
 
 This document describes a general etiquette and code of conduct that every team member should follow, as well as some concrete guidelines and activities we use in the team related to code reviews.
 The purpose of these guidelines is to formalise some basic requirements for pull requests and receiving/providing feedback to improve the quality of code reviews and teamwork in general.
 
 Note: Guidelines in this document should be considered to be of equal importance
 
-Note: This document is heavily inspired by [this blog post](https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/)
+Note: This document is heavily inspired by [this blog post](https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request)
 
-Everyone
---------
+## Everyone
 
 * Be respectful to each other
-* Be humble. ("I'm not sure - let's look it up.")
-* Don't use hyperbole. ("always", "never", "endlessly", "nothing")
+* Be humble ("I'm not sure - let's look it up")
+* Don't use hyperbole ("always", "never", "endlessly", "nothing")
 * Don't use sarcasm or trolling
 * If you feel annoyed at something/someone, don't make it affect your or others' work. Talk to a friend, go for a walk, meditate, switch to something else.
-* Talk synchronously, e.g. call or in person, if there are too many "I didn't understand" or "Alternative solution:" comments. Prefer not to use chat for that. Post a follow-up
-  comment summarizing the discussion.
+* Talk synchronously, e.g. call or in person, if there are too many "I didn't understand" or "Alternative solution:" comments. Prefer not to use chat for that. Post a follow-up comment summarising the discussion.
 * Avoid selective ownership of code ("mine", "not mine", "yours"). Prefer referring to it as `our` code.
-* Use "we" instead of "you", unless asking for someone's opinion ("What do you think ...?", but "Here we are doing ... What if we ...?",)
-* Avoid using terms that could be seen as referring to personal traits. ("dumb",
-  "stupid", "insane"). Assume everyone is intelligent and well-meaning.
+* Use "we" instead of "you", unless asking for someone's opinion ("What do you think...?", but "Here we are doing..., What if we...?")
+* Avoid using terms that could be seen as referring to personal traits. ("dumb", "stupid", "insane"). Assume everyone is intelligent and well-meaning.
 * Be aware of negative bias with online communication. (If content is neutral, we assume the tone is negative.) Can you use positive language as opposed to neutral?
 * When using emojis be aware that their meaning can be different for different individuals (e.g. a winking smile may not be always innocent)
 * Same with any other media format you decide to use
 * Do not expect your comments to be answered immediately. If you need an answer fast — talk directly with the person (the same applies to the Slack messages)
 * Accept that it's fine to have disagreements and it's hard to please everyone
 
+## Creating a Pull Request
 
-Creating a Pull Request
---------
-
-* When creating your branches, name them using a format like `<author>/<ticket>` or `<author>/<ticket>-<shortdescription>`
+* When creating your branches, name them using a format like `<author>/<ticket>` or `<author>/<ticket>-<shortdescription>`. Note:
 * Carefully fill in the pull request template:
 	* the title of the PR should follow the format `[XXX-123] Description of the change`, starting with a ticket number
-	* explain the context and motivation, don’t assume familiarity with the history. Highlight how the goal was achieved without going too much into details - people tend not to read long descriptions and if a long explanation is needed, then a single pull request is probably not going to be enough (i.e. the change may need to go through the proposal process or design review). 
+	* explain the context and motivation, don’t assume familiarity with the history. Highlight how the goal was achieved without going too much into details - people tend not to read long descriptions and if a long explanation is needed, then a single pull request is probably not going to be enough (i.e. the change may need to go through the proposal process or design review).
 	* don't strip out parts of the template unless it is absolutely irrelevant to the changes (i.e. change in the build script does not need any screenshots as it does not touch UI)
 	* don't forget labels (note: it's better to set them after the PR is created, as GitHub sometimes fails with 405 status code and we don't know why)
 * Explicitly request review from or mention team mates you specifically want to involve in the discussion (in addition to the ones that will be assigned to it automatically by PullAssigners)
@@ -48,8 +42,7 @@ Creating a Pull Request
 * It's our common effort to push product forward and we all do equally valuable work. Keep that in mind when creating a PR: try to review some of other's PRs, and avoid having more than X PRs opened at the same time
 
 
-Reviewing a Pull Request
---------
+## Reviewing a Pull Request
 
 * Accept that many programming decisions are opinions. Discuss tradeoffs, which one
   you prefer, and reach a resolution quickly. There are always multiple ways of doing things, and they may be equally acceptable
@@ -60,7 +53,7 @@ Reviewing a Pull Request
 * Do not comment if you don't have any suggestions to address your comment
 * Use GitHub suggestions as much as possible
 * If you feel strong against the change - request changes and explain why you are doing that. Do not request changes for typos, missing documentation comments or code style violations, trust your colleagues to address them.
-* Approve changes if you are confident about them. 
+* Approve changes if you are confident about them.
 * If you are the first reviewer to approve the changes add the label "Needs one reviewer" so that others can see which PRs already have a feedback and which don't have any yet.
 * Comment on the changes if something is not clear to you and needs further clarification or actions
 * If you are not familiar with the domain ask for more context (better directly to the author) rather than skipping to something more familiar
@@ -72,8 +65,7 @@ Reviewing a Pull Request
 * Do not be a blocker - if you requested changes and they were addressed make sure you review it
 * Do not merge others pull requests - they may be waiting for someone else review. In general, the PR author should be the one adding the "Merge" label to merge their own PRs (except rare cases like if the author is on holidays but the PR is otherwise good to go)
 
-Responding to feedback
--------------------------
+## Responding to feedback
 
 * Wait before answering to a single comment, the reviewer may be still writing more of them (though they should prefer to send all comments at once)
 * Be grateful for the reviewer's suggestions. ("Good call. I'll make that
@@ -91,17 +83,15 @@ Responding to feedback
 * When you have two approvals and have no pending questions or requests for changes and don't wait for review from anyone else - put a "Merge" label for bot to merge your changes.
 
 
-PR Parties
---------
+## PR Parties
 
 To improve collaboration, we take time to review pull request together in small groups every week. This is what we call "PR parties".
 
-- Each group should include at least one senior developer. 
+- Each group should include at least one senior developer.
 - Each group will have a few pull requests assigned to them
 - When done with their assigned PRs, the group is free to review something else (i.e. each other's pull requests) or finish the meeting
 
-Pull Assigners
---------
+## Pull Assigners
 
 To balance the workload and avoid knowledge silos we use [Pull Assigners](https://pullpanda.com/assigner) to assign reviewers.
 
