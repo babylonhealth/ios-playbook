@@ -41,7 +41,9 @@ As an iOS Engineer, you should be in the following Slack channels:
 	- `#demo_frontend`
 	- `#developers`
 
-Make sure you also join your Tribe/Squad's Slack channels.
+And add yourself to the `@ios-team` user group. (You can do this under the 3 dot more menu > `User groups`)
+
+Make sure you also join your Tribe/Squad's Slack channels, groups.
 
 ## Install prerequisites
 
