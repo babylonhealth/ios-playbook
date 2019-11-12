@@ -21,18 +21,18 @@ The schedule is the following:
 
 ## PR Parties
 
-The PR Parties are meetings where a group of engineers will get together to review a bunch of PRs they're assigned to. Usually the authors of these PRs will be in the group and they will go through their PRs and explain them.
-This will allow the authors to explain the solution, to open the discussion about it and to agree on an approach if required. In an ideal world, we would have all the PRs approved by the end of the meeting, but this is not the main goal. The purpose is to facilitate the discussion about the PR implementation.
+The PR Parties are groups of engineers who are assembled to review a bunch of PRs they're assigned to. Usually the authors of these PRs will be in the group. Participants will start by reviewing PRs asynchronously on their own. 
+If there is a need, a meeting will be organised where the authors will go through their PRs and explain them. This will open a discussion about them and a different approach can be agreed on if required. In an ideal world, we would have all the PRs approved by the end of the meeting, but this is not the main goal. The purpose is to facilitate the discussion about the PR implementation.
 
 A PR Party Line-Up will be announced every Monday, Wednesday and Thursday.
 
 * The Line-Up will be posted in the #ios-meeting-outcomes Slack channel.
 * Each PR Party will be composed by 3-4 engineers and will have 3-4 PRs to review.
-* The PR Party schedule and duration will be decided by the group.
-* One of the engineers in each group will be the organizer (nominated by who defines the group). The organizer's responsability is to:
+* If a meeting is needed, the schedule and duration will be decided by the group.
+* One of the engineers in each group will be the organizer (nominated by who defines the group). The organizer's responsibility is to:
     - create the Slack channel with the other participants
     - make sure a schedule is defined
-    - kick-off the meeting
+    - kick-off the meeting if needed
     - post the outcome in the thread of the PR Party Line-Up message in Slack.
 * There is an exception in the final week of each sprint. The Main PR Party on Thursday will still happen to accelerate PR Reviews for release. In these weeks there will only be 2 sets of 2 groups of PR Parties.
 
