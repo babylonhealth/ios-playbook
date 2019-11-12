@@ -57,7 +57,7 @@ Depending on the use case we are using different ways to define Feature Switches
 
 2. **Application configuration**
 
-	Application configuration, as name implies, exists to specify application specific configuraitons, i.e. if a feature should be enabled or completely disabled for a specific app or if it should use a different content. To define a new application configuration you should add a new property to the `AppConfigurationProtocol` in `AppConfiguration.swift`. If the flag is related to a specific feature then it might be better to define it in the dedicated configuration struct/protocol, i.e. if the flag is related to `Appointments` we have `AppointmentsContentProtocol` for this purpose.
+	Application configuration, as name implies, exists to specify application specific configurations, i.e. if a feature should be enabled or completely disabled for a specific app or if it should use a different content. To define a new application configuration you should add a new property to the `AppConfigurationProtocol` in `AppConfiguration.swift`. If the flag is related to a specific feature then it might be better to define it in the dedicated configuration struct/protocol, i.e. if the flag is related to `Appointments` we have `AppointmentsContentProtocol` for this purpose.
 	
 	A difference with other Feature Switches is that Application Configuration is used when we know that the configuration is specific to a specific _app_ (not the locale, not the user's region or their consumer network) and other apps should have the same feature configured differently. Other Feature Switches are not target specific.
 	
@@ -94,12 +94,12 @@ Depending on the use case we are using different ways to define Feature Switches
 
 	![](Assets/adding-remote-config-flag.png)
 
-	To control the value of this feature flag we can define values for different "conditions" which are based on the application bundle id and the build version (not the app semantic version number). You can reuse existing conditions (don't mix them with those used for Android app unless you agree to use the same flag for both platforms) or create a new condtion on the `Condtions` page. To create a new condition you need to specify the app bundle identifier and optionally a regular expression for build number (you can use http://gamon.webfactional.com/regexnumericrangegenerator/ to create it)
+	To control the value of this feature flag we can define values for different "conditions" which are based on the application bundle id and the build version (not the app semantic version number). You can reuse existing conditions (don't mix them with those used for Android app unless you agree to use the same flag for both platforms) or create a new condtion on the `Condtions` page. To create a new condition you need to specify the app bundle identifier and optionally a regular expression for build number (you can use [this tool](http://gamon.webfactional.com/regexnumericrangegenerator/) to create it)
 	
 	![](Assets/adding-remote-config-condition.png)
 
 	**Note that default value is `false` again!**
-	**Also not that condition is using a build number, even though the description mentions the app version. Be careful with these conditions when doing a release not from the head of develop branch (but i.e. doing a hot-fix release from the head of previous release) as the build numbers are constantly incremented with each CI run and don't depend on the app version.**
+	**Also note that condition is using a build number, even though the description mentions the app version. Be careful with these conditions when doing a release not from the head of develop branch (but i.e. doing a hot-fix release from the head of previous release) as the build numbers are constantly incremented with each CI run and don't depend on the app version.**
 	
 
 
@@ -126,7 +126,7 @@ Depending on the use case we are using different ways to define Feature Switches
 - Q: Is the change related to something critical and we may want to be able to switch it back to previous implementation?
     - Yes
 
-       While still working on the feature use a locl feature switch, when it is ready for release - convert it to Firebase Feature Switch
+       While still working on the feature, use a local feature switch; when it is ready for release, convert it to Firebase Feature Switch
     - No
 
        Keep it as a local feature switch if you need one
