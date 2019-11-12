@@ -21,14 +21,14 @@ The schedule is the following:
 
 ## PR Parties
 
-The PR Parties are groups of engineers that are assembled to review a bunch of PRs they're assigned to. Usually the authors of these PRs will be in the group. Participants will start by reviewing PRs asynchronously on their own. 
-If there is a need a meeting will be held where authors will go through their PRs and explain them. This will open the discussion about it and to agree on an approach if required. In an ideal world, we would have all the PRs approved by the end of the meeting, but this is not the main goal. The purpose is to facilitate the discussion about the PR implementation.
+The PR Parties are groups of engineers who are assembled to review a bunch of PRs they're assigned to. Usually the authors of these PRs will be in the group. Participants will start by reviewing PRs asynchronously on their own. 
+If there is a need, a meeting will be organised where the authors will go through their PRs and explain them. This will open a discussion about them and a different approach can be agreed on if required. In an ideal world, we would have all the PRs approved by the end of the meeting, but this is not the main goal. The purpose is to facilitate the discussion about the PR implementation.
 
 A PR Party Line-Up will be announced every Monday, Wednesday and Thursday.
 
 * The Line-Up will be posted in the #ios-meeting-outcomes Slack channel.
 * Each PR Party will be composed by 3-4 engineers and will have 3-4 PRs to review.
-* If a meeting is needed, schedule and duration will be decided by the group.
+* If a meeting is needed, the schedule and duration will be decided by the group.
 * One of the engineers in each group will be the organizer (nominated by who defines the group). The organizer's responsibility is to:
     - create the Slack channel with the other participants
     - make sure a schedule is defined
