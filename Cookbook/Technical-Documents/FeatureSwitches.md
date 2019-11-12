@@ -11,7 +11,7 @@ Depending on the use case we are using different ways to define Feature Switches
 	1. Add a new case in the `SettingsKeys` enum for this feature flag in `LocalFeatureSwitches.swift` (in BabylonDependencies):
 
 	```swift
-	case isNewFeatureEnabled
+	case isMyFeatureEnabled
 	```	
 	
 	2. Add a new property to the `LocalFeatureSwitchesProtocol` in `LocalFeatureSwitches.swift`:
