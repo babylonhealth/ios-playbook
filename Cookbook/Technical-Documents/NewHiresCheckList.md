@@ -54,14 +54,14 @@ Make sure you also join your Tribe/Squad's Slack channels, groups.
    teammate.) Make sure you download and install Xcode from the Apple Developer
    Center, rather than the App Store, to avoid unexpected automatic updates.
 
-1. Install Ruby 2.6.3. If you don't have Ruby or a version manager, you can use
+1. Install Ruby 2.6.4. If you don't have Ruby or a version manager, you can use
    RVM to set it up:
 
     ```
     \curl -sSL https://get.rvm.io | bash -s stable
     source ~/.rvm/scripts/rvm
-    rvm install 2.6.3
-    rvm use 2.6.3
+    rvm install 2.6.4
+    rvm use 2.6.4
     ```
 
 ## Setup Guide
