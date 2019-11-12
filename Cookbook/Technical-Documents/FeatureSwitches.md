@@ -8,7 +8,7 @@ Depending on the use case we are using different ways to define Feature Switches
 
 	These feature switches are defined in the `LocalFeatureSwitchesProtocol` and are stored in `UserDefaults`. **These feature switches are supposed to be used only during the development of any new feature so that the code for the feature can be integrated into the `develop` branch continuously.** As they are stored in `UserDefaults` they can be overridden during testing with Settings app. To add a new local feature switch do the following:
 
-	1. Add a new case in the `SettingsKeys` enum for this feature flag in `LocalFeatureSwitches.swift`:
+	1. Add a new case in the `SettingsKeys` enum for this feature flag in `LocalFeatureSwitches.swift` (in BabylonDependencies):
 
 	```swift
 	case isNewFeatureEnabled
