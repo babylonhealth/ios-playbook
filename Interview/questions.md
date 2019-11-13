@@ -48,6 +48,9 @@ Please keep in mind that this document is in a continuous state of flux, with ne
  1. Do you know what Curried Functions are? How do they differ from Partial Application?
  1. What is the `pipe` (`|>`) operator? Is it different from `map`? How do you propagate errors with it? Would a `flatPipe` operator make sense?
  1. What is a monad? Have you ever used one? (Related: why do you think FP has so many academic sounding terms?)
+ 1. Are you familiar with the Combine framework?
+ 1. In what ways does it differ from ReactiveSwift or RxSwift?
+ 1. Can you explain the concept of backpressure?
 
 ### SWIFT
 
