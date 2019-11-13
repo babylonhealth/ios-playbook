@@ -16,6 +16,7 @@
 5. General bug fixing for minor regressions and tasks, that are not related to significant changes made by squads for their own features. For more complex ones:
     1. Delegate the bug to the relevant squad/person. 
     2. If the bug is too complex to be fixed within the release window, please toggle off the feature and inform the Product Manager. 
+6. Bugs that aren't owned by any squad should be fixed by the release engineers. The support engineer(s) can help if additional help is needed.
 
 **The objective is to ship the release build as soon as possible whilst maintaining the quality bar and addressing every bug raised by QA**.
 
