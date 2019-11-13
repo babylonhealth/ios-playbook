@@ -38,6 +38,7 @@ Please keep in mind that this document is in a continuous state of flux, with ne
 ### FUNCTIONAL REACTIVE PROGRAMMING
  1. Are you familiar with `Reactive Programming`?
  1. What's the basic design pattern behind `Reactive Programming`?
+ 1. What's an `Observable` (in RxSwift) or `Signal` and `SignalProducer` (in ReactiveSwift)?
  1. How would you explain reactive programming to a junior developer who knows nothing about it?
  1. Why not using Future/Promises/Async-await instead of ReactiveSwift/RxSwift?
  1. What is functional programming? Explain it to a junior.
