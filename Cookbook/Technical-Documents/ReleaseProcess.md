@@ -58,11 +58,11 @@ There are usually two release engineers working at any given time. It goes witho
 1. Testers will then begin their work against the build you just created.
 1. Any hotfix should target the `develop` branch first. These PRs need to be reviewed not just by the relevant squad or platform QA (Bibin Paul), but also by one of the release engineers assigned to the release. This is to ensure visibility of changes being requested to be made, and to ensure the correct builds are available for validation.
 
-Bear in mind that two approvals from other engineers assigned by Pull Assigners is not enough in this particular case.
+  1. Bear in mind that two approvals from other engineers assigned by Pull Assigners is not enough in this particular case.
 
-After merging, we'll need to cherry-pick the commit via a PR to the release branch. Doing this will ensure that both branches are up to date and reduces the risk of conflicts when merging the release branch back to develop. 
+  1. After merging, we'll need to cherry-pick the commit via a PR to the release branch. Doing this will ensure that both branches are up to date and reduces the risk of conflicts when merging the release branch back to develop. 
 
-Furthermore, the issue for the hotfix has to be added to the release JIRA board.
+  1. Furthermore, the issue for the hotfix has to be added to the release JIRA board.
 
 ### Phase 4: Submit TestFlight builds to App Store Connect
 *It starts after all opened issues had been adressed and can take several cycles until QA's approval*
