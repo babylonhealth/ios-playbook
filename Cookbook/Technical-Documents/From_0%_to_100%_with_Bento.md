@@ -18,14 +18,7 @@ The format of this article will be a step by step guide on how to implement your
 ![](./Assets/bento-image-01.png)
 
 ## Renderer
-As I said before, I assume you are already kind of familiar with our Architecture. Quick recap, a typical screen is built from:
-- ViewController
-- ViewModel
-- Renderer
-- Builder
-- FlowController
-
-In this article, we are going to focus on the **renderer** part. 
+As I said before, I assume you are already kind of familiar with our Architecture. In this article, we are going to focus on the **renderer** part. 
 
 Renderer's purpose is to **calculate** a UI. We used the word calculate on purpose as we express our UI as a function of state `UI = f(state)`. The function is named `func render(state: ViewModel.State) -> Screen<SectionId, ItemId>`.
 
