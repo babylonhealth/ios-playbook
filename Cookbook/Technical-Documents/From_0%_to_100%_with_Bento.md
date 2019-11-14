@@ -8,9 +8,9 @@ In this article, we would like to answer a few questions regarding Bento. If you
 then the article is for you. However, we assume you are already kind of familiar with our [Architecture](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/Architecture.md).
 
 ## What and why?
-First of all, Bento is our **internal library** which allows us to write UI code in a declarative way. This makes it faster to write the UI code. 
+First of all, Bento is our library which allows us to write UI code in a declarative way. This makes it faster to write the UI code. 
 
-Bento now is our internal library however it used to be an **open-source** project. It has changed when Apple announced SwiftUI at WWDC 2019. We decided to move it under the main repo back then.
+Bento now is our **internal library** however it used to be an **open-source** project. It has changed when Apple announced SwiftUI at WWDC 2019. We decided to move it under the main repo back then.
 
 The format of this article will be a step by step guide on how to implement your first **Renderer**. Let's build something! 🏗
 
@@ -18,7 +18,7 @@ The format of this article will be a step by step guide on how to implement your
 ![](./Assets/bento-image-01.png)
 
 ## Renderer
-As I said before, I assume you are already kind of familiar with our Architecture. In this article, we are going to focus on the **renderer** part. 
+We assume you are already kind of familiar with our Architecture. In this article, we are going to focus on the **renderer** part. 
 
 Renderer's purpose is to **calculate** a UI. We used the word calculate on purpose as we express our UI as a function of state `UI = f(state)`. The function is named `func render(state: ViewModel.State) -> Screen<SectionId, ItemId>`.
 
@@ -67,7 +67,7 @@ Going from the top the first question you may ask is **"What's a Config"**. As a
 
 </br>
 
- > 12 Aug 2019 - Renderer has to be a struct as there is a problem with classes & memory management as classes are not deallocated. It may be fixed someday but it's still the case when I'm writing this article.
+ > 12 Aug 2019 - Renderer has to be a struct as there is a problem with classes & memory management as classes are not deallocated. It may be fixed someday but it's still the case when we are writing this article.
 
 </br>
 
