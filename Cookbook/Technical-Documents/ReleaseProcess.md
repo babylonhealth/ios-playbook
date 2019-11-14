@@ -29,7 +29,10 @@ There are usually two release engineers working at any given time. It goes witho
 
 ## 2. Release step-by-step
 
-### Phase 1: Initiation
+### Phase 1: Pre-release considerations
+1. To help expedience of the release, any required feature flag changes should be done prior to the 2am cut-off on the Friday. If this should be missed, a concession can be made so that the changes will be allowed to be made during the Friday. However, this should not be a regular occurance as it requires intervention from the assigned release engineers to create new builds.
+
+### Phase 2: Initiation
 *It starts at the end of the sprint (typically when the new sprint starts on Monday)*
 
 1. Cut a release branch, naming it using the `release/{appname}/{version}` convention (with `{appname}` being one of `babylon`/`telus`/`bupa`/`nhs111`)
@@ -49,13 +52,19 @@ There are usually two release engineers working at any given time. It goes witho
   1. On the sidebar click `+ Version or Platform` and select `iOS`.
   1. Input the new version number.
 
-### Phase 2: Test and fix bugs
+### Phase 3: Test and fix bugs
 *It starts after the App Center build has been delivered and it can take several cycles*
 
 1. Testers will then begin their work against the build you just created.
-1. Any hotfix should target that branch, and you, as the release engineer, are responsible for double checking that the hotfix's PR is pointing to the release branch (instead of `develop`). The issue for the hotfix should be added to the release JIRA board.
+1. Any hotfix should target the `develop` branch first. These PRs need to be reviewed not just by the relevant squad or platform QA (Bibin Paul), but also by one of the release engineers assigned to the release. This is to ensure visibility of changes being requested to be made, and to ensure the correct builds are available for validation.
 
-### Phase 3: Submit TestFlight builds to App Store Connect
+Bear in mind that two approvals from other engineers assigned by Pull Assigners is not enough in this particular case.
+
+After merging, we'll need to cherry-pick the commit via a PR to the release branch. Doing this will ensure that both branches are up to date and reduces the risk of conflicts when merging the release branch back to develop. 
+
+Furthermore, the issue for the hotfix has to be added to the release JIRA board.
+
+### Phase 4: Submit TestFlight builds to App Store Connect
 *It starts after all opened issues had been adressed and can take several cycles until QA's approval*
 
 1. Triger a new release build in the `#ios-build` channel
@@ -64,7 +73,7 @@ There are usually two release engineers working at any given time. It goes witho
 1. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues) ❗️ NOTE: Remember to submit compliance info for that build.
 1. By now, QA should be notified that there is a new version in TestFlight.
 
-### Phase 4: Submit for release in App Store Connect
+### Phase 5: Submit for release in App Store Connect
 *It starts after QA has signed off a particular build and can take several cycles until Apple's approval*
 
 1. Make sure *Manually release this version* is selected in `Version Release`.
@@ -73,7 +82,7 @@ There are usually two release engineers working at any given time. It goes witho
 	2. ✅ Attribute this app installation to a previously served advertisement
 	3. ✅ Attribute an action taken within this app to a previously served advertisement
 
-### Phase 5: Closure
+### Phase 6: Closure
 *It starts after the app is accepted by Apple and final internal approval*
 
 1. Send the build to TestFlight Beta (external testing). Select the `External Testers` group.
