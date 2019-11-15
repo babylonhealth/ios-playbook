@@ -26,7 +26,7 @@ Before proceeding to the section of your choice, please consider the following t
 * Testing is very important for us. Even if you don't write a single test (for instance, because of time constraints), your app should be easy to test (we love [Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection)).
 * Error scenarios should be taken into consideration and it should be easy to add them, even if you don't explicitly handle them (e.g. using an `UIAlertController`).
 * Although UI and UX are important, we are more concerned in this demo with your thought process and with how you architect your application. Your demo should take into consideration features that might be added in the future.
-* You can use any 3rd party libraries (except for networking) if you wish ( `ReactiveCocoa`, `PromiseKit`, `Realm`, etc) but be prepared to justify why you did so. Feel free to use package managers to handle them.
+* You can use any 3rd party libraries if you wish ( `Alamofire`, `ReactiveCocoa`, `PromiseKit`, `Realm`, etc) but be prepared to justify why you did so. Feel free to use package managers to handle them.
 * **Be consistent in your code**. We advise using something like [raywenderlich's swift style guide](https://github.com/raywenderlich/swift-style-guide) while doing the demo. It's absolutly fine to use any other style, as long as you are consistent.
 * Clean the file project structure and remove any unused methods (e.g., from `AppDelegate`). This shows attention to detail.
 * Be opinionated regarding any architecture you use and take your time to make it a reflection of your thought process.
@@ -64,7 +64,6 @@ A Photo detail screen will have:
 The following requirements should be met:
 
 * Use Swift 5.0 or above.
-* No 3rd party libraries for networking
 * The information (photos and photo details) should be available offline. It's assumed that, if it's the first time you are accessing the app and you are offline, you shouldn't see any data.
 * A reloading mechanism e.g. button or `UIRefreshControl`. `Reachability` is not required.
 * **Have a point of synchronization (e.g. making two concurrent requests and waiting for both of them to finish).**
@@ -73,14 +72,12 @@ The following requirements should be met:
 * Stutter free, crash free UI.
 * If you are applying for Senior, there are additional Requirements:
     * You should use a reactive framework
-    * UI should be written in code
 
 ### 2. Previously written project
 
 We would be happy if you would submit a project you already have (for instance, a demo project for another company). Still, the project **must**:
 
 * Use Swift 5.0 or above.
-* No 3rd party libraries for networking
 * Should have clear instructions on how to run the project.
 * Have at least two distinct network calls.
 * Parse the network response and present the information to the user.
@@ -89,7 +86,6 @@ We would be happy if you would submit a project you already have (for instance, 
 * Have a point of synchronization (e.g. making two concurrent requests and waiting for both of them to finish).
 * If you are applying for Senior, there are additional Requirements:
     * You should use a reactive framework
-    * UI should be written in code
 
 If you have a project with these requirements, then perfect! Please ensure that you also have a description of what the project does, in order to give us some context.
 
