@@ -94,14 +94,15 @@ Depending on the use case we are using different ways to define Feature Switches
 
 	![](Assets/adding-remote-config-flag.png)
 
-	To control the value of this feature flag we can define values for different "conditions" which are based on the application bundle id and the build version (not the app semantic version number). You can reuse existing conditions (don't mix them with those used for Android app unless you agree to use the same flag for both platforms) or create a new condtion on the `Condtions` page. To create a new condition you need to specify the app bundle identifier and optionally a regular expression for build number (you can use [this tool](http://gamon.webfactional.com/regexnumericrangegenerator/) to create it)
-	
+	To control the value of this feature flag we can define values for different "conditions" which are based on the application bundle id and the build version (not the app semantic version number). You can reuse existing conditions (don't mix them with those used for Android app unless you agree to use the same flag for both platforms) or create a new condtion on the `Condtions` page. To create a new condition you need to specify the app bundle identifier and optionally a regular expression for build number (you can use [this tool](http://gamon.webfactional.com/regexnumericrangegenerator/) to create it and [this tool](https://regexr.com) to see if your regular expression works). **Remember to start with local feature switch first when working on a new feature**, read next sections of this article for more details.
 	![](Assets/adding-remote-config-condition.png)
 
 	**Note that default value is `false` again!**
 	**Also note that condition is using a build number, even though the description mentions the app version. Be careful with these conditions when doing a release not from the head of develop branch (but i.e. doing a hot-fix release from the head of previous release) as the build numbers are constantly incremented with each CI run and don't depend on the app version.**
 	
-
+	If you want to release a feature, set proper conditions on Firebase **before the release cut off day**. Remember to adjust automation tests to make them work regardless if it's turned on or off. When publishing changes in Firebase Console you might be prompted if you want to force save your changes (that could happen when two people made some changes at the same time). **Never force save your changes** - if you see the prompt, cancel your changes, refresh the console and apply them again.
+	
+	After releasing the feature hidden behind the remote feature switch, make some agreement with your PM when we can stop using this switch. Depends how your squad works, you may want to create a ticket in the backlog to phase out the feature switch and remove legacy code. Remember that even you've phased out the feature switch from the newest version, there are still older versions that will be using this feature switch for a long time. After removing it from code, go to the Firebase Console and update description to say which app versions this switch is affecting.
 
 ## How to decide what feature flag to use
 
@@ -170,3 +171,4 @@ This is yet to be defined.
 
 - Don't change the default value of the flag. We use `false` as default value for all the flags to make their behaviour more predictable and uniform (in opposite to having some flags have it `true` and some have it `false`).
 - Don't introduce feature flags that affect each other. Each feature flag increases testing complexity as it introduces new combinations.
+- Don't name you feature switch `New XXX`. After couple of month you might end up with `New New XXX`. Try to use specific names when possible.
