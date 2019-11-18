@@ -62,6 +62,32 @@ Adding **Opt+Shift** to the shortcuts will show a floating panel allowing you to
 - **Cmd-Ctrl-Opt-Shift-Click** on the symbol will do the same.
 - **Cmd-J** will bring up the same magic floating panel allowing you to move focus to wherever you want.
 
+## Configuring file counterparts
+
+Xcode has the concept of file "counterparts". In Objective-C these are configured to be the `.h` and `.m` files with the same name and you can use **Ctrl+Cmd+Up** and **Ctrl+Cmd+Down** to switch between them. They also appear when you are working with the assitant editor in the `Counterparts` entry of the context menu. 
+
+These counterparts are configurable, and to be be more useful for working in our code base you can configure a suggested set by typing the following at a command line prompt:
+
+
+```
+defaults write com.apple.dt.Xcode IDEAdditionalCounterpartSuffixes -array-add "ViewModel" "Renderer" "FlowController" "Builder"
+```
+
+This will make it very easy to switch between the view mode, renderer, flow controller and builder for a given feature. You can obviously add extra suffixes such as `RendererSnapshotTests`.
+
+Now these are the files that appear in the counterparts context menu in the assistant editor:
+
+![Counterparts Context Menu](./Assets/counterparts.png)
+
+And **Ctrl+Cmd+Up** and **Ctrl+Cmd+Down** will cycle between these files.
+
+You can reset these suffixes to the default values with:
+```
+defaults delete com.apple.dt.Xcode IDEAdditionalCounterpartSuffixes
+```
+
+Source: https://gist.github.com/danielmartin/8411c303e5c8702c19c65950b49635b8
+
 ## Testing
 - Everyone knows you hit **Cmd-U** to start testing… right?
 - **Cmd-Ctrl-Opt-G** “Test again” reruns the last test you've run.
