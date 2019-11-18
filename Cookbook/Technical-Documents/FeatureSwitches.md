@@ -102,7 +102,7 @@ Depending on the use case we are using different ways to define Feature Switches
 	
 	If you want to release a feature, set proper conditions on Firebase **before the release cut off day**. Remember to adjust automation tests to make them work regardless if it's turned on or off. When publishing changes in Firebase Console you might be prompted if you want to force save your changes (that could happen when two people made some changes at the same time). **Never force save your changes** - if you see the prompt, cancel your changes, refresh the console and apply them again.
 	
-	After releasing the feature hidden behind the remote feature switch, make some agreement with your PM when we can stop using this switch. Depends how your squad works, you may want to create a ticket in the backlog to phase out the feature switch and remove legacy code. Remember that even you've phased out the feature switch from the newest version, there are still older versions that will be using this feature switch for a long time. After removing it from code, go to the Firebase Console and update description to say which app versions this switch is affecting.
+	After releasing the feature hidden behind the remote feature switch, make some agreement with your PM when we can stop using this switch. Depending on how your squad works, you may want to create a ticket in the backlog to phase out the feature switch and remove legacy code. Remember that even you've phased out the feature switch from the newest version, there are still older versions that could be using this feature switch for a long time. After removing it from code, go to the Firebase Console and update description to say which app versions this switch is affecting.
 
 ## How to decide what feature flag to use
 
