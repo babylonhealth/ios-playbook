@@ -18,7 +18,7 @@ We use two teams on our Apple developer center account:
 
 For day to day and App Center, we use certificates and profiles from our Enterprise team
 
-1. Add shared developer account credentials from 1Password to your Xcode settings in `Preferences -> Accounts` menu. 
+1. Add shared developer account, "John Appleseed", credentials from 1Password to your Xcode settings in `Preferences -> Accounts` menu. 
 2. Run the following command in the terminal: 
 
 ```shell
