@@ -46,7 +46,7 @@ Every question is attributed with **S/M/J** or a combination of those, defining 
 ### UI-Business logic
 - Does `UIViewController` has only its clear responsibilities? (SM, some for J)
 - Is the navigation abstracted? (SM)
-- Is business logic state management done within UI state/actions? (S)
+- Is business logic state management done within UI state/actions? (bonus point)
 - Is there a layer in between (Persistence & Networking) and ViewModel/Presenter/ViewController? (S)
 - Does it use unidirectional data flow? (bonus point)
 - Is there an abstraction of `UITableViewDataSource`/`UICollectionViewDataSource` (bonus point)
@@ -57,4 +57,3 @@ Every question is attributed with **S/M/J** or a combination of those, defining 
 - If Auto Layout is done in code, is it readable? (S)
 - Are there any Auto Layout warnings in the console? (S)
 - Are views composable? (S)
-
