@@ -7,16 +7,16 @@ The purpose of this proposal is to decouple snapshot tests from unit tests to be
 The goal of this proposal is to make it possible to run only unit-tests **locally** in Xcode. Improving CI run time is not a goal of this proposal.
 
 ## Motivation
-Right now when we run all unit-tests (by pressing cmd+U) we also run snapshot tests. Right now it takes **14 minutes** to run all unit+snapshot tests which is very long. Those 14 minutes doesn't include the build time 😱.
+Right now, when we trigger all unit-tests (by pressing cmd+U), the snapshot tests are also run.  It takes **14 minutes** to run all unit+snapshot tests which is very long. Those 14 minutes doesn't include the build time 😱.
 
-Unit-tests should run as quickly as possible so we can have a quick feedback about stability of our changes.\
+Unit-tests should run as quickly as possible, so we can have a quick feedback about our changes that break tests.\
 \
 Ideally, it would be nice to be able to run only unit-tests when we don't work on UI. Unit-tests in separation take about ~2% of the execution time.
 
 ## Proposed solution
 Decouple snapshot tests from unit test by creating `*SnapshotTests` targets in every framework which has snapshots.
 
-We would also need to create a new scheme like `BabylonUniTestsOnly` which would run only tests targets without snapshot tests targets.
+We would also need to create a new scheme like `BabylonUnitTests` which would run only tests targets without snapshot tests targets.
 
 `Babylon` scheme would still remain configuration to run all tests (unit + snapshots).
 
