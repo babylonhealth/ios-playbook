@@ -28,4 +28,4 @@ We would also need to create a new scheme like `BabylonUniTestsOnly` which would
 
 ## Alternatives considered
 
-- **Xcode's 11 Test plans** - Unfortunately, I haven't found a way to select test files per configuration. I'm afraid we cannot use test plans.
+- **Xcode's 11 Test plans** - TestPlans won't help us in context of this proposal. We would still need to have 2 tests targets, even if we use test plans. Since TestPlans are not necessary and doesn't make this proposal any simpler, I don't think we should enable them as part of the proposal.
