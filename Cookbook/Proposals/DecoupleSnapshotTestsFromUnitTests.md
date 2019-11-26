@@ -27,6 +27,3 @@ We would also need to create a new scheme like `BabylonUniTestsOnly` which would
 ## Alternatives considered
 
 - **Xcode's 11 Test plans** - Unfortunately, I haven't found a way to select test files per configuration. I'm afraid we cannot use test plans.
-
-
-
