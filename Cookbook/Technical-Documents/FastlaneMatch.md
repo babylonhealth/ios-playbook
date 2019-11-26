@@ -34,7 +34,7 @@ Following options can be used for the command above:
 
 (You can find the `TeamID` parameter by searching for `$team_ids` in `/fastlane/Appfile` in the main repo.)
 
-3. On prompt for password to decrypt the repository, enter the one from 1Password vault.
+3. On prompt for passphrase to decrypt the repository, enter the one from 1Password vault.
 
 To troubleshoot, refer to `fastlane/Matchfile`, `fastlane/Appfile` and [documentation](https://docs.fastlane.tools/actions/match/)
 
