@@ -57,12 +57,12 @@ The other way to find an element is using an `XCUIElementQuery` which can either
 
 The quick solution is to simply update the enum. When an identifier's text has changed, this is very straightforward and simple. Update the text defined in the enum to the correct value and automation should start working. Resulting in Pull Requests like this https://github.com/babylonhealth/babylon-ios/pull/6475
 
-```swift
-fileprivate enum NavigationBar {
-    static let header = "Privacy policy"
-    - static let telus = "Babylon by TELUS Health Privacy Policy"
-    + static let telus = "Privacy Policy"
-}
+```diff
+ fileprivate enum NavigationBar {
+     static let header = "Privacy policy"
+-    static let telus = "Babylon by TELUS Health Privacy Policy"
++    static let telus = "Privacy Policy"
+ }
 ```
 
 While this will fix the test, it is susceptible to future changes. In this case time permitting, we should attempt to define an `accessibilityIdentifier` for the element and then update the enum to use this identifier. This is not always possible as in the case with chat responses, but it is something we should strive for in order to make our tests more stable and maintainable, reducing the amount of updates needed in the future.
@@ -92,7 +92,7 @@ let promofield = app.tables.cells
 
 Note that you may need to set the identifier on the cell itself rather than its internal components, as automation may have problems finding elements otherwise.
 
-It is also preferable to always use `.matching(identifier: …).firstMatch` rathen than a subscript (`[…]`) as the subscript variant only expects a single match. If, for some reason, there are several, it will throw an error.
+It is also preferable to always use `.matching(identifier: …).firstMatch` rathen than a subscript (`[…]`) as the subscript variant only expects a single match. [If, for some reason, there are several, it will throw an error](https://babylonhealth.slack.com/archives/GD6J0QWQ5/p1561386269226900).
 
 ### Using identifiers to find screens
 
@@ -171,3 +171,9 @@ For example in the registration screen I would recommend the following for the "
 
 However for the first name field as this is present in multiple screens I would use:
 - **"registerFirstName"**
+
+## FAQ
+
+### Why does `Multiple matches found for "primaryButton" Button` error occur in UITest?
+
+`XCUIApplication` creates malformed view hierarchy after Bento re-rendering (not in real app view hierarchy). See [Slack discussion](https://babylonhealth.slack.com/archives/GD6J0QWQ5/p1561386269226900) for more detail. [Use `.matching(identifier: …).firstMatch` as a workaround](#using-accessibilitycontent).
