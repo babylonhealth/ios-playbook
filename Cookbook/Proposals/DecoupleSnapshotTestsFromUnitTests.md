@@ -28,4 +28,4 @@ We would also need to create a new scheme like `BabylonUnitTests` which would ru
 
 ## Alternatives considered
 
-- **Xcode's 11 Test plans** - TestPlans won't help us in context of this proposal. We would still need to have 2 tests targets, even if we use test plans. Since TestPlans are not necessary and doesn't make this proposal any simpler, I don't think we should enable them as part of the proposal.
+- **Xcode's 11 Test plans** - TestPlans won't help us in context of this proposal. We would still need to have 2 tests targets, even if we use test plans. Admittedly, TestPlans do have a possibility to include only a subset of tests. unfortunately, when we create a new testfile it would be automatically enabled in every testplan which uses corresponding test target. To exlude snapshot test being run in unit-test TestPlan we would need to manually untick the snapshot in this TestPlan. This is too errorprone and additional manuall step. Since TestPlans are not necessary and doesn't make this proposal any simpler, I don't think we should enable them as part of the proposal.
