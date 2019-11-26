@@ -15,7 +15,7 @@ To avoid that go to **Preferences -> Project Structure** and select all the fold
 
 This will allow RubyMine to discover Ruby Gems that we have defined in the Gemfile in the root directory and only index fastlane files.
 
-Now RubyMine will give you a hand with code complition for standard Ruby functions, will understand imports of gems with `require`, will suggest you fixes on syntax errors 
+Now RubyMine will give you a hand with code completion for standard Ruby functions, will understand imports of gems with `require`, will suggest you fixes on syntax errors 
 and other common errors like missing parameters and lint your code style (if you enable scanning with RuboCop).
 
 NOTE: still couldn't find a way for it to understand imports of Fastlane types, i.e. `include FastlaneCore`, and to provide code completion on other fastlane internal types.
