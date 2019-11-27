@@ -36,8 +36,7 @@ A project horizontal corresponds to an area of the project that has an horizonta
 
 - ![Automation Tests 🤖](https://img.shields.io/static/v1?label&message=Automation%20Tests%20🤖&color=d4c5f9) - introduction of automation tests
 - ![Localisation 🌐](https://img.shields.io/static/v1?label&message=Localisation%20🌐&color=fcfc50) - updating localizable strings or working in the localization system of the project
-- ![Infrastructure 🛠](https://img.shields.io/static/v1?label&message=Infrastructure%20🛠&color=8631bf) - working in the foundation of the project like network layer.
-- ![Tooling 🔨](https://img.shields.io/static/v1?label&message=Tooling%20🔨&color=2fcbe0) - working in tools like CircleCI, Danger, Linter.
+- ![Platform 🔩](https://img.shields.io/static/v1?label&message=Platform%20🔩&color=002360) - work in the iOS Platform, e.g. architecture, infrastructure, tooling, ...
 
 ### Branding
 We have several projects which contain a subset of functionalities from the main babylon app. These apps also have different flavours in terms of UI. 
