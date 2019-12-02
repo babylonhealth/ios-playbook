@@ -8,6 +8,9 @@ Every question is attributed with **S/M/J** or a combination of those, defining 
 - **M** (expected of a mid-level task)
 - **J** (expected of a junior-level task)
 
+> Note:
+What we mean by `some` is that the requirement does not need to be completely satisfied. For example, an ideal senior level task should have all parts of the app designed for testability, but for a mid level test, we can consider if they exhibit this in a few parts.
+
 ## General:
 
 ### Basics
