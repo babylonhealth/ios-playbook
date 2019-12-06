@@ -36,7 +36,7 @@ There are usually two release engineers working at any given time. It goes witho
 *It starts at the end of the sprint (typically when the new sprint starts on Monday)*
 
 1. Release branch is cut automatically on last Friday of the sprint during nightly builds. It will create and push release branch, create a release Slack channel, submit a new appcenter build and run UI tests.
-   * if for any reason automatic cut didn't work it can be triggered manually with `/stevenson release_cutoff target:Babylon` fro #ios_build channel
+   * if, for any reason, the automatic cut didn't work it can be triggered manually with `/stevenson release_cutoff target:Babylon` from `#ios-build` channel
 1. Join the slack channel the QA has created (e.g. `ios_release_4_1_0`) to discuss anything related to this release.
 1. Bump the release version by triggering the Slack command (eg. `/testflight Babylon version:4.1.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
    * This creates a TestFlight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
