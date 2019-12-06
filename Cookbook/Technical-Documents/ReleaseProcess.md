@@ -14,8 +14,8 @@
     2. Escalating abnormal influx of bugs, so the release, as a whole, can be reassessed.
 4. Making sure they can dedicate enough time for the release. In case this is not possible (due to other squad commitments), please inform the iOS chapter lead.
 5. General bug fixing for minor regressions and tasks, that are not related to significant changes made by squads for their own features. For more complex ones:
-    1. Delegate the bug to the relevant squad/person. 
-    2. If the bug is too complex to be fixed within the release window, please toggle off the feature and inform the Product Manager. 
+    1. Delegate the bug to the relevant squad/person.
+    2. If the bug is too complex to be fixed within the release window, please toggle off the feature and inform the Product Manager.
 6. Bugs that aren't owned by any squad should be fixed by the release engineers. The support engineer(s) can help if additional help is needed.
 
 **The objective is to ship the release build as soon as possible whilst maintaining the quality bar and addressing every bug raised by QA**.
@@ -56,7 +56,7 @@ There are usually two release engineers working at any given time. It goes witho
 *It starts after the App Center build has been delivered and it can take several cycles*
 
 1. Testers will then begin their work against the build you just created.
-1. Any hotfix should target the `develop` branch first. 
+1. Any hotfix should target the `develop` branch first.
 1. These PRs need to be reviewed by the relevant squad or platform QA (Bibin Paul) & one of the release engineers assigned to the release. This is to ensure visibility of changes being requested to be made, and to ensure the correct builds are available for validation. The exception being that if an issue is not reproducible on `develop` then we can merge directly with `release`. Still, it should be fully understandable why it is not reproducible to help ensure there is no regression for the next release.
     * Bear in mind that two approvals from other engineers assigned by Pull Assigners is not enough in this particular case.
     * After merging, we'll need to merge these changes to the release branch. This can be done either via cherry-picking the relevant commits or rebasing the PR branch on the release branch. _This should be done by the author of the change and the PR should be reviewed by the release engineer as well_. Doing this will ensure that both branches are up to date and reduces the risk of conflicts when merging the release branch back to develop.
@@ -120,11 +120,12 @@ The release process starts when the first build is provided to QA and ends when 
 
 1. Automated QA effort (e.g. `5h`)
 2. Manual QA effort (e.g. `3h`)
-3. Delta between the jira ticket being open and marked as `done` or `wont fix`, for Engineering effort. (e.g. `UA-8289: 1h30`). Consider only tickets that were raised during the release period, checking that their creation dates were after the release branch cut. 
+3. Delta between the jira ticket being open and marked as `done` or `wont fix`, for Engineering effort. (e.g. `UA-8289: 1h30`). Consider only tickets that were raised during the release period, checking that their creation dates were after the release branch cut.
 4. Total effort
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
+| 4.12.0| Konrad Muchowicz, Danilo Aliberti | Manual: `24.5h` | `IOSP-396: 0.5`<br>`MS-635: 0.25h`<br>`CNSMR-3209, AV-1287, AV-1336, CNSMR-3210, AV-1304: 3h`<br>`CNSMR-3204: 3h`<br>`CNSMR-3212, PRSCR-1515: 3h`<br>`GW-1149, PAR-418: 13h`<br>`CNSMR-3205: 3h`<br>`APPTS-2169, CE-976: 10h`<br>`MON-5776, MON-5768: 2.5h`<br>`MS-611: 4h`<br>`IDP-471: 1h`<br>`CE-922: 3h`<br>`TK-271: 1h`<br>`APPTS-2208: 2h`<br>`PAT-444: 2.5h`<br>`IOSP-432: 1h`<br> | Total: **52.75h** | 22.11.2019 | 3.12.2019 |
 | 4.10.0| Ilya Puchka, Yasuhiro Inami | Manual: `23.5h` | `MS-353: 3h`<br>`COREUS-2191: 8h`<br>`MON-5641: 10h`<br>`TK-132: 0.5h`<br>`APPTS-1941, APPTS-2030, APPTS-2037: 30h`<br>`PRSCR-1435: 1h`<br>`AV-1228: 9h`<br>`GW-1028: 0.5h`<br>`NRX-1023: 10h`<br>`CNSMR-3119: 8h`<br>`CE-869: 8h`<br>`MS-412: 1.5h`<br>`MS-388: 1.5h`<br>`MS-427: 6h`<br>`GW-915: 8h`<br>`CNSMR-3120: 5h`<br>`IOSP-253: 2h`<br>`IOSP-275: 2h` | Total: **137.5** | 25.10.2019 | 4.11.2019 |
 | 4.9.1| Michael Brown, Yuri Karabatov | Manual: `1h` | `AV-1225: 1h` | Total: **2h** | 22.10.2019 | 24.10.2019 |
 | 4.9.0| Michael Brown, Yuri Karabatov | Manual: `26h` | `IOSP-200: 10m`<br>`GW-990: 2h`<br>`MS-304: 2h`<br>`MON-5545: 30m`<br>`AV-1181: 1h`<br>`TES-481: 30m`<br>`CE-846: 1h`<br>`IOSP-15: 3h`<br>`MS-315: 30m`<br>`IOSP-221: 10m`<br>`IOSP-209: 4h`<br>`PRSCR-1405: 30m`<br>`IOSP-233: 30m`| Total: **41h 50m** | 14.10.2019 | 22.10.2019 |
@@ -143,9 +144,9 @@ The release process starts when the first build is provided to QA and ends when 
 | 3.16.0  | David Rodrigues <br> Ben Henshall | Automated: `6h 50m`<br>Manual: `19h 35min`| `CNSMR-1556: 2h30m` <br> `CNSMR-1537: 3h` <br> `CNSMR-1525: 1h` <br> `CNSMR-1438: 1h` <br> `CNSMR-1437: 2h` <br> `CNSMR-1555: 1h` <br> `CNSMR-1540: 4h` | Total: **40h55m** | 13.05.2019 | 16.05.2019 |
 | 3.15.0                   | Sergey Shulga <br> Joao Pereira <br> Michael Brown | Automated: `7h 37m`<br>Manual: `24h 15 min`| `CNSMR-1449: 1h` <br> `CNSMR-1443: 12h` <br> `CNSMR-1381: 2h` <br> `CNSMR-1438: 30min` <br> `CNSMR-1430: 30min` <br> `CNSMR-1413: 20min` <br> `CNSMR-1412: 20min` <br> `CNSMR-1375: 20min` <br> `CNSMR-1391: 15min` | Total: **49h07m** | 29.04.2019 | 07.05.2019 |
 | 3.14.0                   | Giorgos Tsiapaliokas <br>Yasuhiro Inami | Automated: `07h28m`<br>Manual: `24h10m`| `NRX-506: 2h` <br> `NRX-495: 30m` <br> `NRX-501: 30m` <br> `CNSMR-1323: 30m` | Total: **35h08m** | 15.04.2019 | 23.04.2019 |
-| 3.13.0                   | Anders Ha <br> Viorel Mihalache | Automated: `07h`<br>Manual: `19h`| `CNSMR-1183: 3h` <br> `CNSMR-1181: 2h` | Total: **31h** | 1.04.2019 | 4.04.2019 | 
-| 3.12.0                   | Ben Henshall<br> Danilo Aliberti | Automated: `07h16m`<br>Manual: `22h`| `MON-4225: 3h`| Total: **32h16m** | 18.03.2019 | 21.03.2019 | 
-| 3.11.0                   | Adam Borek<br> Ilya Puchka | Automated: `07h17m`<br>Manual: `19h30m`| `CNSMR-894: 6h`<br>`CNSMR-913: 2h`<br>`CE-262: 2h`<br>`CE-261: 2h`<br> `Expired certificates: 3h`| Total: **41h47m** | 04.03.2019 | 11.03.2019 | 
+| 3.13.0                   | Anders Ha <br> Viorel Mihalache | Automated: `07h`<br>Manual: `19h`| `CNSMR-1183: 3h` <br> `CNSMR-1181: 2h` | Total: **31h** | 1.04.2019 | 4.04.2019 |
+| 3.12.0                   | Ben Henshall<br> Danilo Aliberti | Automated: `07h16m`<br>Manual: `22h`| `MON-4225: 3h`| Total: **32h16m** | 18.03.2019 | 21.03.2019 |
+| 3.11.0                   | Adam Borek<br> Ilya Puchka | Automated: `07h17m`<br>Manual: `19h30m`| `CNSMR-894: 6h`<br>`CNSMR-913: 2h`<br>`CE-262: 2h`<br>`CE-261: 2h`<br> `Expired certificates: 3h`| Total: **41h47m** | 04.03.2019 | 11.03.2019 |
 |  3.10.0                   | Martin Nygren, Witold Skibniewski | Automated: `07h30m`<br>Manual: `28h`<br> | `CNSMR-814: 30m` | Total: **36h00m** | 18.02.2019 | 21.02.2019 |
 | 3.9.1                    | Michael Brown | Automated: `04h00m`<br>Manual: `14h`<br>| `CNSMR-705: - 30m`<br>`AV-312: - 30m`| Total: **19h00m** | 11.02.2019 | 13.02.2019
 | 3.9.0                    | Michael Brown, Giorgos Tsiapaliokas | Automated: `07h25m`<br>Manual: `24h`<br>| `CNSMR-680: - 2h`<br>| Total: **33h25m** | 04.02.2019 | 08.02.2019
