@@ -30,7 +30,8 @@ There are usually two release engineers working at any given time. It goes witho
 ## 2. Release step-by-step
 
 ### Phase 1: Pre-release considerations
-1. To help expedite the release, any required feature flag changes should be done prior to the 2am cut-off on the Friday. If these are missed, a concession can be made so that the changes will be allowed to be made during the Friday. However, this should not be a regular occurrence as it requires intervention from the assigned release engineers to create new builds.
+1. To help expedite the release, any required feature flag changes should be done prior to the 2am cut-off on the Friday. If these are missed, a concession can be made so that the changes will be allowed to be made during the Friday. However, this should not be a regular occurrence as it requires your intervention to create new builds.
+If the automatic cut-off fails then this must be triggered manually: Run `/stevenson release_cutoff target:{appname}` in the build channel.
 
 ### Phase 2: Initiation
 *It starts at the end of the sprint (typically when the new sprint starts on Monday)*
