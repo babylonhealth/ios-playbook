@@ -59,7 +59,10 @@ There are usually two release engineers working at any given time. It goes witho
 1. Any hotfix should target the `develop` branch first. 
 1. These PRs need to be reviewed by the relevant squad or platform QA (Bibin Paul) & one of the release engineers assigned to the release. This is to ensure visibility of changes being requested to be made, and to ensure the correct builds are available for validation. The exception being that if an issue is not reproducible on `develop` then we can merge directly with `release`. Still, it should be fully understandable why it is not reproducible to help ensure there is no regression for the next release.
     * Bear in mind that two approvals from other engineers assigned by Pull Assigners is not enough in this particular case.
-    * After merging, we'll need to cherry-pick the commit via a PR to the release branch. Doing this will ensure that both branches are up to date and reduces the risk of conflicts when merging the release branch back to develop. 
+    * After merging, we'll need to merge these changes to the release branch. This can be done either via cherry-picking the relevant commits or rebasing the PR branch on the release branch. _This should be done by the author of the change and the PR should be reviewed by the release engineer as well_. Doing this will ensure that both branches are up to date and reduces the risk of conflicts when merging the release branch back to develop.
+
+    _Important: do not change the target branch of the PR from develop to release as this increases the risk of bringing in unneeded changes from develop to release branch. Instead create a second PR to release using rebase or cherry-pick and ensure that only required changes are commited._
+
     * Furthermore, the issue for the hotfix has to be added to the release JIRA board. This can be done automatically by setting the release number in `Fix version` in the hotfix's JIRA card.
 
 ### Phase 4: Submit TestFlight builds to App Store Connect
@@ -164,4 +167,3 @@ The release process starts when the first build is provided to QA and ends when 
 ## 5. Post-mortem
 
 If the release did not go as expected, request a meeting with the iOS team so that the reasons for this failure are analyzed and addressed in order to minimize similar problems in the future.
-
