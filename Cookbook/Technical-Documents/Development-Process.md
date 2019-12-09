@@ -21,7 +21,7 @@ There are 3 services we use daily:
 - Implement all features, changes to satisfy the acceptance criteria defined in the ticket
 - If it introduces a new component, add it to the `GalleryApp` and make sure it's included in the Design System
 
-## Testing 🧪 <!-- TODO: [CNSMR-3195] Link to testing article -->
+## Testing 🧪 <!-- TODO: [CNSMR-3195] link to testing article -->
 
 - Make sure:
   - New components, screens have snapshot tests
