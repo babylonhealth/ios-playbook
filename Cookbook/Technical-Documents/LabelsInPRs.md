@@ -8,8 +8,6 @@ We use labels in our Pull Requests to be able to categorize and prioritize our w
 
 At the moment our labels can be separated into the following groups:
 
-- [Product verticals](#product-verticals)
-
 - [Project horizontals](#project-horizontals)
 
 - [Branding](#branding)
@@ -19,17 +17,6 @@ At the moment our labels can be separated into the following groups:
 - [Emergency](#emergency)
 
 - [Extra](#extra)
-
-
-### Product verticals
-A product vertical corresponds to a big feature of the product. 
-
-- ![Health Management 🍄](https://img.shields.io/static/v1?label&message=Health%20Management%20🍄&color=2BBBBB) - any work done in the health management vertical
-- ![Healthcheck 👩‍⚕️](https://img.shields.io/static/v1?label&message=Healthcheck%20👩‍⚕️&color=5319e7) - any work done in the healthcheck vertical
-- ![Payments 💰](https://img.shields.io/static/v1?label&message=Payments%20💰&color=25fcb8) - any work done in the payments vertical
-- ![Prescriptions 💊](https://img.shields.io/static/v1?label&message=Prescriptions%20💊&color=d3cb34) - any work done in the prescriptions vertical
-- ![SDK 💸](https://img.shields.io/static/v1?label&message=SDK%20💸&color=f9d0c4) - any work done in the SDK vertical
-- ![Triage UI 🏥](https://img.shields.io/static/v1?label&message=Triage%20UI%20🏥&color=006b75&messageColor=f9d0c4) - any work done in the Triage UI vertical
 
 ### Project horizontals
 A project horizontal corresponds to an area of the project that has an horizontal impact, meaning it has impact in most or all the verticals in the project.
@@ -78,14 +65,13 @@ These tags are used to give extra context to the PR.
 
 ## 2. The rules
 
-A PR should always present at least 2 labels. One label should represent the area of the project and the other should represent the stage of the PR.
+A PR should always have at least one label, representing the review status of the PR. If applicable, other labels can be added to represent what area does the PR touch.
 
-There are a few rules we should consider when applying labels to a PR.
+As such, there are a few rules we should consider when applying labels to a PR.
 
+### [**Project horizontals**](#project-horizontals) and [**Branding**](#branding)
 
-### [**Product verticals**](#product-verticals), [**Project horizontals**](#project-horizontals) and [**Branding**](#branding)
-
-A PR should always contain at least one label that belongs to these groups. Multiple labels from these groups can be added to a PR because a piece of work can have impact in more than one area.
+Multiple labels from these groups can be added to a PR because a piece of work can have impact in more than one area.
 
 ### [**Stage**](#stage)
 
