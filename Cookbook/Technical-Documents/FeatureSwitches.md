@@ -2,43 +2,86 @@
 
 This document describes the process that should be followed when defining Features Switches.
 
+New features should follow this approach. If you are working on the existing feature that was not yet refactored to this approach please refer to [previous version of this guide](https://github.com/babylonhealth/ios-playbook/blob/d53a63193dffa9cc613a6810b135b87d67189729/Cookbook/Technical-Documents/FeatureSwitches.md).
+
 Depending on the use case we are using different ways to define Feature Switches in our code base. A feature switch is not always some `Bool` value that can be either `true` or `false` (though most of the times it will be), it can be a more complicated type that defines a conditional behaviour.
 
-1. **Local feature switches**
+# Feature Modules
 
-	These feature switches are defined in the `LocalFeatureSwitchesProtocol` and are stored in `UserDefaults`. **These feature switches are supposed to be used only during the development of any new feature so that the code for the feature can be integrated into the `develop` branch continuously.** As they are stored in `UserDefaults` they can be overridden during testing with Settings app. To add a new local feature switch do the following:
+Each module (i.e. Appointments, ChatBot, Healthcheck) should have a "point of configuraiton" (we will further call it Feature Module) that will be used to initialise this module on application startup with values specific to the applicaiton flavour. This configuration should define "static" configurations which is anything that is hardcoded in the app, and all the feature switches used by this module. Each configuration point should follow a common pattern, i.e. here it is for MapsUI framework:
 
-	1. Add a new case in the `SettingsKeys` enum for this feature flag in `LocalFeatureSwitches.swift` (in BabylonDependencies):
+```swift
+extension World {
+    private static var maps: MapsUI!
 
-	```swift
-	case isMyFeatureEnabled
-	```	
-	
-	2. Add a new property to the `LocalFeatureSwitchesProtocol` in `LocalFeatureSwitches.swift`:
-
-	```swift
-	static var isNewFeatureEnabled: Bool { get }
-	```
-	
-	3. Add a default implementation in the extension of `LocalFeatureSwitchesProtocol` in `LocalFeatureSwitches.swift`:
-
-	```swift
-    public static var isNewFeatureEnabled: Bool {
-        #if DEBUG || ENABLE_FEATURE_FLAGS
-        return valueFromDefaults(for: .isNewFeatureEnabled)
-        #else
-        return false
-        #endif
+    public func configureMaps(
+        config: MapsUI.Configuration
+    ) {
+        World.maps = MapsUI(config: config)
     }
+
+    public var maps: MapsUI { Self.maps }
+
+    public struct MapsUI: FeatureModule {
+        public let featureSwitches: FeatureSwitches = FeatureSwitches()
+        public let config: Configuration
+
+        public struct FeatureSwitches {
+            public enum Keys: String {
+	             // keys for feature switches will go here
+            }
+
+            // feature switches declaration will go here
+        }
+
+        public struct Configuration {
+            // configuraiton propertis will go here
+
+            public init(...) {
+                ...
+            }
+        }
+    }
+}
+```
+
+Then this configuration point is used in the `AppDelegate`:
+
+```swift
+extension SharedAppDelegate {
+    static func configureFeatures() {
+        Current.configureMaps(config: .init()) // configure maps with default values
+        // configuration for other features
+    }
+}
+```
+
+All static configuration properties and feature switches should be declared in this way in each vertical separately.
+
+- ### Local feature switches
+
+	These feature switches are defined in an appropriate Feature Module and are stored in `UserDefaults`. **These feature switches are supposed to be used only during the development of any new feature so that the code for the feature can be integrated into the `develop` branch continuously.** As they are stored in `UserDefaults` they can be overridden during testing with Settings app. To add a new local feature switch do the following:
+
+	1. Declare feature switch in `FeatureSwitches` struct:
+	
+	```swift
+	public struct MapsUI: FeatureModule {
+	    ...
+	    public struct FeatureSwitches {
+	        public enum Keys: String {
+		    case isMyFeatureEnabled
+		}
+		
+		@LocalFeatureSwitch(key: Keys.isMyFeatureEnabled)
+		var isMyFeatureEnabled: Bool
+	    }
+	}
 	```
 	
-	Note: `ENABLE_FEATURE_FLAGS` compilation condition exists so that we are able to disable all the **local feature flags** in the builds that we provide for user testing. This flag should be used **only with local feature switches**.
-	
-	
-	4. Add a new entry in the `Root.plist` for a toggle for this feature. The key name should be the same as the raw value of the case in `SettingsKeys` added before. The entry should be added after the `PSGroupSpecifier` item named `✨ Local Feature Switches ✨` and before `✨ Remote Feature Switches ✨` (this will visually group it with other local feature switches in the Settings app)
+	2. Add a new entry in the `Root.plist` for a toggle for this feature. The key name should be the same as the raw value of the case in `SettingsKeys` added before. The entry should be added after the `PSGroupSpecifier` item named `✨ Local Feature Switches ✨` and before `✨ Remote Feature Switches ✨` (this will visually group it with other local feature switches in the Settings app)
 
 		1. if the feature is related to the Babylon app only it is enough to add the entry to the plist located at `Babylon/Brand/babylon/Settings.bundle`
-		2. if the feature is related to all our apps then the same entry should be added to the plist located at `Babylon/Supporting Files/Settings.bundle`
+		2. if the feature is related to all our apps then the same entry should be added to the plist located at `Babylon/Supporting Files/Settings.bundle` (this bundle is shared by other apps targets)
 	
 	```xml
 	<dict>
@@ -53,51 +96,76 @@ Depending on the use case we are using different ways to define Feature Switches
 	</dict>
 	```
 	
-	**Note that default values are always `false`!**
-
-2. **Application configuration**
-
-	Application configuration, as name implies, exists to specify application specific configurations, i.e. if a feature should be enabled or completely disabled for a specific app or if it should use a different content. To define a new application configuration you should add a new property to the `AppConfigurationProtocol` in `AppConfiguration.swift`. If the flag is related to a specific feature then it might be better to define it in the dedicated configuration struct/protocol, i.e. if the flag is related to `Appointments` we have `AppointmentsContentProtocol` for this purpose.
+	**Note that default values are always `false`!** but you can specify a different default value, i.e. `@LocalFeatureSwitch(key: Keys.isMyFeatureEnabled, defaultValue: true)`
 	
-	A difference with other Feature Switches is that Application Configuration is used when we know that the configuration is specific to a specific _app_ (not the locale, not the user's region or their consumer network) and other apps should have the same feature configured differently. Other Feature Switches are not target specific.
-	
-	It's however possible to have Application Configuration switch to be "driven" by a Local Feature switch or even Remote Feature Switch. This way we can both have a flexibility of these feature switches (that we can change their values remotely or from the Settings app) but we at the same time can override this configuration for other targets and we don't have to change the way how we access the flag in the code when for example we change from a local to remote feature switch.
+	You can then refer this property as `Current.maps.isMyFeatureEnabled`
+
+- ### Static configuration
+
+	Static configuration exists to specify application specific configurations, i.e. if a feature should be enabled or completely disabled for a specific app or if it should use a different content. To define a new static configuration you should add a new property to the `Configuration` struct in the appropriated Feature Module. If the flag is related to a specific feature then it might be better to define it in the dedicated configuration struct/protocol, i.e. if the flag is related to `Appointments` we have `AppointmentsContentProtocol` for this purpose.
 	
 	```swift
-	extension AppointmentsContentProtocol {
-		public var isMyNewFlowEnabled: Bool {
-			return Current.abTestingService[.isMyNewFlowEnabled]
+	public struct MapsUI: FeatureModule {
+	    ...
+	    public struct Configuration {
+	        let myConfiguration: Bool
+		
+		public init(myConfiguration: Bool) {
+		    self.myConfiguration = myConfiguration
 		}
+	    }
 	}
 	```
+	
+	You can then refer this property as `Current.maps.myConfiguration`.
+	
+	A difference with other Feature Switches is that static configuration is used when we know that the configuration is specific to a specific _app_ (not the locale, not the user's region or their consumer network) and other apps should have the same feature configured differently, or we know that these configurations can be simply hardcoded on the client side. Other Feature Switches are not target specific.
 
-3. **Backend feature switches**
+- ### Backend feature switches
 
 	These feature switches are a kind of remote feature switches and are defined on the backend (in Feature Configurator service) and come as a part of patient details and can be accessed as `patient.metadata.featureSwitches`. To add a new feature switch on the client add a new property to `BackendFeatureSwitches` struct in `BackendFeatureSwitches.swift` file and code to decode this property in `Decodable.swift`. Of course it needs to be added on the backend as well, that's something the backend dev from your team should be able to help with.
 	
-4. **Firebase remote config**
+- ### Firebase remote config
 
-	These feature switches are another kind of remote feature switches and use Firebase Remote Config as a backend. To add a new Firebase remote config you need to add a new "variant" variable in the `ABTestVariant` in `ABTesting.swift` and its default to `FirebaseABTestingService.keysAndNSObjectValues`
-	
+	These feature switches are another kind of remote feature switches and use Firebase Remote Config as a backend. To add a new Firebase remote config you need to declare it in the `FeatureSwitches` struct of the appropriate Feature Module, similarly to local feature switches:
+
 	```swift
-	static let isNewFeatureEnabled = makeBoolVariant(key: "is_new_feature_enabled", defaultValue: false)
+    public struct MapsUI: FeatureModule {
+        ...
+        public struct FeatureSwitches {
+            public enum Keys: String {
+                // value should be the same as one defined in Firebase console
+                case isMyFeatureEnabled = "is_my_feature_enabled"
+            }
+
+            @ABTestVariant(key: Keys.isMyFeatureEnabled)
+            var isMyFeatureEnabled: Bool
+        }
+	}
 	```
+
+	Add default value of this feature to `FirebaseABTestingService.init`:
 	
 	```swift
-        let keysAndNSObjectValues = [
-	    ...,
-	    ABTestVariant.isNewFeatureEnabled.keyAndDefault,
+	let keysAndNSObjectValues = [
+	    ...
+	    maps.$isMyFeatureEnabled.keyAndDefault,
 	]
 	```
 	
-	Then you need to add a remote config in the [Firebase console](https://console.firebase.google.com) with the same string key. For that navigate to the `Remote Config` page in the `Grow` section of the side menu and tap "Add parameter".
+	You can then refer this property as `Current.maps.isMyFeatureEnabled`.
+
+	**Note that default value is `false` again!** But you can specify a different default value, i.e. `@ABTestVariant(key: Keys.isMyFeatureEnabled, defaultValue: true)`
+
+	**Adding a feature switch to Firebase console**
+
+	You need to add a remote config in the [Firebase console](https://console.firebase.google.com) with the same string key. For that navigate to the `Remote Config` page in the `Grow` section of the side menu and tap "Add parameter".
 
 	![](Assets/adding-remote-config-flag.png)
 
 	To control the value of this feature flag we can define values for different "conditions" which are based on the application bundle id and the build version (not the app semantic version number). You can reuse existing conditions (don't mix them with those used for Android app unless you agree to use the same flag for both platforms) or create a new condition on the `Conditions` page. To create a new condition you need to specify the app bundle identifier and optionally a regular expression for build number (you can use [this tool](http://gamon.webfactional.com/regexnumericrangegenerator/) to create it and [this tool](https://regexr.com) to see if your regular expression works). **Remember to start with local feature switch first when working on a new feature**, read next sections of this article for more details.
 	![](Assets/adding-remote-config-condition.png)
 
-	**Note that default value is `false` again!**
 	**Also note that condition is using a build number, even though the description mentions the app version. Be careful with these conditions when doing a release not from the head of develop branch (but i.e. doing a hot-fix release from the head of previous release) as the build numbers are constantly incremented with each CI run and don't depend on the app version.**
 	
 	If you want to release a feature, set proper conditions on Firebase **before the release cut off day**. Remember to adjust automation tests to make them work regardless if it's turned on or off. When publishing changes in Firebase Console you might be prompted if you want to force save your changes (that could happen when two people made some changes at the same time). **Never force save your changes** - if you see the prompt, cancel your changes, refresh the console and apply them again.
@@ -172,3 +240,4 @@ This is yet to be defined.
 - Don't change the default value of the flag. We use `false` as default value for all the flags to make their behaviour more predictable and uniform (in opposite to having some flags have it `true` and some have it `false`).
 - Don't introduce feature flags that affect each other. Each feature flag increases testing complexity as it introduces new combinations.
 - Don't name you feature switch `New XXX`. After couple of month you might end up with `New New XXX`. Try to use specific names when possible.
+
