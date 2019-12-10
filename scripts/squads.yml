@@ -164,7 +164,6 @@ squads:
   - name: Onboarding and Navigation
     desc: General user experience in the app.
     members:
-      - *Emese
       - *Sergey
       - *Yuri
   - name: Native Apps Platform
@@ -182,7 +181,7 @@ squads:
   - name: Healthcheck
     desc: Overview of your health using a 3D body model (avatar).
     members:
-      - *Ben
+      - *Emese
       - *Julien
   - name: Identity
     desc: Authentication and Authorization related work
@@ -190,6 +189,10 @@ squads:
       - *Giorgos
       - *Michael
       - *Vojtech
+  - name: Member Comms
+    desc: Improving how we communicate with our users
+    members:
+      - *Viorel
   - name: Monitor
     desc: Help members manage and sustain a healthy lifestyle.
     members:
@@ -197,7 +200,6 @@ squads:
       - *DanielH
       - *DanielS
       - *Diego
-      - *Joshua
   - name: Prescriptions
     desc: Prescriptions functionality.
     members:
@@ -208,10 +210,6 @@ squads:
     desc: Updating and maintaining the Telus app.
     members:
       - *Simon
-  - name: SDK
-    desc: Develop and maintain the SDK frameworks.
-    members:
-      - *Viorel
   - name: Tenancy & Features
     desc: To integrate the new feature configurator.
     members:
@@ -228,6 +226,8 @@ squads:
   - name: US Professional Services
     desc: Features for app in the US.
     members:
+      - *Ben
+      - *Joshua
       - *Chesley
       - *Patrick
       - *Sam
