@@ -49,7 +49,7 @@ There are usually two release engineers working at any given time. It goes witho
     
 During this stage, the release manager has the following tasks:
   1. Create the CRP ticket by triggering the Slack command (eg. `/crp ios branch:release/babylon/4.1.0`) in `#ios-launchpad`		
-    * This will also generate the CHANGELOG automatically (from the list of commits between the `release/{appname}/{version}` branch you mentioned and the tag for the latest version of the same product – i.e. the most recent `{appname}/*` tag) to include it in the CRP ticket		
+    * This will also generate the CHANGELOG automatically (from the list of commits between the `release/{appname}/{version}` branch used in the command and the tag for the latest version of the same product – i.e. the most recent `{appname}/*` tag) to include it in the CRP ticket		
     * Further manually complete the CRP ticket with any additional information (clinical risk, etc)	
  1. Ask the `#ios-launchpad` channel for the expected release notes from each squad if they are releasing anything.
   
