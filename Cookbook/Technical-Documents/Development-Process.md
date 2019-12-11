@@ -21,7 +21,7 @@ There are 3 services we use daily:
 - Create a branch where this work will live. Please follow this format: `<author's_name>/<ticket-id>-<small-description (optional)>` (E.g. `john/TCKT-123-fix-bug`)
 - For new features, add a [local feature switch](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/FeatureSwitches.md) to avoid getting WIP code into the release. Add the name of this flag (and additional instructions) to the ticket to help QA test it
 - Implement all features, changes to satisfy the acceptance criteria defined in the ticket
-- If it introduces a new component, add it to the `GalleryApp` and make sure it's included in the Design System
+- If it introduces a new component, add it to the [`GalleryApp`](https://install.appcenter.ms/orgs/Babylon-Health-1/apps/Gallery) and make sure it's included in the Design System
 
 ## 3. Testing 🧪 <!-- TODO: [CNSMR-3195] link to testing article -->
 
