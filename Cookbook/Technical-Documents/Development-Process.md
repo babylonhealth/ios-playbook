@@ -49,7 +49,7 @@ _Note: Sometimes Pull Assigner is not triggered when a new PR is opened. In that
 - Once it reaches the front of the queue, it's updated with the target branch and CircleCI runs all necessary tests to make sure nothing's failing. _Note: there's no need to trigger checks manually, if there are other PRs in the queue._ <!-- TODO: [CNSMR-3231] link to Wall-E article -->
 - If the required checks are passing, the PR is merged and the branch deleted.
 - The ticket is moved to `Awaiting build` on Jira by our [bot](https://github.com/babylonhealth/Stevenson). It will be updated to `Ready for QA` when the next App Center build is created. (if configured, otherwise this should be done manually)
-
+- If the checks fail, you will have to analyse what is the reason for the failure, fix it, and add the `Merge` label again
 ## 6. QA 🧑‍💻
 
 - Once the work is in the App Center builds, QA can test it to make sure everything works correctly
