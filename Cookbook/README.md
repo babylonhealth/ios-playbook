@@ -83,7 +83,7 @@
   - Interview presentation
 
 ## Tooling 🛠
-  - [XCode Tips & Tricks](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/XcodeTips.md)
+  - [Xcode Tips & Tricks](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/XcodeTips.md)
   - [Posting Analytics Events to Snowplow](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/SnowplowHowTo.md)
   - Firebase remote config
   - [Danger Configuration](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/DangerRules.md)
