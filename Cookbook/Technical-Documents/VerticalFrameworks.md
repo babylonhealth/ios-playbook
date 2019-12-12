@@ -6,8 +6,9 @@ Vertical Frameworks
 After modularisation refactoring in [IOSP-338](https://babylonpartners.atlassian.net/browse/IOSP-338), our Babylon App's UI screen framework dependencies are now fully decoupled from each other so called **Vertical Frameworks**.
 It ensures that there are **no dependencies between each vertical** so that faster parallel build and easy maintainance become possible.
 
-(Example of parallel build in Vertical Frameworks)
-<img src="Assets/parallel-build.png" width="500">
+<img src="Assets/parallel-build.png" width="500"><br>
+(Example of parallel build in Vertical Frameworks)<br>
+
 
 In order to share each vertical's functionalities among other verticals, e.g. `ClinicalRecordsUI` using `MapsUI` feature, rather than one depending on the other sequentially, we now add **`BabylonVerticalInterfaces.framework`** ([PR-9964](https://github.com/babylonhealth/babylon-ios/pull/9964)) as a shim to **share each vertical's interfaces only** to the other verticals.
 
