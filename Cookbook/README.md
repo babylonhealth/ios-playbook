@@ -12,7 +12,6 @@
   - [Initial tasks](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/NewHiresCheckList.md#whats-next)
 
 ## Process 🚓
-  - Overview
   - [Day-to-day in the iOS Team FAQ](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/WorkingAtBabylon.md)
   - [Code owners](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Proposals/CODEOWNERS.md)
   - [Writing proposals](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/WritingAProposal.md)
@@ -41,7 +40,6 @@
   - [Functional operators in our codebase](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/FunctionalOperators.md)
 
 ## Testing 🧪
-  - Overview
   - [Debug Window](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/TheDebugWindow.md)
   - Unit tests
      - [Unit testing view models](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/UnitTestingViewModels.md)
@@ -56,7 +54,6 @@
   - Sample app
 
 ## Conventions 🍊
-  - Overview
   - Colors
   - Git
     - Branch names
@@ -67,7 +64,6 @@
   - Slack messaging
 
 ## Continuous Integration 🚦
-  - Overview
   - [How to invoke CI jobs from Slack](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/SlackCIIntegration.md)
   - Stevenson
   - Wall-E
@@ -106,7 +102,6 @@
 
 ## Other 👀
   - Training
-    - Overview
     - Writing articles
     - Conferences
       - Attending
