@@ -20,3 +20,5 @@ This document is for any Babylon iOS developers who wish to distribute our appli
 * Within [AppstoreConnect](https://appstoreconnect.apple.com/) (login details within 1Password), add the user(s) to the relevant distribution group
 * Within the user distribution group in Testflight on AppstoreConnect there will be a link to invite the user to our build, once they are added to the relevant group, please use this link to invite them to install our build via Testflight
 
+
+![](https://i.imgur.com/apFTvzj.png)
