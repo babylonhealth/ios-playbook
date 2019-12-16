@@ -10,7 +10,7 @@ It ensures that there are **no dependencies between each vertical** so that fast
 (Example of parallel build in Vertical Frameworks)<br>
 
 
-In order to share each vertical's functionalities among other verticals, e.g. `ClinicalRecordsUI` using `MapsUI` feature, rather than one depending on the other sequentially, we now add **`BabylonVerticalInterfaces.framework`** ([PR-9964](https://github.com/babylonhealth/babylon-ios/pull/9964)) as a shim to **share each vertical's interfaces only** to the other verticals.
+This means that from now on, if a vertical needs to use a functionality from another vertical (e.g. `ClinicalRecordsUI` using `MapsUI` feature), we must use **`BabylonVerticalInterfaces.framework`** ([PR-9964](https://github.com/babylonhealth/babylon-ios/pull/9964)) as a shim to **share each vertical's interfaces only** to the other verticals. This is for keeping verticals independent from each other to make parallel build possible.
 
 <img src="Assets/dependency-v4.12.0.png">
 
