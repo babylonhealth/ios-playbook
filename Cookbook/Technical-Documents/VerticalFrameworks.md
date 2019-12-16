@@ -42,7 +42,7 @@ While using `protocol` is a canonical way of abstracting concrete types into a s
 
 Instead, we will just migrate `struct` and `enum` data types directly to `BabylonVerticalInterfaces`, with **only containinig minimal structure i.e. constructors and accessors**, since they should all be simple DTOs.
 
-For example, following code only contains minimal constructors and accessors, thus it is allowed to be added in `BabylonVerticalInterfaces`.
+For example, the following code only contains minimal constructors and accessors (and no behaviour nor business logic), thus it is allowed to be added in `BabylonVerticalInterfaces`.
 
 ```swift
 // Struct DTO example
