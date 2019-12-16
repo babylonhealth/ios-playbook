@@ -36,7 +36,7 @@ It allows to inject concrete dependencies via constructor injection or [global `
 Since adding implementation is prohibited in this interface framework in general, adding protocol default implementation is also discouraged.
 However, if it is simple and valid enough to be worth sharing across every vertical (e.g. making alias of other protocol method, empty IO, …), we may add such default implementation.
 
-### `struct`s and `enum`s that protocol-method uses (DTOs)
+### `struct`s and `enum`s that those protocols use (DTOs)
 
 While using `protocol` is a canonical way of abstracting concrete types into a syntactic level, applying to `struct` or `enum` data types (or DTOs, data-transfer-objects) is often tedious and sometimes doesn't work nicely (e.g. protocol method consuming those data types can't be abstracted as existential due to a contravariance issue).
 
