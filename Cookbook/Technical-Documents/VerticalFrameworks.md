@@ -34,7 +34,7 @@ Following code are considered as shareable interfaces:
 It allows to inject concrete dependencies via constructor injection or [global `Current` access](Current-guide.md) that is not known at callee's (e.g. vertical) compile time but later determined at caller's (e.g. Octopus) compile time or runtime.
 
 Since adding implementation is prohibited in this interface framework in general, adding protocol default implementation is also discouraged.
-However, if it is simple and valid enough to worth sharing across every vertical (e.g. making alias of other protocol method, empty IO), we may add such default implementation.
+However, if it is simple and valid enough to be worth sharing across every vertical (e.g. making alias of other protocol method, empty IO, …), we may add such default implementation.
 
 ### `struct`s and `enum`s that protocol-method uses (DTOs)
 
