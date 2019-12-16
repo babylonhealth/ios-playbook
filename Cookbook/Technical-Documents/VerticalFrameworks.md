@@ -16,7 +16,7 @@ In order to share each vertical's functionalities among other verticals, e.g. `C
 
 This documentation explains:
 
-1. What goes into `BabylonVerticalInterfaces` ?
+1. What goes into `BabylonVerticalInterfaces`
 2. What are the rules for each Vertical Framework?
 
 ## 1. What goes into `BabylonVerticalInterfaces` ?
