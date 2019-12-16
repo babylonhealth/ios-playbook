@@ -26,7 +26,7 @@ Just like C's header file, `BabylonVerticalInterfaces` must only contain interfa
 Following code are considered as shareable interfaces:
 
 1. `protocol`s (without default implementation)
-2. `struct`s and `enum`s that protocol-method uses (DTOs)
+2. `struct`s and `enum`s that those protocols use (DTOs)
 
 ### `protocol`s (without default implementation)
 
