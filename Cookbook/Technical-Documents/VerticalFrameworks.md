@@ -19,7 +19,7 @@ This documentation explains:
 1. What goes into `BabylonVerticalInterfaces`
 2. What are the rules for each Vertical Framework?
 
-## 1. What goes into `BabylonVerticalInterfaces` ?
+## 1. What goes into `BabylonVerticalInterfaces`?
 
 Just like C's header file, `BabylonVerticalInterfaces` must only contain interfaces that describes the **syntax of the API** without exposing its implementation (semantics).
 
