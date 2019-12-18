@@ -52,7 +52,10 @@ It's possible to use snapshot tests to verify that screens look correct with rea
 
 On one hand it means that snapshot tests will fail when we update a copy, on the other hand it makes sure that someone will check whether this screen still looks correct after a copy change.
 
-To do that you'll need to have translations available in tests. Setting this up involves switching bundle(s), for example see `TestAppointmentLocalizationBundleUpdater`.
+To do that you'll need to have copies available in tests. Setting this up involves:
+
+- Adding a **reference** to strings file ("Localizable.strings") in test target (instead of making a hard copy of the file). This way the strings file used by the app can be referenced by multiple test bundles.
+- Switching bundle(s) in tests, for example see `TestAppointmentLocalizationBundleUpdater`.
 
 ### Testing configurations
 
