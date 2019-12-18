@@ -56,7 +56,7 @@ To do that you'll need to have translations available in tests. Setting this up 
 
 Before adding a snapshot test consider is it worth to test all possible device combinations for a given state.
 
-Let's that say we implement 2 secondary states for a new screen - loading and error state. 3 devices x 2 states x 2 visual styles = 12 new snapshots. It's often the case that the secondary screens only display screen's title, a loading or empty state component, maybe a few components which are already tested in primary state snapshots.
+Let's say that we implement 2 secondary states for a new screen - loading and error state. 3 devices x 2 states x 2 visual styles = 12 new snapshots. It's often the case that the secondary screens only display screen's title, a loading or empty state component, maybe a few components which are already tested in primary state snapshots.
 
 The lower-level components for loading and error states are already pretty well tested, so sometimes a single snapshot per device for a state like this may be enough. In this example the number of snapshots would go from 12 to 4 and we could still be pretty confident that UI works fine in those states.
 
