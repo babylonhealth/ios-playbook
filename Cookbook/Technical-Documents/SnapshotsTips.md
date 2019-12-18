@@ -18,7 +18,7 @@ Using snapshot tests as feedback mechanism when building UI is much faster than 
 An example of a workflow for adding a new screen can look like this:
 
 1. **Initial setup**
-      - Add files for a new screen from following templates: BentoBox and RendererSnapshotTests.
+      - Add files for a new screen with "Bento Box" template. To get renderer test file tick "Include Tests" box there or add it separately with "Bento Renderer Snapshot Test" template.
     -  Set `recordMode` to `true` in the snapshot test case - you'll be making a lot of changes.
 2. Build the UI in the [`Renderer`](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/Architecture.md#renderer) from the current `State`, by 🔁 **repeating the following steps until done**:
     - Make some small changes
