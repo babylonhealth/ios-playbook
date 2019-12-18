@@ -51,9 +51,9 @@ What we mean by `some` is that the requirement does not need to be completely sa
 - Does `UIViewController` has only its clear responsibilities? (SM, some for J)
 - Is there an abstraction of `UITableViewDataSource`/`UICollectionViewDataSource` (SM)
 - Is navigation from one module to another not tightly coupled? (SM)
-- Is business logic state management done within UI state/actions? (bonus point)
 - Is there a data access layer in between (Persistence & Networking) and ViewModel/Presenter/ViewController? (S)
 - Does it use unidirectional data flow? (bonus point)
+- Is business logic state management done within UI state/actions? (bonus point)
 
 ### UI
 - Is the Auto Layout used? (SMJ)
