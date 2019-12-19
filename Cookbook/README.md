@@ -39,6 +39,7 @@ iOS Cookbook 👩‍🍳
 * [Replace `iOSSnapshotTestCase` library with `SnapshotTesting`](./Proposals/SnapshotTesting.md)
 * [Automation Identifiers](./Technical-Documents/AutomationIdentifiers.md)
 * [Testing view models](./Technical-Documents/UnitTestingViewModels.md)
+* [Snapshot Testing tips](./Technical-Documents/SnapshotTestingTips.md)
 * [iOS Automation Technical Exercise](../Interview/AutomationExercise.md)
 * [Debugging Push Notifications](./Technical-Documents/DebuggingPushNotifications.md)
 
