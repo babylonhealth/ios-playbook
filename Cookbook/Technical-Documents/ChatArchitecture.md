@@ -40,6 +40,8 @@ An Outgoing message can have the following types of content:
 
 When displaying the chat conversation in a UI, depending on how the UI is designed, it can be useful to know that it is possible to have a sequence of more than one Incoming message, with no Outgoing message in between. For some forms of UI it makes sense to agglomerate a sequence of Incoming messages into a single message to be displayed to the user.
 
+Depending on how the UI is designed, it may also not make sense to display Outgoing messages at all. For example, in a conversational "iMessage" style UI, it is normal to display the user's own messages. However, in a one question per screen UI, this does not make any sense.
+
 ### Chat Input Types
 
 When a chat conversation is waiting for user input, there are several types of input that can be shown to the user. The input for the current state of the chat is stored in the `Chat`'s `inputType: InputType` property which maps to API input types. A much more useful property is the `input: ChatInput` property in `Chat` which is a more closely maps to how a UI might represent a given `InputType`, and also each type has a `sender` closure which can be used to send the chosen input to the server.
@@ -59,13 +61,25 @@ The different types of input are:
 
 ### Chat View Models
 
+Chatbot is split into 3 view models: `ChatViewModel`, `ChatContentViewModel` and `ChatInputViewModel`. This separatation stems from the original conversational UI design, where the content (all previous messages), was distinct from the input and actually rendered in separate view controllers.
 
+The separation was maintained with the change to a single message UI, mainly as the conversational UI is still used in some scenarios and has not been abandoned entirely.
+
+Even if only a single message UI were to be used going forward, the separation is still useful. Having everything in a single view model would probably get very complex.
 
 Explanation of how amd why chat is broken into 3 separate view models.
 
-- Explain responsibilities of the `ChatViewModel` 
-- Explain the responsibilities of the `ChatContentViewModel` 
-- Explain the responsibilities of the `ChatInputViewModel` 
+#### ChatViewModel
+
+The `ChatViewModel` is the simplest of the three and really just handles top level concerns like undo, the progress bar, voice over, analytics and external routing. It also creates and owns the `ChatContentViewModel` and `ChatInputViewModel`.
+
+#### ChatContentViewModel
+
+The `ChatContentViewModel` exists mainly in order to be able to render the current conversation and all its messages, and handles user actions that act on messages, as opposed to user chat input. In a threaded UI it is far more important as it is the basis for rendering the conversation up to the present point in time.
+
+#### ChatInputViewModel
+
+The `ChatInputViewModel` handles the state of the current chat input and the user actions related to sending user responses in the chat.
 
 
 ### Chat rendering strategies
