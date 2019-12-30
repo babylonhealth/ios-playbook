@@ -8,7 +8,7 @@ Depending on the use case we are using different ways to define Feature Switches
 
 # Feature Modules
 
-Each module (i.e. Appointments, ChatBot, Healthcheck) should have a "point of configuraiton" (we will further call it Feature Module) that will be used to initialise this module on application startup with values specific to the applicaiton flavour. This configuration should define "static" configurations which is anything that is hardcoded in the app, and all the feature switches used by this module. Each configuration point should follow a common pattern, i.e. here it is for MapsUI framework:
+Each module (i.e. Appointments, ChatBot, Healthcheck) should have a "point of configuraiton" (we will further call it Feature Module) that will be used to initialise this module on application startup with values specific to the application flavour. This configuration should define "static" configurations which is anything that is hardcoded in the app, and all the feature switches used by this module. Each configuration point should follow a common pattern, i.e. here it is for MapsUI framework:
 
 ```swift
 extension World {
@@ -35,7 +35,7 @@ extension World {
         }
 
         public struct Configuration {
-            // configuraiton propertis will go here
+            // configuraiton properties will go here
 
             public init(...) {
                 ...
@@ -240,4 +240,3 @@ This is yet to be defined.
 - Don't change the default value of the flag. We use `false` as default value for all the flags to make their behaviour more predictable and uniform (in opposite to having some flags have it `true` and some have it `false`).
 - Don't introduce feature flags that affect each other. Each feature flag increases testing complexity as it introduces new combinations.
 - Don't name you feature switch `New XXX`. After couple of month you might end up with `New New XXX`. Try to use specific names when possible.
-
