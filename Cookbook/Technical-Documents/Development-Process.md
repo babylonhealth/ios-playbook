@@ -14,7 +14,7 @@ There are 3 services we use daily:
 
 - Every development task that results in a PR must have a Jira ticket
 - The ticket must be assigned to the engineer who is going to work on it. The engineer should make sure it has all details and designs attached (if applicable).
-- The ticket will be moved to `In progress` once development is ready to start (this might be automatically done by the bot when branch published, if configured)
+- The ticket will be moved to `In progress` once development is ready to start (this might be automatically done by the bot when the branch is published, if configured)
 
 ## 2. Get started with development 🛠
 
