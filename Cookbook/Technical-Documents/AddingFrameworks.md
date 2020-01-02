@@ -38,14 +38,14 @@ If your framework itself depends on other internal Babylon frameworks (e.g. `Bab
 
 	```
 	#include "../BuildConfigs/Framework.Debug.xcconfig"
-	#include "../Pods/Target Support Files/Pods-BabylonNewFramework/Pods-BabylonNewFramework.debug.xcconfig
+	#include "../Pods/Target Support Files/Pods-BabylonNewFramework/Pods-BabylonNewFramework.debug.xcconfig"
 	```
 
    * `BabylonNewFramework.release.xcconfig`:
 
 	```
 	#include "../BuildConfigs/Framework.Release.xcconfig"
-	#include "../Pods/Target Support Files/Pods-BabylonNewFramework/Pods-BabylonNewFramework.release.xcconfig
+	#include "../Pods/Target Support Files/Pods-BabylonNewFramework/Pods-BabylonNewFramework.release.xcconfig"
 	```
 
 3. Add the `BuildConfigs` folder to your Xcode project (by drag & drop or right-click + "Add Files to ...").
