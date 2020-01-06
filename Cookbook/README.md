@@ -33,6 +33,7 @@ iOS Cookbook 👩‍🍳
 * [How to add Labels to a Pull Request](./Technical-Documents/LabelsInPRs.md)
 * [Requesting Out of Office time](./Technical-Documents/OutOffOfficeRequest.md)
 * [Team meetings](./Technical-Documents/meetings-purpose.md)
+* [External libraries policy](./Technical-Documents/External-libraries.md)
 
 ##### ... test my app 🌳
 
