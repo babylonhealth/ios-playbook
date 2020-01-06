@@ -40,7 +40,7 @@ In Lokalise, select the corresponding project.
 Click on the `Add key ⌘K` button
 - `key` - Give a name for the key following the bread-crumb style. For example: `add_family_member_email_placeholder`, `biometric_touchid_primer_description`.
     
-- `Base language value`: The actual string value corresponding to the first language in the list. Placeholders are supported with the `@%` where dynamic values are expected. 
+- `Base language value`: The actual string value corresponding to the first language in the list. Placeholders are supported with the `%@` where dynamic values are expected. 
 
 ### Edit a key/value
 Search and select the key you'd like to update and change any language you need. The languages you may not have the values will be marked as `Not-verified` and the translators will take care.
@@ -126,7 +126,6 @@ The new target specific file should appear in your git diff. ✨
 ## Lokalise: add comments and screenshots when possible.
 Comments and screenshots are important complementary **contexts** for the translators.
 Imagine that when the translators started the Arabic work, they saw the call-to-action `Book` for Book an appointment screen. Then without any comment nor screenshot, that has been translated **litterally** as book 📚📖 (the object that has pages that we read). As an Engineer you should understand that context is crucial. A quick comment and screenshot made in 5 minutes, might save hours of back and forward to fix a misunderstanding of meaning throughout engineering, management, translators and in this case, AppStore approval proccess. 
-
 
 
 
