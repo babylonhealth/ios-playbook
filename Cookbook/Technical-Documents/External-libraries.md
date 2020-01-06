@@ -33,7 +33,7 @@ def shared_pods
 	pod 'SnowplowTracker', '~> 1.1'
 ```
 
-If the framework is specific to particuar apps then add it the relevant targets only.
+If the framework is specific to particular apps then add it the relevant targets only.
 Below is the example of `Appboy-iOS-SDK` framework included in the Babylon app.
 ```ruby
 	target 'Babylon'  do
