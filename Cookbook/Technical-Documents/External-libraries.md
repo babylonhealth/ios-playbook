@@ -7,7 +7,7 @@ If you are looking to add a new service in our app or adding an external framewo
 1. [Release](#release)
 
 ## Exploration
-Even if the decision of using this framework has been already taken (for example this is a service that must adopted by your squad for all mobile platforms) this step is still mandatory. 
+Even if the decision of using this framework has been already taken (for example this is a service that must be adopted by your squad for all mobile platforms) this step is still mandatory. 
 
  - Create a spike and build a proof of concept. Some of the things you should achieve during this initial evaluation: 
 	 - Learn in detail about the framework features.
@@ -33,7 +33,7 @@ def shared_pods
 	pod 'SnowplowTracker', '~> 1.1'
 ```
 
-If the framework is specific to particuar apps then add it the relevant targets only.
+If the framework is specific to particular apps then add it the relevant targets only.
 Below is the example of `Appboy-iOS-SDK` framework included in the Babylon app.
 ```ruby
 	target 'Babylon'  do
