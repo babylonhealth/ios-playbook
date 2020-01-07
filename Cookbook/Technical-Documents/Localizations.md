@@ -1,31 +1,17 @@
 # How to deal with Localizations
 
 In project we can add a new Localization. But that is not in target level. Babylon needs to have a different sets of languages/locales per product.
-
-Babylon:
-  - British English
-
-BabylonKSA:
-  - Arabic
-
-NHS111:
-  - British English
-
-Telus:
-  - Canadian English
-  - Canadian French (soon)
-
-Babylon US and Ascension:
-  - American English
-  - American Spanish
+| Babylon and NHS111 | BabylonKSA | Telus | Babylon US and Ascension |
+|--------|--------|--------|--------|
+| - British English | - Arabic | - Canadian English<br>- Canadian French (soon) | - American English<br>- American Spanish |
 
 ## Build Settings
 ### Understanding `app_languages` variable
 Given that, we manage our languages in an array in Build Settings in each target.
 
-| Babylon UK | Babylon US | Telus |
-|--------|--------|--------|
-| `en.lproj/*` | `en-US.lproj/*` `es-US.lproj/*` | `en.lproj/*` |
+| Babylon UK | Babylon KSA | Telus | Babylon US and Ascension |
+|--------|--------|--------|--------|
+| `en.lproj/*` | `en.lproj/*` `ar-SA.lproj/*` | `en.lproj/*` `fr-CA.lproj/*` | `en-US.lproj/*` `es-US.lproj/*` |
 
 **I.E we control the languages for each target editing the `APP_LANGUAGES` under _User-Defined_**
 
@@ -46,17 +32,18 @@ Click on the `Add key ⌘K` button
     
 - `Base language value`: The actual string value corresponding to the first language in the list. Placeholders are supported with the `%@` where dynamic values are expected. 
 
+Note: the translations will be done by a third party that has access to lokalise and it should be done and notified by your squad.
+
 ### Edit a key/value
 Search and select the key you'd like to update and change any language you need. The languages you may not have the values will be marked as `Not-verified` and the translators will take care.
 
 ## How to add a new Language/Locale
 
 ### 1- Xcode: create Files if needed
-- Select the Babylon Project / Info / Languages then click on the `+` button and choose the Language/Locale you want to add.
-- Select the `.strings` file in the Project Navigator, review it in the File Inspector / Localization and select the language/locale you want.
-
+- Select the Babylon Project / Info / Localizations then click on the `+` button and choose the Language/Locale you want to add.
 ![Create file, if needed](Assets/Localizations-createFile.png)
 
+- Select the `.strings` file in the Project Navigator, review it in the File Inspector / Localization and select the language/locale you want.
 - In `Fastlane/Lanes/lokalise`, add the language/locale code (`en_US` for example) in the `langs` parameter for the desired target. `langs: 'es_US,en_US'` (**comma separated without space**). 
 
 ### 2- Lokalise.co
@@ -67,7 +54,7 @@ Someone else from your squad should have done this before.
 Check [Lokalise pull guide](https://github.com/Babylonpartners/ios-playbook/blob/master/Cookbook/Technical-Documents/Lokalise.md)
 
 ## Commit just your changes
-Stage just your changes (additions and editions) on git. Don't stage any additions nor change that you don't recognize. It's really nice to be proactive but not in this case. It might cause unspected/premature changes. Yes, discard others's changes.
+Stage just your changes (additions and editions) on git. Don't stage any additions nor change that you don't recognize. It's really nice to be proactive but not in this case. It might cause unexpected/premature changes. Yes, discard others's changes.
 
 ## Target specific localizable - Lokalise project and `strings` files
 
