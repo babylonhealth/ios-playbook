@@ -85,7 +85,7 @@ public static func localizedName(key: String, bundle: Bundle = Bundle.main) -> S
 }
 ```
 
-Such approach allows other targets to have treir custom keys' values when, for some reason, the user uses the device in British English.
+Such approach allows other targets to have their custom keys' values when, for some reason, the user uses the device in British English.
 
 Not only that, but also avoids us to have useless and risky repetitions like:<br>
 ```"consultation_gp_details_name_babylon" = "GP Name:";```<br>
@@ -128,7 +128,6 @@ The new target specific file should appear in your git diff. ✨
 ## Lokalise: add comments and screenshots when possible.
 Comments and screenshots are important complementary **contexts** for the translators.
 Imagine that when the translators started the Arabic work, they saw the call-to-action `Book` for Book an appointment screen. Then without any comment nor screenshot, that has been translated **litterally** as book 📚📖 (the object that has pages that we read). As an Engineer you should understand that context is crucial. A quick comment and screenshot made in 5 minutes, might save hours of back and forward to fix a misunderstanding of meaning throughout engineering, management, translators and in this case, AppStore approval proccess. 
-
 
 
 
