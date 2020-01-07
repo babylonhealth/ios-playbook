@@ -106,14 +106,14 @@ All static configuration properties and feature switches should be declared in t
 	
 	```swift
 	public struct MapsUI: FeatureModule {
-	    ...
-	    public struct Configuration {
-	        let myConfiguration: Bool
-		
-		public init(myConfiguration: Bool) {
-		    self.myConfiguration = myConfiguration
+		...
+		public struct Configuration {
+			let myConfiguration: Bool
+
+			public init(myConfiguration: Bool) {
+				self.myConfiguration = myConfiguration
+			}
 		}
-	    }
 	}
 	```
 	
@@ -121,20 +121,22 @@ All static configuration properties and feature switches should be declared in t
 	
 	A difference with other Feature Switches is that static configuration is used when we know that the configuration is specific to a specific _app_ (not the locale, not the user's region or their consumer network) and other apps should have the same feature configured differently, or we know that these configurations can be simply hardcoded on the client side. Other Feature Switches are not target specific.
 
-- ### Backend feature switches
+- ### Backend (consumer network) feature switches
 
-	These feature switches are a kind of remote feature switches and are defined on the backend (in Feature Configurator service) and come as a part of patient details and can be accessed as `patient.metadata.featureSwitches`. To add a new feature switch on the client add a new property to `BackendFeatureSwitches` struct in `BackendFeatureSwitches.swift` file and code to decode this property in `Decodable.swift`. Of course it needs to be added on the backend as well, that's something the backend dev from your team should be able to help with.
+	These feature switches are a kind of remote feature switches and are defined on the backend (in Feature Configurator service) and come as a part of patient details and can be accessed as `patient.metadata.featureSwitches`. Typically such feature swithces depend on some user data, i.e. region or consumer network.
 	
-- ### Firebase remote config
+	To add a new feature switch on the client add a new property to `BackendFeatureSwitches` struct in `BackendFeatureSwitches.swift` file and code to decode this property in `Decodable.swift`. Of course it needs to be added on the backend as well, that's something the backend dev from your team should be able to help with.
+	
+- ### Remote config (A/B test, feature test)
 
-	These feature switches are another kind of remote feature switches and use Firebase Remote Config as a backend. To add a new Firebase remote config you need to declare it in the `FeatureSwitches` struct of the appropriate Feature Module, similarly to local feature switches:
+	These feature switches are another kind of remote feature switches and uses a cloud service (such as Optimizely or previously Firebase) as a backend. To add a new remote config you need to declare it in the `FeatureSwitches` struct of the appropriate Feature Module, similarly to local feature switches:
 
 	```swift
     public struct MapsUI: FeatureModule {
         ...
         public struct FeatureSwitches {
             public enum Keys: String {
-                // value should be the same as one defined in Firebase console
+                // value should be the same as one defined in service console
                 case isMyFeatureEnabled = "is_my_feature_enabled"
             }
 
@@ -144,33 +146,13 @@ All static configuration properties and feature switches should be declared in t
 	}
 	```
 
-	Add default value of this feature to `FirebaseABTestingService.init`:
-	
-	```swift
-	let keysAndNSObjectValues = [
-	    ...
-	    maps.$isMyFeatureEnabled.keyAndDefault,
-	]
-	```
-	
 	You can then refer this property as `Current.maps.isMyFeatureEnabled`.
 
 	**Note that default value is `false` again!** But you can specify a different default value, i.e. `@ABTestVariant(key: Keys.isMyFeatureEnabled, defaultValue: true)`
-
-	**Adding a feature switch to Firebase console**
-
-	You need to add a remote config in the [Firebase console](https://console.firebase.google.com) with the same string key. For that navigate to the `Remote Config` page in the `Grow` section of the side menu and tap "Add parameter".
-
-	![](Assets/adding-remote-config-flag.png)
-
-	To control the value of this feature flag we can define values for different "conditions" which are based on the application bundle id and the build version (not the app semantic version number). You can reuse existing conditions (don't mix them with those used for Android app unless you agree to use the same flag for both platforms) or create a new condition on the `Conditions` page. To create a new condition you need to specify the app bundle identifier and optionally a regular expression for build number (you can use [this tool](http://gamon.webfactional.com/regexnumericrangegenerator/) to create it and [this tool](https://regexr.com) to see if your regular expression works). **Remember to start with local feature switch first when working on a new feature**, read next sections of this article for more details.
-	![](Assets/adding-remote-config-condition.png)
-
-	**Also note that condition is using a build number, even though the description mentions the app version. Be careful with these conditions when doing a release not from the head of develop branch (but i.e. doing a hot-fix release from the head of previous release) as the build numbers are constantly incremented with each CI run and don't depend on the app version.**
 	
-	If you want to release a feature, set proper conditions on Firebase **before the release cut off day**. Remember to adjust automation tests to make them work regardless if it's turned on or off. When publishing changes in Firebase Console you might be prompted if you want to force save your changes (that could happen when two people made some changes at the same time). **Never force save your changes** - if you see the prompt, cancel your changes, refresh the console and apply them again.
+	After releasing the feature hidden behind the remote feature switch, make some agreement with your PM when we can stop using this switch. Depending on how your squad works, you may want to create a ticket in the backlog to phase out the feature switch and remove legacy code. Remember that even you've phased out the feature switch from the newest version, there are still older versions that could be using this feature switch for a long time.
 	
-	After releasing the feature hidden behind the remote feature switch, make some agreement with your PM when we can stop using this switch. Depending on how your squad works, you may want to create a ticket in the backlog to phase out the feature switch and remove legacy code. Remember that even you've phased out the feature switch from the newest version, there are still older versions that could be using this feature switch for a long time. After removing it from code, go to the Firebase Console and update description to say which app versions this switch is affecting.
+	Read more: [Working with Optimizely](./Optimizely.md)
 
 ## How to decide what feature flag to use
 
@@ -195,23 +177,23 @@ All static configuration properties and feature switches should be declared in t
 - Q: Is the change related to something critical and we may want to be able to switch it back to previous implementation?
     - Yes
 
-       While still working on the feature, use a local feature switch; when it is ready for release, convert it to Firebase Feature Switch
+       While still working on the feature, use a Local feature switch; when it is ready for release, convert it to Remote Config
     - No
 
-       Keep it as a local feature switch if you need one
+       Keep it as a Local feature switch if you need one
    
 - Q: Does the feature need to behave differently for different apps?
     - Yes
 
-       Use Firebase feature switch with an app bundle id condition. If it's clear that feature will be availbale only for one app and not for others then it can be hardcoded in the AppConfiguration that the switch will be turned off (typically default is `false`) for particular apps. If you don't need a local or Firebase feature switch for the feature then just use AppConfiguration to define feature variants for different apps
+       Use Remote Config with an app bundle id condition. If it's clear that feature will be availbale only for one app and not for others then it can be hardcoded in the AppConfiguration that the switch will be turned off (typically default is `false`) for particular apps. If you don't need a Local feature switch or Remote Config for the feature then use Static configuration to define feature variants for different apps
     - No, it's the same for all the apps
 
-       Use a local feature switch or Firebase feature switch without app bundle id condition (depending on previous answers)
+       Use a Local feature switch or Firebase feature switch without app bundle id condition (depending on previous answers)
        
 - Q: Does the feature need to behave differently depending on the way user signs up for our services, i.e. through the partnership program or with some code?
     - Yes
 
-       Use backend feature switch, this way it can depend on the user data, i.e. current consumer network.
+       Use Backend feature switch, this way it can depend on the user data, i.e. current consumer network.
     - No
 
        Use a local or Firebase feature switch (depending on previous answers)
@@ -219,10 +201,10 @@ All static configuration properties and feature switches should be declared in t
 - Q: Is there A/B test running for this feature/change?
     - Yes
 
-       Use Firebase feature switch
+       Use Remote config
     - No
 
-       Use a local feature switch or app configuration (depending on previous answers)
+       Use a Local feature switch or Static configuration (depending on previous answers)
 
 ## Phasing out feature switch
 
@@ -232,8 +214,8 @@ This is yet to be defined.
 
 ### Do
 
-- Start new feature development with a local feature switch. When you are going to release the feature convert it to remote feature switch. This way you don't have to use a regular expression on Firebase (if you use Firebase remote config) all the time, only if you need to change the value of the flag _after_ it was released.
-- Try to limit the usage of the feature switch using design patterns like strategy, delegate, facade etc.
+- Start new feature development with a local feature switch. When you are going to release the feature convert it to remote feature switch.
+- Try to limit the exposure of the feature switch using design patterns like strategy, delegate, facade etc.
 
 ### Don't
 
