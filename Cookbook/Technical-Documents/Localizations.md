@@ -27,6 +27,8 @@ Given that, we manage our languages in an array in Build Settings in each target
 
 **I.E we control the languages for each target editing the `APP_LANGUAGES` under _User-Defined_**
 
+![Select the app target, Build Settings, User Defined](Assets/appLanguages-buildSettings-userDefined.png)
+
 ### _Excluded Source File Names_ and _Included Source File Names_ under `Build option`
 In the _Excluded Source File Names_ we exclude any language (`.lproj/`) previously set:
 `*.lproj/*` 
