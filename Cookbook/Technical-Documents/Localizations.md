@@ -1,6 +1,7 @@
 # How to deal with Localizations
 
-In project we can add a new Localization. But that is not in target level. Babylon needs to have a different sets of languages/locales per product.
+In our project we can add a new Localization. But that is not in target level. Babylon needs to have different sets of languages/locales per product.
+
 | Babylon and NHS111 | BabylonKSA | Telus | Babylon US and Ascension |
 |--------|--------|--------|--------|
 | - British English | - Arabic | - Canadian English<br>- Canadian French (soon) | - American English<br>- American Spanish |
@@ -22,7 +23,7 @@ In the _Excluded Source File Names_ we exclude any language (`.lproj/`) previous
 `*.lproj/*` 
 
 In the _Included Source File Names_ we include the languages (`.lproj/`) set in the above mentioned `app_languages` array:
-`${APP_LANGUAGES}` in Babylon US for example it is en-US.lproj/* es-US.lproj/*
+`${APP_LANGUAGES}` in Babylon US for example it is `en-US.lproj/*` `es-US.lproj/*`.
 
 ## How to add a new or changing an existing key/value
 ### Add a new key/value
@@ -39,18 +40,18 @@ Search and select the key you'd like to update and change any language you need.
 
 ## How to add a new Language/Locale
 
-### 1- Xcode: create Files if needed
+### 1. Xcode: create Files if needed
 - Select the Babylon Project / Info / Localizations then click on the `+` button and choose the Language/Locale you want to add.
 ![Create file, if needed](Assets/Localizations-createFile.png)
 
 - Select the `.strings` file in the Project Navigator, review it in the File Inspector / Localization and select the language/locale you want.
 - In `Fastlane/Lanes/lokalise`, add the language/locale code (`en_US` for example) in the `langs` parameter for the desired target. `langs: 'es_US,en_US'` (**comma separated without space**). 
 
-### 2- Lokalise.co
+### 2. Lokalise.co
 - If the project still doesn't exist, click on the `+` plus button beside other flags. Find the desired language on the list, and then add it.
 Someone else from your squad should have done this before.
 
-### 3- Populate the files - pull from lokalise
+### 3. Populate the files - pull from lokalise
 Check [Lokalise pull guide](https://github.com/Babylonpartners/ios-playbook/blob/master/Cookbook/Technical-Documents/Lokalise.md)
 
 ## Commit just your changes
