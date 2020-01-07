@@ -4,16 +4,18 @@ In project we can add a new Localization. But that is not in target level. Babyl
 
 Babylon:
   - British English
-  - Arabic (soon), etc 
 
-NHS111 and Bupa:
+BabylonKSA:
+  - Arabic
+
+NHS111:
   - British English
 
 Telus:
   - Canadian English
   - Canadian French (soon)
 
-Babylon US:
+Babylon US and Ascension:
   - American English
   - American Spanish
 
