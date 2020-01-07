@@ -75,7 +75,7 @@ When we run the target **Telus**, the value will be taken from the target specif
 Whereas when we run **Babylon** the value will be the main one. 
 `GP Name:`
 
-This prioritization happens in the static method [`LocalizationCore.localizedName`](https://github.com/Babylonpartners/babylon-ios/blob/develop/SDK/BabylonCore/BabylonCore/Utilities/LocalizationCore.swift#L14) that basically tries first to get the value for such key from the Specific file and if the result is still the key itself, then it fallsback to the main value. 
+This prioritization happens in the static method [`LocalizationCore.localizedName`](https://github.com/Babylonpartners/babylon-ios/blob/develop/SDK/BabylonCore/BabylonCore/Utilities/LocalizationCore.swift#L14) that basically tries first to get the value for such key from the target-specific file and if the result is still the key itself, then it falls back to the main value. 
 
 ```swift
 public static func localizedName(key: String, bundle: Bundle = Bundle.main) -> String {
@@ -128,6 +128,5 @@ The new target specific file should appear in your git diff. ✨
 ## Lokalise: add comments and screenshots when possible.
 Comments and screenshots are important complementary **contexts** for the translators.
 Imagine that when the translators started the Arabic work, they saw the call-to-action `Book` for Book an appointment screen. Then without any comment nor screenshot, that has been translated **litterally** as book 📚📖 (the object that has pages that we read). As an Engineer you should understand that context is crucial. A quick comment and screenshot made in 5 minutes, might save hours of back and forward to fix a misunderstanding of meaning throughout engineering, management, translators and in this case, AppStore approval proccess. 
-
 
 
