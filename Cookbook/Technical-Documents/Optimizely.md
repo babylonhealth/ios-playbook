@@ -17,7 +17,7 @@ Typically you will only need to worry about the variations. Other parts of an Op
 
 !["activations page"](./Assets/optimizely/OptimizelyExperimentActivations.png)
 
-To fetch the variation that the user has been assigned to you need to define an type that would contain the values of this experiment like it's key, active variation and any associated variables values.
+To fetch the variation that the user has been assigned to you need to define an type that would contain the values of this experiment like its key, active variation and any associated variables values.
 
 ```swift
 struct AwesomeExperiment: ABTestVariantDecodable {

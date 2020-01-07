@@ -129,7 +129,7 @@ All static configuration properties and feature switches should be declared in t
 	
 - ### Remote config (A/B test, feature test)
 
-	These feature switches are another kind of remote feature switches and uses a cloud servise (such as Optimizely or previously Firebase) as a backend. To add a new remote config you need to declare it in the `FeatureSwitches` struct of the appropriate Feature Module, similarly to local feature switches:
+	These feature switches are another kind of remote feature switches and uses a cloud service (such as Optimizely or previously Firebase) as a backend. To add a new remote config you need to declare it in the `FeatureSwitches` struct of the appropriate Feature Module, similarly to local feature switches:
 
 	```swift
     public struct MapsUI: FeatureModule {
