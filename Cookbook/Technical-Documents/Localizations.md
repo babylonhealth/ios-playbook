@@ -49,12 +49,12 @@ Search and select the key you'd like to update and change any language you need.
 
 ### 2. Lokalise.co
 - If the project still doesn't exist, click on the `+` plus button beside other flags. Find the desired language on the list, and then add it.
-Someone else from your squad should have done this before.
+Note: someone else from your squad should have done this before.
 
-### 3. Populate the files - pull from lokalise
-Check [Lokalise pull guide](https://github.com/Babylonpartners/ios-playbook/blob/master/Cookbook/Technical-Documents/Lokalise.md).
+#### 2.1 Populate the files - pull from lokalise
+- Check [Lokalise pull guide](https://github.com/Babylonpartners/ios-playbook/blob/master/Cookbook/Technical-Documents/Lokalise.md).
 
-## Commit just your changes
+#### 2.2 Commit just your changes
 Stage just your changes (additions and editions) on git. Don't stage any additions nor change that you don't recognize. It's really nice to be proactive but not in this case. It might cause unexpected/premature changes. Yes, discard others's changes.
 
 ## Target specific localizable - Lokalise project and `strings` files
