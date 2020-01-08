@@ -1,12 +1,12 @@
 # JIRA 
 ### Overview
-JIRA is the project management tool we use in all development squads at Babylon. Sometimes we make use of other tools like Trello for certain purposes but always one common thing between squads is JIRA. 
+JIRA is the project management tool we use in all development squads at Babylon. Sometimes we make use of other tools, like Trello, for certain purposes but one common thing between squads is always JIRA. 
 JIRA is a really powerful and customisable tool - how we use depends on the squad. Some squads use a simple setup with few statuses, others use advanced workflows with custom fields and many statuses. Although we allow customisation, there are a couple of things that remain shared across all projects which will be covered by the next sections. **One very important thing common for all the squads is that JIRA is our main source of truth and we should keep it as clean and up-to-date as possible**.
 
 ### How we’re using it
 We don’t have one common methodology (Scrum, Kanban etc) so selecting one depends on the squad. Each squad sets its own rules of working so make sure to familiarise yourself with those when you join your squad.
 
-Even that each project can be different we share some of the statuses between each of them to allow our automation to do the hard work of moving tickets between columns (setting up this automation requires some work - check `Automation` section for details). Keep in mind that even we have automation in place, sometimes we have to do it manually.
+Even though each project can be different we share some statuses between them to allow our automation to do the hard work of moving tickets between columns (setting this up requires some work - check `Automation` section for details). Keep in mind that even though we have automation in place, sometimes we have to do it manually.
 
 Common statuses:
 * To Do / Ready For Development 
@@ -23,10 +23,10 @@ Bot described above also fills a field called `Fix versions` with a version of t
 ### Common JIRA projects
 As an iOS Engineer, there are a couple of projects (other than your squad one) that you should familiarise yourself with:
 * [Consumer Apps](https://babylonpartners.atlassian.net/browse/CNSMR) - Shared project across iOS and Android. Contains tickets that don’t fit specific squad projects. It’s divided in a couple of boards. As an iOS Engineer you’ll be interested in: `iOS Engineering`, `iOS Goals`, `Release Board`.
-* [iOS Platform](https://babylonpartners.atlassian.net/browse/IOSP) - Project used by the platform squad. For people outside the platform squad, there’s an epic called BAU (Business as usual) that contains work to be done if someone has time. If there’ s not enough work in your squad, that’s the place to look for work.
+* [iOS Platform](https://babylonpartners.atlassian.net/browse/IOSP) - Project used by the platform squad. For people outside the platform squad, there’s an epic called BAU (Business as usual) that contains work to be done if someone has time. If there’ s not enough work in your squad, or you're a support engineer, that’s the place to look for work.
 
 ### Automation
-To save some time and keep things up-to-date we have tooling that moves ticket between statuses automatically when actions take place on GitHub. If you want to add automation to your project, you’ll need to familiarise yourself with [fastlane/Actions/jira](https://github.com/babylonhealth/babylon-ios/blob/develop/fastlane/Actions/jira) and [ios-build-distribution](https://github.com/babylonhealth/ios-build-distribution).
+To save some time and keep things up-to-date, we have tooling that automatically moves ticket between statuses when actions take place on GitHub. If you want to add automation to your project, you’ll need to familiarise yourself with [fastlane/Actions/jira](https://github.com/babylonhealth/babylon-ios/blob/develop/fastlane/Actions/jira) and [ios-build-distribution](https://github.com/babylonhealth/ios-build-distribution).
 
 In a nutshell:
 * [fastlane/Actions/jira](https://github.com/babylonhealth/babylon-ios/blob/develop/fastlane/Actions/jira) moves tickets between `Awaiting Build`  and  `QA` 
