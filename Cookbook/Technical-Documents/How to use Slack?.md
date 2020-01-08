@@ -82,12 +82,17 @@ There are a few tips to try to reduce the number of notifications to the ones th
 To reduce overall number of notifications we can configure the notifications on Slack doing the following:
 
 1. Go to Slack > Preferences > Notifications
-2. Configure your notifications with the following:
+2. Configure your notifications with:
 
-<img src="./Assets⁩/⁨onboarding/slack-notification-preferences.png" />
+<img src="Assets/onboarding/slack-notification-preferences.png">
 
-3. In `My keywords` define the keywords to be used to trigger notifications. These can be nicknames and variations of your name.
+3. Go to `My keywords` and define the keywords to be used to trigger notifications. These can be your nicknames and variations of your name.
 
+4. In the `Do Not Disturb` you can set the time interval you don't want to receive any Slack notification. Ideally this should enabled during your non-working hours.
+
+On the day to day basis, if you want some quite time, you can mute notifications temporarly by selecting the notifications icon next to your Slack organization name and selecting one of the options.
+
+<img src="Assets/onboarding/slack-notification-muted.png">
 
 ### Leave the channel
 
