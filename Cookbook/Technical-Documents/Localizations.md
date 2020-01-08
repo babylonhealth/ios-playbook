@@ -48,7 +48,7 @@ Search and select the key you'd like to update and change any language you need.
 - In `Fastlane/Lanes/lokalise`, add the language/locale code (`en_US` for example) in the `langs` parameter for the desired target. `langs: 'es_US,en_US'` (**comma separated without space**). 
 
 ### 2. Lokalise.co
-- If the project still doesn't exist, click on the `+` plus button beside other flags. Find the desired language on the list, and then add it.
+- If the project doesn't exist, click on the `+` plus button beside other flags. Find the desired language on the list, then add it.
 Note: someone else from your squad should have done this before.
 
 #### 2.1 Populate the files - pull from lokalise
@@ -128,5 +128,4 @@ The new target specific file should appear in your git diff. ✨
 ## Lokalise: add comments and screenshots when possible.
 Comments and screenshots are important complementary **contexts** for the translators. For that, in the key/value edition screen (on lokalise.co) go to `Advanced` tab, and add a comment on the `Context` field. To upload screenshots, click on the "photo" icon in the keys list and upload them. 
 Imagine that when the translators started the Arabic work, they saw the call-to-action `Book` for Book an appointment screen. Then without any comment nor screenshot, that has been translated **litterally** as book 📚📖 (the object that has pages that we read). As an Engineer you should understand that context is crucial. A quick comment and screenshot made in 5 minutes, might save hours of back and forward to fix a misunderstanding of meaning throughout engineering, management, translators and in this case, AppStore approval proccess. 
-
 
