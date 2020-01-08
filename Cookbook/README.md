@@ -17,7 +17,7 @@
   - [Writing proposals](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/WritingAProposal.md)
   - Writing Documentation
   - Development process
-  - Jira
+  - [Jira](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/JIRA.md)
   - Pull Requests
   	- [Code review etiquette](https://github.com/babylonhealth/ios-playbook/blob/master/Etiquette/CODE_REVIEW.md)
   	- [How to add Labels to a Pull Request](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/LabelsInPRs.md)
