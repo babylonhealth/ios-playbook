@@ -12,13 +12,12 @@
   - [Initial tasks](./Technical-Documents/NewHiresCheckList.md#whats-next)
 
 ## Process 🚓
-  - Overview
   - [Day-to-day in the iOS Team FAQ](./Technical-Documents/WorkingAtBabylon.md)
   - [Code owners](./Proposals/CODEOWNERS.md)
   - [Writing proposals](./Technical-Documents/WritingAProposal.md)
   - Writing Documentation
   - Development process
-  - Jira
+  - [Jira](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/JIRA.md)
   - Pull Requests
   	- [Code review etiquette](https://github.com/babylonhealth/ios-playbook/blob/master/Etiquette/CODE_REVIEW.md)
   	- [How to add Labels to a Pull Request](./Technical-Documents/LabelsInPRs.md)
@@ -57,7 +56,6 @@
   - Sample app
 
 ## Conventions 🍊
-  - Overview
   - Colors
   - Git
     - Branch names
@@ -68,7 +66,6 @@
   - Slack messaging
 
 ## Continuous Integration 🚦
-  - Overview
   - [How to invoke CI jobs from Slack](./Technical-Documents/SlackCIIntegration.md)
   - Stevenson
   - Wall-E
@@ -108,7 +105,6 @@
 
 ## Other 👀
   - Training
-    - Overview
     - Writing articles
     - Conferences
       - Attending
