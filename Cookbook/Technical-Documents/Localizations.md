@@ -33,7 +33,7 @@ Click on the `Add key ⌘K` button
     
 - `Base language value`: The actual string value corresponding to the first language in the list. Placeholders are supported with the `%@` where dynamic values are expected. 
 
-Note: the translations will be done by a third party that has access to lokalise and it should be done and notified by your squad.
+Note: the translations will be done by a third party that has access to Lokalise. Your squad should notify them to translate the new strings.
 
 ### Edit a key/value
 Search and select the key you'd like to update and change any language you need. The languages you may not have the values will be marked as `Not-verified` and the translators will take care.
@@ -128,4 +128,3 @@ The new target specific file should appear in your git diff. ✨
 ## Lokalise: add comments and screenshots when possible.
 Comments and screenshots are important complementary **contexts** for the translators. For that, in the key/value edition screen (on lokalise.co) go to `Advanced` tab, and add a comment on the `Context` field. To upload screenshots, click on the "photo" icon in the keys list and upload them. 
 Imagine that when the translators started the Arabic work, they saw the call-to-action `Book` for Book an appointment screen. Then without any comment nor screenshot, that has been translated **litterally** as book 📚📖 (the object that has pages that we read). As an Engineer you should understand that context is crucial. A quick comment and screenshot made in 5 minutes, might save hours of back and forward to fix a misunderstanding of meaning throughout engineering, management, translators and in this case, AppStore approval proccess. 
-
