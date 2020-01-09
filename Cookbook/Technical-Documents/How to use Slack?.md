@@ -8,7 +8,7 @@ Although this is a pretty straight forward instant messaging tool, there a few r
 ## Which channels to join?
 
 ### #ios
-The channel for any babylonian to reach the iOS Team. This channel should be regularly checked by the iOS support engineers.
+The channel for any babylonian to reach to the iOS Team. This channel should be regularly checked by the iOS support engineers.
 
 ### #ios-underground
 The private channel for the iOS Team. It's the place to raise problems, have discussions, make the team aware of your whereabouts or just to say "Good morning 👋".
@@ -71,6 +71,7 @@ Example:
 A public channel where we usually trigger CI workflows like Testfligh/AppCenter builds or UI Automation Tests.
 The UI Automation Tests run every night and the results are published in this channel.
 To check how to trigger the workflows check [Slack CI Integration](/SlackCIIntegration.md)
+
 ## How to manage notifications?
 
 Slack notifications are great to make sure we don't miss anything important. However, when they are very frequent they can disturbe our work and our productivity.
@@ -90,7 +91,7 @@ To reduce overall number of notifications we can configure the notifications on 
 
 4. In the `Do Not Disturb` you can set the time interval you don't want to receive any Slack notification. Ideally this should enabled during your non-working hours.
 
-On the day to day basis, if you want some quite time, you can mute notifications temporarly by selecting the notifications icon next to your Slack organization name and selecting one of the options.
+On the day to day basis, if you want some quiet time, you can mute notifications temporarly by selecting the notifications icon next to your Slack organization name followed by selecting one of the options.
 
 <img src="Assets/onboarding/slack-notification-muted.png">
 
@@ -100,17 +101,46 @@ When you leave a channel you can no longer open it unless you join it again. Als
 When the channel is private, if you leave it you will have to be invite by one of the members to join it again.
 
 You should leave a channel when:
+
  - You haven't open it in the last month.
- - The subject is no longer relevant.
+ - The subject is no longer relevant or obsolet.
 
 ### Mute the channel
 
+Muting a channel means you will have access to it but you won't be notified if you are mentioned individually or with `@channel` or `@here`.
+
+You should mute a channel when:
 
  - The subject is not your main focus but you like to keep yourself updated on what is happening.
- -   
-1. You joined a channel but you haven't looked at it in the last month - leave that channel.
-2. You joined a channel, you like to check it from time to time but it is not your main focus - you can unmute that channel so you can still visit it but you won't receive any notification if someone uses `@channel`, `@here` or `@<your username>`.
-3. 
+ - It is a private channel and you don't want to loose access to it but you don't check it on a day to day basis.
 
 
 ## How to communicate my schedule?
+
+Your status on Slack should be a way to communicate what is your current status. This can be used to indicate you are working remotely, you are in a meeting or any other status.
+
+### Connect Slack with Outlook
+
+You can integrate your Slack account with your Outlook account. This will give permission for Slack to:
+- notify you of your calendar events
+- change your status to `In Meeting` when you have meetings scheduled in your calendar
+
+To connect the Outlook Calendar app:
+- Go to Apps in Slack
+- Search for Outlook Calendar
+- Open a conversation with Outlook Calendar
+- Connect your account
+- Configure your preferences
+
+### Not available
+
+When we are not available on Slack it is advised to change your Slack status so the person who wants to reach you knows why you are unnavailable.
+You can configure your own status however, for some common situations it is better to use the pre-defined ones:
+
+- [Holidays](/OutOffOfficeRequest.md#holidays-) 🌴
+- [Working from home](https://github.com/babylonhealth/ios-playbook/blob/catarina/CNSMR-3278/Cookbook/Technical-Documents/OutOffOfficeRequest.md#working-from-home-) 🏡
+- Off sick 🤒
+- Focused 💭 - A few of us turn-off notifications or turn-off Slack when we want time to focus on a certain task.
+
+Scheduling time slots to focus on a task are encourage to be used because they help our productivity. When booking these please be mindful of when and for how long you are unnavailable. It is always better to schedule these slots when you have no meetings in your calendar and are not involved in conversations that are active at that time.
+
