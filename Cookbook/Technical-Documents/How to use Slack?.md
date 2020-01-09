@@ -8,7 +8,7 @@ Although this is a pretty straightforward instant messaging tool, there a few ru
 ## Which channels to join?
 
 ### #ios
-The channel for any babylonian to reach to the iOS Team. This channel should be regularly checked by the iOS support engineers.
+The public channel for any babylonian to reach to the iOS Team. This channel should be regularly checked by the iOS support engineers.
 
 ### #ios-underground
 The private channel for the iOS Team. It's the place to raise problems, have discussions, make the team aware of your whereabouts or just to say "Good morning 👋".
