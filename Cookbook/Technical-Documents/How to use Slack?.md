@@ -74,7 +74,7 @@ To check how to trigger the workflows check [Slack CI Integration](/SlackCIInteg
 
 ## How to manage notifications?
 
-Slack notifications are great to make sure we don't miss anything important. However, when they are very frequent they can disturbe our work and our productivity.
+Slack notifications are great to make sure we don't miss anything important. However, when they are very frequent they can disturb our work and our productivity.
 
 There are a few tips to try to reduce the number of notifications to the ones that really matter to you:
 
