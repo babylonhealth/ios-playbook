@@ -3,7 +3,7 @@
 In Babylon we try to be as much remote friendly as we can.
 Slack is a tool we rely on a lot to help us communicate with everyone without having to be physically present.
 On the first day at Babylon, one of the first things you have automatically access is to your Slack account.
-Although this is a pretty straight forward instant messaging tool, there a few rules and tips everyone should be aware.
+Although this is a pretty straightforward instant messaging tool, there a few rules and tips everyone should be aware.
 
 ## Which channels to join?
 
@@ -144,4 +144,3 @@ You can configure your own status however, for some common situations it is bett
 - Focused 💭 - A few of us turn-off notifications or turn-off Slack when we want time to focus on a certain task.
 
 Scheduling time slots to focus on a task are encourage to be used because they help our productivity. When booking these please be mindful of when and for how long you are unnavailable. It is always better to schedule these slots when you have no meetings in your calendar and are not involved in conversations that are active at that time.
-
