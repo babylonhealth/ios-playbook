@@ -47,7 +47,7 @@ Search and select the key you'd like to update and change any language you need.
 - Select the `.strings` file in the Project Navigator, review it in the File Inspector / Localization and select the language/locale you want.
 - In `Fastlane/Lanes/lokalise`, add the language/locale code (`en_US` for example) in the `langs` parameter for the desired target. `langs: 'es_US,en_US'` (**comma separated without space**). 
 
-### 2. Lokalise.co
+### 2. Lokalise
 - If the project doesn't exist, click on the `+` plus button beside other flags. Find the desired language on the list, then add it.
 Note: someone else from your squad should have done this before.
 
