@@ -44,19 +44,19 @@ The rest of the iOS Engineers work in the following squads:
 
 <table>
   <thead><th>Squad</th><th>Engineer</th><th>GitHub</th><th>Twitter</th></thead>
-    <tr><td rowspan='1' valign='top'><strong>Appointments</strong><br/>Appointment booking.</td>
+    <tr><td rowspan='2' valign='top'><strong>Appointments 1</strong><br/>Appointment booking.</td>
       <td>Witold Skibniewski</td><td><a href='https://github.com/mr-v'>@mr-v</a></td><td></td></tr>
-    <tr><td rowspan='2' valign='top'><strong>Consultation</strong><br/>Consultation experience related features including, but not limited to - audio/video call and replay quality, consultation feedback, pre-consultation preparation and reminders for consultation</td>
+      <tr><td>Nico Robin</td><td><a href='https://github.com/Naiko'>@Naiko</a></td><td><a href='https://twitter.com/Naiko'>@Naiko</a></td></tr>
+    <tr><td rowspan='3' valign='top'><strong>Appointments 2</strong><br/>Consultation experience related features including, but not limited to - audio/video call and replay quality, consultation feedback, pre-consultation preparation and reminders for consultation</td>
       <td>Adrian Śliwa</td><td><a href='https://github.com/adiki'>@adiki</a></td><td><a href='https://twitter.com/adiki91'>@adiki91</a></td></tr>
       <tr><td>Chitra Kotwani</td><td><a href='https://github.com/chitrakotwani'>@chitrakotwani</a></td><td><a href='https://twitter.com/chitrakotwani'>@chitrakotwani</a></td></tr>
+      <tr><td>Davide De Franceschi</td><td><a href='https://github.com/defrenz'>@defrenz</a></td><td><a href='https://twitter.com/defrenz'>@defrenz</a></td></tr>
     <tr><td rowspan='2' valign='top'><strong>Onboarding and Navigation</strong><br/>General user experience in the app.</td>
       <td>Sergey Shulga</td><td><a href='https://github.com/sergdort'>@sergdort</a></td><td><a href='https://twitter.com/SergDort'>@SergDort</a></td></tr>
       <tr><td>Yuri Karabatov</td><td><a href='https://github.com/karabatov'>@karabatov</a></td><td><a href='https://twitter.com/karabatov'>@karabatov</a></td></tr>
-    <tr><td rowspan='5' valign='top'><strong>Native Apps Platform</strong><br/>Engineering work like tooling, CI and development processes.</td>
+    <tr><td rowspan='3' valign='top'><strong>Native Apps Platform</strong><br/>Engineering work like tooling, CI and development processes.</td>
       <td>David Rodrigues</td><td><a href='https://github.com/dmcrodrigues'>@dmcrodrigues</a></td><td><a href='https://twitter.com/dmcrodrigues'>@dmcrodrigues</a></td></tr>
       <tr><td>Ilya Puchka</td><td><a href='https://github.com/ilyapuchka'>@ilyapuchka</a></td><td><a href='https://twitter.com/ilyapuchka'>@ilyapuchka</a></td></tr>
-      <tr><td>Yasuhiro Inami</td><td><a href='https://github.com/inamiy'>@inamiy</a></td><td><a href='https://twitter.com/inamiy'>@inamiy</a></td></tr>
-      <tr><td>Martin Nygren</td><td><a href='https://github.com/zzcgumn'>@zzcgumn</a></td><td></td></tr>
       <tr><td>Olivier Halligon</td><td><a href='https://github.com/AliSoftware'>@AliSoftware</a></td><td><a href='https://twitter.com/aligatr'>@aligatr</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>GP @ Hand Registrations</strong><br/>End to end journey for NHS registration.</td>
       <td>James Birtwell</td><td><a href='https://github.com/jimmybee'>@jimmybee</a></td><td></td></tr>
@@ -74,10 +74,9 @@ The rest of the iOS Engineers work in the following squads:
       <tr><td>Daniel Haight</td><td><a href='https://github.com/Daniel1of1'>@Daniel1of1</a></td><td></td></tr>
       <tr><td>Daniel Spindelbauer</td><td><a href='https://github.com/sdaniel55'>@sdaniel55</a></td><td><a href='https://twitter.com/sdaniel55'>@sdaniel55</a></td></tr>
       <tr><td>Diego Petrucci</td><td><a href='https://github.com/diegopetrucci'>@diegopetrucci</a></td><td><a href='https://twitter.com/diegopetrucci'>@diegopetrucci</a></td></tr>
-    <tr><td rowspan='3' valign='top'><strong>Prescriptions</strong><br/>Prescriptions functionality.</td>
+    <tr><td rowspan='2' valign='top'><strong>Prescriptions</strong><br/>Prescriptions functionality.</td>
       <td>Adam Borek</td><td><a href='https://github.com/TheAdamBorek'>@TheAdamBorek</a></td><td><a href='https://twitter.com/TheAdamBorek'>@TheAdamBorek</a></td></tr>
       <tr><td>Konrad Muchowicz</td><td><a href='https://github.com/konrad-em'>@konrad-em</a></td><td></td></tr>
-      <tr><td>Davide De Franceschi</td><td><a href='https://github.com/defrenz'>@defrenz</a></td><td><a href='https://twitter.com/defrenz'>@defrenz</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Partnerships</strong><br/>Updating and maintaining the Telus app.</td>
       <td>Simon Cass</td><td><a href='https://github.com/scass91'>@scass91</a></td><td><a href='https://twitter.com/codercass'>@codercass</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Tenancy & Features</strong><br/>To integrate the new feature configurator.</td>
