@@ -112,7 +112,7 @@ Muting a channel means you will have access to it but you won't be notified if y
 You should mute a channel when:
 
  - The subject is not your main focus but you like to keep yourself updated on what is happening.
- - It is a private channel and you don't want to loose access to it but you don't check it on a day to day basis.
+ - It is a private channel and you don't want to lose access to it, but you don't check it on a day to day basis.
 
 
 ## How to communicate my schedule?
