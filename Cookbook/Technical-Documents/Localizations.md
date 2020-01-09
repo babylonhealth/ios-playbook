@@ -2,17 +2,17 @@
 
 In our project we can add a new Localization. But that is not in target level. Babylon needs to have different sets of languages/locales per product.
 
-| Babylon and NHS111 | BabylonKSA | Telus | Babylon US and Ascension |
-|--------|--------|--------|--------|
-| - British English | - Arabic | - Canadian English<br>- Canadian French (soon) | - American English<br>- American Spanish |
+| Babylon and NHS111 | Telus | Babylon US and Ascension |
+|--------|--------|--------|
+| - British English | - Canadian English<br>- Canadian French (soon) | - American English<br>- American Spanish |
 
 ## Build Settings
 ### Understanding `app_languages` variable
 Given that, we manage our languages in an array in Build Settings in each target.
 
-| Babylon UK | Babylon KSA | Telus | Babylon US and Ascension |
-|--------|--------|--------|--------|
-| `en.lproj/*` | `en.lproj/*` `ar-SA.lproj/*` | `en.lproj/*` `fr-CA.lproj/*` | `en-US.lproj/*` `es-US.lproj/*` |
+| Babylon UK |  Telus | Babylon US and Ascension |
+|--------|--------|--------|
+| `en.lproj/*` | `en.lproj/*` `fr-CA.lproj/*` | `en-US.lproj/*` `es-US.lproj/*` |
 
 **I.E we control the languages for each target editing the `APP_LANGUAGES` under _User-Defined_**
 
