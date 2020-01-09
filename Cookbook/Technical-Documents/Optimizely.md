@@ -17,63 +17,59 @@ Typically you will only need to worry about the variations. Other parts of an Op
 
 !["activations page"](./Assets/optimizely/OptimizelyExperimentActivations.png)
 
-To fetch the variation that the user has been assigned to you need to define an entity which conforms to `OptimizelyExperiment` protocol and can create an instance of itself from the experiment name, variation key and the Optimizely client.
+To fetch the variation that the user has been assigned to you need to define an type that would contain the values of this experiment like its key, active variation and any associated variables values.
 
 ```swift
-enum AwesomeExperiment: OptimizelyExperiment {
-    case variationOneActivated
-    case variationTwoActivated
-    case failed
+struct AwesomeExperiment: ABTestVariantDecodable {
+	static let default = AwesomeExperiment(experiment: nil)
+	
+	enum Varition: String { case one, two }
+	let experiment: (key: String, Variation)?
+	
+	init(decoder: ABTestVariantDecoder) throws {
+		experiment = try (
+			key: decoder.key,
+			variation: Variation(rawValue: decoder.stringValue())
+		)
+	}
+}
 
-    static func make(experimentKey: String, variationKey: String, client: OptimizelyClientProtocol) -> AwesomeExperiment {
-        switch variationKey {
-          case "one":
-            return .variationOneActivated
-          case "two"
-            return .variationTwoActivated
-          default:
-            return .failed
-        }
-    }
+@ABTestVariant(key: "awesome_experiment", defaultValue: .default)
+let variant: AwesomeExperiment
+```
+
+Note that experiments can have any number of variations, but more than two will be unusual as it gets more difficult to collect conclusive data.
+
+## Working with Optimizely Features
+
+Querying Optimizely for feature flags is as simple a defining a boolean property annotated with `ABTestVariant` property wrapper. Similarly A/B test defined as enum with string raw value just needs a property of this enum type annotated with `ABTestVariant` property wrapper. When accessed for the first time Optimizely will activate appropriate variation for the current user (it then will be cached in memory until the app is restarted).
+
+> Note (November 2019): Querying Optimizely to see whether a feature is available currently yields false both when the feature is disabled and when an error occurs. This is inconsistent with their documentation so there is some hope that this will be changed in a future version of the SDK.
+
+With Optimizely it is also possible to define "feature variables". To fetch the value of a feature variable it is necessary to pass both the feature key and variable key to the Optimizely SDK. Typically feature variables are associated with some "feature test" (it is similar to A/B test but this kind of tests are built around particular feature flags rather than just some arbitrary variations). To access variable values use `ABTestVariantDecoder` methods `boolValue(key:)` and `stringValue(key:)`.
+
+```swift
+struct AwesomeExperiment: ABTestVariantDecodable {
+	static let default = AwesomeExperiment(isEnabled: false, stringVariable: "default", boolVariable: false)
+
+	let isEnabled: Bool
+	let stringVariable: String
+	let boolVariable: Bool
+	
+	init(decoder: ABTestVariantDecoder) throws {
+		isEnabled = try decoder.boolValue()
+		if isEnabled {
+			stringVariable = try decoder.stringValue(key: "string_variable")
+			boolVariable = try decoder.boolValue(key: "bool_variable")
+		} else {
+			stringVariable = Self.default.stringVariable
+			boolVariable = Self.default.boolVariable
+		}
+	}
 }
 ```
 
-Note that experiments can have any number of variations, but more than two will be unusual as it gets more difficult to collect conclusive data. Presuming that Optimizely is installed as the ab testing service we can now get the variation like this
-
-```swift
-let variant = ABTestVariant<AwesomeExperiment>.makeOptimizelyVariant(
-    defaultValue: AwesomeExperiment.failed
-)
-
-let variation = Current.abTestingService.value(for: variant)
-```
-
-The above code snippet presumes that we are in a builder and can access `Current` directly.
-
-## Working with Optimizely Features
-An `ABTestVariant<Bool>` that is posted to the Optimizely AB testing service will be forwarded to `isFeatureEnabled`. We typically define a `ABTestVarian<Bool>` instances as static variables
-
-```swift
-let useNewHomeScreen = Current.abTestingService.value(variant: ABTestVariant: showNewHomeScreen)
-```
-
-Querying Optimizely to see whether a feature is available currently (November 2019) yields false both when the feature is disabled and when an error occurs. This is inconsistent with their documentation so there is some hope that this will be changed in a future version of the SDK.
-
-With Optimizely it is also possible to define feature variables. To fetch the value of a feature variable it is necessary to pass both the feature key and variable key to the Optimizely SDK. This requirement does not fit nicely with how our `ABTestingVariant` is defined. Another discrepancy with what `ABTestingVariant` expects is that there is no need to parse the returned value, this is done by the SDK.
-
-Four datatypes, `OptimizelyBoolVariable`, `OptimizelyIntVariable`, `OptimizelyDoubleVariable` and `OptimizelyStringVariable` have been defined to work around this problem. To fetch a feature variable you need to do something like this.
-
-```swift
-let featureKey = "use_prescriptions_hub_screeen"
-let maxNumberOfCardsKey = "max_number_of_cards"
-let defaultMaxNumberOfCards = 4
-let defaultVariable = OptimizelyIntVariable(name: maxNumberOfCardsKey, value: defaultMaxNumberOfCards)
-let variant = ABTestVariant(key: featureName, defaultValue: defaultVariable, value: { _ in defaultVariable } )
-
-let intVariable = Current.abTestingService.value(for: variant)
-```
-
-Fetching a feature variable will return `defaultValue` if there is an error.
+As you can notice this is similar to how we typically implement `Decodable` protocol.
 
 ## Detecting Updates
 We are bundling a downloaded Optimizely data file which should contain values for everything that does not require network access. Optimizely will at boot time and periodically thereafter attempt to download a new version if there are any updates. By subscribing to the `dataUpdated` signal you will be notified if the data file has been updated.

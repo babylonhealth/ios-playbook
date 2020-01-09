@@ -42,14 +42,17 @@ There are usually two release engineers working at any given time. It goes witho
 1. Bump the release version by triggering the Slack command (eg. `/testflight Babylon version:4.1.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
    * This creates a TestFlight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
 1. Trigger the App Center build from that branch using its command (eg. `/appcenter Babylon branch:release/babylon/4.1.0`) in `#ios-build`.
-1. Create the CRP ticket by triggering the Slack command (eg. `/crp ios branch:release/babylon/4.1.0`) in `#ios-launchpad`
-   * This will also generate the CHANGELOG automatically (from the list of commits between the `release/{appname}/{version}` branch you mentioned and the tag for the latest version of the same product – i.e. the most recent `{appname}/*` tag) to include it in the CRP ticket
-   * Your PM should then be able to see that the CRP ticket has been created, and can further manually complete the CRP ticket with any additional information (clinical risk, etc) from here
 1. Trigger the full UI automation run by issuing the command `/stevenson ui_tests branch:release/babylon/4.1.0` in `#ios-build`. Review failures and, if necessary, tag the squads responsible for the failing lanes.
-1. Ask the `#ios-launchpad` channel for the expected release notes from each squad if they are releasing anything.
-1. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
+1. For any target other then Babylon(e.g. Telus, Bupa, NHS111): Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
   1. On the sidebar click `+ Version or Platform` and select `iOS`.
   1. Input the new version number.
+    
+During this stage, the release manager has the following tasks:
+  1. Create the CRP ticket by triggering the Slack command (eg. `/crp ios branch:release/babylon/4.1.0`) in `#ios-launchpad`		
+    * This will also generate the CHANGELOG automatically (from the list of commits between the `release/{appname}/{version}` branch used in the command and the tag for the latest version of the same product – i.e. the most recent `{appname}/*` tag) to include it in the CRP ticket		
+    * Further manually complete the CRP ticket with any additional information (clinical risk, etc)	
+ 1. Ask the `#ios-launchpad` channel for the expected release notes from each squad if they are releasing anything.
+  
 
 ### Phase 3: Test and fix bugs
 *It starts after the App Center build has been delivered and it can take several cycles*
@@ -98,6 +101,7 @@ There are usually two release engineers working at any given time. It goes witho
 	* Remove from reviewers list any engineer that has been added by the PullAssigner but haven't contributed to the release branch.
 	* Set the _Merge_ label once all the required reviewers have approved it.
 1. Update the [release calendar](#release-calendar)
+1. Update this document if any steps during the release process have changed.
 
 ## 3. SDK Release
 
@@ -124,6 +128,7 @@ The release process starts when the first build is provided to QA and ends when 
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
+| 4.13.0| Michal Kwiecien, Viorel Mihalache | Manual: `26h` | `MS-741: 1h`<br>`MS-742: 1h`<br>`APPTS-2296: 1.5h`<br>`APPTS-2288: 1.5h`<br>`TK-324: 1h`<br>`TK-325: 1h`<br>`CE-1011: 5h`<br>`NRX-1158: 1h`<br>`CNSMR-3275: 1h`<br>`PRSCR-1551 : 5h`<br>`PRSCR-1545: 0.5h`<br>`IDP-516 : 5h`<br> | Total: **46h** | 06.12.2019 | 16.12.2019 |
 | 4.12.0| Konrad Muchowicz, Danilo Aliberti | Manual: `24.5h` | `IOSP-396: 0.5`<br>`MS-635: 0.25h`<br>`CNSMR-3209, AV-1287, AV-1336, CNSMR-3210, AV-1304: 3h`<br>`CNSMR-3204: 3h`<br>`CNSMR-3212, PRSCR-1515: 3h`<br>`GW-1149, PAR-418: 13h`<br>`CNSMR-3205: 3h`<br>`APPTS-2169, CE-976: 10h`<br>`MON-5776, MON-5768: 2.5h`<br>`MS-611: 4h`<br>`IDP-471: 1h`<br>`CE-922: 3h`<br>`TK-271: 1h`<br>`APPTS-2208: 2h`<br>`PAT-444: 2.5h`<br>`IOSP-432: 1h`<br> | Total: **52.75h** | 22.11.2019 | 3.12.2019 |
 | 4.10.0| Ilya Puchka, Yasuhiro Inami | Manual: `23.5h` | `MS-353: 3h`<br>`COREUS-2191: 8h`<br>`MON-5641: 10h`<br>`TK-132: 0.5h`<br>`APPTS-1941, APPTS-2030, APPTS-2037: 30h`<br>`PRSCR-1435: 1h`<br>`AV-1228: 9h`<br>`GW-1028: 0.5h`<br>`NRX-1023: 10h`<br>`CNSMR-3119: 8h`<br>`CE-869: 8h`<br>`MS-412: 1.5h`<br>`MS-388: 1.5h`<br>`MS-427: 6h`<br>`GW-915: 8h`<br>`CNSMR-3120: 5h`<br>`IOSP-253: 2h`<br>`IOSP-275: 2h` | Total: **137.5** | 25.10.2019 | 4.11.2019 |
 | 4.9.1| Michael Brown, Yuri Karabatov | Manual: `1h` | `AV-1225: 1h` | Total: **2h** | 22.10.2019 | 24.10.2019 |
