@@ -126,6 +126,7 @@ You can integrate your Slack account with your Outlook account. This will give p
 - change your status to `In Meeting` when you have meetings scheduled in your calendar
 
 To connect the Outlook Calendar app:
+
 - Go to Apps in Slack
 - Search for Outlook Calendar
 - Open a conversation with Outlook Calendar
