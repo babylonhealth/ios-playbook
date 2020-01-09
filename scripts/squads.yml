@@ -66,10 +66,6 @@ team:
     name: Ilya Puchka
     github: ilyapuchka
     twitter: ilyapuchka
-  - &Inami
-    name: Yasuhiro Inami
-    github: inamiy
-    twitter: inamiy
   - &James
     name: James Birtwell
     github: jimmybee
@@ -86,9 +82,6 @@ team:
   - &Konrad
     name: Konrad Muchowicz
     github: konrad-em
-  - &Martin
-    name: Martin Nygren
-    github: zzcgumn
   - &Michael
     name: Michael Brown
     github: mluisbrown
@@ -97,6 +90,10 @@ team:
     name: Michał Kwiecień
     github: MichalTKwiecien
     twitter: kwiecien_co
+  - &Nico
+    name: Nico Robin
+    github: Naiko
+    twitter: Naiko
   - &Olivier
     name:  Olivier Halligon
     github: AliSoftware
@@ -152,19 +149,20 @@ roles:
 # List of the Squads and their members
 #
 squads:
-  - name: Appointments
+  - name: Appointments 1
     desc: Appointment booking.
     members:
       - *Witold
-  - name: Consultation
+      - *Nico
+  - name: Appointments 2
     desc: Consultation experience related features including, but not limited to - audio/video call and replay quality, consultation feedback, pre-consultation preparation and reminders for consultation 
     members:
       - *Adrian
       - *Chitra
+      - *Davide
   - name: Onboarding and Navigation
     desc: General user experience in the app.
     members:
-      - *Emese
       - *Sergey
       - *Yuri
   - name: Native Apps Platform
@@ -172,8 +170,6 @@ squads:
     members:
       - *David
       - *Ilya
-      - *Inami
-      - *Martin
       - *Olivier
   - name: GP @ Hand Registrations
     desc: End to end journey for NHS registration.
@@ -182,7 +178,7 @@ squads:
   - name: Healthcheck
     desc: Overview of your health using a 3D body model (avatar).
     members:
-      - *Ben
+      - *Emese
       - *Julien
   - name: Identity
     desc: Authentication and Authorization related work
@@ -190,6 +186,10 @@ squads:
       - *Giorgos
       - *Michael
       - *Vojtech
+  - name: Member Comms
+    desc: Improving how we communicate with our users
+    members:
+      - *Viorel
   - name: Monitor
     desc: Help members manage and sustain a healthy lifestyle.
     members:
@@ -197,21 +197,15 @@ squads:
       - *DanielH
       - *DanielS
       - *Diego
-      - *Joshua
   - name: Prescriptions
     desc: Prescriptions functionality.
     members:
       - *Adam
       - *Konrad
-      - *Davide
   - name: Partnerships
     desc: Updating and maintaining the Telus app.
     members:
       - *Simon
-  - name: SDK
-    desc: Develop and maintain the SDK frameworks.
-    members:
-      - *Viorel
   - name: Tenancy & Features
     desc: To integrate the new feature configurator.
     members:
@@ -228,6 +222,8 @@ squads:
   - name: US Professional Services
     desc: Features for app in the US.
     members:
+      - *Ben
+      - *Joshua
       - *Chesley
       - *Patrick
       - *Sam
