@@ -60,3 +60,4 @@ iOS Cookbook 👩‍🍳
 * [Xcode Tips & Tricks](Technical-Documents/XcodeTips.md)
 * [Configure PullAssigner on our repos](Technical-Documents/PullAssigners.md)
 * [App Center](Technical-Documents/AppCenter.md)
+* [RubyMine](Technical-Documents/RubyMine.md)
