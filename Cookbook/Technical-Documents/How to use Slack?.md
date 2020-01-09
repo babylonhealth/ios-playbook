@@ -80,7 +80,7 @@ There are a few tips to try to reduce the number of notifications to the ones th
 
 ### Global notification preferences
 
-To reduce overall number of notifications we can configure the notifications on Slack doing the following:
+To reduce the overall number of notifications we can configure the notifications on Slack doing the following:
 
 1. Go to Slack > Preferences > Notifications
 2. Configure your notifications with:
