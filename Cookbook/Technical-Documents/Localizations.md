@@ -95,7 +95,7 @@ in the same file released for all apps.
 ### How to create a key/value that goes to this file? (lokalise key configuration + fastlane output file location)
 Considering you are working in an app (different than the main Babylon UK). A project in Lokalise is needed. Then when you need to have a custom value for a certain key. 
 
-#### In www.lokalise.co:
+#### In Lokalise
 
 1. Create a new key: Click on the `Add key ⌘K` button
 2. Add the exact same key as it is in the Babylon (Lokalise) Project. Also its custom value.
