@@ -16,7 +16,7 @@
   - [Code owners](./Proposals/CODEOWNERS.md)
   - [Writing proposals](./Technical-Documents/WritingAProposal.md)
   - Writing Documentation
-  - Development process
+  - [Development process](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/Development-Process.md)
   - [Jira](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/JIRA.md)
   - Pull Requests
   	- [Code review etiquette](https://github.com/babylonhealth/ios-playbook/blob/master/Etiquette/CODE_REVIEW.md)
