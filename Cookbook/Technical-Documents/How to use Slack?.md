@@ -103,7 +103,7 @@ When the channel is private, if you leave it you will have to be invited by one 
 You should leave a channel when:
 
  - You haven't open it in the last month.
- - The subject is no longer relevant or obsolet.
+ - The subject is no longer relevant or obsolete.
 
 ### Mute the channel
 
