@@ -36,7 +36,7 @@ Click on the `Add key ⌘K` button
 Note: the translations will be done by a third party that has access to Lokalise. Your squad should notify them to translate the new strings.
 
 ### Edit a key/value
-Search and select the key you'd like to update and change any language you need. The languages you may not have the values will be marked as `Not-verified` and the translators will take care.
+Search and select the key you'd like to update and change any language you need. The languages that have no values will be marked as `Not-verified` and the translators will take care of them.
 
 ## How to add a new Language/Locale
 
