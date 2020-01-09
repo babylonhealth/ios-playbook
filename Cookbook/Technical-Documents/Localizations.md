@@ -87,7 +87,7 @@ public static func localizedName(key: String, bundle: Bundle = Bundle.main) -> S
 
 Such approach allows other targets to have their custom key values when, for some reason, the user uses the device in British English.
 
-Not only that, but also avoids us to have useless and risky repetitions like:<br>
+Not only that, but also avoids us to have useless and risky repetitions like:
 ```"consultation_gp_details_name_babylon" = "GP Name:";```<br>
 ```"consultation_gp_details_name_telus" = "Doctor Name:";```<br>
 in the same file released for all apps. 
