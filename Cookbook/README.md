@@ -48,7 +48,7 @@
   - UI Automation tests
      - [UI Automation with XCTest & Gherkin](./Technical-Documents/UIAutomation.md)  
      - [Automation Identifiers](./Technical-Documents/AutomationIdentifiers.md)
-  - [Debugging Push Notifications](./Technical-Documents/DebuggingPushNotifications.md)
+  - [Debugging Push Notifications](./Technical-Documents/DebuggingPushNotifications.md) 
 
 ## SDKs 🌱
   - Documenting SDKs
