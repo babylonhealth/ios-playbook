@@ -16,17 +16,18 @@
   - [Code owners](./Proposals/CODEOWNERS.md)
   - [Writing proposals](./Technical-Documents/WritingAProposal.md)
   - Writing Documentation
-  - [Development process](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/Development-Process.md)
-  - [Jira](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/JIRA.md)
+  - [Development process](./Technical-Documents/Development-Process.md)
+  - [Jira](./Technical-Documents/JIRA.md)
   - Pull Requests
-  	- [Code review etiquette](https://github.com/babylonhealth/ios-playbook/blob/master/Etiquette/CODE_REVIEW.md)
+  	- [Code review etiquette](../Etiquette/CODE_REVIEW.md)
   	- [How to add Labels to a Pull Request](./Technical-Documents/LabelsInPRs.md)
   	- Merge bot
   - [Release process](./Technical-Documents/ReleaseProcess.md)
+    - [CRP bot](./Technical-Documents/CRP-Bot.md)
   - [Support engineer role](./Technical-Documents/SupportEngineerRole.md)
   - [Chapter meetings](./Technical-Documents/meetings-purpose.md)
   - [External libraries policy](./Technical-Documents/External-libraries.md)
-  - [Code of conduct](https://github.com/babylonhealth/ios-playbook/blob/master/Etiquette/README.md)
+  - [Code of conduct](../Etiquette/README.md)
   - [Requesting and Notifying Out Of Office time](./Technical-Documents/OutOffOfficeRequest.md)
 
 ## Architecture 🗼
@@ -72,11 +73,11 @@
   - CircleCI
 
 ## Recruitment 🎓
-  - [Overview](https://github.com/babylonhealth/ios-playbook/blob/master/Interview/README.md) 🛠
-  - [Software Engineer Technical test](https://github.com/babylonhealth/ios-playbook/blob/master/Interview/demo.md)
-  - [UI Automation Engineer Technical Test](https://github.com/babylonhealth/ios-playbook/blob/master/Interview/AutomationExercise.md)
+  - [Overview](../Interview/README.md) 🛠
+  - [Software Engineer Technical test](../Interview/demo.md)
+  - [UI Automation Engineer Technical Test](../Interview/AutomationExercise.md)
   - Pair programming session
-  - [Technical questions](https://github.com/babylonhealth/ios-playbook/blob/master/Interview/questions.md)
+  - [Technical questions](../Interview/questions.md)
   - Cultural fit questions
   - Interview presentation
 
