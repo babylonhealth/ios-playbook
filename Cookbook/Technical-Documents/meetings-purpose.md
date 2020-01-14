@@ -39,7 +39,7 @@ A PR Party Line-Up will be announced every Monday, Wednesday and Thursday.
 ## iOS Lunch & Learn
 
 The purpose of this meeting is to have fortnightly iOS learning sessions with the whole team.
-We will grab lunch before the meeting, sit together (physically or remotelly) and:
+We will grab lunch before the meeting, sit together (physically or remotely) and:
 
 * Watch a video relevant to the iOS team.
 * Watch a presentation done by someone in the team (full or lightning).
