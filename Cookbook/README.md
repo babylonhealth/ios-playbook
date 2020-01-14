@@ -23,7 +23,7 @@
   	- [How to add Labels to a Pull Request](./Technical-Documents/LabelsInPRs.md)
   	- Merge bot
   - [Release process](./Technical-Documents/ReleaseProcess.md)
-    - [CRP bot: Usage](./Technical-Documents/CRP-Bot.md)
+    - [CRP bot: Usage Documentation](./Technical-Documents/CRP-Bot.md)
     - [CRP bot: Implementation Details](./Technical-Documents/CRP-Bot-ImplementationDetails.md)
   - [Support engineer role](./Technical-Documents/SupportEngineerRole.md)
   - [Chapter meetings](./Technical-Documents/meetings-purpose.md)

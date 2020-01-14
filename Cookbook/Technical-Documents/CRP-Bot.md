@@ -16,6 +16,8 @@ In order to comply with that tracking requirement, every time a version of one o
 
 You can find an example of [a CRP ticket dedicated to an iOS release for Babylon UK 4.4.0 here](https://babylonpartners.atlassian.net/browse/CRP-4578).
 
+> Note: for documentation about how the CRP is _implemented_ in the code of our Stevenson bot, see [this companion document](CRP-Bot-ImplementationDetails.md)._
+
 ## Projects whitelist
 
 To avoid accidentally creating JIRA versions on boards others than the ones we own, or messing with boards that don't follow the same schema/template as the one expected by the bot, the CRP bot has a whitelist of boards on which it will be allowed to create JIRA versions and set Fix Versions fields.
