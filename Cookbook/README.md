@@ -81,7 +81,7 @@
   - Interview presentation
 
 ## Tooling 🛠
-  - [XCode Tips & Tricks](./Technical-Documents/XcodeTips.md)
+  - [Xcode Tips & Tricks](./Technical-Documents/XcodeTips.md)
   - [Posting Analytics Events to Snowplow](./Technical-Documents/SnowplowHowTo.md)
   - Firebase remote config
   - [Danger Configuration](./Technical-Documents/DangerRules.md)
