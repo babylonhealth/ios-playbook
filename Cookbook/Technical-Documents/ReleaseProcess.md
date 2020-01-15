@@ -80,7 +80,7 @@ During this stage, the release manager has the following tasks:
 *It starts after QA has signed off a particular build and can take several cycles until Apple's approval*
 
 1. Make sure *Manually release this version* is selected in `Version Release`.
-2. Select 'Use phased release`
+2. Select *Use phased release*
 3. When submitting to release, you are asked if the app uses the Advertising Identifier (IDFA). The answer is YES. You are then presented with three options please select as followed:
 	1. 🚫 Serve advertisements within the app
 	2. ✅ Attribute this app installation to a previously served advertisement
