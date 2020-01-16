@@ -89,13 +89,11 @@ Still, this is a behavior to be aware of to understand the real meaning we put b
 
 ### "Fix versions" and planning versions ahead
 
-Some teams might want to use JIRA versions to plan ahead, at the beginning of a sprint, which tickets we hope to be part of which version.
+Some squads might want to use JIRA releases to plan ahead, at the beginning of a sprint, which tickets they hope to be part of a future release.
 
-But since there's no guarantee that those tickets will make it in time in the planned release when the corresponding release branch is cut, it would lead to inconsistencies to use the Fix Version and JIRA releases named `"<platform> <app> <version>"` to mark those planned tickets before the release is cut; because if those planned tickets end up not making the cut, you'd still have manually marked them with a Fix Version that is supposed to reflect what was _actually_ shipped as part of the release.
+Since there's no guarantee that those tickets will actually make it in time in the planned release when the corresponding release branch is cut, we need to differentiate a ticket that is just _planned_ from a ticket that _actually made that release_.
 
-> Note that for each board, if a Jira version with the exact same name the bots is planning to use ("<Platform> <Flavor> <Version>" e.g. "iOS Ascension 1.1.0") already exists in the Jira board by the time the CRP process is run (= at the time the release branch is cut and the release process starts every second Friday), then the bot will re-use that existing Jira version instead of creating a separate one (Jira doesn't allow two versions to have the same name anyway)
+As JIRA releases handled by the CRP bot are dedicated to mark tickets that _actually shipped_ in a release (i.e. that are in the corresponding release branch), **you should never use those `"<platform> <app> <version>"` JIRA releases to mark planned tickets** via the `Fix Version` field. Otherwise that will mess up with our SSDLC requirement about tracking which tickets actually shipped with which version.
 
-So for teams which want to use JIRA releases and some field to mark tickets _planned_ for that release ahead of time (e.g. at the beginning of the sprint), to avoid inconsistencies between what the bot uses for "tickets actually shipped" and what you use for "tickets hoping to make the cut", we suggest one of those two solutions:
-
- * either use the "Affects Versions" JIRA field to plan ahead instead of the "Fix Version" field ("Affects Versions" is totally untouched by the bot and is free for PMs to use as they prefer)
- * or still use the "Fix Versions" to add Jira Versions to a ticket manually, but use Jira Versions names that don't conflict and are clearly distinct from the Jira versions created/managed by the bot. A typical example of that which some squads already use is to name your manually-managed version like "<Platform> <Flavor> RC <Version>" using "RC" in the name to mean Release Candidate and what's planned, and differentiate from the actual version used once actually released.
+Instead, you should use JIRA Versions with a name that doesn't conflict with the ones used by the bot.  
+We recommend naming those JIRA releases for _planned_ roadmaps something like **"<Platform> <Flavor> RC <Version>"** – e.g. "iOS Babylon RC 4.10.0". "RC" here meaning "Release Candidate", it will help differentiate that kind of planned JIRA versions from the version used by the bot when the ticket is actually released.
