@@ -12,10 +12,6 @@ team:
     name: Adrian Śliwa
     github: adiki
     twitter: adiki91
-  - &Anders
-    name: Anders Ha
-    github: andersio
-    twitter: _andersha
   - &Anil
     name: Anil Puttabuddhi
     github: anilputtabuddhi
@@ -193,7 +189,6 @@ squads:
   - name: Monitor
     desc: Help members manage and sustain a healthy lifestyle.
     members:
-      - *Anders
       - *DanielH
       - *DanielS
       - *Diego
