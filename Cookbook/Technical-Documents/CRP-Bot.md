@@ -39,8 +39,8 @@ In the near future, it will likely be automatically triggered by the script doin
 
 Given some quota limitations with the JIRA API – which makes JIRA not respond to some requests if we send too many requests in parallel – the CRP bot uses some throttling mechanism to only make API calls to set the "Fix Version" field of each ticket by batches, instead of all at once. This improves the behavior of the JIRA API, but that API still sometimes fail with timeout on some requests – often the JIRA server seem to have processed the request and updated the Fix Version field as requested by the API call, but never returns an HTTP response to the client to let it know it succeeded.
 
-Currently, since the default timeout for network requests is 60s, every time JIRA decides not to respond to one of our API requests, that request takes 60s to finally fail. This means that on those occasions, the CRP process can take as much as N minutes where N is the number of timeout failures on which JIRA API decided not to reply to our requests.  
-This can accumulate to quite some time in total before the CRP end up sending the calls for all the tickets for the release (e.g. on some recent invocations it had 20 API calls fail with timeouts, leading to the whole process taking around 20 minutes in total! Despite those requests having been processed by JIRA since the corresponding tickets still had their Fix Version field properly updated…).
+As of January 2020, since the default timeout for network requests is 60s, every time JIRA decides not to respond to one of our API requests, that request takes 60s to finally fail. This means that on those occasions, the CRP process can take as much as N minutes where N is the number of timeout failures on which JIRA API decided not to reply to our requests.  
+This can accumulate to quite some time in total before the CRP ends up sending the calls for all the tickets for the release (e.g. on some recent invocations it had 20 API calls fail with timeouts, leading to the whole process taking around **20 minutes in total** in spite of those requests having been processed by JIRA since the corresponding tickets still had their Fix Version field properly updated…).
 
 This situation is clearly not ideal, but since we don't have much control on the JIRA API failures, and as far as our understanding of this limitation goes, there's not much we can do (other than reducing the timeout) to improve that situation so far.
 
@@ -55,7 +55,7 @@ Those errors and warnings can include:
   - or it's a real board (but which is not using the official JIRA issue templates so is not compatible with the bot), in which case the release manager is supposed to create the JIRA versions and update the Fix Version on those tickets manually
 * errors about API timeouts
   – these are reported as `Error setting FixedVersion for <ticket> - ⚠️ [ThrowError.URLError: The operation could not be completed. (NSURLErrorDomain error -1001.)]`
-  - those are instances of the JIRA API limitation described in the previous paragraph, when JIRA happen to not reply to some ouf our API requests and make us timeout on them
+  - those are instances of the JIRA API limitation described in the previous paragraph, when JIRA happens not to reply to some ouf our API requests and times out
   - most often times the request will have been processed by JIRA and the "Fix Version" field would already be correct – it just didn't send the success HTTP response back – so there's nothing to be done; but on occasion the request might not have been processed by JIRA at all, in which case the release manager should update the field manually for those tickets
 
 
