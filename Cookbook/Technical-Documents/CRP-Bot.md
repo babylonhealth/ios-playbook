@@ -8,11 +8,11 @@ In order to comply with that tracking requirement, every time a version of one o
 
 * Gather the CHANGELOG from the list of tickets/commits that will be included in this upcoming release.
   - The list is built by listing the commits between the current release being cut and the last tag / GitHub release for the same flavor (e.g. between tag `telus/4.4.0` and branch `release/telus/4.5.0`) as described in our SSDLC
-  - Since each commit is annotated with a reference to the JIRA ticket it is supposed to implement, the list of commits allows to build a list of Jira tickets included in the release
+  - Since each commit is annotated with a reference to the JIRA ticket it is supposed to implement, the list of commits allows to build a list of JIRA tickets included in the release
 * Create the ticket on the CRP board, with the CHANGELOG (list of affected tickets) previously built
-* Create a new JIRA version on each board mentioned in the CHANGELOG (e.g. in CNSMR, NRX, AV, APPTS, … boards) and whitelisted in the bot, named like "iOS Babylon 4.3.0" (same name for each version created on each board).
+* Create a new JIRA release on each board mentioned in the CHANGELOG (e.g. in CNSMR, NRX, AV, APPTS, … boards) and whitelisted in the bot. It will name it like "iOS Babylon 4.3.0" (it will use the same name for each release created on each JIRA board).
   - If a release with that exact name already exists in a board, the bot will reuse it instead of creating a new one.
-* Add that newly created version to the "Fix Version" field of the tickets found in the CHANGELOG
+* Add that newly created JIRA release to the "Fix Version" field of the tickets found in the CHANGELOG
 
 You can find an example of [a CRP ticket dedicated to an iOS release for Babylon UK 4.4.0 here](https://babylonpartners.atlassian.net/browse/CRP-4578).
 
@@ -20,7 +20,7 @@ You can find an example of [a CRP ticket dedicated to an iOS release for Babylon
 
 ## Projects whitelist
 
-To avoid accidentally creating JIRA versions on boards others than the ones we own, or messing with boards that don't follow the same schema/template as the one expected by the bot, the CRP bot has a whitelist of boards on which it will be allowed to create JIRA versions and set Fix Versions fields.
+To avoid accidentally creating JIRA releases on boards others than the ones we own, or messing with boards that don't follow the same schema/template as the one expected by the bot, the CRP bot has a whitelist of boards on which it will be allowed to create JIRA releases and set Fix Versions fields.
 
 * This provides some security against any `[XXX-NNN]` that might be contained in a commit message to reference a JIRA ticket on some board that we don't own (e.g. a ticket from BackEnd), for which we don't want our bot to act
 * This also allows us to not whitelist some of our boards, for which we ideally would want the CRP bot to work on, but which sadly don't use the official JIRA template that the bot expects – which means that they might not have the same fields in their JIRA tickets, or have different field IDs in the JIRA API for some fields (and sending requests to update a given Field ID would mean accidentally update the wrong field)
@@ -37,7 +37,7 @@ In the near future, it will likely be automatically triggered by the script doin
 
 ## JIRA API limitations
 
-Given some quota limitations with the JIRA API – which makes JIRA not respond to some requests if we send too many requests in parallel – the CRP bot uses some throttling mechanism to only make API calls to set the "Fix Version" field of each ticket by batches, instead of all at once. This improves the behavior of the JIRA API, but that API still sometimes fail with timeout on some requests – often the JIRA server seem to have processed the request and updated the Fix Version field as requested by the API call, but never returns an HTTP response to the client to let it know it succeeded.
+Given some quota limitations with the JIRA API – which makes JIRA not respond to some requests if we send too many requests in parallel – the CRP bot uses some throttling mechanism to only make API calls to set the "Fix Version" field of each ticket by batches, instead of all at once. This improves the behavior of the JIRA API, but that API still sometimes fail with timeout on some requests. Often the JIRA server seem to still have processed those requests and updated the Fix Version field as requested by the API call, but just didn't return the HTTP response to the client to let it know it succeeded.
 
 As of January 2020, since the default timeout for network requests is 60s, every time JIRA decides not to respond to one of our API requests, that request takes 60s to finally fail. This means that on those occasions, the CRP process can take as much as N minutes where N is the number of timeout failures on which JIRA API decided not to reply to our requests.  
 This can accumulate to quite some time in total before the CRP ends up sending the calls for all the tickets for the release (e.g. on some recent invocations it had 20 API calls fail with timeouts, leading to the whole process taking around **20 minutes in total** in spite of those requests having been processed by JIRA since the corresponding tickets still had their Fix Version field properly updated…).
@@ -95,5 +95,5 @@ Since there's no guarantee that those tickets will actually make it in time in t
 
 As JIRA releases handled by the CRP bot are dedicated to mark tickets that _actually shipped_ in a release (i.e. that are in the corresponding release branch), **you should never use those `"<platform> <app> <version>"` JIRA releases to mark planned tickets** via the `Fix Version` field. Otherwise that will mess up with our SSDLC requirement about tracking which tickets actually shipped with which version.
 
-Instead, you should use JIRA Versions with a name that doesn't conflict with the ones used by the bot.  
-We recommend naming those JIRA releases for _planned_ roadmaps something like **"<Platform> <Flavor> RC <Version>"** – e.g. "iOS Babylon RC 4.10.0". "RC" here meaning "Release Candidate", it will help differentiate that kind of planned JIRA versions from the version used by the bot when the ticket is actually released.
+Instead, you should use JIRA releases with a name that doesn't conflict with the ones used by the bot.  
+We recommend naming those JIRA releases for _planned_ roadmaps something like **"<Platform> <Flavor> RC <Version>"** – e.g. "iOS Babylon RC 4.10.0". "RC" here meaning "Release Candidate", it will help differentiate that kind of planned JIRA releases from the JIRA release used by the bot when the ticket is actually released.
