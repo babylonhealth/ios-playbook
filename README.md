@@ -69,9 +69,8 @@ The rest of the iOS Engineers work in the following squads:
       <tr><td>Vojtech Vrbka</td><td><a href='https://github.com/vojtechvrbka'>@vojtechvrbka</a></td><td><a href='https://twitter.com/vojtechvrbka'>@vojtechvrbka</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Member Comms</strong><br/>Improving how we communicate with our users</td>
       <td>Viorel Mihalache</td><td><a href='https://github.com/viorel15'>@viorel15</a></td><td><a href='https://twitter.com/viorelMO'>@viorelMO</a></td></tr>
-    <tr><td rowspan='4' valign='top'><strong>Monitor</strong><br/>Help members manage and sustain a healthy lifestyle.</td>
-      <td>Anders Ha</td><td><a href='https://github.com/andersio'>@andersio</a></td><td><a href='https://twitter.com/_andersha'>@_andersha</a></td></tr>
-      <tr><td>Daniel Haight</td><td><a href='https://github.com/Daniel1of1'>@Daniel1of1</a></td><td></td></tr>
+    <tr><td rowspan='3' valign='top'><strong>Monitor</strong><br/>Help members manage and sustain a healthy lifestyle.</td>
+      <td>Daniel Haight</td><td><a href='https://github.com/Daniel1of1'>@Daniel1of1</a></td><td></td></tr>
       <tr><td>Daniel Spindelbauer</td><td><a href='https://github.com/sdaniel55'>@sdaniel55</a></td><td><a href='https://twitter.com/sdaniel55'>@sdaniel55</a></td></tr>
       <tr><td>Diego Petrucci</td><td><a href='https://github.com/diegopetrucci'>@diegopetrucci</a></td><td><a href='https://twitter.com/diegopetrucci'>@diegopetrucci</a></td></tr>
     <tr><td rowspan='2' valign='top'><strong>Prescriptions</strong><br/>Prescriptions functionality.</td>
