@@ -28,11 +28,17 @@ let variant: AwesomeExperiment
 
 Note that experiments can have any number of variations, but more than two will be unusual as it gets more difficult to collect conclusive data.
 
-## A/B test vs Feature Tests
+## A/B Tests vs Feature Tests
 
-Optimizely unlike other services has different kind of tests: A/B tests and feature tests. Feature tests are built around some feature switches and to create such test you would need to already have or create a feature switch. A/B tests on the other hand are not related to feature switchs and only provide the client app with the value of variation as a string. It's up to the client to process this value and decide how the behaviour of the client should change. Feature tests serve the purpose of testing in what configuraiton a feature works better. As Optimizely feature switches can have associated variables when defininig feature test variations you can define not only if feature is enabled or not, but also different valaues for these variables.
+Optimizely unlike other services has different kinds of tests: A/B tests and feature tests. Feature tests are built around some feature switches and to create such test you would need to already have or create a feature switch. A/B tests on the other hand are not related to feature switches and only provide the client app with the value of variation as a string. It's up to the client to process this value and decide how the behaviour of the client should change. 
 
-When defining A/B test in code you should use the key of this test as a key of `ABTestVariant`. When defining feature switch test you should instead use a feature switch key, not the test key. With feature tests you never need to access the test itself, assigned variation will be activeted by Optimizely SDK under the hood (unlike for A/B tests for which we call activation function manually when you first access the variation value). Active veriations are observed both for A/B tests and feature tests and reported to analytics so you don't need to do that mnaully.
+Feature tests serve the purpose of testing in what configuration a feature works better. As Optimizely feature switches can have associated variables, when defining feature test variations you can define not only if the feature is enabled or not, but also different values for these variables.
+
+When defining an _A/B test_ in code you should use the _key of this test_ as a key of `ABTestVariant`. When defining a _feature test_ you should instead use the _feature key_, not the test key. 
+
+With feature tests you never need to access the test itself, assigned variation will be activated by Optimizely SDK under the hood (unlike for A/B tests, for which we call activation function manually when you first access the variation value). Active variations are observed both for A/B tests and feature tests and reported to analytics so you don't need to do that manually.
+
+For more information, see the Optimizely documentation on [feature tests](https://docs.developers.optimizely.com/full-stack/docs/run-feature-tests) and [A/B tests](https://docs.developers.optimizely.com/full-stack/docs/run-a-b-tests).
 
 ## Working with Optimizely Features
 
