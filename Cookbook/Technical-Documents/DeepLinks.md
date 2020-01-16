@@ -1,16 +1,16 @@
 # Handling deep links
 
-The app can handle several types of deep links, directly opening the related screens from inside or outside the app. A deep link is usually composed of a prefix, like `babylon://`, and the deep link intent with or without a parameter:
+The app can handle several types of deep links, directly opening the related screens from inside or outside the app. Deep links are usually composed of a prefix, like `babylon://`, and a deep link intent with or without a parameter:
 
 - `babylon://homepage`
 - `babylon://somescreen/parameter`
 - `babylon://nested/screen/parameter`
 
-Currently only single, simple parameters are supported app-wide as there was no requirement for anything else, and for reliability.
+Currently, only single, simple parameters are supported app-wide for reliability and there was no requirement for anything else.
 
 The prefix is not only `babylon://`, but also several others, and the app does not distinguish between them, looking only at the intent, as long as the OS is able to invoke the app. Thus, `babylon://link` and `otherprefix://link` are equivalent from the deep link handling standpoint within the app.
 
-Let's trace the whole process from defining a new deep link intent, possibly restricting it to specific app targets, to presenting a new screen.
+Let's take a look at the whole process from defining a new deep link intent, possibly restricting it to specific app targets, to presenting a new screen.
 
 ## Overall architecture
 
@@ -23,6 +23,7 @@ struct DeepLink: Decodable {
     let url: URL
     let options: [UIApplication.OpenURLOptionsKey : Any]
     let intent: ApplicationInvocation.Intent?
+}
 ```
 
 Incoming deep link events are then processed in the private `handle` method, producing a routing event, bound to the `routes` variable in the invocation router protocol:
@@ -37,7 +38,7 @@ The produced routes are then plugged into `BabylonTabBarViewModel` (always prese
 
 `BabylonTabBarViewModel` in its turn produces a `Route.external(RoutingEvent, .deeplink)` event handled through its Flow controller, always presented modally over the tab bar controller. Some deep links switch tabs instead of presenting screens modally, which is encapsulated in the `RoutingEvent` as well.
 
-Overall, the initial `DeepLink` value gets transformed into a `RoutingEvent` which is, essentially, just like a regular `Route` handled by Flow controllers in other parts of the app, and in `BabylonTabBarFlowController` these events are also handled in a regular fashion by constructing a screen with a `Builder` and presenting it.
+Overall, the initial `DeepLink` value gets transformed into a `RoutingEvent` which is, essentially, just like a regular `Route` handled by Flow controllers in other parts of the app. In `BabylonTabBarFlowController` these events are handled in a regular fashion by constructing a screen with a `Builder` and presenting it.
 
 ### Prevent certain deep links from being handled
 
@@ -55,7 +56,7 @@ The default value is just to return `true`, this enabling all available deep lin
 
 ### Open a deep link from within the app
 
-When the deep links found extended usage within the app, it became apparent that interacting with them in the app through `UIApplication.openURL(_:)` was extremely inconvenient during testing. It was common for both testers and developers to have multiple versions of the app installed at the same time, and iOS, as it turned out, randomly chooses the app to handle a particular custom URL scheme from the ones installed, as long as they support it. We were unable to control which app would be opened, when interacting with a deep link from inside an app, and this could even affect end users, since they could, in theory, have several of our apps installed at the same time.
+When we started to use deep links in the app more, it became apparent that interacting with them in the app through `UIApplication.openURL(_:)` was extremely inconvenient during testing. It was common for both testers and developers to have multiple versions of the app installed, and iOS, as it turned out, randomly chooses the app to handle a particular custom URL scheme from the ones installed (as long as they support it). When interacting with a deep link from inside an app we were unable to control which app would be opened, and this could even affect end users, since in theory they could have several of our apps installed.
 
 We created a special router to handle this situation:
 
@@ -66,7 +67,7 @@ protocol TabDeeplinkRouterProtocol {
 }
 ```
 
-Internally it simply forwards the deep link interaction to the instance of `ApplicationInvocationRouter`, removing the OS from the equation and making sure that the deep link is always opened in the same app that it was interacted in.
+Internally it simply forwards the deep link interaction to the instance of `ApplicationInvocationRouter`, removing the OS from the equation and making sure that the deep link is always opened in the same app that it was opened from.
 
 If you're creating a new screen or just want to open an existing screen by using a deep link without the need to construct it, use `TabDeeplinkRouterProtocol` instead of `UIApplication.openURL(_:)` to avoid the problem described above.
 
