@@ -22,6 +22,7 @@
   	- [Code review etiquette](https://github.com/babylonhealth/ios-playbook/blob/master/Etiquette/CODE_REVIEW.md)
   	- [How to add Labels to a Pull Request](./Technical-Documents/LabelsInPRs.md)
   	- Merge bot
+  - [How to deal with Localizations](./Technical-Documents/Localizations.md)
   - [Release process](./Technical-Documents/ReleaseProcess.md)
   - [Support engineer role](./Technical-Documents/SupportEngineerRole.md)
   - [Chapter meetings](./Technical-Documents/meetings-purpose.md)
