@@ -72,7 +72,7 @@ This whitelist has two main purposes:
 
 Those misconfigured boards are tracked in [IOSP-101](https://babylonpartners.atlassian.net/browse/IOSP-101). 
 
-Trying to execute the CRP automation on those boards would end in an invalid API request or worse, some unexpected changes in the tickets, because field IDs would not match the ones expected by the bot.
+Trying to execute the CRP automation on those boards would end in an invalid API request or worse, some unexpected changes in the tickets, because field IDs would not match the ones expected by the bot. Which is why those boards are not included in the whitelist.
 
 ### `batchSetFixedVersions`
 
@@ -93,6 +93,7 @@ A similar construct is used in `createAndSetFixedVersions` to gather all the rep
 ### SlowClient
 
 One of the particularities of this process is that it sends a **LOT** of API calls to JIRA:
+
 – one for the CRP ticket itself
 - then one for each board to create a JIRA version
 - and, finally, one for each ticket in the CRP in order to update their fields
