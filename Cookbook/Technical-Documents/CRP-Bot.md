@@ -29,11 +29,11 @@ This is why some of the boards are still not whitelisted. This is tracked in [IO
 
 Note that the whitelist only affects the creation of JIRA releases and update of "Fix Version" field on those boards. A link to the tickets will still be included in the description/body of CRP ticket (listing all tickets found in the changelog messages) even for tickets belonging to a non-whitelisted board.
 
-## Running the CRP bot
+## Triggering the CRP bot
 
-Currently, the CRP bot can be triggered by a slack command `/crp <platform> <branch>` (e.g. `/crp ios release/babylon/4.4.0`) in the `#ios-launchpad` slack channel.
+The CRP process is automatically triggered during the release cutoff automation and happens every second Friday alongside the release branch creation.
 
-In the near future, it will likely be automatically triggered by the script doing the release cut every second Friday.
+Note: The CRP bot can also be triggered by a slack command `/crp <platform> <branch>` (e.g. `/crp ios release/babylon/4.4.0`) in the `#ios-launchpad` slack channel, though now that it is automatically triggered during release cutoff, invoking it manually from Slack should not be necessary anymore. [In the future, that Slack command might be updated to allow _updating_ the existing CRP ticket with _new_ tickets added _after_ release cut](https://babylonpartners.atlassian.net/browse/IOSP-532).
 
 ## JIRA API limitations
 
