@@ -4,7 +4,7 @@
 
 Because we're now certified ISO-13485, our SSDLC and the ISO process requires that we track every changes in the codebase and in each release of each flavor of our apps. This means that we need to track which commits (and which corresponding JIRA tickets) have been included in each version of the apps we push to the stores.
 
-In order to comply with that tracking requirement, every time a version of one of the flavors (Babylon UK, Bupa, Telus, Ascension US, ...) is released to one of the stores (AppStore or PlayStore), and the CRP bot is triggered (either using the Slack command – e.g. `/crp ios release/babylon/4.4.0` – or automatically during release cutoff _(soon)_) to handle that part of the release process, the bot will handle the following tasks:
+In order to comply with that tracking requirement, every time a version of one of the flavors (Babylon UK, Bupa, Telus, Ascension US, ...) is released to one of the stores (AppStore or PlayStore), and the CRP bot is triggered (either automatically during release cutoff, or when using the Slack command – e.g. `/crp ios release/babylon/4.4.0` to trigger it manually if ever needed) to handle that part of the release process, the bot will handle the following tasks:
 
 * Gather the CHANGELOG from the list of tickets/commits that will be included in this upcoming release.
   - The list is built by listing the commits between the current release being cut and the last tag / GitHub release for the same flavor (e.g. between tag `telus/4.4.0` and branch `release/telus/4.5.0`) as described in our SSDLC
