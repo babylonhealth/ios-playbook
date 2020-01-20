@@ -143,4 +143,4 @@ You can configure your own status however, for some common situations it is bett
 - Off sick 🤒
 - Focused 💭 - A few of us turn-off notifications or turn-off Slack when we want time to focus on a certain task.
 
-Scheduling time slots to focus on a task is encouraged because it helps our productivity. When booking these please be mindful of when and for how long you are unnavailable. It is always better to schedule these slots when you have no meetings in your calendar and are not involved in conversations that are active at that time.
+Scheduling time slots to focus on a task is encouraged because it helps our productivity. When booking these please be mindful of when and how long you are unavailable for. It is always better to schedule these slots when you have no meetings in your calendar and not involved in conversations that are active at that time.
