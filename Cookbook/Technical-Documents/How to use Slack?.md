@@ -135,7 +135,7 @@ To connect the Outlook Calendar app:
 
 ### Not available
 
-When we are not available on Slack it is advised to change your Slack status so the person who wants to reach you knows why you are unnavailable.
+When we are not available on Slack, it is advised to update your Slack status so the person trying to reach you knows why you are unavailable.
 You can configure your own status however, for some common situations it is better to use the pre-defined ones:
 
 - [Holidays](/OutOffOfficeRequest.md#holidays-) 🌴
