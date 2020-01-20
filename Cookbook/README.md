@@ -41,7 +41,6 @@
   - [Vertical frameworks](./Technical-Documents/VerticalFrameworks.md)
   - [Design Library Technical Documentation](./Technical-Documents/DesignLibrary.md)
   - [Functional operators in our codebase](./Technical-Documents/FunctionalOperators.md)
-  - [Handling deep links](./Technical-Documents/DeepLinks.md)
 
 ## Testing 🧪
   - Overview
