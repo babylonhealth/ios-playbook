@@ -22,6 +22,7 @@
   	- [Code review etiquette](../Etiquette/CODE_REVIEW.md)
   	- [How to add Labels to a Pull Request](./Technical-Documents/LabelsInPRs.md)
   	- Merge bot
+  - [How to deal with Localizations](./Technical-Documents/Localizations.md)
   - [Release process](./Technical-Documents/ReleaseProcess.md)
     - [CRP bot: Usage Documentation](./Technical-Documents/CRP-Bot.md)
     - [CRP bot: Implementation Details](./Technical-Documents/CRP-Bot-ImplementationDetails.md)
