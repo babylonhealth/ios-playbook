@@ -107,7 +107,7 @@ You should leave a channel when:
 
 ### Mute the channel
 
-Muting a channel means you will have access to it but you won't be notified if you are mentioned individually or with `@channel` or `@here`.
+Muting a channel means you will have access to it but you won't be notified if you are mentioned individually, with `@channel`, or `@here`.
 
 You should mute a channel when:
 
