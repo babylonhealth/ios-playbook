@@ -1,6 +1,6 @@
 # How to use Slack?
 
-In Babylon we try to be as much remote friendly as we can.
+In Babylon we try to be as remote friendly as we can.
 Slack is a tool we rely on a lot to help us communicate with everyone without having to be physically present.
 On the first day at Babylon, one of the first things you have automatically access is to your Slack account.
 Although this is a pretty straightforward instant messaging tool, there a few rules and tips everyone should be aware.
