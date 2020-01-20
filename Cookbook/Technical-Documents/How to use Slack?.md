@@ -117,7 +117,7 @@ You should mute a channel when:
 
 ## How to communicate my schedule?
 
-Your status on Slack should be a way to communicate what is your current status. This can be used to indicate you are working remotely, you are in a meeting or any other status.
+Your status on Slack should be a way to communicate what is your current status. This can be used to indicate you are working remotely, in a meeting, or any other statuses.
 
 ### Connect Slack with Outlook
 
