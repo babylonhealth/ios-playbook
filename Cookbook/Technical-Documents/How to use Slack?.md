@@ -3,7 +3,7 @@
 In Babylon we try to be as remote friendly as we can.
 Slack is a tool we rely on to help us communicate with everyone, without having to be physically present.
 On your first day at Babylon, one of the first things you have access to is Slack.
-Although this is a pretty straightforward instant messaging tool, there a few rules and tips everyone should be aware.
+Although this is a pretty straightforward instant messaging tool, there are a few rules and tips everyone should be aware.
 
 ## Which channels to join?
 
