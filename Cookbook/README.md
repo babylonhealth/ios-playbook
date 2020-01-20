@@ -36,6 +36,7 @@
   - [Implementing features with ReactiveFeedback](https://ilya.puchka.me/implementing-features-with-reactivefeedback/)
   - [Implementing features that work with backend](./Technical-Documents/BackendFeatureHowTo.md)
   - [How to use `Current`](./Technical-Documents/Current-guide.md)
+  - [Vertical frameworks](./Technical-Documents/VerticalFrameworks.md)
   - [Design Library Technical Documentation](./Technical-Documents/DesignLibrary.md)
   - [Functional operators in our codebase](./Technical-Documents/FunctionalOperators.md)
 
@@ -91,6 +92,7 @@
   - [Pull Assigners](./Technical-Documents/PullAssigners.md)
   - SwiftLint
   - [RubyMine](Technical-Documents/RubyMine.md)
+  - [Platform tools](Technical-Documents/PlatformTools.md)
 
 ## How to 🤔
   - Add a new API in an existing SDK
