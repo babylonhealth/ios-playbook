@@ -146,16 +146,16 @@ roles:
 #
 squads:
   - name: Appointments 1
-    desc: Appointment booking.
+    desc: Face to face appointment booking.
     members:
       - *Witold
-      - *Nico
   - name: Appointments 2
-    desc: Consultation experience related features including, but not limited to - audio/video call and replay quality, consultation feedback, pre-consultation preparation and reminders for consultation 
+    desc: Digital appointment booking.
     members:
       - *Adrian
       - *Chitra
       - *Davide
+      - *Nico
   - name: Onboarding and Navigation
     desc: General user experience in the app.
     members:
