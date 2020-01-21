@@ -44,13 +44,13 @@ The rest of the iOS Engineers work in the following squads:
 
 <table>
   <thead><th>Squad</th><th>Engineer</th><th>GitHub</th><th>Twitter</th></thead>
-    <tr><td rowspan='2' valign='top'><strong>Appointments 1</strong><br/>Appointment booking.</td>
+    <tr><td rowspan='1' valign='top'><strong>Appointments 1</strong><br/>Appointment booking.</td>
       <td>Witold Skibniewski</td><td><a href='https://github.com/mr-v'>@mr-v</a></td><td></td></tr>
-      <tr><td>Nico Robin</td><td><a href='https://github.com/Naiko'>@Naiko</a></td><td><a href='https://twitter.com/Naiko'>@Naiko</a></td></tr>
-    <tr><td rowspan='3' valign='top'><strong>Appointments 2</strong><br/>Consultation experience related features including, but not limited to - audio/video call and replay quality, consultation feedback, pre-consultation preparation and reminders for consultation</td>
+    <tr><td rowspan='4' valign='top'><strong>Appointments 2</strong><br/>Consultation experience related features including, but not limited to - audio/video call and replay quality, consultation feedback, pre-consultation preparation and reminders for consultation</td>
       <td>Adrian Śliwa</td><td><a href='https://github.com/adiki'>@adiki</a></td><td><a href='https://twitter.com/adiki91'>@adiki91</a></td></tr>
       <tr><td>Chitra Kotwani</td><td><a href='https://github.com/chitrakotwani'>@chitrakotwani</a></td><td><a href='https://twitter.com/chitrakotwani'>@chitrakotwani</a></td></tr>
       <tr><td>Davide De Franceschi</td><td><a href='https://github.com/defrenz'>@defrenz</a></td><td><a href='https://twitter.com/defrenz'>@defrenz</a></td></tr>
+      <tr><td>Nico Robin</td><td><a href='https://github.com/Naiko'>@Naiko</a></td><td><a href='https://twitter.com/Naiko'>@Naiko</a></td></tr>
     <tr><td rowspan='2' valign='top'><strong>Onboarding and Navigation</strong><br/>General user experience in the app.</td>
       <td>Sergey Shulga</td><td><a href='https://github.com/sergdort'>@sergdort</a></td><td><a href='https://twitter.com/SergDort'>@SergDort</a></td></tr>
       <tr><td>Yuri Karabatov</td><td><a href='https://github.com/karabatov'>@karabatov</a></td><td><a href='https://twitter.com/karabatov'>@karabatov</a></td></tr>
