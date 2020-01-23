@@ -51,7 +51,7 @@ A Photo detail screen will have:
 
 * The user the photo belongs to.
     * Get the user id from the album(http://jsonplaceholder.typicode.com/albums/{:id})
-    * Get the User from the user detail (http://jsonplaceholder.typicode.com/user/{:id})
+    * Get the User from the user detail (http://jsonplaceholder.typicode.com/users/{:id})
 * The title of the photo.
 * The number of comments on the photo:
     * (https://jsonplaceholder.typicode.com/photos/{:id}/comments)
