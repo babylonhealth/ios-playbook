@@ -53,7 +53,7 @@ Flags if there is something preventing the PR from being merged that is unrelate
 Alerts when a PR is required to be merged. This is used in emergency situations like a hot fix or a piece of work that is mandatory to go in the release that is about to ship.
 
 - ![Feature at risk 🚑](https://img.shields.io/static/v1?label&message=Feature%20at%20risk%20🚑&color=e00000) - A PR that has to go in the next release that will ship in 2 days or less. This PR has priority to be reviewed over all the other PRs that are not in emergency.
-- ![Hotfix 🆘](https://img.shields.io/static/v1?label&message=Hotfix%20🆘&color=fcc1ba) - The PR has priority to be reviewed because it has a hot fix targeting the current release branch.
+- ![Hotfix 🆘](https://img.shields.io/static/v1?label&message=Hotfix%20🆘&color=fcc1ba) - The PR has priority to be reviewed because it has an urgent fix targeting the PR's base branch, which could be develop or the current release branch.
 
 ### Extra
 These tags are used to give extra context to the PR.
