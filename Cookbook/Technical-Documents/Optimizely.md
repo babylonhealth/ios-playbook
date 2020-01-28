@@ -86,6 +86,9 @@ The latest value will always be returned for a feature flag. Experiments should 
 
 When and how to react to an updated feature flag depends on the situation. It is clearly not a good experience if the user interface is updated half-way through a flow but it might be okay to update the content of a tab once the user has navigated to another tab.
 
+### Flag values at launch
+If Optimizely does not have any downloaded version of the flags (e.g. first launch of the app with no connection), then it will default to the values specified in `optimizely-develop.json` or `optimizely-release.json`, depending on app scheme. These files are automatically updated during the release process and should not be updated manually.
+
 ## Posting Meta Data to Optimizely
 Optimizely allows us to post meta data that can be used to calculate what activation to assign, whether a feature is enabled or what feature value to return. At the moment this can be done by creating a `ABTestVariant` with attributes passed in a `[String: Any]` dictionary. It might very well be that we want to have a more type safe API, but during the initial integration of Optimizely (October 2019) it was not clear how an improved API should look.
 
