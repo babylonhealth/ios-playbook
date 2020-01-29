@@ -4,7 +4,7 @@ Working with Optimizely
 [Optimizely](https://www.optimizely.com) is a tool for full stack software experimentation. Its two main concepts are Experiments and Features. In an experiment users are divided into two or more segments, each segment is shown a different version of the user interface and we try to collect some performance data to decide which version works best. A feature is a flag which decides whether something is available for a specific user.
 
 ## Interacting with the Optimizely Portal
-Optimizely is available through our single sign on portal so you can [sign in](https://app.optimizely.com/signin) using SSO and just provide your babylon email. 
+Optimizely is available through our single sign on portal so you can [sign in](https://app.optimizely.com/signin) using SSO and just provide your Babylon email. 
 
 After you have signed in, select "Babylon Health iOS" under the project heading in the left hand menu.
 
