@@ -21,7 +21,7 @@
   - Pull Requests
   	- [Code review etiquette](../Etiquette/CODE_REVIEW.md)
   	- [How to add Labels to a Pull Request](./Technical-Documents/LabelsInPRs.md)
-  	- Merge bot
+  	- [Merge bot](https://github.com/babylonhealth/Wall-E/blob/master/README.md)
   - [How to deal with Localizations](./Technical-Documents/Localizations.md)
   - [Release process](./Technical-Documents/ReleaseProcess.md)
   - [Support engineer role](./Technical-Documents/SupportEngineerRole.md)
