@@ -35,7 +35,7 @@ There are 3 services we use daily:
 
 - Fill in the PR template and set the title using the following format: `[TCKT-123] Short summary of work`
 - [Add labels](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/LabelsInPRs.md)
-- Assign the PR to the engineer(s)
+- Thanks to a GitHub action, the PR will automatically be assigned to its creator
 - Move the ticket to `Peer review` on Jira (or it'll be automatically moved if configured)
 - If you'd like feedback before the work on the ticket is done, open a draft PR so your peers can leave comments
 - To run checks before merging, use the comment `@ios-bot-babylon test_pr` ([more info](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/SlackCIIntegration.md))
