@@ -152,7 +152,7 @@ All static configuration properties and feature switches should be declared in t
 	
 	After releasing the feature hidden behind the remote feature switch, make some agreement with your PM when we can stop using this switch. Depending on how your squad works, you may want to create a ticket in the backlog to phase out the feature switch and remove legacy code. Remember that even you've phased out the feature switch from the newest version, there are still older versions that could be using this feature switch for a long time.
 	
-	For a/b test there is a dedicated property wrapper `@ABTest` that makes the separation between regular feature switches and a/b tests more explicit. It's also only possible to create a/b test using enum with string raw value. Other than that `ABTest` is identical to `RemoteFeatureSwitch` (and actually uses it as a backing storage)
+	For A/B tests, there is a dedicated property wrapper `@ABTest` that makes the separation between regular feature switches and A/B tests more explicit. Also, it's only possible to create an A/B test using an enum with string raw value. Other than that, `ABTest` is identical to `RemoteFeatureSwitch` (and actually uses it as a backing storage)
 	
 	```swift
 	public struct MapsUI: FeatureModule {
@@ -170,7 +170,7 @@ All static configuration properties and feature switches should be declared in t
 	}
 	```
 	
-	Read more: [Working with Optimizely](./Optimizely.md). Refer to the documentation for `RemoteFeatureSwitchDecoder` for more examples.
+Read more: [Working with Optimizely](./Optimizely.md). Refer to the documentation for `RemoteFeatureSwitchDecoder` for more examples.
 
 ## How to decide what feature flag to use
 
