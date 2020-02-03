@@ -28,7 +28,7 @@ extension World {
 
         public struct FeatureSwitches {
             public enum Keys: String {
-	             // keys for feature switches will go here
+	        // keys for feature switches will go here
             }
 
             // feature switches declaration will go here
@@ -106,14 +106,14 @@ All static configuration properties and feature switches should be declared in t
 	
 	```swift
 	public struct MapsUI: FeatureModule {
-		...
-		public struct Configuration {
-			let myConfiguration: Bool
+	    ...
+	    public struct Configuration {
+	        let myConfiguration: Bool
 
-			public init(myConfiguration: Bool) {
-				self.myConfiguration = myConfiguration
-			}
+	        public init(myConfiguration: Bool) {
+	            self.myConfiguration = myConfiguration
 		}
+	    }
 	}
 	```
 	
@@ -132,27 +132,45 @@ All static configuration properties and feature switches should be declared in t
 	These feature switches are another kind of remote feature switches and uses a cloud service (such as Optimizely or previously Firebase) as a backend. To add a new remote config you need to declare it in the `FeatureSwitches` struct of the appropriate Feature Module, similarly to local feature switches:
 
 	```swift
-    public struct MapsUI: FeatureModule {
-        ...
-        public struct FeatureSwitches {
-            public enum Keys: String {
-                // value should be the same as one defined in service console
-                case isMyFeatureEnabled = "is_my_feature_enabled"
-            }
+	public struct MapsUI: FeatureModule {
+	    ...
+	    public struct FeatureSwitches {
+	        public enum Keys: String {
+	            // value should be the same as one defined in service console
+	            case isMyFeatureEnabled = "is_my_feature_enabled"
+	        }
 
-            @ABTestVariant(key: Keys.isMyFeatureEnabled)
-            var isMyFeatureEnabled: Bool
-        }
+	        @RemoteFeatureSwitch(key: Keys.isMyFeatureEnabled)
+	        var isMyFeatureEnabled: Bool
+	    }
 	}
 	```
 
 	You can then refer this property as `Current.maps.isMyFeatureEnabled`.
 
-	**Note that default value is `false` again!** But you can specify a different default value, i.e. `@ABTestVariant(key: Keys.isMyFeatureEnabled, defaultValue: true)`
+	**Note that default value is `false` again!** But you can specify a different default value, i.e. `@RemoteFeatureSwitch(key: Keys.isMyFeatureEnabled, defaultValue: true)`
 	
 	After releasing the feature hidden behind the remote feature switch, make some agreement with your PM when we can stop using this switch. Depending on how your squad works, you may want to create a ticket in the backlog to phase out the feature switch and remove legacy code. Remember that even you've phased out the feature switch from the newest version, there are still older versions that could be using this feature switch for a long time.
 	
-	Read more: [Working with Optimizely](./Optimizely.md)
+	For a/b test there is a dedicated property wrapper `@ABTest` that makes the separation between regular feature switches and a/b tests more explicit. It's also only possible to create a/b test using enum with string raw value. Other than that `ABTest` is identical to `RemoteFeatureSwitch` (and actually uses it as a backing storage)
+	
+	```swift
+	public struct MapsUI: FeatureModule {
+	    ...
+	    public struct FeatureSwitches {
+	        public enum Keys: String {
+	            case myTest = "my_test"
+	        }
+		
+		enum MyTest: String { case variatio1, variation2 }
+
+	        @ABTest(key: Keys.myTest, default: .variation1)
+	        var myTest: MyTest
+	    }
+	}
+	```
+	
+	Read more: [Working with Optimizely](./Optimizely.md). Refer to the documentation for `RemoteFeatureSwitchDecoder` for more examples.
 
 ## How to decide what feature flag to use
 
