@@ -27,6 +27,6 @@ public static func image(_ name: Name, bundle: Bundle) -> UIImage {
 The method without specifying bundle automatically chooses `Bundle.main`. The algorithm is the following:
 1. The method checks if the icon is present in the assets catalog of the main bundle. In most cases it will be the white label app bundle (this allows overriding the icon for specific app).
 2. If the icon is not there it takes icon from DesignLibrary assets catalog.
-3. In other case `fatalError` is called, but this situation is impossible because icon has to be in DesignLibrary assets catalog because SwiftGen created identifier for it. (If icon is deleted SwiftGen will regenerate file without identifier for that icon).
+3. If both fails, `fatalError` is called; but this situation is impossible because SwiftGen creates identifiers based on the content of the DesignLibrary's assets catalog, so the the image has to at least be there (and if icon is deleted SwiftGen will remove that identifier for the generated file).
 
 When some app overrides icon with the same name in its assets catalog but it still would like to use icon from DesignLibrary in other case it can specify bundle: `Bundle(for: IconsBundleToken.self)` and it will enforce that image from DesignLibrary assets catalog will retrieved.
