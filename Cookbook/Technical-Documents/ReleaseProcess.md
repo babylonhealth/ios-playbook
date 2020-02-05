@@ -48,9 +48,11 @@ There are usually two release engineers working at any given time. It goes witho
   1. Input the new version number.
     
 During this stage, the release manager has the following tasks:
-  1. Create the CRP ticket by triggering the Slack command (eg. `/crp ios branch:release/babylon/4.1.0`) in `#ios-launchpad`		
-    * This will also generate the CHANGELOG automatically (from the list of commits between the `release/{appname}/{version}` branch used in the command and the tag for the latest version of the same product – i.e. the most recent `{appname}/*` tag) to include it in the CRP ticket		
-    * Further manually complete the CRP ticket with any additional information (clinical risk, etc)	
+
+  1. Ensure the CRP ticket is up-to-date
+     * The CRP ticket is created automatically for iOS during release cutoff ([see details here](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/Process/Release%20process/CRP-Bot.md))
+     * But they need to ensure all tickets have had their Fix Version field updated as expected (see the CRP report)
+     * They also need to manually complete the CRP ticket with some additional information (clinical risk, etc)	
  1. Ask the `#ios-launchpad` channel for the expected release notes from each squad if they are releasing anything.
   
 
@@ -103,14 +105,20 @@ During this stage, the release manager has the following tasks:
 	* Remove from reviewers list any engineer that has been added by the PullAssigner but haven't contributed to the release branch.
 	* Set the _Merge_ label once all the required reviewers have approved it.
 1. Update the [release calendar](#release-calendar)
+	* Tip: You can use the following command in your Terminal to list the tickets and authors who participated in the Release, to ask them the time they took for each ticket
+      ```
+      git log --format="%<(25)%an | %s" origin/develop..origin/release/babylon/4.15.0 | grep -vE "^(Steve|iOS Bot) *\|" | sort
+      ```
+      (be sure to `git fetch origin master` before that to have up-to-date branches)
 1. Update this document if any steps during the release process have changed.
 
 ## 3. SDK Release
 
 1. Ask SDK team (#sdk_squad) about the SDK version number.
 1. Cut a release branch for the SDK from the app release branch, using the `release/sdk/{version}` naming convention (eg. `release/sdk/0.5.0`)
-1. Create a CRP ticket by triggering its command (eg. `/crp ios branch:release/sdk/0.5.0`) in Slack
+1. The Release Manager should then create a CRP ticket by triggering its command (eg. `/crp ios branch:release/sdk/0.5.0`) in Slack
    * This will create the CRP ticket for the SDK, only including in the CHANGELOG field of the CRP the commits messages containing `[SDK-xxx]` or `#SDK` – filtering out the other commits, that are considered app-only changes if not containing those tags
+   * See [here for more detailed documentation about the CRP](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/Process/Release%20process/CRP-Bot.md)
    * See also the [Internal SDK Release Process](https://engineering.ops.babylontech.co.uk/docs/cicd-deployments/#mobile-sdk-releases-ios-android) for more info.
 1. By now, our bot created PR with the name `SDK x.x.x [ci skip]`- assign yourself there and update the SDK changelog `SDK/CHANGELOG.md` to add the release version and date on the branch mentioned in this PR.
    * this document will be distributed alongside the SDK and used to document changes to SDK consumers, so the list of changes here could be worded differently from the CHANGELOG used in the CRP ticket if necessary
