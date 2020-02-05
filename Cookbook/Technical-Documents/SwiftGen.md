@@ -5,7 +5,7 @@
 ### Image assets
 
 Using icons and images with our SwiftGen integration is really easy. The only thing you have to do is to add the image to `BabylonDesignLibrary/DesignLibrary/Assets.xcassets` and then you can just use it by calling `appearance.tokens.icons.image(.myNewIcon)`. Before compilation of `BabylonDesignLibrary`, SwiftGen is executed and regenerates the identifiers.
-If you name your icon with camel case style the same name will be generated. If you choose sneak case style e.g. `my_new_icon` SwiftGen will process it and will produce camel case identifier `myNewIcon`.
+If you name your icon with camel case style (e.g. `MyNewIcon`), the same name will be generated. If you choose snake case style (e.g. `my_new_icon`), SwiftGen will generate a camel-cased identifier from it (e.g. `myNewIcon`).
 
 #### Overriding icons in white label apps
 
