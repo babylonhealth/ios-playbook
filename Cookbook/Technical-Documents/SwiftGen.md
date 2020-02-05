@@ -1,6 +1,6 @@
 ## SwiftGen
 
-SwiftGen allows plenty of possibilities to automatically generate code based on resources we store in our project. Following sections will describe which types of resources are currently integrated with SwiftGen and how to use them.
+[SwiftGen](https://github.com/SwiftGen/SwiftGen) allows plenty of possibilities to automatically generate code based on resources we store in our project. Following sections will describe which types of resources are currently integrated with SwiftGen and how to use them.
 
 ### Image assets
 
