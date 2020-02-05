@@ -50,10 +50,9 @@ There are usually two release engineers working at any given time. It goes witho
 During this stage, the release manager has the following tasks:
 
   1. Ensure the CRP ticket is up-to-date
-
-    * The CRP ticket is created automatically for iOS during release cutoff ([see details here](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/Process/Release%20process/CRP-Bot.md))
-    * But they need to ensure all tickets have had their Fix Version field updated as expected (see the CRP report)
-    * They also need to manually complete the CRP ticket with some additional information (clinical risk, etc)	
+   * The CRP ticket is created automatically for iOS during release cutoff ([see details here](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/Process/Release%20process/CRP-Bot.md))
+   * But they need to ensure all tickets have had their Fix Version field updated as expected (see the CRP report)
+   * They also need to manually complete the CRP ticket with some additional information (clinical risk, etc)	
  1. Ask the `#ios-launchpad` channel for the expected release notes from each squad if they are releasing anything.
   
 
@@ -106,8 +105,11 @@ During this stage, the release manager has the following tasks:
 	* Remove from reviewers list any engineer that has been added by the PullAssigner but haven't contributed to the release branch.
 	* Set the _Merge_ label once all the required reviewers have approved it.
 1. Update the [release calendar](#release-calendar)
-	* Tip: You can use the following command in your Terminal to list the tickets and authors who participated in the Release to ask them the time they took for each ticket  
-          `git log --format="%<(25)%an | %s" develop..origin/release/babylon/4.15.0 | grep -vE "^(Steve|iOS Bot) *\|" | sort`
+	* Tip: You can use the following command in your Terminal to list the tickets and authors who participated in the Release, to ask them the time they took for each ticket
+      ```
+      git log --format="%<(25)%an | %s" origin/develop..origin/release/babylon/4.15.0 | grep -vE "^(Steve|iOS Bot) *\|" | sort
+      ```
+      (be sure to `git fetch origin master` before that to have up-to-date branches)
 1. Update this document if any steps during the release process have changed.
 
 ## 3. SDK Release
