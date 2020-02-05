@@ -24,7 +24,7 @@ public static func image(_ name: Name, bundle: Bundle) -> UIImage {
 	return result
 }
 ```
-The method without specifying bundle automatically chooses `Bundle.main`. The algorithm is following:
+The method without specifying bundle automatically chooses `Bundle.main`. The algorithm is the following:
 1. Method checks if the icon is added in assets catalog in the main bundle. In most cases it will be white label app bundle (this allows overriding the icon for specific app).
 2. If the icon is not there it takes icon from DesignLibrary assets catalog.
 3. In other case `fatalError` is called, but this situation is impossible because icon has to be in DesignLibrary assets catalog because SwiftGen created identifier for it. (If icon is deleted SwiftGen will regenerate file without identifier for that icon).
