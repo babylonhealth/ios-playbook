@@ -112,7 +112,7 @@ During this stage, the release manager has the following tasks:
 1. Create a CRP ticket by triggering its command (eg. `/crp ios branch:release/sdk/0.5.0`) in Slack
    * This will create the CRP ticket for the SDK, only including in the CHANGELOG field of the CRP the commits messages containing `[SDK-xxx]` or `#SDK` – filtering out the other commits, that are considered app-only changes if not containing those tags
    * See also the [Internal SDK Release Process](https://engineering.ops.babylontech.co.uk/docs/cicd-deployments/#mobile-sdk-releases-ios-android) for more info.
-1. Create PR and update the SDK changelog `SDK/CHANGELOG.md` to add the release version and date
+1. By now, our bot created PR with the name `SDK x.x.x [ci skip]`- assign yourself there and update the SDK changelog `SDK/CHANGELOG.md` to add the release version and date on the branch mentioned in this PR.
    * this document will be distributed alongside the SDK and used to document changes to SDK consumers, so the list of changes here could be worded differently from the CHANGELOG used in the CRP ticket if necessary
 1. Trigger the App Center build from that branch using its command (eg. `/fastlane distribute_sdk version:0.5.0 branch:release/sdk/0.5.0`) in `#ios-build`.
 1. Update the Sample app to point to the latest SDK release and ensure it still compiles
