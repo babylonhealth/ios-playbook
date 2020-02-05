@@ -50,9 +50,9 @@ There are usually two release engineers working at any given time. It goes witho
 During this stage, the release manager has the following tasks:
 
   1. Ensure the CRP ticket is up-to-date
-   * The CRP ticket is created automatically for iOS during release cutoff ([see details here](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/Process/Release%20process/CRP-Bot.md))
-   * But they need to ensure all tickets have had their Fix Version field updated as expected (see the CRP report)
-   * They also need to manually complete the CRP ticket with some additional information (clinical risk, etc)	
+    * The CRP ticket is created automatically for iOS during release cutoff ([see details here](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/Process/Release%20process/CRP-Bot.md))
+    * But they need to ensure all tickets have had their Fix Version field updated as expected (see the CRP report)
+    * They also need to manually complete the CRP ticket with some additional information (clinical risk, etc)	
  1. Ask the `#ios-launchpad` channel for the expected release notes from each squad if they are releasing anything.
   
 
