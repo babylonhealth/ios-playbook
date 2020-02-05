@@ -31,4 +31,4 @@ The method without specifying bundle automatically chooses `Bundle.main`. The al
 2. If the icon is not in the specified bundle, it will then fallback to pick the one from DesignLibrary assets catalog.
 3. If both fails, `fatalError` is called; but this situation is impossible because SwiftGen creates identifiers based on the content of the DesignLibrary's assets catalog, so the the image has to at least be there (and if icon is deleted SwiftGen will remove that identifier for the generated file).
 
-When some app overrides icon with the same name in its assets catalog but it still would like to use icon from DesignLibrary in other case it can specify bundle: `Bundle(for: IconsBundleToken.self)` and it will enforce that image from DesignLibrary assets catalog will retrieved.
+When an app overrides an icon with the same name in its assets catalog but you would still like to use the icon from DesignLibrary in some cases, you can explicitly pass `DesignLibrary.bundle` to enforce that the image is loaded from the DesignLibrary assets catalog.
