@@ -91,6 +91,7 @@
   - [Code Signing with Fastlane Match](./Technical-Documents/FastlaneMatch.md)
   - [AppCenter](./Technical-Documents/AppCenter.md)
   - [Pull Assigners](./Technical-Documents/PullAssigners.md)
+  - [SwiftGen](./Technical-Documents/SwiftGen.md)
   - SwiftLint
   - [RubyMine](Technical-Documents/RubyMine.md)
   - [Platform tools](Technical-Documents/PlatformTools.md)
