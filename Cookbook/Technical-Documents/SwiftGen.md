@@ -18,9 +18,8 @@ public static func image(_ name: Name) -> UIImage {
 }
 
 public static func image(_ name: Name, bundle: Bundle) -> UIImage {
-	let iconsBundle = Bundle(for: IconsBundleToken.self)
 	guard let result = UIImage(named: name.rawValue, in: bundle, compatibleWith: nil)
-		?? UIImage(named: name.rawValue, in: iconsBundle, compatibleWith: nil) else {
+		?? UIImage(named: name.rawValue, in: DesignLibrary.bundle, compatibleWith: nil) else {
 		 fatalError("Unable to load image named \(name).") 
 	}
 	return result
