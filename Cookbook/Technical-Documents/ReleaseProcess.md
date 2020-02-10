@@ -105,7 +105,7 @@ During this stage, the **release manager** has the following tasks:
       ```
       git log --format="%<(25)%an | %s" origin/develop..origin/release/babylon/4.15.0 | grep -vE "^(Steve|iOS Bot) *\|" | sort
       ```
-      (be sure to `git fetch origin master` before that to have up-to-date branches)
+      (be sure to `git fetch origin develop` before that to have up-to-date branches)
 1. Update this document if any steps during the release process have changed.
 
 ## 3. SDK Release
