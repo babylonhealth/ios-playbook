@@ -20,7 +20,7 @@
 
 **The objective is to ship the release build as soon as possible whilst maintaining the quality bar and addressing every bug raised by QA**.
 
-When dealing with a particularly complicated bug (one that would require a rather significant effort to address) the release engineer should speak with either Andreea Papillon (Native Apps' Product Manager) or Lilla Szulyovszky (Native Apps' Delivery Manager) as every release is managed and signed-off by the Native Apps squad.  
+When dealing with a particularly complicated bug (one that would require a rather significant effort to address) the release engineer should speak with Release Manager.  
 The bug's corresponding feature should be disabled altogether using its feature switch (if applicable). Such a bug would subsequently be handled by its respective squad.
 
 Release duties have priority over regular squad duties. Please inform your squad of your unavailability before starting to work in the release. As with every other week, twenty percent of your work hours overall are to be allocated towards making the release a reality.
