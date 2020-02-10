@@ -60,14 +60,11 @@ During this stage, the **release manager** has the following tasks:
 *It starts after the App Center build has been delivered and it can take several cycles*
 
 1. Testers will then begin their work against the build you just created.
-1. Any hotfix should target the `develop` branch first.
-1. These PRs need to be reviewed by the relevant squad or platform QA (Bibin Paul) & one of the release engineers assigned to the release. This is to ensure visibility of changes being requested to be made, and to ensure the correct builds are available for validation. The exception being that if an issue is not reproducible on `develop` then we can merge directly with `release`. Still, it should be fully understandable why it is not reproducible to help ensure there is no regression for the next release.
+1. Any hotfix should target the release branch first.
+1. These PRs need to be reviewed by the relevant squad or platform QA (Bibin Paul) & one of the release engineers assigned to the release. This is to ensure visibility of changes being requested to be made, and to ensure the correct builds are available for validation.
     * Bear in mind that two approvals from other engineers assigned by Pull Assigners is not enough in this particular case.
-    * After merging, we'll need to merge these changes to the release branch. This can be done either via cherry-picking the relevant commits or rebasing the PR branch on the release branch. _This should be done by the author of the change and the PR should be reviewed by the release engineer as well_. Doing this will ensure that both branches are up to date and reduces the risk of conflicts when merging the release branch back to develop.
-
-    _Important: do not change the target branch of the PR from develop to release as this increases the risk of bringing in unneeded changes from develop to release branch. Instead create a second PR to release using rebase or cherry-pick and ensure that only required changes are commited._
-
-    * Furthermore, the issue for the hotfix has to be added to the release JIRA board. This can be done automatically by setting the release number in `Fix version` in the hotfix's JIRA card.
+    * After fix is merged to release branch, the automation will create "Cherry pick 🍒" PR targeting `develop`. If no PR gets created, open PR manually and notify Platform squad about the issue with automation. Following this process will ensure that both branches are up to date and reduces the risk of conflicts when merging the release branch back to `develop`.
+    * The issue for the hotfix has to visible on the release JIRA board. To ensure this set the release number in `Fix version` in the hotfix's JIRA card.
 
 ### Phase 4: Submit TestFlight builds to App Store Connect
 *It starts after all opened issues had been adressed and can take several cycles until QA's approval*
