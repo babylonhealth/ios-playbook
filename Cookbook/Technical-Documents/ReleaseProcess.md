@@ -97,9 +97,8 @@ During this stage, the **release manager** has the following tasks:
    * Attach the zipped `xcarchive` as an artefact to the GitHub release (if you're using the automated release command, you can find the `*.xcarchive.zip` in the Artifacts top section in the CI build).
 1. Merge `release` branch back to `develop`:
 	* Open the Release PR ( PR from `release` branch targeting `develop`) which has been automatically created.
-  * Resolve the conflicts (if any)
-	* Set as reviewers all the engineers who contributed to the `release` branch, and remove the ones automatically assigned by PullAssigners.
-	* Remove from reviewers list any engineer that has been added by the PullAssigner but haven't contributed to the release branch.
+  * Resolve the conflicts (if any).
+	* In case there are any changes besides updates to app and build versions, then assign as reviewers all the engineers who worked on those changes and remove the ones automatically assigned by PullAssigners. After merging with `develop` the extra changes may be there due to either resolving conflict or because hot fix PR wasn't merged to `develop`.
 	* Set the _Merge_ label once all the required reviewers have approved it.
 1. Update the [release calendar](#release-calendar)
 	* Tip: You can use the following command in your Terminal to list the tickets and authors who participated in the Release, to ask them the time they took for each ticket
