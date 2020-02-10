@@ -47,7 +47,7 @@ There are usually two release engineers working at any given time. It goes witho
   1. On the sidebar click `+ Version or Platform` and select `iOS`.
   1. Input the new version number.
     
-During this stage, the release manager has the following tasks:
+During this stage, the **release manager** has the following tasks:
 
   1. Ensure the CRP ticket is up-to-date
      * The CRP ticket is created automatically for iOS during release cutoff ([see details here](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/Process/Release%20process/CRP-Bot.md))
