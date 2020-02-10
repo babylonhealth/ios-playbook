@@ -8,7 +8,7 @@
 1. Own the entire release process (step-by-step).
 2. Provide visibility of the release, at all stages, to the wider audience (e.g. squad, tribe and iOS chapter lead) by:
 	1. Tagging in the release Slack channel, anyone (Engineers, PMs, QAs) that is relevant to the release and to the issues that are raised during the release cycle.
-	2. Adding in the #ios-standup, a daily note with the status of the release (QA and bug fixing progress).
+	2. Adding in the release channel a daily note with the status of the release (QA and bug fixing progress).
 3. Collaborate with QA by:
     1. Providing visibility to potential blockers to the wider audience.
     2. Escalating abnormal influx of bugs, so the release, as a whole, can be reassessed.
