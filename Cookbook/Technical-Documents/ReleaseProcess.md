@@ -103,7 +103,7 @@ During this stage, the **release manager** has the following tasks:
 1. Update the [release calendar](#release-calendar)
 	* Tip: You can use the following command in your Terminal to list the tickets and authors who participated in the Release, to ask them the time they took for each ticket
       ```
-      git log --format="%<(25)%an | %s" origin/develop..origin/release/babylon/4.15.0 | grep -vE "^(Steve|iOS Bot) *\|" | sort
+      git log --format="%<(25)%an | %s" origin/develop..origin/release/{flavor}/{version} | grep -vE "^(Steve|iOS Bot) *\|" | sort
       ```
       (be sure to `git fetch origin develop` before that to have up-to-date branches)
 1. Update this document if any steps during the release process have changed.
