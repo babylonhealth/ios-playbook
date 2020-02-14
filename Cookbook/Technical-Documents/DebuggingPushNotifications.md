@@ -6,6 +6,7 @@ To sucessfully debug Push Notification on your device make sure that you have pr
 - [PubNub](#pubnub)
 - [Key sets](#key-sets)
 - [APNS certificates and environments](#apns-certificates-and-environments)
+- [Test notification functionality](#test-notification-functionality)
 
 ## TLDR
 When you are testing push notifications make sure that:
@@ -45,3 +46,8 @@ Apart from certificate we need to set `APNS Environment` in each key set. This i
 _Example 1_: to test notifications locally on pre-prod environment APNS environment for `preprod` and `preprod-ios-push` key sets should be set to `Development`
 
 _Example 2_: to test notifications on App Center build on pre-prod environment APNS environment for `preprod` and `preprod-ios-push` key sets should be set to `Production`
+
+## Test notification functionality
+
+Debug, AppCenter and TestFlight builds include the "Test Notification" functionality. This will request a push notification to be sent through the notification service, through Pubnub and APNS then back to the device. This simulates an end user receiving a notification and can be used to eliminate common notification issues such as certificates having expired or incorrect Pubnub credentials.
+This functionality can be accessed in the Me tab -> Settings -> Test notification.
