@@ -51,3 +51,4 @@ _Example 2_: to test notifications on App Center build on pre-prod environment A
 
 Debug, AppCenter and TestFlight builds include the "Test Notification" functionality. This will request a push notification to be sent through the notification service, through Pubnub and APNS then back to the device. This simulates an end user receiving a notification and can be used to eliminate common notification issues such as certificates having expired or incorrect Pubnub credentials.
 This functionality can be accessed in the Me tab -> Settings -> Test notification.
+<img src="Assets/test-notification-functionality.gif" alt="Test Notification" width="200"/>
