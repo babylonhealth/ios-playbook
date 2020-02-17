@@ -109,8 +109,8 @@ During this stage, the **release manager** has the following tasks:
 1. Update this document if any steps during the release process have changed.
 
 ## 3. SDK Release
+At the moment SDK release is handled by the SDK squad itself. As a release engineer you don't have to worry about this section.
 
-1. Ask SDK team (#sdk_squad) about the SDK version number.
 1. Cut a release branch for the SDK from the app release branch, using the `release/sdk/{version}` naming convention (eg. `release/sdk/0.5.0`)
 1. The Release Manager should then create a CRP ticket by triggering its command (eg. `/crp ios branch:release/sdk/0.5.0`) in Slack
    * This will create the CRP ticket for the SDK, only including in the CHANGELOG field of the CRP the commits messages containing `[SDK-xxx]` or `#SDK` – filtering out the other commits, that are considered app-only changes if not containing those tags
