@@ -70,7 +70,7 @@ Example:
 
 A public channel where we usually trigger CI workflows like Testfligh/AppCenter builds or UI Automation Tests.
 The UI Automation Tests run every night and the results are published in this channel by the bot.
-To check how to trigger the workflows check [Slack CI Integration](/SlackCIIntegration.md)
+To check how to trigger the workflows check [Slack CI Integration](../SlackCIIntegration.md)
 
 ## How to manage notifications?
 
