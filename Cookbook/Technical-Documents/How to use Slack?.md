@@ -97,7 +97,7 @@ On a day to day basis, if you want some quiet time, you can mute notifications t
 
 ### Leave the channel
 
-When you leave a channel you can no longer open it unless you join it again. Also, when someone shares a thread from that channel with you, you will have to join the channel to be able to read it.
+When you leave a channel, you can see its messages, but can't participate unless you join it again. When someone shares a thread from that channel, you will be able to read it, but again you'll have to join the channel to interact with it.
 When the channel is private, if you leave it you will have to be invited by one of its members to join it again.
 
 You should leave a channel when:
