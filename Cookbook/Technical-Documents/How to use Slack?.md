@@ -89,7 +89,7 @@ To reduce the overall number of notifications we can configure the notifications
 
 3. Go to `My keywords` and define the keywords to be used to trigger notifications. These can be your nicknames and variations of your name.
 
-4. In the `Do Not Disturb` you can set the time interval you don't want to receive any Slack notification. Ideally this should enabled during your non-working hours.
+4. In the `Do Not Disturb` you can set the time interval you don't want to receive any Slack notification. Ideally, this should be enabled during your non-working hours.
 
 On the day to day basis, if you want some quiet time, you can mute notifications temporarly by selecting the notifications icon next to your Slack organization name followed by selecting one of the options.
 
