@@ -50,6 +50,8 @@ The rest of the iOS Engineers work in the following squads:
       <td>Adrian Śliwa</td><td><a href='https://github.com/adiki'>@adiki</a></td><td><a href='https://twitter.com/adiki91'>@adiki91</a></td></tr>
       <tr><td>Chitra Kotwani</td><td><a href='https://github.com/chitrakotwani'>@chitrakotwani</a></td><td><a href='https://twitter.com/chitrakotwani'>@chitrakotwani</a></td></tr>
       <tr><td>Nico Robin</td><td><a href='https://github.com/Naiko'>@Naiko</a></td><td><a href='https://twitter.com/Naiko'>@Naiko</a></td></tr>
+    <tr><td rowspan='1' valign='top'><strong>Assistant</strong><br/>Chatbot-powered features.</td>
+      <td>João Pereira</td><td><a href='https://github.com/NSMyself'>@NSMyself</a></td><td><a href='https://twitter.com/NSMyself'>@NSMyself</a></td></tr>
     <tr><td rowspan='2' valign='top'><strong>Onboarding and Navigation</strong><br/>General user experience in the app.</td>
       <td>Sergey Shulga</td><td><a href='https://github.com/sergdort'>@sergdort</a></td><td><a href='https://twitter.com/SergDort'>@SergDort</a></td></tr>
       <tr><td>Yuri Karabatov</td><td><a href='https://github.com/karabatov'>@karabatov</a></td><td><a href='https://twitter.com/karabatov'>@karabatov</a></td></tr>
@@ -66,7 +68,7 @@ The rest of the iOS Engineers work in the following squads:
       <td>Giorgos Tsiapaliokas</td><td><a href='https://github.com/gtsiap'>@gtsiap</a></td><td></td></tr>
       <tr><td>Michael Brown</td><td><a href='https://github.com/mluisbrown'>@mluisbrown</a></td><td><a href='https://twitter.com/mluisbrown'>@mluisbrown</a></td></tr>
       <tr><td>Vojtech Vrbka</td><td><a href='https://github.com/vojtechvrbka'>@vojtechvrbka</a></td><td><a href='https://twitter.com/vojtechvrbka'>@vojtechvrbka</a></td></tr>
-    <tr><td rowspan='1' valign='top'><strong>Member Comms</strong><br/>Improving how we communicate with our users</td>
+    <tr><td rowspan='1' valign='top'><strong>Member Comms</strong><br/>Improving how we communicate with our users.</td>
       <td>Viorel Mihalache</td><td><a href='https://github.com/viorel15'>@viorel15</a></td><td><a href='https://twitter.com/viorelMO'>@viorelMO</a></td></tr>
     <tr><td rowspan='4' valign='top'><strong>Monitor</strong><br/>Help members manage and sustain a healthy lifestyle.</td>
       <td>Daniel Haight</td><td><a href='https://github.com/Daniel1of1'>@Daniel1of1</a></td><td></td></tr>
@@ -78,13 +80,12 @@ The rest of the iOS Engineers work in the following squads:
       <tr><td>Konrad Muchowicz</td><td><a href='https://github.com/konrad-em'>@konrad-em</a></td><td></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Partnerships</strong><br/>Updating and maintaining the Telus app.</td>
       <td>Simon Cass</td><td><a href='https://github.com/scass91'>@scass91</a></td><td><a href='https://twitter.com/codercass'>@codercass</a></td></tr>
-    <tr><td rowspan='1' valign='top'><strong>SDK</strong><br/>Updating and maintaining the SDK</td>
+    <tr><td rowspan='1' valign='top'><strong>SDK</strong><br/>Updating and maintaining the SDK.</td>
       <td>Michał Kwiecień</td><td><a href='https://github.com/MichalTKwiecien'>@MichalTKwiecien</a></td><td><a href='https://twitter.com/kwiecien_co'>@kwiecien_co</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Tenancy & Features</strong><br/>To integrate the new feature configurator.</td>
       <td>Anil Puttabuddhi</td><td><a href='https://github.com/anilputtabuddhi'>@anilputtabuddhi</a></td><td></td></tr>
-    <tr><td rowspan='2' valign='top'><strong>Triage</strong><br/>Chatbot functionality.</td>
+    <tr><td rowspan='1' valign='top'><strong>Triage</strong><br/>Chatbot functionality.</td>
       <td>Danilo Aliberti</td><td><a href='https://github.com/daniloaliberti'>@daniloaliberti</a></td><td></td></tr>
-      <tr><td>João Pereira</td><td><a href='https://github.com/NSMyself'>@NSMyself</a></td><td><a href='https://twitter.com/NSMyself'>@NSMyself</a></td></tr>
     <tr><td rowspan='4' valign='top'><strong>US Professional Services</strong><br/>Features for app in the US.</td>
       <td>Ben Henshall</td><td><a href='https://github.com/Ben-Henshall'>@Ben-Henshall</a></td><td><a href='https://twitter.com/ben_henshall'>@ben_henshall</a></td></tr>
       <tr><td>Joshua Simmons</td><td><a href='https://github.com/j531'>@j531</a></td><td></td></tr>

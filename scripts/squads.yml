@@ -148,6 +148,10 @@ squads:
       - *Adrian
       - *Chitra
       - *Nico
+  - name: Assistant
+    desc: Chatbot-powered features.
+    members:
+      - *Joao
   - name: Onboarding and Navigation
     desc: General user experience in the app.
     members:
@@ -175,7 +179,7 @@ squads:
       - *Michael
       - *Vojtech
   - name: Member Comms
-    desc: Improving how we communicate with our users
+    desc: Improving how we communicate with our users.
     members:
       - *Viorel
   - name: Monitor
@@ -195,7 +199,7 @@ squads:
     members:
       - *Simon
   - name: SDK
-    desc: Updating and maintaining the SDK
+    desc: Updating and maintaining the SDK.
     members:
       - *Michal
   - name: Tenancy & Features
@@ -206,7 +210,6 @@ squads:
     desc: Chatbot functionality.
     members:
       - *Danilo
-      - *Joao
   - name: US Professional Services
     desc: Features for app in the US.
     members:
