@@ -152,17 +152,6 @@ squads:
     desc: Chatbot-powered features.
     members:
       - *Joao
-  - name: Onboarding and Navigation
-    desc: General user experience in the app.
-    members:
-      - *Sergey
-      - *Yuri
-  - name: Native Apps Platform
-    desc: Engineering work like tooling, CI and development processes.
-    members:
-      - *David
-      - *Ilya
-      - *Olivier
   - name: GP @ Hand Registrations
     desc: End to end journey for NHS registration.
     members:
@@ -189,6 +178,17 @@ squads:
       - *DanielS
       - *Diego
       - *Javier
+  - name: Native Apps Platform
+    desc: Engineering work like tooling, CI and development processes.
+    members:
+      - *David
+      - *Ilya
+      - *Olivier
+  - name: Onboarding and Navigation
+    desc: General user experience in the app.
+    members:
+      - *Sergey
+      - *Yuri
   - name: Prescriptions
     desc: Prescriptions functionality.
     members:
