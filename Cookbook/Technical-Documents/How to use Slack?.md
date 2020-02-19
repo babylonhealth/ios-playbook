@@ -33,7 +33,7 @@ Recording: https://babylonhealth.zoom.us/recording/share/2q99Zb7Oxg0Kk7yIAVITuGU
 
 ### #ios-pedia
 A private channel used to make announcements or to open discussions on broader topics within the iOS Team.
-Each announcement or discussion should be just one message and the discussion should happen within that message thread.
+Each announcement or discussion should be just one message and the discussion should happen within that message's thread.
 To understand the status of a message we tag the messages following:
 
 - In discussion 💬
