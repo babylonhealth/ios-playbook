@@ -50,14 +50,14 @@ The rest of the iOS Engineers work in the following squads:
       <td>Adrian Śliwa</td><td><a href='https://github.com/adiki'>@adiki</a></td><td><a href='https://twitter.com/adiki91'>@adiki91</a></td></tr>
       <tr><td>Chitra Kotwani</td><td><a href='https://github.com/chitrakotwani'>@chitrakotwani</a></td><td><a href='https://twitter.com/chitrakotwani'>@chitrakotwani</a></td></tr>
       <tr><td>Nico Robin</td><td><a href='https://github.com/Naiko'>@Naiko</a></td><td><a href='https://twitter.com/Naiko'>@Naiko</a></td></tr>
-    <tr><td rowspan='1' valign='top'><strong>Assistant</strong><br/>Chatbot-powered features.</td>
+    <tr><td rowspan='1' valign='top'><strong>Assistant</strong><br/>Chatbot-related features.</td>
       <td>João Pereira</td><td><a href='https://github.com/NSMyself'>@NSMyself</a></td><td><a href='https://twitter.com/NSMyself'>@NSMyself</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>GP @ Hand Registrations</strong><br/>End to end journey for NHS registration.</td>
       <td>James Birtwell</td><td><a href='https://github.com/jimmybee'>@jimmybee</a></td><td></td></tr>
     <tr><td rowspan='2' valign='top'><strong>Healthcheck</strong><br/>Overview of your health using a 3D body model (avatar).</td>
       <td>Emese Toth</td><td><a href='https://github.com/emeseuk'>@emeseuk</a></td><td></td></tr>
       <tr><td>Julien Ducret</td><td><a href='https://github.com/brocoo'>@brocoo</a></td><td></td></tr>
-    <tr><td rowspan='3' valign='top'><strong>Identity</strong><br/>Authentication and Authorization related work</td>
+    <tr><td rowspan='3' valign='top'><strong>Identity</strong><br/>Authentication and Authorization related work.</td>
       <td>Giorgos Tsiapaliokas</td><td><a href='https://github.com/gtsiap'>@gtsiap</a></td><td></td></tr>
       <tr><td>Michael Brown</td><td><a href='https://github.com/mluisbrown'>@mluisbrown</a></td><td><a href='https://twitter.com/mluisbrown'>@mluisbrown</a></td></tr>
       <tr><td>Vojtech Vrbka</td><td><a href='https://github.com/vojtechvrbka'>@vojtechvrbka</a></td><td><a href='https://twitter.com/vojtechvrbka'>@vojtechvrbka</a></td></tr>

@@ -149,7 +149,7 @@ squads:
       - *Chitra
       - *Nico
   - name: Assistant
-    desc: Chatbot-powered features.
+    desc: Chatbot-related features.
     members:
       - *Joao
   - name: GP @ Hand Registrations
@@ -162,7 +162,7 @@ squads:
       - *Emese
       - *Julien
   - name: Identity
-    desc: Authentication and Authorization related work
+    desc: Authentication and Authorization related work.
     members:
       - *Giorgos
       - *Michael
