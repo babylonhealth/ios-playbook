@@ -34,20 +34,24 @@ Recording: https://babylonhealth.zoom.us/recording/share/2q99Zb7Oxg0Kk7yIAVITuGU
 ### #ios-pedia
 A private channel used to make announcements or to open discussions on broader topics within the iOS Team.
 Each announcement or discussion should be just one message and the discussion should happen within that message's thread.
-To understand the status of a message we tag the messages following:
+To understand the status of a message we should identify each topic by adding tagging each message with:
 
-- In discussion 💬
+- Discussion 💬
+- Announcement ⚠️
+- Information ℹ️
+
+When a discussion is completed we should tag if there was an outcome or not with:
 - No outcome ❎
 - With outcome ✅
-- Announcement ⚠️
+
 
 To be easier to identify the topic of the message we use:
- `[<topic of the message>] message`
+ `[<tag>][<topic of the message>] message`
 
 Example: 
 
 ```
-[Peakon] Please make sure you feel the Peakon survey frequently and give as much feedback as you can. Please do not ever think your feedback is not relevant enough to write it down. I can guarantee you every feedback is important for us and it will always help us get better at what we do.
+⚠️[Peakon] Please make sure you feel the Peakon survey frequently and give as much feedback as you can. Please do not ever think your feedback is not relevant enough to write it down. I can guarantee you every feedback is important for us and it will always help us get better at what we do.
 Your help is very much appreciated!
 Thank you :thanks:
 ```
