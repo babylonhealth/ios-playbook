@@ -23,9 +23,6 @@ team:
     name: Ana Catarina Figueiredo
     github: AnnKatF
     twitter: AnnKatFig
-  - &Chesley
-    name: Chesley Stephens
-    github: cstephens-babylon
   - &Chitra
     name: Chitra Kotwani
     github: chitrakotwani
@@ -44,10 +41,6 @@ team:
     name: David Rodrigues
     github: dmcrodrigues
     twitter: dmcrodrigues
-  - &Davide
-    name: Davide De Franceschi
-    github: defrenz
-    twitter: defrenz
   - &Diego
     name: Diego Petrucci
     github: diegopetrucci
@@ -65,6 +58,9 @@ team:
   - &James
     name: James Birtwell
     github: jimmybee
+  - &Javier
+    name: Javier Hernández
+    github: jaherhi
   - &Joao
     name: João Pereira
     github: NSMyself
@@ -108,9 +104,6 @@ team:
     name: Simon Cass
     github: scass91
     twitter: codercass
-  - &Tyler
-    name: Tyler Hargett
-    github: thargett-babylon
   - &Viorel
     name: Viorel Mihalache
     github: viorel15
@@ -145,6 +138,10 @@ roles:
 # List of the Squads and their members
 #
 squads:
+  - name: Activate
+    desc: Onboard users so that they understand the value we provide.
+    members:
+    - *Sergey
   - name: Appointments 1
     desc: Face to face appointment booking.
     members:
@@ -154,19 +151,11 @@ squads:
     members:
       - *Adrian
       - *Chitra
-      - *Davide
       - *Nico
-  - name: Onboarding and Navigation
-    desc: General user experience in the app.
+  - name: Assistant
+    desc: Chatbot-related features.
     members:
-      - *Sergey
-      - *Yuri
-  - name: Native Apps Platform
-    desc: Engineering work like tooling, CI and development processes.
-    members:
-      - *David
-      - *Ilya
-      - *Olivier
+      - *Joao
   - name: GP @ Hand Registrations
     desc: End to end journey for NHS registration.
     members:
@@ -177,13 +166,13 @@ squads:
       - *Emese
       - *Julien
   - name: Identity
-    desc: Authentication and Authorization related work
+    desc: Authentication and Authorization related work.
     members:
       - *Giorgos
       - *Michael
       - *Vojtech
   - name: Member Comms
-    desc: Improving how we communicate with our users
+    desc: Improving how we communicate with our users.
     members:
       - *Viorel
   - name: Monitor
@@ -192,6 +181,13 @@ squads:
       - *DanielH
       - *DanielS
       - *Diego
+      - *Javier
+  - name: Native Apps Platform
+    desc: Engineering work like tooling, CI and development processes.
+    members:
+      - *David
+      - *Ilya
+      - *Olivier
   - name: Prescriptions
     desc: Prescriptions functionality.
     members:
@@ -201,25 +197,26 @@ squads:
     desc: Updating and maintaining the Telus app.
     members:
       - *Simon
+  - name: Retain
+    desc: Engage users with our key features in a dynamic, personalised manner.
+    members:
+      - *Yuri
+  - name: SDK
+    desc: Updating and maintaining the SDK.
+    members:
+      - *Michal
   - name: Tenancy & Features
     desc: To integrate the new feature configurator.
     members:
       - *Anil
-  - name: Test Kits
-    desc: Managing everything related to Babylon do-at-home tests.
-    members:
-      - *Michal
   - name: Triage
     desc: Chatbot functionality.
     members:
       - *Danilo
-      - *Joao
   - name: US Professional Services
     desc: Features for app in the US.
     members:
       - *Ben
       - *Joshua
-      - *Chesley
       - *Patrick
       - *Sam
-      - *Tyler
