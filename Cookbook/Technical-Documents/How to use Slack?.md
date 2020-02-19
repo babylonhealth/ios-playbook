@@ -55,7 +55,7 @@ Thank you :thanks:
 ### #ios-questions
 
 A private channel where the iOS engineers can post any technical question and it will be answered by anyone in the iOS Team.
-The questions should be a message in a channel and the reply should be withing the message's thread.
+The questions should be a message in a channel and the reply should be within the message's thread.
 Ideally follow the stackoverflow approach and state what you tried.
 
 The question should follow the format:
