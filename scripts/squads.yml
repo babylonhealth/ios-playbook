@@ -138,6 +138,10 @@ roles:
 # List of the Squads and their members
 #
 squads:
+  - name: Activate
+    desc: Onboard users so that they understand the value we provide.
+    members:
+    - *Sergey
   - name: Appointments 1
     desc: Face to face appointment booking.
     members:
@@ -184,11 +188,6 @@ squads:
       - *David
       - *Ilya
       - *Olivier
-  - name: Onboarding and Navigation
-    desc: General user experience in the app.
-    members:
-      - *Sergey
-      - *Yuri
   - name: Prescriptions
     desc: Prescriptions functionality.
     members:
@@ -198,6 +197,10 @@ squads:
     desc: Updating and maintaining the Telus app.
     members:
       - *Simon
+  - name: Retain
+    desc: Engage users with our key features in a dynamic, personalised manner.
+    members:
+      - *Yuri
   - name: SDK
     desc: Updating and maintaining the SDK.
     members:

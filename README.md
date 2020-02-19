@@ -44,6 +44,8 @@ The rest of the iOS Engineers work in the following squads:
 
 <table>
   <thead><th>Squad</th><th>Engineer</th><th>GitHub</th><th>Twitter</th></thead>
+    <tr><td rowspan='1' valign='top'><strong>Activate</strong><br/>Onboard users so that they understand the value we provide.</td>
+      <td>Sergey Shulga</td><td><a href='https://github.com/sergdort'>@sergdort</a></td><td><a href='https://twitter.com/SergDort'>@SergDort</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Appointments 1</strong><br/>Face to face appointment booking.</td>
       <td>Witold Skibniewski</td><td><a href='https://github.com/mr-v'>@mr-v</a></td><td></td></tr>
     <tr><td rowspan='3' valign='top'><strong>Appointments 2</strong><br/>Digital appointment booking.</td>
@@ -72,14 +74,13 @@ The rest of the iOS Engineers work in the following squads:
       <td>David Rodrigues</td><td><a href='https://github.com/dmcrodrigues'>@dmcrodrigues</a></td><td><a href='https://twitter.com/dmcrodrigues'>@dmcrodrigues</a></td></tr>
       <tr><td>Ilya Puchka</td><td><a href='https://github.com/ilyapuchka'>@ilyapuchka</a></td><td><a href='https://twitter.com/ilyapuchka'>@ilyapuchka</a></td></tr>
       <tr><td>Olivier Halligon</td><td><a href='https://github.com/AliSoftware'>@AliSoftware</a></td><td><a href='https://twitter.com/aligatr'>@aligatr</a></td></tr>
-    <tr><td rowspan='2' valign='top'><strong>Onboarding and Navigation</strong><br/>General user experience in the app.</td>
-      <td>Sergey Shulga</td><td><a href='https://github.com/sergdort'>@sergdort</a></td><td><a href='https://twitter.com/SergDort'>@SergDort</a></td></tr>
-      <tr><td>Yuri Karabatov</td><td><a href='https://github.com/karabatov'>@karabatov</a></td><td><a href='https://twitter.com/karabatov'>@karabatov</a></td></tr>
     <tr><td rowspan='2' valign='top'><strong>Prescriptions</strong><br/>Prescriptions functionality.</td>
       <td>Adam Borek</td><td><a href='https://github.com/TheAdamBorek'>@TheAdamBorek</a></td><td><a href='https://twitter.com/TheAdamBorek'>@TheAdamBorek</a></td></tr>
       <tr><td>Konrad Muchowicz</td><td><a href='https://github.com/konrad-em'>@konrad-em</a></td><td></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Partnerships</strong><br/>Updating and maintaining the Telus app.</td>
       <td>Simon Cass</td><td><a href='https://github.com/scass91'>@scass91</a></td><td><a href='https://twitter.com/codercass'>@codercass</a></td></tr>
+    <tr><td rowspan='1' valign='top'><strong>Retain</strong><br/>Engage users with our key features in a dynamic, personalised manner.</td>
+      <td>Yuri Karabatov</td><td><a href='https://github.com/karabatov'>@karabatov</a></td><td><a href='https://twitter.com/karabatov'>@karabatov</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>SDK</strong><br/>Updating and maintaining the SDK.</td>
       <td>Michał Kwiecień</td><td><a href='https://github.com/MichalTKwiecien'>@MichalTKwiecien</a></td><td><a href='https://twitter.com/kwiecien_co'>@kwiecien_co</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Tenancy & Features</strong><br/>To integrate the new feature configurator.</td>
