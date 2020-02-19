@@ -23,9 +23,6 @@ team:
     name: Ana Catarina Figueiredo
     github: AnnKatF
     twitter: AnnKatFig
-  - &Chesley
-    name: Chesley Stephens
-    github: cstephens-babylon
   - &Chitra
     name: Chitra Kotwani
     github: chitrakotwani
@@ -44,10 +41,6 @@ team:
     name: David Rodrigues
     github: dmcrodrigues
     twitter: dmcrodrigues
-  - &Davide
-    name: Davide De Franceschi
-    github: defrenz
-    twitter: defrenz
   - &Diego
     name: Diego Petrucci
     github: diegopetrucci
@@ -65,6 +58,9 @@ team:
   - &James
     name: James Birtwell
     github: jimmybee
+  - &Javier
+    name: Javier Hernández
+    github: jaherhi
   - &Joao
     name: João Pereira
     github: NSMyself
@@ -108,9 +104,6 @@ team:
     name: Simon Cass
     github: scass91
     twitter: codercass
-  - &Tyler
-    name: Tyler Hargett
-    github: thargett-babylon
   - &Viorel
     name: Viorel Mihalache
     github: viorel15
@@ -154,7 +147,6 @@ squads:
     members:
       - *Adrian
       - *Chitra
-      - *Davide
       - *Nico
   - name: Onboarding and Navigation
     desc: General user experience in the app.
@@ -192,6 +184,7 @@ squads:
       - *DanielH
       - *DanielS
       - *Diego
+      - *Javier
   - name: Prescriptions
     desc: Prescriptions functionality.
     members:
@@ -201,14 +194,14 @@ squads:
     desc: Updating and maintaining the Telus app.
     members:
       - *Simon
+  - name: SDK
+    desc: Updating and maintaining the SDK
+    members:
+      - *Michal
   - name: Tenancy & Features
     desc: To integrate the new feature configurator.
     members:
       - *Anil
-  - name: Test Kits
-    desc: Managing everything related to Babylon do-at-home tests.
-    members:
-      - *Michal
   - name: Triage
     desc: Chatbot functionality.
     members:
@@ -219,7 +212,5 @@ squads:
     members:
       - *Ben
       - *Joshua
-      - *Chesley
       - *Patrick
       - *Sam
-      - *Tyler
