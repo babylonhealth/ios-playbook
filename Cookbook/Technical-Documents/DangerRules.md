@@ -102,9 +102,18 @@ Especially that in the top section title we **replace `## x.x.x (TBD)` with the 
 > * Function: `check_unexpected_resource_files`
 > * Type: 🚫 failure
 
-This rule ensure that we didn't accidentally add some Xcode-specific files to a target's "Copy Resource Files" phase, as those files are only used by Xcode or for documentation or tests, but that shouldn't end up in the final framework or app.
+This rule ensures that we didn't accidentally add some Xcode-specific files to a target's "Copy Resource Files" phase, as those files are only used by Xcode or for documentation or tests, but that shouldn't end up in the final framework or app.
 
 This rule currently checks for `*.xcconfig`, `*.md`, `*Info.plist` and any file under a `__Snapshots__` directory and fail if they have been added to your target accidentally.
+
+### Warn about absolute paths
+
+> * Function: `check_absolute_paths`
+> * Type: 🚫 failure (inline comments)
+
+This rule ensures that we didn't accidentally reference files using absolute paths in our Xcode projects.
+
+It will add inline comments on each lines in the `pbxproj` where an absolute path was detected.
 
 ### Warn about `null` references
 
@@ -129,3 +138,13 @@ _Context: The `pbxproj` format is such that it contains a list of file reference
 This rule will warn you if any part of the pbxproj references an UUID that got accidentally removed. (Note: you should see similar warnings when you run `pod install` in your terminal and it warns about an unknown UUID)
 
 When that happens, you need to figure out if the removal of the file was intended as part of your PR (and if so, fix the merge by also removing the lines pointing to that now-deleted file reference), or if the removal of the file from the pbxproj was unintented (and if so, restore it). You could do that by editing the `pbxproj` manually, but if possible it's even better if you can fix it in Xcode (e.g. by removing the offending file from the project and add it again)
+
+## swiftlint
+
+> * Declared in: `danger-ci/swiftlint.rb`
+> * Function: `check_swiftlint_violations`
+> * Type: ⚠️ inline warning
+
+This will report swiftlint violations as inline comments (warnings) in the Pull Request.
+
+Only `.swift` files that are part of the PR are linted by this rule; so only violations in files that were added/modified/renamed by the PR will be reported. This is to ensure that we don't introduce new violations, and that we fix existing violations on any file we touch or update.
