@@ -147,4 +147,4 @@ When that happens, you need to figure out if the removal of the file was intende
 
 This will report swiftlint violations as inline comments (warnings) in the Pull Request.
 
-Only `.swift` files that are part of the PR (added, modified or renamed by the PR) are linted by this rule.
+Only `.swift` files that are part of the PR are linted by this rule; so only violations in files that were added/modified/renamed by the PR will be reported. This is to ensure that we don't introduce new violations, and that we fix existing violations on any file we touch or update.
