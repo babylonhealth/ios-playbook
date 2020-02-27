@@ -162,7 +162,7 @@ All static configuration properties and feature switches should be declared in t
 	            case myTest = "my_test"
 	        }
 		
-		enum MyTest: String { case variatio1, variation2 }
+		enum MyTest: String { case variation1, variation2 }
 
 	        @ABTest(key: Keys.myTest, default: .variation1)
 	        var myTest: MyTest

@@ -15,7 +15,7 @@ As a front end developer you are most likely to be interested in the content und
 
 ## Setting up Optimizely Feature flags and experiments
 
-Querying Optimizely for feature flags is as simple as defining a boolean property annotated with `RemoteFeatureSwitch` property wrapper. When accessed for the first time Optimizely will activate appropriate variation for the current user (it then will be cached in memory until the app is restarted).
+Querying Optimizely for feature flags is as simple as defining a boolean property annotated with the `RemoteFeatureSwitch` property wrapper. When accessed for the first time, Optimizely will activate the appropriate variation for the current user (it then will be cached in memory until the app is restarted).
 
 > Note (November 2019): Querying Optimizely to see whether a feature is available currently yields false both when the feature is disabled and when an error occurs. This is inconsistent with their documentation so there is some hope that this will be changed in a future version of the SDK.
 
@@ -35,9 +35,9 @@ struct AwesomeExperiment: RemoteFeatureSwitchDecodable {
     let boolVariable: Bool
 
     private init() {
-        isEnabled = false
-	stringVariable = ""
-	boolVariable = false
+      isEnabled = false
+        stringVariable = ""
+        boolVariable = false
     }
     
     init(decoder: RemoteFeatureSwitchDecoder) throws {
@@ -46,8 +46,8 @@ struct AwesomeExperiment: RemoteFeatureSwitchDecodable {
             return
         }
         isEnabled = true
-	stringVariable = try decoder.stringValue(for: "string_value")
-	boolVariable = try decoder.boolValue(for: "bool_value")
+	  stringVariable = try decoder.stringValue(for: "string_value")
+	  boolVariable = try decoder.boolValue(for: "bool_value")
     }
 }
 
@@ -55,9 +55,9 @@ struct AwesomeExperiment: RemoteFeatureSwitchDecodable {
 let awesomeExperiment: AwesomeExperiment
 ```
 
-As you can notice this is similar to how we typically implement `Decodable` protocol.
+As you can see, this is similar to how we typically implement the `Decodable` protocol.
 
-A/B tests in optimizely is a variation of test that is not based on a feature flag and instead based on number of variations. The best way to define it is using enum and `ABTest` property wrapper:
+A/B tests in Optimizely is a variation of tests that is not based on a feature flag but on a number of variations. The best way to define it is using an enum and `ABTest` property wrapper:
 
 ```swift
 @ABTest(key: "signup_test", default: .sign_up)
@@ -77,7 +77,7 @@ enum SignUpTitle: String {
 
 Note that experiments can have any number of variations, but more than two will be unusual as it gets more difficult to collect conclusive data.
 
-Tracking of active variants both for feature switches and for A/B tests is done automatically and generally does not requeire any additional implementation.
+Tracking of active variants both for feature switches and for A/B tests is done automatically and generally does not require any additional implementation.
 
 !["activations page"](./Assets/optimizely/OptimizelyExperimentActivations.png)
 
