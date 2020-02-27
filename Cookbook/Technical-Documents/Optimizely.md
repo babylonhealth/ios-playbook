@@ -13,32 +13,32 @@ After you have signed in, select "Babylon Health iOS" under the project heading 
 As a front end developer you are most likely to be interested in the content under "Experiments" and "Features".
 
 ## Setting up Optimizely Experiments
-Typically you will only need to worry about the variations. Other parts of an Optimizely experiment mainly concern analytics and product management. What we definitely need for implementing an experiment in the iOS app is the activation keys which you find on the variations page.
+Typically you will only need to worry about the variations. Other parts of an Optimizely experiment mainly concern analytics and product management.
 
-!["activations page"](./Assets/optimizely/OptimizelyExperimentActivations.png)
-
-To fetch the variation that the user has been assigned to you need to define an type that would contain the values of this experiment like its key, active variation and any associated variables values.
+To fetch the variation that the user has been assigned to you need to define a type that would contain the value of this variation:
 
 ```swift
-struct AwesomeExperiment: ABTestVariantDecodable {
-	static let default = AwesomeExperiment(experiment: nil)
-	
-	enum Varition: String { case one, two }
-	let experiment: (key: String, Variation)?
-	
-	init(decoder: ABTestVariantDecoder) throws {
-		experiment = try (
-			key: decoder.key,
-			variation: Variation(rawValue: decoder.stringValue())
-		)
-	}
+enum AwesomeExperiment: String {
+  case A, B
 }
 
-@ABTestVariant(key: "awesome_experiment", defaultValue: .default)
+@ABTestVariant(key: "awesome_experiment", defaultValue: .A)
 let variant: AwesomeExperiment
 ```
 
 Note that experiments can have any number of variations, but more than two will be unusual as it gets more difficult to collect conclusive data.
+
+## A/B Tests vs Feature Tests
+
+Optimizely unlike other services has different kinds of tests: A/B tests and feature tests. Feature tests are built around some feature switches and to create such test you would need to already have or create a feature switch. A/B tests on the other hand are not related to feature switches and only provide the client app with the value of variation as a string. It's up to the client to process this value and decide how the behaviour of the client should change. 
+
+Feature tests serve the purpose of testing in what configuration a feature works better. As Optimizely feature switches can have associated variables when defininig feature test variations you can define not only if feature is enabled or not, but also different values for these variables.
+
+When defining an _A/B test_ in code you should use the _key of this test_ as a key of `ABTestVariant`. When defining a _feature test_ you should instead use the _feature key_, not the test key. 
+
+With feature tests you never need to access the test itself, the assigned variation will be activated by Optimizely SDK under the hood (unlike for A/B tests for which we call activation function manually when you first access the variation value). Active variations are observed both for A/B tests and feature tests and reported to analytics so you don't need to do that manually.
+
+For more information, see the Optimizely documentation on [feature tests](https://docs.developers.optimizely.com/full-stack/docs/run-feature-tests) and [A/B tests](https://docs.developers.optimizely.com/full-stack/docs/run-a-b-tests).
 
 ## Working with Optimizely Features
 
@@ -69,7 +69,7 @@ struct AwesomeExperiment: ABTestVariantDecodable {
 }
 ```
 
-As you can notice this is similar to how we typically implement `Decodable` protocol.
+As you can notice this is similar to how we typically implement `Decodable` protocol. You shouldn't access feature variables when feature is not enabled so always check for that first.
 
 ## Detecting Updates
 We are bundling a downloaded Optimizely data file which should contain values for everything that does not require network access. Optimizely will at boot time and periodically thereafter attempt to download a new version if there are any updates. By subscribing to the `dataUpdated` signal you will be notified if the data file has been updated.
