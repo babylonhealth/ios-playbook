@@ -32,7 +32,7 @@ Note that experiments can have any number of variations, but more than two will 
 
 Optimizely unlike other services has different kinds of tests: A/B tests and feature tests. Feature tests are built around some feature switches and to create such test you would need to already have or create a feature switch. A/B tests on the other hand are not related to feature switches and only provide the client app with the value of variation as a string. It's up to the client to process this value and decide how the behaviour of the client should change. 
 
-Feature tests serve the purpose of testing in what configuraiton a feature works better. As Optimizely feature switches can have associated variables when defininig feature test variations you can define not only if feature is enabled or not, but also different values for these variables.
+Feature tests serve the purpose of testing in what configuration a feature works better. As Optimizely feature switches can have associated variables when defininig feature test variations you can define not only if feature is enabled or not, but also different values for these variables.
 
 When defining an _A/B test_ in code you should use the _key of this test_ as a key of `ABTestVariant`. When defining a _feature test_ you should instead use the _feature key_, not the test key. 
 
