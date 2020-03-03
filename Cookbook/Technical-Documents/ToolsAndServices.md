@@ -16,7 +16,7 @@
 | [zoom.us](https://zoom.us) | Video Conferences | Create account with BabylonHealth email-Id. You will have access to basic plan (you can join invites without an account but will need one to create conferences)|
 | VPN | Remote Access to our intranet and internal domains | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) |
 | [CircleCI](https://circleci.com/gh/babylonhealth) | See CI jobs and logs | Use your GitHub login |
-| [App Center](http://appcenter.ms/apps) | See OTA builds sent internally to QA | Log in using company sign in. Once you have access to App Center, ask the support engineers in the iOS team channel on Slack to invite you to the org or use the shared credentials if you already have access to 1Password. For more information, there's [documentation](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/AppCenter.md) focused on this.
+| [App Center](http://appcenter.ms/apps) | See OTA builds sent internally to QA | Log in using company sign in. Once you have access to App Center, ask the support engineers in the iOS team channel on Slack to invite you to the org or use the shared credentials to invite yourself if you already have access to 1Password. For more information, there's [documentation](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/AppCenter.md) focused on this.
 | [Firebase](https://console.firebase.google.com) | View crash reports, performance monitoring | Ask Catarina or David for access |
 | [Test Rail](https://babylonpartners.testrail.net) | Test effort management tool | Use the account shared on the iOS team vault on 1Password |
 
