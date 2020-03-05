@@ -24,7 +24,6 @@ As an iOS Engineer, you should be in the following Slack channels:
 	- `#ios`
 	- `#ios-build`
 	- `#ios-usa-support`
-	- `#ios-standup`
 	- `#ios-automation`
 	- `#ios-crash-reports`
 	- `#ios-recruiting`
