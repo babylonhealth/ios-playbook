@@ -101,7 +101,7 @@ During this stage, the **release manager** has the following tasks:
   * In case there are changes other than updates to app and build versions after merging the changes from `develop`, the release engineer should assign as reviewers all the engineers who worked on those changes and remove the ones automatically assigned by PullAssigners. In current workflow every change integrated to release branch is supposed to be go into `develop` soon after, so differences should be minimal. Any differences might be a result of resolving conflicts or a hot fix PR not being merged previously to `develop`.
   * Set the _Merge_ label once all the required reviewers have approved it.
 1. Update the [release calendar](#release-calendar)
-	* Tip: You can use the following command in your Terminal to list the tickets and authors who participated in the Release, to ask them the time they took for each ticket
+	* Tip: You can use the following command in your Terminal to list the tickets and authors who participated in the Release:
       ```
       git log --format="%<(25)%an | %s" origin/develop..origin/release/{flavor}/{version} | grep -vE "^(Steve|iOS Bot) *\|" | sort
       ```
@@ -130,6 +130,7 @@ The release process starts when the first build is provided to QA and ends when 
 1. Automated QA effort (e.g. `5h`)
 2. Manual QA effort (e.g. `3h`)
 3. Delta between the jira ticket being open and marked as `done` or `wont fix`, for Engineering effort. (e.g. `UA-8289: 1h30`). Consider only tickets that were raised during the release period, checking that their creation dates were after the release branch cut.
+  * We have agreed to stop collecting time spent on tickets from engineers, so there is no need to record it.
 4. Total effort
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
