@@ -74,7 +74,7 @@ During this stage, the **release manager** has the following tasks:
 1. Enable the new release version in [AppStoreConnect](https://appstoreconnect.apple.com).
 1. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues) ❗️ NOTE: Remember to submit compliance info for that build.
 1. By now, QA should be notified that there is a new version in TestFlight.
-1. If you are asekd about **"Export Compliance Information"** check what to do [here](https://babylonpartners.atlassian.net/wiki/spaces/IOS/pages/247169186/Release+Process)
+1. If you are asked about **"Export Compliance Information"** check what to do [here](https://babylonpartners.atlassian.net/wiki/spaces/IOS/pages/247169186/Release+Process)
 
 ### Phase 5: Submit for release in App Store Connect
 *It starts after QA has signed off a particular build and can take several cycles until Apple's approval*
@@ -96,10 +96,10 @@ During this stage, the **release manager** has the following tasks:
    * Set the body of the GitHub release to the content of the Release Notes for the app
    * Attach the zipped `xcarchive` as an artefact to the GitHub release (if you're using the automated release command, you can find the `*.xcarchive.zip` in the Artifacts top section in the CI build).
 1. Merge `release` branch back to `develop`:
-	* Open the Release PR ( PR from `release` branch targeting `develop`) which has been automatically created.
+  * Open the Release PR ( PR from `release` branch targeting `develop`) which has been automatically created.
   * Resolve the conflicts (if any).
-	*  In case there are changes other than updates to app and build versions after merging the changes from `develop`, the release engineer should assign as reviewers all the engineers who worked on those changes and remove the ones automatically assigned by PullAssigners. In current workflow every change integrated to release branch is supposed to be go into to `develop` soon after, so differences should be minimal. Any differences might be a result of resolving conflicts or a hot fix PR not being merged previously to `develop`.
-	* Set the _Merge_ label once all the required reviewers have approved it.
+  * In case there are changes other than updates to app and build versions after merging the changes from `develop`, the release engineer should assign as reviewers all the engineers who worked on those changes and remove the ones automatically assigned by PullAssigners. In current workflow every change integrated to release branch is supposed to be go into `develop` soon after, so differences should be minimal. Any differences might be a result of resolving conflicts or a hot fix PR not being merged previously to `develop`.
+  * Set the _Merge_ label once all the required reviewers have approved it.
 1. Update the [release calendar](#release-calendar)
 	* Tip: You can use the following command in your Terminal to list the tickets and authors who participated in the Release, to ask them the time they took for each ticket
       ```
