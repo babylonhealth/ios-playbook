@@ -81,34 +81,43 @@ During this stage, the **release manager** has the following tasks:
 ### Phase 5: Submit for release in App Store Connect
 *It starts after QA has signed off a particular build and can take several cycles until Apple's approval*
 
+This process is now automated using the `submit_for_review` lane. Just trigger the lane from the `#ios-build` channel using `/stevenson fastlane submit_for_review target:<target> build:<testflight_build>`.
+
+<details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
+	
 1. Make sure *Manually release this version* is selected in `Version Release`.
 2. Select *Use phased release*
 3. When submitting to release, you are asked if the app uses the Advertising Identifier (IDFA). The answer is YES. You are then presented with three options please select as followed:
 	1. 🚫 Serve advertisements within the app
 	2. ✅ Attribute this app installation to a previously served advertisement
 	3. ✅ Attribute an action taken within this app to a previously served advertisement
+</details>
 
 ### Phase 6: Closure
 *It starts after the app is accepted by Apple and final internal approval*
 
-1. Send the build to TestFlight Beta (external testing). Select the `External Testers` group.
-1. Press `Release this version` in App Store Connect
-1. Create a tag named `{appname}/{version}` (e.g. `babylon/4.1.0`) on the release commit and create a GitHub release for that new tag
-   * Make sure you create separate tags (and GitHub releases) for each app released on the AppStore (eg. Babylon 4.1.0 and Telus 4.1.0 would each have their own `babylon/4.1.0` and `telus/4.1.0` tags)
-   * Set the body of the GitHub release to the content of the Release Notes for the app
-   * Attach the zipped `xcarchive` as an artefact to the GitHub release (if you're using the automated release command, you can find the `*.xcarchive.zip` in the Artifacts top section in the CI build).
+Most of the steps for this phase have been automated using the `finish_release` lane.
+
+1. Trigger the lane from the `#ios-build` channel using `/stevenson fastlane finish_release target:<target>`.
+
+    <details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
+
+    1. Send the build to TestFlight Beta (external testing). Select the `External Testers` group.
+    1. Press `Release this version` in App Store Connect
+    1. Create a tag named `{appname}/{version}` (e.g. `babylon/4.1.0`) on the release commit and create a GitHub release for that new tag
+       * Make sure you create separate tags (and GitHub releases) for each app released on the AppStore (eg. Babylon 4.1.0 and Telus 4.1.0 would each have their own `babylon/4.1.0` and `telus/4.1.0` tags)
+       * Set the body of the GitHub release to the content of the Release Notes for the app
+       * Attach the zipped `xcarchive` as an artefact to the GitHub release (if you're using the automated release command, you can find the `*.xcarchive.zip` in the Artifacts top section in the CI build).
+   
+    </details>
+
 1. Merge `release` branch back to `develop`:
    * Open the Release PR ( PR from `release` branch targeting `develop`) which has been automatically created.
    * Resolve the conflicts (if any).
    * In case there are changes other than updates to app and build versions after merging the changes from `develop`, the release engineer should assign as reviewers all the engineers who worked on those changes and remove the ones automatically assigned by PullAssigners. In current workflow every change integrated to release branch is supposed to be go into `develop` soon after, so differences should be minimal. Any differences might be a result of resolving conflicts or a hotfix PR not being merged previously to `develop`.
    * Set the _Merge_ label once all the required reviewers have approved it.
-1. Update the [release calendar](#release-calendar)
-	 * Tip: You can use the following command in your Terminal to list the tickets and authors who participated in the Release:
-      ```
-      git log --format="%<(25)%an | %s" origin/develop..origin/release/{flavor}/{version} | grep -vE "^(Steve|iOS Bot) *\|" | sort
-      ```
-      (be sure to `git fetch origin develop` before that to have up-to-date branches)
 1. Update this document if any steps during the release process have changed.
+
 
 ## 3. SDK Release
 At the moment SDK release is handled by the SDK squad itself. As a release engineer you don't have to worry about this section.
@@ -124,6 +133,10 @@ At the moment SDK release is handled by the SDK squad itself. As a release engin
 1. Update the Sample app to point to the latest SDK release and ensure it still compiles
 
 ## 4. Release calendar
+
+Note: Starting 4.18.0, we are no longer keeping track of the release effort in this App Release calendar section.
+
+<details><summary>History of tracked effort for versions up to 4.17.0</summary>
 
 ### 4a. App Release calendar
 
@@ -182,6 +195,8 @@ The release process starts when the first build is provided to QA and ends when 
 |---------|------------------------|----------------------|-----------------------------|---------------|---------------|-------------------|
 | 1.0.0 | 4.8.0 | Giorgos Tsiapaliokas <br> Ben Henshall | Nothing outside of release notes / running release command 🕺 | 0h | 07.10.2019 | 07.10.2019 |
 | 0.7.0 | 3.16.0 | David Rodrigues <br> Ben Henshall | CNSMR-1589: 3h (Involved a lot of waiting due to dependency on DevOps)<br>Expired GitHub token issue: 2h | 4h30m | 17.05.2019 | 21.05.2019 |
+
+</details>
 
 ## 5. Post-mortem
 
