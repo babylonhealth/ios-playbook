@@ -135,6 +135,7 @@ The release process starts when the first build is provided to QA and ends when 
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
+| 4.17.0 | Julien Ducret, Yuri Karabatov | Manual: `24h 30m` | N/A | Total **24h 30m** | 14.02.2020 | 26.02.2020 |
 | 4.16.0 | Joao Pereira, Witold Skibniewski | Manual: `23h 30m` | `CNSMR-3413: 2h` <br> `REFER-138: 2h` <br> `CE-1139: 30m` <br> `CNSMR-3416: 2h` <br> `TC-65: 20h` <br> `NRX-1223: 30m` <br> `IOSP-553: 1.5h` <br> `CE-1136: 4h` <br> `CE-1038: 2h` <br> `COREUS-4237: 1h` <br>`AV-1466: 1h` <br> `AV-1456: 1h` | Total **37h 30m** | 31.01.2020 | 10.02.2020 |
 | 4.15.0 | Adam Borek, Giorgos Tsiapaliokas | Manual: `23h 30m` | `MS-857: 5m` <br> `MS-838: 2h` <br> `SDK-457:  6h` <br> `SDK-461: 2h` <br> `PAR-495: 10m` <br> `MON-5871: 8h` <br> `MON-5871: 2h` <br> `MON-5968: 1h` <br> `APPTS-2507: 3h` <br>`TK-412: 30m` <br> `IOSP-539: 15m` <br> `CE-1101: 1h` <br> `CE-1059: 3h` <br> `AV-1398: 4h` <br> `AV-1436: 4h` <br> `AV-1437: 1h`| Total **61h 30 m** | 17.01.2020 | 27.01.2020 |
 | 4.14.1 | James Birtwell, Adrian Sliwa | Manual: `2h` |  `[REFER-133] - 6` : | Total: **8h** | 18.01.2020 | 20.01.2020 |
