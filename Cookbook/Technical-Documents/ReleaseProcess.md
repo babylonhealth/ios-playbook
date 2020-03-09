@@ -98,7 +98,7 @@ During this stage, the **release manager** has the following tasks:
 1. Merge `release` branch back to `develop`:
    * Open the Release PR ( PR from `release` branch targeting `develop`) which has been automatically created.
    * Resolve the conflicts (if any).
-   * In case there are changes other than updates to app and build versions after merging the changes from `develop`, the release engineer should assign as reviewers all the engineers who worked on those changes and remove the ones automatically assigned by PullAssigners. In current workflow every change integrated to release branch is supposed to be go into `develop` soon after, so differences should be minimal. Any differences might be a result of resolving conflicts or a hot fix PR not being merged previously to `develop`.
+   * In case there are changes other than updates to app and build versions after merging the changes from `develop`, the release engineer should assign as reviewers all the engineers who worked on those changes and remove the ones automatically assigned by PullAssigners. In current workflow every change integrated to release branch is supposed to be go into `develop` soon after, so differences should be minimal. Any differences might be a result of resolving conflicts or a hotfix PR not being merged previously to `develop`.
    * Set the _Merge_ label once all the required reviewers have approved it.
 1. Update the [release calendar](#release-calendar)
 	 * Tip: You can use the following command in your Terminal to list the tickets and authors who participated in the Release:
