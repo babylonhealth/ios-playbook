@@ -130,7 +130,7 @@ The release process starts when the first build is provided to QA and ends when 
 1. Automated QA effort (e.g. `5h`)
 2. Manual QA effort (e.g. `3h`)
 3. Delta between the jira ticket being open and marked as `done` or `wont fix`, for Engineering effort. (e.g. `UA-8289: 1h30`). Consider only tickets that were raised during the release period, checking that their creation dates were after the release branch cut.
-  * We have agreed to stop collecting time spent on tickets from engineers, so there is no need to record it.
+   * We have agreed to stop collecting time spent on tickets from engineers, so there is no need to record it.
 4. Total effort
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
