@@ -27,4 +27,6 @@ The days an engineer is on support are defined as following:
 
 The schedule is defined in the iOS Team Plan document and calendar events are also added to the iOS Developers Outlook calendar.
 
+Please let your squad know with a week's notice if you are being assigned to Support
+
 
