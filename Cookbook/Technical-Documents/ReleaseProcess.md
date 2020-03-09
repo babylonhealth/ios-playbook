@@ -76,7 +76,7 @@ During this stage, the **release manager** has the following tasks:
 1. Enable the new release version in [AppStoreConnect](https://appstoreconnect.apple.com).
 1. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues) ❗️ NOTE: Remember to submit compliance info for that build.
 1. By now, QA should be notified that there is a new version in TestFlight.
-1. If you are asekd about **"Export Compliance Information"** check what to do [here](https://babylonpartners.atlassian.net/wiki/spaces/IOS/pages/247169186/Release+Process)
+1. If you are asked about **"Export Compliance Information"** check what to do [here](https://babylonpartners.atlassian.net/wiki/spaces/IOS/pages/247169186/Release+Process)
 
 ### Phase 5: Submit for release in App Store Connect
 *It starts after QA has signed off a particular build and can take several cycles until Apple's approval*
@@ -98,12 +98,12 @@ During this stage, the **release manager** has the following tasks:
    * Set the body of the GitHub release to the content of the Release Notes for the app
    * Attach the zipped `xcarchive` as an artefact to the GitHub release (if you're using the automated release command, you can find the `*.xcarchive.zip` in the Artifacts top section in the CI build).
 1. Merge `release` branch back to `develop`:
-	* Open the Release PR ( PR from `release` branch targeting `develop`) which has been automatically created.
-  * Resolve the conflicts (if any).
-	*  In case there are changes other than updates to app and build versions after merging the changes from `develop`, the release engineer should assign as reviewers all the engineers who worked on those changes and remove the ones automatically assigned by PullAssigners. In current workflow every change integrated to release branch is supposed to be go into to `develop` soon after, so differences should be minimal. Any differences might be a result of resolving conflicts or a hot fix PR not being merged previously to `develop`.
-	* Set the _Merge_ label once all the required reviewers have approved it.
+   * Open the Release PR ( PR from `release` branch targeting `develop`) which has been automatically created.
+   * Resolve the conflicts (if any).
+   * In case there are changes other than updates to app and build versions after merging the changes from `develop`, the release engineer should assign as reviewers all the engineers who worked on those changes and remove the ones automatically assigned by PullAssigners. In current workflow every change integrated to release branch is supposed to be go into `develop` soon after, so differences should be minimal. Any differences might be a result of resolving conflicts or a hotfix PR not being merged previously to `develop`.
+   * Set the _Merge_ label once all the required reviewers have approved it.
 1. Update the [release calendar](#release-calendar)
-	* Tip: You can use the following command in your Terminal to list the tickets and authors who participated in the Release, to ask them the time they took for each ticket
+	 * Tip: You can use the following command in your Terminal to list the tickets and authors who participated in the Release:
       ```
       git log --format="%<(25)%an | %s" origin/develop..origin/release/{flavor}/{version} | grep -vE "^(Steve|iOS Bot) *\|" | sort
       ```
@@ -132,11 +132,13 @@ The release process starts when the first build is provided to QA and ends when 
 1. Automated QA effort (e.g. `5h`)
 2. Manual QA effort (e.g. `3h`)
 3. Delta between the jira ticket being open and marked as `done` or `wont fix`, for Engineering effort. (e.g. `UA-8289: 1h30`). Consider only tickets that were raised during the release period, checking that their creation dates were after the release branch cut.
+   * We have agreed to stop collecting time spent on tickets from engineers, so there is no need to record it.
 4. Total effort
 
 | Version | Release Engineer(s)  | QA effort   | Engineering effort          | Total effort  | Cut-off date  | Release date  |
 |---------|----------------------|-------------|-----------------------------|---------------|---------------|---------------|
-| 4.16.0 | Joao Pereira, Witold Skibniewski | Manual: `23h 30m` | `CNSMR-3413: 2h` <br> `REFER-138: 2h` <br> `CE-1139: 30m` <br> `CNSMR-3416: 2h` <br> `TC-65: 20h` <br> `NRX-1223: 30m` <br> `IOSP-553: 1.5h` <br> `CE-1136: 4h` <br> `CE-1038: 2h` <br> `COREUS-4237: 1h` <br>`AV-1466: 1h` <br> `AV-1456: 1h` | Total **37h 30m m** | 31.01.2020 | 10.02.2020 |
+| 4.17.0 | Julien Ducret, Yuri Karabatov | Manual: `24h 30m` | N/A | Total **24h 30m** | 14.02.2020 | 26.02.2020 |
+| 4.16.0 | Joao Pereira, Witold Skibniewski | Manual: `23h 30m` | `CNSMR-3413: 2h` <br> `REFER-138: 2h` <br> `CE-1139: 30m` <br> `CNSMR-3416: 2h` <br> `TC-65: 20h` <br> `NRX-1223: 30m` <br> `IOSP-553: 1.5h` <br> `CE-1136: 4h` <br> `CE-1038: 2h` <br> `COREUS-4237: 1h` <br>`AV-1466: 1h` <br> `AV-1456: 1h` | Total **37h 30m** | 31.01.2020 | 10.02.2020 |
 | 4.15.0 | Adam Borek, Giorgos Tsiapaliokas | Manual: `23h 30m` | `MS-857: 5m` <br> `MS-838: 2h` <br> `SDK-457:  6h` <br> `SDK-461: 2h` <br> `PAR-495: 10m` <br> `MON-5871: 8h` <br> `MON-5871: 2h` <br> `MON-5968: 1h` <br> `APPTS-2507: 3h` <br>`TK-412: 30m` <br> `IOSP-539: 15m` <br> `CE-1101: 1h` <br> `CE-1059: 3h` <br> `AV-1398: 4h` <br> `AV-1436: 4h` <br> `AV-1437: 1h`| Total **61h 30 m** | 17.01.2020 | 27.01.2020 |
 | 4.14.1 | James Birtwell, Adrian Sliwa | Manual: `2h` |  `[REFER-133] - 6` : | Total: **8h** | 18.01.2020 | 20.01.2020 |
 | 4.14.0 | James Birtwell, Adrian Sliwa | Manual: `28h` | `[COREUS-3072] - 6`<br>`[NRX-1168] - 0.5`<br>`[MS-761] - 6.5`<br>`[IOSP-518] - 10min`<br>`[CNSMR-3317] - 16`<br>`[CNSMR-3174] 0.5`<br>`[COREUS-3639] - 2`<br>`[AV-1409] - 1`<br>`[CE-1047] - 2`<br>`[CE-1054] - 6`<br>`[NRX-1167] - 6`<br>`[CNSMR-3353] - 2`<br>`[IOSP-528]`<br>`[PRSCR-1613] - 3` | Total: **85h 40min + ??** | 09.01.2020 | 17.01.2020 |
