@@ -78,7 +78,7 @@ Working from home is a benefit and should be seen as such.
 At the moment it is accepted that an engineer, once settled in the iOS Team processes, project, and squad is allowed to work from home 1-2 days per week. 
 The number of days may very depending on your personal situation and your squad’s way of working. These should be discussed and agreed with your Line Manager and your PM.
 
-When working from home you should notify your squad and the rest of the iOS team (via our Slack channel) when you are away and when are you expecting to come back. Furthermore, if you are planning to work from home (in a non-emergency situation) for more than 1 consecutive day please give at least 1 week notice.
+When working from home you should notify your squad and the rest of the iOS team (via our Slack channel) when you are away and when are you expecting to come back.
 
 ### Request
 
@@ -88,7 +88,7 @@ When working from home you should notify your squad and the rest of the iOS team
 
 ### Notify
 
-1. Notify the iOS Team and your Squad via Slack on the working day before you are working from home. Emergencies might happen that require you to work from home and only notify on the same day. That will be acceptable if there is a reasonable excuse for it.
+1. Please notify the rest of the iOS team and your squad via Slack on the working day before you are working from home. Emergencies might happen that require you to work from home and only notify on the same day. That will be acceptable if there is a reasonable excuse for it. Furthermore, if you are planning to work from home (in a non-emergency situation) for more than 1 consecutive day please give at least 1 week notice.
 2. On the day you are working from home change your Slack status to 🏡 **Working remotely**.
 
 ### Being remote
