@@ -78,7 +78,7 @@ Working from home is a benefit and should be seen as such.
 At the moment it is accepted that an engineer, once settled in the iOS Team processes, project, and squad is allowed to work from home 1-2 days per week. 
 The number of days may very depending on your personal situation and your squad’s way of working. These should be discussed and agreed with your Line Manager and your PM.
 
-When working from home you should notify in the the iOS team Slack channel when you are away and when are you expecting to come back.
+When working from home you should notify your squad and the rest of the iOS team (via our Slack channel) when you are away and when are you expecting to come back. Furthermore, if you are planning to work from home (in a non-emergency situation) for more than 1 consecutive day please give at least 1 week notice.
 
 ### Request
 
