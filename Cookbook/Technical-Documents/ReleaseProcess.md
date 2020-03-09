@@ -23,7 +23,9 @@
 When dealing with a particularly complicated bug (one that would require a rather significant effort to address) the release engineer should speak with Release Manager.  
 The bug's corresponding feature should be disabled altogether using its feature switch (if applicable). Such a bug would subsequently be handled by its respective squad.
 
-Release duties have priority over regular squad duties. Please inform your squad of your unavailability before starting to work in the release. As with every other week, twenty percent of your work hours overall are to be allocated towards making the release a reality.
+Release duties have priority over regular squad duties. Please inform your squad of your unavailability before starting to work in the release **with at least a sprint's notice**. As with every other week, twenty percent of your work hours overall are to be allocated towards making the release a reality.
+
+
 
 There are usually two release engineers working at any given time. It goes without saying that both engineers need to work together and that constant feedback is vital.
 
