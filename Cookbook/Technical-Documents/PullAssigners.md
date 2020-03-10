@@ -19,17 +19,6 @@ The aim of this document is to explain how to configure GitHub's automatic pull 
 
 2. Next, **make sure that this GitHub team –containing the people you want as reviewers– has access to your repository**, via the "Repositories" tab in the team's page ([e.g. here for `iOS-Devs`](https://github.com/orgs/babylonhealth/teams/iOS-Devs/repositories))
 
-### The proxy team to trigger Pull Assigners
-
-1. Now, we will need another, separate, GitHub team –called the "Proxy team" in Pull Assigner's vocabulary– which will be the team that you'll assign to your PRs via `CODEOWNERS` to trigger Pull Assigner on those PRs (†)
-
-   * For the iOS repos, the proxy team we use –to assign people from the `@babylonhealth/iOS-Admin` to our PRs– is called `@babylonhealth/iOS-PullAssigner`, so if you are using the same list of people from `iOS-Admin` you can also use the `iOS-PullAssigner` for your proxy team directly without creating a new one
-   * If instead you created a separate team because for your case the list of people in `iOS-Admin` wasn't matching the people you wanted to assign PRs for your repo, you'll need to [create a new GitHub team again](https://github.com/orgs/babylonhealth/new-team), but this time leave it with no member in it (since it will only act as proxy)
-
-2. Next, **make sure that the proxy team has access to your repository**, via the "Repositories" tab in the team's page (e.g. https://github.com/orgs/babylonhealth/teams/ios-pullassigner/repositories)
-
-> _(†) Side note: This proxy team is not strictly necessary, but if you don't use a proxy team and instead use the team you just declared above directly, that means that everybody will be notified and requested review every time a new PR is created. With proxy team Pull Assigners will automatically replace it with only N people from that team requesting review only from them. This is why using a proxy team without any member in it to trigger Pull Assigner is usually preferrable_
-
 ### Configure Pull Assigners with those GitHub teams
 
 If you are reusing the `iOS-Admin` and `iOS-PullAssigner` teams for your repo setup, you have nothing special to configure on https://pullreminders.com as those GitHub teams are already configured in Pull Assigner; so you can skip to the next section.
