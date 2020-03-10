@@ -21,19 +21,17 @@ The aim of this document is to explain how to configure GitHub's automatic pull 
 
 ## The `CODEOWNERS` file
 
-Now we need to ensure that the proxy team (e.g. `iOS-PullAssigners`) is automatically affected as reviewer on all new PRs.
+Now we need to ensure that the right team (e.g. `iOS-Devs`) is automatically assigned as reviewer on all new PRs.
 
-For this, you just need to create a `.github/CODEOWNERS` file in your repo with the following content (if you have a `CODEOWNERS` file already at the root of your repository, we advise to move it inside a `.github/` directory to clean up your repo root)
+For this, you just need to create a `.github/CODEOWNERS` file in your repo with the following content (if you have a `CODEOWNERS` file already at the root of your repository, we advise to move it inside a `.github/` directory to clean up your repo root).
 
 ```
 # Global rule for the whole codebase.
 #  - The empty `iOS-PullAssigner` team will act as a proxy for the PullAssigner bot.
 #    When a new PR arrives, PullAssigner will be triggered, which will then pick members from the iOS-Admin team
 
-* @babylonhealth/iOS-PullAssigner
+* @babylonhealth/iOS-Devs
 ```
-
-Of course, if you created a separate proxy team instead of using our common `iOS-PullAssigner` GitHub proxy team, adapt the content accordingly
 
 ## GitHub PRs configuration (protected branches)
 
