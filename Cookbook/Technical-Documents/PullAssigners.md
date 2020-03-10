@@ -2,14 +2,11 @@
 
 ## Introduction
 
-[Pull Panda](https://pullpanda.com/) is a set of tools for automating actions on GitHub Pull Requests and provide some integration with Slack. Amongst those tools, Pull Assigner will allow you to auto-assign people from your team as reviewers of Pull Requests, typically trying to distribute the PRs amongst the team evenly
+The aim of this document is to explain how to configure GitHub's automatic pull request reviewer assignment feature on our Babylon repos in order for it to assign people to PRs automatically
 
-The aim of this document is to explain how to configure `Pull Assigner` on our Babylon repos in order for it to affect people to PRs automatically
-
-- We will use the `CODEOWNERS` file to make GitHub always assign a special GitHub team (called the proxy team in Pull Assigner's parlance) to all our Pull Requests
-- That special GitHub team will in fact be managed by Pull Assigners, which will detect when that team is added as a reviewer
-- Pull Assigner will then pick N reviewers from a GitHub team listing all possible reviewers, then unassign the "proxy team"
-- Optionally, we could also require each PR of a repository to always have an approval from a subset of people (the ones owning the responsibility of the code) – like we did for our bots repository owned by the Developer Experience squad
+- We will use the `CODEOWNERS` file to make GitHub always assign a GitHub team to all our Pull Requests.
+- GitHub will then pick N reviewers from that team then unassign the team itself.
+- Optionally, we could also require each PR of a repository to always have an approval from a subset of people (the ones owning the responsibility of the code) – like we did for our bots repository owned by the Developer Experience squad.
 
 ## Configure GitHub Teams
 
