@@ -2,19 +2,19 @@
 
 ## Introduction
 
-The aim of this document is to explain how to configure GitHub's automatic code review assignment feature on our Babylon repos in order for it to assign people to PRs automatically.
+The aim of this document is to explain how to configure GitHub's automatic code review assignment in our Babylon repos in order for it to assign people to PRs automatically.
 
 - We will use the `CODEOWNERS` file to make GitHub always assign a GitHub team to all our Pull Requests.
-- GitHub will then pick N reviewers from that team then unassign the team itself.
+- GitHub will then pick N reviewers from that team and unassign the team itself.
 - Optionally, we could also require each PR of a repository to always have an approval from a subset of people (the ones owning the responsibility of the code) – like we did for our bots repository owned by the Developer Experience squad.
 
 ## Configure GitHub Teams
 
 ### A team to list the reviewers to pick from
 
-1. First you need a GitHub team containing the list of all the people you want Pull Assigner to pick reviewers from.
+1. First you need a GitHub team containing the list of all the people you want GitHub to pick reviewers from.
 
-   * For the iOS repos, we use the team `@babylonhealth/iOS-Devs` for this, which should contain every iOS developer that is on our team. So if you need the same list of reviewers, you can just use this one instead of creating one.
+   * For the iOS repos, we use the team `@babylonhealth/iOS-Devs`, which should contain every iOS developer at Babylon. So if you need the same list of reviewers, you can just use this one instead of creating one.
    * If you need a different list to pick your reviewers from, you'd need to create a team via [this page on GitHub](https://github.com/orgs/babylonhealth/new-team), and once it's created, go to the team's page and add Members to that new team ([e.g. here for `iOS-Devs`](https://github.com/orgs/babylonhealth/teams/iOS-Devs/members))
 
 2. Next, **make sure that this GitHub team –containing the people you want as reviewers– has access to your repository**, via the "Repositories" tab in the team's page ([e.g. here for `iOS-Devs`](https://github.com/orgs/babylonhealth/teams/iOS-Devs/repositories))
@@ -35,9 +35,9 @@ For this, you just need to create a `.github/CODEOWNERS` file in your repo with 
 
 ## Enabling GitHub's code review assignment
 
-Once the team and `CODEOWNERS` file has been created, we can go ahead and enable GitHub's PR reviewer assignment feature.
+Once the team and `CODEOWNERS` file has been created, we can go ahead and enable GitHub's reviewer assignment feature.
 
-1. Head to the [organisation's home page](https://github.com/babylonhealth) in GitHub.
+1. Head to the [organisation's home page](https://github.com/babylonhealth).
 2. Go to the "Teams" tab and search for your team ([e.g. here for `iOS-Devs`](https://github.com/orgs/babylonhealth/teams/ios-devs)).
 3. Go to the "Settings" page (to access / edit your team's settings you'll need to have the `Maintainer` team role).
 4. In "Settings" go to "Code review assignment".
@@ -59,7 +59,7 @@ Congratulations, you now have reviewers for your PR and you didn't need to lift 
 
 #### Excluding yourself from auto assignment
 
-There are some scenarios where you'd like to prevent yourself from being automatically assigned as a reviewer, e.g. taking time off. To do this, simply click your avatar in the top right of GitHub, click "Set status" and then tick "Busy". Busy team members will not be automatically assigned as reviewers.
+There are some scenarios where you'd like to prevent yourself from being automatically assigned as a reviewer, e.g. holidays. To do this, simply click your avatar in the top right of GitHub, click "Set status" and then tick "Busy". Busy team members will not be automatically assigned as reviewers.
 
 ## GitHub PRs configuration (protected branches)
 
