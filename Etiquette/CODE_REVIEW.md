@@ -38,7 +38,7 @@ Creating a Pull Request
 	* explain the context and motivation, don’t assume familiarity with the history. Highlight how the goal was achieved without going too much into details - people tend not to read long descriptions and if a long explanation is needed, then a single pull request is probably not going to be enough (i.e. the change may need to go through the proposal process or design review). 
 	* don't strip out parts of the template unless it is absolutely irrelevant to the changes (i.e. change in the build script does not need any screenshots as it does not touch UI)
 	* don't forget labels (note: it's better to set them after the PR is created, as GitHub sometimes fails with 405 status code and we don't know why)
-* Explicitly request review from or mention team mates you specifically want to involve in the discussion (in addition to the ones that will be assigned to it automatically by PullAssigners)
+* Explicitly request review from or mention team mates you specifically want to involve in the discussion (in addition to the ones that will be assigned to it automatically by GitHub)
 * Self-review your changes, adding comments where you think you can get questions (it may worth adding these as code or documentation comments). Tip: if you spot small issues you can use GitHub suggestions and apply them right away
 * Keep your pull requests small, ideally they shouldn't be more than **800 additions** (Danger will make a warning if this exceeds 850 additions)
 * Create a draft PR for work that is in progress, but only do that if you seek for opinions on your work
@@ -103,8 +103,8 @@ To improve collaboration, we take time to review pull request together in small 
 Pull Assigners
 --------
 
-To balance the workload and avoid knowledge silos we use [Pull Assigners](https://pullpanda.com/assigner) to assign reviewers.
+To balance the workload and avoid knowledge silos we use GitHub's code reviewer assignment feature to automatically assign reviewers.
 
-- Each pull request will be assigned to three random reviewers from the team (PS: if the PullAssigners bot seems stuck, try to de-assign it and re-assign it.)
+- Each pull request will be assigned to three random reviewers from the team.
 - Two approvals are enough to merge a pull request (there shouldn't be pending requests for changes though and you should address any other pending questions or comments)
 - Anyone else is still encouraged to review any pull request and author can request reviews from specific teammates
