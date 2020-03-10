@@ -37,7 +37,7 @@ For this, you just need to create a `.github/CODEOWNERS` file in your repo with 
 
 Once the team and `CODEOWNERS` file has been created, we can go ahead and enable GitHub's reviewer assignment feature.
 
-1. Head to the [organisation's home page](https://github.com/babylonhealth).
+1. Head to the organisation's [home page](https://github.com/babylonhealth).
 2. Go to the "Teams" tab and search for your team ([e.g. here for `iOS-Devs`](https://github.com/orgs/babylonhealth/teams/ios-devs)).
 3. Go to the "Settings" page (to access / edit your team's settings you'll need to have the `Maintainer` team role).
 4. In "Settings" go to "Code review assignment".
