@@ -14,10 +14,10 @@ The aim of this document is to explain how to configure GitHub's automatic pull 
 
 1. First you need a GitHub team containing the list of all the people you want Pull Assigner to pick reviewers from.
 
-   * For the iOS repos, we use the team `@babylonhealth/iOS-Admin` for this, which should contain every iOS developer that are on our team. So if you need the same list of reviewers, you can just use this one instead of creating one.
-   * If you need a different list to pick your reviewers from, you'd need to create a team via [this page on GitHub](https://github.com/orgs/babylonhealth/new-team), and once it's created, go to the team's page and add Members to that new team ([e.g. here for `iOS-Admin`](https://github.com/orgs/babylonhealth/teams/iOS-Admin/members))
+   * For the iOS repos, we use the team `@babylonhealth/iOS-Devs` for this, which should contain every iOS developer that is on our team. So if you need the same list of reviewers, you can just use this one instead of creating one.
+   * If you need a different list to pick your reviewers from, you'd need to create a team via [this page on GitHub](https://github.com/orgs/babylonhealth/new-team), and once it's created, go to the team's page and add Members to that new team ([e.g. here for `iOS-Devs`](https://github.com/orgs/babylonhealth/teams/iOS-Devs/members))
 
-2. Next, **make sure that this GitHub team –containing the people you want as reviewers– has access to your repository**, via the "Repositories" tab in the team's page ([e.g. here for `iOS-Admin`](https://github.com/orgs/babylonhealth/teams/iOS-Admin/repositories))
+2. Next, **make sure that this GitHub team –containing the people you want as reviewers– has access to your repository**, via the "Repositories" tab in the team's page ([e.g. here for `iOS-Devs`](https://github.com/orgs/babylonhealth/teams/iOS-Devs/repositories))
 
 ### The proxy team to trigger Pull Assigners
 
