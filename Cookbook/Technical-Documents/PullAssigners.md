@@ -19,18 +19,6 @@ The aim of this document is to explain how to configure GitHub's automatic pull 
 
 2. Next, **make sure that this GitHub team –containing the people you want as reviewers– has access to your repository**, via the "Repositories" tab in the team's page ([e.g. here for `iOS-Devs`](https://github.com/orgs/babylonhealth/teams/iOS-Devs/repositories))
 
-### Configure Pull Assigners with those GitHub teams
-
-If you are reusing the `iOS-Admin` and `iOS-PullAssigner` teams for your repo setup, you have nothing special to configure on https://pullreminders.com as those GitHub teams are already configured in Pull Assigner; so you can skip to the next section.
-
-But if you have created new teams (team listing reviewers + proxy team) you'll need to log in to https://pullreminders.com and add the GitHub teams to Pull Assigner's configuration via [this screen](https://pullreminders.com/installs/6124714/assigner)
-
- - Click "Add Team"
- - Select the real (not proxy) team you've created before in the dropdown menu
- - Configure the team in the next screen, especially the number of reviewers to assign, the algorithm, but also the proxy team you previously created, and select to delete that (proxy) team review request after assigning reviewers (†).
-
- (†) Note that if your repository's protected branch is configured with "Require review from Code Owners" checked, then any member or team mentioned in your `CODEOWNERS` file will stay assigned as reviewer. Which means that in that case, your proxy team, being typically mentioned in your `CODEOWNERS` to always be auto-assigned, won't be removed from your PR even if you chose "Delete after assigning reviewer(s)" for the "Team review request" setting in your https://pullreminders.com setup. It will only be able to be deleted if the "Require review from Code Owners" setting is unchecked in your repo.
-
 ## Update GitHub's PullAssigner app settings
 
 ⚠️ This step will require the assistance of someone from `#devops` who has access to the GitHub's *organization* settings.
