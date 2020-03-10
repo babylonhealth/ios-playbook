@@ -19,14 +19,6 @@ The aim of this document is to explain how to configure GitHub's automatic pull 
 
 2. Next, **make sure that this GitHub team –containing the people you want as reviewers– has access to your repository**, via the "Repositories" tab in the team's page ([e.g. here for `iOS-Devs`](https://github.com/orgs/babylonhealth/teams/iOS-Devs/repositories))
 
-## Update GitHub's PullAssigner app settings
-
-⚠️ This step will require the assistance of someone from `#devops` who has access to the GitHub's *organization* settings.
-
-Ask `#devops` to go to the GitHub organization's settings and under the "Installed GitHub Pages" [here](https://github.com/organizations/babylonhealth/settings/installations).
-
-From there they should be able to edit the "PullAssigner" app's settings and add your new repo to the list of repositories the PullAssigner GitHub app has access to
-
 ## The `CODEOWNERS` file
 
 Now we need to ensure that the proxy team (e.g. `iOS-PullAssigners`) is automatically affected as reviewer on all new PRs.
