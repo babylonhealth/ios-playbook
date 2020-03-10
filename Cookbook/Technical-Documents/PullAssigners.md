@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The aim of this document is to explain how to configure GitHub's automatic pull request reviewer assignment feature on our Babylon repos in order for it to assign people to PRs automatically.
+The aim of this document is to explain how to configure GitHub's automatic code review assignment feature on our Babylon repos in order for it to assign people to PRs automatically.
 
 - We will use the `CODEOWNERS` file to make GitHub always assign a GitHub team to all our Pull Requests.
 - GitHub will then pick N reviewers from that team then unassign the team itself.
@@ -32,6 +32,34 @@ For this, you just need to create a `.github/CODEOWNERS` file in your repo with 
 
 * @babylonhealth/iOS-Devs
 ```
+
+## Enabling GitHub's code review assignment
+
+Once the team and `CODEOWNERS` file has been created, we can go ahead and enable GitHub's PR reviewer assignment feature.
+
+1. Head to the [organisation's home page](https://github.com/babylonhealth) in GitHub.
+2. Go to the "Teams" tab and search for your team ([e.g. here for `iOS-Devs`](https://github.com/orgs/babylonhealth/teams/ios-devs)).
+3. Go to the "Settings" page (to access / edit your team's settings you'll need to have the `Maintainer` team role).
+4. In "Settings" go to "Code review assignment".
+5. Tick "Enable auto assignment" and configure the settings as desired. 
+
+**Note:** You'll probably want to tick "If assigning team members, don't notify the entire team" to prevent the entire team getting notifications for every PR, even if they haven't been individually assigned to it.
+
+Please see [GitHub's documentation](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/managing-code-review-assignment-for-your-team) for more in-depth details around configuring these settings.
+
+#### In summary
+
+Now that we have a team of reviewers, your project has a `CODEOWNERS` file and GitHub code review assignment is enabled, the following will happen when you create a PR:
+
+1. The team defined in `CODEOWNERS` will be automatically assigned as a reviewer.
+2. GitHub will instantly pick N reviewers and assign them to the pull request (number of reviewers is configured in the "Code review assignment" settings).
+3. The team will be unassigned.
+
+Congratulations, you now have reviewers for your PR and you didn't need to lift a finger.
+
+#### Excluding yourself from auto assignment
+
+There are some scenarios where you'd like to prevent yourself from being automatically assigned as a reviewer, e.g. taking time off. To do this, simply click your avatar in the top right of GitHub, click "Set status" and then tick "Busy". Busy team members will not be automatically assigned as reviewers.
 
 ## GitHub PRs configuration (protected branches)
 
