@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The aim of this document is to explain how to configure GitHub's automatic pull request reviewer assignment feature on our Babylon repos in order for it to assign people to PRs automatically
+The aim of this document is to explain how to configure GitHub's automatic pull request reviewer assignment feature on our Babylon repos in order for it to assign people to PRs automatically.
 
 - We will use the `CODEOWNERS` file to make GitHub always assign a GitHub team to all our Pull Requests.
 - GitHub will then pick N reviewers from that team then unassign the team itself.
