@@ -12,7 +12,7 @@ The aim of this document is to explain how to configure GitHub's automatic code 
 
 ### A team to list the reviewers to pick from
 
-1. First you need a GitHub team containing the list of all the people you want GitHub to pick reviewers from.
+1. First, you need a GitHub team containing the list of all the people you want GitHub to pick reviewers from.
 
    * For the iOS repos, we use the team `@babylonhealth/iOS-Devs`, which should contain every iOS developer at Babylon. So if you need the same list of reviewers, you can just use this one instead of creating one.
    * If you need a different list to pick your reviewers from, you'd need to create a team via [this page on GitHub](https://github.com/orgs/babylonhealth/new-team), and once it's created, go to the team's page and add Members to that new team ([e.g. here for `iOS-Devs`](https://github.com/orgs/babylonhealth/teams/iOS-Devs/members))
