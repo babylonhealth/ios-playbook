@@ -62,7 +62,7 @@ When we leave on holidays we should make sure we leave our work either finished 
 	1. Who to contact if necessary.
 	1. If it's something urgent should be assigned to another team member and a proper handover should be done with that person.
 1. [Set your status to "Busy" on GitHub](#steps-to-be-added-to-the-pullreminder-exclusion-list) to prevent yourself being added as a PR reviewer while you are away. 
-1. Once you get back, you have to unset the "Busy" status. Adding a Slack reminder (`/remind me to unset my GitHub "Busy" status on <date>`) before you leave might help you not to forget.
+1. Once you get back, you have to clear your "Busy" status. Adding a Slack reminder (`/remind me to clear my GitHub "Busy" status on <date>`) before you leave might help you not to forget.
 
 #### Steps to set your status to "Busy" on GitHub
 1. Go to [GitHub.com](https://github.com) and sign in.

@@ -59,7 +59,7 @@ Congratulations, you now have reviewers for your PR and you didn't need to lift 
 
 #### Excluding yourself from auto assignment
 
-There are some scenarios where you'd like to prevent yourself from being automatically assigned as a reviewer, e.g. holidays. To do this, simply click your avatar in the top right of GitHub, click "Set status" and then tick "Busy". Busy team members will not be automatically assigned as reviewers.
+There are some scenarios where you'd like to prevent yourself from being automatically assigned as a reviewer, e.g. holidays. To do this, simply click your avatar in the top right of GitHub, click "Set status", tick "Busy" then confirm by clicking "Set status". Busy team members will not be automatically assigned as reviewers.
 
 ## GitHub PRs configuration (protected branches)
 
