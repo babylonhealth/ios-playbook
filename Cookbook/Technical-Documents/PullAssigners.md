@@ -12,7 +12,7 @@ The aim of this document is to explain how to configure GitHub's automatic code 
 
 ### A team to list the reviewers to pick from
 
-1. First you need a GitHub team containing the list of all the people you want GitHub to pick reviewers from.
+1. First, you need a GitHub team containing the list of all the people you want GitHub to pick reviewers from.
 
    * For the iOS repos, we use the team `@babylonhealth/iOS-Devs`, which should contain every iOS developer at Babylon. So if you need the same list of reviewers, you can just use this one instead of creating one.
    * If you need a different list to pick your reviewers from, you'd need to create a team via [this page on GitHub](https://github.com/orgs/babylonhealth/new-team), and once it's created, go to the team's page and add Members to that new team ([e.g. here for `iOS-Devs`](https://github.com/orgs/babylonhealth/teams/iOS-Devs/members))
@@ -43,7 +43,7 @@ Once the team and `CODEOWNERS` file has been created, we can go ahead and enable
 4. In "Settings" go to "Code review assignment".
 5. Tick "Enable auto assignment" and configure the settings as desired. 
 
-**Note:** You'll probably want to tick "If assigning team members, don't notify the entire team" to prevent the entire team getting notifications for every PR, even if they haven't been individually assigned to it.
+**Note:** You'll probably want to tick "If assigning team members, don't notify the entire team" to prevent the entire team from getting notifications for every PR, even if they haven't been individually assigned to it.
 
 Please see [GitHub's documentation](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/managing-code-review-assignment-for-your-team) for more in-depth details around configuring these settings.
 
