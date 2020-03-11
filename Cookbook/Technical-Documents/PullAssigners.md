@@ -43,7 +43,7 @@ Once the team and `CODEOWNERS` file has been created, we can go ahead and enable
 4. In "Settings" go to "Code review assignment".
 5. Tick "Enable auto assignment" and configure the settings as desired. 
 
-**Note:** You'll probably want to tick "If assigning team members, don't notify the entire team" to prevent the entire team getting notifications for every PR, even if they haven't been individually assigned to it.
+**Note:** You'll probably want to tick "If assigning team members, don't notify the entire team" to prevent the entire team from getting notifications for every PR, even if they haven't been individually assigned to it.
 
 Please see [GitHub's documentation](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/managing-code-review-assignment-for-your-team) for more in-depth details around configuring these settings.
 
