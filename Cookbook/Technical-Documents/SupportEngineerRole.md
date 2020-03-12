@@ -9,7 +9,10 @@ When an engineer is on support, these duties have higher priority over Squad dut
 
 * **Update #ios and #ios-usa-support Slack channels topics** The topics should be updated with the iOS Engineers in support for the current day. This update should be done first thing in the morning.
 * **Be available to answer any requests posted in the #ios and #ios-usa-support.** The engineer can either solve the request or delegate to someone who might know how to solve it.
-* **Pick up tickets from the iOS Platform backlog.** These are tickets that don't have any Squad as an owner and still need to be fixed. [Kanban board](https://babylonpartners.atlassian.net/secure/RapidBoard.jspa?rapidView=1100&projectKey=IOSP)
+* **Pick up tickets from the iOS Platform backlog.** These are tickets that don't have any Squad as an owner and still need to be fixed, or ones for which the Platform team might need some help with.
+   * Use this [Kanban board](https://babylonpartners.atlassian.net/secure/RapidBoard.jspa?rapidView=1100&projectKey=IOSP) to see the list of pending BAU tickets
+   * But first, ping the platform team directly on Slack to check with them if there is any urgent/blocker ticket that could use some help and would take priority
+   * At the end of your shift, be sure to post your progress on the ticket, for the next engineeer to pick up, and inform them of any outstanding work.
 * **Work on personal goals.** Personal goals should be tasks that will help you improve competences in your preferred areas. They are also important tasks that are used, in addition to other metrics, to evaluate your performance. You should only work on these if there is no other task to be picked up from the points defined above and there is no critical work to be done as part of your Squad.
 
 ## Schedule
