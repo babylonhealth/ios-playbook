@@ -35,5 +35,5 @@ Similarly to Design System, we have [separate Lokalise project](https://app.loka
 To update strings for the UI SDKs use the lane:
 ```
 bundle exec fastlane lokalise_pull      // download all projects, including UI SDKs
-bundle exec fastlane lokalise_pull_sdks // download only Design System project
+bundle exec fastlane lokalise_pull_sdks // download only SDK project
 ```
