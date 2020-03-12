@@ -5,7 +5,7 @@
 The aim of this document is to explain how to configure GitHub's automatic code review assignment in our Babylon repos in order for it to assign people to PRs automatically.
 
 - We will use the `CODEOWNERS` file to make GitHub always assign a GitHub team to all our Pull Requests.
-- GitHub will then pick N reviewers from that team ([see below how to configure that number N](#enabling-github-s-code-review-assignment)) and unassign the team itself.
+- GitHub will then pick N reviewers from that team ([see below how to configure that number N](#enabling-githubs-code-review-assignment)) and unassign the team itself.
 - Optionally, we could also require each PR of a repository to always have an approval from a subset of people (the ones owning the responsibility of the code) – like we did for our bots repository owned by the Developer Experience squad.
 
 ## Configure a GitHub Team containing the reviewers to pick from
