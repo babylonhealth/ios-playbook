@@ -8,9 +8,7 @@ The aim of this document is to explain how to configure GitHub's automatic code 
 - GitHub will then pick N reviewers from that team ([see below how to configure that number N](#enabling-github-s-code-review-assignment)) and unassign the team itself.
 - Optionally, we could also require each PR of a repository to always have an approval from a subset of people (the ones owning the responsibility of the code) – like we did for our bots repository owned by the Developer Experience squad.
 
-## Configure GitHub Teams
-
-### A team to list the reviewers to pick from
+## Configure a GitHub Team containing the reviewers to pick from
 
 1. First, you need a GitHub team containing the list of all the people you want GitHub to pick reviewers from.
 
