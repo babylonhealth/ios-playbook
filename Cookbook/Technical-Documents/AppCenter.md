@@ -1,4 +1,4 @@
-If you want to know how to invite people, [click here](#adding-people-to-the-organisation).
+Follow steps below to get access to our nightly builds.
 
 # Accessing App Center builds
 
@@ -62,7 +62,7 @@ If this happened, follow these steps:
 
 
 # Adding people to the organisation
-App Center team is currently working on integrating Azure Active Directory to App Center Auth but for now, we still need to manually invite people. See [App Center ticket](https://github.com/microsoft/appcenter/issues/994) to check the progress on this.
+App Center supports Azure Active Directory so there should be no reason to invite people - everyone with Babylon okta account should be able to access our projects and builds. However, for some reasons, it sometimes doesn't work and we need to invite people manually. In such case, follow steps below.
 
 ### Steps to invite
 
