@@ -62,7 +62,7 @@ If this happened, follow these steps:
 
 
 # Adding people to the organisation
-App Center supports Azure Active Directory so there should be no reason to invite people - everyone with Babylon okta account should be able to access our projects and builds. However, for some reasons, it sometimes doesn't work and we need to invite people manually. In such case, follow steps below.
+App Center supports Azure Active Directory so there should be no reason to invite people - everyone with Babylon Okta account should be able to access our projects and builds. However, for some reasons, it sometimes doesn't work and we need to invite people manually. In such case, follow steps below.
 
 ### Steps to invite
 
