@@ -61,15 +61,14 @@ When we leave on holidays we should make sure we leave our work either finished 
 	1. Have a description of what is left to be done.
 	1. Who to contact if necessary.
 	1. If it's something urgent should be assigned to another team member and a proper handover should be done with that person.
-1. [Add yourself to the PullReminder exclusion list](#steps-to-be-added-to-the-pullreminder-exclusion-list) to prevent you to be added as a PR reviewer while you are away. 
-1. Once you get back, you have to remove yourself from the PullReminder exclusion list. Adding a Slack reminder (`/remind me to reactivate PullReminder on <date>`) before you leave might help you not to forget.
+1. [Set your status to "Busy" on GitHub](#steps-to-be-added-to-the-pullreminder-exclusion-list) to prevent yourself being added as a PR reviewer while you are away. 
+1. Once you get back, you have to clear your "Busy" status. Adding a Slack reminder (`/remind me to clear my GitHub "Busy" status on <date>`) before you leave might help you not to forget.
 
-#### Steps to be added to the PullReminder exclusion list
-1. Go to [pullreminders.com](https://pullreminders.com)
-1. Sign in
-1. Select Babylonpartners organization
-1. Select iOS-PullAssigners team
-1. Add yourself to the Excluded team members
+#### Steps to set your status to "Busy" on GitHub
+1. Go to [GitHub.com](https://github.com) and sign in.
+1. Click your avatar in the top right.
+1. Click "Set status".
+1. Tick "Busy" and confirm by clicking "Set status".
 
 ## Working from Home 🏡
 This section is only valid for non-remote employees.

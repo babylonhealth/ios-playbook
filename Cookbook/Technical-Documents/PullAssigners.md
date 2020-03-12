@@ -2,72 +2,64 @@
 
 ## Introduction
 
-[Pull Panda](https://pullpanda.com/) is a set of tools for automating actions on GitHub Pull Requests and provide some integration with Slack. Amongst those tools, Pull Assigner will allow you to auto-assign people from your team as reviewers of Pull Requests, typically trying to distribute the PRs amongst the team evenly
+The aim of this document is to explain how to configure GitHub's automatic code review assignment in our Babylon repos in order for it to assign people to PRs automatically.
 
-The aim of this document is to explain how to configure `Pull Assigner` on our Babylon repos in order for it to affect people to PRs automatically
+- We will use the `CODEOWNERS` file to make GitHub always assign a GitHub team to all our Pull Requests.
+- GitHub will then pick N reviewers from that team ([see below how to configure that number N](#enabling-githubs-code-review-assignment)) and unassign the team itself.
+- Optionally, we could also require each PR of a repository to always have an approval from a subset of people (the ones owning the responsibility of the code) – like we did for our bots repository owned by the Developer Experience squad.
 
-- We will use the `CODEOWNERS` file to make GitHub always assign a special GitHub team (called the proxy team in Pull Assigner's parlance) to all our Pull Requests
-- That special GitHub team will in fact be managed by Pull Assigners, which will detect when that team is added as a reviewer
-- Pull Assigner will then pick N reviewers from a GitHub team listing all possible reviewers, then unassign the "proxy team"
-- Optionally, we could also require each PR of a repository to always have an approval from a subset of people (the ones owning the responsibility of the code) – like we did for our bots repository owned by the Developer Experience squad
+## Configure a GitHub Team containing the reviewers to pick from
 
-## Configure GitHub Teams
+1. First, you need a GitHub team containing the list of all the people you want GitHub to pick reviewers from.
 
-### A team to list the reviewers to pick from
+   * For the iOS repos, we use the team `@babylonhealth/iOS-Devs`, which should contain every iOS developer at Babylon. So if you need the same list of reviewers, you can just use this one instead of creating one.
+   * If you need a different list to pick your reviewers from, you'd need to create a team via [this page on GitHub](https://github.com/orgs/babylonhealth/new-team), and once it's created, go to the team's page and add Members to that new team ([e.g. here for `iOS-Devs`](https://github.com/orgs/babylonhealth/teams/iOS-Devs/members))
 
-1. First you need a GitHub team containing the list of all the people you want Pull Assigner to pick reviewers from.
-
-   * For the iOS repos, we use the team `@babylonhealth/iOS-Admin` for this, which should contain every iOS developer that are on our team. So if you need the same list of reviewers, you can just use this one instead of creating one.
-   * If you need a different list to pick your reviewers from, you'd need to create a team via [this page on GitHub](https://github.com/orgs/babylonhealth/new-team), and once it's created, go to the team's page and add Members to that new team ([e.g. here for `iOS-Admin`](https://github.com/orgs/babylonhealth/teams/iOS-Admin/members))
-
-2. Next, **make sure that this GitHub team –containing the people you want as reviewers– has access to your repository**, via the "Repositories" tab in the team's page ([e.g. here for `iOS-Admin`](https://github.com/orgs/babylonhealth/teams/iOS-Admin/repositories))
-
-### The proxy team to trigger Pull Assigners
-
-1. Now, we will need another, separate, GitHub team –called the "Proxy team" in Pull Assigner's vocabulary– which will be the team that you'll assign to your PRs via `CODEOWNERS` to trigger Pull Assigner on those PRs (†)
-
-   * For the iOS repos, the proxy team we use –to assign people from the `@babylonhealth/iOS-Admin` to our PRs– is called `@babylonhealth/iOS-PullAssigner`, so if you are using the same list of people from `iOS-Admin` you can also use the `iOS-PullAssigner` for your proxy team directly without creating a new one
-   * If instead you created a separate team because for your case the list of people in `iOS-Admin` wasn't matching the people you wanted to assign PRs for your repo, you'll need to [create a new GitHub team again](https://github.com/orgs/babylonhealth/new-team), but this time leave it with no member in it (since it will only act as proxy)
-
-2. Next, **make sure that the proxy team has access to your repository**, via the "Repositories" tab in the team's page (e.g. https://github.com/orgs/babylonhealth/teams/ios-pullassigner/repositories)
-
-> _(†) Side note: This proxy team is not strictly necessary, but if you don't use a proxy team and instead use the team you just declared above directly, that means that everybody will be notified and requested review every time a new PR is created. With proxy team Pull Assigners will automatically replace it with only N people from that team requesting review only from them. This is why using a proxy team without any member in it to trigger Pull Assigner is usually preferrable_
-
-### Configure Pull Assigners with those GitHub teams
-
-If you are reusing the `iOS-Admin` and `iOS-PullAssigner` teams for your repo setup, you have nothing special to configure on https://pullreminders.com as those GitHub teams are already configured in Pull Assigner; so you can skip to the next section.
-
-But if you have created new teams (team listing reviewers + proxy team) you'll need to log in to https://pullreminders.com and add the GitHub teams to Pull Assigner's configuration via [this screen](https://pullreminders.com/installs/6124714/assigner)
-
- - Click "Add Team"
- - Select the real (not proxy) team you've created before in the dropdown menu
- - Configure the team in the next screen, especially the number of reviewers to assign, the algorithm, but also the proxy team you previously created, and select to delete that (proxy) team review request after assigning reviewers (†).
-
- (†) Note that if your repository's protected branch is configured with "Require review from Code Owners" checked, then any member or team mentioned in your `CODEOWNERS` file will stay assigned as reviewer. Which means that in that case, your proxy team, being typically mentioned in your `CODEOWNERS` to always be auto-assigned, won't be removed from your PR even if you chose "Delete after assigning reviewer(s)" for the "Team review request" setting in your https://pullreminders.com setup. It will only be able to be deleted if the "Require review from Code Owners" setting is unchecked in your repo.
-
-## Update GitHub's PullAssigner app settings
-
-⚠️ This step will require the assistance of someone from `#devops` who has access to the GitHub's *organization* settings.
-
-Ask `#devops` to go to the GitHub organization's settings and under the "Installed GitHub Pages" [here](https://github.com/organizations/babylonhealth/settings/installations).
-
-From there they should be able to edit the "PullAssigner" app's settings and add your new repo to the list of repositories the PullAssigner GitHub app has access to
+2. Next, **make sure that this GitHub team –containing the people you want as reviewers– has access to your repository**, via the "Repositories" tab in the team's page ([e.g. here for `iOS-Devs`](https://github.com/orgs/babylonhealth/teams/iOS-Devs/repositories))
 
 ## The `CODEOWNERS` file
 
-Now we need to ensure that the proxy team (e.g. `iOS-PullAssigners`) is automatically affected as reviewer on all new PRs.
+Now we need to ensure that the right team (e.g. `iOS-Devs`) is automatically assigned as reviewer on all new PRs.
 
-For this, you just need to create a `.github/CODEOWNERS` file in your repo with the following content (if you have a `CODEOWNERS` file already at the root of your repository, we advise to move it inside a `.github/` directory to clean up your repo root)
+For this, you just need to create a `.github/CODEOWNERS` file in your repo with the following content (if you have a `CODEOWNERS` file already at the root of your repository, we advise to move it inside a `.github/` directory to clean up your repo root).
 
 ```
 # Global rule for the whole codebase.
-#  - The empty `iOS-PullAssigner` team will act as a proxy for the PullAssigner bot.
-#    When a new PR arrives, PullAssigner will be triggered, which will then pick members from the iOS-Admin team
+# GitHub's Code Reviewer assignment feature will only pick N people from that list
+#   to assign them as reviewers. To configure this, go to your Team's page
+#   (https://github.com/orgs/babylonhealth/teams/<yourteam>) then to
+#   Settings > Code review assignment
 
-* @babylonhealth/iOS-PullAssigner
+* @babylonhealth/iOS-Devs
 ```
 
-Of course, if you created a separate proxy team instead of using our common `iOS-PullAssigner` GitHub proxy team, adapt the content accordingly
+## Enabling GitHub's code review assignment
+
+Once the team and `CODEOWNERS` file has been created, we can go ahead and enable GitHub's reviewer assignment feature.
+
+1. Head to the organisation's [home page](https://github.com/babylonhealth).
+2. Go to the "Teams" tab and search for your team ([e.g. here for `iOS-Devs`](https://github.com/orgs/babylonhealth/teams/ios-devs)).
+3. Go to the "Settings" page (to access / edit your team's settings you'll need to have the `Maintainer` team role).
+4. In "Settings" go to "Code review assignment".
+5. Tick "Enable auto assignment" and configure the settings as desired. 
+
+**Note:** You'll probably want to tick "If assigning team members, don't notify the entire team" to prevent the entire team from getting notifications for every PR, even if they haven't been individually assigned to it.
+
+Please see [GitHub's documentation](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/managing-code-review-assignment-for-your-team) for more in-depth details around configuring these settings.
+
+#### In summary
+
+Now that we have a team of reviewers, your project has a `CODEOWNERS` file and GitHub code review assignment is enabled, the following will happen when you create a PR:
+
+1. The team defined in `CODEOWNERS` will be automatically assigned as a reviewer.
+2. GitHub will instantly pick N reviewers and assign them to the pull request (number of reviewers is configured in the "Code review assignment" settings).
+3. The team will be unassigned.
+
+Congratulations, you now have reviewers for your PR and you didn't need to lift a finger.
+
+#### Excluding yourself from auto assignment
+
+There are some scenarios where you'd like to prevent yourself from being automatically assigned as a reviewer, e.g. holidays. To do this, simply click your avatar in the top right of GitHub, click "Set status", tick "Busy" then confirm by clicking "Set status". Busy team members will not be automatically assigned as reviewers.
 
 ## GitHub PRs configuration (protected branches)
 
