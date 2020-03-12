@@ -105,6 +105,6 @@ Pull Assigners
 
 To balance the workload and avoid knowledge silos we use GitHub's code reviewer assignment feature to automatically assign reviewers.
 
-- Each pull request will be assigned to three random reviewers from the team.
+- Each pull request will be assigned to three reviewers from the team. At the time of writing, reviewers are chosen on a "round robin" basis where assignments are given to those with the least recent review requests.
 - Two approvals are enough to merge a pull request (there shouldn't be pending requests for changes though and you should address any other pending questions or comments)
 - Anyone else is still encouraged to review any pull request and author can request reviews from specific teammates
