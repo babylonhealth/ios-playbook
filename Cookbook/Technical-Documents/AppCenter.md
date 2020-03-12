@@ -1,4 +1,4 @@
-Follow steps below to get access to our nightly builds.
+Follow the steps below to get access to our nightly builds.
 
 # Accessing App Center builds
 
