@@ -27,8 +27,10 @@ For this, you just need to create a `.github/CODEOWNERS` file in your repo with 
 
 ```
 # Global rule for the whole codebase.
-#  - The empty `iOS-PullAssigner` team will act as a proxy for the PullAssigner bot.
-#    When a new PR arrives, PullAssigner will be triggered, which will then pick members from the iOS-Admin team
+# GitHub's Code Reviewer assignment feature will only pick N people from that list
+#   to assign them as reviewers. To configure this, go to your Team's page
+#   (https://github.com/orgs/babylonhealth/teams/<yourteam>) then to
+#   Settings > Code review assignment
 
 * @babylonhealth/iOS-Devs
 ```
