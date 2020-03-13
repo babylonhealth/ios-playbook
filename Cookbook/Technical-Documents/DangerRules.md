@@ -59,39 +59,20 @@ This rule is just to inform (informative message, no error nor warning) when the
 
 The goal is to suggest them to take extra care in reviewing why we needed those changes in our dependencies and if they were properly justified.
 
-## SDK Checks
+## SDK: Mark changes to any of our SDKs with `#SDK` hashtag
 
 > * Declared in: `danger-ci/sdk.rb`
-
-### Mark changes to SDK with `#SDK` (or `#IgnoreSDKChanges`)
-
 > * Function: `check_sdk_hashtag`  
 > * Type: 🚫 failure
 
-This rule is to:
+This rule is to ensure that you identify **PRs containing changes to any files in our SDKs** by **adding `#SDK` to the PR title**.
+This applies to any changes done in files in the `SDK/` and `UI SDK/` folders – except for files related to tests.
 
-1. Ensure you **identify PRs that contain SDK changes with `#SDK`** – as those would need to be included in the CRP ticket for next SDK release (SSDLC requirement):
-  - Note that if the PR is associated with an SDK ticket, and thus contains `[SDK-xxx]` in it's title, then `#SDK` is implied and you don't have to add the hashtag explicitly
+Note that if the PR is already associated with ticket from one of the SDK board, and thus contains `[SDK-xxx]` or `[SDKS-xxx]`
+in its title, then `#SDK` is implied and you don't have to add the hashtag explicitly.
+The hashtag is only needed for Pull Requests addressing tickets from non-SDK boards but still touching the SDK files.
 
-2. Remind you to **update the `SDK/CHANGELOG.md` document** (intended for our partners) **when you make a significant change to the SDK**
-  - If you made trivial changes to the SDK which you consider don't require to be mentioned in the CHANGELOG for partners, you can add the `#IgnoreSDKChanges` in the PR title to acknowledge that it's ok that the `SDK/CHANGELOG.md` wasn't updated. **When in doubt if a change in SDK needs to be mentioned in the CHANGELOG, ask the `#sdk_squad` in slack**.
-
-
-Context | Mention in PR title | Commit included in SDK CRP ticket? | New entry in CHANGELOG?
----|---|---|---
-This PR didn't touch any (non-test) file in `sdk/*`, nothing related to SDK here | _None_ | 🚫 No | 🚫 No
-This PR made significant SDK changes | `#SDK` (or `[SDK-xxx]`) | ✅ Yes | ✅Yes
-This PR touched `sdk/*` files but it's a false positive (e.g. we just fixed indentation or a typo in a comment) | `#IgnoreSDKChanges` | 🚫 No | 🚫 No
-This PR made SDK changes (which need to appear in CRP) but they are not worth a note in our partner's CHANGELOG | `#SDK ` (or `[SDK-xxx]`) *AND* `#IgnoreSDKChanges` | ✅ Yes | 🚫 No
-
-### Ensure SDK CHANGELOG is updated on PRs releasing the SDK
-
-> * Function: `check_sdk_release_changelog`
-> * Type: ⚠️ warning
-
-This rule ensures that, when we do a **PR to make a public SDK release** (i.e. to merge a `release/sdk/*` branch), **the `SDK/CHANGELOG.md` has been updated**.
-
-Especially that in the top section title we **replace `## x.x.x (TBD)` with the actual version number and release date**.
+_This is needed because of the Change Request Process (CRP) from our sSDLC requirement: any ticket touching code in the SDK needs to be included in the CRP ticket for next SDK release, and that hashtag will allow us to include those tickets automatically._
 
 ## pbxproj checks
 
