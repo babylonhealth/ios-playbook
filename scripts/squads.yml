@@ -86,6 +86,9 @@ team:
     name: Nico Robin
     github: Naiko
     twitter: Naiko
+  - &Nikolay
+    name: Nikolay Marinov
+    github: nikolay-bab
   - &Olivier
     name:  Olivier Halligon
     github: AliSoftware
@@ -182,6 +185,7 @@ squads:
       - *DanielS
       - *Diego
       - *Javier
+      - *Nikolay
   - name: Native Apps Platform
     desc: Engineering work like tooling, CI and development processes.
     members:

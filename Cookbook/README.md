@@ -6,7 +6,7 @@
   - Team Roles
   - Team Structure
   - [Tools and Services](./Technical-Documents/ToolsAndServices.md)
-  - [How to use Slack](./Technical-Documents/HowToUseSlack?.md)
+  - [How to use Slack](./Technical-Documents/HowToUseSlack.md)
   - [GitHub Access](./Technical-Documents/NewHiresCheckList.md#github-access)
   - [Computer set-up](./Technical-Documents/NewHiresCheckList.md#install-prerequisites)
   - [Initial tasks](./Technical-Documents/NewHiresCheckList.md#whats-next)
