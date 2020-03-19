@@ -65,11 +65,12 @@ The rest of the iOS Engineers work in the following squads:
       <tr><td>Vojtech Vrbka</td><td><a href='https://github.com/vojtechvrbka'>@vojtechvrbka</a></td><td><a href='https://twitter.com/vojtechvrbka'>@vojtechvrbka</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Member Comms</strong><br/>Improving how we communicate with our users.</td>
       <td>Viorel Mihalache</td><td><a href='https://github.com/viorel15'>@viorel15</a></td><td><a href='https://twitter.com/viorelMO'>@viorelMO</a></td></tr>
-    <tr><td rowspan='4' valign='top'><strong>Monitor</strong><br/>Help members manage and sustain a healthy lifestyle.</td>
+    <tr><td rowspan='5' valign='top'><strong>Monitor</strong><br/>Help members manage and sustain a healthy lifestyle.</td>
       <td>Daniel Haight</td><td><a href='https://github.com/Daniel1of1'>@Daniel1of1</a></td><td></td></tr>
       <tr><td>Daniel Spindelbauer</td><td><a href='https://github.com/sdaniel55'>@sdaniel55</a></td><td><a href='https://twitter.com/sdaniel55'>@sdaniel55</a></td></tr>
       <tr><td>Diego Petrucci</td><td><a href='https://github.com/diegopetrucci'>@diegopetrucci</a></td><td><a href='https://twitter.com/diegopetrucci'>@diegopetrucci</a></td></tr>
       <tr><td>Javier Hernández</td><td><a href='https://github.com/jaherhi'>@jaherhi</a></td><td></td></tr>
+      <tr><td>Nikolay Marinov</td><td><a href='https://github.com/nikolay-bab'>@nikolay-bab</a></td><td></td></tr>
     <tr><td rowspan='3' valign='top'><strong>Native Apps Platform</strong><br/>Engineering work like tooling, CI and development processes.</td>
       <td>David Rodrigues</td><td><a href='https://github.com/dmcrodrigues'>@dmcrodrigues</a></td><td><a href='https://twitter.com/dmcrodrigues'>@dmcrodrigues</a></td></tr>
       <tr><td>Ilya Puchka</td><td><a href='https://github.com/ilyapuchka'>@ilyapuchka</a></td><td><a href='https://twitter.com/ilyapuchka'>@ilyapuchka</a></td></tr>

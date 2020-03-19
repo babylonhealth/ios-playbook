@@ -1,4 +1,4 @@
-# How to use Slack?
+# How to use Slack
 
 In Babylon we try to be as remote friendly as we can.
 Slack is a tool we rely on to help us communicate with everyone, without having to be physically present.
