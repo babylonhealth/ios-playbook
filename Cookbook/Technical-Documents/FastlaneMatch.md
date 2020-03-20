@@ -44,7 +44,7 @@ For day to day and App Center, we use certificates and profiles from our Enterpr
 
 To troubleshoot, refer to `fastlane/Matchfile`, `fastlane/Appfile` and [documentation](https://docs.fastlane.tools/actions/match/)
 
-Mentioned lanes will download certificates and profiles for all the apps (and their extensions) specificed in Appfile in the `app_config`. You can specify `readonly:false` option if you want the profiles to be regenerated. Not that it will regenerate all invalid profiles for all the apps.
+Mentioned lanes will download certificates and profiles for all the apps (and their extensions) specificed in Appfile in the `app_config`. You can specify `readonly:false` option if you want the profiles to be regenerated. Note that it will regenerate all invalid profiles for all the apps.
 
 ```
 bundle exec fastlane match_enterprise readonly:false
