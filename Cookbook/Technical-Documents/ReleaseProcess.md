@@ -3,7 +3,7 @@
 
 ## 1. Release engineer as a role
 
-  The release engineer responsibilities are, but not limited to:
+The release engineer responsibilities are, but not limited to:
 
 1. Own the entire release process (step-by-step).
 2. Provide visibility of the release, at all stages, to the wider audience (e.g. squad, tribe and iOS chapter lead) by:
@@ -25,8 +25,6 @@ The bug's corresponding feature should be disabled altogether using its feature 
 
 Release duties have priority over regular squad duties. Please inform your squad of your unavailability before starting to work in the release **with at least a sprint's notice**. As with every other week, twenty percent of your work hours overall are to be allocated towards making the release a reality.
 
-
-
 There are usually two release engineers working at any given time. It goes without saying that both engineers need to work together and that constant feedback is vital.
 
 ## 2. Release step-by-step
@@ -37,15 +35,15 @@ There are usually two release engineers working at any given time. It goes witho
 ### Phase 2: Initiation
 *It starts at the end of the sprint (typically when the new sprint starts on Monday)*
 
-1. Release branch is cut automatically on last Friday of the sprint during nightly builds. It will create and push release branch, create a release Slack channel, submit a new appcenter build and run UI tests.
-   * if, for any reason, the automatic cut didn't work it can be triggered manually with `/stevenson release_cutoff target:Babylon` from `#ios-build` channel
+1. Release branch is cut automatically on last Friday of the sprint during nightly builds. It will create and push release branch, create a release Slack channel, submit a new AppCenter build, and run UI tests.
+   * if, for any reason, the automatic cut didn't work it can be triggered manually with `/stevenson release_cutoff target:Babylon version:4.1.0` from `#ios-build` channel
    * If you're releasing another app (e.g. Telus, Bupa, NHS111), since they typically go thru the release process _only_ once the main Babylon app has been signed off by QA, you should create the new branch from the corresponding Babylon release branch that was recently already QA'd and signed off (e.g. `release/babylon/4.1.0`) instead of `develop`, and name your new branch using the same `release/{appname}/{version}` convention (e.g. `release/telus/4.1.0`)
 1. Join the slack channel the QA has created (e.g. `ios_release_4_1_0`) to discuss anything related to this release.
 1. Bump the release version by triggering the Slack command (eg. `/testflight Babylon version:4.1.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
    * This creates a TestFlight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
 1. Trigger the App Center build from that branch using its command (eg. `/appcenter Babylon branch:release/babylon/4.1.0`) in `#ios-build`.
 1. Trigger the full UI automation run by issuing the command `/stevenson ui_tests branch:release/babylon/4.1.0` in `#ios-build`. Review failures and, if necessary, tag the squads responsible for the failing lanes.
-1. For any target other then Babylon(e.g. Telus, Bupa, NHS111): Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
+1. For any target other then Babylon (e.g. Telus, Bupa, NHS111): Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
   1. On the sidebar click `+ Version or Platform` and select `iOS`.
   1. Input the new version number.
     
