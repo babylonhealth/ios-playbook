@@ -132,13 +132,39 @@ At the moment SDK release is handled by the SDK squad itself. As a release engin
 1. Trigger the App Center build from that branch using its command (eg. `/fastlane distribute_sdk version:0.5.0 branch:release/sdk/0.5.0`) in `#ios-build`.
 1. Update the Sample app to point to the latest SDK release and ensure it still compiles
 
-## 4. Release calendar
+## 4 US release process
+
+For the most part, the US and Ascension flavors follow the same release process as the UK.
+
+## Branching
+US release cycles are aligned with the UK's, and we currently work off of the UK release branches. However, the version numbers do not align across apps. For example, UK 4.15.0 corresponded with US 2.2.0. But we do follow the same pattern, incrementing the minor version with each new release unless instructed otherwise. So, release builds generated in the `#ios-build` channel must specify the branch and the version number.
+#####Examples:
+`/testflight BabylonUS branch:release/babylon/4.15.0 version:2.2.0`
+`/appcenter Ascension branch:release/babylon/4.15.0 version:1.5.0`
+
+## QA Distribution
+* Generate a TestFlight build
+* After the TestFlight build has processed (typically takes 1-3 hours), distribute it to the "QA" test group.
+
+**Note:** The first TestFlight build with a new version number will need to be approved by Apple, which can take a day or two. That's why it's ideal to submit on Friday. The builds will typically be approved by Monday. After that, any new build with the same version number should be approved automatically.
+
+* Generate an App Center build
+
+Update tickets in the [release board](https://babylonpartners.atlassian.net/secure/RapidBoard.jspa?rapidView=1079).
+
+## App Store Submission
+In the developer portal, create a new iOS version and update marketing content based on tickets in the release board. Monitor the current US and/or Ascension release channel for QA signoff (these channels are kept private). Once QA has signed off, submit to the App Store using the TestFlight build that was approved by QA.
+
+## Closure
+Tag the commit that the release build was generated from (e.g. `babylonus/2.2.0`, `ascension/1.5.0`). The release commit may not be the latest commit on the release branch because the UK is working off the same branch, fixing bugs (and mostly UI tests).
+
+## 5. Release calendar
 
 Note: Starting 4.18.0, we are no longer keeping track of the release effort in this App Release calendar section.
 
 <details><summary>History of tracked effort for versions up to 4.17.0</summary>
 
-### 4a. App Release calendar
+### 5a. App Release calendar
 
 The release process starts when the first build is provided to QA and ends when Apple has approved the app. Effort to release should be broken down by:
 
@@ -198,6 +224,6 @@ The release process starts when the first build is provided to QA and ends when 
 
 </details>
 
-## 5. Post-mortem
+## 6. Post-mortem
 
 If the release did not go as expected, request a meeting with the iOS team so that the reasons for this failure are analyzed and addressed in order to minimize similar problems in the future.
