@@ -120,6 +120,20 @@ This rule will warn you if any part of the pbxproj references an UUID that got a
 
 When that happens, you need to figure out if the removal of the file was intended as part of your PR (and if so, fix the merge by also removing the lines pointing to that now-deleted file reference), or if the removal of the file from the pbxproj was unintented (and if so, restore it). You could do that by editing the `pbxproj` manually, but if possible it's even better if you can fix it in Xcode (e.g. by removing the offending file from the project and add it again)
 
+## Detect Missing Feedbacks
+
+> * Declared in: `danger-ci/feedbacks.rb`
+> * Function: `check_feedbacks_in_viewmodels`
+> * Type: ⚠️ warning
+
+This rule analyses any `*ViewModel.swift` file created or modified in the PR, and try to determine if any `Feedback` static method was declared but not called.
+This is typically to catch cases when you declare a new `Feedback` in your code but forgot to then add it to the state machine.
+
+This rule uses `sourcekitten` to dump the structure of the Swift code. It uses it to finds all the `static func` returning a `Feedback` declared in your code, then searches for all the method calls in your code to see if that list contains calls to all the `Feedback` methods declared. If it finds a `static func … -> Feedback<…>` method that is never called, it emits a warning.
+
+Note that this rule can have false positives in rare cases. Especially if you use constructs like `obj.map(Self.whenBlah)`, it doesn't detect `whenBlah` as a method call because it is encapsulated inside a `map`. This is why this rule is only a warning.
+(If still detects `Feedbacks` called conditionally though –like `if (cond) { feedbacks += Self.whenBlah() }`– and should still catch the most common cases of forgiving to add a newly-created `Feedback` to the state machine.
+
 ## swiftlint
 
 > * Declared in: `danger-ci/swiftlint.rb`
