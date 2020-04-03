@@ -132,7 +132,8 @@ This is typically to catch cases when you declare a new `Feedback` in your code 
 This rule uses `sourcekitten` to dump the structure of the Swift code. It uses it to finds all the `static func` returning a `Feedback` declared in your code, then searches for all the method calls in your code to see if that list contains calls to all the `Feedback` methods declared. If it finds a `static func … -> Feedback<…>` method that is never called, it emits a warning.
 
 Note that this rule can have false positives in rare cases. Especially if you use constructs like `obj.map(Self.whenBlah)`, it doesn't detect `whenBlah` as a method call because it is encapsulated inside a `map`. This is why this rule is only a warning.
-(If still detects `Feedbacks` called conditionally though –like `if (cond) { feedbacks += Self.whenBlah() }`– and should still catch the most common cases of forgetting to add a newly-created `Feedback` to the state machine.
+
+(It still detects `Feedbacks` called conditionally though – like `if (cond) { feedbacks += Self.whenBlah() }` – and should still catch the most common cases of forgetting to add a newly-created `Feedback` to the state machine)
 
 ## swiftlint
 
