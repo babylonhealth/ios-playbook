@@ -38,15 +38,20 @@ There are usually two release engineers working at any given time. It goes witho
 1. Release branch is cut automatically on last Friday of the sprint during nightly builds. It will create and push release branch, create a release Slack channel, submit a new AppCenter build, and run UI tests.
    * if, for any reason, the automatic cut didn't work, it can be triggered manually with `/stevenson release_cutoff target:Babylon version:4.1.0` from `#ios-build` channel
    * If you're releasing another app (e.g. Telus), since they typically go thru the release process _only_ after the main Babylon app has been signed off by QA, you should create the new branch from the corresponding Babylon release branch that was recently already QA'd and signed off (e.g. `release/babylon/4.1.0`) instead of `develop`, and name your new branch using the same `release/{appname}/{version}` convention (e.g. `release/telus/4.1.0`)
-1. Join the Slack channel the QA has created (e.g. `ios_release_4_1_0`) to discuss anything related to this release.
 
 <details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
 
+1. Create the release branch (e.g. `release/babylon/4.1.0`) from `develop` and publish it
+1. Create a release channel on Slack (e.g. `ios_release_4_1_0`)
+1. Create a PR (e.g. `[CRP-XXX] Babylon Release 4.1.0`), assign the release engineers, and add the `WIP` label
 1. Trigger the App Center build from that branch using its command (e.g. `/appcenter Babylon branch:release/babylon/4.1.0`) in `#ios-build`.
-1. Trigger the full UI automation run by issuing the command `/stevenson ui_tests branch:release/babylon/4.1.0` in `#ios-build`. Review failures and, if necessary, tag the squads responsible for the failing lanes.
+1. Trigger the full UI automation run by issuing the command `/stevenson ui_tests branch:release/babylon/4.1.0` in `#ios-build`.
+1. Run CRP `/crp ios release/babylon/4.1.0` in `#ios-launchpad`
 
 </details>
 
+1. Join the Slack channel e.g. `ios_release_4_1_0`) to discuss anything related to this release.
+1. Review UI test failures and, if necessary, tag the squads responsible for the failing lanes.
 1. Bump the release version by triggering the Slack command (e.g. `/testflight Babylon version:4.1.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
    * This creates a TestFlight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
 1. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
