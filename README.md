@@ -26,7 +26,7 @@ Some of the roles are transverse to all the squads:
   <thead><th>Role</th><th>Engineer</th><th>GitHub</th><th>Twitter</th></thead>
     <tr><td rowspan='2' valign='top'><strong>Chapter Leads</strong></td>
       <td>Ana Catarina Figueiredo</td><td><a href='https://github.com/AnnKatF'>@AnnKatF</a></td><td><a href='https://twitter.com/AnnKatFig'>@AnnKatFig</a></td></tr>
-      <tr><td>David Rodrigues</td><td><a href='https://github.com/dmcrodrigues'>@dmcrodrigues</a></td><td><a href='https://twitter.com/dmcrodrigues'>@dmcrodrigues</a></td></tr>
+      <tr><td>Chitra Kotwani</td><td><a href='https://github.com/chitrakotwani'>@chitraKotwani</a></td><td><a href='https://twitter.com/ChitraKotwani'>@ChitraKotwani</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Squad Tech Leads</strong></td>
       <td>Michael Brown</td><td><a href='https://github.com/mluisbrown'>@mluisbrown</a></td><td><a href='https://twitter.com/mluisbrown'>@mluisbrown</a></td></tr>
 </table>
@@ -48,7 +48,7 @@ The rest of the iOS Engineers work in the following squads:
       <td>Sergey Shulga</td><td><a href='https://github.com/sergdort'>@sergdort</a></td><td><a href='https://twitter.com/SergDort'>@SergDort</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Appointments 1</strong><br/>Face to face appointment booking.</td>
       <td>Witold Skibniewski</td><td><a href='https://github.com/mr-v'>@mr-v</a></td><td></td></tr>
-    <tr><td rowspan='3' valign='top'><strong>Appointments 2</strong><br/>Digital appointment booking.</td>
+    <tr><td rowspan='3' valign='top'><strong>Appointments 2</strong><br/>Digital appointments.</td>
       <td>Adrian Śliwa</td><td><a href='https://github.com/adiki'>@adiki</a></td><td><a href='https://twitter.com/adiki91'>@adiki91</a></td></tr>
       <tr><td>Chitra Kotwani</td><td><a href='https://github.com/chitrakotwani'>@chitrakotwani</a></td><td><a href='https://twitter.com/chitrakotwani'>@chitrakotwani</a></td></tr>
       <tr><td>Nico Robin</td><td><a href='https://github.com/Naiko'>@Naiko</a></td><td><a href='https://twitter.com/Naiko'>@Naiko</a></td></tr>
@@ -72,7 +72,6 @@ The rest of the iOS Engineers work in the following squads:
       <tr><td>Javier Hernández</td><td><a href='https://github.com/jaherhi'>@jaherhi</a></td><td></td></tr>
       <tr><td>Nikolay Marinov</td><td><a href='https://github.com/nikolay-bab'>@nikolay-bab</a></td><td></td></tr>
     <tr><td rowspan='3' valign='top'><strong>Native Apps Platform</strong><br/>Engineering work like tooling, CI and development processes.</td>
-      <td>David Rodrigues</td><td><a href='https://github.com/dmcrodrigues'>@dmcrodrigues</a></td><td><a href='https://twitter.com/dmcrodrigues'>@dmcrodrigues</a></td></tr>
       <tr><td>Ilya Puchka</td><td><a href='https://github.com/ilyapuchka'>@ilyapuchka</a></td><td><a href='https://twitter.com/ilyapuchka'>@ilyapuchka</a></td></tr>
       <tr><td>Olivier Halligon</td><td><a href='https://github.com/AliSoftware'>@AliSoftware</a></td><td><a href='https://twitter.com/aligatr'>@aligatr</a></td></tr>
     <tr><td rowspan='2' valign='top'><strong>Prescriptions</strong><br/>Prescriptions functionality.</td>
@@ -84,15 +83,12 @@ The rest of the iOS Engineers work in the following squads:
       <td>Yuri Karabatov</td><td><a href='https://github.com/karabatov'>@karabatov</a></td><td><a href='https://twitter.com/karabatov'>@karabatov</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>SDK</strong><br/>Updating and maintaining the SDK.</td>
       <td>Michał Kwiecień</td><td><a href='https://github.com/MichalTKwiecien'>@MichalTKwiecien</a></td><td><a href='https://twitter.com/kwiecien_co'>@kwiecien_co</a></td></tr>
-    <tr><td rowspan='1' valign='top'><strong>Tenancy & Features</strong><br/>To integrate the new feature configurator.</td>
-      <td>Anil Puttabuddhi</td><td><a href='https://github.com/anilputtabuddhi'>@anilputtabuddhi</a></td><td></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Triage</strong><br/>Chatbot functionality.</td>
       <td>Danilo Aliberti</td><td><a href='https://github.com/daniloaliberti'>@daniloaliberti</a></td><td></td></tr>
     <tr><td rowspan='4' valign='top'><strong>US Professional Services</strong><br/>Features for app in the US.</td>
       <td>Ben Henshall</td><td><a href='https://github.com/Ben-Henshall'>@Ben-Henshall</a></td><td><a href='https://twitter.com/ben_henshall'>@ben_henshall</a></td></tr>
       <tr><td>Joshua Simmons</td><td><a href='https://github.com/j531'>@j531</a></td><td></td></tr>
       <tr><td>Patrick Westmeyer</td><td><a href='https://github.com/bh-pwestmeyer'>@bh-pwestmeyer</a></td><td></td></tr>
-      <tr><td>Sam Francis</td><td><a href='https://github.com/SamFrancis-Babylon'>@SamFrancis-Babylon</a></td><td></td></tr>
 </table>
 <!-- end:squads -->
 
