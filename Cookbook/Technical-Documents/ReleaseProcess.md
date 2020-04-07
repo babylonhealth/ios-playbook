@@ -36,14 +36,20 @@ There are usually two release engineers working at any given time. It goes witho
 *It starts at the end of the sprint (typically when the new sprint starts on Monday)*
 
 1. Release branch is cut automatically on last Friday of the sprint during nightly builds. It will create and push release branch, create a release Slack channel, submit a new AppCenter build, and run UI tests.
-   * if, for any reason, the automatic cut didn't work it can be triggered manually with `/stevenson release_cutoff target:Babylon version:4.1.0` from `#ios-build` channel
-   * If you're releasing another app (e.g. Telus, NHS111), since they typically go thru the release process _only_ after the main Babylon app has been signed off by QA, you should create the new branch from the corresponding Babylon release branch that was recently already QA'd and signed off (e.g. `release/babylon/4.1.0`) instead of `develop`, and name your new branch using the same `release/{appname}/{version}` convention (e.g. `release/telus/4.1.0`)
+   * if, for any reason, the automatic cut didn't work, it can be triggered manually with `/stevenson release_cutoff target:Babylon version:4.1.0` from `#ios-build` channel
+   * If you're releasing another app (e.g. Telus), since they typically go thru the release process _only_ after the main Babylon app has been signed off by QA, you should create the new branch from the corresponding Babylon release branch that was recently already QA'd and signed off (e.g. `release/babylon/4.1.0`) instead of `develop`, and name your new branch using the same `release/{appname}/{version}` convention (e.g. `release/telus/4.1.0`)
 1. Join the Slack channel the QA has created (e.g. `ios_release_4_1_0`) to discuss anything related to this release.
-1. Bump the release version by triggering the Slack command (e.g. `/testflight Babylon version:4.1.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
-   * This creates a TestFlight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
+
+<details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
+
 1. Trigger the App Center build from that branch using its command (e.g. `/appcenter Babylon branch:release/babylon/4.1.0`) in `#ios-build`.
 1. Trigger the full UI automation run by issuing the command `/stevenson ui_tests branch:release/babylon/4.1.0` in `#ios-build`. Review failures and, if necessary, tag the squads responsible for the failing lanes.
-1. For any target other than Babylon (e.g. Telus, NHS111): Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
+
+</details>
+
+1. Bump the release version by triggering the Slack command (e.g. `/testflight Babylon version:4.1.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
+   * This creates a TestFlight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
+1. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
   1. On the sidebar click `+ Version or Platform` and select `iOS`.
   1. Input the new version number.
 
@@ -75,7 +81,7 @@ During this stage, the **release manager** has the following tasks:
 	* ❗️NOTE: Remember to submit compliance info for that build
 	* If you are asked about **"Export Compliance Information"** check what to do [here](https://babylonpartners.atlassian.net/wiki/spaces/IOS/pages/247169186/Release+Process)
 1. Perform a quick exploratory test on the TestFlight build to make sure everything looks okay. (e.g. verifying that DigitalTwin Assets are visible and are not dropped due to Git LFS issues)
-1. By now, QA should be notified that there is a new version in TestFlight.
+1. By now, QA should have been notified that there is a new version in TestFlight.
 
 ### Phase 5: Submit for release in App Store Connect
 *It starts after QA has signed off a particular build and can take several cycles until Apple's approval*
@@ -103,7 +109,6 @@ Most of the steps for this phase have been automated using the `finish_release` 
     <details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
 
     1. Send the build to TestFlight Beta (external testing). Select the `External Testers` group.
-
     1. Create a tag named `{appname}/{version}` (e.g. `babylon/4.1.0`) on the release commit and create a GitHub release for that new tag
        * Make sure you create separate tags (and GitHub releases) for each app released on the AppStore (eg. Babylon 4.1.0 and Telus 4.1.0 would each have their own `babylon/4.1.0` and `telus/4.1.0` tags)
        * Set the body of the GitHub release to the content of the Release Notes for the app
@@ -112,9 +117,9 @@ Most of the steps for this phase have been automated using the `finish_release` 
     </details>
 
 1. Merge `release` branch back to `develop`:
-   * Open the Release PR ( PR from `release` branch targeting `develop`) which has been automatically created.
+   * Open the Release PR (PR from `release` branch targeting `develop`) which has been automatically created.
    * Resolve the conflicts (if any).
-   * In case there are changes other than updates to app and build versions after merging the changes from `develop`, the release engineer should assign as reviewers all the engineers who worked on those changes and remove the ones automatically assigned by PullAssigners. In current workflow every change integrated to release branch is supposed to be go into `develop` soon after, so differences should be minimal. Any differences might be a result of resolving conflicts or a hotfix PR not being merged previously to `develop`.
+   * In case there are changes other than updates to app and build versions after merging the changes from `develop`, the release engineer should assign as reviewers all the engineers who worked on those changes and remove the ones automatically assigned. In current workflow every change integrated to release branch is supposed to be go into `develop` soon after, so there shouldn't be any changes. Any differences might be a result of resolving conflicts, or a hotfix PR not being merged previously to `develop`.
    * Set the _Merge_ label once all the required reviewers have approved it.
 1. Update this document if any steps during the release process have changed.
 
