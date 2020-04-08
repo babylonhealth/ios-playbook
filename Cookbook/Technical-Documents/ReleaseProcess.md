@@ -39,32 +39,31 @@ There are usually two release engineers working at any given time. It goes witho
    * if, for any reason, the automatic cut didn't work, it can be triggered manually with `/stevenson release_cutoff target:Babylon version:4.1.0` from `#ios-build` channel
    * If you're releasing another app (e.g. Telus), since they typically go thru the release process _only_ after the main Babylon app has been signed off by QA, you should create the new branch from the corresponding Babylon release branch that was recently already QA'd and signed off (e.g. `release/babylon/4.1.0`) instead of `develop`, and name your new branch using the same `release/{appname}/{version}` convention (e.g. `release/telus/4.1.0`)
 
-<details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
+	<details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
 
-1. Create the release branch (e.g. `release/babylon/4.1.0`) from `develop` and publish it
-1. Create a release channel on Slack (e.g. `ios_release_4_1_0`)
-1. Create a PR (e.g. `[CRP-XXX] Babylon Release 4.1.0`), assign the release engineers, and add the `WIP` label
-1. Trigger the App Center build from that branch using its command (e.g. `/appcenter Babylon branch:release/babylon/4.1.0`) in `#ios-build`.
-1. Trigger the full UI automation run by issuing the command `/stevenson ui_tests branch:release/babylon/4.1.0` in `#ios-build`.
-1. Run CRP `/crp ios release/babylon/4.1.0` in `#ios-launchpad`
+	1. Create the release branch (e.g. `release/babylon/4.1.0`) from `develop` and publish it
+	1. Create a release channel on Slack (e.g. `ios_release_4_1_0`)
+	1. Create a PR (e.g. `[CRP-XXX] Babylon Release 4.1.0`), assign the release engineers, and add the `WIP` label
+	1. Trigger the App Center build from that branch using its command (e.g. `/appcenter Babylon branch:release/babylon/4.1.0`) in `#ios-build`.
+	1. Trigger the full UI automation run by issuing the command `/stevenson ui_tests branch:release/babylon/4.1.0` in `#ios-build`.
+	1. Run CRP `/crp ios release/babylon/4.1.0` in `#ios-launchpad`
 
-</details>
-
-1. Join the Slack channel e.g. `ios_release_4_1_0`) to discuss anything related to this release.
-1. Review UI test failures and, if necessary, tag the squads responsible for the failing lanes.
-1. Bump the release version by triggering the Slack command (e.g. `/testflight Babylon version:4.1.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
+	</details>
+2. Join the Slack channel e.g. `ios_release_4_1_0`) to discuss anything related to this release.
+3. Review UI test failures and, if necessary, tag the squads responsible for the failing lanes.
+4. Bump the release version by triggering the Slack command (e.g. `/testflight Babylon version:4.1.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
    * This creates a TestFlight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
-1. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
+5. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
   1. On the sidebar click `+ Version or Platform` and select `iOS`.
   1. Input the new version number.
 
 During this stage, the **release manager** has the following tasks:
 
-  1. Ensure the CRP ticket is up-to-date
+1. Ensure the CRP ticket is up-to-date
      * The CRP ticket is created automatically for iOS during release cutoff ([see details here](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/Process/Release%20process/CRP-Bot.md))
      * But they need to ensure all tickets have had their Fix Version field updated as expected (see the CRP report)
      * They also need to manually complete the CRP ticket with some additional information (clinical risk, etc)
- 1. Ask the `#ios-launchpad` channel for the expected release notes from each squad if they are releasing anything.
+1. Ask the `#ios-launchpad` channel for the expected release notes from each squad if they are releasing anything.
 
 
 ### Phase 3: Test and fix bugs
@@ -96,11 +95,13 @@ This process is now automated using the `submit_for_review` lane. Just trigger t
 <details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
 
 1. Make sure *Manually release this version* is selected in `Version Release`.
-2. Select *Use phased release*
+1. Select *Use phased release*
+1. Select build to submit for review
 3. When submitting to release, you are asked if the app uses the Advertising Identifier (IDFA). The answer is YES. You are then presented with three options please select as followed:
 	1. 🚫 Serve advertisements within the app
-	2. ✅ Attribute this app installation to a previously served advertisement
-	3. ✅ Attribute an action taken within this app to a previously served advertisement
+	1. ✅ Attribute this app installation to a previously served advertisement
+	1. ✅ Attribute an action taken within this app to a previously served advertisement
+	1. ✅ `Limit Ad Tracking setting in iOS`
 </details>
 
 ### Phase 6: Closure
@@ -139,33 +140,33 @@ The hotfix is cut from the latest stable release (e.g. `4.1.1` from `4.1.0`).
 
 1. Trigger manually with `/stevenson release_cutoff target:Babylon version:4.1.1 branch:release/babylon/4.1.0` from `#ios-build` channel
 
-<details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
+	<details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
 
-1. Create the hotfix release branch (e.g. `release/babylon/4.1.1`) from the last released tag and publish it
-1. Create a release channel on Slack (e.g. `ios_release_4_1_1`)
-1. Create a PR (e.g. `[CRP-XXX] Babylon Release 4.1.1`), assign the release engineers, and add the `WIP` label
-1. Trigger the App Center build from that branch using its command (e.g. `/appcenter Babylon branch:release/babylon/4.1.1`) in `#ios-build`.
-1. Trigger the full UI automation run by issuing the command `/stevenson ui_tests branch:release/babylon/4.1.1` in `#ios-build`.
-1. Run CRP `/crp ios release/babylon/4.1.1` in `#ios-launchpad`
-	* **⚠️ NOTE:** Only run the CRP after the previous release has been finished. In order to run the CRP, the GitHub release/tab need to exist, otherwise it will include unrelated tickets.
+	1. Create the hotfix release branch (e.g. `release/babylon/4.1.1`) from the last released tag and publish it
+	1. Create a release channel on Slack (e.g. `ios_release_4_1_1`)
+	1. Create a PR (e.g. `[CRP-XXX] Babylon Release 4.1.1`), assign the release engineers, and add the `WIP` label
+	1. Trigger the App Center build from that branch using its command (e.g. `/appcenter Babylon branch:release/babylon/4.1.1`) in `#ios-build`.
+	1. Trigger the full UI automation run by issuing the command `/stevenson ui_tests branch:release/babylon/4.1.1` in `#ios-build`.
+	1. Run CRP `/crp ios release/babylon/4.1.1` in `#ios-launchpad`
+		* **⚠️ NOTE:** Only run the CRP after the previous release has been finished. In order to run the CRP, the GitHub release/tab need to exist, otherwise it will include unrelated tickets.
 
-</details>
+	</details>
 
-1. Join the Slack channel (e.g. `ios_release_4_1_1`) to discuss anything related to this release.
-1. Bump the release version by triggering the Slack command (e.g. `/testflight Babylon version:4.1.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
+2. Join the Slack channel (e.g. `ios_release_4_1_1`) to discuss anything related to this release.
+3. Bump the release version by triggering the Slack command (e.g. `/testflight Babylon version:4.1.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
    * This creates a TestFlight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
-1. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
+4. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
   1. On the sidebar click `+ Version or Platform` and select `iOS`.
   1. Input the new version number.
   * Note: this can be only done after the previous release has been completed
 
 During this stage, the **release manager** has the following tasks:
 
-  1. Ensure the CRP ticket is up-to-date
+1. Ensure the CRP ticket is up-to-date
      * The CRP ticket is created automatically for iOS during release cutoff ([see details here](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/Process/Release%20process/CRP-Bot.md))
      * But they need to ensure all tickets have had their Fix Version field updated as expected (see the CRP report)
      * They also need to manually complete the CRP ticket with some additional information (clinical risk, etc)
- 1. Ask the `#ios-launchpad` channel for the expected release notes from each squad if they are releasing anything.
+1. Ask the `#ios-launchpad` channel for the expected release notes from each squad if they are releasing anything.
 
 The rest of the steps are the same as for the regular release.
 
