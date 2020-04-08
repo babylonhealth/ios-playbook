@@ -8,7 +8,7 @@
 Instead of using custom decoding methods as we do now we propose to use property wrappers which allows to write custom decoding code only for these wrappers and leave the rest for compiler.
 As a matter of fact we already have such "wrappers" in our code base, but they are not annotated with `@propertyWrapper` as they were introduced to our code base before this feature became available in Swift. Examples of such wrappers are `ISO8601Date`, `NestedKeyDecodable`, `FailableDecodable`, `NotEmptyDecodable` etc.
 
-Ideally we this approach we would be able to get rid of all custom decoding/encoding methods. Which not only decreases amount of boilerplate but also makes the code easier to understand.
+Ideally with this approach we would be able to get rid of all custom decoding/encoding methods. This not only decreases amount of boilerplate but also makes the code easier to understand.
 
 ## Motivation
 
@@ -151,5 +151,7 @@ This might be a good way to unify the approach, but it's a bit harder to read an
 ### References
 
 https://github.com/gonzalezreal/DefaultCodable
+
 https://github.com/GottaGetSwifty/CodableWrappers
+
 https://github.com/dgrzeszczak/KeyedCodable
