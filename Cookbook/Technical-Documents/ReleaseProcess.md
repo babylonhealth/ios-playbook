@@ -114,7 +114,6 @@ Most of the steps for this phase have been automated using the `finish_release` 
 
     <details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
 
-    1. Send the build to TestFlight Beta (external testing). Select the `External Testers` group.
     1. Create a tag named `{appname}/{version}` (e.g. `babylon/4.1.0`) on the release commit and create a GitHub release for that new tag
        * Make sure you create separate tags (and GitHub releases) for each app released on the AppStore (eg. Babylon 4.1.0 and Telus 4.1.0 would each have their own `babylon/4.1.0` and `telus/4.1.0` tags)
        * Set the body of the GitHub release to the content of the Release Notes for the app
