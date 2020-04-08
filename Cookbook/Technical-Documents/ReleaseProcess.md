@@ -190,8 +190,9 @@ For the most part, the US and Ascension flavors follow the same release process 
 US release cycles are aligned with the UK's, and we currently work off of the UK release branches. However, the version numbers do not align across apps. For example, UK `4.15.0` corresponded with US `2.2.0`. But we do follow the same pattern, incrementing the minor version with each new release unless instructed otherwise. Release builds generated in the `#ios-build` channel must specify the branch and the version number.
 
 #### Examples:
-`/testflight BabylonUS branch:release/babylon/4.15.0 version:2.2.0`
-`/appcenter Ascension branch:release/babylon/4.15.0 version:1.5.0`
+
+- `/testflight BabylonUS branch:release/babylon/4.15.0 version:2.2.0`
+- `/appcenter Ascension branch:release/babylon/4.15.0 version:1.5.0`
 
 ### QA Distribution
 
