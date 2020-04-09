@@ -133,11 +133,11 @@ Most of the steps for this phase have been automated using the `finish_release` 
 
 ### Phase 1: Initiation
 
-The hotfix is cut from the latest stable release (e.g. `4.1.1` from `4.1.0`).
+The hotfix is cut from the latest stable/hotfix release tag (e.g. `4.1.1` from `4.1.0`, or `4.1.2` from `4.1.1`).
 
-**⚠️ NOTE:** Only run the automated process if the main release has been finished. In order to run the CRP, the GitHub release/tab need to exist, otherwise it will include unrelated tickets.
+**⚠️ NOTE:** Only run the automated process if the previous release has been finished. In order to run the CRP, the GitHub release/tab need to exist, otherwise it will include unrelated tickets.
 
-1. Trigger manually with `/stevenson release_cutoff target:Babylon version:4.1.1 branch:release/babylon/4.1.0` from `#ios-build` channel
+1. Trigger manually with `/stevenson release_cutoff target:Babylon version:4.1.1 branch:{hash of last release tag}` from `#ios-build` channel
 
 	<details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
 
