@@ -48,15 +48,15 @@ There are usually two release engineers working at any given time. It goes witho
 1. For any target other then Babylon(e.g. Telus, Bupa, NHS111): Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
   1. On the sidebar click `+ Version or Platform` and select `iOS`.
   1. Input the new version number.
-    
+
 During this stage, the **release manager** has the following tasks:
 
   1. Ensure the CRP ticket is up-to-date
      * The CRP ticket is created automatically for iOS during release cutoff ([see details here](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/Process/Release%20process/CRP-Bot.md))
      * But they need to ensure all tickets have had their Fix Version field updated as expected (see the CRP report)
-     * They also need to manually complete the CRP ticket with some additional information (clinical risk, etc)	
+     * They also need to manually complete the CRP ticket with some additional information (clinical risk, etc)
  1. Ask the `#ios-launchpad` channel for the expected release notes from each squad if they are releasing anything.
-  
+
 
 ### Phase 3: Test and fix bugs
 *It starts after the App Center build has been delivered and it can take several cycles*
@@ -84,13 +84,10 @@ During this stage, the **release manager** has the following tasks:
 This process is now automated using the `submit_for_review` lane. Just trigger the lane from the `#ios-build` channel using `/stevenson fastlane submit_for_review target:<target> build:<testflight_build>`.
 
 <details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
-	
+
 1. Make sure *Manually release this version* is selected in `Version Release`.
 2. Select *Use phased release*
-3. When submitting to release, you are asked if the app uses the Advertising Identifier (IDFA). The answer is YES. You are then presented with three options please select as followed:
-	1. 🚫 Serve advertisements within the app
-	2. ✅ Attribute this app installation to a previously served advertisement
-	3. ✅ Attribute an action taken within this app to a previously served advertisement
+3. If you are asked about **"Advertising Identifier (IDFA)"** check what to do [here](https://babylonpartners.atlassian.net/wiki/spaces/IOS/pages/247169186/Release+Process)
 </details>
 
 ### Phase 6: Closure
@@ -108,7 +105,7 @@ Most of the steps for this phase have been automated using the `finish_release` 
        * Make sure you create separate tags (and GitHub releases) for each app released on the AppStore (eg. Babylon 4.1.0 and Telus 4.1.0 would each have their own `babylon/4.1.0` and `telus/4.1.0` tags)
        * Set the body of the GitHub release to the content of the Release Notes for the app
        * Attach the zipped `xcarchive` as an artefact to the GitHub release (if you're using the automated release command, you can find the `*.xcarchive.zip` in the Artifacts top section in the CI build).
-   
+
     </details>
 
 1. Merge `release` branch back to `develop`:
