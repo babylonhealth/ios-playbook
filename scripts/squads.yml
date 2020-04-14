@@ -12,9 +12,6 @@ team:
     name: Adrian Śliwa
     github: adiki
     twitter: adiki91
-  - &Anil
-    name: Anil Puttabuddhi
-    github: anilputtabuddhi
   - &Ben
     name: Ben Henshall
     github: Ben-Henshall
@@ -37,10 +34,6 @@ team:
   - &Danilo
     name: Danilo Aliberti
     github: daniloaliberti
-  - &David
-    name: David Rodrigues
-    github: dmcrodrigues
-    twitter: dmcrodrigues
   - &Diego
     name: Diego Petrucci
     github: diegopetrucci
@@ -96,9 +89,6 @@ team:
   - &Patrick
     name: Patrick Westmeyer
     github: bh-pwestmeyer
-  - &Sam
-    name: Sam Francis
-    github: SamFrancis-Babylon
   - &Sergey
     name: Sergey Shulga
     github: sergdort
@@ -114,10 +104,6 @@ team:
   - &Witold
     name: Witold Skibniewski
     github: mr-v
-  - &Vojtech
-    name: Vojtech Vrbka
-    github: vojtechvrbka
-    twitter: vojtechvrbka
   - &Yuri
     name: Yuri Karabatov
     github: karabatov
@@ -131,7 +117,7 @@ roles:
   - name: Chapter Leads
     members:
       - *Catarina
-      - *David
+      - *Chitra
   - name: Squad Tech Leads
     members:
       - *Michael
@@ -150,7 +136,7 @@ squads:
     members:
       - *Witold
   - name: Appointments 2
-    desc: Digital appointment booking.
+    desc: Digital appointments
     members:
       - *Adrian
       - *Chitra
@@ -173,7 +159,6 @@ squads:
     members:
       - *Giorgos
       - *Michael
-      - *Vojtech
   - name: Member Comms
     desc: Improving how we communicate with our users.
     members:
@@ -189,7 +174,6 @@ squads:
   - name: Native Apps Platform
     desc: Engineering work like tooling, CI and development processes.
     members:
-      - *David
       - *Ilya
       - *Olivier
   - name: Prescriptions
@@ -209,10 +193,6 @@ squads:
     desc: Updating and maintaining the SDK.
     members:
       - *Michal
-  - name: Tenancy & Features
-    desc: To integrate the new feature configurator.
-    members:
-      - *Anil
   - name: Triage
     desc: Chatbot functionality.
     members:
@@ -223,4 +203,3 @@ squads:
       - *Ben
       - *Joshua
       - *Patrick
-      - *Sam

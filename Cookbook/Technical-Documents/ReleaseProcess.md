@@ -64,7 +64,7 @@ During this stage, the **release manager** has the following tasks:
      * The CRP ticket is created automatically for iOS during release cutoff ([see details here](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/Process/Release%20process/CRP-Bot.md))
      * But they need to ensure all tickets have had their Fix Version field updated as expected (see the CRP report)
      * They also need to manually complete the CRP ticket with some additional information (clinical risk, etc)
-1. Ask the `#ios-launchpad` channel for the expected release notes from each squad if they are releasing anything.
+1. Ask the `#ios-launchpad` channel for the expected release notes from each squad if they are releasing anything
 
 
 ### Phase 3: Test and fix bugs
@@ -98,11 +98,8 @@ This process is now automated using the `submit_for_review` lane. Just trigger t
 1. Make sure *Manually release this version* is selected in `Version Release`.
 1. Select *Use phased release*
 1. Select build to submit for review
-3. When submitting to release, you are asked if the app uses the Advertising Identifier (IDFA). The answer is YES. You are then presented with three options please select as followed:
-	1. 🚫 Serve advertisements within the app
-	1. ✅ Attribute this app installation to a previously served advertisement
-	1. ✅ Attribute an action taken within this app to a previously served advertisement
-	1. ✅ `Limit Ad Tracking setting in iOS`
+1. If you are asked about **"Advertising Identifier (IDFA)"** check what to do [here](https://babylonpartners.atlassian.net/wiki/spaces/IOS/pages/247169186/Release+Process)
+
 </details>
 
 ### Phase 6: Closure
