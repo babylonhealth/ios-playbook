@@ -87,6 +87,7 @@ This process is now automated using the `submit_for_review` lane. Just trigger t
 
 1. Make sure *Manually release this version* is selected in `Version Release`.
 2. Select *Use phased release*
+3. If you are asked about **"Advertising Identifier (IDFA)"** check what to do [here](https://babylonpartners.atlassian.net/wiki/spaces/IOS/pages/247169186/Release+Process)
 </details>
 
 ### Phase 6: Closure
