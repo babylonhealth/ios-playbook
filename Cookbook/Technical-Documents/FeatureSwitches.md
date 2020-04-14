@@ -73,8 +73,8 @@ All static configuration properties and feature switches should be declared in t
             }
 
             @LocalFeatureSwitch(key: Keys.isMyFeatureEnabled)
-                var isMyFeatureEnabled: Bool
-            }
+            var isMyFeatureEnabled: Bool
+        }
     }
 	```
 	
@@ -132,7 +132,7 @@ All static configuration properties and feature switches should be declared in t
     ```swift
     extension ProductConfig {
         public var myFeature: ProductConfigKeyPath<MyFeautre> {
-	    // define key path using a feature key in a product config manifest
+            // define key path using a feature key in a product config manifest
             ProductConfigKeyPath(key: "my_feature")
         }
 
