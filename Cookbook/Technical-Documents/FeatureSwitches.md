@@ -132,7 +132,8 @@ All static configuration properties and feature switches should be declared in t
     ```swift
     extension ProductConfig {
         public var myFeature: ProductConfigKeyPath<MyFeautre> {
-            ProductConfigKeyPath(key: "myFeature")
+	    // define key path using a feature key in a product config manifest
+            ProductConfigKeyPath(key: "my_feature")
         }
 
         public struct MyFeature: ProductConfigProperty {
@@ -168,8 +169,8 @@ All static configuration properties and feature switches should be declared in t
             }
 
             @RemoteFeatureSwitch(key: Keys.isMyFeatureEnabled)
-                var isMyFeatureEnabled: Bool
-            }
+            var isMyFeatureEnabled: Bool
+        }
     }
     ```
 
@@ -192,8 +193,7 @@ All static configuration properties and feature switches should be declared in t
             enum MyTest: String { case variation1, variation2 }
 
             @ABTest(key: Keys.myTest, default: .variation1)
-                var myTest: MyTest
-            }
+            var myTest: MyTest
         }
     }
     ```
