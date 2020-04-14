@@ -104,18 +104,18 @@ All static configuration properties and feature switches should be declared in t
 
 	Static configuration exists to specify application specific configurations, i.e. if a feature should be enabled or completely disabled for a specific app or if it should use a different content. To define a new static configuration you should add a new property to the `Configuration` struct in the appropriated Feature Module. If the flag is related to a specific feature then it might be better to define it in the dedicated configuration struct/protocol, i.e. if the flag is related to `Appointments` we have `AppointmentsContentProtocol` for this purpose.
 	
-	```swift
+    ```swift
     public struct MapsUI: FeatureModule {
         ...
         public struct Configuration {
             let myConfiguration: Bool
 
-	    public init(myConfiguration: Bool) {
-	        self.myConfiguration = myConfiguration
+            public init(myConfiguration: Bool) {
+                self.myConfiguration = myConfiguration
             }
         }
     }
-        ```
+    ```
 	
 	You can then refer this property as `Current.maps.myConfiguration`.
 	
