@@ -60,14 +60,14 @@ Reviewing a Pull Request
 * Do not comment if you don't have any suggestions to address your comment
 * Use GitHub suggestions as much as possible
 * If you feel strong against the change - request changes and explain why you are doing that. Do not request changes for typos, missing documentation comments or code style violations, trust your colleagues to address them.
-* Approve changes if you are confident about them. 
-* If you are the first reviewer to approve the changes add the label "Needs one reviewer" so that others can see which PRs already have a feedback and which don't have any yet.
 * Comment on the changes if something is not clear to you and needs further clarification or actions
 * If you are not familiar with the domain ask for more context (better directly to the author) rather than skipping to something more familiar
 * Ask, don't tell. ("What do you think about...?", "How about ...?", "Should we try ...?")
 * Be brief but clear in your comments (code review is not about proving who is more correct or knows more)
 * Unless explicitly asked for it do not suggest code to be written in a specific way - let the author to find or suggest a solution themselves, they may come up with a better one
 * Submit all the comments as a single review, even if there is just one comment
+* Approve changes if you are confident about them.
+* If you are the first person to approve the changes, our bot will automatically add the label "Needs one reviewer" after your review.
 * If you see a stale pull request without any updates - ask for the status update in the comment
 * Do not be a blocker - if you requested changes and they were addressed make sure you review it
 * Do not merge others pull requests - they may be waiting for someone else review. In general, the PR author should be the one adding the "Merge" label to merge their own PRs (except rare cases like if the author is on holidays but the PR is otherwise good to go)
@@ -96,7 +96,7 @@ PR Parties
 
 To improve collaboration, we take time to review pull request together in small groups every week. This is what we call "PR parties".
 
-- Each group should include at least one senior developer. 
+- Each group should include at least one senior developer.
 - Each group will have a few pull requests assigned to them
 - When done with their assigned PRs, the group is free to review something else (i.e. each other's pull requests) or finish the meeting
 
