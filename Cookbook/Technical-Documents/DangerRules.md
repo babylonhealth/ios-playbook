@@ -9,6 +9,10 @@ If you plan to add a new Danger rule:
  * Please follow the naming convention of starting the functions implementing the rules with `check_`
  * Make sure you keep the main `Dangerfile` clean: the main file is supposed to only call `check_*` functions defined in other files, not to contain actual rule implementations
  * Make sure you document the new rule here
+ 
+For a more in-depth presentation about Danger and how it works, see [these slides](https://docs.google.com/presentation/d/1bkVNxplnjchkQZ1-CaqUrcfMioRiNeYtyAKmJpnIx2I/) (private company shared Drive).
+
+The [Danger website](https://danger.systems/ruby/) also has a pretty detailed documentation (especially look at the links to list of Guides and the DSL reference at the very bottom of the page).
 
 ## Danger documentation updates
 
