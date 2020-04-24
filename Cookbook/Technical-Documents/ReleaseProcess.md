@@ -38,7 +38,7 @@ There are usually two release engineers working at any given time. It goes witho
 
 1. Release branch is cut automatically on last Friday of the sprint during nightly builds. It will create and push release branch, create a release Slack channel, submit a new AppCenter build, and run UI tests.
    * if, for any reason, the automatic cut didn't work, it can be triggered manually with `/stevenson release_cutoff target:Babylon version:4.1.0` from `#ios-build` channel
-   * If you're releasing another app (e.g. Telus), since they typically go thru the release process _only_ after the main Babylon app has been signed off by QA, you should create the new branch from the corresponding Babylon release branch that was recently already QA'd and signed off (e.g. `release/babylon/4.1.0`) instead of `develop`, and name your new branch using the same `release/{appname}/{version}` convention (e.g. `release/telus/4.1.0`). To do this, run `/stevenson release_cutoff branch:release/babylon/4.1.0 target:Telus`
+   * If you're releasing another app (e.g. Telus), since they typically go thru the release process _only_ after the main Babylon app has been signed off by QA, you should create the new branch from the corresponding Babylon release branch that was recently already QA'd and signed off (e.g. `release/babylon/4.1.0`) instead of `develop`, and name your new branch using the same `release/{appname}/{version}` convention (e.g. `release/telus/4.1.0`). To do this, run `/stevenson release_cutoff branch:release/babylon/4.1.0 version:4.1.0 target:Telus` (you need to specify both the branch and the version so that the script don't bump the version to 4.2.0 by default when cutting the branch)
 
 	<details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
 
@@ -47,7 +47,7 @@ There are usually two release engineers working at any given time. It goes witho
 	1. Create a PR (e.g. `[CRP-XXX] Babylon Release 4.1.0`), assign the release engineers, and add the `WIP` label
 	1. Trigger the App Center build from that branch using its command (e.g. `/appcenter Babylon branch:release/babylon/4.1.0`) in `#ios-build`.
 	1. Trigger the full UI automation run by issuing the command `/stevenson ui_tests branch:release/babylon/4.1.0` in `#ios-build`.
-	1. Run CRP `/crp ios release/babylon/4.1.0` in `#ios-launchpad`, then edit the PR ticket title to update the `[CRP-XXX]` with the actual CRP ticket number created by this command. If the bot returns errors, you can find more info about them in the [CRP Bot](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/Process/Release%20process/CRP-Bot.md) document.
+	1. Run CRP `/crp ios release/babylon/4.1.0` in `#ios-launchpad`, then edit the PR ticket title to update the `[CRP-XXX]` with the actual CRP ticket number created by this command. If the bot returns errors, you can find more info about them in the [CRP Bot](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/Process/Release%20process/CRP-Bot.md) documentation.
 
 	</details>
 2. Join the Slack channel e.g. `ios_release_4_1_0`) to discuss anything related to this release.
@@ -138,7 +138,7 @@ The hotfix is cut from the latest stable/hotfix release tag (e.g. `4.1.1` from `
 **⚠️ NOTE:** Only run the automated process if the previous release has been finished. In order to run the CRP, the **GitHub Release** need to exist (and not just the git tag), otherwise it will include previous, released tickets.
 
 1. Trigger manually with `/stevenson release_cutoff target:Babylon version:4.1.1 branch:babylon/4.1.0` from `#ios-build` channel
-	- ⚠️ Note: `branch:` is using the name of the release tag, not the release branch
+	- ⚠️ Note: `branch:` is using the name of the release tag, not the release branch, to ensure we cut from the point where the last release was pushed to the store and tagged.
 
 	<details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
 
