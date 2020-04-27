@@ -71,10 +71,9 @@ During this stage, the **release manager** has the following tasks:
 *It starts after the App Center build has been delivered and it can take several cycles*
 
 1. Testers will then begin their work against the build that was just created.
-1. Any hotfix should target the release branch first.
-1. These PRs need to be reviewed by the relevant squad or **platform QA** & one of the **release engineers** assigned to the release. This is to ensure visibility of changes being requested to be made, and to ensure the correct builds are available for validation.
+1. Any hotfix should target the `develop` branch first, then cherry-picked to the release branch.
+1. The cherry-pick PRs need to be reviewed by the relevant squad or **platform QA** & one of the **release engineers** assigned to the release. This is to ensure visibility of changes being requested to be made, and to ensure the correct builds are available for validation.
     * Bear in mind that two approvals from other engineers is not enough in this particular case.
-    * After the fix is merged to the release branch, the automation will create "Cherry pick 🍒" PR targeting `develop`. If no PR gets created, open PR manually and notify Platform squad about the issue with automation. Following this process will ensure that both branches are up to date and reduces the risk of conflicts when merging the release branch back to `develop`.
     * The issue for the hotfix has to visible on the release JIRA board. To ensure this, set the release number in the `Fix version` field in the hotfix's JIRA ticket.
 
 ### Phase 4: Submit TestFlight builds to App Store Connect
