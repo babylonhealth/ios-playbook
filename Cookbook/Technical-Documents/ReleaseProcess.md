@@ -72,7 +72,7 @@ During this stage, the **release manager** has the following tasks:
 
 1. Testers will then begin their work against the build that was just created.
 1. Any hotfix should target the `develop` branch first, then cherry-picked to the release branch.
-1. The cherry-pick PRs need to be reviewed by the relevant squad or **platform QA** & one of the **release engineers** assigned to the release. This is to ensure visibility of changes being requested to be made, and to ensure the correct builds are available for validation.
+1. The cherry-pick PRs need to be reviewed by the relevant squad or **platform QA** & one of the **release engineers** assigned to the release. This is to ensure visibility of the changes and the correct builds are available for validation.
     * Bear in mind that two approvals from other engineers is not enough in this particular case.
     * The issue for the hotfix has to visible on the release JIRA board. To ensure this, set the release number in the `Fix version` field in the hotfix's JIRA ticket.
 
