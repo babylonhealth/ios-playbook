@@ -134,7 +134,7 @@ Most of the steps for this phase have been automated using the `finish_release` 
 
 The hotfix is cut from the latest stable/hotfix release tag (e.g. `4.1.1` from `4.1.0`, or `4.1.2` from `4.1.1`).
 
-**⚠️ NOTE:** Only run the automated process if the previous release has been finished. In order to run the CRP, the **GitHub Release** need to exist (and not just the git tag), otherwise it will include previous, released tickets.
+**⚠️ NOTE:** Only run the automated process if the previous release has been finished. In order to run the CRP, the **GitHub Release** needs to exist (and not just the git tag), otherwise it will include previous, released tickets.
 
 1. Trigger manually with `/stevenson release_cutoff target:Babylon version:4.1.1 branch:babylon/4.1.0` from `#ios-build` channel
 	- ⚠️ Note: `branch:` is using the name of the release tag, not the release branch, to ensure we cut from the point where the last release was pushed to the store and tagged.
