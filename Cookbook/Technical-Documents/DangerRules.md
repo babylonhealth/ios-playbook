@@ -167,6 +167,8 @@ Every time the `Babylon.xcodeproj` file is modified, this rule will iterate on e
 If the answer to these questions for a given target and build configuration are not all the same (not all `true` nor all `false`), this means that there is an inconsistency in the HealthKit setup for this target and build config.  
 In that case, for each target+config, the rule will report a failure, and also add a markdown table listing the state of the HealthKit setup (✅/❌) for each of those 5 setup places for that target+config.
 
+> See also [this documentation in our private repo](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/importing-healthkit/HowToCorrectlySetHealthKitPermissionsInAnAppWhenEnablingHKFunctionality.md) to learn how to configure HealthKit in our projects.
+
 
 ## swiftlint
 
