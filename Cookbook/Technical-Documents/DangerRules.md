@@ -14,6 +14,7 @@ For a more in-depth presentation about Danger and how it works, see [these slide
 
 The [Danger website](https://danger.systems/ruby/) also has a pretty detailed documentation (especially look at the links to list of Guides and the DSL reference at the very bottom of the page).
 
+
 ## Danger documentation updates
 
 > * Declared in: `danger-ci/danger.rb`
@@ -21,6 +22,7 @@ The [Danger website](https://danger.systems/ruby/) also has a pretty detailed do
 > * Type: 📖 informative message
 
 This rule simply reminds us to update this very documentation when the Danger configuration is changed (when any file in `danger-ci/*` is modified), so that we keep the documentation in sync with the actual rules.
+
 
 ## PR Size
 
@@ -38,6 +40,7 @@ _Note: We have an informal limit of 800 lines for PRs, but since it's only infor
 If this rule is triggered, an table is also added showing some stats (the table is hidden behind a disclosure triangle) about the number of changes per various categories of content (Feature Code, Test Code, pbxproj, Binary files, ...). Thoe goal of this table is to better understand how the code of the PR is distributed, hopefully giving the author and reviewers some ideas on how to split the PR if needed (e.g. one PR with just the code for the Builder separated from the PR adding the VM)
 
 This rule is only a warning because we don't want it to block PRs, as there are some rare exceptions where we allow the limit to be exceeded, as long as it's justified by the author (e.g. a refactoring PR)
+
 
 ## Podfile Checks
 
@@ -63,6 +66,7 @@ This rule is just to inform (informative message, no error nor warning) when the
 
 The goal is to suggest them to take extra care in reviewing why we needed those changes in our dependencies and if they were properly justified.
 
+
 ## SDK: Mark changes to any of our SDKs with `#SDK` hashtag
 
 > * Declared in: `danger-ci/sdk.rb`
@@ -77,6 +81,7 @@ in its title, then `#SDK` is implied and you don't have to add the hashtag expli
 The hashtag is only needed for Pull Requests addressing tickets from non-SDK boards but still touching the SDK files.
 
 _This is needed because of the Change Request Process (CRP) from our sSDLC requirement: any ticket touching code in the SDK needs to be included in the CRP ticket for next SDK release, and that hashtag will allow us to include those tickets automatically._
+
 
 ## pbxproj checks
 
@@ -124,6 +129,7 @@ This rule will warn you if any part of the pbxproj references an UUID that got a
 
 When that happens, you need to figure out if the removal of the file was intended as part of your PR (and if so, fix the merge by also removing the lines pointing to that now-deleted file reference), or if the removal of the file from the pbxproj was unintented (and if so, restore it). You could do that by editing the `pbxproj` manually, but if possible it's even better if you can fix it in Xcode (e.g. by removing the offending file from the project and add it again)
 
+
 ## Detect Missing Feedbacks
 
 > * Declared in: `danger-ci/feedbacks.rb`
@@ -138,6 +144,31 @@ This rule uses `sourcekitten` to dump the structure of the Swift code. It uses i
 Note that this rule can have false positives in rare cases. Especially if you use constructs like `obj.map(Self.whenBlah)`, it doesn't detect `whenBlah` as a method call because it is encapsulated inside a `map`. This is why this rule is only a warning.
 
 (It still detects `Feedbacks` called conditionally though – like `if (cond) { feedbacks += Self.whenBlah() }` – and should still catch the most common cases of forgetting to add a newly-created `Feedback` to the state machine)
+
+
+## Check HealthKit configuration consistency
+
+> * Declared in: `danger-ci/healthkit.rb`
+> * Function: `check_healthkit`
+> * Type: 🚫 failure
+
+When configuring HealthKit on a target, either to enable it on a given app flavor or to disable it if we decide to remove the feature for a flavor or for a new target we cloned from an existing one, we need to configure it in multiple places in the project and target, and ensure those configurations are consistent.
+
+If there are some inconsistencies in the way HealthKit is configured in the different places in a target, we will likely get rejected by Apple when submitting on the AppStore, especially because we could think that we disabled it but Apple will still find traces of it, or we enabled it but forgot to turn some flags on affecting some `#if` in our Swift code depending on it. This is why this rule exists, to ensure everything is consistent and we don't get rejected last minute for HealthKit configuration issues.
+
+Every time the `Babylon.xcodeproj` file is modified, this rule will iterate on each target and each build config (Debug/Release) and for each will check the following places for the HealthKit setup:
+
+* Is HealthKit enabled in the Entitlements files?
+* Are the 2 keys `NSHealthShareUsageDescription` and `NSHealthUpdateUsageDescription` both set in Info.plist?
+* Is `HEALTHKIT_INTEGRATION_AVAILABLE` flag turned on in Build Settings under `SWIFT_ACTIVE_COMPILATION_CONDITIONS`?
+* Is `HealthKit.framework` linked with the target?
+* Is `BabylonHealthKitIntegrationSDK.framework` linked with target?
+
+If the answer to these questions for a given target and build configuration are not all the same (not all `true` nor all `false`), this means that there is an inconsistency in the HealthKit setup for this target and build config.  
+In that case, for each target+config, the rule will report a failure, and also add a markdown table listing the state of the HealthKit setup (✅/❌) for each of those 5 setup places for that target+config.
+
+> See also [this documentation in our private repo](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/importing-healthkit/HowToCorrectlySetHealthKitPermissionsInAnAppWhenEnablingHKFunctionality.md) to learn how to configure HealthKit in our projects.
+
 
 ## swiftlint
 
