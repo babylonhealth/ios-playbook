@@ -95,6 +95,7 @@
   - SwiftLint
   - [RubyMine](Technical-Documents/RubyMine.md)
   - [Platform tools](Technical-Documents/PlatformTools.md)
+  - [What we tried to improve CI Build Time (type-checker optimisations, `cocoapods-binary`, CI cache…)](./Technical-Documents/BuildTime-Spikes-Report.md)
 
 ## How to 🤔
   - Add a new API in an existing SDK
