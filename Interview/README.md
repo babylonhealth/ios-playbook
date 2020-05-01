@@ -66,4 +66,4 @@ Above all, be yourself and thank you for taking the time to apply to babylon hea
 Oh, and if you happen to know someone who might be interested in applying for a position with us, please point them to our [careers page](https://www.babylonhealth.com/careers).
 
 #### We look forward to hearing from you!
-- The [babylon health iOS team](http://github.com/Babylonpartners)
+- The [babylon health iOS team](http://github.com/babylonhealth)

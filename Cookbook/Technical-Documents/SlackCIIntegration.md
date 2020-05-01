@@ -1,6 +1,6 @@
 ## Slack CI Integration
 
-From time to time we need to trigger some CI jobs manually, for example to create a Hockeyapp or Testflight distribution build. This can be done easily from Slack Slash Commands powered by our bots, [Stevenson](https://github.com/Babylonpartners/Stevenson) and its predecessor Steve.
+From time to time we need to trigger some CI jobs manually, for example to create an App Center or TestFlight distribution build. This can be done easily from Slack Slash Commands powered by our bots, [Stevenson](https://github.com/babylonhealth/Stevenson) and its predecessor Steve.
 
 ### Supported commands (Stevenson)
 
@@ -12,7 +12,7 @@ Creates a Testflight build in **Release** configuration for AppStore distributio
 /testflight Babylon version:3.13.0
 ```
 
-This will trigger the `testflight` lane on the `release/3.13.0` branch. As we are following a bit different branching model for other targets you can additionally specify a branch:
+This will trigger the `testflight` lane on the `release/babylon/3.13.0` branch. You can also create a testflight build from arbitrary branch with `branch` option:
 
 ```
 /testflight Telus version:3.13.0 branch:release/telus/3.13.0
@@ -22,21 +22,21 @@ Note the names of the targets are following the names in the project.
 
 Tip: `/testflight help` will respond with instructions for this command.
 
-* #### `/hockeyapp`
+* #### `/appcenter`
 
-Creates a Hockeyapp build in **Debug** configuration for Hockeyapp distribution (beta). It requires the target name, **as they are defined in the project**, as the first parameter:
-
-```
-/hockeyapp Babylon
-```
-
-This will trigger the `hockeyapp` lane on the `develop` branch. You can additionally specify a branch:
+Creates an App Center build in **Debug** configuration for App Center distribution (beta). It requires the target name, **as they are defined in the project**, as the first parameter:
 
 ```
-/hockeyapp Babylon branch:ilya/CE-123
+/appcenter Babylon
 ```
 
-Tip: `/hockeyapp help` will respond with instructions for this command.
+This will trigger the `appcenter` lane on the `develop` branch. You can additionally specify a branch:
+
+```
+/appcenter Babylon branch:ilya/CE-123
+```
+
+Tip: `/appcenter help` will respond with instructions for this command.
 
 * #### `/fastlane`
 
@@ -62,51 +62,54 @@ Tip: `/fastlane help` will respond with instructions for this command.
 This command will create a CRP Jira ticket for the app release. Currently it only supports Babylon app. It requires the name of the platform as the first parameter and a release branch name:
 
 ```
-/crp ios branch:release/3.13.0
+/crp ios branch:release/babylon/3.13.0
 ```
 
 Tip: `/crp help` will respond with instructions for this command.
 
-### Other commands (Steve)
+* #### `/stevenson`
 
-Some of the commands are implemented in the older version of our bot. They are still working as they should, but some of them are deprecated and running them will suggest you to run a new command. **They will still work as they used to until they are completely removed from Slack integration**
-
-* #### `/distribute` (deprecated)
-
-This command will make a beta build for Hockeyapp. It should be invoked in a format `/distribute branch:target`:
+This command will run arbitrary workflow defined in our CircleCI configuration (`.circleci/config.yml` in the project directory). You can provide a branch parameter to run workflow on a branch unless workflow is configured to be run on specific branches (i.e. only on develop or release branches)
 
 ```
-/distribute release/3.15.0:babylon
+/stevenson ui_tests branch:develop
 ```
 
-Note that target names are not following their naming in the project, they should be lowercased ("babylon", "bupa", "nhs111", "telus")
+When running a workflow you should specify parameters that are required for this workflow, unless they have default values. If a parameter is missing or extra parameters are sent the build will fail and you will get an error message.
 
-* #### `release` (deprecated)
+To see the list of supported workflows look for `parameters` section in the CircleCI config file.
 
-This command will make a release build for Testflight. It should be invoked in a format `/release target:version`:
-
-```
-/release babylon:3.15.0
-```
-
-Names of the targets are the same as for `/distribute` command. **This command does not properly support arbitrary branches so does not porperly work for targets other than Babylon**. For other targets use either `/testflight` or `/fastlane` commands.
-
-* #### `/distribute_sdk`
-
-This commands will make a new SDK release and upload it to Artifactory:
+You can also invoke all other commands using the `/stevenson` command, e.g.:
 
 ```
-/distribute_sdk version:0.6.0
+/stevenson fastlane ui_test_babylon_smoke branch:develop device:"iPhone X"
 ```
 
-This will create a new release from `develop` branch. Aditionally you can specify a branch:
+Tip: `/stevenson help` will respond with instructions for this command.
+
+## Pull request comments
+
+Alternatively to Slack commands, you can trigger CI workflow on a pull request with a comment. The format of the comment is the same as the Slack commands, except they should be prefixed with the bot's GitHub user name and you don't need to specify the branch (it will always use the branch of the PR)
+
+You can invoke any lane with the following comment:
 
 ```
-/distribute_sdk version:0.6.0 branch:develop
+@ios-bot-babylon fastlane appcenter target:Babylon
 ```
+
+Or you can invoke a workflow defined in our CircleCI config with the following comment:
+
+```
+@ios-bot-babylon test_pr
+```
+
+To see the list of supported workflows look for `parameters` section in the CircleCI config file.
+
+Note: you won't get any feedback in the PR with the results of the triggered command or whether it was correct or not (yet), but Slack messages with the result will be posted by the bot in #ios-build channel as usual when CI finishes running the jobs.
 
 ### Troubleshooting
 
-* ATM we are hosting our bots on Heroku so they are being shut down when they are not in use, so sometimes you may see a timeout errors when trying to call a Stevenson command (Slack expects apps to respond in 3 seconds). You will still get the response shortly after that when build is triggered. Steve commands may also fail because of timeouts but it may not send the response even if the build actually started. In this case check the CI dashboard to see if the job was actually triggered - it should be if the command was correct.
+* ATM we are hosting Stevenson on Heroku so it is being shut down when it is not in use, so sometimes you may see a timeout error when trying to call a Stevenson command (Slack expects apps to respond in 3 seconds). You will still get the response shortly after that when build is triggered. Steve commands may also fail because of timeouts but it may not send the response even if the build actually started. In this case check the CI dashboard to see if the job was actually triggered - it should be if the command was correct.
 
 * You can find Stevenson app in the list of Slack apps and see all of its commands from there.
+

@@ -9,6 +9,11 @@ If you plan to add a new Danger rule:
  * Please follow the naming convention of starting the functions implementing the rules with `check_`
  * Make sure you keep the main `Dangerfile` clean: the main file is supposed to only call `check_*` functions defined in other files, not to contain actual rule implementations
  * Make sure you document the new rule here
+ 
+For a more in-depth presentation about Danger and how it works, see [these slides](https://docs.google.com/presentation/d/1bkVNxplnjchkQZ1-CaqUrcfMioRiNeYtyAKmJpnIx2I/) (private company shared Drive).
+
+The [Danger website](https://danger.systems/ruby/) also has a pretty detailed documentation (especially look at the links to list of Guides and the DSL reference at the very bottom of the page).
+
 
 ## Danger documentation updates
 
@@ -17,6 +22,7 @@ If you plan to add a new Danger rule:
 > * Type: 📖 informative message
 
 This rule simply reminds us to update this very documentation when the Danger configuration is changed (when any file in `danger-ci/*` is modified), so that we keep the documentation in sync with the actual rules.
+
 
 ## PR Size
 
@@ -34,6 +40,7 @@ _Note: We have an informal limit of 800 lines for PRs, but since it's only infor
 If this rule is triggered, an table is also added showing some stats (the table is hidden behind a disclosure triangle) about the number of changes per various categories of content (Feature Code, Test Code, pbxproj, Binary files, ...). Thoe goal of this table is to better understand how the code of the PR is distributed, hopefully giving the author and reviewers some ideas on how to split the PR if needed (e.g. one PR with just the code for the Builder separated from the PR adding the VM)
 
 This rule is only a warning because we don't want it to block PRs, as there are some rare exceptions where we allow the limit to be exceeded, as long as it's justified by the author (e.g. a refactoring PR)
+
 
 ## Podfile Checks
 
@@ -59,39 +66,22 @@ This rule is just to inform (informative message, no error nor warning) when the
 
 The goal is to suggest them to take extra care in reviewing why we needed those changes in our dependencies and if they were properly justified.
 
-## SDK Checks
+
+## SDK: Mark changes to any of our SDKs with `#SDK` hashtag
 
 > * Declared in: `danger-ci/sdk.rb`
-
-### Mark changes to SDK with `#SDK` (or `#IgnoreSDKChanges`)
-
 > * Function: `check_sdk_hashtag`  
 > * Type: 🚫 failure
 
-This rule is to:
+This rule is to ensure that you identify **PRs containing changes to any files in our SDKs** by **adding `#SDK` to the PR title**.
+This applies to any changes done in files in the `SDK/` and `UI SDK/` folders – except for files related to tests.
 
-1. Ensure you **identify PRs that contain SDK changes with `#SDK`** – as those would need to be included in the CRP ticket for next SDK release (SSDLC requirement):
-  - Note that if the PR is associated with an SDK ticket, and thus contains `[SDK-xxx]` in it's title, then `#SDK` is implied and you don't have to add the hashtag explicitly
+Note that if the PR is already associated with ticket from one of the SDK board, and thus contains `[SDK-xxx]` or `[SDKS-xxx]`
+in its title, then `#SDK` is implied and you don't have to add the hashtag explicitly.
+The hashtag is only needed for Pull Requests addressing tickets from non-SDK boards but still touching the SDK files.
 
-2. Remind you to **update the `SDK/CHANGELOG.md` document** (intended for our partners) **when you make a significant change to the SDK**
-  - If you made trivial changes to the SDK which you consider don't require to be mentioned in the CHANGELOG for partners, you can add the `#IgnoreSDKChanges` in the PR title to acknowledge that it's ok that the `SDK/CHANGELOG.md` wasn't updated. **When in doubt if a change in SDK needs to be mentioned in the CHANGELOG, ask the `#sdk_squad` in slack**.
+_This is needed because of the Change Request Process (CRP) from our sSDLC requirement: any ticket touching code in the SDK needs to be included in the CRP ticket for next SDK release, and that hashtag will allow us to include those tickets automatically._
 
-
-Context | Mention in PR title | Commit included in SDK CRP ticket? | New entry in CHANGELOG?
----|---|---|---
-This PR didn't touch any (non-test) file in `sdk/*`, nothing related to SDK here | _None_ | 🚫 No | 🚫 No
-This PR made significant SDK changes | `#SDK` (or `[SDK-xxx]`) | ✅ Yes | ✅Yes
-This PR touched `sdk/*` files but it's a false positive (e.g. we just fixed indentation or a typo in a comment) | `#IgnoreSDKChanges` | 🚫 No | 🚫 No
-This PR made SDK changes (which need to appear in CRP) but they are not worth a note in our partner's CHANGELOG | `#SDK ` (or `[SDK-xxx]`) *AND* `#IgnoreSDKChanges` | ✅ Yes | 🚫 No
-
-### Ensure SDK CHANGELOG is updated on PRs releasing the SDK
-
-> * Function: `check_sdk_release_changelog`
-> * Type: ⚠️ warning
-
-This rule ensures that, when we do a **PR to make a public SDK release** (i.e. to merge a `release/sdk/*` branch), **the `SDK/CHANGELOG.md` has been updated**.
-
-Especially that in the top section title we **replace `## x.x.x (TBD)` with the actual version number and release date**.
 
 ## pbxproj checks
 
@@ -102,9 +92,18 @@ Especially that in the top section title we **replace `## x.x.x (TBD)` with the 
 > * Function: `check_unexpected_resource_files`
 > * Type: 🚫 failure
 
-This rule ensure that we didn't accidentally add some Xcode-specific files to a target's "Copy Resource Files" phase, as those files are only used by Xcode or for documentation or tests, but that shouldn't end up in the final framework or app.
+This rule ensures that we didn't accidentally add some Xcode-specific files to a target's "Copy Resource Files" phase, as those files are only used by Xcode or for documentation or tests, but that shouldn't end up in the final framework or app.
 
 This rule currently checks for `*.xcconfig`, `*.md`, `*Info.plist` and any file under a `__Snapshots__` directory and fail if they have been added to your target accidentally.
+
+### Warn about absolute paths
+
+> * Function: `check_absolute_paths`
+> * Type: 🚫 failure (inline comments)
+
+This rule ensures that we didn't accidentally reference files using absolute paths in our Xcode projects.
+
+It will add inline comments on each lines in the `pbxproj` where an absolute path was detected.
 
 ### Warn about `null` references
 
@@ -129,3 +128,54 @@ _Context: The `pbxproj` format is such that it contains a list of file reference
 This rule will warn you if any part of the pbxproj references an UUID that got accidentally removed. (Note: you should see similar warnings when you run `pod install` in your terminal and it warns about an unknown UUID)
 
 When that happens, you need to figure out if the removal of the file was intended as part of your PR (and if so, fix the merge by also removing the lines pointing to that now-deleted file reference), or if the removal of the file from the pbxproj was unintented (and if so, restore it). You could do that by editing the `pbxproj` manually, but if possible it's even better if you can fix it in Xcode (e.g. by removing the offending file from the project and add it again)
+
+
+## Detect Missing Feedbacks
+
+> * Declared in: `danger-ci/feedbacks.rb`
+> * Function: `check_feedbacks_in_viewmodels`
+> * Type: ⚠️ warning
+
+This rule analyses any `*ViewModel.swift` file created or modified in the PR, and try to determine if any `Feedback` static method was declared but not called.
+This is typically to catch cases when you declare a new `Feedback` in your code but forgot to then add it to the state machine.
+
+This rule uses `sourcekitten` to dump the structure of the Swift code. It uses it to finds all the `static func` returning a `Feedback` declared in your code, then searches for all the method calls in your code to see if that list contains calls to all the `Feedback` methods declared. If it finds a `static func … -> Feedback<…>` method that is never called, it emits a warning.
+
+Note that this rule can have false positives in rare cases. Especially if you use constructs like `obj.map(Self.whenBlah)`, it doesn't detect `whenBlah` as a method call because it is encapsulated inside a `map`. This is why this rule is only a warning.
+
+(It still detects `Feedbacks` called conditionally though – like `if (cond) { feedbacks += Self.whenBlah() }` – and should still catch the most common cases of forgetting to add a newly-created `Feedback` to the state machine)
+
+
+## Check HealthKit configuration consistency
+
+> * Declared in: `danger-ci/healthkit.rb`
+> * Function: `check_healthkit`
+> * Type: 🚫 failure
+
+When configuring HealthKit on a target, either to enable it on a given app flavor or to disable it if we decide to remove the feature for a flavor or for a new target we cloned from an existing one, we need to configure it in multiple places in the project and target, and ensure those configurations are consistent.
+
+If there are some inconsistencies in the way HealthKit is configured in the different places in a target, we will likely get rejected by Apple when submitting on the AppStore, especially because we could think that we disabled it but Apple will still find traces of it, or we enabled it but forgot to turn some flags on affecting some `#if` in our Swift code depending on it. This is why this rule exists, to ensure everything is consistent and we don't get rejected last minute for HealthKit configuration issues.
+
+Every time the `Babylon.xcodeproj` file is modified, this rule will iterate on each target and each build config (Debug/Release) and for each will check the following places for the HealthKit setup:
+
+* Is HealthKit enabled in the Entitlements files?
+* Are the 2 keys `NSHealthShareUsageDescription` and `NSHealthUpdateUsageDescription` both set in Info.plist?
+* Is `HEALTHKIT_INTEGRATION_AVAILABLE` flag turned on in Build Settings under `SWIFT_ACTIVE_COMPILATION_CONDITIONS`?
+* Is `HealthKit.framework` linked with the target?
+* Is `BabylonHealthKitIntegrationSDK.framework` linked with target?
+
+If the answer to these questions for a given target and build configuration are not all the same (not all `true` nor all `false`), this means that there is an inconsistency in the HealthKit setup for this target and build config.  
+In that case, for each target+config, the rule will report a failure, and also add a markdown table listing the state of the HealthKit setup (✅/❌) for each of those 5 setup places for that target+config.
+
+> See also [this documentation in our private repo](https://github.com/babylonhealth/babylon-ios/blob/develop/Documentation/importing-healthkit/HowToCorrectlySetHealthKitPermissionsInAnAppWhenEnablingHKFunctionality.md) to learn how to configure HealthKit in our projects.
+
+
+## swiftlint
+
+> * Declared in: `danger-ci/swiftlint.rb`
+> * Function: `check_swiftlint_violations`
+> * Type: ⚠️ inline warning
+
+This will report swiftlint violations as inline comments (warnings) in the Pull Request.
+
+Only `.swift` files that are part of the PR are linted by this rule; so only violations in files that were added/modified/renamed by the PR will be reported. This is to ensure that we don't introduce new violations, and that we fix existing violations on any file we touch or update.

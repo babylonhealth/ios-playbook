@@ -18,7 +18,7 @@ Managing assets is not a difficult engineering problem but without standardized 
 
 To make sure we won't have duplicated assets in the project and all of them will be accessible in all places where we implement features, all of us should agree on uniform rules about how and where we should add new assets and how we should manage them. 
 
-To automate the process of generating assets' identifiers we are going to use SwiftGen (agreed solution for Localization https://github.com/Babylonpartners/ios-playbook/pull/187). Having that tool in place we could also use it to generate assets' identifiers. 
+To automate the process of generating assets' identifiers we are going to use SwiftGen (agreed solution for Localization https://github.com/babylonhealth/ios-playbook/pull/187). Having that tool in place we could also use it to generate assets' identifiers. 
 
 ## Proposed solution 
 

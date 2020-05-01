@@ -6,7 +6,7 @@
 babylon iOS interview questions
 ==================================
 
-As described in the iOS recruitment process [main page](https://github.com/Babylonpartners/iOS-Interview-Demo/blob/master/README.md), the face-to-face technical interviews involve us asking candidates a number of technical questions which we have decided to open-source.
+As described in the iOS recruitment process [main page](https://github.com/babylonhealth/iOS-Interview-Demo/blob/master/README.md), the face-to-face technical interviews involve us asking candidates a number of technical questions which we have decided to open-source.
 
 Please keep in mind that this document is in a continuous state of flux, with new questions being added, and old ones tweaked or removed.
 
@@ -38,6 +38,7 @@ Please keep in mind that this document is in a continuous state of flux, with ne
 ### FUNCTIONAL REACTIVE PROGRAMMING
  1. Are you familiar with `Reactive Programming`?
  1. What's the basic design pattern behind `Reactive Programming`?
+ 1. What's the `Observable` (in RxSwift) or `Signal` and `SignalProducer` (in ReactiveSwift) or `Publisher` (in Combine)?
  1. How would you explain reactive programming to a junior developer who knows nothing about it?
  1. Why not using Future/Promises/Async-await instead of ReactiveSwift/RxSwift?
  1. What is functional programming? Explain it to a junior.
@@ -48,6 +49,9 @@ Please keep in mind that this document is in a continuous state of flux, with ne
  1. Do you know what Curried Functions are? How do they differ from Partial Application?
  1. What is the `pipe` (`|>`) operator? Is it different from `map`? How do you propagate errors with it? Would a `flatPipe` operator make sense?
  1. What is a monad? Have you ever used one? (Related: why do you think FP has so many academic sounding terms?)
+ 1. Are you familiar with the Combine framework?
+ 1. In what ways does it differ from ReactiveSwift or RxSwift?
+ 1. Can you explain the concept of backpressure?
 
 ### SWIFT
 
@@ -126,4 +130,4 @@ Please keep in mind that this document is in a continuous state of flux, with ne
  1. Knowledge about algorithms: sorting, searching and others.
 
 #### Thanks for your time! We look forward to hearing from you!
- 1. The [babylon health iOS team](http://github.com/Babylonpartners)
+The [babylon health iOS team](http://github.com/babylonhealth)

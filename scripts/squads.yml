@@ -12,13 +12,6 @@ team:
     name: Adrian Śliwa
     github: adiki
     twitter: adiki91
-  - &Anders
-    name: Anders Ha
-    github: andersio
-    twitter: _andersha
-  - &Anil
-    name: Anil Puttabuddhi
-    github: anilputtabuddhi
   - &Ben
     name: Ben Henshall
     github: Ben-Henshall
@@ -27,12 +20,6 @@ team:
     name: Ana Catarina Figueiredo
     github: AnnKatF
     twitter: AnnKatFig
-  - &Chesley
-    name: Chesley Stephens
-    github: cstephens-babylon
-  - &Tyler
-    name: Tyler Hargett
-    github: thargett-babylon
   - &Chitra
     name: Chitra Kotwani
     github: chitrakotwani
@@ -47,10 +34,6 @@ team:
   - &Danilo
     name: Danilo Aliberti
     github: daniloaliberti
-  - &David
-    name: David Rodrigues
-    github: dmcrodrigues
-    twitter: dmcrodrigues
   - &Diego
     name: Diego Petrucci
     github: diegopetrucci
@@ -65,13 +48,12 @@ team:
     name: Ilya Puchka
     github: ilyapuchka
     twitter: ilyapuchka
-  - &Inami
-    name: Yasuhiro Inami
-    github: inamiy
-    twitter: inamiy
   - &James
     name: James Birtwell
     github: jimmybee
+  - &Javier
+    name: Javier Hernández
+    github: jaherhi
   - &Joao
     name: João Pereira
     github: NSMyself
@@ -85,9 +67,6 @@ team:
   - &Konrad
     name: Konrad Muchowicz
     github: konrad-em
-  - &Martin
-    name: Martin Nygren
-    github: zzcgumn
   - &Michael
     name: Michael Brown
     github: mluisbrown
@@ -96,6 +75,13 @@ team:
     name: Michał Kwiecień
     github: MichalTKwiecien
     twitter: kwiecien_co
+  - &Nico
+    name: Nico Robin
+    github: Naiko
+    twitter: Naiko
+  - &Nikolay
+    name: Nikolay Marinov
+    github: nikolay-bab
   - &Olivier
     name:  Olivier Halligon
     github: AliSoftware
@@ -103,13 +89,6 @@ team:
   - &Patrick
     name: Patrick Westmeyer
     github: bh-pwestmeyer
-  - &Rui
-    name: Rui Peres
-    github: RuiAAPeres
-    twitter: peres
-  - &Sam
-    name: Sam Francis
-    github: SamFrancis-Babylon
   - &Sergey
     name: Sergey Shulga
     github: sergdort
@@ -135,13 +114,10 @@ team:
 # Global roles transverse to the squads
 #
 roles:
-  - name: Engineering Manager
-    members:
-      - *Rui
   - name: Chapter Leads
     members:
       - *Catarina
-      - *David
+      - *Chitra
   - name: Squad Tech Leads
     members:
       - *Michael
@@ -151,30 +127,24 @@ roles:
 # List of the Squads and their members
 #
 squads:
-  - name: Appointments
-    desc: Appointment booking.
+  - name: Activate
+    desc: Onboard users so that they understand the value we provide.
+    members:
+    - *Sergey
+  - name: Appointments 1
+    desc: Face to face appointment booking.
     members:
       - *Witold
-  - name: Consultation
-    desc: Consultation experience related features including, but not limited to - audio/video call and replay quality, consultation feedback, pre-consultation preparation and reminders for consultation 
+  - name: Appointments 2
+    desc: Digital appointments
     members:
       - *Adrian
       - *Chitra
-  - name: Onboarding and Navigation
-    desc: General user experience in the app.
+      - *Nico
+  - name: Assistant
+    desc: Chatbot-related features.
     members:
-      - *Emese
-      - *Giorgos
-      - *Sergey
-      - *Yuri
-  - name: Native Apps Platform
-    desc: Engineering work like tooling, CI and development processes.
-    members:
-      - *David
-      - *Ilya
-      - *Inami
-      - *Martin
-      - *Olivier
+      - *Joao
   - name: GP @ Hand Registrations
     desc: End to end journey for NHS registration.
     members:
@@ -182,20 +152,30 @@ squads:
   - name: Healthcheck
     desc: Overview of your health using a 3D body model (avatar).
     members:
-      - *Ben
+      - *Emese
       - *Julien
   - name: Identity
-    desc: Authentication and Authorization related work
+    desc: Authentication and Authorization related work.
     members:
-      - TBD
+      - *Giorgos
+      - *Michael
+  - name: Member Comms
+    desc: Improving how we communicate with our users.
+    members:
+      - *Viorel
   - name: Monitor
     desc: Help members manage and sustain a healthy lifestyle.
     members:
-      - *Anders
       - *DanielH
       - *DanielS
       - *Diego
-      - *Joshua
+      - *Javier
+      - *Nikolay
+  - name: Native Apps Platform
+    desc: Engineering work like tooling, CI and development processes.
+    members:
+      - *Ilya
+      - *Olivier
   - name: Prescriptions
     desc: Prescriptions functionality.
     members:
@@ -205,28 +185,21 @@ squads:
     desc: Updating and maintaining the Telus app.
     members:
       - *Simon
+  - name: Retain
+    desc: Engage users with our key features in a dynamic, personalised manner.
+    members:
+      - *Yuri
   - name: SDK
-    desc: Develop and maintain the SDK frameworks.
-    members:
-      - *Viorel
-  - name: Tenancy & Features
-    desc: To integrate the new feature configurator.
-    members:
-      - *Anil
-  - name: Test Kits
-    desc: Managing everything related to Babylon do-at-home tests.
+    desc: Updating and maintaining the SDK.
     members:
       - *Michal
   - name: Triage
     desc: Chatbot functionality.
     members:
       - *Danilo
-      - *Joao
-      - *Michael
   - name: US Professional Services
     desc: Features for app in the US.
     members:
-      - *Chesley
+      - *Ben
+      - *Joshua
       - *Patrick
-      - *Sam
-      - *Tyler
