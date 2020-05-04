@@ -1,6 +1,10 @@
 ## Testing
 
-Our team is composed by multiple squads which are responsible for specific parts of the product. Based on that, each squad is responsible for owning and maintaining their own testing, from unit tests to UI Automation tests, meaning that any failure should be investigated and fixed by the squad responsible. If for some reason the squad is unavailable, e.g. holidays, then one of the release engineers should take ownernship of the failure when we are in the process of release a new version of that app otherwise it should fallback to the Support Engineer.
+Our team is composed by multiple squads which are responsible for specific parts of the product.
+
+Based on that, **each squad is responsible for owning and maintaining their own testing, from unit tests to UI Automation tests**, meaning that **any failure should be investigated and fixed by the squad responsible**.
+ 
+If the squad is unavailable, e.g. holidays, then one of the Release Engineers should take ownership of the failure when we are in the process of releasing a new version of that app; otherwise it should fallback to the Support Engineer.
 
 ### Execution
 
