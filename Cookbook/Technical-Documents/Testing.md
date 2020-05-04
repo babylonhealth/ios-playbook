@@ -22,7 +22,9 @@ Listing all lanes available can be done with `bundle exec fastlane list` in the 
 
 ### QA
 
-Each squad is composed by iOS Engineer(s) but also by one QA Engineer responsible for testing all the work done by the squad. Our UI Automation tests take a significant amount of time to run so it's only executed every night which means we don't detect if some feature breaks with the changes of a pull request automatically. Because of that, **both the iOS and QA Engineers are responsible for checking any potential failure** in any change done within the squad by triggering the relevant lane for testing, ideally during the review of the pull request to avoid the breakage.
+Each squad has a QA Engineer responsible for testing all the work done by the squad and they should work together with the engineers to make sure we are delivering good and stable features.
+
+Our UI Automation tests take a significant amount of time to run so it's only executed every night, which means we don't detect if some feature breaks with the changes of a pull request automatically. For this reason, **both the iOS and QA Engineers are responsible for checking any potential failure** in any change done within the squad. This can be achieved by triggering the relevant lane for testing and ideally, this should be done during the review of the pull request, to avoid breakage.
 
 When there's a suspicion that the changes may affect other parts of the product, the relevant lanes should be triggered to be tested, or ultimately, the entire suite should be executed to assert that nothing breaks within the product. This can be identified and done by either the iOS Engineer or the QA Engineer.
 
