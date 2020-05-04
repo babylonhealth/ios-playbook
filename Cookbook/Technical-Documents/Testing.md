@@ -19,6 +19,7 @@ $ bundle exec fastlane {lane}
 ```
 
 Listing all lanes available can be done with `bundle exec fastlane list` in the terminal.
+More details on Slack integration with CircleCI can be found [here](./SlackCIIntegration.md).
 
 ### QA
 
