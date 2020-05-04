@@ -20,6 +20,7 @@
 | [Firebase](https://console.firebase.google.com) | View crash reports, performance monitoring | Ask Catarina for access |
 | [Test Rail](https://babylonpartners.testrail.net) | Test effort management tool | Use the account shared on the iOS team vault on 1Password |
 | [GA 360](https://analytics.google.com) | Analytics for the Babylon UK app | Ask `@Chris Drew` for access |
+| [Optimizely](https://www.optimizely.com) | Feature flags | [IT Support ticket](https://supportbybabylon.atlassian.net/servicedesk/customer/portal/5/group/12/create/43) to get it added to your Okta account. Ask to be invited as a collaborator by a project admin, and log in using SSO. For more information, check this [document](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/Optimizely.md) about Optimizely.
 
 ## Internal tools
 
