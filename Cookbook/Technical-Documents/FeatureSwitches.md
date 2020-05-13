@@ -127,7 +127,7 @@ All static configuration properties and feature switches should be declared in t
 	
 	To add a new feature switch on the client add a new property to `BackendFeatureSwitches` struct in `BackendFeatureSwitches.swift` file and code to decode this property in `Decodable.swift`. Of course it needs to be added on the backend as well, that's something the backend dev from your team should be able to help with.
 	
-	_Product config_ is a new preffered way of managing such feature switches and it's preferable to use it for any new feature switch that defines features per product/partner. To use product config service in code you use `Current.productConfig` and define your flags via extensions to `ProductConfig` type:
+	_Product config_ is a new preferred way of managing such feature switches and it's preferable to use it for any new feature switch that defines features per product/partner. To use product config service in code, use `Current.productConfig` and define the flags via extensions to `ProductConfig` type:
 	
     ```swift
     extension ProductConfig {
