@@ -28,7 +28,7 @@ extension World {
 
         public struct FeatureSwitches {
             public enum Keys: String {
-	             // keys for feature switches will go here
+	        // keys for feature switches will go here
             }
 
             // feature switches declaration will go here
@@ -65,17 +65,17 @@ All static configuration properties and feature switches should be declared in t
 	1. Declare feature switch in `FeatureSwitches` struct:
 	
 	```swift
-	public struct MapsUI: FeatureModule {
-	    ...
-	    public struct FeatureSwitches {
-	        public enum Keys: String {
-		    case isMyFeatureEnabled
-		}
-		
-		@LocalFeatureSwitch(key: Keys.isMyFeatureEnabled)
-		var isMyFeatureEnabled: Bool
-	    }
-	}
+    public struct MapsUI: FeatureModule {
+        ...
+        public struct FeatureSwitches {
+            public enum Keys: String {
+                case isMyFeatureEnabled
+            }
+
+            @LocalFeatureSwitch(key: Keys.isMyFeatureEnabled)
+            var isMyFeatureEnabled: Bool
+        }
+    }
 	```
 	
 	2. Add a new entry in the `Root.plist` for a toggle for this feature. The key name should be the same as the raw value of the case in `SettingsKeys` added before. The entry should be added after the `PSGroupSpecifier` item named `✨ Local Feature Switches ✨` and before `✨ Remote Feature Switches ✨` (this will visually group it with other local feature switches in the Settings app)
@@ -104,34 +104,62 @@ All static configuration properties and feature switches should be declared in t
 
 	Static configuration exists to specify application specific configurations, i.e. if a feature should be enabled or completely disabled for a specific app or if it should use a different content. To define a new static configuration you should add a new property to the `Configuration` struct in the appropriated Feature Module. If the flag is related to a specific feature then it might be better to define it in the dedicated configuration struct/protocol, i.e. if the flag is related to `Appointments` we have `AppointmentsContentProtocol` for this purpose.
 	
-	```swift
-	public struct MapsUI: FeatureModule {
-		...
-		public struct Configuration {
-			let myConfiguration: Bool
+    ```swift
+    public struct MapsUI: FeatureModule {
+        ...
+        public struct Configuration {
+            let myConfiguration: Bool
 
-			public init(myConfiguration: Bool) {
-				self.myConfiguration = myConfiguration
-			}
-		}
-	}
-	```
+            public init(myConfiguration: Bool) {
+                self.myConfiguration = myConfiguration
+            }
+        }
+    }
+    ```
 	
 	You can then refer this property as `Current.maps.myConfiguration`.
 	
 	A difference with other Feature Switches is that static configuration is used when we know that the configuration is specific to a specific _app_ (not the locale, not the user's region or their consumer network) and other apps should have the same feature configured differently, or we know that these configurations can be simply hardcoded on the client side. Other Feature Switches are not target specific.
 
-- ### Backend (consumer network) feature switches
+- ### Backend (consumer network/product config) feature switches
 
 	These feature switches are a kind of remote feature switches and are defined on the backend (in Feature Configurator service) and come as a part of patient details and can be accessed as `patient.metadata.featureSwitches`. Typically such feature swithces depend on some user data, i.e. region or consumer network.
 	
 	To add a new feature switch on the client add a new property to `BackendFeatureSwitches` struct in `BackendFeatureSwitches.swift` file and code to decode this property in `Decodable.swift`. Of course it needs to be added on the backend as well, that's something the backend dev from your team should be able to help with.
 	
+	_Product config_ is a new preferred way of managing such feature switches and it's preferable to use it for any new feature switch that defines features per product/partner. To use product config service in code, use `Current.productConfig` and define the flags via extensions to `ProductConfig` type:
+	
+    ```swift
+    extension ProductConfig {
+        public var myFeature: ProductConfigKeyPath<MyFeautre> {
+            // define key path using a feature key in a product config manifest
+            ProductConfigKeyPath(key: "my_feature")
+        }
+
+        public struct MyFeature: ProductConfigProperty {
+            public static let defaultValue = ProductConfig.MyFeature(
+                myFeatureEnabled: false
+            )
+
+            public let myFeatureEnabled: Bool
+
+            // typical Decodable implementation, value can be represented as a nested object 
+            // or as a single value, then it should be decoded with a `singleValueContainer`
+            private enum CodingKeys: String, CodingKey {
+                case myFeatureEnabled = "my_feature_enabled"
+            }
+        }
+    }
+
+    // access feature value as a SignalProducer<Bool, Never>
+    Current.productConfig.myFeature.map(\.myFeatureEnabled)
+    ```
+	
 - ### Remote config (A/B test, feature test)
 
 	These feature switches are another kind of remote feature switches and uses a cloud service (such as Optimizely or previously Firebase) as a backend. To add a new remote config you need to declare it in the `FeatureSwitches` struct of the appropriate Feature Module, similarly to local feature switches:
 
-	```swift
+    ```swift
     public struct MapsUI: FeatureModule {
         ...
         public struct FeatureSwitches {
@@ -140,19 +168,37 @@ All static configuration properties and feature switches should be declared in t
                 case isMyFeatureEnabled = "is_my_feature_enabled"
             }
 
-            @ABTestVariant(key: Keys.isMyFeatureEnabled)
+            @RemoteFeatureSwitch(key: Keys.isMyFeatureEnabled)
             var isMyFeatureEnabled: Bool
         }
-	}
-	```
+    }
+    ```
 
 	You can then refer this property as `Current.maps.isMyFeatureEnabled`.
 
-	**Note that default value is `false` again!** But you can specify a different default value, i.e. `@ABTestVariant(key: Keys.isMyFeatureEnabled, defaultValue: true)`
+	**Note that default value is `false` again!** But you can specify a different default value, i.e. `@RemoteFeatureSwitch(key: Keys.isMyFeatureEnabled, defaultValue: true)`
 	
 	After releasing the feature hidden behind the remote feature switch, make some agreement with your PM when we can stop using this switch. Depending on how your squad works, you may want to create a ticket in the backlog to phase out the feature switch and remove legacy code. Remember that even you've phased out the feature switch from the newest version, there are still older versions that could be using this feature switch for a long time.
 	
-	Read more: [Working with Optimizely](./Optimizely.md)
+	For A/B tests, there is a dedicated property wrapper `@ABTest` that makes the separation between regular feature switches and A/B tests more explicit. Also, it's only possible to create an A/B test using an enum with string raw value. Other than that, `ABTest` is identical to `RemoteFeatureSwitch` (and actually uses it as a backing storage)
+	
+    ```swift
+    public struct MapsUI: FeatureModule {
+        ...
+        public struct FeatureSwitches {
+            public enum Keys: String {
+                case myTest = "my_test"
+            }
+
+            enum MyTest: String { case variation1, variation2 }
+
+            @ABTest(key: Keys.myTest, default: .variation1)
+            var myTest: MyTest
+        }
+    }
+    ```
+	
+Read more: [Working with Optimizely](./Optimizely.md). Refer to the documentation for `RemoteFeatureSwitchDecoder` for more examples.
 
 ## How to decide what feature flag to use
 
