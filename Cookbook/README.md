@@ -50,7 +50,7 @@
   - UI Automation tests
      - [UI Automation with XCTest & Gherkin](./Technical-Documents/UIAutomation.md)  
      - [Automation Identifiers](./Technical-Documents/AutomationIdentifiers.md)
-  - [Debugging Push Notifications](./Technical-Documents/DebuggingPushNotifications.md) 
+  - [Debugging Push Notifications](./Technical-Documents/DebuggingPushNotifications.md)
 
 ## SDKs 🌱
   - Documenting SDKs
@@ -125,7 +125,8 @@
 | [Stevenson](https://github.com/babylonhealth/Stevenson)                     | Ilya, Olivier                     |    [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/Stevenson.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/Stevenson/stargazers/) |
 | Style guide                   | Diego                    |    WIP       |
 
---
+---
+
 This is a live document. We are constantly writing documentation for the items that are missing one and we also do periodic reviews and updates to other documents that might be out-dated.
 
 Please come back from time to time to check the new stuff!
