@@ -69,7 +69,7 @@ Tip: `/crp help` will respond with instructions for this command.
 
 * #### `/stevenson`
 
-This command will run arbitrary workflow defined in our CircleCI configuration. You can provide a branch parameter to run workflow on a branch unless workflow is configured to be run on specific branches (i.e. only on develop or release branches)
+This command will run arbitrary workflow defined in our CircleCI configuration (`.circleci/config.yml` in the project directory). You can provide a branch parameter to run workflow on a branch unless workflow is configured to be run on specific branches (i.e. only on develop or release branches)
 
 ```
 /stevenson ui_tests branch:develop

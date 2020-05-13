@@ -68,7 +68,7 @@ Generally, you only need to keep the ones below:
 Once your new framework has been configured and builds properly with its own dependencies, don't forget to add it to the relevant application targets in the `babylon.xcodeproj` project if needed:
 
 1. Add your `BabylonNewFramework.framework` to the `"Link Binary with Libraries"` build phase
-2. Add the `BabylonNewFramework.framework` to the `"Embed Frameworks"` build phase so that it's copied in the app bundle
+2. Add the `BabylonNewFramework.framework` to the `"Frameworks and Libraries"` build phase. Choose "Do Not Embed" if you're linking your framework to another framework target; choose "Embed & Sign" if you're linking it to an app target
 3. Be sure that the `BabylonNewFramework.framework` file reference – that was added in the Project Navigator by Xcode during the previous steps – was added under the `Frameworks` group (move it there if needed) **and is referenced as `Relative to Build Products`**
 
 ## One xcconfig pair and project per module

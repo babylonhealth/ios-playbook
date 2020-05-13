@@ -40,8 +40,6 @@ There are 3 services we use daily:
 - If you'd like feedback before the work on the ticket is done, open a draft PR so your peers can leave comments
 - To run checks before merging, use the comment `@ios-bot-babylon test_pr` ([more info](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/SlackCIIntegration.md))
 
-_Note: Sometimes Pull Assigner is not triggered when a new PR is opened. In that case, re-request `ios-pullassigner` to add reviewers from the team._
-
 ## 5. Merging PR 🚦
 
 - Once a PR has 2 approvals and no outstanding comments/changes requested, the `Merge` label can be added to begin the merging process

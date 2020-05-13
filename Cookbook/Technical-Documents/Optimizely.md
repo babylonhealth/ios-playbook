@@ -35,7 +35,7 @@ struct AwesomeExperiment: RemoteFeatureSwitchDecodable {
     let boolVariable: Bool
 
     private init() {
-      isEnabled = false
+        isEnabled = false
         stringVariable = ""
         boolVariable = false
     }
@@ -46,8 +46,8 @@ struct AwesomeExperiment: RemoteFeatureSwitchDecodable {
             return
         }
         isEnabled = true
-	  stringVariable = try decoder.stringValue(for: "string_value")
-	  boolVariable = try decoder.boolValue(for: "bool_value")
+	    stringVariable = try decoder.stringValue(for: "string_value")
+	    boolVariable = try decoder.boolValue(for: "bool_value")
     }
 }
 

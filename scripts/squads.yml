@@ -12,9 +12,6 @@ team:
     name: Adrian Śliwa
     github: adiki
     twitter: adiki91
-  - &Anil
-    name: Anil Puttabuddhi
-    github: anilputtabuddhi
   - &Ben
     name: Ben Henshall
     github: Ben-Henshall
@@ -23,9 +20,6 @@ team:
     name: Ana Catarina Figueiredo
     github: AnnKatF
     twitter: AnnKatFig
-  - &Chesley
-    name: Chesley Stephens
-    github: cstephens-babylon
   - &Chitra
     name: Chitra Kotwani
     github: chitrakotwani
@@ -40,14 +34,6 @@ team:
   - &Danilo
     name: Danilo Aliberti
     github: daniloaliberti
-  - &David
-    name: David Rodrigues
-    github: dmcrodrigues
-    twitter: dmcrodrigues
-  - &Davide
-    name: Davide De Franceschi
-    github: defrenz
-    twitter: defrenz
   - &Diego
     name: Diego Petrucci
     github: diegopetrucci
@@ -65,6 +51,9 @@ team:
   - &James
     name: James Birtwell
     github: jimmybee
+  - &Javier
+    name: Javier Hernández
+    github: jaherhi
   - &Joao
     name: João Pereira
     github: NSMyself
@@ -90,6 +79,9 @@ team:
     name: Nico Robin
     github: Naiko
     twitter: Naiko
+  - &Nikolay
+    name: Nikolay Marinov
+    github: nikolay-bab
   - &Olivier
     name:  Olivier Halligon
     github: AliSoftware
@@ -97,9 +89,6 @@ team:
   - &Patrick
     name: Patrick Westmeyer
     github: bh-pwestmeyer
-  - &Sam
-    name: Sam Francis
-    github: SamFrancis-Babylon
   - &Sergey
     name: Sergey Shulga
     github: sergdort
@@ -108,9 +97,6 @@ team:
     name: Simon Cass
     github: scass91
     twitter: codercass
-  - &Tyler
-    name: Tyler Hargett
-    github: thargett-babylon
   - &Viorel
     name: Viorel Mihalache
     github: viorel15
@@ -118,10 +104,6 @@ team:
   - &Witold
     name: Witold Skibniewski
     github: mr-v
-  - &Vojtech
-    name: Vojtech Vrbka
-    github: vojtechvrbka
-    twitter: vojtechvrbka
   - &Yuri
     name: Yuri Karabatov
     github: karabatov
@@ -135,7 +117,7 @@ roles:
   - name: Chapter Leads
     members:
       - *Catarina
-      - *David
+      - *Chitra
   - name: Squad Tech Leads
     members:
       - *Michael
@@ -145,28 +127,24 @@ roles:
 # List of the Squads and their members
 #
 squads:
+  - name: Activate
+    desc: Onboard users so that they understand the value we provide.
+    members:
+    - *Sergey
   - name: Appointments 1
     desc: Face to face appointment booking.
     members:
       - *Witold
   - name: Appointments 2
-    desc: Digital appointment booking.
+    desc: Digital appointments
     members:
       - *Adrian
       - *Chitra
-      - *Davide
       - *Nico
-  - name: Onboarding and Navigation
-    desc: General user experience in the app.
+  - name: Assistant
+    desc: Chatbot-related features.
     members:
-      - *Sergey
-      - *Yuri
-  - name: Native Apps Platform
-    desc: Engineering work like tooling, CI and development processes.
-    members:
-      - *David
-      - *Ilya
-      - *Olivier
+      - *Joao
   - name: GP @ Hand Registrations
     desc: End to end journey for NHS registration.
     members:
@@ -177,13 +155,12 @@ squads:
       - *Emese
       - *Julien
   - name: Identity
-    desc: Authentication and Authorization related work
+    desc: Authentication and Authorization related work.
     members:
       - *Giorgos
       - *Michael
-      - *Vojtech
   - name: Member Comms
-    desc: Improving how we communicate with our users
+    desc: Improving how we communicate with our users.
     members:
       - *Viorel
   - name: Monitor
@@ -192,6 +169,13 @@ squads:
       - *DanielH
       - *DanielS
       - *Diego
+      - *Javier
+      - *Nikolay
+  - name: Native Apps Platform
+    desc: Engineering work like tooling, CI and development processes.
+    members:
+      - *Ilya
+      - *Olivier
   - name: Prescriptions
     desc: Prescriptions functionality.
     members:
@@ -201,25 +185,21 @@ squads:
     desc: Updating and maintaining the Telus app.
     members:
       - *Simon
-  - name: Tenancy & Features
-    desc: To integrate the new feature configurator.
+  - name: Retain
+    desc: Engage users with our key features in a dynamic, personalised manner.
     members:
-      - *Anil
-  - name: Test Kits
-    desc: Managing everything related to Babylon do-at-home tests.
+      - *Yuri
+  - name: SDK
+    desc: Updating and maintaining the SDK.
     members:
       - *Michal
   - name: Triage
     desc: Chatbot functionality.
     members:
       - *Danilo
-      - *Joao
   - name: US Professional Services
     desc: Features for app in the US.
     members:
       - *Ben
       - *Joshua
-      - *Chesley
       - *Patrick
-      - *Sam
-      - *Tyler

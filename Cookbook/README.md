@@ -6,7 +6,7 @@
   - Team Roles
   - Team Structure
   - [Tools and Services](./Technical-Documents/ToolsAndServices.md)
-  - Slack
+  - [How to use Slack](./Technical-Documents/HowToUseSlack.md)
   - [GitHub Access](./Technical-Documents/NewHiresCheckList.md#github-access)
   - [Computer set-up](./Technical-Documents/NewHiresCheckList.md#install-prerequisites)
   - [Initial tasks](./Technical-Documents/NewHiresCheckList.md#whats-next)
@@ -91,9 +91,11 @@
   - [Code Signing with Fastlane Match](./Technical-Documents/FastlaneMatch.md)
   - [AppCenter](./Technical-Documents/AppCenter.md)
   - [Pull Assigners](./Technical-Documents/PullAssigners.md)
+  - [SwiftGen](./Technical-Documents/SwiftGen.md)
   - SwiftLint
   - [RubyMine](Technical-Documents/RubyMine.md)
   - [Platform tools](Technical-Documents/PlatformTools.md)
+  - [What we tried to improve CI Build Time (type-checker optimisations, `cocoapods-binary`, CI cache…)](./Technical-Documents/BuildTime-Spikes-Report.md)
 
 ## How to 🤔
   - Add a new API in an existing SDK
@@ -117,9 +119,9 @@
 ## Open source projects 🚀
 | Project name                  | Owner(s)                 | Stars        |
 |-------------------------------|--------------------------| ------------ |
-| [Bento](https://github.com/babylonhealth/Bento)                         | Anders, David, Sergey    | [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/Bento.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/Bento/stargazers/) |
-| [DrawerKit](https://github.com/babylonhealth/DrawerKit)                     | Inami, Ben               |    [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/DrawerKit/stargazers/) |
-| [ReactiveFeedback](https://github.com/babylonhealth/ReactiveFeedback)              | Anders, Sergey           |    [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/ReactiveFeedback/stargazers/) |
+| [Bento](https://github.com/babylonhealth/Bento)                         | David, Sergey    | [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/Bento.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/Bento/stargazers/) |
+| [DrawerKit](https://github.com/babylonhealth/DrawerKit)                     | Ben               |    [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/DrawerKit/stargazers/) |
+| [ReactiveFeedback](https://github.com/babylonhealth/ReactiveFeedback)              | Sergey           |    [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/ReactiveFeedback/stargazers/) |
 | [Wall-E](https://github.com/babylonhealth/Wall-E)                        | David               |    [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/Wall-E.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/Wall-E/stargazers/)    |
 | [Stevenson](https://github.com/babylonhealth/Stevenson)                     | Ilya, Olivier                     |    [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/Stevenson.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/Stevenson/stargazers/) |
 | Style guide                   | Diego                    |    WIP       |
