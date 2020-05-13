@@ -6,7 +6,7 @@ Alongside this framework, we also use a few services to help us keep track of wh
 
 There are 3 services we use daily:
 
-- Jira: is where the development process begins. Once a ticket has all the necessary details, dev can pick it up and implement it <!-- TODO: [CNSMR-3230] link to Jira article -->
+- [Jira:](JIRA.md) is where the development process begins. Once a ticket has all the necessary details, dev can pick it up and implement it
 - GitHub: used for hosting our project and version control using Git
 - CircleCI: our continuous integration service to run tests when integrating PRs <!-- TODO: [CNSMR-xxxx] link to CircleCI article -->
 
@@ -34,7 +34,8 @@ There are 3 services we use daily:
 ## 4. Creating the PR 📝
 
 - Fill in the PR template and set the title using the following format: `[TCKT-123] Short summary of work`
-- [Add labels](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/LabelsInPRs.md)
+- [Add labels](https://github.com/babylonhealth/ios-playbook/blob/master/Cookbook/Technical-Documents/LabelsInPRs.md) if necessary
+    - To open a work in progress PR, use [GitHub's draft PR feature](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests#draft-pull-requests) and pusblish it once it's ready for review. Reviewers will only be requested for published PRs.
 - Thanks to a GitHub action, the PR will automatically be assigned to its creator
 - Move the ticket to `Peer review` on Jira (or it'll be automatically moved if configured)
 - If you'd like feedback before the work on the ticket is done, open a draft PR so your peers can leave comments
@@ -48,6 +49,7 @@ There are 3 services we use daily:
 - If the required checks are passing, the PR is merged and the branch deleted.
 - The ticket is moved to `Awaiting build` on Jira by our [bot](https://github.com/babylonhealth/Stevenson). It will be updated to `Ready for QA` when the next App Center build is created. (if configured, otherwise this should be done manually)
 - If the checks fail, you will have to analyse what is the reason for the failure, fix it, and add the `Merge` label again
+
 ## 6. QA 🧑‍💻
 
 - Once the work is in the App Center builds, QA can test it to make sure everything works correctly
