@@ -26,12 +26,10 @@ A project horizontal corresponds to an area of the project that has an horizonta
 - ![Platform 🔩](https://img.shields.io/static/v1?label&message=Platform%20🔩&color=002360) - work in the iOS Platform, e.g. architecture, infrastructure, tooling, ...
 
 ### Branding
-We have several projects which contain a subset of functionalities from the main babylon app. These apps also have different flavours in terms of UI. 
+We have several projects which contain a subset of functionalities from the main babylon app. These apps also have different flavours in terms of UI.
 
 The labels to define work that is done in each different project are:
 
-- ![BUPA 🤕](https://img.shields.io/static/v1?label&message=BUPA%20🤕&color=1d76db) - work in the BUPA app
-- ![NHS 👩‍⚕️](https://img.shields.io/static/v1?label&message=NHS%20👩‍⚕️&color=0052cc) - work in the GP and hand app
 - ![Telus 🇨🇦](https://img.shields.io/static/v1?label&message=Telus%20&color=9746e2)🇨🇦 - work in the Telus app
 - ![US 🇺🇸](https://img.shields.io/static/v1?label&message=US%20&color=2f2799) 🇺🇸 - work in the US app
 
@@ -40,8 +38,6 @@ Informs in which stage of development the PR is. These labels are used to know w
 
 - ![Merge](https://img.shields.io/static/v1?label&message=Merge&color=FF7F50) - The PR is ready to be merged. Our bot picks up when this label is added. It will then automatically add the PR in the queue to merge the PRs in order. Once dequeued, it will first merge back develop into the PR, then wait for our CI system to run all the tests. Only if every test has passed the bot will finally merge the PR.
 - ![Needs one reviewer 🙏](https://img.shields.io/static/v1?label&message=Needs%20one%20reviewer🙏%20&color=ce3799) - The PR has one approval and is waiting for one more review.
-- ![Ready for Review 🚀](https://img.shields.io/static/v1?label&message=Ready%20for%20Review🚀&color=0e8a16) - The work on the PR is finished and it is ready to be reviewed.
-- ![Work in progress 🚧](https://img.shields.io/static/v1?label&message=Work%20in%20progress%20🚧&color=fbca04) - The work on the PR is not finished and is not ready to be reviewed.
 
 ### Status
 Flags if there is something preventing the PR from being merged that is unrelated with review requests or failing builds.
@@ -52,8 +48,7 @@ Flags if there is something preventing the PR from being merged that is unrelate
 ### Emergency
 Alerts when a PR is required to be merged. This is used in emergency situations like a hot fix or a piece of work that is mandatory to go in the release that is about to ship.
 
-- ![Feature at risk 🚑](https://img.shields.io/static/v1?label&message=Feature%20at%20risk%20🚑&color=e00000) - A PR that has to go in the next release that will ship in 2 days or less. This PR has priority to be reviewed over all the other PRs that are not in emergency.
-- ![Hotfix 🆘](https://img.shields.io/static/v1?label&message=Hotfix%20🆘&color=fcc1ba) - The PR has priority to be reviewed because it has an urgent fix targeting the PR's base branch, which could be develop or the current release branch.
+- ![Hotfix 🆘](https://img.shields.io/static/v1?label&message=Hotfix%20🆘&color=fcc1ba) - The PR has priority to be reviewed because it has an urgent change for the current or next release.
 
 ### Extra
 These tags are used to give extra context to the PR.
@@ -75,7 +70,7 @@ Multiple labels from these groups can be added to a PR because a piece of work c
 
 ### [**Stage**](#stage)
 
-In this group a mixed of rules are applied. 
+In this group a mixed of rules are applied.
 A PR can:
 
 - be either [ready for review](#ready_review) or still [in progress](#in_progress). These are mutually exclusive. It means the labels representing both these stages can't be present in the same instant.
@@ -98,5 +93,3 @@ A PR can only have one emergency label.
 ### [**Extra**](#extra)
 
 A PR can have one or more extra labels at the same time.
-
-
