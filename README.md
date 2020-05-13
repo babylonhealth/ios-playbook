@@ -8,7 +8,7 @@ iOS Playbook 📚
 
 At Babylon, we firmly believe that **transparency** is a core value that should be present in everything we do. In this playbook you can learn about [who we are](#who-are-we) and [our ways of working](/Cookbook/README.md).
 
-## Who are we? 
+## Who are we?
 
 We're organised in Squads. Each squad can be composed of people from Engineering (iOS, Android, Web, Backend), Design and Product.
 
@@ -96,8 +96,6 @@ The rest of the iOS Engineers work in the following squads:
 - On our [Cookbook](/Cookbook/README.md) 🥘
 - Check our [open positions](https://www.babylonhealth.com/careers-hub/vacancies) 👀
 
+---
 
---
 The [Babylon health iOS team](http://github.com/babylonhealth)
-
-
