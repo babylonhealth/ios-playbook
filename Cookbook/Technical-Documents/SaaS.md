@@ -1,4 +1,4 @@
-SaaS app is effectively a Babylon app with a configurable subset of features. To make this process scalable rather than creating new application targets every time we have a blueprint target, called SaaS, that is used to generate an app based on the configuration file at build time. We also use remote [feature switches](./FeatureSwitches.md) to configure features availablility.
+SaaS app is effectively a Babylon app with a configurable subset of features. To make this process scalable, rather than creating new application targets every time, we have a blueprint target called `SaaS` that is used to generate an app based on the configuration file at build time. We also use remote [feature switches](./FeatureSwitches.md) to configure features' availablility.
 
 ## SaaS config 
 
@@ -42,9 +42,9 @@ SaaS config file is a plain json file that describes some of the applicaiton fea
 }
 ```
 
-For full list of configurations seee `Brand/SaaS/SaaS.json` file.
+For full list of configurations see `Brand/SaaS/SaaS.json` file.
 
-Because these configuration values are effectively hardcoded in the app we use this config file to generate source files and metadata files like plist and entitlments files:
+Because these configuration values are effectively hardcoded in the app, we use this config file to generate source files and metadata files like plist and entitlements files:
 
 ```
 bundle exec fastlane generate_saas saas:SaaSConfigFileName
@@ -52,7 +52,7 @@ bundle exec fastlane generate_saas saas:SaaSConfigFileName
 
 Running this command will use `Brand/SaaS/SaaSConfigFileName.json` as a source of values for generated files. Files are generated from templates in the `SaaS/Templates` folder and are generated into `Brand/SaaS/Generated` folder.
 
-To create an Appcenter or Testflight build provide a name of config file with a `saas` parameter instead of a target:
+To create an AppCenter or Testflight build, provide a name of config file with a `saas` parameter instead of a target:
 
 ```
 bundle exec fastlane appcenter saas:SaaSConfigFileName
@@ -82,10 +82,10 @@ bundle exec fastlane match_enterprise saas:SaaSConfigFileName
 
 ## Extending configurations
 
-We should strive to minimise amount of compile time configuration and allow runtime configuration instead so whenever possible consider using product config for the feature configuration. If it's not possible and feature is configured in the AppConfiguration or as a static configuration then to being able to configure it for different SaaS projects you need to:
+We should strive to minimise amount of compile time configuration and allow runtime configuration instead. Whenever possible consider using product config for the feature configuration. If it's not possible and feature is configured in the `AppConfiguration` or as a static configuration, then to be able to configure it for different SaaS projects, you need to:
 
 - add the key with the configuration value in the config file. Note that you should add it to all the config files or check if the key is defined in the template
-- if the configuraiton is not yet part of the existing templates extract it into a new template or add to the existing one depending on where it fits better
-- if the configuration is a part of the static feature configuration then add it as a parameter to the corresponding feature module configuration call in `Brand/SaaS/Templates/SaaSAppDelegate.swift.erb`
-- the template files are ERB templates so make sure you use corret [ERB syntax](https://puppet.com/docs/puppet/latest/lang_template_erb.html#concept-5566). So to write the configuration value in the generated file use `<%= cofig_key %>` syntax in the template.
-- if you added a new template file add it to the list of template files in the `generate_saas_files` method in the `fastlane/Lanes/saas`
+- if the configuration is not yet part of the existing templates, extract it into a new template or add to the existing one depending on where it fits better
+- if the configuration is a part of the static feature configuration, then add it as a parameter to the corresponding feature module configuration call in `Brand/SaaS/Templates/SaaSAppDelegate.swift.erb`
+- the template files are ERB templates so make sure you use corret [ERB syntax](https://puppet.com/docs/puppet/latest/lang_template_erb.html#concept-5566). To write the configuration value in the generated file, use `<%= cofig_key %>` syntax in the template.
+- if you added a new template file, add it to the list of template files in the `generate_saas_files` method in `fastlane/Lanes/saas`
