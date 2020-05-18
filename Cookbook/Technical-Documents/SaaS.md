@@ -89,3 +89,4 @@ We should strive to minimise amount of compile time configuration and allow runt
 - if the configuration is a part of the static feature configuration, then add it as a parameter to the corresponding feature module configuration call in `Brand/SaaS/Templates/SaaSAppDelegate.swift.erb`
 - the template files are ERB templates so make sure you use corret [ERB syntax](https://puppet.com/docs/puppet/latest/lang_template_erb.html#concept-5566). To write the configuration value in the generated file, use `<%= cofig_key %>` syntax in the template.
 - if you added a new template file, add it to the list of template files in the `generate_saas_files` method in `fastlane/Lanes/saas`
+- run `bundle exec fastlane generate_saas saas:SaaS` to update default generated files and commit new changes
