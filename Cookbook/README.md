@@ -101,6 +101,7 @@
   - Add a new API in an existing SDK
   - [Add Frameworks/Modules to the project](./Technical-Documents/AddingFrameworks.md)
   - Build a screen that touches all layers
+  - [Create and configure a SaaS app](./Technical-Documents/SaaS.md)
 
 ## Proposals 📖
   - [Overview](./Technical-Documents/WritingAProposal.md)
