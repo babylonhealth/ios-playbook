@@ -25,11 +25,10 @@ As an iOS Engineer, you should be in the following Slack channels:
 * Public:
 	- `#ios`
 	- `#ios-build`
-	- `#ios-usa-support`
 	- `#ios-automation`
 	- `#ios-crash-reports`
 	- `#ios-recruiting`
-
+	
 * Private (ask someone to invite you):
 	- `#ios-underground`
 	- `#ios-questions`
