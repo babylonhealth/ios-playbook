@@ -1,6 +1,6 @@
 # Support Engineer Role
 
-As well as **Squad-related** work, we, as iOS engineers, have **iOS Chapter-related** work.
+As well as **Squad-related** work, we (iOS engineers) have **iOS Chapter-related** work.
 
 In order to make time for the latter, we have introduced the **Support Role**. Once in a while, every iOS engineer goes on support duty for **two consecutive days** during which Chapter work is prioritised – unless there are critical Squad tasks to be done. In that case, the Support Engineer can ask an iOS Chapter Lead to find someone to replace them.
 
