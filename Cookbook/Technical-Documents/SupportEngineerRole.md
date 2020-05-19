@@ -2,13 +2,14 @@
 
 As iOS Engineers, we have Squad related work and we also have iOS Chapter work.
 
-The iOS Team duties are as important as Squad duties, although in some occasions one can have priority over the other.<br>
+The iOS Team duties are as important as Squad duties, although in some occasions one can have priority over the other.
+
 When an engineer is on support, these duties have higher priority over Squad duties, however this can change if there is critical Squad work to be done. In this case, the Support Engineer can ask an iOS Chapter Lead to be replaced in their support duties.
 
 ## Duties
 
-* **Update #ios and #ios-usa-support Slack channels topics** The topics should be updated with the iOS Engineers in support for the current day. This update should be done first thing in the morning.
-* **Be available to answer any requests posted in the #ios and #ios-usa-support.** The engineer can either solve the request or delegate to someone who might know how to solve it.
+* **Update the #ios Slack channel's topic** The topic should be updated to show the Support Engineer for the current day. This should be done first thing in the morning.
+* **Be available to answer any requests posted in the #ios channel.** The engineer can either solve the request or delegate to someone who might know how to solve it.
 * **Pick up tickets from the iOS Platform backlog.** These are tickets that don't have any Squad as an owner and still need to be fixed, or ones for which the Platform team might need some help with.
    * Use this [Kanban board](https://babylonpartners.atlassian.net/secure/RapidBoard.jspa?rapidView=1509) to see the list of pending BAU tickets.
    * But first, ping the platform team directly on Slack to check with them if there is any urgent/blocker ticket that could use some help and would take priority.
