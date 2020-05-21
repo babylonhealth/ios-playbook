@@ -76,6 +76,6 @@ App Center supports Azure Active Directory so there should be no reason to invit
 
 5. Inside the `Collaborators` tab, invite someone using their `@babylonhealth.com` email.
 
-6. Switch to the `Teams` tab and select the team you want to add the person to. `BABYLON-TEAM` gives access to see all of our projects so if you're not sure which one you should select, just invite there. Inside the team, add the collaborator using their email (**Unfortunately, you can only add people that already accepted an invitation to the organisation so you need to wait for them to accept**). If you need, you can create new group here, remember to congifure apps and select proper access level for this new group.
+6. Switch to the `Teams` tab and select the team you want to add the person to. `BABYLON-TEAM` gives access to see all of our projects so if you're not sure which one you should select, just invite there. Inside the team, add the collaborator using their email (**Unfortunately, you can only add people that already accepted an invitation to the organisation so you need to wait for them to accept**). If you need, you can create new group here, remember to configure apps and select proper access level for this new group.
 
 7. Switch to the `Distribution groups` tab and select `BABYLON` group - invite the person there using their email. **Do not create new groups here. CI is configured to distribute new builds only to this group.**
