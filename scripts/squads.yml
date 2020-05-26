@@ -20,10 +20,6 @@ team:
     name: Ana Catarina Figueiredo
     github: AnnKatF
     twitter: AnnKatFig
-  - &Chitra
-    name: Chitra Kotwani
-    github: chitrakotwani
-    twitter: chitrakotwani
   - &DanielH
     name: Daniel Haight
     github: Daniel1of1
@@ -31,9 +27,6 @@ team:
     name: Daniel Spindelbauer
     github: sdaniel55
     twitter: sdaniel55
-  - &Danilo
-    name: Danilo Aliberti
-    github: daniloaliberti
   - &Diego
     name: Diego Petrucci
     github: diegopetrucci
@@ -48,9 +41,6 @@ team:
     name: Ilya Puchka
     github: ilyapuchka
     twitter: ilyapuchka
-  - &James
-    name: James Birtwell
-    github: jimmybee
   - &Javier
     name: Javier Hernández
     github: jaherhi
@@ -67,14 +57,6 @@ team:
   - &Konrad
     name: Konrad Muchowicz
     github: konrad-em
-  - &Michael
-    name: Michael Brown
-    github: mluisbrown
-    twitter: mluisbrown
-  - &Michal
-    name: Michał Kwiecień
-    github: MichalTKwiecien
-    twitter: kwiecien_co
   - &Nico
     name: Nico Robin
     github: Naiko
@@ -82,10 +64,6 @@ team:
   - &Nikolay
     name: Nikolay Marinov
     github: nikolay-bab
-  - &Olivier
-    name:  Olivier Halligon
-    github: AliSoftware
-    twitter: aligatr
   - &Patrick
     name: Patrick Westmeyer
     github: bh-pwestmeyer
@@ -104,10 +82,6 @@ team:
   - &Witold
     name: Witold Skibniewski
     github: mr-v
-  - &Yuri
-    name: Yuri Karabatov
-    github: karabatov
-    twitter: karabatov
 
 
 ################################################################
@@ -117,20 +91,18 @@ roles:
   - name: Chapter Leads
     members:
       - *Catarina
-      - *Chitra
-  - name: Squad Tech Leads
-    members:
-      - *Michael
 
 
 ################################################################
 # List of the Squads and their members
 #
 squads:
-  - name: Activate
-    desc: Onboard users so that they understand the value we provide.
+  - name: Partnerships
+    desc: Updating and maintaning our partner apps. Engineering work like tooling, CI and development processes..
     members:
-    - *Sergey
+      - *Ilya
+      - *Sergey
+      - *Simon
   - name: Appointments 1
     desc: Face to face appointment booking.
     members:
@@ -139,30 +111,16 @@ squads:
     desc: Digital appointments
     members:
       - *Adrian
-      - *Chitra
       - *Nico
   - name: Assistant
     desc: Chatbot-related features.
     members:
       - *Joao
-  - name: GP @ Hand Registrations
-    desc: End to end journey for NHS registration.
-    members:
-      - *James
   - name: Healthcheck
     desc: Overview of your health using a 3D body model (avatar).
     members:
       - *Emese
       - *Julien
-  - name: Identity
-    desc: Authentication and Authorization related work.
-    members:
-      - *Giorgos
-      - *Michael
-  - name: Member Comms
-    desc: Improving how we communicate with our users.
-    members:
-      - *Viorel
   - name: Monitor
     desc: Help members manage and sustain a healthy lifestyle.
     members:
@@ -171,32 +129,19 @@ squads:
       - *Diego
       - *Javier
       - *Nikolay
-  - name: Native Apps Platform
-    desc: Engineering work like tooling, CI and development processes.
-    members:
-      - *Ilya
-      - *Olivier
-  - name: Prescriptions
-    desc: Prescriptions functionality.
+  - name: Real-Time Matching
+    desc: To increase average appointment per hour per clinician.
     members:
       - *Adam
       - *Konrad
-  - name: Partnerships
-    desc: Updating and maintaining the Telus app.
-    members:
-      - *Simon
-  - name: Retain
+  - name: Experience
     desc: Engage users with our key features in a dynamic, personalised manner.
     members:
-      - *Yuri
-  - name: SDK
-    desc: Updating and maintaining the SDK.
-    members:
-      - *Michal
+      - *Giorgos
   - name: Triage
     desc: Chatbot functionality.
     members:
-      - *Danilo
+      - *Viorel
   - name: US Professional Services
     desc: Features for app in the US.
     members:
