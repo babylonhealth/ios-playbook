@@ -31,7 +31,7 @@ Actions: For @catarina to change the PR Party documentation to address the chang
 Recording: https://babylonhealth.zoom.us/recording/share/2q99Zb7Oxg0Kk7yIAVITuGUZVCs2_eV7Vge2Ppmjq3WwIumekTziMw
 ```
 
-### #ios-pedia
+### #ios-announcements
 A private channel used to make announcements or to open discussions on broader topics within the iOS Team.
 Each announcement or discussion should be just one message and the discussion should happen within that message's thread.
 To understand the status of a message we should identify each topic by adding tagging each message with:
@@ -75,6 +75,11 @@ Example:
 A public channel where we usually trigger CI workflows like Testfligh/AppCenter builds or UI Automation Tests.
 The UI Automation Tests run every night and the results are published in this channel by the bot.
 To check how to trigger the workflows check [Slack CI Integration](../SlackCIIntegration.md)
+
+### #mobile-announcements
+
+A private channel used to make relevant announcements for both iOS and Android teams.
+Each announcement should be just one message and the discussion should happen within that message's thread.
 
 ## How to manage notifications?
 
