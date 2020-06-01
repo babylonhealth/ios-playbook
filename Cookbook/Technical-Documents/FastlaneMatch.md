@@ -86,8 +86,10 @@ Note: We specify `--app_identifier` so that other valid profiles are not re-gene
 
 - Run `bundle exec fastlane add_device` locally, it will ask you for the name of the device and its UDID, will add it to the Apple developer center for enterprise team and will automatically regenerate all development provisioning profiles.
 
-If something goes wrong with this lane you can follow manual steps:
-- You can also register your device manually on the portal in the enterprise team account
+After adding the device, the lane will ask for the bundle ids for the provisioning profiles that need to be regenerated. Check the target that you want to run, as some of them may require more than one in order to work. For example, the main target requires the notification service extension, which means that at least two provisionin profiles need to be generated.
+
+If something goes wrong with this lane you can follow these manual steps:
+- You can register your device manually on the portal in the enterprise team account
 - Run the following command
 
 ```
