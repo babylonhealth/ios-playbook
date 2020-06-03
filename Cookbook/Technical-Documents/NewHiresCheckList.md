@@ -6,7 +6,9 @@ You can find the list of services you'll need and how to get access to them in [
 
 ## GitHub Access
 
-Prior to starting, make sure you have a GitHub account (either your personal or new for Babylon) and that you have access to the following repositories:
+Prior to starting, make sure you have a GitHub account (either your personal or a new one for Babylon) and that you are added to the [iOS](https://github.com/orgs/babylonhealth/teams/ios) and [iOS-Devs](https://github.com/orgs/babylonhealth/teams/ios-devs) teams. This will give you access to all the appropriate repositories and will include you in GitHub's automatic code reviewer assignments.
+
+Once you've done that, double check that you have access to the following repositories:
 
 - [babylon-ios](https://github.com/babylonhealth/babylon-ios)
 - [ios-charts](https://github.com/babylonhealth/ios-charts)
@@ -23,12 +25,10 @@ As an iOS Engineer, you should be in the following Slack channels:
 * Public:
 	- `#ios`
 	- `#ios-build`
-	- `#ios-usa-support`
-	- `#ios-standup`
 	- `#ios-automation`
 	- `#ios-crash-reports`
 	- `#ios-recruiting`
-
+	
 * Private (ask someone to invite you):
 	- `#ios-underground`
 	- `#ios-questions`
@@ -36,6 +36,7 @@ As an iOS Engineer, you should be in the following Slack channels:
 	- `#ios-oss`
 	- `#ios-meeting-outcomes`
 	- `#ios-pedia`
+	- `#ios-support-info`
 
 * Others
 	- `#demo_frontend`

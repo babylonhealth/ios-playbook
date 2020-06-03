@@ -21,6 +21,8 @@ The schedule is the following:
 
 ## PR Parties
 
+**[IMPORTANT] The recurring PR Party meetings are now cancelled given the low number of PRs opened for review at the same time. PR Party meetings can still be be scheduled when needed.**
+
 The PR Parties are groups of engineers who are assembled to review a bunch of PRs they're assigned to. Usually the authors of these PRs will be in the group. Participants will start by reviewing PRs asynchronously on their own. 
 If there is a need, a meeting will be organised where the authors will go through their PRs and explain them. This will open a discussion about them and a different approach can be agreed on if required. In an ideal world, we would have all the PRs approved by the end of the meeting, but this is not the main goal. The purpose is to facilitate the discussion about the PR implementation.
 
@@ -39,7 +41,7 @@ A PR Party Line-Up will be announced every Monday, Wednesday and Thursday.
 ## iOS Lunch & Learn
 
 The purpose of this meeting is to have fortnightly iOS learning sessions with the whole team.
-We will grab lunch before the meeting, sit together (physically or remotelly) and:
+We will grab lunch before the meeting, sit together (physically or remotely) and:
 
 * Watch a video relevant to the iOS team.
 * Watch a presentation done by someone in the team (full or lightning).

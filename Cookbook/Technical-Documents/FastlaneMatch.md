@@ -12,45 +12,51 @@ We use two teams on our Apple developer center account:
 **Caution**
 
 - **DO NOT** use Xcode code signing capabilities ("Download Manual Profiles" or "Manage Certificates" buttons in Xcode's preferences pane) and don't change automatic code signing in the project settings. Always use Match.
+- Do not enable automatic code signing for any target in the project. Always set it to Manual and use xcconfig files to specify code signing build settings if needed
 - Never use Match with `--readonly false` **unless** you need to generate/regenerate profiles. Otherwise existing builds on App Center will become invalid. By default it is run with `--readonly true`
 
 ## Download and install code signing identities on your machine
 
 For day to day and App Center, we use certificates and profiles from our Enterprise team
 
-1. Add shared developer account credentials from 1Password to your Xcode settings in `Preferences -> Accounts` menu. 
+1. Add shared developer account, "John Appleseed", credentials from 1Password to your Xcode settings in `Preferences -> Accounts` menu. 
 2. Run the following command in the terminal: 
 
+- to download development certificates and profiles to run the app on device from Xcode:
+
 ```shell
- $ bundle exec fastlane match {{Type}} --team_id {{TeamID}} 
+ $ bundle exec fastlane match_development
 ```
 
-Following options can be used for the command above:
+- to download enterprise certificates and profiles to make enterprise build locally:
 
-| Code signing identities for | Type param| TeamID param    |
-|-----------------------------|-----------|-------------------
-|Day-to-day development       |development|Enterprise TeamID|
-|App Center                   |enterprise |Enterprise TeamID|
+```shell
+ $ bundle exec fastlane match_enterprise
+```
 
-(You can find the `TeamID` parameter by searching for `$team_ids` in `/fastlane/Appfile` in the main repo.)
+- to download AppStore certificates and profiles to make AppStore build locally:
 
-3. On prompt for password to decrypt the repository, enter the one from 1Password vault.
+```shell
+ $ bundle exec fastlane match_appstore
+```
+
+3. On prompt for passphrase to decrypt the repository, enter the one from 1Password vault.
 
 To troubleshoot, refer to `fastlane/Matchfile`, `fastlane/Appfile` and [documentation](https://docs.fastlane.tools/actions/match/)
 
-### TestFlight and AppStore
+Mentioned lanes will download certificates and profiles for all the apps (and their extensions) specificed in Appfile in the `app_config`. You can specify `readonly:false` option if you want the profiles to be regenerated. Note that it will regenerate all invalid profiles for all the apps.
 
-For TestFlight and AppStore, we use certificates and profiles from our App Store developer team
-
-If need arises to create a Testflight or App Store build on your machine, run the following command:
-
-```shell
- $ bundle exec fastlane match appstore --team_id {{appstore TeamID}} --git_branch {{appstore TeamID}} --app_identifier {{appstore bundleID}}
+```
+bundle exec fastlane match_enterprise readonly:false
 ```
 
-Note: 
-- More on `--git-branch` option [below](#several-targets-and-teams)
-We specify individual app identifiers instead of adding all App Store bundle ids to the default set as Match would otherwise attempt to load certificates that do not exist in the portal. This is because some of our app ids are registered with teams that belong to our partners.
+If you want to work with profiles and certificates of specific application use `fastlane match` action directly and call it with all required parameters explicitly (use `bundle exec fastlane match --help` to list all the parameters):
+
+- `--type`: the profile type, can be `appstore`, `adhoc`, `development`, `enterprise`
+- `--app_identifier`: The bundle identifier(s) of your app (comma-separated)
+- `--team_id`: The ID of Developer Portal team (see `team_id` in Appfile)
+- `--git_branch`: Specific git branch in match repository to use (`352LTJUM25` for `appstore`, `adhoc-build` for `adhoc`, `master` for `enterprise` and `development`), default is `master`
+- `--readonly false`: will generate new certificates and profiles if needed, default is `true` (meaning match will run in readonly mode and will only download existing profiles and certificates)
 
 ## Renew expired profiles
 
@@ -80,8 +86,10 @@ Note: We specify `--app_identifier` so that other valid profiles are not re-gene
 
 - Run `bundle exec fastlane add_device` locally, it will ask you for the name of the device and its UDID, will add it to the Apple developer center for enterprise team and will automatically regenerate all development provisioning profiles.
 
-If something goes wrong with this lane you can follow manual steps:
-- You can also register your device manually on the portal in the enterprise team account
+After adding the device, the lane will ask for the bundle ids for the provisioning profiles that need to be regenerated. Check the target that you want to run, as some of them may require more than one in order to work. For example, the main target requires the notification service extension, which means that at least two provisionin profiles need to be generated.
+
+If something goes wrong with this lane you can follow these manual steps:
+- You can register your device manually on the portal in the enterprise team account
 - Run the following command
 
 ```
@@ -91,22 +99,9 @@ bundle exec fastlane match development --team_id {{enterprise teamID}} --force_f
 ## Several Targets and Teams
 
 - As recommended, we store identities related to different teams on different branches in our fastlane match git repository
-- On `develop` branch, enterprise-account (develop and App Center) related identities are stored
+- On `master` branch, enterprise-account (develop and App Center) related identities are stored
 - On `{{AppStore team id}}` branch, Testflight & Appstore related identities (distribution) are stored
-
-On CI, code signing certificates for more than one target or type are needed for a build. This can be handled by making several calls to match. 
-
-```ruby
-match(app_identifier: "com.best.app.ever.seriously", type: "adhoc", git_branch: "best_app_ever_ad_hoc_signing")
-match(app_identifier: "com.best.app.ever.seriously", type: "development", git_branch: "best_app_ever_dev_signing")
-```
-
-The corresponding shell commands would be
-
-```shell
-fastlane match adhoc --app_identifier com.best.app.ever.seriously --git_branch best_app_ever_ad_hoc_signing
-fastlane match development --app_identifier com.best.app.ever.seriously --git_branch best_app_ever_dev_signing
-```
+- `adhoc-build` branch is used for adhoc certificates and profiles
 
 ## Update Contents Manually
 
@@ -226,6 +221,8 @@ Fastlane match requires that provisioning profiles are named AdHoc_`bundle ident
 
 ## Problems and trouble-shooting
 
-- When you run `fastlane match` first time it will ask you to enter the password from Apple developer center. This password is stored in iOS team's 1Password vault. If you used the wrong password you will not be asked to change it. You then need to go to your keychain, find the entry for this password (it will be named after the email of the account prefixed with `deliver.`) and delete it. After that next time you run `faslane match` it will ask you for the password again.
+- When you run `fastlane match` first time it will ask you to enter the password from Apple developer center. This password is stored in iOS team's 1Password vault. If you used the wrong password you will not be asked to change it. You then need to go to your keychain, find the entry for this password (searching for `fastlane`) and delete it. After that next time you run `faslane match` it will ask you for the password again.
 
 - There were some problems (March 2019) with running `bundle exec fastlane spaceship`, it struggled to install the `pry` gem. This might be related to your shell version and a possible workaround is to install manually in the `~/.fastlane` folder.
+
+- If you are making enterprise or AppStore build locally and signing fails make sure that you have only one distribution certificate in your keychain as match can confuse them and pick the first one in the list that might not be what you need. Delete the certificate that you don't need (i.e. only leave AppStore certificate if you are making AppStore build). If you will need this certificate later you'll be able to donwload it again.

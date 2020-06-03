@@ -1,4 +1,4 @@
-If you want to know how to invite people, [click here](#adding-people-to-the-organisation).
+Follow the steps below to get access to our nightly builds.
 
 # Accessing App Center builds
 
@@ -62,7 +62,7 @@ If this happened, follow these steps:
 
 
 # Adding people to the organisation
-App Center team is currently working on integrating Azure Active Directory to App Center Auth but for now, we still need to manually invite people. See [App Center ticket](https://github.com/microsoft/appcenter/issues/994) to check the progress on this.
+App Center supports Azure Active Directory so there should be no reason to invite people - everyone with Babylon Okta account should be able to access our projects and builds. However, for some reasons, it sometimes doesn't work and we need to invite people manually. In such case, follow steps below.
 
 ### Steps to invite
 
@@ -76,6 +76,6 @@ App Center team is currently working on integrating Azure Active Directory to Ap
 
 5. Inside the `Collaborators` tab, invite someone using their `@babylonhealth.com` email.
 
-6. Switch to the `Teams` tab and select the team you want to add the person to. `BABYLON-TEAM` gives access to see all of our projects so if you're not sure which one you should select, just invite there. Inside the team, add the collaborator using their email (**Unfortunately, you can only add people that already accepted an invitation to the organisation so you need to wait for them to accept**). If you need, you can create new group here, remember to congifure apps and select proper access level for this new group.
+6. Switch to the `Teams` tab and select the team you want to add the person to. `BABYLON-TEAM` gives access to see all of our projects so if you're not sure which one you should select, just invite there. Inside the team, add the collaborator using their email (**Unfortunately, you can only add people that already accepted an invitation to the organisation so you need to wait for them to accept**). If you need, you can create new group here, remember to configure apps and select proper access level for this new group.
 
 7. Switch to the `Distribution groups` tab and select `BABYLON` group - invite the person there using their email. **Do not create new groups here. CI is configured to distribute new builds only to this group.**
