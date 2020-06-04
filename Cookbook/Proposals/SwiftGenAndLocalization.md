@@ -74,7 +74,8 @@ When downloading the strings they can be filtered by filename so only the keys a
 Source: https://docs.lokalise.com/en/articles/1400500-downloading-files-and-using-webhooks
 
 
-Summary
+# Summary
+
 All of these methods could be used at the same time in the project, or we can decide to use a combination of two of them if using all of them at the same time would cause more complication in the daily work then it would benefit us. 
 I would recommend using tagging to mark the deprecated keys in the project.
 Pro: easy Swiftgen implementation
