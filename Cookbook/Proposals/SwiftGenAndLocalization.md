@@ -5,7 +5,6 @@
 
 ## Introduction
 
-# Motivation
 In order to modularise our strings we need to triage the existing ones and separate them per feature and possibly mark the unused ones as deprecated. 
 The reason for this is that the next time we would like to create a new app, like we did for Brazil, we would only translate a subset of localization which is relevant to that new application.
 
@@ -80,12 +79,3 @@ All of these methods could be used at the same time in the project, or we can de
 I would recommend using tagging to mark the deprecated keys in the project.
 Pro: easy Swiftgen implementation
 Con: the downfall of this method is that the number of keys we have in Lokalise would heavily increase (but the keys in our strings files pulled by lokalise_pull might not).
-
-Proposed solution
-// This section should the answer the how?.
-
-Impact on existing codebase
-// This section should explain, assuming this proposal is accepted, how much effort it would require for it to be implemented in our codebase. Other concerns should be raised, if it's a significant deviation from our stack.
-
-Alternatives considered
-// This section describes what other approaches were considered and why this one was chosen.
