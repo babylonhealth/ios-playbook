@@ -38,7 +38,13 @@ There are usually two release engineers working at any given time. It goes witho
 
 1. Release branch is cut automatically on last Friday of the sprint during nightly builds. It will create and push release branch, create a release Slack channel, submit a new AppCenter build, and run UI tests.
    * if, for any reason, the automatic cut didn't work, it can be triggered manually with `/stevenson release_cutoff target:Babylon version:4.1.0` from `#ios-build` channel
-   * If you're releasing another app (e.g. Telus), since they typically go thru the release process _only_ after the main Babylon app has been signed off by QA, you should create the new branch from the corresponding Babylon release branch that was recently already QA'd and signed off (e.g. `release/babylon/4.1.0`) instead of `develop`, and name your new branch using the same `release/{appname}/{version}` convention (e.g. `release/telus/4.1.0`). To do this, run `/stevenson release_cutoff branch:release/babylon/4.1.0 version:4.1.0 target:Telus` (you need to specify both the branch and the version so that the script don't bump the version to 4.2.0 by default when cutting the branch)
+   * If you're releasing another app (e.g. Telus), they typically go through the release process _only_ after the main Babylon app has been signed off by QA. 
+     * You should create the new branch from either
+       * the corresponding Babylon **release branch** that was recently already QA'd and signed off (e.g. `release/babylon/4.1.0`) 
+       * or the corresponding Babylon **release tag** that was already released (e.g. `babylon/4.1.0`) if the release branch hasn't been merged yet
+     * Name your new branch using the same `release/{appname}/{version}` convention (e.g. `release/telus/4.1.0`)
+     * To do this, run `/stevenson release_cutoff branch:release/babylon/4.1.0 version:4.1.0 target:Telus` (Note: `branch` parameter is for the branch or release tag)
+     * _(you need to specify both the branch and the version so that the script don't bump the version to `4.2.0` by default when cutting the branch)_
 
 	<details><summary>If for some reason you need to do this process manually instead of using the lane, you can follow these manual steps</summary>
 
