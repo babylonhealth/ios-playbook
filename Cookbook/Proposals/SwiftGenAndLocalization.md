@@ -6,7 +6,7 @@
 ## Introduction
 
 In order to modularise our strings we need to triage the existing ones and separate them per feature and possibly mark the unused ones as deprecated. 
-The reason for this is that the next time we would like to create a new app, like we did for Brazil, we would only translate a subset of localization which is relevant to that new application.
+The reason for this is that the next time we would like to create a new app, similarly to the Barzil one, we would only translate a subset of localization which is relevant to that new application.
 
 This work would require us to go through all of the existing keys, so we could consider this as an opportunity to standardize the naming convention of the keys which would help the introduction of Swiftgen in the code base.
 
@@ -32,7 +32,8 @@ public enum Healthcheck {
 # Obsoleting old keys
 One of the problems we’ll face is that we have a rule about not deleting old keys in Lokalise. So we’ll need to find a way to rename the existing keys we have in Lokalise so that we can still provide the modularisation we’re aiming for.
 
-# Key referencing
+# Possible solutions
+# 1 Key referencing
 
 One way could be using Lokalise’s key referencing feature. In Lokalise every key has a unique key_id, with these the translations can be linked to each other to allow the reuse of the existing translations in the new strings.
 Example of key referencing:
@@ -52,7 +53,11 @@ If by any chance in the future it’d be decided that we can remove keys from Lo
 
 All of the old keys would be marked with a deprecated tag. This way the old keys would be still available in Lokalise as we cannot delete them, but `lokalise_pull` might be modified to filter out the deprecated keys.
 
-# Tags
+Pro: easy Swiftgen implementation
+
+Con: the downfall of this method is that the number of keys we have in Lokalise would heavily increase (but the keys in our strings files pulled by `lokalise_pull` might not).
+
+# 2 Tags
 If we don’t want to change the format of the keys we could simply tag all of the keys with the corresponding vertical’s name so later on when creating a new app we could filter the keys by this name.
 Some tags were already introduced so we should create a unique name for example `ios_appointment_vertical` to avoid confusion and to ensure this tag is used by the team and no translators, PMs.
 
@@ -65,7 +70,7 @@ Also, not that this would only solve the problem of categorizing keys by feature
 Source: https://docs.lokalise.com/en/articles/1475552-tags
 
 
-# Split into multiple .strings files
+# 3 Split into multiple .strings files
 Keys can be assigned to one filename per platform. This feature could be used to split up one Localizable.strings file into one per vertical `AppointmentsLocalizable.strings`, etc then include them in the corresponding part of the project.
 All the common strings like Cancel, OK, etc. could be included in a separate file.
 
@@ -76,9 +81,5 @@ Source: https://docs.lokalise.com/en/articles/1400500-downloading-files-and-usin
 
 # Summary
 
-All of these methods could be used at the same time in the project, or we can decide to use a combination of two of them if using all of them at the same time would cause more complication in the daily work then it would benefit us. 
-I would recommend using tagging to mark the deprecated keys in the project.
-
-Pro: easy Swiftgen implementation
-
-Con: the downfall of this method is that the number of keys we have in Lokalise would heavily increase (but the keys in our strings files pulled by `lokalise_pull` might not).
+All of these methods could be used at the same time in the project, or we can decide to use a combination of two of them if using all of them at the same time would cause more complication in the daily work then it would benefit us, nevertheless
+I would recommend using tagging to mark the deprecated keys in the project in any case.
