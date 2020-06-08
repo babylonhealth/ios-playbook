@@ -50,7 +50,7 @@ general_cancel = [key_id_3] //key_id_1
 
 If by any chance in the future it’d be decided that we can remove keys from Lokalise, we would only remove the old formatting and the new one would contain the translation we need.
 
-All of the old keys would be marked with a deprecated tag. This way the old keys would be still available in Lokalise as we cannot delete them, but lokalise_pull might be modified to filter out the deprecated keys.
+All of the old keys would be marked with a deprecated tag. This way the old keys would be still available in Lokalise as we cannot delete them, but `lokalise_pull` might be modified to filter out the deprecated keys.
 
 # Tags
 If we don’t want to change the format of the keys we could simply tag all of the keys with the corresponding vertical’s name so later on when creating a new app we could filter the keys by this name.
@@ -78,5 +78,7 @@ Source: https://docs.lokalise.com/en/articles/1400500-downloading-files-and-usin
 
 All of these methods could be used at the same time in the project, or we can decide to use a combination of two of them if using all of them at the same time would cause more complication in the daily work then it would benefit us. 
 I would recommend using tagging to mark the deprecated keys in the project.
+
 Pro: easy Swiftgen implementation
-Con: the downfall of this method is that the number of keys we have in Lokalise would heavily increase (but the keys in our strings files pulled by lokalise_pull might not).
+
+Con: the downfall of this method is that the number of keys we have in Lokalise would heavily increase (but the keys in our strings files pulled by `lokalise_pull` might not).
