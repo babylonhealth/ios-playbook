@@ -54,11 +54,11 @@ All of the old keys would be marked with a deprecated tag. This way the old keys
 
 # Tags
 If we don’t want to change the format of the keys we could simply tag all of the keys with the corresponding vertical’s name so later on when creating a new app we could filter the keys by this name.
-Some tags were already introduced so we should create a unique name for example ios_appointment_vertical to avoid confusion and to ensure this tag is used by the team and no translators, PMs.
+Some tags were already introduced so we should create a unique name for example `ios_appointment_vertical` to avoid confusion and to ensure this tag is used by the team and no translators, PMs.
 
 When downloading the keys can be filtered by their tags in order to include or exclude them for the download.
 
-The potential risk here is to have a lot of tags (we already have quite some tags, used by translators themselves it seems, and we want to be sure translators don’t mess up with our tags (remove or add them themselves). 
+The potential risk here is to have a lot of tags. We already have quite some tags, used by translators themselves it seems, and we want to be sure translators don’t tidy up with our tags accidently (remove or add them themselves). It's also easy to add the wrong tag as Lokalise automatically adds the latest used tag when we create a new entry.
 
 Also, not that this would only solve the problem of categorizing keys by feature, but won’t solve how we would be able to have nice constants when introducing SwiftGen for strings.
 
@@ -66,10 +66,10 @@ Source: https://docs.lokalise.com/en/articles/1475552-tags
 
 
 # Split into multiple .strings files
-Keys can be assigned to one filename per platform. This can use this feature to split up one Localizable.strings file into one per vertical AppointmentsLocalizable.strings, etc then include them in the corresponding part of the project.
+Keys can be assigned to one filename per platform. This feature could be used to split up one Localizable.strings file into one per vertical `AppointmentsLocalizable.strings`, etc then include them in the corresponding part of the project.
 All the common strings like Cancel, OK, etc. could be included in a separate file.
 
-When downloading the strings they can be filtered by filename so only the keys attributed with the selected files will be downloaded. 
+When downloading the strings they can be filtered by filename so only the keys attributed with the selected files will be downloaded.
 
 Source: https://docs.lokalise.com/en/articles/1400500-downloading-files-and-using-webhooks
 
