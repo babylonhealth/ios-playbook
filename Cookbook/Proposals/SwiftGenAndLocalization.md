@@ -6,7 +6,7 @@
 ## Introduction
 
 In order to modularise our strings we need to triage the existing ones and separate them per feature and possibly mark the unused ones as deprecated. 
-The reason for this is that the next time we would like to create a new app, similarly to the Barzil one, we would only translate a subset of localization which is relevant to that new application.
+The reason for this is that the next time we would like to create a new app (such as our SAAS initiative), we would only translate a subset of localization which is relevant to that new application.
 
 This work would require us to go through all of the existing keys, so we could consider this as an opportunity to standardize the naming convention of the keys which would help the introduction of Swiftgen in the code base.
 
