@@ -119,6 +119,10 @@ All static configuration properties and feature switches should be declared in t
 	Consumer network feature switches are a kind of remote feature switches and are defined on the backend (in Feature Configurator service) and come as a part of patient details and can be accessed as `patient.metadata.featureSwitches`. Typically such feature swithces depend on some user data, i.e. region or consumer network.
 		
 	To add a new feature switch on the client add a new property to `BackendFeatureSwitches` struct in `BackendFeatureSwitches.swift` file and necessary code to decode this property in `Decodable.swift`. Of course it needs to be added on the backend as well, that's something the backend dev from your team should be able to help with.
+	
+	### Product Config and Consumer Networks
+	
+	Product config does not have a notion of preffered consumer networt which is one that user have currently selected through the app. That's why selecting different consumer network does not affect product config. On the other hand joining a consumer network, i.e. by adding a membership code, is translated to adding patient to a specific contract/partner/plan and so patient can be assigned multiple contracts/partners/plans by using multiple membership codes. That said as soon as patient adds the code they will have the features available to them that are targeted to the contract/partner/plan corresponding to this code. It is possible to target product config values to specific contracts/partners/plans and exclude other contract/partners/plans as well as resolve conflicting settings. To know more about how product config values are computed read [this doc](https://github.com/babylonhealth/manifests/tree/master/product-config#how-is-config-computed).
 
 - ### Remote config (A/B test, feature test)
 
