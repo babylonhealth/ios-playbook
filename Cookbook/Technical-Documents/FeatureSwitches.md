@@ -218,10 +218,19 @@ Feature switches (remote & local) can be inspected in the application debug wind
 - Q: Is the change related to something critical and we may want to be able to switch it back to previous implementation?
     - Yes
 
-       While still working on the feature, use a Local feature switch; when it is ready for release, convert it to Remote Feature Switch; when feature is stable consider moving it to Product Config
+       While still working on the feature, use a Local feature switch; when it is ready for release, convert it to Remote Feature Switch
     - No
 
        Keep it as a Local feature switch if you need one
+
+- Q: Is it a "kill switch"? Kill switch is a switch that exists **solely** to be able to turn the feature on/off remotely without releasing a patch
+    - Yes
+
+       Use Optimizely. When feature is considered stable remove it from code and mark it as deprecated in Optimizely. If feature requirements change and requires to behave differently for different apps move it to Product Config
+    - No
+
+       Use other providers (depending on previous answers)
+    
    
 - Q: Does the feature need to behave differently for different apps?
     - Yes
@@ -246,6 +255,7 @@ Feature switches (remote & local) can be inspected in the application debug wind
     - No
 
        Use a Local feature switch or Static configuration (depending on previous answers)
+       
 
 ## Phasing out feature switch
 
