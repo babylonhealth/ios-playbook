@@ -67,10 +67,6 @@ team:
   - &Patrick
     name: Patrick Westmeyer
     github: bh-pwestmeyer
-  - &Sergey
-    name: Sergey Shulga
-    github: sergdort
-    twitter: SergDort
   - &Simon
     name: Simon Cass
     github: scass91
@@ -101,7 +97,7 @@ squads:
     desc: Updating and maintaning our partner apps. Engineering work like tooling, CI and development processes..
     members:
       - *Ilya
-      - *Sergey
+      - *DanielS
       - *Simon
   - name: Appointments 1
     desc: Face to face appointment booking.
@@ -125,7 +121,6 @@ squads:
     desc: Help members manage and sustain a healthy lifestyle.
     members:
       - *DanielH
-      - *DanielS
       - *Diego
       - *Javier
       - *Nikolay

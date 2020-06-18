@@ -19,7 +19,7 @@ Some of the roles are transverse to all the squads:
   DO NOT EDIT MANUALLY: This table has been auto-generated.
   TO UPDATE THIS TABLE:
    - update scripts/squads.yml
-   - run `scripts/squads.rb` to update the `README.md` sections
+   - run `ruby scripts/squads.rb` to update the `README.md` sections
 -->
 
 <table>
@@ -36,14 +36,14 @@ The rest of the iOS Engineers work in the following squads:
   DO NOT EDIT MANUALLY: This table has been auto-generated.
   TO UPDATE THIS TABLE:
    - update scripts/squads.yml
-   - run `scripts/squads.rb` to update the `README.md` sections
+   - run `ruby scripts/squads.rb` to update the `README.md` sections
 -->
 
 <table>
   <thead><th>Squad</th><th>Engineer</th><th>GitHub</th><th>Twitter</th></thead>
     <tr><td rowspan='3' valign='top'><strong>Partnerships</strong><br/>Updating and maintaning our partner apps. Engineering work like tooling, CI and development processes..</td>
       <td>Ilya Puchka</td><td><a href='https://github.com/ilyapuchka'>@ilyapuchka</a></td><td><a href='https://twitter.com/ilyapuchka'>@ilyapuchka</a></td></tr>
-      <tr><td>Sergey Shulga</td><td><a href='https://github.com/sergdort'>@sergdort</a></td><td><a href='https://twitter.com/SergDort'>@SergDort</a></td></tr>
+      <tr><td>Daniel Spindelbauer</td><td><a href='https://github.com/sdaniel55'>@sdaniel55</a></td><td><a href='https://twitter.com/sdaniel55'>@sdaniel55</a></td></tr>
       <tr><td>Simon Cass</td><td><a href='https://github.com/scass91'>@scass91</a></td><td><a href='https://twitter.com/codercass'>@codercass</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Appointments 1</strong><br/>Face to face appointment booking.</td>
       <td>Witold Skibniewski</td><td><a href='https://github.com/mr-v'>@mr-v</a></td><td></td></tr>
@@ -55,9 +55,8 @@ The rest of the iOS Engineers work in the following squads:
     <tr><td rowspan='2' valign='top'><strong>Healthcheck</strong><br/>Overview of your health using a 3D body model (avatar).</td>
       <td>Emese Toth</td><td><a href='https://github.com/emeseuk'>@emeseuk</a></td><td></td></tr>
       <tr><td>Julien Ducret</td><td><a href='https://github.com/brocoo'>@brocoo</a></td><td></td></tr>
-    <tr><td rowspan='5' valign='top'><strong>Monitor</strong><br/>Help members manage and sustain a healthy lifestyle.</td>
+    <tr><td rowspan='4' valign='top'><strong>Monitor</strong><br/>Help members manage and sustain a healthy lifestyle.</td>
       <td>Daniel Haight</td><td><a href='https://github.com/Daniel1of1'>@Daniel1of1</a></td><td></td></tr>
-      <tr><td>Daniel Spindelbauer</td><td><a href='https://github.com/sdaniel55'>@sdaniel55</a></td><td><a href='https://twitter.com/sdaniel55'>@sdaniel55</a></td></tr>
       <tr><td>Diego Petrucci</td><td><a href='https://github.com/diegopetrucci'>@diegopetrucci</a></td><td><a href='https://twitter.com/diegopetrucci'>@diegopetrucci</a></td></tr>
       <tr><td>Javier Hernández</td><td><a href='https://github.com/jaherhi'>@jaherhi</a></td><td></td></tr>
       <tr><td>Nikolay Marinov</td><td><a href='https://github.com/nikolay-bab'>@nikolay-bab</a></td><td></td></tr>
