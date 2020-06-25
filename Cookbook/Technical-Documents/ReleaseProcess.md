@@ -61,8 +61,9 @@ There are usually two release engineers working at any given time. It goes witho
 4. Bump the release version by triggering the Slack command (e.g. `/testflight Babylon version:4.1.0`) in `#ios-build` (you can run the command every time you want to upload a new build).
    * This creates a TestFlight build (try to make one as early as possible so that you can catch issues like missing/expired certificates or profiles and any other production build errors early).
 5. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
-  1. On the sidebar click `+ Version or Platform` and select `iOS`.
-  1. Input the new version number.
+   1. Navigate to the app you want to create a new version for
+   1. On the sidebar click the `+` button next to the iOS App header
+   1. Input the new version number. If doing this redirects you to the home page without creating the new version, make sure to try another browser, as some may face issues when creating new app versions
 
 During this stage, the **release manager** has the following tasks:
 
