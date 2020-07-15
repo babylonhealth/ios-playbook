@@ -63,7 +63,7 @@ There are usually two release engineers working at any given time. It goes witho
 5. Create a new version in [AppStoreConnect](https://appstoreconnect.apple.com) (login using your own account) / My Apps
    1. Navigate to the app you want to create a new version for
    1. On the sidebar click the `+` button next to the iOS App header
-   1. Input the new version number. If doing this redirects you to the home page without creating the new version, make sure to try another browser, as some may face issues when creating new app versions
+   1. Input the new version number.
 
 During this stage, the **release manager** has the following tasks:
 
