@@ -16,10 +16,6 @@ team:
     name: Ben Henshall
     github: Ben-Henshall
     twitter: ben_henshall
-  - &Catarina
-    name: Ana Catarina Figueiredo
-    github: AnnKatF
-    twitter: AnnKatFig
   - &DanielH
     name: Daniel Haight
     github: Daniel1of1
@@ -37,10 +33,6 @@ team:
   - &Giorgos
     name: Giorgos Tsiapaliokas
     github: gtsiap
-  - &Ilya
-    name: Ilya Puchka
-    github: ilyapuchka
-    twitter: ilyapuchka
   - &Javier
     name: Javier Hernández
     github: jaherhi
@@ -86,7 +78,7 @@ team:
 roles:
   - name: Chapter Leads
     members:
-      - *Catarina
+      - *Viorel
 
 
 ################################################################
@@ -96,7 +88,6 @@ squads:
   - name: Partnerships
     desc: Updating and maintaning our partner apps. Engineering work like tooling, CI and development processes..
     members:
-      - *Ilya
       - *DanielS
       - *Simon
   - name: Appointments 1
