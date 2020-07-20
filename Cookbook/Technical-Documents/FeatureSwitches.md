@@ -119,6 +119,10 @@ All static configuration properties and feature switches should be declared in t
 	Consumer network feature switches are a kind of remote feature switches and are defined on the backend (in Feature Configurator service) and come as a part of patient details and can be accessed as `patient.metadata.featureSwitches`. Typically such feature swithces depend on some user data, i.e. region or consumer network.
 		
 	To add a new feature switch on the client add a new property to `BackendFeatureSwitches` struct in `BackendFeatureSwitches.swift` file and necessary code to decode this property in `Decodable.swift`. Of course it needs to be added on the backend as well, that's something the backend dev from your team should be able to help with.
+	
+	### Product Config and Consumer Networks
+	
+	Product config does not have a notion of preferred consumer network, which is one that the user currently has selected through the app. That's why selecting different consumer networks do not affect product config. On the other hand, joining a consumer network, i.e. by adding a membership code, is translated to adding patient to a specific contract/partner/plan, so the patient can be assigned multiple contracts/partners/plans by using multiple membership codes. That said, as soon as the patient adds the code, the features targeted to the contract/partner/plan corresponding to this code will be available to them.  It is possible to target product config values to specific contracts/partners/plans, exclude other contract/partners/plans, as well as resolve conflicting settings. To know more about how product config values are computed read [this doc](https://github.com/babylonhealth/manifests/tree/master/product-config#how-is-config-computed).
 
 - ### Remote config (A/B test, feature test)
 
@@ -214,10 +218,19 @@ Feature switches (remote & local) can be inspected in the application debug wind
 - Q: Is the change related to something critical and we may want to be able to switch it back to previous implementation?
     - Yes
 
-       While still working on the feature, use a Local feature switch; when it is ready for release, convert it to Remote Feature Switch; when feature is stable consider moving it to Product Config
+       While still working on the feature, use a Local feature switch; when it is ready for release, convert it to Remote Feature Switch
     - No
 
        Keep it as a Local feature switch if you need one
+
+- Q: Is it a "kill switch"? Kill switch is a switch that exists **solely** to be able to turn the feature on/off remotely without releasing a patch
+    - Yes
+
+       Use Optimizely. When feature is considered stable remove it from code and mark it as deprecated in Optimizely. If feature requirements change and requires to behave differently for different apps move it to Product Config
+    - No
+
+       Use other providers (depending on previous answers)
+    
    
 - Q: Does the feature need to behave differently for different apps?
     - Yes
@@ -242,6 +255,7 @@ Feature switches (remote & local) can be inspected in the application debug wind
     - No
 
        Use a Local feature switch or Static configuration (depending on previous answers)
+       
 
 ## Phasing out feature switch
 
