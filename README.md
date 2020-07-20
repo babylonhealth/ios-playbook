@@ -25,7 +25,7 @@ Some of the roles are transverse to all the squads:
 <table>
   <thead><th>Role</th><th>Engineer</th><th>GitHub</th><th>Twitter</th></thead>
     <tr><td rowspan='1' valign='top'><strong>Chapter Leads</strong></td>
-      <td>Ana Catarina Figueiredo</td><td><a href='https://github.com/AnnKatF'>@AnnKatF</a></td><td><a href='https://twitter.com/AnnKatFig'>@AnnKatFig</a></td></tr>
+      <td>Viorel Mihalache</td><td><a href='https://github.com/viorel15'>@viorel15</a></td><td><a href='https://twitter.com/viorelMO'>@viorelMO</a></td></tr>
 </table>
 <!-- end:roles -->
 
@@ -41,9 +41,8 @@ The rest of the iOS Engineers work in the following squads:
 
 <table>
   <thead><th>Squad</th><th>Engineer</th><th>GitHub</th><th>Twitter</th></thead>
-    <tr><td rowspan='3' valign='top'><strong>Partnerships</strong><br/>Updating and maintaning our partner apps. Engineering work like tooling, CI and development processes..</td>
-      <td>Ilya Puchka</td><td><a href='https://github.com/ilyapuchka'>@ilyapuchka</a></td><td><a href='https://twitter.com/ilyapuchka'>@ilyapuchka</a></td></tr>
-      <tr><td>Daniel Spindelbauer</td><td><a href='https://github.com/sdaniel55'>@sdaniel55</a></td><td><a href='https://twitter.com/sdaniel55'>@sdaniel55</a></td></tr>
+    <tr><td rowspan='2' valign='top'><strong>Partnerships</strong><br/>Updating and maintaning our partner apps. Engineering work like tooling, CI and development processes..</td>
+      <td>Daniel Spindelbauer</td><td><a href='https://github.com/sdaniel55'>@sdaniel55</a></td><td><a href='https://twitter.com/sdaniel55'>@sdaniel55</a></td></tr>
       <tr><td>Simon Cass</td><td><a href='https://github.com/scass91'>@scass91</a></td><td><a href='https://twitter.com/codercass'>@codercass</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Appointments 1</strong><br/>Face to face appointment booking.</td>
       <td>Witold Skibniewski</td><td><a href='https://github.com/mr-v'>@mr-v</a></td><td></td></tr>
