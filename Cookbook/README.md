@@ -42,7 +42,7 @@
   - [Functional operators in our codebase](./Technical-Documents/FunctionalOperators.md)
 
 ## Testing 🧪
-  - Overview
+  - [Overview](./Technical-Documents/Testing.md)
   - [Debug Window](./Technical-Documents/TheDebugWindow.md)
   - Unit tests
      - [Unit testing view models](./Technical-Documents/UnitTestingViewModels.md)
