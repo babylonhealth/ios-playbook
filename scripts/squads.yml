@@ -1,0 +1,136 @@
+################################################################
+# All the members of our iOS team
+#   (For ease of diff/review, please try to keep ths list sorted alphabetically by first name)
+#   YAML tip: By using `&SomeName` to define a named anchor in front of each entry, we can reference it with `*SomeName` later in the rest of the YAML
+#
+team:
+  - &Adam
+    name: Adam Borek
+    github: TheAdamBorek
+    twitter: TheAdamBorek
+  - &Adrian
+    name: Adrian Śliwa
+    github: adiki
+    twitter: adiki91
+  - &Ben
+    name: Ben Henshall
+    github: Ben-Henshall
+    twitter: ben_henshall
+  - &DanielH
+    name: Daniel Haight
+    github: Daniel1of1
+  - &DanielS
+    name: Daniel Spindelbauer
+    github: sdaniel55
+    twitter: sdaniel55
+  - &Diego
+    name: Diego Petrucci
+    github: diegopetrucci
+    twitter: diegopetrucci
+  - &Emese
+    name: Emese Toth
+    github: emeseuk
+  - &Giorgos
+    name: Giorgos Tsiapaliokas
+    github: gtsiap
+  - &Javier
+    name: Javier Hernández
+    github: jaherhi
+  - &Joao
+    name: João Pereira
+    github: NSMyself
+    twitter: NSMyself
+  - &Joshua
+    name: Joshua Simmons
+    github: j531
+  - &Julien
+    name: Julien Ducret
+    github: brocoo
+  - &Konrad
+    name: Konrad Muchowicz
+    github: konrad-em
+  - &Nico
+    name: Nico Robin
+    github: Naiko
+    twitter: Naiko
+  - &Nikolay
+    name: Nikolay Marinov
+    github: nikolay-bab
+  - &Patrick
+    name: Patrick Westmeyer
+    github: bh-pwestmeyer
+  - &Simon
+    name: Simon Cass
+    github: scass91
+    twitter: codercass
+  - &Viorel
+    name: Viorel Mihalache
+    github: viorel15
+    twitter: viorelMO
+  - &Witold
+    name: Witold Skibniewski
+    github: mr-v
+
+
+################################################################
+# Global roles transverse to the squads
+#
+roles:
+  - name: Chapter Leads
+    members:
+      - *Viorel
+
+
+################################################################
+# List of the Squads and their members
+#
+squads:
+  - name: Partnerships
+    desc: Updating and maintaning our partner apps. Engineering work like tooling, CI and development processes..
+    members:
+      - *DanielS
+      - *Simon
+  - name: Appointments 1
+    desc: Face to face appointment booking.
+    members:
+      - *Witold
+  - name: Appointments 2
+    desc: Digital appointments
+    members:
+      - *Adrian
+      - *Nico
+  - name: Assistant
+    desc: Chatbot-related features.
+    members:
+      - *Joao
+  - name: Healthcheck
+    desc: Overview of your health using a 3D body model (avatar).
+    members:
+      - *Emese
+      - *Julien
+  - name: Monitor
+    desc: Help members manage and sustain a healthy lifestyle.
+    members:
+      - *DanielH
+      - *Diego
+      - *Javier
+      - *Nikolay
+  - name: Real-Time Matching
+    desc: To increase average appointment per hour per clinician.
+    members:
+      - *Adam
+      - *Konrad
+  - name: Experience
+    desc: Engage users with our key features in a dynamic, personalised manner.
+    members:
+      - *Giorgos
+  - name: Triage
+    desc: Chatbot functionality.
+    members:
+      - *Viorel
+  - name: US Professional Services
+    desc: Features for app in the US.
+    members:
+      - *Ben
+      - *Joshua
+      - *Patrick

@@ -33,7 +33,7 @@ git lfs install
 
 # Clone the iOS repository into the given code directory, if needed.
 if [[ ! -d "${target_directory}" ]]; then
-  git clone git@github.com:Babylonpartners/babylon-ios.git "${target_directory}"
+  git clone git@github.com:babylonhealth/babylon-ios.git "${target_directory}"
 fi
 cd "${target_directory}"
 
@@ -41,7 +41,7 @@ cd "${target_directory}"
 ./Templates/install_xcode_templates.sh
 
 # Install project dependencies (Ruby gems and Cocoapods pods).
-gem install bundler -v '~> 1.0'
+gem install bundler -v '~> 2.0'
 bundle install
 bundle exec pod install
 
