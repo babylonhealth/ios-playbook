@@ -23,10 +23,6 @@ team:
     name: Daniel Spindelbauer
     github: sdaniel55
     twitter: sdaniel55
-  - &Diego
-    name: Diego Petrucci
-    github: diegopetrucci
-    twitter: diegopetrucci
   - &Emese
     name: Emese Toth
     github: emeseuk
@@ -112,7 +108,6 @@ squads:
     desc: Help members manage and sustain a healthy lifestyle.
     members:
       - *DanielH
-      - *Diego
       - *Javier
       - *Nikolay
   - name: Real-Time Matching
