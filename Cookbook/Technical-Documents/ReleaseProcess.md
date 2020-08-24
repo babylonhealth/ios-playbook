@@ -212,6 +212,10 @@ Update tickets in the [release board](https://babylonpartners.atlassian.net/secu
 ### App Store Submission
 In the developer portal, create a new iOS version and update marketing content based on tickets in the release board. Monitor the current US and/or Ascension release channel for QA signoff (these channels are kept private). Once QA has signed off, submit to the App Store using the TestFlight build that was approved by QA.
 
+### App Store Rejections
+If the app is rejected for not meeting the App Store guidelines, we have internal documentation available that contains responses to certain guideline failures. This should be updated everytime an app fails one of the guidelines. If an app has previously been rejected, then you should be able to re-use the previous message (It's worth checking with the release manager that the response does answer Apples questions though).
+[Link to the document here](https://docs.google.com/document/d/1MMc9m-in3GVQOdSBXY8L1U2qHEFknD2YGwPv4-cOkY4)
+
 ### Closure
 Tag the commit that the release build was generated from (e.g. `babylonus/2.2.0`, `ascension/1.5.0`). The release commit may not be the latest commit on the release branch because the UK is working off the same branch, fixing bugs (and mostly UI tests).
 
