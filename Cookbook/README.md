@@ -1,7 +1,6 @@
 # Cookbook 🥘
 
 ## Onboarding 🚢
-  - Overview
   - [New hires checklist](./Technical-Documents/NewHiresCheckList.md)
   - Team Roles
   - Team Structure
@@ -70,7 +69,7 @@
 ## Continuous Integration 🚦
   - [How to invoke CI jobs from Slack](./Technical-Documents/SlackCIIntegration.md)
   - Stevenson
-  - Wall-E
+  - [Wall-E](https://github.com/babylonhealth/Wall-E/blob/master/README.md)
   - CircleCI
 
 ## Recruitment 🎓
@@ -85,7 +84,6 @@
 ## Tooling 🛠
   - [Xcode Tips & Tricks](./Technical-Documents/XcodeTips.md)
   - [Posting Analytics Events to Snowplow](./Technical-Documents/SnowplowHowTo.md)
-  - Firebase remote config
   - [Danger Configuration](./Technical-Documents/DangerRules.md)
   - [Lokalise](./Technical-Documents/Lokalise.md)
   - [Code Signing with Fastlane Match](./Technical-Documents/FastlaneMatch.md)
@@ -120,17 +118,16 @@
 ## Open source projects 🚀
 | Project name                  | Owner(s)                 | Stars        |
 |-------------------------------|--------------------------| ------------ |
-| [Bento](https://github.com/babylonhealth/Bento)                         | David, Sergey    | [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/Bento.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/Bento/stargazers/) |
-| [DrawerKit](https://github.com/babylonhealth/DrawerKit)                     | Ben               |    [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/DrawerKit/stargazers/) |
-| [ReactiveFeedback](https://github.com/babylonhealth/ReactiveFeedback)              | Sergey           |    [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/ReactiveFeedback/stargazers/) |
-| [Wall-E](https://github.com/babylonhealth/Wall-E)                        | David               |    [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/Wall-E.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/Wall-E/stargazers/)    |
-| [Stevenson](https://github.com/babylonhealth/Stevenson)                     | Ilya, Olivier                     |    [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/Stevenson.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/Stevenson/stargazers/) |
-| Style guide                   | Diego                    |    WIP       |
+| [Bento](https://github.com/babylonhealth/Bento) | Unowned | [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/Bento.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/Bento/stargazers/) |
+| [DrawerKit](https://github.com/babylonhealth/DrawerKit) | [Ben](https://github.com/Ben-Henshall) | [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/DrawerKit.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/DrawerKit/stargazers/) |
+| [ReactiveFeedback](https://github.com/babylonhealth/ReactiveFeedback) | Unowned | [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/ReactiveFeedback.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/ReactiveFeedback/stargazers/) |
+| [Wall-E](https://github.com/babylonhealth/Wall-E) | [Dan S](https://github.com/sdaniel55) | [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/Wall-E.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/Wall-E/stargazers/) |
+| [Stevenson](https://github.com/babylonhealth/Stevenson) | [Dan S](https://github.com/sdaniel55) | [![GitHub stars](https://img.shields.io/github/stars/babylonhealth/Stevenson.svg?style=social&label=Star&maxAge=2592000)](https://github.com/babylonhealth/Stevenson/stargazers/) |
 
 ---
 
-This is a live document. We are constantly writing documentation for the items that are missing one and we also do periodic reviews and updates to other documents that might be out-dated.
+This is a live document. We are constantly writing documentation for the items that are missing one and we also do periodic reviews and updates to other documents that might be outdated.
 
 Please come back from time to time to check the new stuff!
 
-The [Babylon health iOS team](http://github.com/babylonhealth)
+The [Babylon Health iOS team](http://github.com/babylonhealth)
