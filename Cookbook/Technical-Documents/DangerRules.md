@@ -179,3 +179,24 @@ In that case, for each target+config, the rule will report a failure, and also a
 This will report swiftlint violations as inline comments (warnings) in the Pull Request.
 
 Only `.swift` files that are part of the PR are linted by this rule; so only violations in files that were added/modified/renamed by the PR will be reported. This is to ensure that we don't introduce new violations, and that we fix existing violations on any file we touch or update.
+
+## Detect Missing Screenowner 
+
+> * Declared in: `danger-ci/screenowner.rb`
+> * Function: `check_screenowner_is_set`
+> * Type: ⚠️ warning
+
+This will report any View Models that are missing a screen owner as a warning in the Pull Request.
+
+Only `*ViewModel.swift` files that are part of the PR are linted by this rule; so only violations in files that were added/modified/renamed by the PR will be reported. This is to ensure that we don't introduce new violations, and that we fix existing violations on any file we touch or update. Similarly to [missing feedbacks](#detect-missing-feedbacks).
+
+How to resolve: add the following definition to the affected View Model(s)
+
+```swift
+extension ExampleViewModel: ScreenAttributes {
+    var screenOwner: Squad? {
+        // set the appropriate squad here
+    }
+}
+```
+
