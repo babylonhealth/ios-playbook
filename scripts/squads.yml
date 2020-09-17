@@ -32,10 +32,6 @@ team:
   - &Javier
     name: Javier Hernández
     github: jaherhi
-  - &Joao
-    name: João Pereira
-    github: NSMyself
-    twitter: NSMyself
   - &Joshua
     name: Joshua Simmons
     github: j531
@@ -98,7 +94,6 @@ squads:
   - name: Assistant
     desc: Chatbot-related features.
     members:
-      - *Joao
   - name: Healthcheck
     desc: Overview of your health using a 3D body model (avatar).
     members:
