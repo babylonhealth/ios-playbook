@@ -91,9 +91,6 @@ squads:
     members:
       - *Adrian
       - *Nico
-  - name: Assistant
-    desc: Chatbot-related features.
-    members:
   - name: Healthcheck
     desc: Overview of your health using a 3D body model (avatar).
     members:
