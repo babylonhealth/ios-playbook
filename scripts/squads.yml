@@ -35,9 +35,6 @@ team:
   - &Joshua
     name: Joshua Simmons
     github: j531
-  - &Julien
-    name: Julien Ducret
-    github: brocoo
   - &Konrad
     name: Konrad Muchowicz
     github: konrad-em
@@ -95,7 +92,6 @@ squads:
     desc: Overview of your health using a 3D body model (avatar).
     members:
       - *Emese
-      - *Julien
   - name: Monitor
     desc: Help members manage and sustain a healthy lifestyle.
     members:
