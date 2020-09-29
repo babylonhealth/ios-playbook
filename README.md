@@ -51,7 +51,6 @@ The rest of the iOS Engineers work in the following squads:
       <tr><td>Nico Robin</td><td><a href='https://github.com/Naiko'>@Naiko</a></td><td><a href='https://twitter.com/Naiko'>@Naiko</a></td></tr>
     <tr><td rowspan='2' valign='top'><strong>Healthcheck</strong><br/>Overview of your health using a 3D body model (avatar).</td>
       <td>Emese Toth</td><td><a href='https://github.com/emeseuk'>@emeseuk</a></td><td></td></tr>
-      <tr><td>Julien Ducret</td><td><a href='https://github.com/brocoo'>@brocoo</a></td><td></td></tr>
     <tr><td rowspan='3' valign='top'><strong>Monitor</strong><br/>Help members manage and sustain a healthy lifestyle.</td>
       <td>Daniel Haight</td><td><a href='https://github.com/Daniel1of1'>@Daniel1of1</a></td><td></td></tr>
       <tr><td>Javier Hernández</td><td><a href='https://github.com/jaherhi'>@jaherhi</a></td><td></td></tr>
