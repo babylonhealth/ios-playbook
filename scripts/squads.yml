@@ -100,9 +100,6 @@ squads:
     members:
       - *Adam
       - *Konrad
-  - name: Experience
-    desc: Engage users with our key features in a dynamic, personalised manner.
-    members:
   - name: Triage
     desc: Chatbot functionality.
     members:

@@ -58,8 +58,6 @@ The rest of the iOS Engineers work in the following squads:
     <tr><td rowspan='2' valign='top'><strong>Real-Time Matching</strong><br/>To increase average appointment per hour per clinician.</td>
       <td>Adam Borek</td><td><a href='https://github.com/TheAdamBorek'>@TheAdamBorek</a></td><td><a href='https://twitter.com/TheAdamBorek'>@TheAdamBorek</a></td></tr>
       <tr><td>Konrad Muchowicz</td><td><a href='https://github.com/konrad-em'>@konrad-em</a></td><td></td></tr>
-    <tr><td rowspan='1' valign='top'><strong>Experience</strong><br/>Engage users with our key features in a dynamic, personalised manner.</td>
-     </tr>
     <tr><td rowspan='1' valign='top'><strong>Triage</strong><br/>Chatbot functionality.</td>
       <td>Viorel Mihalache</td><td><a href='https://github.com/viorel15'>@viorel15</a></td><td><a href='https://twitter.com/viorelMO'>@viorelMO</a></td></tr>
     <tr><td rowspan='3' valign='top'><strong>US Professional Services</strong><br/>Features for app in the US.</td>
