@@ -26,9 +26,6 @@ team:
   - &Emese
     name: Emese Toth
     github: emeseuk
-  - &Giorgos
-    name: Giorgos Tsiapaliokas
-    github: gtsiap
   - &Javier
     name: Javier Hernández
     github: jaherhi
@@ -103,10 +100,6 @@ squads:
     members:
       - *Adam
       - *Konrad
-  - name: Experience
-    desc: Engage users with our key features in a dynamic, personalised manner.
-    members:
-      - *Giorgos
   - name: Triage
     desc: Chatbot functionality.
     members:
