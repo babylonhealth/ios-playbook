@@ -12,10 +12,6 @@ team:
     name: Adrian Śliwa
     github: adiki
     twitter: adiki91
-  - &Ben
-    name: Ben Henshall
-    github: Ben-Henshall
-    twitter: ben_henshall
   - &DanielH
     name: Daniel Haight
     github: Daniel1of1
@@ -29,9 +25,6 @@ team:
   - &Javier
     name: Javier Hernández
     github: jaherhi
-  - &Joshua
-    name: Joshua Simmons
-    github: j531
   - &Konrad
     name: Konrad Muchowicz
     github: konrad-em
@@ -107,6 +100,4 @@ squads:
   - name: US Professional Services
     desc: Features for app in the US.
     members:
-      - *Ben
-      - *Joshua
       - *Patrick
