@@ -80,6 +80,7 @@
   - [Technical questions](../Interview/questions.md)
   - Cultural fit questions
   - Interview presentation
+  - [How to Conduct a Technical Interview](../Interview/ConductingATechnicalInterview.md)
 
 ## Tooling 🛠
   - [Xcode Tips & Tricks](./Technical-Documents/XcodeTips.md)
