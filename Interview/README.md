@@ -37,15 +37,12 @@ As such, these are the main areas the iOS team will focus our assessment of cand
 
 ### The iOS recruitment process
 
-Our recruitment process is different for candidates who are interested in working remotely and those who are interested in working on-site at our office in London, in **three** ways:
-- remote candidates are **required** to be proficient in **reactive programming** (`ReactiveSwift`/`ReactiveCocoa` or `RxSwift`) at an above-average level
-- remote candidates are **required** to use **reactive programming** in their interview demo projects
-- technical interview sessions differ in number and duration:
-    * **on-site**: initial recruiter call -> demo -> one Skype interview -> **3-hour face-to-face technical interview**
-    * **remote**:  initial recruiter call -> demo -> one Skype interview -> **1 working day with us (at our expense)**
-    
-Our process for **senior contractors based in London** has the following stages:
-- initial recruiter call -> one Skype interview -> **3-hour face-to-face technical interview**
+Senior candidates are **required** to be proficient in **reactive programming** (`ReactiveSwift`/`ReactiveCocoa` or `RxSwift`) and to use this in their interview demo projects.
+
+Our recruitment process consists in: 
+ - Initial recruiter call;
+ - Demo;
+ - Technical interview.
 
 As indicated above, we expect all candidates to submit an ["interview demo project"](demo.md) but, in order to be accommodating of different schedules, we provide three different ways in which a candidate can submit a demo of their work. **Only one of these is required**.
 
@@ -55,9 +52,9 @@ As indicated above, we expect all candidates to submit an ["interview demo proje
 
 A demo project should be an example of one's **best** work. We don't just want to see a technically good project; we want to be *wowed* by a candidate's technical skills and creativity. Note that we don't have a submission deadline so take your time to polish your demo project.
 
-If we then think the demo project is interesting enough, we'll proceed to a face-to-face step, either on Skype (for remote candidates) or in person (for on-site candidates).
+If we then think the demo project is interesting enough, we'll proceed to a face-to-face step on a video call.
 
-That face-to-face step, which normally lasts 90 minutes per session (there may be more than one), typically starts with a discussion around the candidate's project. We normally ask the candidate to implement a new feature (even if it's just using pseudo-code), or to refactor and unit-test a particular component, and in general we aim to have an informal discussion about the candidate's approach.
+That face-to-face step, which normally lasts 60 minutes per session (there may be more than one), typically starts with a discussion around the candidate's project. We normally ask the candidate to implement a new feature (even if it's just using pseudo-code), or to refactor and unit-test a particular component, and in general we aim to have an informal discussion about the candidate's approach.
 
 We may also focus on more technical aspects and ask a number of highly technical questions. As indicated earlier, we have open-sourced these questions as well since we believe that a fully open recruitment process gives all candidates a fairer chance to prepare themselves, and makes our assessment uniform across all candidates.
 

@@ -1,3 +1,4 @@
+
 <p align="center">
 <img src="../logo.png">
 </p>
@@ -12,7 +13,7 @@ As described in the iOS recruitment process [main page](README.md), we expect al
 2. [A project you've already done](#2-already-written-project).
 3. [An open source project you've done or contributed to](#3-open-source-work).
 
-**IMPORTANT**: Please note that if you're a candidate interested in working remotely, your demo project **must** use a reactive programming library.
+**IMPORTANT**: Please note that if you're a applying for a senior role, your demo project **must** use a reactive programming library.
 
 **IMPORTANT**: Please submit your interview demo project as a `.zip`ed archive.
 
