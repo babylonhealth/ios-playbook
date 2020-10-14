@@ -52,7 +52,7 @@ As indicated above, we expect all candidates to submit an ["interview demo proje
 
 A demo project should be an example of one's **best** work. We don't just want to see a technically good project; we want to be *wowed* by a candidate's technical skills and creativity. Note that we don't have a submission deadline so take your time to polish your demo project.
 
-If we then think the demo project is interesting enough, we'll proceed to a face-to-face step on Skype.
+If we then think the demo project is interesting enough, we'll proceed to a face-to-face step on a video call.
 
 That face-to-face step, which normally lasts 60 minutes per session (there may be more than one), typically starts with a discussion around the candidate's project. We normally ask the candidate to implement a new feature (even if it's just using pseudo-code), or to refactor and unit-test a particular component, and in general we aim to have an informal discussion about the candidate's approach.
 
