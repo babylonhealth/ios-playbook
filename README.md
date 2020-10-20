@@ -55,6 +55,8 @@ The rest of the iOS Engineers work in the following squads:
       <td>Daniel Haight</td><td><a href='https://github.com/Daniel1of1'>@Daniel1of1</a></td><td></td></tr>
       <tr><td>Javier Hernández</td><td><a href='https://github.com/jaherhi'>@jaherhi</a></td><td></td></tr>
       <tr><td>Nikolay Marinov</td><td><a href='https://github.com/nikolay-bab'>@nikolay-bab</a></td><td></td></tr>
+    <tr><td rowspan='1' valign='top'><strong>Payments</strong><br/>Implement payments transactions compliant with SCA requirements</td>
+      <td>Malgorzata Gocał</td><td><a href='https://github.com/mgocalPGS'>@mgocalPGS</a></td><td></td></tr>
     <tr><td rowspan='2' valign='top'><strong>Real-Time Matching</strong><br/>To increase average appointment per hour per clinician.</td>
       <td>Adam Borek</td><td><a href='https://github.com/TheAdamBorek'>@TheAdamBorek</a></td><td><a href='https://twitter.com/TheAdamBorek'>@TheAdamBorek</a></td></tr>
       <tr><td>Konrad Muchowicz</td><td><a href='https://github.com/konrad-em'>@konrad-em</a></td><td></td></tr>

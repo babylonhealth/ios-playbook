@@ -28,6 +28,9 @@ team:
   - &Konrad
     name: Konrad Muchowicz
     github: konrad-em
+  - &MalG
+    name: Malgorzata Gocał
+    github: mgocalPGS
   - &Nico
     name: Nico Robin
     github: Naiko
@@ -88,6 +91,10 @@ squads:
       - *DanielH
       - *Javier
       - *Nikolay
+  - name: Payments
+    desc: Implement payments transactions compliant with SCA requirements
+    members:
+      - *MalG
   - name: Real-Time Matching
     desc: To increase average appointment per hour per clinician.
     members:
