@@ -28,10 +28,6 @@ team:
   - &Konrad
     name: Konrad Muchowicz
     github: konrad-em
-  - &Nico
-    name: Nico Robin
-    github: Naiko
-    twitter: Naiko
   - &Nikolay
     name: Nikolay Marinov
     github: nikolay-bab
@@ -77,7 +73,6 @@ squads:
     desc: Digital appointments
     members:
       - *Adrian
-      - *Nico
   - name: Healthcheck
     desc: Overview of your health using a 3D body model (avatar).
     members:
