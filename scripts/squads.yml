@@ -8,17 +8,9 @@ team:
     name: Adam Borek
     github: TheAdamBorek
     twitter: TheAdamBorek
-  - &Adrian
-    name: Adrian Śliwa
-    github: adiki
-    twitter: adiki91
   - &DanielH
     name: Daniel Haight
     github: Daniel1of1
-  - &DanielS
-    name: Daniel Spindelbauer
-    github: sdaniel55
-    twitter: sdaniel55
   - &Emese
     name: Emese Toth
     github: emeseuk
@@ -28,12 +20,6 @@ team:
   - &Konrad
     name: Konrad Muchowicz
     github: konrad-em
-  - &Nikolay
-    name: Nikolay Marinov
-    github: nikolay-bab
-  - &Patrick
-    name: Patrick Westmeyer
-    github: bh-pwestmeyer
   - &Simon
     name: Simon Cass
     github: scass91
@@ -61,18 +47,13 @@ roles:
 #
 squads:
   - name: Partnerships
-    desc: Updating and maintaning our partner apps. Engineering work like tooling, CI and development processes..
+    desc: Updating and maintaning our partner apps.
     members:
-      - *DanielS
       - *Simon
   - name: Appointments 1
     desc: Face to face appointment booking.
     members:
       - *Witold
-  - name: Appointments 2
-    desc: Digital appointments
-    members:
-      - *Adrian
   - name: Healthcheck
     desc: Overview of your health using a 3D body model (avatar).
     members:
@@ -82,7 +63,6 @@ squads:
     members:
       - *DanielH
       - *Javier
-      - *Nikolay
   - name: Real-Time Matching
     desc: To increase average appointment per hour per clinician.
     members:
@@ -92,7 +72,3 @@ squads:
     desc: Chatbot functionality.
     members:
       - *Viorel
-  - name: US Professional Services
-    desc: Features for app in the US.
-    members:
-      - *Patrick
