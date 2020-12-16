@@ -28,10 +28,6 @@ team:
     name: Viorel Mihalache
     github: viorel15
     twitter: viorelMO
-  - &Witold
-    name: Witold Skibniewski
-    github: mr-v
-
 
 ################################################################
 # Global roles transverse to the squads
@@ -50,10 +46,6 @@ squads:
     desc: Updating and maintaning our partner apps.
     members:
       - *Simon
-  - name: Appointments 1
-    desc: Face to face appointment booking.
-    members:
-      - *Witold
   - name: Healthcheck
     desc: Overview of your health using a 3D body model (avatar).
     members:
