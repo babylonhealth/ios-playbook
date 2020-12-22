@@ -20,6 +20,9 @@ team:
   - &Konrad
     name: Konrad Muchowicz
     github: konrad-em
+  - &Marcin
+    name: Marcin Galus
+    github: marcingalus
   - &Simon
     name: Simon Cass
     github: scass91
@@ -60,6 +63,7 @@ squads:
     members:
       - *Adam
       - *Konrad
+      - *Marcin
   - name: Triage
     desc: Chatbot functionality.
     members:

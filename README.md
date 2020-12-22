@@ -48,9 +48,10 @@ The rest of the iOS Engineers work in the following squads:
     <tr><td rowspan='2' valign='top'><strong>Monitor</strong><br/>Help members manage and sustain a healthy lifestyle.</td>
       <td>Daniel Haight</td><td><a href='https://github.com/Daniel1of1'>@Daniel1of1</a></td><td></td></tr>
       <tr><td>Javier Hernández</td><td><a href='https://github.com/jaherhi'>@jaherhi</a></td><td></td></tr>
-    <tr><td rowspan='2' valign='top'><strong>Real-Time Matching</strong><br/>To increase average appointment per hour per clinician.</td>
+    <tr><td rowspan='3' valign='top'><strong>Real-Time Matching</strong><br/>To increase average appointment per hour per clinician.</td>
       <td>Adam Borek</td><td><a href='https://github.com/TheAdamBorek'>@TheAdamBorek</a></td><td><a href='https://twitter.com/TheAdamBorek'>@TheAdamBorek</a></td></tr>
       <tr><td>Konrad Muchowicz</td><td><a href='https://github.com/konrad-em'>@konrad-em</a></td><td></td></tr>
+      <tr><td>Marcin Galus</td><td><a href='https://github.com/marcingalus'>@marcingalus</a></td><td></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Triage</strong><br/>Chatbot functionality.</td>
       <td>Viorel Mihalache</td><td><a href='https://github.com/viorel15'>@viorel15</a></td><td><a href='https://twitter.com/viorelMO'>@viorelMO</a></td></tr>
 </table>
