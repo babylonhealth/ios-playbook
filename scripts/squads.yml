@@ -63,8 +63,11 @@ squads:
     members:
       - *Adam
       - *Konrad
-      - *Marcin
   - name: Triage
     desc: Chatbot functionality.
     members:
       - *Viorel
+  - name: Native Apps
+    desc: Updating and maintaning our native apps.
+    members:
+      - *Marcin
