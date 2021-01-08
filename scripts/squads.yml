@@ -17,9 +17,6 @@ team:
   - &Javier
     name: Javier Hernández
     github: jaherhi
-  - &Konrad
-    name: Konrad Muchowicz
-    github: konrad-em
   - &Marcin
     name: Marcin Galus
     github: marcingalus
@@ -62,7 +59,6 @@ squads:
     desc: To increase average appointment per hour per clinician.
     members:
       - *Adam
-      - *Konrad
   - name: Triage
     desc: Chatbot functionality.
     members:
