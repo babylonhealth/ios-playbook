@@ -8,9 +8,6 @@ team:
     name: Adam Borek
     github: TheAdamBorek
     twitter: TheAdamBorek
-  - &DanielH
-    name: Daniel Haight
-    github: Daniel1of1
   - &Emese
     name: Emese Toth
     github: emeseuk
@@ -56,7 +53,6 @@ squads:
   - name: Monitor
     desc: Help members manage and sustain a healthy lifestyle.
     members:
-      - *DanielH
       - *Javier
   - name: Real-Time Matching
     desc: To increase average appointment per hour per clinician.
