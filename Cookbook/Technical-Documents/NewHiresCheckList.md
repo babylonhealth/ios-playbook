@@ -65,6 +65,12 @@ Make sure you also join your Tribe/Squad's Slack channels, groups.
     rvm use 2.6.4
     ```
 
+1. Install pods using following command:
+
+   ```
+   UPDATE_LICENSES=1 bundle exec pod install
+   ```
+
 ## Setup Guide
 
 Most of the work to get the iOS project up and running is automated inside a
