@@ -8,12 +8,6 @@ team:
     name: Adam Borek
     github: TheAdamBorek
     twitter: TheAdamBorek
-  - &Emese
-    name: Emese Toth
-    github: emeseuk
-  - &Javier
-    name: Javier Hernández
-    github: jaherhi
   - &Marcin
     name: Marcin Galus
     github: marcingalus
@@ -43,14 +37,6 @@ squads:
     desc: Updating and maintaning our partner apps.
     members:
       - *Simon
-  - name: Healthcheck
-    desc: Overview of your health using a 3D body model (avatar).
-    members:
-      - *Emese
-  - name: Monitor
-    desc: Help members manage and sustain a healthy lifestyle.
-    members:
-      - *Javier
   - name: Real-Time Matching
     desc: To increase average appointment per hour per clinician.
     members:

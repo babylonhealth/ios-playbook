@@ -43,8 +43,6 @@ The rest of the iOS Engineers work in the following squads:
   <thead><th>Squad</th><th>Engineer</th><th>GitHub</th><th>Twitter</th></thead>
     <tr><td rowspan='1' valign='top'><strong>Partnerships</strong><br/>Updating and maintaning our partner apps.</td>
       <td>Simon Cass</td><td><a href='https://github.com/scass91'>@scass91</a></td><td><a href='https://twitter.com/codercass'>@codercass</a></td></tr>
-    <tr><td rowspan='1' valign='top'><strong>Monitor</strong><br/>Help members manage and sustain a healthy lifestyle.</td>
-      <td>Javier Hernández</td><td><a href='https://github.com/jaherhi'>@jaherhi</a></td><td></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Real-Time Matching</strong><br/>To increase average appointment per hour per clinician.</td>
       <td>Adam Borek</td><td><a href='https://github.com/TheAdamBorek'>@TheAdamBorek</a></td><td><a href='https://twitter.com/TheAdamBorek'>@TheAdamBorek</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Triage</strong><br/>Chatbot functionality.</td>
