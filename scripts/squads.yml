@@ -8,9 +8,6 @@ team:
     name: Adam Borek
     github: TheAdamBorek
     twitter: TheAdamBorek
-  - &Marcin
-    name: Marcin Galus
-    github: marcingalus
   - &Simon
     name: Simon Cass
     github: scass91
@@ -45,7 +42,3 @@ squads:
     desc: Chatbot functionality.
     members:
       - *Viorel
-  - name: Native Apps
-    desc: Updating and maintaning our native apps.
-    members:
-      - *Marcin

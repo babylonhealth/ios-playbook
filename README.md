@@ -47,8 +47,6 @@ The rest of the iOS Engineers work in the following squads:
       <td>Adam Borek</td><td><a href='https://github.com/TheAdamBorek'>@TheAdamBorek</a></td><td><a href='https://twitter.com/TheAdamBorek'>@TheAdamBorek</a></td></tr>
     <tr><td rowspan='1' valign='top'><strong>Triage</strong><br/>Chatbot functionality.</td>
       <td>Viorel Mihalache</td><td><a href='https://github.com/viorel15'>@viorel15</a></td><td><a href='https://twitter.com/viorelMO'>@viorelMO</a></td></tr>
-    <tr><td rowspan='1' valign='top'><strong>Native Apps</strong><br/>Updating and maintaning our native apps.</td>
-      <td>Marcin Galus</td><td><a href='https://github.com/marcingalus'>@marcingalus</a></td><td></td></tr>
 </table>
 <!-- end:squads -->
 
