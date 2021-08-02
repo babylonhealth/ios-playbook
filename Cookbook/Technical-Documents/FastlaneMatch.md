@@ -19,7 +19,7 @@ We use two teams on our Apple developer center account:
 
 For day to day and App Center, we use certificates and profiles from our Enterprise team
 
-1. Add shared developer account, "John Appleseed", credentials from 1Password to your Xcode settings in `Preferences -> Accounts` menu. 
+1. Set a developer account that is added to Babylon's internal enterprise organization to your Xcode settings in `Preferences -> Accounts` menu. 
 2. Run the following command in the terminal: 
 
 - to download development certificates and profiles to run the app on device from Xcode:
